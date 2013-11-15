@@ -1,0 +1,7 @@
+bases.yml
+#.gitignore
+*~
+cache/
+log/
+nbproject/
+test/
