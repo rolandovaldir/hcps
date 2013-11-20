@@ -1,3 +1,93 @@
+notas_evolucion:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                NotasEvolucion
+    module:               notas_evolucion
+    prefix_path:          /notas_evolucion
+    column:               id
+    with_wildcard_routes: true
+
+notas_enfermeria:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                NotasEnfermeria
+    module:               notas_enfermeria
+    prefix_path:          /notas_enfermeria
+    column:               id
+    with_wildcard_routes: true
+
+signos_vitales_nursery:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                SignosVitalesNursery
+    module:               nursery
+    prefix_path:          /nursery
+    column:               id
+    with_wildcard_routes: true
+
+solicitud_reposicion_material:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                SolicitudReposicionMaterial
+    module:               reposicion_materiales
+    prefix_path:          /reposicion_materiales
+    column:               id
+    with_wildcard_routes: true
+
+solicitud_servicio:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                SolicitudServicio
+    module:               solicitudes_servicios
+    prefix_path:          /solicitudes_servicios
+    column:               id
+    with_wildcard_routes: true
+
+solicitud_interconsulta:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                SolicitudInterconsulta
+    module:               solicitudes_interconsultas
+    prefix_path:          /solicitudes_interconsultas
+    column:               id
+    with_wildcard_routes: true
+
+examen_fisico_recien_nacido:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ExamenFisicoRecienNacido
+    module:               recien_nacidos
+    prefix_path:          /recien_nacidos
+    column:               id
+    with_wildcard_routes: true
+
+junta_medica:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                JuntaMedica
+    module:               juntas_medicas
+    prefix_path:          /juntas_medicas
+    column:               id
+    with_wildcard_routes: true
+
+servicio_mantenimiento:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ServicioMantenimiento
+    module:               servicios_mantenimiento
+    prefix_path:          /servicios_mantenimiento
+    column:               id
+    with_wildcard_routes: true
+
+orden_medica:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                OrdenMedica
+    module:               ordenes_medicas
+    prefix_path:          /ordenes_medicas
+    column:               id
+    with_wildcard_routes: true
+
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
 

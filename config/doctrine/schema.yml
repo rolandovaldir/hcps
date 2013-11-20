@@ -1,0 +1,293 @@
+# config/doctrine/schema.yml
+---
+actAs:
+  Signable:
+    created:
+      name: created_by
+      type: integer
+      onUpdate: CASCADE
+      onDelete: SET NULL
+      options:
+        notnull: true
+        default: 1
+    updated:
+      name: updated_by
+      type: integer
+      
+FileInternacion:
+  actAs: [Timestampable]
+  columns:
+    
+  relations:
+    OrdenMedica:              {local: id, foreign: file_internacion_id, type: many, foreignAlias: File}
+    ServicioMantenimiento:    {local: id, foreign: file_internacion_id, type: many, foreignAlias: File}
+    JuntaMedica:              {local: id, foreign: file_internacion_id, type: many, foreignAlias: File}
+    ExamenFisicoRecienNacido: {local: id, foreign: file_internacion_id, type: many, foreignAlias: File}
+    SolicitudInterconsulta:   {local: id, foreign: file_internacion_id, type: many, foreignAlias: File}
+    SolicitudServicio:        {local: id, foreign: file_internacion_id, type: many, foreignAlias: File}
+    
+#--------------------------------------------------------
+
+OrdenMedica:
+  actAs: [Timestampable]
+  columns:
+    file_internacion_id: {type: integer, notnull: true}
+    numero_hoja:         {type: integer}
+  relations:  
+    FileInternacion:    {local: file_internacion_id, foreign: id, type: one, foreignAlias: Ordenes}
+    DetalleOrdenMedica: {local: id, foreign: orden_medica_id, type: many, foreignAlias: Orden}
+    
+DetalleOrdenMedica:
+  actAs: [Timestampable]
+  columns:
+    orden_medica_id:               {type: integer, notnull: true}
+    via_administracion_id:         {type: integer, notnull: true}
+    fecha_hora:                    {type: timestamp}
+    nombre_medicamento_indicacion: {type: string(150)}
+    dosis_intervalo:               {type: string(150)}
+    fecha_inicio:                  {type: date}
+    fecha_terminacion:             {type: date}
+  relations:
+    OrdenMedica:       {local: orden_medica_id, foreign: id, type: one, foreignAlias: DetallesOrdenes}
+    ViaAdministracion: {local: via_administracion_id, foreign: id, type: one, foreignAlias: DetallesOrdenes}
+
+ViaAdministracion:
+  actAs: [Timestampable]
+  columns:
+    nombre: {type: string(100)}
+  relations:
+    DetalleOrdenMedica: {local: id, foreign: via_administracion_id, type: many, foreignAlias: Administracion}
+
+#--------------------------------------------------------
+
+ServicioMantenimiento:
+  actAs: [Timestampable]
+  columns:
+    file_internacion_id: {type: integer, notnull: true}
+    solicitante:         {type: string(80)}
+    sector:              {type: string(50)}
+    fecha_solicitante:   {type: date}
+    objeto_reparado:     {type: string(100)}
+    caracteristicas:     {type: string(250)}
+    trabajo_solicitado:  {type: string(2000)}
+    conformidad:         {type: string(250)}
+    reparado_por:        {type: string(150)}
+    importe :            {type: integer}
+    importe_fecha:       {type: date}
+  relations:
+    FileInternacion: {local: file_internacion_id, foreign: id, type: one, foreignAlias: Mantenimientos}
+
+#--------------------------------------------------------
+
+JuntaMedica:
+  actAs: [Timestampable]
+  columns:
+    file_internacion_id:     {type: integer, notnull: true}
+    medico_solicitante:      {type: string(100)}
+    servicio:                {type: string(45)}
+    especialidades:          {type: string(45)}
+    fecha_junta:             {type: date}
+    diagnostico_establecido: {type: string(2000)}
+    relacion_junta:          {type: string(2500)}
+    conclusiones:            {type: string(2000)}
+    tac:                     {type: boolean}
+    contraste:               {type: boolean}
+  relations:
+    FileInternacion:  {local: file_internacion_id, foreign: id, type: one, foreignAlias: Juntas}
+    MedicoParticular: {local: id, foreign: junta_medica_id, type: many ,foreignAlias: Junta}
+    
+MedicoParticular:
+  actAs: [Timestampable]
+  columns:
+    junta_medica_id: {type: integer, notnull: true}
+    nombre:              {type: string(150)}
+  relations:
+    JuntaMedica: {local: junta_medica_id, foreign: id, type: one, foreignAlias: Particulares}
+ 
+#--------------------------------------------------------
+    
+ExamenFisicoRecienNacido:
+  actAs: [Timestampable]
+  columns:
+    file_internacion_id:  {type: integer, notnull: true}
+    ap_paterno:           {type: string(45)}
+    ap_maperno:           {type: string(45)}
+    fecha_nacimiento:     {type: date}
+    sexo:                 {type: string(20)}
+    peso_nacimiento:      {type: string(45)}
+    talla:                {type: string(45)}
+    circunferencia_torax: {type: string(20)}
+    numero_cuna:          {type: integer}
+    fecha_adminision:     {type: date}
+    fecha_egreso:         {type: date}
+  relations:
+    FileInternacion: {local: file_internacion_id, foreign: id, type: one, foreignAlias: RecienNacidos}
+    Apgar:           {local: id, foreign: examen_fisico_recien_nacido_id, type: many, foreignAlias: RecienNacido}
+    
+Apgar:
+  actAs: [Timestampable]
+  columns:
+    examen_fisico_recien_nacido_id: {type: integer, notnull: true}
+    nacer_egresar:                  {type: boolean}
+    apariencia:                     {type: string(100)}
+    piel:                           {type: string(100)}
+    cabeza:                         {type: string(100)}
+    ojos:                           {type: string(100)}
+    oidos_nariz_garganta:           {type: string(100)}
+    torax:                          {type: string(100)}
+    pulmones:                       {type: string(100)}
+    corazon:                        {type: string(100)}
+    abdomen:                        {type: string(100)}
+    genitales:                      {type: string(100)}
+    torso_espina:                   {type: string(100)}
+    extremidades:                   {type: string(100)}
+    reflejos:                       {type: string(100)}
+    ano:                            {type: string(100)}
+  relations:
+    ExamenFisicoRecienNacido: {local: examen_fisico_recien_nacido_id, foreign: id, type: one, foreignAlias: Apgars}
+
+#--------------------------------------------------------
+
+SolicitudInterconsulta:
+  actAs: [Timestampable]
+  columns:
+    file_internacion_id:   {type: integer, notnull: true}
+    dirigida_a:            {type: string(50)}
+    especialidad:          {type: string(50)}
+    motivo:                {type: string(2000)}
+    datos_clinicos:        {type: string(2000)}
+    informe_medico:        {type: string(2500)}
+    conclusiones:          {type: string(2500)}
+    hora_solicitud:        {type: time}
+    fecha_solicitud:       {type: date}
+  relations:
+    FileInternacion:   {local: file_internacion_id, foreign: id, type: one, foreignAlias: Interconsultas}
+    DetalleMedicacion: {local: id, foreign: solicitud_intercosultada_id, type: many, foreignAlias: Interconsulta}
+    
+DetalleMedicacion:
+  actAs: [Timestampable]
+  columns:
+    solicitud_intercosultada_id: {type: integer, notnull: true}
+    medicacion_utilizada:        {type: string(150)}
+    dosis:                       {type: string(45)}
+    fecha_inicio:                {type: date}
+  relations:
+    SolicitudInterconsulta: {local: solicitud_intercosultada_id, foreign: id, type: one, foreignAlias: Medicaciones}
+    
+#--------------------------------------------------------
+
+SolicitudServicio:
+  actAs: [Timestampable]
+  columns:
+    file_internacion_id:    {type: integer, notnull: true}
+    atencion_id:            {type: integer, notnull: true}
+    para:                   {type: string(2000)}
+    diagnostico_presuncion: {type: string(250)}
+    material_utilizado:     {type: string(2000)}
+  relations:
+    FileInternacion: {local: file_internacion_id, foreign: id, type: one, foreignAlias: SolicitudServicios}
+    Atencion:        {local: atencion_id, foreign: id, type: one, foreignAlias: SolicitudServicios}
+
+Atencion:
+  actAs: [Timestampable]
+  columns:
+    nombre: {type: string(100)}
+  relations:
+    SolicitudServicio: {local: id, foreign: atencion_id, type: many, foreignAlias: Atencion}
+#--------------------------------------------------------
+
+SolicitudReposicionMaterial:
+  actAs: [Timestampable]
+  columns:
+    file_internacion_id: {type: integer, notnull: true}
+    unidad:              {type: string(100)}
+    encargado:           {type: string(150)}
+  relations:
+    FileInternacion: {local: file_internacion_id, foreign: id, type: one, foreignAlias: SolicitudMateriales}
+    DetalleMaterial: {local: id, foreign: solicitud_reposicion_material_id, type: many, foreignAlias: SolicitudMaterial}
+
+DetalleMaterial:
+  actAs: [Timestampable]
+  columns:
+    solicitud_reposicion_material_id: {type: integer, notnull: true}
+    codigo:                           {type: string(45)}
+    descripcion:                      {type: string(100)}
+    unidad:                           {type: integer}
+    saldo_anterior:                   {type: integer}
+    reposicion_solicitada:            {type: integer}
+    saldo_actual:                     {type: integer}
+  relations:
+    SolicitudReposicionMaterial: {local: solicitud_reposicion_material_id, foreign: id, type: one,foreignAlias: Materiales}
+
+#--------------------------------------------------------
+
+SignosVitalesNursery:
+  actAs: [Timestampable]
+  columns:
+    file_internacion_id: {type: integer, notnull: true}
+    numero_hoja:         {type: integer}
+  relations:
+    FileInternacion: {local: file_internacion_id, foreign: id, type: one, foreignAlias: Nurserys}
+    DetalleNursery:  {local: id, foreign: signos_vitales_nursery_id, type: many, foreignAlias: Nursery}
+    
+DetalleNursery:
+  actAs: [Timestampable]
+  columns:
+    signos_vitales_nursery_id: {type: integer, notnull: true}
+    fecha:                     {type: date}
+    hora:                      {type: time}
+    fc_nursery:                {type: string(45)}
+    fr_nursery:                {type: string(45)}
+    to_nursery:                {type: string(45)}
+    diu_nursery:               {type: string(45)}
+    cat_nursery:               {type: string(45)}
+    lm_nursery:                {type: string(45)}
+    residuo:                   {type: string(45)}
+    observaciones:             {type: string(45)}
+  relations:
+    SignosVitalesNursery: {local: signos_vitales_nursery_id, foreign: id, type: one, foreignAlias: DetalleNurserys}
+
+#--------------------------------------------------------
+
+NotasEnfermeria:
+  actAs: [Timestampable]
+  columns:
+    file_internacion_id: {type: integer, notnull: true}
+    numero_hoja:         {type: integer}
+  relations:
+    FileInternacion:   {local: file_internacion_id, foreign: id, type: one, foreignAlias: Enfermerias}
+    DetalleEnfermeria: {local: id, foreign: notas_enfermeria_id, type: many, foreignAlias: Enfermeria}
+
+DetalleEnfermeria:
+  actAs: [Timestampable]
+  columns:
+    notas_enfermeria_id: {type: integer, notnull: true}
+    fecha:               {type: date}
+    hora:                {type: time}
+    procedimientos:      {type: string(150)}
+    observaciones:       {type: string(500)}
+  relations:
+    NotasEnfermeria: {local: notas_enfermeria_id, foreign: id, type: one, foreignAlias: DetallesEnfermeria}
+
+#--------------------------------------------------------
+
+NotasEvolucion:
+  actAs: [Timestampable]
+  columns:
+    file_internacion_id: {type: integer, notnull: true}
+    numero_hoja:         {type: integer}
+  relations:
+    FileInternacion:  {local: file_internacion_id, foreign: id, type: one, foreignAlias: Evoluciones}
+    DetalleEvolucion: {local: id, foreign: notas_evolucion_id, type: many, foreignAlias: Evolucion}
+
+DetalleEvolucion:
+  actAs: [Timestampable]
+  columns:
+    notas_evolucion_id: {type: integer, notnull: true}
+    fecha_hora:         {type: timestamp}
+    numero_prob:        {type: integer}
+    nota_soap:          {type: string(1500)}
+  relations:
+    NotasEvolucion: {local: notas_evolucion_id, foreign: id, type: one, foreignAlias: DetallesEvolucion}
+
+#--------------------------------------------------------
