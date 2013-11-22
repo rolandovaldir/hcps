@@ -88,6 +88,152 @@ orden_medica:
     column:               id
     with_wildcard_routes: true
 
+# guiller 
+
+informe_estadistico_adm_egreso_informeestadisticoadmegreso:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                InformeEstadisticoAdmEgreso
+    module:               informeestadisticoadmegreso
+    prefix_path:          /informeestadisticoadmegreso
+    column:               id
+    with_wildcard_routes: true
+
+informe_estadistico_adm_egreso:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                InformeEstadisticoAdmEgreso
+    module:               informeestadisticoAdmegreso
+    prefix_path:          /informeestadisticoAdmegreso
+    column:               id
+    with_wildcard_routes: true
+
+papeleta_pedido_material:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                PapeletaPedidoMaterial
+    module:               papeletapedidomaterial
+    prefix_path:          /papeletapedidomaterial
+    column:               id
+    with_wildcard_routes: true
+
+solicitud_transfusion_sanguinea:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                SolicitudTransfusionSanguinea
+    module:               solicitudtransfusionsanguinea
+    prefix_path:          /solicitudtransfusionsanguinea
+    column:               id
+    with_wildcard_routes: true
+
+lista_dieta:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ListaDieta
+    module:               listadieta
+    prefix_path:          /listadieta
+    column:               id
+    with_wildcard_routes: true
+
+atencion_enfermeria:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AtencionEnfermeria
+    module:               atencionenfermeria
+    prefix_path:          /atencionenfermeria
+    column:               id
+    with_wildcard_routes: true
+
+uso_hospitalario:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                UsoHospitalario
+    module:               usohospitalario
+    prefix_path:          /usohospitalario
+    column:               id
+    with_wildcard_routes: true
+
+resumen_alta:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ResumenAlta
+    module:               resumenalta
+    prefix_path:          /resumenalta
+    column:               id
+    with_wildcard_routes: true
+
+administracion_medicamento:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AdministracionMedicamento
+    module:               administracionmedicamento
+    prefix_path:          /administracionmedicamento
+    column:               id
+    with_wildcard_routes: true
+
+solicitud_examen_laboratorio:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                SolicitudExamenLaboratorio
+    module:               solicitudexamenlaboratorio
+    prefix_path:          /solicitudexamenlaboratorio
+    column:               id
+    with_wildcard_routes: true
+
+programacion_cirugias:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ProgramacionCirugias
+    module:               programacioncirugias
+    prefix_path:          /programacioncirugias
+    column:               id
+    with_wildcard_routes: true
+
+autorizacion_autopsia:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AutorizacionAutopsia
+    module:               autorizacionesautopsia
+    prefix_path:          /autorizacionesautopsia
+    column:               id
+    with_wildcard_routes: true
+
+autorizacion_alta_solicitada:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AutorizacionAltaSolicitada
+    module:               autorizacionesaltasolicitada
+    prefix_path:          /autorizacionesaltasolicitada
+    column:               id
+    with_wildcard_routes: true
+
+autorizacion_diagnostico_tratamiento_autorizaciondiagnosticotratamientos:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AutorizacionDiagnosticoTratamiento
+    module:               autorizaciondiagnosticotratamientos
+    prefix_path:          /autorizaciondiagnosticotratamientos
+    column:               id
+    with_wildcard_routes: true
+
+autorizacion_diagnostico_tratamiento:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AutorizacionDiagnosticoTratamiento
+    module:               autorizaciondiagnosticoTratamientos
+    prefix_path:          /autorizaciondiagnosticoTratamientos
+    column:               id
+    with_wildcard_routes: true
+
+file_internacion_fileinternaciones:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                FileInternacion
+    module:               fileinternaciones
+    prefix_path:          /fileinternaciones
+    column:               id
+    with_wildcard_routes: true
+
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
 
