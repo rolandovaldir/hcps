@@ -1,3 +1,84 @@
+detalle_evolucion:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                DetalleEvolucion
+    module:               detalles_evolucion
+    prefix_path:          /detalles_evolucion
+    column:               id
+    with_wildcard_routes: true
+
+detalle_enfermeria:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                DetalleEnfermeria
+    module:               detalles_enfermeria
+    prefix_path:          /detalles_enfermeria
+    column:               id
+    with_wildcard_routes: true
+
+detalle_nursery:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                DetalleNursery
+    module:               detalles_nursery
+    prefix_path:          /detalles_nursery
+    column:               id
+    with_wildcard_routes: true
+
+detalle_material:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                DetalleMaterial
+    module:               detalles_material
+    prefix_path:          /detalles_material
+    column:               id
+    with_wildcard_routes: true
+
+atencion:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Atencion
+    module:               atenciones
+    prefix_path:          /atenciones
+    column:               id
+    with_wildcard_routes: true
+
+detalle_medicacion:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                DetalleMedicacion
+    module:               detalles_medicacion
+    prefix_path:          /detalles_medicacion
+    column:               id
+    with_wildcard_routes: true
+
+apgar:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Apgar
+    module:               apgar
+    prefix_path:          /apgar
+    column:               id
+    with_wildcard_routes: true
+
+medico_particular:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                MedicoParticular
+    module:               medicos_particulares
+    prefix_path:          /medicos_particulares
+    column:               id
+    with_wildcard_routes: true
+
+via_administracion:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ViaAdministracion
+    module:               vias_administracion
+    prefix_path:          /vias_administracion
+    column:               id
+    with_wildcard_routes: true
+
 notas_evolucion:
   class: sfDoctrineRouteCollection
   options:
