@@ -653,7 +653,6 @@ Internado:
   actAs: [Timestampable]
   tableName: internado
   columns: 
-    id:                      { type: integer, primary: true, notnull: true, autoincrement: true } 
     afiliado_id:             { type: integer, notnull: true }
     noAfiliado_id:           { type: integer, notnull: true }
     categoria_id:            { type: integer, notnull: true }
@@ -680,5 +679,3 @@ Internado:
     lugar_referencia_salida: { type: string(200), notnull: true }
     medio_referencia_salida: { type: string(200), notnull: true }
     motivo_refe_retorno:     { type: string(200), notnull: true }
-    created_at:              { type: TIMESTAMP }
-    updated_at:              { type: TIMESTAMP }
