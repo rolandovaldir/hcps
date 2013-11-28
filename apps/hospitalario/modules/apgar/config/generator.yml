@@ -13,9 +13,16 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
-      list:    ~
-      filter:  ~
+      fields:  
+        nacer_egresar: {label: 'Recien Nacido?'}
+      list:    
+        title: APGAR
+        actions: {}
+        batch_actions: {}
+      filter:  
+        display: [nacer_egresar]
       form:    ~
-      edit:    ~
-      new:     ~
+      edit:    
+        Editar Registro Apgar
+      new:     
+        title: Registro Apgar

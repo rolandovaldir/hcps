@@ -12,5 +12,6 @@ class AdministracionMedicamentoForm extends BaseAdministracionMedicamentoForm
 {
   public function configure()
   {
+      unset($this['created_at'], $this['updated_at']);
   }
 }

@@ -14,7 +14,10 @@ generator:
     config:
       actions: ~
       fields:  ~
-      list:    ~
+      list:    
+        title: Lista de Autorizaciones de Autopsia
+        actions: {}
+        batch_actions: {}
       filter:  
         class: false
       form:    ~

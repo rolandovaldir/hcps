@@ -14,8 +14,14 @@ generator:
     config:
       actions: ~
       fields:  ~
-      list:    ~
-      filter:  ~
+      list:    
+        title: Lista de Atenciones
+        actions: {}
+        batch_actions: {}
+      filter:  
+        display: [nombre]
       form:    ~
-      edit:    ~
-      new:     ~
+      edit:    
+        title: Editar Atencion %%nombre%%
+      new:    
+        title: Nueva Atencion

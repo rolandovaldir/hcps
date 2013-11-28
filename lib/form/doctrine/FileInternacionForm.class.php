@@ -12,5 +12,6 @@ class FileInternacionForm extends BaseFileInternacionForm
 {
   public function configure()
   {
+      unset($this['created_at'], $this['updated_at']);
   }
 }

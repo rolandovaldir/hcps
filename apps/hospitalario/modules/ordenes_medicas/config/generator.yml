@@ -16,6 +16,8 @@ generator:
       fields:  ~
       list:    
         title: Ordenes Médicas
+        actions: {}
+        batch_actions: {}
       filter:  
         display: [numero_hoja]
       form:    ~

@@ -12,5 +12,6 @@ class AutorizacionAutopsiaForm extends BaseAutorizacionAutopsiaForm
 {
   public function configure()
   {
+      unset($this['created_at'], $this['updated_at']);
   }
 }

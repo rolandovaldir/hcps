@@ -16,6 +16,8 @@ generator:
       fields:  ~
       list:    
         title: Administración de Medicamentos
+        actions: {}
+        batch_actions: {}
       filter:  
         class: false
       form:    ~

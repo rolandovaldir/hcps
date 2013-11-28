@@ -14,9 +14,14 @@ generator:
     config:
       actions: ~
       fields:  ~
-      list:    ~
+      list:    
+        title: Atencion de Enfermeria
+        actions: {}
+        batch_actions: {}
       filter:  
         class: false
       form:    ~
-      edit:    ~
-      new:     ~
+      edit:    
+        title: Editar Atencion %%%%
+      new:     
+        title: Nueva atencion de Enfermeria

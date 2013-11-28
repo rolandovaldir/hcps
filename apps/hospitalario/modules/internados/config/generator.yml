@@ -14,9 +14,17 @@ generator:
     config:
       actions: ~
       fields:  ~
-      list:    ~
+      list:    
+        title: Lista de Personas Hopitalizadas
       filter:  
-        class: false
-      form:    ~
-      edit:    ~
-      new:     ~
+        display: [cama_id]
+      form:    
+        display:
+          Datos Internado: [formulario_referencia, diagnostico, procedencia, medio_referencia, observaciones, fecha, hora, conducto, es_afiliado]
+          Datos Medico: [medico_id, medico_consulta_id, medico_referencia_id]
+          Ubicadion: [categoria_id, cama_id]
+          Datos Alta: [alta, altaFecha, altaHora, diagnostico_alta, tratamientio, lugar_referencia_salida, medio_referencia_salida, motivo_refe_retorno]
+      edit:    
+        title: Editar Internado %%%%
+      new:
+        title: Nuevo Hospitalizado

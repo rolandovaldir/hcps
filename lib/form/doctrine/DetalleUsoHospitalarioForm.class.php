@@ -12,5 +12,6 @@ class DetalleUsoHospitalarioForm extends BaseDetalleUsoHospitalarioForm
 {
   public function configure()
   {
+      unset($this['created_at'], $this['updated_at']);
   }
 }

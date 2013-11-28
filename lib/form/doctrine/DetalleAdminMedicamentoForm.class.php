@@ -12,5 +12,6 @@ class DetalleAdminMedicamentoForm extends BaseDetalleAdminMedicamentoForm
 {
   public function configure()
   {
+      unset($this['created_at'], $this['updated_at']);
   }
 }

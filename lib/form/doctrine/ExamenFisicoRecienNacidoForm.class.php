@@ -12,5 +12,6 @@ class ExamenFisicoRecienNacidoForm extends BaseExamenFisicoRecienNacidoForm
 {
   public function configure()
   {
+      unset($this['created_at'], $this['updated_at']);
   }
 }

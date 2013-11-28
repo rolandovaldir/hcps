@@ -12,5 +12,6 @@ class UsoHospitalarioForm extends BaseUsoHospitalarioForm
 {
   public function configure()
   {
+      unset($this['created_at'], $this['updated_at']);
   }
 }
