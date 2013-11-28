@@ -1,23 +1,21 @@
 generator:
   class: sfDoctrineGenerator
   param:
-    model_class:           OrdenMedica
+    model_class:           DetalleOrdenMedica
     theme:                 admin
     non_verbose_templates: true
     with_show:             false
     singular:              ~
     plural:                ~
-    route_prefix:          orden_medica
+    route_prefix:          detalle_orden_medica
     with_doctrine_route:   true
     actions_base_class:    sfActions
 
     config:
       actions: ~
       fields:  ~
-      list:    
-        title: Ordenes Médicas
-      filter:  
-        display: [numero_hoja]
+      list:    ~
+      filter:  ~
       form:    ~
       edit:    ~
       new:     ~

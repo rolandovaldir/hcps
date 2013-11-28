@@ -14,7 +14,8 @@ generator:
     config:
       actions: ~
       fields:  ~
-      list:    ~
+      list:    
+        title: Administración de Medicamentos
       filter:  
         class: false
       form:    ~
