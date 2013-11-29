@@ -2,7 +2,7 @@ generator:
   class: sfDoctrineGenerator
   param:
     model_class:           ProgramacionCirugias
-    theme:                 admin
+    theme:                 dojotheme
     non_verbose_templates: true
     with_show:             false
     singular:              ~
@@ -10,15 +10,17 @@ generator:
     route_prefix:          programacion_cirugias
     with_doctrine_route:   true
     actions_base_class:    sfActions
-
+    dojo_object:   symfonydojo
     config:
       actions: ~
-      fields:  ~
+      fields: ~
+#        operacion_fecha: { name: fecha de operacion, type: plain }           
       list:    
         actions: {}
-        batch_actions: {}
+        batch_actions: {}       
       filter:  
-        class: false
+        display: [ medico_id, operacion_fecha ]
       form:    ~
       edit:    ~
-      new:     ~
+      new: 
+        title: Nueva Programacion Cirugia      
