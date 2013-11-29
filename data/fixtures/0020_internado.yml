@@ -1,0 +1,53 @@
+## YAML Template.
+---
+Internado:  
+  INTER1:     
+    afiliado_id:             NULL
+    noAfiliado_id:           null
+    categoria_id:            0
+    cama_id:                 0
+    medico_id:               0
+    medico_consulta_id:      0
+    medico_referencia_id:    0
+    formulario_referencia:   ''
+    diagnostico:             ''
+    procedencia:             ''
+    medio_referencia:        ''
+    observaciones:           'nuevo'
+    fecha:                   '2013-01-15'
+    hora:                    '09:45'
+    conducto:                ''
+    es_afiliado:             true
+    alta:                    false
+    altaFecha:               null
+    altaHora:                null
+    diagnostico_alta:        ''
+    tratamientio:            ''
+    lugar_referencia_salida: ''
+    medio_referencia_salida: ''
+    motivo_refe_retorno:     ''
+  INTER2:
+    afiliado_id:             NULL
+    noAfiliado_id:           null
+    categoria_id:            0
+    cama_id:                 0
+    medico_id:               0
+    medico_consulta_id:      0
+    medico_referencia_id:    0
+    formulario_referencia:   ''
+    diagnostico:             ''
+    procedencia:             ''
+    medio_referencia:        ''
+    observaciones:           'nuevo'
+    fecha:                   '2013-02-08'
+    hora:                    '14:09'
+    conducto:                ''
+    es_afiliado:             true
+    alta:                    false
+    altaFecha:               null
+    altaHora:                null
+    diagnostico_alta:        ''
+    tratamientio:            ''
+    lugar_referencia_salida: ''
+    medio_referencia_salida: ''
+    motivo_refe_retorno:     ''

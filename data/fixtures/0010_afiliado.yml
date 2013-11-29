@@ -15,3 +15,26 @@
 #     password: changeme
 #     name:     Kris Wallsmith
 #     email:    kris.wallsmith@symfony-project.com
+
+
+Afiliado:
+  AFI1:
+    matricula: '0001'
+    paterno: Arteaga
+    materno: Torrez
+    nombre: Jose
+    hclinica: null
+    empresa: caja petrolera
+    tafiliado: ''
+    activo: 1
+    grupofam: 1
+  AFI2:
+    matricula: '0002'
+    paterno: Mamani
+    materno: Perez
+    nombre: Maria
+    hclinica: null
+    empresa: alcaldia
+    tafiliado: ''
+    activo: 1
+    grupofam: 1  
