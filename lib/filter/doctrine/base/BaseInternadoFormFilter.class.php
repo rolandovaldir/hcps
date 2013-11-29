@@ -13,8 +13,8 @@ abstract class BaseInternadoFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'afiliado_id'             => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'noAfiliado_id'           => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'afiliado_id'             => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Afiliado'), 'add_empty' => true)),
+      'noAfiliado_id'           => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('PacienteOtroseguro'), 'add_empty' => true)),
       'categoria_id'            => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'cama_id'                 => new sfWidgetFormFilterInput(),
       'medico_id'               => new sfWidgetFormFilterInput(array('with_empty' => false)),
@@ -32,7 +32,7 @@ abstract class BaseInternadoFormFilter extends BaseFormFilterDoctrine
       'alta'                    => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
       'altaFecha'               => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
       'altaHora'                => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'diagnostico_alta'        => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'diagnostico_alta'        => new sfWidgetFormFilterInput(),
       'tratamientio'            => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'lugar_referencia_salida' => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'medio_referencia_salida' => new sfWidgetFormFilterInput(array('with_empty' => false)),
@@ -42,8 +42,8 @@ abstract class BaseInternadoFormFilter extends BaseFormFilterDoctrine
     ));
 
     $this->setValidators(array(
-      'afiliado_id'             => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
-      'noAfiliado_id'           => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'afiliado_id'             => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Afiliado'), 'column' => 'id')),
+      'noAfiliado_id'           => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('PacienteOtroseguro'), 'column' => 'id')),
       'categoria_id'            => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'cama_id'                 => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'medico_id'               => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
@@ -88,8 +88,8 @@ abstract class BaseInternadoFormFilter extends BaseFormFilterDoctrine
   {
     return array(
       'id'                      => 'Number',
-      'afiliado_id'             => 'Number',
-      'noAfiliado_id'           => 'Number',
+      'afiliado_id'             => 'ForeignKey',
+      'noAfiliado_id'           => 'ForeignKey',
       'categoria_id'            => 'Number',
       'cama_id'                 => 'Number',
       'medico_id'               => 'Number',

@@ -16,8 +16,8 @@ abstract class BaseInternadoForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'id'                      => new sfWidgetFormInputHidden(),
-      'afiliado_id'             => new sfWidgetFormInputText(),
-      'noAfiliado_id'           => new sfWidgetFormInputText(),
+      'afiliado_id'             => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Afiliado'), 'add_empty' => true)),
+      'noAfiliado_id'           => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('PacienteOtroseguro'), 'add_empty' => true)),
       'categoria_id'            => new sfWidgetFormInputText(),
       'cama_id'                 => new sfWidgetFormInputText(),
       'medico_id'               => new sfWidgetFormInputText(),
@@ -46,8 +46,8 @@ abstract class BaseInternadoForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'id'                      => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'afiliado_id'             => new sfValidatorInteger(),
-      'noAfiliado_id'           => new sfValidatorInteger(),
+      'afiliado_id'             => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Afiliado'), 'required' => false)),
+      'noAfiliado_id'           => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('PacienteOtroseguro'), 'required' => false)),
       'categoria_id'            => new sfValidatorInteger(),
       'cama_id'                 => new sfValidatorInteger(array('required' => false)),
       'medico_id'               => new sfValidatorInteger(),
@@ -65,7 +65,7 @@ abstract class BaseInternadoForm extends BaseFormDoctrine
       'alta'                    => new sfValidatorBoolean(array('required' => false)),
       'altaFecha'               => new sfValidatorDate(),
       'altaHora'                => new sfValidatorTime(),
-      'diagnostico_alta'        => new sfValidatorString(array('max_length' => 1000)),
+      'diagnostico_alta'        => new sfValidatorString(array('max_length' => 1000, 'required' => false)),
       'tratamientio'            => new sfValidatorString(array('max_length' => 200)),
       'lugar_referencia_salida' => new sfValidatorString(array('max_length' => 200)),
       'medio_referencia_salida' => new sfValidatorString(array('max_length' => 200)),

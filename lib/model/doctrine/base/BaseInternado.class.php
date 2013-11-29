@@ -29,7 +29,9 @@
  * @property string $lugar_referencia_salida
  * @property string $medio_referencia_salida
  * @property string $motivo_refe_retorno
- * @property Doctrine_Collection $Internado
+ * @property Afiliado $Afiliado
+ * @property PacienteOtroseguro $PacienteOtroseguro
+ * @property Doctrine_Collection $FileInternacion
  * 
  * @method integer             getAfiliadoId()              Returns the current record's "afiliado_id" value
  * @method integer             getNoAfiliadoId()            Returns the current record's "noAfiliado_id" value
@@ -55,7 +57,9 @@
  * @method string              getLugarReferenciaSalida()   Returns the current record's "lugar_referencia_salida" value
  * @method string              getMedioReferenciaSalida()   Returns the current record's "medio_referencia_salida" value
  * @method string              getMotivoRefeRetorno()       Returns the current record's "motivo_refe_retorno" value
- * @method Doctrine_Collection getInternado()               Returns the current record's "Internado" collection
+ * @method Afiliado            getAfiliado()                Returns the current record's "Afiliado" value
+ * @method PacienteOtroseguro  getPacienteOtroseguro()      Returns the current record's "PacienteOtroseguro" value
+ * @method Doctrine_Collection getFileInternacion()         Returns the current record's "FileInternacion" collection
  * @method Internado           setAfiliadoId()              Sets the current record's "afiliado_id" value
  * @method Internado           setNoAfiliadoId()            Sets the current record's "noAfiliado_id" value
  * @method Internado           setCategoriaId()             Sets the current record's "categoria_id" value
@@ -80,7 +84,9 @@
  * @method Internado           setLugarReferenciaSalida()   Sets the current record's "lugar_referencia_salida" value
  * @method Internado           setMedioReferenciaSalida()   Sets the current record's "medio_referencia_salida" value
  * @method Internado           setMotivoRefeRetorno()       Sets the current record's "motivo_refe_retorno" value
- * @method Internado           setInternado()               Sets the current record's "Internado" collection
+ * @method Internado           setAfiliado()                Sets the current record's "Afiliado" value
+ * @method Internado           setPacienteOtroseguro()      Sets the current record's "PacienteOtroseguro" value
+ * @method Internado           setFileInternacion()         Sets the current record's "FileInternacion" collection
  * 
  * @package    hcps
  * @subpackage model
@@ -94,11 +100,11 @@ abstract class BaseInternado extends sfDoctrineRecord
         $this->setTableName('internado');
         $this->hasColumn('afiliado_id', 'integer', null, array(
              'type' => 'integer',
-             'notnull' => true,
+             'notnull' => false,
              ));
         $this->hasColumn('noAfiliado_id', 'integer', null, array(
              'type' => 'integer',
-             'notnull' => true,
+             'notnull' => false,
              ));
         $this->hasColumn('categoria_id', 'integer', null, array(
              'type' => 'integer',
@@ -170,7 +176,7 @@ abstract class BaseInternado extends sfDoctrineRecord
              ));
         $this->hasColumn('diagnostico_alta', 'string', 1000, array(
              'type' => 'string',
-             'notnull' => 'notnull',
+             'notnull' => false,
              'length' => 1000,
              ));
         $this->hasColumn('tratamientio', 'string', 200, array(
@@ -198,7 +204,15 @@ abstract class BaseInternado extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasMany('FileInternacion as Internado', array(
+        $this->hasOne('Afiliado', array(
+             'local' => 'afiliado_id',
+             'foreign' => 'id'));
+
+        $this->hasOne('PacienteOtroseguro', array(
+             'local' => 'noAfiliado_id',
+             'foreign' => 'id'));
+
+        $this->hasMany('FileInternacion', array(
              'local' => 'id',
              'foreign' => 'internado_id'));
 
