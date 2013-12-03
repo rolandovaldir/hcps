@@ -28,3 +28,6 @@ generator:
         title: Editar Internado %%%%
       new:
         title: Nuevo Hospitalizado
+        actions:
+          _save: ~
+          _save_and_add: ~

@@ -24,3 +24,6 @@ generator:
       edit:    ~
       new: 
         title: Nueva Programacion Cirugia      
+        actions:
+          _save: ~
+          _save_and_add: ~

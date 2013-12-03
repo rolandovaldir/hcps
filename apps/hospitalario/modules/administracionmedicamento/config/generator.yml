@@ -22,4 +22,7 @@ generator:
         class: false
       form:    ~
       edit:    ~
-      new:     ~
+      new:     
+        actions:
+          _save: ~
+          _save_and_add: ~

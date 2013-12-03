@@ -25,3 +25,6 @@ generator:
         title: Editar Atencion %%%%
       new:     
         title: Nueva atencion de Enfermeria
+        actions:
+          _save: ~
+          _save_and_add: ~

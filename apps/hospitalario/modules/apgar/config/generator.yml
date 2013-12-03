@@ -26,3 +26,6 @@ generator:
         Editar Registro Apgar
       new:     
         title: Registro Apgar
+        actions:
+          _save: ~
+          _save_and_add: ~
