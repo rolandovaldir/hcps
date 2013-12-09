@@ -63,7 +63,7 @@
               </div>
             </div>     
             </div>
-          <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'" id="main-container" >
+          <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'" id="dojotheme-maincontainer" >
               <?php echo $sf_content; ?>              
           </div>          
           <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'bottom'" id="footer-layout" >              

@@ -15,12 +15,19 @@ generator:
       actions: ~
       fields:  ~
       list:    
+        title: Juntas Medicas
+        display: [fecha_junta, medico_solicitante, diagnostico_establecido, conclusiones]
         actions: {}
         batch_actions: {}
-      filter:  ~
+      filter:  
+        display: [fecha_junta, medico_solicitante]
       form:    ~
-      edit:    ~
+      edit:    
+        title: Editar Junta Médica
+        actions:
+          _save: ~
       new:     
+        title: Nueva Junta Médica
         actions:
           _save: ~
           _save_and_add: ~

@@ -15,12 +15,19 @@ generator:
       actions: ~
       fields:  ~
       list:    
+        title: Solicitudes de Mantenimiento
+        display: [fecha_solicitante, solicitante, sector, trabajo_solicitado]
         actions: {}
         batch_actions: {}
-      filter:  ~
+      filter:  
+        display: [fecha_solicitante, sector]
       form:    ~
-      edit:    ~
+      edit:    
+        title: Editar Solicitud de Servicio de Mantenimiento
+        actions:
+          _save: ~
       new:     
+        title: Nueva Solicitud de Servicio de Mantenimiento
         actions:
           _save: ~
           _save_and_add: ~

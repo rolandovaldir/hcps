@@ -13,4 +13,18 @@ require_once dirname(__FILE__).'/../lib/recien_nacidosGeneratorHelper.class.php'
  */
 class recien_nacidosActions extends autoRecien_nacidosActions
 {
+    public function executeNew(sfWebRequest $request)
+    {
+        $this->form = $this->configuration->getForm();
+        $this->examen_medico_recien_nacido = $this->form->getObject();
+        $internado = $this->getUser()->getAttribute('internado');
+        $this->form->setDefault('internado_id', $internado->getId());
+    }
+    
+    protected function getFilters()
+    {   
+        $filters = parent::getFilters();        
+        $filters['internado_id'] = sfContext::getInstance()->getRequest()->getParameter('internado_id');
+        return $filters;
+    }
 }

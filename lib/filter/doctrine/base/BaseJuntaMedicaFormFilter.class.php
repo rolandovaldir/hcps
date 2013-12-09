@@ -13,7 +13,7 @@ abstract class BaseJuntaMedicaFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'file_internacion_id'     => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('FileInternacion'), 'add_empty' => true)),
+      'internado_id'            => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => true)),
       'medico_solicitante'      => new sfWidgetFormFilterInput(),
       'servicio'                => new sfWidgetFormFilterInput(),
       'especialidades'          => new sfWidgetFormFilterInput(),
@@ -28,7 +28,7 @@ abstract class BaseJuntaMedicaFormFilter extends BaseFormFilterDoctrine
     ));
 
     $this->setValidators(array(
-      'file_internacion_id'     => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('FileInternacion'), 'column' => 'id')),
+      'internado_id'            => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Internado'), 'column' => 'id')),
       'medico_solicitante'      => new sfValidatorPass(array('required' => false)),
       'servicio'                => new sfValidatorPass(array('required' => false)),
       'especialidades'          => new sfValidatorPass(array('required' => false)),
@@ -60,7 +60,7 @@ abstract class BaseJuntaMedicaFormFilter extends BaseFormFilterDoctrine
   {
     return array(
       'id'                      => 'Number',
-      'file_internacion_id'     => 'ForeignKey',
+      'internado_id'            => 'ForeignKey',
       'medico_solicitante'      => 'Text',
       'servicio'                => 'Text',
       'especialidades'          => 'Text',

@@ -16,9 +16,9 @@ abstract class BaseExamenFisicoRecienNacidoForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'id'                   => new sfWidgetFormInputHidden(),
-      'file_internacion_id'  => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('FileInternacion'), 'add_empty' => false)),
+      'internado_id'         => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => false)),
       'ap_paterno'           => new sfWidgetFormInputText(),
-      'ap_maperno'           => new sfWidgetFormInputText(),
+      'ap_materno'           => new sfWidgetFormInputText(),
       'fecha_nacimiento'     => new sfWidgetFormDate(),
       'sexo'                 => new sfWidgetFormInputText(),
       'peso_nacimiento'      => new sfWidgetFormInputText(),
@@ -33,9 +33,9 @@ abstract class BaseExamenFisicoRecienNacidoForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'id'                   => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'file_internacion_id'  => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('FileInternacion'))),
+      'internado_id'         => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'))),
       'ap_paterno'           => new sfValidatorString(array('max_length' => 45, 'required' => false)),
-      'ap_maperno'           => new sfValidatorString(array('max_length' => 45, 'required' => false)),
+      'ap_materno'           => new sfValidatorString(array('max_length' => 45, 'required' => false)),
       'fecha_nacimiento'     => new sfValidatorDate(array('required' => false)),
       'sexo'                 => new sfValidatorString(array('max_length' => 20, 'required' => false)),
       'peso_nacimiento'      => new sfValidatorString(array('max_length' => 45, 'required' => false)),

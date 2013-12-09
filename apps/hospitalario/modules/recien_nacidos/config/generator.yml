@@ -15,12 +15,19 @@ generator:
       actions: ~
       fields:  ~
       list:    
+        title: Examen Físico del Recien Nacido
+        display: [ap_paterno, ap_materno, sexo, peso_nacimiento]
         actions: {}
         batch_actions: {}
-      filter:  ~
+      filter:  
+        display: [ap_paterno, ap_materno, sexo]
       form:    ~
-      edit:    ~
+      edit:    
+        title: Editar Recien Nacido %%ap_paterno%% %%ap_materno%%
+        actions:
+          _save: ~
       new:     
+        title: Nuevo Recien Nacido
         actions:
           _save: ~
           _save_and_add: ~

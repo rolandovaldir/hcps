@@ -16,7 +16,7 @@ abstract class BaseSolicitudServicioForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'id'                     => new sfWidgetFormInputHidden(),
-      'file_internacion_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('FileInternacion'), 'add_empty' => false)),
+      'internado_id'           => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => false)),
       'atencion_id'            => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Atencion'), 'add_empty' => false)),
       'para'                   => new sfWidgetFormTextarea(),
       'diagnostico_presuncion' => new sfWidgetFormInputText(),
@@ -27,7 +27,7 @@ abstract class BaseSolicitudServicioForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'id'                     => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'file_internacion_id'    => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('FileInternacion'))),
+      'internado_id'           => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'))),
       'atencion_id'            => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Atencion'))),
       'para'                   => new sfValidatorString(array('max_length' => 2000, 'required' => false)),
       'diagnostico_presuncion' => new sfValidatorString(array('max_length' => 250, 'required' => false)),

@@ -12,4 +12,8 @@
  */
 class ViaAdministracion extends BaseViaAdministracion
 {
+    public function __toString()
+    {
+       return $this->getNombre();
+    }
 }

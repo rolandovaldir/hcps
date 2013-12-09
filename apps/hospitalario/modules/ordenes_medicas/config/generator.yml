@@ -13,15 +13,22 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
+      fields:  
+        nombre_medicamento_indicacion: {label: Indicaciones}
+        via_administracion:            {label: Administracion}
+        dosis_intervalo:               {label: Intervalo}
+        fecha_inicio:                  {label: Inicio}
+        fecha_terminacion:             {label: Termino}
       list:    
         title: Ordenes Médicas
+        display: [nombre_medicamento_indicacion, via_administracion, dosis_intervalo, fecha_inicio, fecha_terminacion]
         actions: {}
         batch_actions: {}
-      filter:  
-        display: [numero_hoja]
+      filter:  ~
       form:    ~
-      edit:    ~
+      edit:    
+        actions:
+          _save: ~
       new:     
         actions:
           _save: ~

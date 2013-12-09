@@ -13,9 +13,9 @@ abstract class BaseExamenFisicoRecienNacidoFormFilter extends BaseFormFilterDoct
   public function setup()
   {
     $this->setWidgets(array(
-      'file_internacion_id'  => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('FileInternacion'), 'add_empty' => true)),
+      'internado_id'         => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => true)),
       'ap_paterno'           => new sfWidgetFormFilterInput(),
-      'ap_maperno'           => new sfWidgetFormFilterInput(),
+      'ap_materno'           => new sfWidgetFormFilterInput(),
       'fecha_nacimiento'     => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate())),
       'sexo'                 => new sfWidgetFormFilterInput(),
       'peso_nacimiento'      => new sfWidgetFormFilterInput(),
@@ -29,9 +29,9 @@ abstract class BaseExamenFisicoRecienNacidoFormFilter extends BaseFormFilterDoct
     ));
 
     $this->setValidators(array(
-      'file_internacion_id'  => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('FileInternacion'), 'column' => 'id')),
+      'internado_id'         => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Internado'), 'column' => 'id')),
       'ap_paterno'           => new sfValidatorPass(array('required' => false)),
-      'ap_maperno'           => new sfValidatorPass(array('required' => false)),
+      'ap_materno'           => new sfValidatorPass(array('required' => false)),
       'fecha_nacimiento'     => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDateTime(array('required' => false)))),
       'sexo'                 => new sfValidatorPass(array('required' => false)),
       'peso_nacimiento'      => new sfValidatorPass(array('required' => false)),
@@ -62,9 +62,9 @@ abstract class BaseExamenFisicoRecienNacidoFormFilter extends BaseFormFilterDoct
   {
     return array(
       'id'                   => 'Number',
-      'file_internacion_id'  => 'ForeignKey',
+      'internado_id'         => 'ForeignKey',
       'ap_paterno'           => 'Text',
-      'ap_maperno'           => 'Text',
+      'ap_materno'           => 'Text',
       'fecha_nacimiento'     => 'Date',
       'sexo'                 => 'Text',
       'peso_nacimiento'      => 'Text',

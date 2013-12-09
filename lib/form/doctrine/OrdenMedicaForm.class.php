@@ -14,6 +14,6 @@ class OrdenMedicaForm extends BaseOrdenMedicaForm
   {
       unset($this['created_at'], $this['updated_at']);
       
-      
+      $this->widgetSchema['internado_id'] = new sfWidgetFormInputHidden();
   }
 }

@@ -16,7 +16,7 @@ abstract class BaseJuntaMedicaForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'id'                      => new sfWidgetFormInputHidden(),
-      'file_internacion_id'     => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('FileInternacion'), 'add_empty' => false)),
+      'internado_id'            => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => false)),
       'medico_solicitante'      => new sfWidgetFormInputText(),
       'servicio'                => new sfWidgetFormInputText(),
       'especialidades'          => new sfWidgetFormInputText(),
@@ -32,7 +32,7 @@ abstract class BaseJuntaMedicaForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'id'                      => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'file_internacion_id'     => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('FileInternacion'))),
+      'internado_id'            => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'))),
       'medico_solicitante'      => new sfValidatorString(array('max_length' => 100, 'required' => false)),
       'servicio'                => new sfValidatorString(array('max_length' => 45, 'required' => false)),
       'especialidades'          => new sfValidatorString(array('max_length' => 45, 'required' => false)),
