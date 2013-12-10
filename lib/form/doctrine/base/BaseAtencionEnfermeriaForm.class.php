@@ -16,7 +16,7 @@ abstract class BaseAtencionEnfermeriaForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'id'                                    => new sfWidgetFormInputHidden(),
-      'file_internacion_id'                   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('FileInternacion'), 'add_empty' => true)),
+      'internado_id'                          => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => true)),
       'enfermera_id'                          => new sfWidgetFormInputText(),
       'lugar'                                 => new sfWidgetFormInputText(),
       'codigo'                                => new sfWidgetFormInputText(),
@@ -84,7 +84,7 @@ abstract class BaseAtencionEnfermeriaForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'id'                                    => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'file_internacion_id'                   => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('FileInternacion'), 'required' => false)),
+      'internado_id'                          => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'required' => false)),
       'enfermera_id'                          => new sfValidatorInteger(array('required' => false)),
       'lugar'                                 => new sfValidatorString(array('max_length' => 60, 'required' => false)),
       'codigo'                                => new sfValidatorString(array('max_length' => 45, 'required' => false)),

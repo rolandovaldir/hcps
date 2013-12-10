@@ -13,7 +13,7 @@ abstract class BaseSolicitudServicioFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'file_internacion_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('FileInternacion'), 'add_empty' => true)),
+      'internado_id'           => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => true)),
       'atencion_id'            => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Atencion'), 'add_empty' => true)),
       'para'                   => new sfWidgetFormFilterInput(),
       'diagnostico_presuncion' => new sfWidgetFormFilterInput(),
@@ -23,7 +23,7 @@ abstract class BaseSolicitudServicioFormFilter extends BaseFormFilterDoctrine
     ));
 
     $this->setValidators(array(
-      'file_internacion_id'    => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('FileInternacion'), 'column' => 'id')),
+      'internado_id'           => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Internado'), 'column' => 'id')),
       'atencion_id'            => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Atencion'), 'column' => 'id')),
       'para'                   => new sfValidatorPass(array('required' => false)),
       'diagnostico_presuncion' => new sfValidatorPass(array('required' => false)),
@@ -50,7 +50,7 @@ abstract class BaseSolicitudServicioFormFilter extends BaseFormFilterDoctrine
   {
     return array(
       'id'                     => 'Number',
-      'file_internacion_id'    => 'ForeignKey',
+      'internado_id'           => 'ForeignKey',
       'atencion_id'            => 'ForeignKey',
       'para'                   => 'Text',
       'diagnostico_presuncion' => 'Text',

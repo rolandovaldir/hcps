@@ -13,7 +13,7 @@ abstract class BaseInformeEstadisticoAdmEgresoFormFilter extends BaseFormFilterD
   public function setup()
   {
     $this->setWidgets(array(
-      'file_internacion_id'      => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('FileInternacion'), 'add_empty' => true)),
+      'internado_id'             => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => true)),
       'urgencia_persona_ref'     => new sfWidgetFormFilterInput(),
       'urgencia_direccion_calle' => new sfWidgetFormFilterInput(),
       'urgencia_direccion_no'    => new sfWidgetFormFilterInput(),
@@ -23,7 +23,7 @@ abstract class BaseInformeEstadisticoAdmEgresoFormFilter extends BaseFormFilterD
     ));
 
     $this->setValidators(array(
-      'file_internacion_id'      => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('FileInternacion'), 'column' => 'id')),
+      'internado_id'             => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Internado'), 'column' => 'id')),
       'urgencia_persona_ref'     => new sfValidatorPass(array('required' => false)),
       'urgencia_direccion_calle' => new sfValidatorPass(array('required' => false)),
       'urgencia_direccion_no'    => new sfValidatorPass(array('required' => false)),
@@ -50,7 +50,7 @@ abstract class BaseInformeEstadisticoAdmEgresoFormFilter extends BaseFormFilterD
   {
     return array(
       'id'                       => 'Number',
-      'file_internacion_id'      => 'ForeignKey',
+      'internado_id'             => 'ForeignKey',
       'urgencia_persona_ref'     => 'Text',
       'urgencia_direccion_calle' => 'Text',
       'urgencia_direccion_no'    => 'Text',

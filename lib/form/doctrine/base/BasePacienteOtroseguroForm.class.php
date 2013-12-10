@@ -20,7 +20,7 @@ abstract class BasePacienteOtroseguroForm extends BaseFormDoctrine
       'paterno'         => new sfWidgetFormInputText(),
       'materno'         => new sfWidgetFormInputText(),
       'casada'          => new sfWidgetFormInputText(),
-      'fechaNacimiento' => new sfWidgetFormDate(),
+      'fechaNacimiento' => new myWidgetFormDojoDate(),
       'sexo'            => new sfWidgetFormInputText(),
       'ci'              => new sfWidgetFormInputText(),
       'exp'             => new sfWidgetFormInputText(),

@@ -15,21 +15,21 @@ abstract class BaseSolicitudReposicionMaterialForm extends BaseFormDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'id'                  => new sfWidgetFormInputHidden(),
-      'file_internacion_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('FileInternacion'), 'add_empty' => false)),
-      'unidad'              => new sfWidgetFormInputText(),
-      'encargado'           => new sfWidgetFormInputText(),
-      'created_at'          => new sfWidgetFormDateTime(),
-      'updated_at'          => new sfWidgetFormDateTime(),
+      'id'           => new sfWidgetFormInputHidden(),
+      'internado_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => false)),
+      'unidad'       => new sfWidgetFormInputText(),
+      'encargado'    => new sfWidgetFormInputText(),
+      'created_at'   => new sfWidgetFormDateTime(),
+      'updated_at'   => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(
-      'id'                  => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'file_internacion_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('FileInternacion'))),
-      'unidad'              => new sfValidatorString(array('max_length' => 100, 'required' => false)),
-      'encargado'           => new sfValidatorString(array('max_length' => 150, 'required' => false)),
-      'created_at'          => new sfValidatorDateTime(),
-      'updated_at'          => new sfValidatorDateTime(),
+      'id'           => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
+      'internado_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'))),
+      'unidad'       => new sfValidatorString(array('max_length' => 100, 'required' => false)),
+      'encargado'    => new sfValidatorString(array('max_length' => 150, 'required' => false)),
+      'created_at'   => new sfValidatorDateTime(),
+      'updated_at'   => new sfValidatorDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('solicitud_reposicion_material[%s]');

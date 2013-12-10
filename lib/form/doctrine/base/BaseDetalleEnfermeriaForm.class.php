@@ -17,7 +17,7 @@ abstract class BaseDetalleEnfermeriaForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'                  => new sfWidgetFormInputHidden(),
       'notas_enfermeria_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('NotasEnfermeria'), 'add_empty' => false)),
-      'fecha'               => new sfWidgetFormDate(),
+      'fecha'               => new myWidgetFormDojoDate(),
       'hora'                => new sfWidgetFormTime(),
       'procedimientos'      => new sfWidgetFormInputText(),
       'observaciones'       => new sfWidgetFormTextarea(),

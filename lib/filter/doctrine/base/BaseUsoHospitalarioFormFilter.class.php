@@ -13,23 +13,23 @@ abstract class BaseUsoHospitalarioFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'file_internacion_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('FileInternacion'), 'add_empty' => true)),
-      'medico_id'           => new sfWidgetFormFilterInput(),
-      'lugar'               => new sfWidgetFormFilterInput(),
-      'codigo'              => new sfWidgetFormFilterInput(),
-      'especialidad'        => new sfWidgetFormFilterInput(),
-      'created_at'          => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
-      'updated_at'          => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
+      'internado_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => true)),
+      'medico_id'    => new sfWidgetFormFilterInput(),
+      'lugar'        => new sfWidgetFormFilterInput(),
+      'codigo'       => new sfWidgetFormFilterInput(),
+      'especialidad' => new sfWidgetFormFilterInput(),
+      'created_at'   => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
+      'updated_at'   => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
     ));
 
     $this->setValidators(array(
-      'file_internacion_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('FileInternacion'), 'column' => 'id')),
-      'medico_id'           => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
-      'lugar'               => new sfValidatorPass(array('required' => false)),
-      'codigo'              => new sfValidatorPass(array('required' => false)),
-      'especialidad'        => new sfValidatorPass(array('required' => false)),
-      'created_at'          => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
-      'updated_at'          => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
+      'internado_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Internado'), 'column' => 'id')),
+      'medico_id'    => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'lugar'        => new sfValidatorPass(array('required' => false)),
+      'codigo'       => new sfValidatorPass(array('required' => false)),
+      'especialidad' => new sfValidatorPass(array('required' => false)),
+      'created_at'   => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
+      'updated_at'   => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
     ));
 
     $this->widgetSchema->setNameFormat('uso_hospitalario_filters[%s]');
@@ -49,14 +49,14 @@ abstract class BaseUsoHospitalarioFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
-      'id'                  => 'Number',
-      'file_internacion_id' => 'ForeignKey',
-      'medico_id'           => 'Number',
-      'lugar'               => 'Text',
-      'codigo'              => 'Text',
-      'especialidad'        => 'Text',
-      'created_at'          => 'Date',
-      'updated_at'          => 'Date',
+      'id'           => 'Number',
+      'internado_id' => 'ForeignKey',
+      'medico_id'    => 'Number',
+      'lugar'        => 'Text',
+      'codigo'       => 'Text',
+      'especialidad' => 'Text',
+      'created_at'   => 'Date',
+      'updated_at'   => 'Date',
     );
   }
 }

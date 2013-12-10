@@ -279,12 +279,12 @@ solicitud_examen_laboratorio:
     column:               id
     with_wildcard_routes: true
 
-programacion_cirugias:
+programacion_cirugia:
   class: sfDoctrineRouteCollection
   options:
-    model:                ProgramacionCirugias
-    module:               programacioncirugias
-    prefix_path:          /programacioncirugias
+    model:                ProgramacionCirugia
+    module:               programacion_cirugia
+    prefix_path:          /programacion_cirugia
     column:               id
     with_wildcard_routes: true
 
