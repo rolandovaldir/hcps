@@ -28,6 +28,14 @@ table.user-info td{
   text-align: center;
 }
 
+ul.side_menu_forms {
+  margin:0px;  
+}
+
+ul.side_menu_forms li {
+  list-style: none;
+}
+
 /*OVERWRITE SF ADMIN STYLES*/
 #sf_admin_container fieldset.dijitFieldset
 {

@@ -62,10 +62,6 @@
   background-color: #ffe;
 }
 
-#sf_admin_container input, #sf_admin_container textarea
-{
-  width: auto;
-}
 
 #sf_admin_container .radio_list, #sf_admin_container .checkbox_list
 {
@@ -268,4 +264,7 @@
 {
   text-align: center;
 }
-
+.sf_admin_list th {
+  padding: 0 6px;
+  white-space: nowrap;
+}

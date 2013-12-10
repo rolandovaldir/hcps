@@ -2,7 +2,7 @@
 ---
 Internado:  
   INTER1:     
-    afiliado_id:             NULL
+    Afiliado:                AFI1
     noAfiliado_id:           null
     categoria_id:            0
     cama_id:                 0
@@ -27,7 +27,7 @@ Internado:
     medio_referencia_salida: ''
     motivo_refe_retorno:     ''
   INTER2:
-    afiliado_id:             NULL
+    Afiliado:                AFI2
     noAfiliado_id:           null
     categoria_id:            0
     cama_id:                 0

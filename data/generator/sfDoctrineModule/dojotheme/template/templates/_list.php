@@ -1,3 +1,4 @@
+<?php $aux_extra_url_custom_id = $this->params['extra_url_custom_id']!='' ? '\'extra_url_custom_id\' => $extra_url_custom_id' : '' ?>
 <div class="sf_admin_list">
   [?php if (!$pager->getNbResults()): ?]
     <p>[?php echo __('No result', array(), 'sf_admin') ?]</p>
@@ -8,7 +9,7 @@
 <?php if ($this->configuration->getValue('list.batch_actions')): ?>
           <th id="sf_admin_list_batch_actions"><input id="sf_admin_list_batch_checkbox" type="checkbox" onclick="checkAll();" /></th>
 <?php endif; ?>
-          [?php include_partial('<?php echo $this->getModuleName() ?>/list_th_<?php echo $this->configuration->getValue('list.layout') ?>', array('sort' => $sort)) ?]
+          [?php include_partial('<?php echo $this->getModuleName() ?>/list_th_<?php echo $this->configuration->getValue('list.layout') ?>', array('sort' => $sort,'',<?php echo $aux_extra_url_custom_id ?>)) ?]
 <?php if ($this->configuration->getValue('list.object_actions')): ?>
           <th id="sf_admin_list_th_actions">[?php echo __('Actions', array(), 'sf_admin') ?]</th>
 <?php endif; ?>
@@ -36,7 +37,7 @@
 <?php endif; ?>
             [?php include_partial('<?php echo $this->getModuleName() ?>/list_td_<?php echo $this->configuration->getValue('list.layout') ?>', array('<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>)) ?]
 <?php if ($this->configuration->getValue('list.object_actions')): ?>
-            [?php include_partial('<?php echo $this->getModuleName() ?>/list_td_actions', array('<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>, 'helper' => $helper)) ?]
+            [?php include_partial('<?php echo $this->getModuleName() ?>/list_td_actions', array('<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>, 'helper' => $helper, <?php echo $aux_extra_url_custom_id ?>)) ?]
 <?php endif; ?>
           </tr>
         [?php endforeach; ?]
