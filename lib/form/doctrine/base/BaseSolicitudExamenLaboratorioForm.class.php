@@ -23,7 +23,7 @@ abstract class BaseSolicitudExamenLaboratorioForm extends BaseFormDoctrine
       'diagnostico_presuntivo' => new sfWidgetFormInputText(),
       'medico_id'              => new sfWidgetFormInputText(),
       'lugar'                  => new sfWidgetFormInputText(),
-      'fecha'                  => new sfWidgetFormDate(),
+      'fecha'                  => new myWidgetFormDojoDate(),
       'created_at'             => new sfWidgetFormDateTime(),
       'updated_at'             => new sfWidgetFormDateTime(),
     ));

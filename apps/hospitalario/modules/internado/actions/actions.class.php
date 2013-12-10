@@ -13,8 +13,4 @@ require_once dirname(__FILE__).'/../lib/internadoGeneratorHelper.class.php';
  */
 class internadoActions extends autoInternadoActions
 {
-    public function executeBienvenido($request)
-    {
-        
-    }
 }

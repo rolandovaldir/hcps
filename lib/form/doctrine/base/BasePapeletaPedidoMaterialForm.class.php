@@ -18,7 +18,7 @@ abstract class BasePapeletaPedidoMaterialForm extends BaseFormDoctrine
       'id'              => new sfWidgetFormInputHidden(),
       'internado_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => true)),
       'enfermera_id'    => new sfWidgetFormInputText(),
-      'fecha_solicitud' => new sfWidgetFormDate(),
+      'fecha_solicitud' => new myWidgetFormDojoDate(),
       'numero'          => new sfWidgetFormInputText(),
       'detalle'         => new sfWidgetFormInputText(),
       'cantidad'        => new sfWidgetFormInputText(),

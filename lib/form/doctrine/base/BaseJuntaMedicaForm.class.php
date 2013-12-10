@@ -20,7 +20,7 @@ abstract class BaseJuntaMedicaForm extends BaseFormDoctrine
       'medico_solicitante'      => new sfWidgetFormInputText(),
       'servicio'                => new sfWidgetFormInputText(),
       'especialidades'          => new sfWidgetFormInputText(),
-      'fecha_junta'             => new sfWidgetFormDate(),
+      'fecha_junta'             => new myWidgetFormDojoDate(),
       'diagnostico_establecido' => new sfWidgetFormTextarea(),
       'relacion_junta'          => new sfWidgetFormTextarea(),
       'conclusiones'            => new sfWidgetFormTextarea(),

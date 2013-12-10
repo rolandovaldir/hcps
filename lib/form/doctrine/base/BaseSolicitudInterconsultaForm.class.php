@@ -24,7 +24,7 @@ abstract class BaseSolicitudInterconsultaForm extends BaseFormDoctrine
       'informe_medico'  => new sfWidgetFormTextarea(),
       'conclusiones'    => new sfWidgetFormTextarea(),
       'hora_solicitud'  => new sfWidgetFormTime(),
-      'fecha_solicitud' => new sfWidgetFormDate(),
+      'fecha_solicitud' => new myWidgetFormDojoDate(),
       'created_at'      => new sfWidgetFormDateTime(),
       'updated_at'      => new sfWidgetFormDateTime(),
     ));
