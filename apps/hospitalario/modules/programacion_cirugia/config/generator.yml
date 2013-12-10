@@ -1,0 +1,34 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           ProgramacionCirugia
+    theme:                 dojotheme
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          programacion_cirugia
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    extra_url_custom_id:   internado_id
+
+    config:      
+      actions: ~
+      fields:          
+        operacion_fecha: { date_format: dd/MM/yyyy }
+      list:
+        title: Listado Programacion Para Cirugias
+        actions: {}
+        batch_actions: {}
+      filter:
+        display: [ medico_id, operacion_fecha ]
+      form:   
+        display: 
+          Operacion:            [ internado_id, operacion_fecha, operacion_hora ]
+          " ":                  [ diagnostico_preoperatorio, tratamiento_quirurgico, anestesia, otros ]
+          Examenes Auxiliares:  [ examenes_auxiliares, created_at, updated_at ]          
+      edit:            
+        title: Edición Programación Para Cirugias
+      new:        
+        title: Nueva Programación Para Cirugias
+        actions: {}

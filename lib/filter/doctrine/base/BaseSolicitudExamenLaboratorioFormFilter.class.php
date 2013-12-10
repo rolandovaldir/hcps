@@ -13,7 +13,7 @@ abstract class BaseSolicitudExamenLaboratorioFormFilter extends BaseFormFilterDo
   public function setup()
   {
     $this->setWidgets(array(
-      'file_internacion_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('FileInternacion'), 'add_empty' => true)),
+      'internado_id'           => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => true)),
       'doctor_id'              => new sfWidgetFormFilterInput(),
       'material_enviado'       => new sfWidgetFormFilterInput(),
       'otros_examenes'         => new sfWidgetFormFilterInput(),
@@ -26,7 +26,7 @@ abstract class BaseSolicitudExamenLaboratorioFormFilter extends BaseFormFilterDo
     ));
 
     $this->setValidators(array(
-      'file_internacion_id'    => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('FileInternacion'), 'column' => 'id')),
+      'internado_id'           => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Internado'), 'column' => 'id')),
       'doctor_id'              => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'material_enviado'       => new sfValidatorPass(array('required' => false)),
       'otros_examenes'         => new sfValidatorPass(array('required' => false)),
@@ -56,7 +56,7 @@ abstract class BaseSolicitudExamenLaboratorioFormFilter extends BaseFormFilterDo
   {
     return array(
       'id'                     => 'Number',
-      'file_internacion_id'    => 'ForeignKey',
+      'internado_id'           => 'ForeignKey',
       'doctor_id'              => 'Number',
       'material_enviado'       => 'Text',
       'otros_examenes'         => 'Text',

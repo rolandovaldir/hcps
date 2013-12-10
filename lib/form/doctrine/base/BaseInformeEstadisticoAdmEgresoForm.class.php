@@ -16,7 +16,7 @@ abstract class BaseInformeEstadisticoAdmEgresoForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'id'                       => new sfWidgetFormInputHidden(),
-      'file_internacion_id'      => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('FileInternacion'), 'add_empty' => true)),
+      'internado_id'             => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => true)),
       'urgencia_persona_ref'     => new sfWidgetFormInputText(),
       'urgencia_direccion_calle' => new sfWidgetFormInputText(),
       'urgencia_direccion_no'    => new sfWidgetFormInputText(),
@@ -27,7 +27,7 @@ abstract class BaseInformeEstadisticoAdmEgresoForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'id'                       => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'file_internacion_id'      => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('FileInternacion'), 'required' => false)),
+      'internado_id'             => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'required' => false)),
       'urgencia_persona_ref'     => new sfValidatorString(array('max_length' => 150, 'required' => false)),
       'urgencia_direccion_calle' => new sfValidatorString(array('max_length' => 70, 'required' => false)),
       'urgencia_direccion_no'    => new sfValidatorString(array('max_length' => 10, 'required' => false)),

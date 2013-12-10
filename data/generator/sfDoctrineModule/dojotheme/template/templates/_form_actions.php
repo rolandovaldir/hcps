@@ -1,3 +1,6 @@
+<?php $aux_extra_url_custom_id = $this->params['extra_url_custom_id']!='' ? '\'query_string\'=>$extra_url_custom_id' : '';
+      $extra_url_custom_id = $this->params['extra_url_custom_id']!='' ? ' . \'?\' . $extra_url_custom_id' : '';
+?>
 <ul class="sf_admin_actions">
 <?php foreach (array('new', 'edit') as $action): ?>
 <?php if ('new' == $action): ?>
@@ -10,7 +13,8 @@
   <?php echo $this->addCredentialCondition('[?php echo $helper->linkToDelete($form->getObject(), '.$this->asPhp($params).') ?]', $params) ?>
 
 <?php elseif ('_list' == $name): ?>
-  <?php echo $this->addCredentialCondition('[?php echo $helper->linkToList('.$this->asPhp($params).') ?]', $params) ?>
+  <?php //echo $this->addCredentialCondition('[?php echo $helper->linkToList('.$this->asPhp($params).') ?]', $params) ?>
+  <?php echo $this->addCredentialCondition('[?php echo \'<li class="sf_admin_action_list">\' . link_to(__(\'' . $params['label'] . '\', array(), \'sf_admin\'), \'@\' . $helper->getUrlForAction(\'list\') ' . $extra_url_custom_id . ' , array(\'onclick\'=>"dijit.byId(\'dojotheme-maincontainer\').set(\'href\',this.href);return false;") ).\'</li>\'  ?]', $params) ?>
 
 <?php elseif ('_save' == $name): ?>
   <?php echo $this->addCredentialCondition('[?php echo $helper->linkToSave($form->getObject(), '.$this->asPhp($params).') ?]', $params) ?>

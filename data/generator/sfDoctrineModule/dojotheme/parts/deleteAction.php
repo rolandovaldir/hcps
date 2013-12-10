@@ -8,6 +8,7 @@
     {
       $this->getUser()->setFlash('notice', 'The item was deleted successfully.');
     }
-
-    $this->redirect('@<?php echo $this->getUrlForAction('list') ?>');
+    
+<?php $aux_extra_url_custom_id = $this->params['extra_url_custom_id']!='' ? " . '?" . $this->params['extra_url_custom_id'] . '=\' . $request->getParameter(\'' .  $this->params['extra_url_custom_id'] . '\')' : '' ?>    
+    $this->redirect('@<?php echo $this->getUrlForAction('list') ?>' <?php echo $aux_extra_url_custom_id ?>);
   }

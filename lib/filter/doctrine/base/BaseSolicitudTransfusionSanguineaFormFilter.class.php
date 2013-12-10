@@ -13,7 +13,7 @@ abstract class BaseSolicitudTransfusionSanguineaFormFilter extends BaseFormFilte
   public function setup()
   {
     $this->setWidgets(array(
-      'file_internacion_id'       => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('FileInternacion'), 'add_empty' => true)),
+      'internado_id'              => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => true)),
       'quirofano'                 => new sfWidgetFormFilterInput(),
       'requiere_transfusion_de'   => new sfWidgetFormFilterInput(),
       'cumplirse_enforma'         => new sfWidgetFormFilterInput(),
@@ -42,7 +42,7 @@ abstract class BaseSolicitudTransfusionSanguineaFormFilter extends BaseFormFilte
     ));
 
     $this->setValidators(array(
-      'file_internacion_id'       => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('FileInternacion'), 'column' => 'id')),
+      'internado_id'              => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Internado'), 'column' => 'id')),
       'quirofano'                 => new sfValidatorPass(array('required' => false)),
       'requiere_transfusion_de'   => new sfValidatorPass(array('required' => false)),
       'cumplirse_enforma'         => new sfValidatorPass(array('required' => false)),
@@ -88,7 +88,7 @@ abstract class BaseSolicitudTransfusionSanguineaFormFilter extends BaseFormFilte
   {
     return array(
       'id'                        => 'Number',
-      'file_internacion_id'       => 'ForeignKey',
+      'internado_id'              => 'ForeignKey',
       'quirofano'                 => 'Text',
       'requiere_transfusion_de'   => 'Text',
       'cumplirse_enforma'         => 'Text',

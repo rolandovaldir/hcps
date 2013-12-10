@@ -1,13 +1,13 @@
 generator:
   class: sfDoctrineGenerator
   param:
-    model_class:           FileInternacion
+    model_class:           Internado
     theme:                 admin
     non_verbose_templates: true
     with_show:             false
     singular:              ~
     plural:                ~
-    route_prefix:          file_internacion_fileinternaciones
+    route_prefix:          internado_internado
     with_doctrine_route:   true
     actions_base_class:    sfActions
 
@@ -15,6 +15,7 @@ generator:
       actions: ~
       fields:  ~
       list:    
+        display: [afiliado_id]
         actions: {}
         batch_actions: {}
       filter:  

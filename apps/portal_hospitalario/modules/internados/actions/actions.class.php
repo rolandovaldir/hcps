@@ -25,6 +25,6 @@ class internadosActions extends autoInternadosActions
         $user-> setAttribute('internado',  $this->getRoute()->getObject());
         $internado = $user->getAttribute('internado');
 
-        $this->redirect('/hospitalario'.$env.'.php/fileinternaciones?id='.$internado->getId());
+        $this->redirect('/hospitalario'.$env.'.php/internado/bienvenido?id='.$internado->getId());
     }
 }

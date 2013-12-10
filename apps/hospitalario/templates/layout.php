@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xml:lang="en" lang="en">
+<html xml:lang="es" lang="es">
 <head>
     <?php include_http_metas() ?>
     <?php include_metas() ?>
@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="/favicon.ico" />    
     <?php include_stylesheets() ?>
     <link rel="stylesheet" href="<?php echo public_path('js/dojo-1.9.1/dijit/themes/claro/claro.css'); ?>" media="screen" />    
-    <?php include_javascripts() ?>        
+    <?php include_javascripts() ?>    
     <script type="text/javascript" src="<?php echo public_path('js/dojo-1.9.1/dojo/dojo.js'); ?>" 
             data-dojo-config="has:{'dojo-firebug': true},parseOnLoad: true, async: 1" ></script>
     <script>        

@@ -13,7 +13,7 @@ abstract class BaseResumenAltaFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'file_internacion_id'      => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('FileInternacion'), 'add_empty' => true)),
+      'internado_id'             => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => true)),
       'medico_id'                => new sfWidgetFormFilterInput(),
       'servicio'                 => new sfWidgetFormFilterInput(),
       'servicio_egreso'          => new sfWidgetFormFilterInput(),
@@ -30,7 +30,7 @@ abstract class BaseResumenAltaFormFilter extends BaseFormFilterDoctrine
     ));
 
     $this->setValidators(array(
-      'file_internacion_id'      => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('FileInternacion'), 'column' => 'id')),
+      'internado_id'             => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Internado'), 'column' => 'id')),
       'medico_id'                => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'servicio'                 => new sfValidatorPass(array('required' => false)),
       'servicio_egreso'          => new sfValidatorPass(array('required' => false)),
@@ -64,7 +64,7 @@ abstract class BaseResumenAltaFormFilter extends BaseFormFilterDoctrine
   {
     return array(
       'id'                       => 'Number',
-      'file_internacion_id'      => 'ForeignKey',
+      'internado_id'             => 'ForeignKey',
       'medico_id'                => 'Number',
       'servicio'                 => 'Text',
       'servicio_egreso'          => 'Text',
