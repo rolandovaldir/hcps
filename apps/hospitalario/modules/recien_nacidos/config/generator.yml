@@ -17,6 +17,9 @@ generator:
       list:    
         title: Examen Físico del Recien Nacido
         display: [ap_paterno, ap_materno, sexo, peso_nacimiento]
+        object_actions:
+          apgar: {label: APGAR, action: apgar}
+          edit: ~
         actions: {}
         batch_actions: {}
       filter:  

@@ -15,12 +15,19 @@ generator:
       actions: ~
       fields:  ~
       list:    
+        title: Notas de Enfermeria
+        display: [fecha, hora, procedimientos]
         actions: {}
         batch_actions: {}
-      filter:  ~
+      filter:  
+        display: [fecha]
       form:    ~
-      edit:    ~
+      edit:    
+        title: Editar Nota de Enfermeria
+        actions:
+          _save: ~
       new:     
+        title: Nueva Nota de Enfermeria
         actions:
           _save: ~
           _save_and_add: ~

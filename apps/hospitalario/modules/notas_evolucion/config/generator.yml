@@ -15,12 +15,19 @@ generator:
       actions: ~
       fields:  ~
       list:    
+        title: Notas de Evolucion
+        display: [fecha_hora, numero_prob, nota_soap]
         actions: {}
         batch_actions: {}
-      filter:  ~
+      filter:  
+        display: [fecha_hora]
       form:    ~
-      edit:    ~
+      edit:    
+        title: Editar Nota de Evolucion
+        actions:
+          _save: ~
       new:     
+        title: Nueva Nota de Evolucion
         actions:
           _save: ~
           _save_and_add: ~

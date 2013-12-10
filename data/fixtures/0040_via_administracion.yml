@@ -25,3 +25,7 @@ ViaAdministracion:
     nombre: VÍA RECTAL
   Parenteral:
     nombre: VÍA PARENTERAL
+    
+Atencion:
+  Servicio:
+    nombre: SERVICIO

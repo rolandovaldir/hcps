@@ -15,12 +15,19 @@ generator:
       actions: ~
       fields:  ~
       list:    
+        title: Solicitudes de Reposicion de Material
+        display: [unidad, encargado]
         actions: {}
         batch_actions: {}
-      filter:  ~
+      filter:  
+        display: [unidad, encargado]
       form:    ~
-      edit:    ~
+      edit:    
+        title: Editar Solicitud de Reposicion de Material
+        actions:
+          _save: ~
       new:     
+        title: Nueva Solicitud de Reposicion de Material
         actions:
           _save: ~
           _save_and_add: ~

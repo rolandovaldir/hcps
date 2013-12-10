@@ -13,4 +13,18 @@ require_once dirname(__FILE__).'/../lib/solicitudes_interconsultasGeneratorHelpe
  */
 class solicitudes_interconsultasActions extends autoSolicitudes_interconsultasActions
 {
+    public function executeNew(sfWebRequest $request)
+    {
+        $this->form = $this->configuration->getForm();
+        $this->solicitud_interconsulta = $this->form->getObject();
+        $internado = $this->getUser()->getAttribute('internado');
+        $this->form->setDefault('internado_id', $internado->getId());
+    }
+    
+    protected function getFilters()
+    {   
+        $filters = parent::getFilters();        
+        $filters['internado_id'] = sfContext::getInstance()->getRequest()->getParameter('internado_id');
+        return $filters;
+    }
 }

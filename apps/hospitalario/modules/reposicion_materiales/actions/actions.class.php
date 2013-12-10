@@ -13,4 +13,18 @@ require_once dirname(__FILE__).'/../lib/reposicion_materialesGeneratorHelper.cla
  */
 class reposicion_materialesActions extends autoReposicion_materialesActions
 {
+    public function executeNew(sfWebRequest $request)
+    {
+        $this->form = $this->configuration->getForm();
+        $this->solicitud_reposicion_material = $this->form->getObject();
+        $internado = $this->getUser()->getAttribute('internado');
+        $this->form->setDefault('internado_id', $internado->getId());
+    }
+    
+    protected function getFilters()
+    {   
+        $filters = parent::getFilters();        
+        $filters['internado_id'] = sfContext::getInstance()->getRequest()->getParameter('internado_id');
+        return $filters;
+    }
 }

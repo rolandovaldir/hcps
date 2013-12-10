@@ -27,4 +27,17 @@ class recien_nacidosActions extends autoRecien_nacidosActions
         $filters['internado_id'] = sfContext::getInstance()->getRequest()->getParameter('internado_id');
         return $filters;
     }
+    
+    public function executeApgar($request)
+    {
+        $user = $this->getUser();
+        $this->examen_fisico_recien_nacido = $this->getRoute()->getObject();
+        $user->setAttribute('recien_nacido', $this->examen_fisico_recien_nacido);
+        
+        if(sfConfig::get('sf_environment') == 'dev')
+        {
+            $env = '_dev';
+        }
+        $this->redirect('/hospitalario'.$env.'.php/apgar');   
+    }
 }

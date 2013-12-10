@@ -13,4 +13,18 @@ require_once dirname(__FILE__).'/../lib/notas_enfermeriaGeneratorHelper.class.ph
  */
 class notas_enfermeriaActions extends autoNotas_enfermeriaActions
 {
+    public function executeNew(sfWebRequest $request)
+    {
+        $this->form = $this->configuration->getForm();
+        $this->notas_enfermeria = $this->form->getObject();
+        $internado = $this->getUser()->getAttribute('internado');
+        $this->form->setDefault('internado_id', $internado->getId());
+    }
+    
+    protected function getFilters()
+    {   
+        $filters = parent::getFilters();        
+        $filters['internado_id'] = sfContext::getInstance()->getRequest()->getParameter('internado_id');
+        return $filters;
+    }
 }

@@ -23,7 +23,7 @@ generator:
         display: [nacer_egresar]
       form:    ~
       edit:    
-        Editar Registro Apgar
+        title: Editar Registro Apgar
       new:     
         title: Registro Apgar
         actions:

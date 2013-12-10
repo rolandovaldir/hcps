@@ -13,5 +13,7 @@ class NotasEvolucionForm extends BaseNotasEvolucionForm
   public function configure()
   {
       unset($this['created_at'], $this['updated_at']);
+      
+      $this->widgetSchema['internado_id'] = new sfWidgetFormInputHidden();
   }
 }

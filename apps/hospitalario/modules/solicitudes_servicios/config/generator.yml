@@ -15,12 +15,19 @@ generator:
       actions: ~
       fields:  ~
       list:    
+        title: Solicitudes de Servicios
+        display: [atencion_id, para, diagnostico_presuncion]
         actions: {}
         batch_actions: {}
-      filter:  ~
+      filter:  
+        display: [atencion_id]
       form:    ~
-      edit:    ~
+      edit:    
+        title: Editar Solicitud de Servicio
+        actions:
+          _save: ~
       new:     
+        title: Nueva Solicitud de Servicios
         actions:
           _save: ~
           _save_and_add: ~

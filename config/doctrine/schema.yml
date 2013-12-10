@@ -423,7 +423,6 @@ NotasEvolucion:
   actAs: [Timestampable]
   columns:
     internado_id: {type: integer, notnull: true}
-    numero_hoja:  {type: integer}
     fecha_hora:   {type: timestamp}
     numero_prob:  {type: integer}
     nota_soap:    {type: string(1500)}

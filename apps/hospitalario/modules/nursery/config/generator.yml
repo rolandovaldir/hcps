@@ -15,12 +15,19 @@ generator:
       actions: ~
       fields:  ~
       list:    
+        title: Signos Vitales Nursery
+        display: [hora, fc_nursery, fr_nursery, to_nursery]
         actions: {}
         batch_actions: {}
-      filter:  ~
+      filter:  
+        display: [hora, fc_nursery, fr_nursery, to_nursery]
       form:    ~
-      edit:    ~
+      edit:    
+        title: Editar Signos Vitales Nursery
+        actions:
+          _save: ~
       new:     
+        title: Nuevo Signos Vitales Nursery
         actions:
           _save: ~
           _save_and_add: ~
