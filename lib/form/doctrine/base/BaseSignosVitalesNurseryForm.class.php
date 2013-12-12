@@ -17,7 +17,7 @@ abstract class BaseSignosVitalesNurseryForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'            => new sfWidgetFormInputHidden(),
       'internado_id'  => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => false)),
-      'fecha'         => new myWidgetFormDojoDate(),
+      'fecha'         => new sfWidgetFormDate(),
       'hora'          => new sfWidgetFormTime(),
       'fc_nursery'    => new sfWidgetFormInputText(),
       'fr_nursery'    => new sfWidgetFormInputText(),

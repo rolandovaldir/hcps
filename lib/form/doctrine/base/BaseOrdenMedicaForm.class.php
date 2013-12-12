@@ -21,8 +21,8 @@ abstract class BaseOrdenMedicaForm extends BaseFormDoctrine
       'fecha_hora'                    => new sfWidgetFormDateTime(),
       'nombre_medicamento_indicacion' => new sfWidgetFormInputText(),
       'dosis_intervalo'               => new sfWidgetFormInputText(),
-      'fecha_inicio'                  => new myWidgetFormDojoDate(),
-      'fecha_terminacion'             => new myWidgetFormDojoDate(),
+      'fecha_inicio'                  => new sfWidgetFormDate(),
+      'fecha_terminacion'             => new sfWidgetFormDate(),
       'created_at'                    => new sfWidgetFormDateTime(),
       'updated_at'                    => new sfWidgetFormDateTime(),
     ));

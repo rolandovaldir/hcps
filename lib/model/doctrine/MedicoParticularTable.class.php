@@ -16,4 +16,15 @@ class MedicoParticularTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('MedicoParticular');
     }
+    
+    public static function selectMedicos($junta_id)
+    {
+        
+        $q = Doctrine_Query::create()
+                    ->from('MedicoParticular mp')
+                    ->leftJoin('mp.JuntaMedica jm')
+                    ->where('mp.junta_medica_id = ?', $junta_id)
+                    ->orderBy('mp.id ASC');
+        return $q;
+    }
 }

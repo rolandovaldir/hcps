@@ -19,7 +19,7 @@ abstract class BaseDetalleMedicacionForm extends BaseFormDoctrine
       'solicitud_intercosultada_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('SolicitudInterconsulta'), 'add_empty' => false)),
       'medicacion_utilizada'        => new sfWidgetFormInputText(),
       'dosis'                       => new sfWidgetFormInputText(),
-      'fecha_inicio'                => new myWidgetFormDojoDate(),
+      'fecha_inicio'                => new sfWidgetFormDate(),
       'created_at'                  => new sfWidgetFormDateTime(),
       'updated_at'                  => new sfWidgetFormDateTime(),
     ));

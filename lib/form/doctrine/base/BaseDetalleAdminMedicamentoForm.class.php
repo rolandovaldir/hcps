@@ -20,7 +20,7 @@ abstract class BaseDetalleAdminMedicamentoForm extends BaseFormDoctrine
       'enfermera_id'                  => new sfWidgetFormInputText(),
       'medicamento_solucion'          => new sfWidgetFormInputText(),
       'tipo'                          => new sfWidgetFormInputText(),
-      'fecha'                         => new myWidgetFormDojoDate(),
+      'fecha'                         => new sfWidgetFormDate(),
       'horario'                       => new sfWidgetFormTime(),
       'created_at'                    => new sfWidgetFormDateTime(),
       'updated_at'                    => new sfWidgetFormDateTime(),

@@ -22,7 +22,10 @@ generator:
         batch_actions: {}
       filter:  
         display: [fecha_junta, medico_solicitante]
-      form:    ~
+      form:    
+        display:
+          Datos de la Junta Médica: [fecha_junta, medico_solicitante, servicio, especialidades, diagnostico_establecido, conclusiones, tac, contraste]
+          Medicos Particulares: [medico]
       edit:    
         title: Editar Junta Médica
         actions:
