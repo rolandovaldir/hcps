@@ -221,7 +221,7 @@
   padding: 0 1em 3px 0;
   float: left;
   text-align: left;
-  width: 8em;
+  min-width: 8em;
   color: #666;
   font-weight: normal !important;
 }

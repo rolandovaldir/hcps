@@ -15,5 +15,17 @@ class SolicitudReposicionMaterialForm extends BaseSolicitudReposicionMaterialFor
       unset($this['created_at'], $this['updated_at']);
       
       $this->widgetSchema['internado_id'] = new sfWidgetFormInputHidden();
+      
+      
+      $detalle = new DetalleMaterial();
+      $detalle->setSolicitudReposicionMaterial($this->object);
+      $detalleForm = new DetalleMaterialForm($detalle);
+      $this->embedForm('detalle', $detalleForm);  
+
+      $this->embedRelation('DetalleMaterial');
+      
+      
+      
+      
   }
 }
