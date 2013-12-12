@@ -28,8 +28,8 @@ abstract class BaseResumenAltaForm extends BaseFormDoctrine
       'evolucion_complicacion'   => new sfWidgetFormTextarea(),
       'cond_trat_ref_pronostico' => new sfWidgetFormTextarea(),
       'fecha'                    => new myWidgetFormDojoDate(),
-      'created_at'               => new sfWidgetFormDateTime(),
-      'updated_at'               => new sfWidgetFormDateTime(),
+      'created_at'               => new myWidgetFormDojoDateTime(),
+      'updated_at'               => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(

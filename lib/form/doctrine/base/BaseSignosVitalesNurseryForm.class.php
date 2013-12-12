@@ -18,7 +18,7 @@ abstract class BaseSignosVitalesNurseryForm extends BaseFormDoctrine
       'id'            => new sfWidgetFormInputHidden(),
       'internado_id'  => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => false)),
       'fecha'         => new myWidgetFormDojoDate(),
-      'hora'          => new sfWidgetFormTime(),
+      'hora'          => new myWidgetFormDojoTime(),
       'fc_nursery'    => new sfWidgetFormInputText(),
       'fr_nursery'    => new sfWidgetFormInputText(),
       'to_nursery'    => new sfWidgetFormInputText(),
@@ -27,8 +27,8 @@ abstract class BaseSignosVitalesNurseryForm extends BaseFormDoctrine
       'lm_nursery'    => new sfWidgetFormInputText(),
       'residuo'       => new sfWidgetFormInputText(),
       'observaciones' => new sfWidgetFormInputText(),
-      'created_at'    => new sfWidgetFormDateTime(),
-      'updated_at'    => new sfWidgetFormDateTime(),
+      'created_at'    => new myWidgetFormDojoDateTime(),
+      'updated_at'    => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(

@@ -6,7 +6,8 @@
 [?php use_javascripts_for_form($form) ?]
 
 <div class="sf_admin_form">
-  [?php echo form_tag_for($form, '@<?php echo $this->params['route_prefix'] ?>',array('data-dojo-type'=>'dijit/form/Form')) ?]
+  [?php //echo form_tag_for($form, '@<?php echo $this->params['route_prefix'] ?>',array('data-dojo-type'=>'dijit/form/Form')) ?]
+  [?php echo $form->renderFormTag(url_for_form($form, '@<?php echo $this->params['route_prefix'] ?>')<?php echo $this->params['extra_url_custom_id']!='' ? ' . \'?\' . $extra_url_custom_id ' : '' ?>, array('data-dojo-type'=>'dijit/form/Form')) ?]  
     <script type="dojo/method" data-dojo-event="onSubmit">
         dojo.xhrPost({
             form: this.get('id'),

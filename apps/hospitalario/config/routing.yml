@@ -1,20 +1,56 @@
-internado_internado:
+solicitud_examen_laboratorio_solicitudes_examen_laboratorio:
   class: sfDoctrineRouteCollection
   options:
-    model:                Internado
-    module:               internado
-    prefix_path:          /internado
+    model:                SolicitudExamenLaboratorio
+    module:               solicitudes_examen_laboratorio
+    prefix_path:          /solicitudes_examen_laboratorio
     column:               id
     with_wildcard_routes: true
 
-internado_info_internado:
+solicitud_examen_laboratorio_solicitud_examen_laboratorio:
   class: sfDoctrineRouteCollection
   options:
-    model:                Internado
-    module:               info_internado
-    prefix_path:          /info_internado
+    model:                SolicitudExamenLaboratorio
+    module:               solicitud_examen_laboratorio
+    prefix_path:          /solicitud_examen_laboratorio
     column:               id
     with_wildcard_routes: true
+
+autorizacion_autopsia_autorizaciones_autopsia:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AutorizacionAutopsia
+    module:               autorizaciones_autopsia
+    prefix_path:          /autorizaciones_autopsia
+    column:               id
+    with_wildcard_routes: true
+
+autorizacion_alta_solicitada_autorizaciones_alta_solicitada:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AutorizacionAltaSolicitada
+    module:               autorizaciones_alta_solicitada
+    prefix_path:          /autorizaciones_alta_solicitada
+    column:               id
+    with_wildcard_routes: true
+
+autorizacion_diagnostico_tratamiento_autorizaciones_diagnostico_tratamiento:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AutorizacionDiagnosticoTratamiento
+    module:               autorizaciones_diagnostico_tratamiento
+    prefix_path:          /autorizaciones_diagnostico_tratamiento
+    column:               id
+    with_wildcard_routes: true
+
+programacion_cirugia:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ProgramacionCirugia
+    module:               programacion_cirugia
+    prefix_path:          /programacion_cirugia
+    column:               id
+    with_wildcard_routes: true  
 
 detalle_orden_medica:
   class: sfDoctrineRouteCollection
@@ -297,12 +333,12 @@ solicitud_examen_laboratorio:
     column:               id
     with_wildcard_routes: true
 
-programacion_cirugia:
+programacion_cirugias:
   class: sfDoctrineRouteCollection
   options:
-    model:                ProgramacionCirugia
-    module:               programacion_cirugia
-    prefix_path:          /programacion_cirugia
+    model:                ProgramacionCirugias
+    module:               programacioncirugias
+    prefix_path:          /programacioncirugias
     column:               id
     with_wildcard_routes: true
 

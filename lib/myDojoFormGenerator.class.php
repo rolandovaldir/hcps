@@ -21,6 +21,12 @@ class myDojoFormGenerator extends sfDoctrineFormGenerator
       case 'date':
         return 'myWidgetFormDojoDate';
         break;
+      case 'time':
+        return 'myWidgetFormDojoTime';
+        break;
+      case 'timestamp':
+        return 'myWidgetFormDojoDateTime';
+        break; 
       default:
         return parent::getWidgetClassForColumn($column); 
     }

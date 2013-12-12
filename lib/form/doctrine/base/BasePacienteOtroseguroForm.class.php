@@ -33,8 +33,8 @@ abstract class BasePacienteOtroseguroForm extends BaseFormDoctrine
       'departamento'    => new sfWidgetFormInputText(),
       'ciudad'          => new sfWidgetFormInputText(),
       'provincia'       => new sfWidgetFormInputText(),
-      'created_at'      => new sfWidgetFormDateTime(),
-      'updated_at'      => new sfWidgetFormDateTime(),
+      'created_at'      => new myWidgetFormDojoDateTime(),
+      'updated_at'      => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(

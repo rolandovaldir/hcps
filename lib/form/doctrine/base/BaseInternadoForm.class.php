@@ -29,19 +29,19 @@ abstract class BaseInternadoForm extends BaseFormDoctrine
       'medio_referencia'        => new sfWidgetFormInputText(),
       'observaciones'           => new sfWidgetFormTextarea(),
       'fecha'                   => new myWidgetFormDojoDate(),
-      'hora'                    => new sfWidgetFormTime(),
+      'hora'                    => new myWidgetFormDojoTime(),
       'conducto'                => new sfWidgetFormTextarea(),
       'es_afiliado'             => new sfWidgetFormInputCheckbox(),
       'alta'                    => new sfWidgetFormInputCheckbox(),
       'altaFecha'               => new myWidgetFormDojoDate(),
-      'altaHora'                => new sfWidgetFormTime(),
+      'altaHora'                => new myWidgetFormDojoTime(),
       'diagnostico_alta'        => new sfWidgetFormTextarea(),
       'tratamientio'            => new sfWidgetFormInputText(),
       'lugar_referencia_salida' => new sfWidgetFormInputText(),
       'medio_referencia_salida' => new sfWidgetFormInputText(),
       'motivo_refe_retorno'     => new sfWidgetFormInputText(),
-      'created_at'              => new sfWidgetFormDateTime(),
-      'updated_at'              => new sfWidgetFormDateTime(),
+      'created_at'              => new myWidgetFormDojoDateTime(),
+      'updated_at'              => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(

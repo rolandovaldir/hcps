@@ -24,8 +24,8 @@ abstract class BaseSolicitudExamenLaboratorioForm extends BaseFormDoctrine
       'medico_id'              => new sfWidgetFormInputText(),
       'lugar'                  => new sfWidgetFormInputText(),
       'fecha'                  => new myWidgetFormDojoDate(),
-      'created_at'             => new sfWidgetFormDateTime(),
-      'updated_at'             => new sfWidgetFormDateTime(),
+      'created_at'             => new myWidgetFormDojoDateTime(),
+      'updated_at'             => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(

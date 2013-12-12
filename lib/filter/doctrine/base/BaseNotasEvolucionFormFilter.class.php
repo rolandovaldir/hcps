@@ -14,6 +14,7 @@ abstract class BaseNotasEvolucionFormFilter extends BaseFormFilterDoctrine
   {
     $this->setWidgets(array(
       'internado_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => true)),
+      'numero_hoja'  => new sfWidgetFormFilterInput(),
       'fecha_hora'   => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate())),
       'numero_prob'  => new sfWidgetFormFilterInput(),
       'nota_soap'    => new sfWidgetFormFilterInput(),
@@ -23,6 +24,7 @@ abstract class BaseNotasEvolucionFormFilter extends BaseFormFilterDoctrine
 
     $this->setValidators(array(
       'internado_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Internado'), 'column' => 'id')),
+      'numero_hoja'  => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'fecha_hora'   => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
       'numero_prob'  => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'nota_soap'    => new sfValidatorPass(array('required' => false)),
@@ -49,6 +51,7 @@ abstract class BaseNotasEvolucionFormFilter extends BaseFormFilterDoctrine
     return array(
       'id'           => 'Number',
       'internado_id' => 'ForeignKey',
+      'numero_hoja'  => 'Number',
       'fecha_hora'   => 'Date',
       'numero_prob'  => 'Number',
       'nota_soap'    => 'Text',

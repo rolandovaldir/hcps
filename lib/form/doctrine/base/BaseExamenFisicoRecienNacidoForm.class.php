@@ -27,8 +27,8 @@ abstract class BaseExamenFisicoRecienNacidoForm extends BaseFormDoctrine
       'numero_cuna'          => new sfWidgetFormInputText(),
       'fecha_adminision'     => new myWidgetFormDojoDate(),
       'fecha_egreso'         => new myWidgetFormDojoDate(),
-      'created_at'           => new sfWidgetFormDateTime(),
-      'updated_at'           => new sfWidgetFormDateTime(),
+      'created_at'           => new myWidgetFormDojoDateTime(),
+      'updated_at'           => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(

@@ -21,9 +21,9 @@ abstract class BaseDetalleAdminMedicamentoForm extends BaseFormDoctrine
       'medicamento_solucion'          => new sfWidgetFormInputText(),
       'tipo'                          => new sfWidgetFormInputText(),
       'fecha'                         => new myWidgetFormDojoDate(),
-      'horario'                       => new sfWidgetFormTime(),
-      'created_at'                    => new sfWidgetFormDateTime(),
-      'updated_at'                    => new sfWidgetFormDateTime(),
+      'horario'                       => new myWidgetFormDojoTime(),
+      'created_at'                    => new myWidgetFormDojoDateTime(),
+      'updated_at'                    => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(

@@ -26,8 +26,8 @@ abstract class BaseJuntaMedicaForm extends BaseFormDoctrine
       'conclusiones'            => new sfWidgetFormTextarea(),
       'tac'                     => new sfWidgetFormInputCheckbox(),
       'contraste'               => new sfWidgetFormInputCheckbox(),
-      'created_at'              => new sfWidgetFormDateTime(),
-      'updated_at'              => new sfWidgetFormDateTime(),
+      'created_at'              => new myWidgetFormDojoDateTime(),
+      'updated_at'              => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(

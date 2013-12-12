@@ -19,7 +19,7 @@ abstract class BaseProgramacionCirugiaForm extends BaseFormDoctrine
       'internado_id'              => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => false)),
       'medico_id'                 => new sfWidgetFormInputText(),
       'operacion_fecha'           => new myWidgetFormDojoDate(),
-      'operacion_hora'            => new sfWidgetFormTime(),
+      'operacion_hora'            => new myWidgetFormDojoTime(),
       'diagnostico_preoperatorio' => new sfWidgetFormInputText(),
       'tratamiento_quirurgico'    => new sfWidgetFormInputText(),
       'anestesia'                 => new sfWidgetFormInputText(),
@@ -29,8 +29,8 @@ abstract class BaseProgramacionCirugiaForm extends BaseFormDoctrine
       'enfermera_id'              => new sfWidgetFormInputText(),
       'enviado'                   => new sfWidgetFormInputText(),
       'recibido'                  => new sfWidgetFormInputText(),
-      'created_at'                => new sfWidgetFormDateTime(),
-      'updated_at'                => new sfWidgetFormDateTime(),
+      'created_at'                => new myWidgetFormDojoDateTime(),
+      'updated_at'                => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(

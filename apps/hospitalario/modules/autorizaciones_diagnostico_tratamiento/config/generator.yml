@@ -1,0 +1,33 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           AutorizacionDiagnosticoTratamiento
+    theme:                 dojotheme
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          autorizacion_diagnostico_tratamiento_autorizaciones_diagnostico_tratamiento
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    extra_url_custom_id:   internado_id
+
+    config:
+      actions: ~
+      fields:
+        fecha_hora: { date_format: 'dd/MM/yyyy HH:mm' }
+        created_at: { date_format: dd/MM/yyyy }
+        updated_at: { date_format: dd/MM/yyyy }
+      list:    
+        title: Listado Autorizacion Diagnostico Tratamiento
+        display: [ nom_familiar, ci_familiar, fecha_hora , created_at, updated_at]        
+        actions: {}
+        batch_actions: {}
+      filter: 
+        display: [ nom_familiar,ci_familiar,fecha_hora ]
+      form:    
+        display: [ internado_id, nom_familiar,ci_familiar,fecha_hora ]
+      edit:    
+        title: Edición Autorizacion Diagnostico Tratamiento
+      new:        
+        title: Nueva Autorizacion Diagnostico Tratamiento

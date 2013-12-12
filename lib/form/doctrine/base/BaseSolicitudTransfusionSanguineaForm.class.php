@@ -21,13 +21,13 @@ abstract class BaseSolicitudTransfusionSanguineaForm extends BaseFormDoctrine
       'requiere_transfusion_de'   => new sfWidgetFormInputText(),
       'cumplirse_enforma'         => new sfWidgetFormInputText(),
       'fecha_prog_quirurgica'     => new myWidgetFormDojoDate(),
-      'hora_prog_quirurgica'      => new sfWidgetFormTime(),
+      'hora_prog_quirurgica'      => new myWidgetFormDojoTime(),
       'quirofano_prog_quirurgica' => new sfWidgetFormInputText(),
       'cantidad_requerida'        => new sfWidgetFormInputText(),
       'cantidad_requerida_unidad' => new sfWidgetFormInputText(),
       'observaciones'             => new sfWidgetFormInputText(),
       'fecha_solicitud'           => new myWidgetFormDojoDate(),
-      'hora_solicitud'            => new sfWidgetFormTime(),
+      'hora_solicitud'            => new myWidgetFormDojoTime(),
       'medico_id'                 => new sfWidgetFormInputText(),
       'numero'                    => new sfWidgetFormInputText(),
       'fecha_recepcion_solicitud' => new myWidgetFormDojoDate(),
@@ -40,8 +40,8 @@ abstract class BaseSolicitudTransfusionSanguineaForm extends BaseFormDoctrine
       'hr_receptor'               => new sfWidgetFormInputText(),
       'anticuerpos_irreg'         => new sfWidgetFormInputText(),
       'nombre_res_bancosangre'    => new sfWidgetFormInputText(),
-      'created_at'                => new sfWidgetFormDateTime(),
-      'updated_at'                => new sfWidgetFormDateTime(),
+      'created_at'                => new myWidgetFormDojoDateTime(),
+      'updated_at'                => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(

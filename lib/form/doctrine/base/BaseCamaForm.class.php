@@ -22,8 +22,8 @@ abstract class BaseCamaForm extends BaseFormDoctrine
       'observaciones' => new sfWidgetFormInputText(),
       'codigo_activo' => new sfWidgetFormInputText(),
       'activo_id'     => new sfWidgetFormInputText(),
-      'created_at'    => new sfWidgetFormDateTime(),
-      'updated_at'    => new sfWidgetFormDateTime(),
+      'created_at'    => new myWidgetFormDojoDateTime(),
+      'updated_at'    => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(

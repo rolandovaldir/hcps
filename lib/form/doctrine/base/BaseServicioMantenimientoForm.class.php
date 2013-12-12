@@ -27,8 +27,8 @@ abstract class BaseServicioMantenimientoForm extends BaseFormDoctrine
       'reparado_por'       => new sfWidgetFormInputText(),
       'importe'            => new sfWidgetFormInputText(),
       'importe_fecha'      => new myWidgetFormDojoDate(),
-      'created_at'         => new sfWidgetFormDateTime(),
-      'updated_at'         => new sfWidgetFormDateTime(),
+      'created_at'         => new myWidgetFormDojoDateTime(),
+      'updated_at'         => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(

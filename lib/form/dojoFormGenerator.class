@@ -1,0 +1,16 @@
+<?php
+class dojoFormGenerator extends sfDoctrineGenerator
+{
+
+  public function getWidgetClassForColumn($column)
+  { 
+    switch ($column->getDoctrineType())
+    {
+      case 'date':
+        return 'sfWidgetFormDojoDate';
+        break;
+      default:
+        return parent::getWidgetClassForColumn($column); 
+    }
+  }
+}
