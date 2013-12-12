@@ -2,7 +2,7 @@ generator:
   class: sfDoctrineGenerator
   param:
     model_class:           ExamenFisicoRecienNacido
-    theme:                 admin
+    theme:                 dojotheme
     non_verbose_templates: true
     with_show:             false
     singular:              ~
@@ -10,6 +10,7 @@ generator:
     route_prefix:          examen_fisico_recien_nacido
     with_doctrine_route:   true
     actions_base_class:    sfActions
+    extra_url_custom_id:   internado_id
 
     config:
       actions: ~
