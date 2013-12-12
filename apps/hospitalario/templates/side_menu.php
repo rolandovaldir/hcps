@@ -18,10 +18,10 @@ $link_menus = array(
     array('link'=>'reposicion_materiales','label'=>'Reposicion Materiales'),
     array('link'=>'resumenalta','label'=>'Resumen Alta'),
     array('link'=>'servicios_mantenimiento','label'=>'Servicio Mantenimiento'),
-    array('link'=>'solicitudes_interconsultas','label'=>'Soliciotudes Interconsultas'),
-    array('link'=>'solicitudes_servicios','label'=>'Soliciotudes Servicios'),
+    array('link'=>'solicitudes_interconsultas','label'=>'Solicitudes Interconsultas'),
+    array('link'=>'solicitudes_servicios','label'=>'Solicitudes Servicios'),
     array('link'=>'solicitudes_examen_laboratorio','label'=>'Solicitudes Examen Laboratorio'),
-    array('link'=>'solicitudtransfusionsanguinea','label'=>'Soliciotudes Transfusiones'),
+    array('link'=>'solicitudtransfusionsanguinea','label'=>'Solicitudes Transfusiones'),
     array('link'=>'usohospitalario','label'=>'Uso Hospitalario')
 );
 
