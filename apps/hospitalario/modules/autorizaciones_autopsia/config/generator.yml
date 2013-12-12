@@ -1,0 +1,33 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           AutorizacionAutopsia
+    theme:                 dojotheme
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          autorizacion_autopsia_autorizaciones_autopsia
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    extra_url_custom_id:   internado_id
+
+    config:
+      actions: ~
+      fields:          
+        created_at: { date_format: dd/MM/yyyy }
+        updated_at: { date_format: dd/MM/yyyy }
+      list:   
+        title: Listado Autorizacion Autopsia
+        display: [ nombre_familiar1, tipo_parentesco1, ci_familiar1,nombre_familiar2, tipo_parentesco2, ci_familiar2,nombre_familiar3, tipo_parentesco3, ci_familiar3, fecha_hora, created_at, updated_at]        
+        actions: {}
+        batch_actions: {}
+      filter:  
+        display: [ nombre_familiar1, tipo_parentesco1, ci_familiar1,nombre_familiar2, tipo_parentesco2, ci_familiar2,nombre_familiar3, tipo_parentesco3, ci_familiar3, fecha_hora ]
+      form:    
+        display: [internado_id, nombre_familiar1, tipo_parentesco1, ci_familiar1,nombre_familiar2, tipo_parentesco2, ci_familiar2,nombre_familiar3, tipo_parentesco3, ci_familiar3, fecha_hora]
+      edit:            
+        title: Edición Autorizacion Autopsia
+      new:        
+        title: Nueva Autorizacion Autopsia
+        actions: {}

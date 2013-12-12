@@ -19,9 +19,9 @@ abstract class BaseAutorizacionDiagnosticoTratamientoForm extends BaseFormDoctri
       'internado_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => false)),
       'nom_familiar' => new sfWidgetFormInputText(),
       'ci_familiar'  => new sfWidgetFormInputText(),
-      'fecha_hora'   => new sfWidgetFormDateTime(),
-      'created_at'   => new sfWidgetFormDateTime(),
-      'updated_at'   => new sfWidgetFormDateTime(),
+      'fecha_hora'   => new myWidgetFormDojoDateTime(),
+      'created_at'   => new myWidgetFormDojoDateTime(),
+      'updated_at'   => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(

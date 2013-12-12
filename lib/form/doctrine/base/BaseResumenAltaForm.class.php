@@ -27,9 +27,9 @@ abstract class BaseResumenAltaForm extends BaseFormDoctrine
       'hallazgos_lab_rayx'       => new sfWidgetFormTextarea(),
       'evolucion_complicacion'   => new sfWidgetFormTextarea(),
       'cond_trat_ref_pronostico' => new sfWidgetFormTextarea(),
-      'fecha'                    => new sfWidgetFormDate(),
-      'created_at'               => new sfWidgetFormDateTime(),
-      'updated_at'               => new sfWidgetFormDateTime(),
+      'fecha'                    => new myWidgetFormDojoDate(),
+      'created_at'               => new myWidgetFormDojoDateTime(),
+      'updated_at'               => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(

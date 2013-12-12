@@ -20,14 +20,14 @@ abstract class BaseJuntaMedicaForm extends BaseFormDoctrine
       'medico_solicitante'      => new sfWidgetFormInputText(),
       'servicio'                => new sfWidgetFormInputText(),
       'especialidades'          => new sfWidgetFormInputText(),
-      'fecha_junta'             => new sfWidgetFormDate(),
+      'fecha_junta'             => new myWidgetFormDojoDate(),
       'diagnostico_establecido' => new sfWidgetFormTextarea(),
       'relacion_junta'          => new sfWidgetFormTextarea(),
       'conclusiones'            => new sfWidgetFormTextarea(),
       'tac'                     => new sfWidgetFormInputCheckbox(),
       'contraste'               => new sfWidgetFormInputCheckbox(),
-      'created_at'              => new sfWidgetFormDateTime(),
-      'updated_at'              => new sfWidgetFormDateTime(),
+      'created_at'              => new myWidgetFormDojoDateTime(),
+      'updated_at'              => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(

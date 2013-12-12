@@ -1,5 +1,5 @@
   protected function processForm(sfWebRequest $request, sfForm $form)
-  {
+  {  
     $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
     if ($form->isValid())
     {
@@ -26,14 +26,14 @@
       if ($request->hasParameter('_save_and_add'))
       {
         $this->getUser()->setFlash('notice', $notice.' You can add another one below.');
-
-        $this->redirect('@<?php echo $this->getUrlForAction('new') ?>');
+        <?php $aux_extra_url_custom_id = $this->params['extra_url_custom_id']!='' ? " . '?" . $this->params['extra_url_custom_id'] . '=\' . $request->getParameter(\'' .  $this->params['extra_url_custom_id'] . '\')' : '' ?> 
+        $this->redirect('@<?php echo $this->getUrlForAction('new') ?>' <?php echo $aux_extra_url_custom_id ?>);
       }
       else
       {
         $this->getUser()->setFlash('notice', $notice);
-
-        $this->redirect(array('sf_route' => '<?php echo $this->getUrlForAction('edit') ?>', 'sf_subject' => $<?php echo $this->getSingularName() ?>));
+        <?php $aux_extra_url_custom_id = $this->params['extra_url_custom_id']!='' ? ' \'' . $this->params['extra_url_custom_id'] . '\'=> $request->getParameter(\'' .  $this->params['extra_url_custom_id'] . '\')' : '' ?> 
+        $this->redirect(array('sf_route' => '<?php echo $this->getUrlForAction('edit') ?>', 'sf_subject' => $<?php echo $this->getSingularName() ?>, <?php echo $aux_extra_url_custom_id ?>));
       }
     }
     else

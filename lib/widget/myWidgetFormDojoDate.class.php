@@ -48,6 +48,23 @@ class myWidgetFormDojoDate extends sfWidgetForm
    */
   public function render($name, $value = null, $attributes = array(), $errors = array())
   {
-    return $this->renderTag('input', array_merge(array('type' => 'input','data-dojo-type'=>'dijit/form/DateTextBox', 'name' => $name, 'value' => $value), $attributes));
+    $default = '';
+    if (is_array($value))
+    {
+      $value = $value['year'] . '-' . $value['month'] . '-' . $value['day'];
+    }
+    else
+    {
+      $value = (string) $value == (string) (integer) $value ? (integer) $value : strtotime($value);
+      if (false === $value)
+      {
+        $value = $default;
+      }
+      else
+      {
+        $value = date('Y-m-d', $value);
+      }
+    }
+    return $this->renderTag('input', array_merge(array('type' => 'input','data-dojo-type'=>'dijit/form/DateTextBox', 'name' => $name, 'value' => $value, 'style'=>'width:9em;'), $attributes));
   }
 }

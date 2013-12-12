@@ -12,6 +12,7 @@ class ProgramacionCirugiaForm extends BaseProgramacionCirugiaForm
 {
     public function configure()
     {
+        unset($this['created_at'], $this['updated_at']);
         $this->setWidget("internado_id", new sfWidgetFormInputHidden());
     }
 }

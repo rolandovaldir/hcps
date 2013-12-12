@@ -19,16 +19,16 @@ abstract class BaseExamenFisicoRecienNacidoForm extends BaseFormDoctrine
       'internado_id'         => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => false)),
       'ap_paterno'           => new sfWidgetFormInputText(),
       'ap_materno'           => new sfWidgetFormInputText(),
-      'fecha_nacimiento'     => new sfWidgetFormDate(),
+      'fecha_nacimiento'     => new myWidgetFormDojoDate(),
       'sexo'                 => new sfWidgetFormInputText(),
       'peso_nacimiento'      => new sfWidgetFormInputText(),
       'talla'                => new sfWidgetFormInputText(),
       'circunferencia_torax' => new sfWidgetFormInputText(),
       'numero_cuna'          => new sfWidgetFormInputText(),
-      'fecha_adminision'     => new sfWidgetFormDate(),
-      'fecha_egreso'         => new sfWidgetFormDate(),
-      'created_at'           => new sfWidgetFormDateTime(),
-      'updated_at'           => new sfWidgetFormDateTime(),
+      'fecha_adminision'     => new myWidgetFormDojoDate(),
+      'fecha_egreso'         => new myWidgetFormDojoDate(),
+      'created_at'           => new myWidgetFormDojoDateTime(),
+      'updated_at'           => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(

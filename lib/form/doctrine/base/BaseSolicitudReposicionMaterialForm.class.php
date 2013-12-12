@@ -19,8 +19,8 @@ abstract class BaseSolicitudReposicionMaterialForm extends BaseFormDoctrine
       'internado_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => false)),
       'unidad'       => new sfWidgetFormInputText(),
       'encargado'    => new sfWidgetFormInputText(),
-      'created_at'   => new sfWidgetFormDateTime(),
-      'updated_at'   => new sfWidgetFormDateTime(),
+      'created_at'   => new myWidgetFormDojoDateTime(),
+      'updated_at'   => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(

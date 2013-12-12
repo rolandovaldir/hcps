@@ -23,8 +23,5 @@ class SolicitudReposicionMaterialForm extends BaseSolicitudReposicionMaterialFor
 
 //      $this->embedRelation('DetalleMaterial');
       
-      
-      
-      
   }
 }

@@ -26,9 +26,9 @@ abstract class BaseAutorizacionAutopsiaForm extends BaseFormDoctrine
       'nombre_familiar3' => new sfWidgetFormInputText(),
       'tipo_parentesco3' => new sfWidgetFormInputText(),
       'ci_familiar3'     => new sfWidgetFormInputText(),
-      'fecha_hora'       => new sfWidgetFormDateTime(),
-      'created_at'       => new sfWidgetFormDateTime(),
-      'updated_at'       => new sfWidgetFormDateTime(),
+      'fecha_hora'       => new myWidgetFormDojoDateTime(),
+      'created_at'       => new myWidgetFormDojoDateTime(),
+      'updated_at'       => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(

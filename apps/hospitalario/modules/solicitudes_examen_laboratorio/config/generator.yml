@@ -1,0 +1,34 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           SolicitudExamenLaboratorio
+    theme:                 dojotheme
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          solicitud_examen_laboratorio_solicitudes_examen_laboratorio
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    extra_url_custom_id:   internado_id
+
+    config:
+      actions: ~
+      fields:     
+        fecha:      { date_format: dd/MM/yyyy }
+        created_at: { date_format: dd/MM/yyyy }
+        updated_at: { date_format: dd/MM/yyyy }
+      list:   
+        title: Listado Solicitud Examenes Laboratorio
+        display: [ material_enviado, otros_examenes, diagnostico_presuntivo, medico_id, lugar, fecha ]
+        actions: {}
+        batch_actions: {}
+      filter:  
+        display: [ material_enviado, otros_examenes, diagnostico_presuntivo, medico_id, lugar, fecha ]
+      form:    
+        display: [internado_id, material_enviado, otros_examenes, diagnostico_presuntivo, medico_id, lugar, fecha ]
+      edit:            
+        title: Edición Solicitud Examenes Laboratorio
+      new:        
+        title: Nueva Solicitud Examenes Laboratorio
+        actions: {}

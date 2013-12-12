@@ -32,8 +32,8 @@ abstract class BaseApgarForm extends BaseFormDoctrine
       'extremidades'                   => new sfWidgetFormInputText(),
       'reflejos'                       => new sfWidgetFormInputText(),
       'ano'                            => new sfWidgetFormInputText(),
-      'created_at'                     => new sfWidgetFormDateTime(),
-      'updated_at'                     => new sfWidgetFormDateTime(),
+      'created_at'                     => new myWidgetFormDojoDateTime(),
+      'updated_at'                     => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(

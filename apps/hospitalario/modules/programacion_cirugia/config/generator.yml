@@ -10,14 +10,17 @@ generator:
     route_prefix:          programacion_cirugia
     with_doctrine_route:   true
     actions_base_class:    sfActions
-    extra_url_custom_id:   internado_id
+    extra_url_custom_id:       internado_id
 
     config:      
       actions: ~
       fields:          
         operacion_fecha: { date_format: dd/MM/yyyy }
+        created_at: { date_format: dd/MM/yyyy }
+        updated_at: { date_format: dd/MM/yyyy }
       list:
         title: Listado Programacion Para Cirugias
+        display: [ operacion_fecha, operacion_hora,diagnostico_preoperatorio, tratamiento_quirurgico, anestesia, otros, examenes_auxiliares, created_at, updated_at]        
         actions: {}
         batch_actions: {}
       filter:

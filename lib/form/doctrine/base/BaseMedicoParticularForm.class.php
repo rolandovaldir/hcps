@@ -18,8 +18,8 @@ abstract class BaseMedicoParticularForm extends BaseFormDoctrine
       'id'              => new sfWidgetFormInputHidden(),
       'junta_medica_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('JuntaMedica'), 'add_empty' => false)),
       'nombre'          => new sfWidgetFormInputText(),
-      'created_at'      => new sfWidgetFormDateTime(),
-      'updated_at'      => new sfWidgetFormDateTime(),
+      'created_at'      => new myWidgetFormDojoDateTime(),
+      'updated_at'      => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(

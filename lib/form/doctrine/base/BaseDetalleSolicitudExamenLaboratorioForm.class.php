@@ -18,8 +18,8 @@ abstract class BaseDetalleSolicitudExamenLaboratorioForm extends BaseFormDoctrin
       'id'                              => new sfWidgetFormInputHidden(),
       'solicitud_examen_laboratorio_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('SolicitudExamenLaboratorio'), 'add_empty' => false)),
       'tipo'                            => new sfWidgetFormInputText(),
-      'created_at'                      => new sfWidgetFormDateTime(),
-      'updated_at'                      => new sfWidgetFormDateTime(),
+      'created_at'                      => new myWidgetFormDojoDateTime(),
+      'updated_at'                      => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(
