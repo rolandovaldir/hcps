@@ -37,19 +37,19 @@ abstract class BaseProgramacionCirugiaForm extends BaseFormDoctrine
       'id'                        => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'internado_id'              => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'))),
       'medico_id'                 => new sfValidatorInteger(array('required' => false)),
-      'operacion_fecha'           => new sfValidatorDate(array('required' => false)),
+      'operacion_fecha'           => new myValidatorDojoDate(array('required' => false)),
       'operacion_hora'            => new sfValidatorTime(array('required' => false)),
       'diagnostico_preoperatorio' => new sfValidatorString(array('max_length' => 250, 'required' => false)),
       'tratamiento_quirurgico'    => new sfValidatorString(array('max_length' => 250, 'required' => false)),
       'anestesia'                 => new sfValidatorString(array('max_length' => 150, 'required' => false)),
       'otros'                     => new sfValidatorString(array('max_length' => 150, 'required' => false)),
       'examenes_auxiliares'       => new sfValidatorString(array('max_length' => 1, 'required' => false)),
-      'fecha'                     => new sfValidatorDate(array('required' => false)),
+      'fecha'                     => new myValidatorDojoDate(array('required' => false)),
       'enfermera_id'              => new sfValidatorInteger(array('required' => false)),
       'enviado'                   => new sfValidatorString(array('max_length' => 80, 'required' => false)),
       'recibido'                  => new sfValidatorString(array('max_length' => 80, 'required' => false)),
-      'created_at'                => new sfValidatorDateTime(),
-      'updated_at'                => new sfValidatorDateTime(),
+      'created_at'                => new myValidatorDojoDateTime(),
+      'updated_at'                => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('programacion_cirugia[%s]');

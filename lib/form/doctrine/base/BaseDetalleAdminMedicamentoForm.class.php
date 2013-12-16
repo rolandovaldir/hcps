@@ -32,10 +32,10 @@ abstract class BaseDetalleAdminMedicamentoForm extends BaseFormDoctrine
       'enfermera_id'                  => new sfValidatorInteger(array('required' => false)),
       'medicamento_solucion'          => new sfValidatorString(array('max_length' => 250, 'required' => false)),
       'tipo'                          => new sfValidatorString(array('max_length' => 1, 'required' => false)),
-      'fecha'                         => new sfValidatorDate(array('required' => false)),
+      'fecha'                         => new myValidatorDojoDate(array('required' => false)),
       'horario'                       => new sfValidatorTime(array('required' => false)),
-      'created_at'                    => new sfValidatorDateTime(),
-      'updated_at'                    => new sfValidatorDateTime(),
+      'created_at'                    => new myValidatorDojoDateTime(),
+      'updated_at'                    => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('detalle_admin_medicamento[%s]');

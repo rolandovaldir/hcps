@@ -1,0 +1,44 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           SolicitudTransfusionSanguinea
+    theme:                 dojotheme
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          solicitud_transfusion_sanguinea_solicitudes_transfusion_sanguinea
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    extra_url_custom_id:   internado_id
+
+    config:
+      actions: ~
+      fields:          
+        fecha_prog_quirurgica:     { date_format: dd/MM/yyyy }
+        fecha_solicitud:           { date_format: dd/MM/yyyy }
+        fecha_recepcion_solicitud: { date_format: dd/MM/yyyy }
+        created_at:                { date_format: dd/MM/yyyy }
+        updated_at:                { date_format: dd/MM/yyyy }
+        requiere_transfusion_de:               { label: Requiere Transfusion de }
+        descripcion_requiere_transfusion_de:   { label: Requiere Transfusion de }
+        cumplirse_enforma:                     { label: Cumplirse en Forma }
+        descripcion_cumplirse_enforma:         { label: Cumplirse en Forma }
+        
+      list: 
+        title:   Listado Solicitud de Tranfusiones sanguineas
+        display: [ quirofano, descripcion_requiere_transfusion_de, descripcion_cumplirse_enforma, fecha_prog_quirurgica, hora_prog_quirurgica, quirofano_prog_quirurgica, cantidad_requerida, cantidad_requerida_unidad, observaciones, fecha_solicitud, hora_solicitud, medico_id, numero, fecha_recepcion_solicitud, bolsa_compatible1, bolsa_compatible2, bolsa_compatible3, bolsa_compatible4, bolsa_compatible5, grupo_sanguineo_receptor, hr_receptor, anticuerpos_irreg, nombre_res_bancosangre ,created_at, updated_at ]        
+        actions: {}
+        batch_actions: {}
+      filter: 
+        display: [ quirofano, requiere_transfusion_de, cumplirse_enforma, fecha_prog_quirurgica, hora_prog_quirurgica, quirofano_prog_quirurgica, cantidad_requerida, cantidad_requerida_unidad, observaciones, fecha_solicitud, hora_solicitud, medico_id, numero, fecha_recepcion_solicitud, bolsa_compatible1, bolsa_compatible2, bolsa_compatible3, bolsa_compatible4, bolsa_compatible5, grupo_sanguineo_receptor, hr_receptor, anticuerpos_irreg, nombre_res_bancosangre ]
+      form: 
+        display: 
+          "&nbsp;": [ internado_id, quirofano ]
+          "DIAGNOSTICO:": [ requiere_transfusion_de, cumplirse_enforma ]          
+          "TRATAMIENTO AMBULATORIO": [fecha_prog_quirurgica, hora_prog_quirurgica, quirofano_prog_quirurgica, cantidad_requerida, cantidad_requerida_unidad, observaciones, fecha_solicitud, hora_solicitud, numero, fecha_recepcion_solicitud, bolsa_compatible1, bolsa_compatible2, bolsa_compatible3, bolsa_compatible4, bolsa_compatible5, grupo_sanguineo_receptor, hr_receptor, anticuerpos_irreg, nombre_res_bancosangre ]          
+      edit:            
+        title: Edición Solicitud de Tranfusiones sanguineas
+      new:        
+        title: Nueva Solicitud de Tranfusiones sanguineas
+        actions: {}

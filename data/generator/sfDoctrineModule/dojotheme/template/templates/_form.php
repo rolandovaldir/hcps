@@ -18,7 +18,7 @@
                 console.log(error);
             }
         });
-        dijit.byId('dojotheme-maincontainer').set('content','<span class="dijitContentPaneLoading"><span class="dijitInline dijitIconLoading"></span>Loading...</span>');
+        dijit.byId('dojotheme-maincontainer').set('content',dijit.byId('dojotheme-maincontainer').loadingMessage);
         return false;
     </script>
     [?php echo $form->renderHiddenFields(false) ?]

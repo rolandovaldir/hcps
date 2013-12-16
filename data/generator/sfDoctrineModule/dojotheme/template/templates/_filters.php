@@ -18,7 +18,7 @@
                 console.log(error);
             }
         });
-        dijit.byId('dojotheme-maincontainer').set('content','');
+        dijit.byId('dojotheme-maincontainer').set('content',dijit.byId('dojotheme-maincontainer').loadingMessage);
         return false;
     </script>
     <table cellspacing="0">      
@@ -43,7 +43,7 @@
             [?php // echo link_to(__('Reset', array(), 'sf_admin'), '<?php echo $this->getUrlForAction('collection') ?>', array('action' => 'filter'), array('query_string' => '_reset', 'method' => 'post')) ?]                        
             [?php $aux_form = new BaseForm(); $aux_csrf_function = $aux_form->isCSRFProtected() ?  $aux_form->getCSRFFieldName() . '=' . $aux_form->getCSRFToken() : '';                  
                   echo link_to(__('Reset', array(), 'sf_admin'), '<?php echo $this->getUrlForAction('collection') ?>', array('action' => 'filter'), array('query_string' =>'_reset'<?php echo $this->params['extra_url_custom_id']!='' ? ' . \'&\' . $extra_url_custom_id' : '' ?>, 
-                       'data-dojo-type'=>'dijit/form/Button','data-dojo-props'=>"iconClass:'dijitEditorIcon dijitEditorIconUndo',onClick:function(){ var co = dijit.byId('dojotheme-maincontainer'); dojo.xhrPost({url:this.href, postData: '" . $aux_csrf_function . "',load:function(data){ co.set('content',data); },error: function(error){ co.set('content',error);} }); co.set('content','<span class=\"dijitContentPaneLoading\"><span class=\"dijitInline dijitIconLoading\"></span>Loading...</span>'); return false;}" ))  ?]
+                       'data-dojo-type'=>'dijit/form/Button','data-dojo-props'=>"iconClass:'dijitEditorIcon dijitEditorIconUndo',onClick:function(){ var co = dijit.byId('dojotheme-maincontainer'); dojo.xhrPost({url:this.href, postData: '" . $aux_csrf_function . "',load:function(data){ co.set('content',data); },error: function(error){ co.set('content',error);} }); co.set('content',co.loadingMessage); return false;}" ))  ?]
             <button type="submit" data-dojo-type="dijit/form/Button" data-dojo-props="iconClass:'dijitEditorIcon dijitEditorIconSelectAll'" >[?php echo __('Filter', array(), 'sf_admin') ?]</button>
           </td>
         </tr>

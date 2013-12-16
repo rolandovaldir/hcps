@@ -36,8 +36,8 @@ abstract class BaseDetalleMaterialForm extends BaseFormDoctrine
       'saldo_anterior'                   => new sfValidatorInteger(array('required' => false)),
       'reposicion_solicitada'            => new sfValidatorInteger(array('required' => false)),
       'saldo_actual'                     => new sfValidatorInteger(array('required' => false)),
-      'created_at'                       => new sfValidatorDateTime(),
-      'updated_at'                       => new sfValidatorDateTime(),
+      'created_at'                       => new myValidatorDojoDateTime(),
+      'updated_at'                       => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('detalle_material[%s]');

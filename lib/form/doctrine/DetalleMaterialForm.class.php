@@ -12,6 +12,6 @@ class DetalleMaterialForm extends BaseDetalleMaterialForm
 {
   public function configure()
   {
-      unset($this['created_at'], $this['updated_at'], $this['solicitud_reposicion_material_id']);
+      unset($this['created_at'], $this['updated_at']);
   }
 }

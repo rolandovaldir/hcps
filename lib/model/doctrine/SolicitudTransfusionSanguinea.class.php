@@ -12,4 +12,16 @@
  */
 class SolicitudTransfusionSanguinea extends BaseSolicitudTransfusionSanguinea
 {
+    
+    public function getDescripcionRequiereTransfusionDe() 
+    {
+        return SolicitudTransfusionSanguineaTable::getDescripcion_requiere_transfusion_de($this->getRequiereTransfusionDe());
+    }
+    
+    
+    public function getDescripcionCumplirseEnforma()
+    {
+        return SolicitudTransfusionSanguineaTable::getDescripcion_cumplirse_enforma($this->getCumplirseEnforma());
+    }
+    
 }

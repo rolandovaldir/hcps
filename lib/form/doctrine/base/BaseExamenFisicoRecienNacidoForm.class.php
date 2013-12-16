@@ -36,16 +36,16 @@ abstract class BaseExamenFisicoRecienNacidoForm extends BaseFormDoctrine
       'internado_id'         => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'))),
       'ap_paterno'           => new sfValidatorString(array('max_length' => 45, 'required' => false)),
       'ap_materno'           => new sfValidatorString(array('max_length' => 45, 'required' => false)),
-      'fecha_nacimiento'     => new sfValidatorDate(array('required' => false)),
+      'fecha_nacimiento'     => new myValidatorDojoDate(array('required' => false)),
       'sexo'                 => new sfValidatorString(array('max_length' => 20, 'required' => false)),
       'peso_nacimiento'      => new sfValidatorString(array('max_length' => 45, 'required' => false)),
       'talla'                => new sfValidatorString(array('max_length' => 45, 'required' => false)),
       'circunferencia_torax' => new sfValidatorString(array('max_length' => 20, 'required' => false)),
       'numero_cuna'          => new sfValidatorInteger(array('required' => false)),
-      'fecha_adminision'     => new sfValidatorDate(array('required' => false)),
-      'fecha_egreso'         => new sfValidatorDate(array('required' => false)),
-      'created_at'           => new sfValidatorDateTime(),
-      'updated_at'           => new sfValidatorDateTime(),
+      'fecha_adminision'     => new myValidatorDojoDate(array('required' => false)),
+      'fecha_egreso'         => new myValidatorDojoDate(array('required' => false)),
+      'created_at'           => new myValidatorDojoDateTime(),
+      'updated_at'           => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('examen_fisico_recien_nacido[%s]');

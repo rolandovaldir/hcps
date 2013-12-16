@@ -12,4 +12,8 @@
  */
 class AdministracionMedicamento extends BaseAdministracionMedicamento
 {
+    public function getDescripcionTipo() 
+    {
+        return AdministracionMedicamentoTable::getDescripcion_tipo($this->getTipo());
+    }
 }

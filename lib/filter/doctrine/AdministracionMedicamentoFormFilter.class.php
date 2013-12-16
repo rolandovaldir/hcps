@@ -12,5 +12,6 @@ class AdministracionMedicamentoFormFilter extends BaseAdministracionMedicamentoF
 {
   public function configure()
   {
+      $this->widgetSchema['tipo'] = new sfWidgetFormChoice(array('choices'  => AdministracionMedicamentoTable::getDescripciones_tipo(),'expanded' => true));
   }
 }

@@ -75,8 +75,8 @@ abstract class BaseAtencionEnfermeriaFormFilter extends BaseFormFilterDoctrine
       'capstr_relpaciente_enfermedad_val'     => new sfWidgetFormFilterInput(),
       'creencia_religiosa'                    => new sfWidgetFormFilterInput(),
       'diagnostico_enfermera'                 => new sfWidgetFormFilterInput(),
-      'created_at'                            => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
-      'updated_at'                            => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
+      'created_at'                            => new sfWidgetFormFilterDate(array('from_date' => new myWidgetFormDojoDate(), 'to_date' => new myWidgetFormDojoDate(), 'with_empty' => false)),
+      'updated_at'                            => new sfWidgetFormFilterDate(array('from_date' => new myWidgetFormDojoDate(), 'to_date' => new myWidgetFormDojoDate(), 'with_empty' => false)),
     ));
 
     $this->setValidators(array(

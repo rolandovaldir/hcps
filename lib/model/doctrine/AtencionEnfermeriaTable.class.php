@@ -16,4 +16,44 @@ class AtencionEnfermeriaTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('AtencionEnfermeria');
     }
+    
+    
+    
+    const ESCALA_TIPO1_N = 'N';
+    const ESCALA_TIPO1_A = 'A';
+    
+    static $descripciones_escala_tipo1 = array('N'=>'N', 'A'=>'A');
+    
+    static function getDescripciones_escala_tipo1()
+    {
+        return self::$descripciones_escala_tipo1;
+    }
+    
+    static function getDescripcion_escala_tipo1($key,$default=null)
+    {
+        if (array_key_exists($key, self::$descripciones_escala_tipo1)){
+            return self::$descripciones_escala_tipo1[$key];
+        }
+        return $default;
+    }
+    
+    
+    const ESCALA_TIPO2_N = 'S';
+    const ESCALA_TIPO2_A = 'N';
+    
+    static $descripciones_escala_tipo2 = array('S'=>'SI', 'N'=>'NO');
+    
+    static function getDescripciones_escala_tipo2()
+    {
+        return self::$descripciones_escala_tipo2;
+    }
+    
+    static function getDescripcion_escala_tipo2($key,$default=null)
+    {
+        if (array_key_exists($key, self::$descripciones_escala_tipo2)){
+            return self::$descripciones_escala_tipo2[$key];
+        }
+        return $default;
+    }
+    
 }

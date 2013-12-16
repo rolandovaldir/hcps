@@ -26,8 +26,8 @@ abstract class BaseDetalleSolicitudExamenLaboratorioForm extends BaseFormDoctrin
       'id'                              => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'solicitud_examen_laboratorio_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('SolicitudExamenLaboratorio'))),
       'tipo'                            => new sfValidatorInteger(array('required' => false)),
-      'created_at'                      => new sfValidatorDateTime(),
-      'updated_at'                      => new sfValidatorDateTime(),
+      'created_at'                      => new myValidatorDojoDateTime(),
+      'updated_at'                      => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('detalle_solicitud_examen_laboratorio[%s]');

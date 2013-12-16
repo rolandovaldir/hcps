@@ -13,7 +13,7 @@ class AdministracionMedicamentoForm extends BaseAdministracionMedicamentoForm
   public function configure()
   {
       unset($this['created_at'], $this['updated_at']);
-      
-      $this->widgetSchema['internado_id'] = new sfWidgetFormInputHidden();
+      $this->setWidget("internado_id", new sfWidgetFormInputHidden());
+      $this->widgetSchema['tipo'] = new sfWidgetFormChoice(array('choices'  => AdministracionMedicamentoTable::getDescripciones_tipo(),'expanded' => true));
   }
 }

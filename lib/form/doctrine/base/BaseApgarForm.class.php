@@ -54,8 +54,8 @@ abstract class BaseApgarForm extends BaseFormDoctrine
       'extremidades'                   => new sfValidatorString(array('max_length' => 100, 'required' => false)),
       'reflejos'                       => new sfValidatorString(array('max_length' => 100, 'required' => false)),
       'ano'                            => new sfValidatorString(array('max_length' => 100, 'required' => false)),
-      'created_at'                     => new sfValidatorDateTime(),
-      'updated_at'                     => new sfValidatorDateTime(),
+      'created_at'                     => new myValidatorDojoDateTime(),
+      'updated_at'                     => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('apgar[%s]');

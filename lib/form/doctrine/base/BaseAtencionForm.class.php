@@ -24,8 +24,8 @@ abstract class BaseAtencionForm extends BaseFormDoctrine
     $this->setValidators(array(
       'id'         => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'nombre'     => new sfValidatorString(array('max_length' => 100, 'required' => false)),
-      'created_at' => new sfValidatorDateTime(),
-      'updated_at' => new sfValidatorDateTime(),
+      'created_at' => new myValidatorDojoDateTime(),
+      'updated_at' => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('atencion[%s]');

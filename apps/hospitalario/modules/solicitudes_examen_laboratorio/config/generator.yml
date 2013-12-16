@@ -14,21 +14,20 @@ generator:
 
     config:
       actions: ~
-      fields:     
-        fecha:      { date_format: dd/MM/yyyy }
+      fields:          
+        fecha: { date_format: 'dd/MM/yyyy hh:mm' }
         created_at: { date_format: dd/MM/yyyy }
         updated_at: { date_format: dd/MM/yyyy }
-      list:   
-        title: Listado Solicitud Examenes Laboratorio
-        display: [ material_enviado, otros_examenes, diagnostico_presuntivo, medico_id, lugar, fecha ]
+      list:  
+        title: Listado Solicitudes Examen Laboratorio
+        display: [ material_enviado, otros_examenes, diagnostico_presuntivo, lugar, fecha, created_at, updated_at ]
         actions: {}
         batch_actions: {}
-      filter:  
-        display: [ material_enviado, otros_examenes, diagnostico_presuntivo, medico_id, lugar, fecha ]
+      filter:
+        display: [ material_enviado, otros_examenes, diagnostico_presuntivo, lugar, fecha ]
       form:    
-        display: [internado_id, material_enviado, otros_examenes, diagnostico_presuntivo, medico_id, lugar, fecha ]
-      edit:            
-        title: Edición Solicitud Examenes Laboratorio
+        display: [ internado_id, material_enviado, otros_examenes, diagnostico_presuntivo, lugar, fecha ]
+      edit:    
+        title: Edición Listado Solicitudes Examen Laboratorio
       new:        
-        title: Nueva Solicitud Examenes Laboratorio
-        actions: {}
+        title: Nueva Listado Solicitudes Examen Laboratorio

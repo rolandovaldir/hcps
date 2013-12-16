@@ -1,0 +1,45 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           AtencionEnfermeria
+    theme:                 dojotheme
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          atencion_enfermeria_atencion_enfermeria
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    extra_url_custom_id:   internado_id
+
+    config:
+      actions: ~
+      fields:        
+        created_at:     { date_format: dd/MM/yyyy }
+        updated_at:     { date_format: dd/MM/yyyy }        
+      list:  
+        title:   Listado Atencion Enfermeria
+        display: [ per_apariencia_gral_esc, per_apariencia_gral_val, per_habitos_esc, per_habitos_val, per_alergias_esc, per_alergias_val, per_inmunizaciones_esc, per_inmunizaciones_val, per_medicacion_actual_esc, per_medicacion_actual_val, motivo_ingreso, nutmet_higiene_esc, nutmet_higiene_val, nutmet_estado_nutricional_esc, nutmet_estado_nutricional_val, nutmet_protesis_dental_esc, nutmet_protesis_dental_val, nutmet_liquidos_electrolitos_esc, nutmet_liquidos_electrolitos_val, patelim_habito_intestinal_esc, patelim_habito_intestinal_val, patelim_habito_urinario_esc, patelim_habito_urinario_val, acteje_valoracion_cardiopulmonar_esc, acteje_valoracion_cardiopulmonar_val, acteje_capacidad_motora_esc, acteje_capacidad_motora_val, acteje_act_diversion_esc, acteje_act_diversion_val, acteje_deficit_autocuidado_esc, acteje_deficit_autocuidado_val, acteje_crecim_desarrollo_esc, acteje_crecim_desarrollo_val, des_habito_descanso_esc, des_habito_descanso_val, des_transtorno_sueno_esc, des_transtorno_sueno_val, cogper_alter_sensoriales_esc, cogper_alter_sensoriales_val, cogper_nivel_conciencia_esc, cogper_nivel_conciencia_val, cogper_alteracion_promentales_esc, cogper_alteracion_promentales_val, auto_reaccion_emocional_esc, auto_reaccion_emocional_val, relrol_relacion_interpersonal_esc, relrol_relacion_interpersonal_val, relrol_conducta_familia_esc, relrol_conducta_familia_val, relrol_cambio_personalfamiliar_esc, relrol_cambio_personalfamiliar_val, repsex_alteracion_sisreproductivo_esc, repsex_alteracion_sisreproductivo_val, capstr_relpaciente_enfermedad_esc, capstr_relpaciente_enfermedad_val, creencia_religiosa, diagnostico_enfermera, created_at, updated_at ]
+        actions: {}
+        batch_actions: {}
+      filter: 
+        display: [ per_apariencia_gral_esc, per_apariencia_gral_val, per_habitos_esc, per_habitos_val, per_alergias_esc, per_alergias_val, per_inmunizaciones_esc, per_inmunizaciones_val, per_medicacion_actual_esc, per_medicacion_actual_val, motivo_ingreso, nutmet_higiene_esc, nutmet_higiene_val, nutmet_estado_nutricional_esc, nutmet_estado_nutricional_val, nutmet_protesis_dental_esc, nutmet_protesis_dental_val, nutmet_liquidos_electrolitos_esc, nutmet_liquidos_electrolitos_val, patelim_habito_intestinal_esc, patelim_habito_intestinal_val, patelim_habito_urinario_esc, patelim_habito_urinario_val, acteje_valoracion_cardiopulmonar_esc, acteje_valoracion_cardiopulmonar_val, acteje_capacidad_motora_esc, acteje_capacidad_motora_val, acteje_act_diversion_esc, acteje_act_diversion_val, acteje_deficit_autocuidado_esc, acteje_deficit_autocuidado_val, acteje_crecim_desarrollo_esc, acteje_crecim_desarrollo_val, des_habito_descanso_esc, des_habito_descanso_val, des_transtorno_sueno_esc, des_transtorno_sueno_val, cogper_alter_sensoriales_esc, cogper_alter_sensoriales_val, cogper_nivel_conciencia_esc, cogper_nivel_conciencia_val, cogper_alteracion_promentales_esc, cogper_alteracion_promentales_val, auto_reaccion_emocional_esc, auto_reaccion_emocional_val, relrol_relacion_interpersonal_esc, relrol_relacion_interpersonal_val, relrol_conducta_familia_esc, relrol_conducta_familia_val, relrol_cambio_personalfamiliar_esc, relrol_cambio_personalfamiliar_val, repsex_alteracion_sisreproductivo_esc, repsex_alteracion_sisreproductivo_val, capstr_relpaciente_enfermedad_esc, capstr_relpaciente_enfermedad_val, creencia_religiosa, diagnostico_enfermera ]
+      form:
+        display: 
+          "1. PERCEPCION DE LA SALUD":        [ internado_id, per_apariencia_gral_esc, per_apariencia_gral_val, per_habitos_esc, per_habitos_val, per_alergias_esc, per_alergias_val, per_inmunizaciones_esc, per_inmunizaciones_val, per_medicacion_actual_esc, per_medicacion_actual_val, motivo_ingreso ]
+          "2. NUTRICIONAL-METABOLICO":        [ nutmet_higiene_esc, nutmet_higiene_val, nutmet_estado_nutricional_esc, nutmet_estado_nutricional_val, nutmet_protesis_dental_esc, nutmet_protesis_dental_val, nutmet_liquidos_electrolitos_esc, nutmet_liquidos_electrolitos_val ]
+          "3. PATRON ELIMINACION":            [ patelim_habito_intestinal_esc, patelim_habito_intestinal_val, patelim_habito_urinario_esc, patelim_habito_urinario_val ]
+          "4. ACTIVIDAD Y EJERCICIO":         [ acteje_valoracion_cardiopulmonar_esc, acteje_valoracion_cardiopulmonar_val, acteje_capacidad_motora_esc, acteje_capacidad_motora_val, acteje_act_diversion_esc, acteje_act_diversion_val, acteje_deficit_autocuidado_esc, acteje_deficit_autocuidado_val, acteje_crecim_desarrollo_esc, acteje_crecim_desarrollo_val ]
+          "5. SUEÑO DESCANSO":                [ des_habito_descanso_esc, des_habito_descanso_val, des_transtorno_sueno_esc, des_transtorno_sueno_val ]
+          "6. COGNOCITIVO-PERCEPTUAL":        [ cogper_alter_sensoriales_esc, cogper_alter_sensoriales_val, cogper_nivel_conciencia_esc, cogper_nivel_conciencia_val, cogper_alteracion_promentales_esc, cogper_alteracion_promentales_val ]
+          "7. AUTOPERCEPCION Y AUTOCONCEPTO": [ auto_reaccion_emocional_esc, auto_reaccion_emocional_val ]
+          "8. RELACION CON EL ROL":           [ relrol_relacion_interpersonal_esc, relrol_relacion_interpersonal_val, relrol_conducta_familia_esc, relrol_conducta_familia_val, relrol_cambio_personalfamiliar_esc, relrol_cambio_personalfamiliar_val ]
+          "9. PEPRODUCTIVO-SEXUAL":           [ repsex_alteracion_sisreproductivo_esc, repsex_alteracion_sisreproductivo_val ]
+          "10. CAPACIDAD DE AFRONTAR SITUACIONES DE STRESS":  [ capstr_relpaciente_enfermedad_esc, capstr_relpaciente_enfermedad_val ]
+          "11. CREENCIAS Y VALORES":          [ creencia_religiosa ]
+          "&nbsp;":                           [ diagnostico_enfermera ]
+      edit:
+        title: Edición Atencion Enfermeria
+      new:        
+        title: Nueva Atencion Enfermeria
+        actions: {}

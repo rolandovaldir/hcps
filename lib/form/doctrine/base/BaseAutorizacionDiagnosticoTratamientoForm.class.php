@@ -15,23 +15,23 @@ abstract class BaseAutorizacionDiagnosticoTratamientoForm extends BaseFormDoctri
   public function setup()
   {
     $this->setWidgets(array(
-      'id'           => new sfWidgetFormInputHidden(),
-      'internado_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => false)),
-      'nom_familiar' => new sfWidgetFormInputText(),
-      'ci_familiar'  => new sfWidgetFormInputText(),
-      'fecha_hora'   => new myWidgetFormDojoDateTime(),
-      'created_at'   => new myWidgetFormDojoDateTime(),
-      'updated_at'   => new myWidgetFormDojoDateTime(),
+      'id'              => new sfWidgetFormInputHidden(),
+      'internado_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => false)),
+      'nombre_familiar' => new sfWidgetFormInputText(),
+      'ci_familiar'     => new sfWidgetFormInputText(),
+      'fecha_hora'      => new myWidgetFormDojoDateTime(),
+      'created_at'      => new myWidgetFormDojoDateTime(),
+      'updated_at'      => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(
-      'id'           => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'internado_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'))),
-      'nom_familiar' => new sfValidatorString(array('max_length' => 200, 'required' => false)),
-      'ci_familiar'  => new sfValidatorString(array('max_length' => 10, 'required' => false)),
-      'fecha_hora'   => new sfValidatorDateTime(array('required' => false)),
-      'created_at'   => new sfValidatorDateTime(),
-      'updated_at'   => new sfValidatorDateTime(),
+      'id'              => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
+      'internado_id'    => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'))),
+      'nombre_familiar' => new sfValidatorString(array('max_length' => 200, 'required' => false)),
+      'ci_familiar'     => new sfValidatorString(array('max_length' => 10, 'required' => false)),
+      'fecha_hora'      => new myValidatorDojoDateTime(array('required' => false)),
+      'created_at'      => new myValidatorDojoDateTime(),
+      'updated_at'      => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('autorizacion_diagnostico_tratamiento[%s]');

@@ -29,9 +29,9 @@ abstract class BaseDetalleMedicacionForm extends BaseFormDoctrine
       'solicitud_intercosultada_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('SolicitudInterconsulta'))),
       'medicacion_utilizada'        => new sfValidatorString(array('max_length' => 150, 'required' => false)),
       'dosis'                       => new sfValidatorString(array('max_length' => 45, 'required' => false)),
-      'fecha_inicio'                => new sfValidatorDate(array('required' => false)),
-      'created_at'                  => new sfValidatorDateTime(),
-      'updated_at'                  => new sfValidatorDateTime(),
+      'fecha_inicio'                => new myValidatorDojoDate(array('required' => false)),
+      'created_at'                  => new myValidatorDojoDateTime(),
+      'updated_at'                  => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('detalle_medicacion[%s]');

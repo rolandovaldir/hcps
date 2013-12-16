@@ -12,5 +12,7 @@ class SolicitudTransfusionSanguineaFormFilter extends BaseSolicitudTransfusionSa
 {
   public function configure()
   {
+      $this->widgetSchema['requiere_transfusion_de'] = new sfWidgetFormChoice(array('choices'  => SolicitudTransfusionSanguineaTable::getDescripciones_requiere_transfusion_de(),'expanded' => true));
+      $this->widgetSchema['cumplirse_enforma'] = new sfWidgetFormChoice(array('choices'  => SolicitudTransfusionSanguineaTable::getDescripciones_cumplirse_enforma(),'expanded' => true));
   }
 }

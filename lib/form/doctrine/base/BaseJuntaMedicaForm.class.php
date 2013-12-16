@@ -36,14 +36,14 @@ abstract class BaseJuntaMedicaForm extends BaseFormDoctrine
       'medico_solicitante'      => new sfValidatorString(array('max_length' => 100, 'required' => false)),
       'servicio'                => new sfValidatorString(array('max_length' => 45, 'required' => false)),
       'especialidades'          => new sfValidatorString(array('max_length' => 45, 'required' => false)),
-      'fecha_junta'             => new sfValidatorDate(array('required' => false)),
+      'fecha_junta'             => new myValidatorDojoDate(array('required' => false)),
       'diagnostico_establecido' => new sfValidatorString(array('max_length' => 2000, 'required' => false)),
       'relacion_junta'          => new sfValidatorString(array('max_length' => 2500, 'required' => false)),
       'conclusiones'            => new sfValidatorString(array('max_length' => 2000, 'required' => false)),
       'tac'                     => new sfValidatorBoolean(array('required' => false)),
       'contraste'               => new sfValidatorBoolean(array('required' => false)),
-      'created_at'              => new sfValidatorDateTime(),
-      'updated_at'              => new sfValidatorDateTime(),
+      'created_at'              => new myValidatorDojoDateTime(),
+      'updated_at'              => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('junta_medica[%s]');

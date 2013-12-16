@@ -12,8 +12,4 @@
  */
 class Atencion extends BaseAtencion
 {
-    public function __toString()
-    {
-       return $this->getNombre();
-    }
 }

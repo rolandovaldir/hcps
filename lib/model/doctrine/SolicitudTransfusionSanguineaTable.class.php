@@ -16,4 +16,51 @@ class SolicitudTransfusionSanguineaTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('SolicitudTransfusionSanguinea');
     }
+    
+    
+    const REQUIERE_SANGRE_ENTERA = 'e';
+    const REQUIERE_PLASMA_BLANCO = 'b';
+    const REQUIERE_PLASMA_FRESCO = 'f';
+    const REQUIERE_CRIOPRECIPITADOS = 'c';
+    const REQUIERE_PAQUETE_GLOBULAR = 'g';
+    const REQUIERE_CONCENTRADOS_PLAQUETADOS = 'p';
+        
+    
+    static $descripciones_requiere_transfusion_de = array('e'=>'SANGRE ENTERA', 'b'=>'PLASMA BLANCO', 'f'=>'PLASMA FRESCO', 'c'=>'CRIOPRECIPITADOS', 'g'=>'PAQUETE GLOBULAR', 'p'=>'CONCENTRADOS PLAQUETARIOS');
+    
+    static function getDescripciones_requiere_transfusion_de()
+    {
+        return self::$descripciones_requiere_transfusion_de;
+    }
+    
+    static function getDescripcion_requiere_transfusion_de($key,$default=null)
+    {
+        if (array_key_exists($key, self::$descripciones_requiere_transfusion_de)){
+            return self::$descripciones_requiere_transfusion_de[$key];
+        }
+        return $default;
+    }
+    
+    
+    
+    const CUMPLIRSE_INMEDIATA = 'i';
+    const CUMPLIRSE_MEDIATA = 'm';
+    const CUMPLIRSE_TRATAMIENTO_SALA = 's';
+    const CUMPLIRSE_QUIROFANO = 'q';
+        
+    static $descripciones_cumplirse_enforma = array('i'=>'INMEDIATA', 'm'=>'MEDIATA', 's'=>'TRATAMIENTO EN SALA', 'q'=>'QUIROFANO');
+    
+    static function getDescripciones_cumplirse_enforma()
+    {
+        return self::$descripciones_cumplirse_enforma;
+    }
+    
+    static function getDescripcion_cumplirse_enforma($key,$default=null)
+    {
+        if (array_key_exists($key, self::$descripciones_cumplirse_enforma)){
+            return self::$descripciones_cumplirse_enforma[$key];
+        }
+        return $default;
+    }
+    
 }

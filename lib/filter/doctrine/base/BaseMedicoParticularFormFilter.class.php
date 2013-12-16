@@ -15,8 +15,8 @@ abstract class BaseMedicoParticularFormFilter extends BaseFormFilterDoctrine
     $this->setWidgets(array(
       'junta_medica_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('JuntaMedica'), 'add_empty' => true)),
       'nombre'          => new sfWidgetFormFilterInput(),
-      'created_at'      => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
-      'updated_at'      => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
+      'created_at'      => new sfWidgetFormFilterDate(array('from_date' => new myWidgetFormDojoDate(), 'to_date' => new myWidgetFormDojoDate(), 'with_empty' => false)),
+      'updated_at'      => new sfWidgetFormFilterDate(array('from_date' => new myWidgetFormDojoDate(), 'to_date' => new myWidgetFormDojoDate(), 'with_empty' => false)),
     ));
 
     $this->setValidators(array(

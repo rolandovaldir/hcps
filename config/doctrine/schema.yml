@@ -428,11 +428,12 @@ NotasEvolucion:
 
 #--------------------------------------------------------
 
+# guillermo
 AutorizacionDiagnosticoTratamiento:
   actAs: [Timestampable]  
   columns:     
     internado_id:        { type: integer , notnull: true }
-    nom_familiar:        { type: string(200) }
+    nombre_familiar:        { type: string(200) }
     ci_familiar:         { type: string(10) }
     fecha_hora:          { type: timestamp }  
   relations: 
@@ -512,25 +513,26 @@ DetalleSolicitudExamenLaboratorio:
     SolicitudExamenLaboratorio: { local: solicitud_examen_laboratorio_id, foreign: id, type: one, foreignAlias: DetallesSolicitudExamenLaboratorio }
 
 # guillermo
+#AdministracionMedicamento:
+#  actAs: [Timestampable]  
+#  columns:     
+#    internado_id:         { type: integer, notnull: true }    
+#  relations:
+#    Internado: { local: internado_id, foreign: id, type: one, foreignAlias: AdministracionesMedicamento }
+
+# guillermo
 AdministracionMedicamento:
   actAs: [Timestampable]  
   columns:     
-    internado_id:         { type: integer, notnull: true }    
+    internado_id:               { type: integer, notnull: true }
+    enfermera_id:               { type: integer }
+    medicamento_solucion:       { type: string(400), notnull: true }
+    tipo:                       { type: string(1), notnull: true }
+    fecha:                      { type: date , notnull: true }
+    horario:                    { type: time , notnull: true }
   relations:
     Internado: { local: internado_id, foreign: id, type: one, foreignAlias: AdministracionesMedicamento }
-
-# guillermo
-DetalleAdminMedicamento:
-  actAs: [Timestampable]  
-  columns:     
-    administracion_medicamento_id:  { type: integer, notnull: true }
-    enfermera_id:                   { type: integer }
-    medicamento_solucion:           { type: string(250) }
-    tipo:                           { type: string(1) }
-    fecha:                          { type: date }
-    horario:                        { type: time }
-  relations:
-    AdministracionMedicamento: { local: administracion_medicamento_id, foreign: id, type: one, foreignAlias: DetallesAdminMedicamento }
+#    AdministracionMedicamento: { local: administracion_medicamento_id, foreign: id, type: one, foreignAlias: DetallesAdminMedicamento }
 
 # guillermo
 ResumenAlta:

@@ -31,13 +31,13 @@ abstract class BaseOrdenMedicaForm extends BaseFormDoctrine
       'id'                            => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'internado_id'                  => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'))),
       'via_administracion_id'         => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('ViaAdministracion'))),
-      'fecha_hora'                    => new sfValidatorDateTime(array('required' => false)),
+      'fecha_hora'                    => new myValidatorDojoDateTime(array('required' => false)),
       'nombre_medicamento_indicacion' => new sfValidatorString(array('max_length' => 150, 'required' => false)),
       'dosis_intervalo'               => new sfValidatorString(array('max_length' => 150, 'required' => false)),
-      'fecha_inicio'                  => new sfValidatorDate(array('required' => false)),
-      'fecha_terminacion'             => new sfValidatorDate(array('required' => false)),
-      'created_at'                    => new sfValidatorDateTime(),
-      'updated_at'                    => new sfValidatorDateTime(),
+      'fecha_inicio'                  => new myValidatorDojoDate(array('required' => false)),
+      'fecha_terminacion'             => new myValidatorDojoDate(array('required' => false)),
+      'created_at'                    => new myValidatorDojoDateTime(),
+      'updated_at'                    => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('orden_medica[%s]');

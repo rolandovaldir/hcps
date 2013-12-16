@@ -16,16 +16,16 @@ abstract class BaseServicioMantenimientoFormFilter extends BaseFormFilterDoctrin
       'internado_id'       => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => true)),
       'solicitante'        => new sfWidgetFormFilterInput(),
       'sector'             => new sfWidgetFormFilterInput(),
-      'fecha_solicitante'  => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate())),
+      'fecha_solicitante'  => new sfWidgetFormFilterDate(array('from_date' => new myWidgetFormDojoDate(), 'to_date' => new myWidgetFormDojoDate())),
       'objeto_reparado'    => new sfWidgetFormFilterInput(),
       'caracteristicas'    => new sfWidgetFormFilterInput(),
       'trabajo_solicitado' => new sfWidgetFormFilterInput(),
       'conformidad'        => new sfWidgetFormFilterInput(),
       'reparado_por'       => new sfWidgetFormFilterInput(),
       'importe'            => new sfWidgetFormFilterInput(),
-      'importe_fecha'      => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate())),
-      'created_at'         => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
-      'updated_at'         => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
+      'importe_fecha'      => new sfWidgetFormFilterDate(array('from_date' => new myWidgetFormDojoDate(), 'to_date' => new myWidgetFormDojoDate())),
+      'created_at'         => new sfWidgetFormFilterDate(array('from_date' => new myWidgetFormDojoDate(), 'to_date' => new myWidgetFormDojoDate(), 'with_empty' => false)),
+      'updated_at'         => new sfWidgetFormFilterDate(array('from_date' => new myWidgetFormDojoDate(), 'to_date' => new myWidgetFormDojoDate(), 'with_empty' => false)),
     ));
 
     $this->setValidators(array(

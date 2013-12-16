@@ -34,8 +34,8 @@ abstract class BaseCamaForm extends BaseFormDoctrine
       'observaciones' => new sfValidatorString(array('max_length' => 250, 'required' => false)),
       'codigo_activo' => new sfValidatorString(array('max_length' => 16, 'required' => false)),
       'activo_id'     => new sfValidatorInteger(array('required' => false)),
-      'created_at'    => new sfValidatorDateTime(),
-      'updated_at'    => new sfValidatorDateTime(),
+      'created_at'    => new myValidatorDojoDateTime(),
+      'updated_at'    => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('cama[%s]');

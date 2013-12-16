@@ -14,7 +14,8 @@ generator:
 
     config:
       actions: ~
-      fields:          
+      fields:  
+        fecha_hora: { date_format: 'dd/MM/yyyy hh:mm' } 
         created_at: { date_format: dd/MM/yyyy }
         updated_at: { date_format: dd/MM/yyyy }
       list:   
