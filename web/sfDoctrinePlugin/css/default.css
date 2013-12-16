@@ -98,8 +98,11 @@
 
 #sf_admin_bar
 {
-  float: right;
-  margin-left: 20px;
+  top: 25px;
+  right: 150px;
+  width: auto;
+/*  float: left;
+  margin-left: 20px;*/
 }
 
 .sf_admin_pagination
@@ -264,7 +267,16 @@
 {
   text-align: center;
 }
-.sf_admin_list th {
+/*.sf_admin_list th {
   padding: 0 6px;
   white-space: nowrap;
+}*/
+
+.sf_admin_list table 
+{
+    width: 100%;
+}
+.sf_admin_list table td, .sf_admin_list table th
+{
+    width: auto;
 }

@@ -20,4 +20,9 @@ class internadosActions extends autoInternadosActions
         $internado = $user->getAttribute('internado');
         $this->setLayout('layout');
     }
+   
+    public function executeSecure()
+    {
+        
+    }
 }
