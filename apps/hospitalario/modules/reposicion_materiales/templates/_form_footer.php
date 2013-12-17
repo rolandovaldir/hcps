@@ -24,11 +24,15 @@ $materiales = $q->execute();
                 <td><?php echo $material->getSaldoActual() ?></td>
                 <td>
                     <ul class="sf_admin_td_actions">
+                        
+                        <?php   ?>    
                         <?php
+                        
                         $helper = new reposicion_materialesGeneratorHelper();
-//                        echo $helper->linkToEdit($material, array('params' => array(), 'class_suffix' => 'edit', 'label' => 'Edit',))
+                        echo '<li class="sf_admin_action_edit">' . link_to(__('Edit', array(), 'sf_admin'), $helper->getUrlForAction('edit'), $material, array('onclick'=>"dijit.byId('dojotheme-maincontainer').set('href',this.href);return false;") ).'</li>';
+                        echo $helper->linkToEdit($material, array('params' => array(), 'class_suffix' => 'edit', 'label' => 'Edit',))
                         ?>
-                        <?php // echo $helper->linkToDelete($material, array('params' => array(), 'confirm' => 'Are you sure?', 'class_suffix' => 'delete', 'label' => 'Delete',)) ?>
+                        <?php echo $helper->linkToDelete($material, array('params' => array(), 'confirm' => 'Are you sure?', 'class_suffix' => 'delete', 'label' => 'Delete',)) ?>
                     </ul>
                 </td>
             </tr>
