@@ -15,18 +15,18 @@ generator:
     config:
       actions: ~
       fields:
-        fecha_hora: { date_format: 'dd/MM/yyyy HH:mm' }
+        fecha_hora: { date_format: 'dd/MM/yyyy hh:mm' }
         created_at: { date_format: dd/MM/yyyy }
         updated_at: { date_format: dd/MM/yyyy }
       list:    
         title: Listado Autorizacion Diagnostico Tratamiento
-        display: [ nom_familiar, ci_familiar, fecha_hora , created_at, updated_at]        
+        display: [ nombre_familiar, ci_familiar, fecha_hora , created_at, updated_at]        
         actions: {}
         batch_actions: {}
       filter: 
-        display: [ nom_familiar,ci_familiar,fecha_hora ]
+        display: [ nombre_familiar,ci_familiar,fecha_hora ]
       form:    
-        display: [ internado_id, nom_familiar,ci_familiar,fecha_hora ]
+        display: [ internado_id, nombre_familiar,ci_familiar,fecha_hora ]
       edit:    
         title: Edición Autorizacion Diagnostico Tratamiento
       new:        

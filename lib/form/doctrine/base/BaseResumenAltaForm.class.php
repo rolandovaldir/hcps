@@ -45,9 +45,9 @@ abstract class BaseResumenAltaForm extends BaseFormDoctrine
       'hallazgos_lab_rayx'       => new sfValidatorString(array('max_length' => 2000, 'required' => false)),
       'evolucion_complicacion'   => new sfValidatorString(array('max_length' => 2000, 'required' => false)),
       'cond_trat_ref_pronostico' => new sfValidatorString(array('max_length' => 2000, 'required' => false)),
-      'fecha'                    => new sfValidatorDate(array('required' => false)),
-      'created_at'               => new sfValidatorDateTime(),
-      'updated_at'               => new sfValidatorDateTime(),
+      'fecha'                    => new myValidatorDojoDate(array('required' => false)),
+      'created_at'               => new myValidatorDojoDateTime(),
+      'updated_at'               => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('resumen_alta[%s]');

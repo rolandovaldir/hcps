@@ -14,6 +14,7 @@
  */
 class myDojoFormGenerator extends sfDoctrineFormGenerator
 {
+    
   public function getWidgetClassForColumn($column)
   { 
     switch ($column->getDoctrineType())
@@ -31,4 +32,21 @@ class myDojoFormGenerator extends sfDoctrineFormGenerator
         return parent::getWidgetClassForColumn($column); 
     }
   }
+  
+  public function getValidatorClassForColumn($column)
+  {
+    switch ($column->getDoctrineType())
+    {
+      case 'date':
+        return 'myValidatorDojoDate';
+        break;      
+      case 'timestamp':
+        return 'myValidatorDojoDateTime';
+        break;      
+      default:
+        return parent::getValidatorClassForColumn($column) ;
+    }
+   
+  }
+  
 }

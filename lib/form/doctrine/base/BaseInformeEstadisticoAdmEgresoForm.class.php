@@ -32,8 +32,8 @@ abstract class BaseInformeEstadisticoAdmEgresoForm extends BaseFormDoctrine
       'urgencia_direccion_calle' => new sfValidatorString(array('max_length' => 70, 'required' => false)),
       'urgencia_direccion_no'    => new sfValidatorString(array('max_length' => 10, 'required' => false)),
       'urgencia_direccion_fono'  => new sfValidatorString(array('max_length' => 20, 'required' => false)),
-      'created_at'               => new sfValidatorDateTime(),
-      'updated_at'               => new sfValidatorDateTime(),
+      'created_at'               => new myValidatorDojoDateTime(),
+      'updated_at'               => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('informe_estadistico_adm_egreso[%s]');

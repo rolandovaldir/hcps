@@ -46,8 +46,8 @@ abstract class BaseMedicoForm extends BaseFormDoctrine
       'observacion'     => new sfValidatorString(array('max_length' => 2000, 'required' => false)),
       'especialidad_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Especialidad'))),
       'item_id'         => new sfValidatorInteger(),
-      'created_at'      => new sfValidatorDateTime(),
-      'updated_at'      => new sfValidatorDateTime(),
+      'created_at'      => new myValidatorDojoDateTime(),
+      'updated_at'      => new myValidatorDojoDateTime(),
     ));
 
     $this->validatorSchema->setPostValidator(

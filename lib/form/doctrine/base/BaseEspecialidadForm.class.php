@@ -34,8 +34,8 @@ abstract class BaseEspecialidadForm extends BaseFormDoctrine
       'servicio_id' => new sfValidatorInteger(),
       'filial_id'   => new sfValidatorInteger(array('required' => false)),
       'observacion' => new sfValidatorString(array('max_length' => 2000, 'required' => false)),
-      'created_at'  => new sfValidatorDateTime(),
-      'updated_at'  => new sfValidatorDateTime(),
+      'created_at'  => new myValidatorDojoDateTime(),
+      'updated_at'  => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('especialidad[%s]');

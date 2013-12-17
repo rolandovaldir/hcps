@@ -36,8 +36,8 @@ abstract class BasePlantaForm extends BaseFormDoctrine
       'codigo'        => new sfValidatorString(array('max_length' => 10, 'required' => false)),
       'plano'         => new sfValidatorString(array('max_length' => 100, 'required' => false)),
       'numero'        => new sfValidatorInteger(array('required' => false)),
-      'created_at'    => new sfValidatorDateTime(),
-      'updated_at'    => new sfValidatorDateTime(),
+      'created_at'    => new myValidatorDojoDateTime(),
+      'updated_at'    => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('planta[%s]');

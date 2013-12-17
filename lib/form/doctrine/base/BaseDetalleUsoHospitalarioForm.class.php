@@ -34,8 +34,8 @@ abstract class BaseDetalleUsoHospitalarioForm extends BaseFormDoctrine
       'cantidad'            => new sfValidatorString(array('max_length' => 10, 'required' => false)),
       'unidad'              => new sfValidatorString(array('max_length' => 20, 'required' => false)),
       'cod_farmacia_ibm'    => new sfValidatorString(array('max_length' => 25, 'required' => false)),
-      'created_at'          => new sfValidatorDateTime(),
-      'updated_at'          => new sfValidatorDateTime(),
+      'created_at'          => new myValidatorDojoDateTime(),
+      'updated_at'          => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('detalle_uso_hospitalario[%s]');

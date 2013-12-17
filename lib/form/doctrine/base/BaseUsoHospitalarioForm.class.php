@@ -32,8 +32,8 @@ abstract class BaseUsoHospitalarioForm extends BaseFormDoctrine
       'lugar'        => new sfValidatorString(array('max_length' => 60, 'required' => false)),
       'codigo'       => new sfValidatorString(array('max_length' => 45, 'required' => false)),
       'especialidad' => new sfValidatorString(array('max_length' => 45, 'required' => false)),
-      'created_at'   => new sfValidatorDateTime(),
-      'updated_at'   => new sfValidatorDateTime(),
+      'created_at'   => new myValidatorDojoDateTime(),
+      'updated_at'   => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('uso_hospitalario[%s]');

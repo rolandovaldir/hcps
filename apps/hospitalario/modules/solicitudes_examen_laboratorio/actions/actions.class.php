@@ -30,4 +30,5 @@ class solicitudes_examen_laboratorioActions extends autoSolicitudes_examen_labor
         $this->form->setDefault('internado_id',$request->getParameter('internado_id'));
         //var_dump($this->form->getDefault('file_internacion_id'));
     }
+    
 }

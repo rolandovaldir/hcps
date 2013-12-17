@@ -43,9 +43,9 @@ abstract class BasesfGuardUserForm extends BaseFormDoctrine
       'password'         => new sfValidatorString(array('max_length' => 128, 'required' => false)),
       'is_active'        => new sfValidatorBoolean(array('required' => false)),
       'is_super_admin'   => new sfValidatorBoolean(array('required' => false)),
-      'last_login'       => new sfValidatorDateTime(array('required' => false)),
-      'created_at'       => new sfValidatorDateTime(),
-      'updated_at'       => new sfValidatorDateTime(),
+      'last_login'       => new myValidatorDojoDateTime(array('required' => false)),
+      'created_at'       => new myValidatorDojoDateTime(),
+      'updated_at'       => new myValidatorDojoDateTime(),
       'groups_list'      => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardGroup', 'required' => false)),
       'permissions_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardPermission', 'required' => false)),
     ));

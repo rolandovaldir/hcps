@@ -17,14 +17,14 @@ abstract class BaseJuntaMedicaFormFilter extends BaseFormFilterDoctrine
       'medico_solicitante'      => new sfWidgetFormFilterInput(),
       'servicio'                => new sfWidgetFormFilterInput(),
       'especialidades'          => new sfWidgetFormFilterInput(),
-      'fecha_junta'             => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate())),
+      'fecha_junta'             => new sfWidgetFormFilterDate(array('from_date' => new myWidgetFormDojoDate(), 'to_date' => new myWidgetFormDojoDate())),
       'diagnostico_establecido' => new sfWidgetFormFilterInput(),
       'relacion_junta'          => new sfWidgetFormFilterInput(),
       'conclusiones'            => new sfWidgetFormFilterInput(),
       'tac'                     => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
       'contraste'               => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
-      'created_at'              => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
-      'updated_at'              => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
+      'created_at'              => new sfWidgetFormFilterDate(array('from_date' => new myWidgetFormDojoDate(), 'to_date' => new myWidgetFormDojoDate(), 'with_empty' => false)),
+      'updated_at'              => new sfWidgetFormFilterDate(array('from_date' => new myWidgetFormDojoDate(), 'to_date' => new myWidgetFormDojoDate(), 'with_empty' => false)),
     ));
 
     $this->setValidators(array(

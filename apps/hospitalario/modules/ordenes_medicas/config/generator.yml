@@ -29,9 +29,11 @@ generator:
         display: [fecha_inicio, fecha_terminacion]
       form:    ~
       edit:    
+        title: Editar Orden Médica
         actions:
           _save: ~
       new:     
+        title: Nueva Orden Médica
         actions:
           _save: ~
           _save_and_add: ~

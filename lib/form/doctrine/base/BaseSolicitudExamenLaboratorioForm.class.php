@@ -37,9 +37,9 @@ abstract class BaseSolicitudExamenLaboratorioForm extends BaseFormDoctrine
       'diagnostico_presuntivo' => new sfValidatorString(array('max_length' => 45, 'required' => false)),
       'medico_id'              => new sfValidatorInteger(array('required' => false)),
       'lugar'                  => new sfValidatorString(array('max_length' => 45, 'required' => false)),
-      'fecha'                  => new sfValidatorDate(array('required' => false)),
-      'created_at'             => new sfValidatorDateTime(),
-      'updated_at'             => new sfValidatorDateTime(),
+      'fecha'                  => new myValidatorDojoDate(array('required' => false)),
+      'created_at'             => new myValidatorDojoDateTime(),
+      'updated_at'             => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('solicitud_examen_laboratorio[%s]');

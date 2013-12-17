@@ -10,7 +10,7 @@ generator:
     route_prefix:          programacion_cirugia
     with_doctrine_route:   true
     actions_base_class:    sfActions
-    extra_url_custom_id:       internado_id
+    extra_url_custom_id:   internado_id
 
     config:      
       actions: ~
@@ -28,7 +28,7 @@ generator:
       form:   
         display: 
           Operacion:            [ internado_id, operacion_fecha, operacion_hora ]
-          " ":                  [ diagnostico_preoperatorio, tratamiento_quirurgico, anestesia, otros ]
+          "&nbsp;":             [ diagnostico_preoperatorio, tratamiento_quirurgico, anestesia, otros ]
           Examenes Auxiliares:  [ examenes_auxiliares, created_at, updated_at ]          
       edit:            
         title: Edición Programación Para Cirugias

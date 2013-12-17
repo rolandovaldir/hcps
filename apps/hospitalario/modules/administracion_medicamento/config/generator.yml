@@ -1,0 +1,34 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           AdministracionMedicamento
+    theme:                 dojotheme
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          administracion_medicamento_administracion_medicamento
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    extra_url_custom_id:   internado_id
+
+    config:
+      actions: ~
+      fields: 
+        fecha:      { date_format: dd/MM/yyyy }
+        created_at:       { date_format: dd/MM/yyyy }
+        updated_at:       { date_format: dd/MM/yyyy }
+        descripcion_tipo: { label: Tipo }
+      list: 
+        title: Listado Administracion de Medicamentos
+        display: [ medicamento_solucion, descripcion_tipo, fecha, horario, created_at, updated_at ]
+        actions: {}
+        batch_actions: {}
+      filter: 
+        display: [ medicamento_solucion, tipo, fecha, horario ]
+      form: 
+        display: [ medicamento_solucion, tipo, fecha, horario ]
+      edit:    
+        title: Edición Administracion de Medicamentos
+      new:        
+        title: Nueva Administracion de Medicamentos

@@ -43,9 +43,9 @@ abstract class BaseAutorizacionAutopsiaForm extends BaseFormDoctrine
       'nombre_familiar3' => new sfValidatorString(array('max_length' => 100, 'required' => false)),
       'tipo_parentesco3' => new sfValidatorString(array('max_length' => 30, 'required' => false)),
       'ci_familiar3'     => new sfValidatorString(array('max_length' => 10, 'required' => false)),
-      'fecha_hora'       => new sfValidatorDateTime(array('required' => false)),
-      'created_at'       => new sfValidatorDateTime(),
-      'updated_at'       => new sfValidatorDateTime(),
+      'fecha_hora'       => new myValidatorDojoDateTime(array('required' => false)),
+      'created_at'       => new myValidatorDojoDateTime(),
+      'updated_at'       => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('autorizacion_autopsia[%s]');

@@ -1,18 +1,36 @@
+atencion_enfermeria_atencion_enfermeria:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AtencionEnfermeria
+    module:               atencion_enfermeria
+    prefix_path:          /atencion_enfermeria
+    column:               id
+    with_wildcard_routes: true
+
+solicitud_transfusion_sanguinea_solicitudes_transfusion_sanguinea:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                SolicitudTransfusionSanguinea
+    module:               solicitudes_transfusion_sanguinea
+    prefix_path:          /solicitudes_transfusion_sanguinea
+    column:               id
+    with_wildcard_routes: true
+
+administracion_medicamento_administracion_medicamento:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AdministracionMedicamento
+    module:               administracion_medicamento
+    prefix_path:          /administracion_medicamento
+    column:               id
+    with_wildcard_routes: true
+
 solicitud_examen_laboratorio_solicitudes_examen_laboratorio:
   class: sfDoctrineRouteCollection
   options:
     model:                SolicitudExamenLaboratorio
     module:               solicitudes_examen_laboratorio
     prefix_path:          /solicitudes_examen_laboratorio
-    column:               id
-    with_wildcard_routes: true
-
-solicitud_examen_laboratorio_solicitud_examen_laboratorio:
-  class: sfDoctrineRouteCollection
-  options:
-    model:                SolicitudExamenLaboratorio
-    module:               solicitud_examen_laboratorio
-    prefix_path:          /solicitud_examen_laboratorio
     column:               id
     with_wildcard_routes: true
 

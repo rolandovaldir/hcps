@@ -7,7 +7,7 @@
     <?php         
     echo $this->addCredentialCondition('[?php ' . ' $aux_form = new BaseForm(); $aux_csrf_function = $aux_form->isCSRFProtected() ? \'&\' . $aux_form->getCSRFFieldName() . \'=\' . $aux_form->getCSRFToken() : \'\'; ' .
          'echo \'<li class="sf_admin_action_delete">\' . link_to(__(\'' . $params['label'] . '\', array(), \'sf_admin\'), $helper->getUrlForAction(\'delete\'), $'.$this->getSingularName().', array(\'onclick\'=>"' . 
-         "if(confirm('" . $params['confirm'] . "')){ var co = dijit.byId('dojotheme-maincontainer'); dojo.xhrPost({url:this.href, postData: 'sf_method=delete" . '" . $aux_csrf_function . "' . "',load:function(data){ co.set('content',data); },error: function(error){ co.set('content',error);} }); co.set('content','" . '<span class=\"dijitContentPaneLoading\"><span class=\"dijitInline dijitIconLoading\"></span>Loading...</span>' . "'); } return false;" . 
+         "if(confirm('" . $params['confirm'] . "')){ var co = dijit.byId('dojotheme-maincontainer'); dojo.xhrPost({url:this.href, postData: 'sf_method=delete" . '" . $aux_csrf_function . "' . "',load:function(data){ co.set('content',data); },error: function(error){ co.set('content',error);} }); co.set('content',co.loadingMessage); } return false;" . 
          '",' . $aux_extra_url_custom_id . ') ).\'</li>\' ?]', $params) 
     ?>      
 <?php elseif ('_edit' == $name): ?>

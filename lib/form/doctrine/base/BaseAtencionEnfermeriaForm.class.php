@@ -146,8 +146,8 @@ abstract class BaseAtencionEnfermeriaForm extends BaseFormDoctrine
       'capstr_relpaciente_enfermedad_val'     => new sfValidatorString(array('max_length' => 150, 'required' => false)),
       'creencia_religiosa'                    => new sfValidatorString(array('max_length' => 80, 'required' => false)),
       'diagnostico_enfermera'                 => new sfValidatorString(array('max_length' => 2500, 'required' => false)),
-      'created_at'                            => new sfValidatorDateTime(),
-      'updated_at'                            => new sfValidatorDateTime(),
+      'created_at'                            => new myValidatorDojoDateTime(),
+      'updated_at'                            => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('atencion_enfermeria[%s]');

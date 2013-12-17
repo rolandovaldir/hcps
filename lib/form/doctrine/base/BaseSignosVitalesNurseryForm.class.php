@@ -34,7 +34,7 @@ abstract class BaseSignosVitalesNurseryForm extends BaseFormDoctrine
     $this->setValidators(array(
       'id'            => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'internado_id'  => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'))),
-      'fecha'         => new sfValidatorDate(array('required' => false)),
+      'fecha'         => new myValidatorDojoDate(array('required' => false)),
       'hora'          => new sfValidatorTime(array('required' => false)),
       'fc_nursery'    => new sfValidatorString(array('max_length' => 45, 'required' => false)),
       'fr_nursery'    => new sfValidatorString(array('max_length' => 45, 'required' => false)),
@@ -44,8 +44,8 @@ abstract class BaseSignosVitalesNurseryForm extends BaseFormDoctrine
       'lm_nursery'    => new sfValidatorString(array('max_length' => 45, 'required' => false)),
       'residuo'       => new sfValidatorString(array('max_length' => 45, 'required' => false)),
       'observaciones' => new sfValidatorString(array('max_length' => 45, 'required' => false)),
-      'created_at'    => new sfValidatorDateTime(),
-      'updated_at'    => new sfValidatorDateTime(),
+      'created_at'    => new myValidatorDojoDateTime(),
+      'updated_at'    => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('signos_vitales_nursery[%s]');

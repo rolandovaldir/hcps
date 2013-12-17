@@ -40,8 +40,8 @@ abstract class BaseAfiliadoForm extends BaseFormDoctrine
       'tafiliado'  => new sfValidatorString(array('max_length' => 12)),
       'activo'     => new sfValidatorString(array('max_length' => 1, 'required' => false)),
       'grupofam'   => new sfValidatorString(array('max_length' => 1, 'required' => false)),
-      'created_at' => new sfValidatorDateTime(),
-      'updated_at' => new sfValidatorDateTime(),
+      'created_at' => new myValidatorDojoDateTime(),
+      'updated_at' => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('afiliado[%s]');
