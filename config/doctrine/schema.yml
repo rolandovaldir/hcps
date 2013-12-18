@@ -257,15 +257,17 @@ JuntaMedica:
     contraste:               {type: boolean}
   relations:
     Internado:        {local: internado_id, foreign: id, type: one, foreignAlias: Juntas}
-    MedicoParticular: {local: id, foreign: junta_medica_id, type: many ,foreignAlias: Junta}
+    MedicoParticipante: {local: id, foreign: junta_medica_id, type: many ,foreignAlias: Junta}
     
-MedicoParticular:
+MedicoParticipante:
   actAs: [Timestampable]
   columns:
     junta_medica_id: {type: integer, notnull: true}
-    nombre:              {type: string(150)}
+    nombre:          {type: string(150)}
+    especialidad:    {type: string(100)}
+    cargo:           {type: string(50)}
   relations:
-    JuntaMedica: {local: junta_medica_id, foreign: id, type: one, foreignAlias: Particulares}
+    JuntaMedica: {local: junta_medica_id, foreign: id, type: one, foreignAlias: Participantes}
  
 #--------------------------------------------------------
     

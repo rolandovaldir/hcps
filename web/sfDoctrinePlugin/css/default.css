@@ -267,6 +267,13 @@
 {
   text-align: center;
 }
+
+#sf_admin_container
+{
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-left: 10px;
+}
 /*.sf_admin_list th {
   padding: 0 6px;
   white-space: nowrap;
