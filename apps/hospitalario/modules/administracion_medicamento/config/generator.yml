@@ -15,10 +15,11 @@ generator:
     config:
       actions: ~
       fields: 
-        fecha:      { date_format: dd/MM/yyyy }
+        medicamento_solucion:   { label: "MEDICAMENTO/SOLUCION" }
+        descripcion_tipo:       { label: Tipo }
+        fecha:            { date_format: dd/MM/yyyy }
         created_at:       { date_format: dd/MM/yyyy }
-        updated_at:       { date_format: dd/MM/yyyy }
-        descripcion_tipo: { label: Tipo }
+        updated_at:       { date_format: dd/MM/yyyy }        
       list: 
         title: Listado Administracion de Medicamentos
         display: [ medicamento_solucion, descripcion_tipo, fecha, horario, created_at, updated_at ]

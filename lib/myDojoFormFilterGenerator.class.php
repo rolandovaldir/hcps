@@ -36,7 +36,7 @@ class myDojoFormFilterGenerator extends sfDoctrineFormFilterGenerator
       case 'timestamp':
         $options = array();
         $withEmpty = $column->isNotNull() && !$column->isForeignKey() ? array("'with_empty' => false") : array();  
-        $options[] = "'from_date' => new myWidgetFormDojoDate(), 'to_date' => new myWidgetFormDojoDate()";
+        $options[] = "'from_date' => new myWidgetFormDojoDate(), 'to_date' => new myWidgetFormDojoDate(), 'filter_template' => '%date_range% %empty_checkbox% %empty_label%', 'template' => '<table class=\"onlyFormat\"><tr><td>from</td><td>%from_date%</td><tr/><tr><td>to</td><td>%to_date%</td></tr></table>'";
         $options = array_merge($options, $withEmpty);
         return count($options) ? sprintf('array(%s)', implode(', ', $options)) : '';
         break;

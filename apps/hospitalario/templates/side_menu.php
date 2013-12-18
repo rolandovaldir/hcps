@@ -23,7 +23,7 @@ $link_menus = array(
     array('link'=>'solicitudes_servicios','label'=>'Solicitudes Servicios'),
     array('link'=>'solicitudes_examen_laboratorio','label'=>'Solicitudes Examen Laboratorio'),
     array('link'=>'solicitudes_transfusion_sanguinea','label'=>'Solicitudes Transfusiones'),
-    array('link'=>'usohospitalario','label'=>'Uso Hospitalario')
+    array('link'=>'uso_hospitalario','label'=>'Uso Hospitalario')
 );
 
 foreach ($link_menus as $val){ ?>

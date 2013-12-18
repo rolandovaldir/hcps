@@ -65,6 +65,8 @@
  * @property string $repsex_alteracion_sisreproductivo_val
  * @property string $capstr_relpaciente_enfermedad_esc
  * @property string $capstr_relpaciente_enfermedad_val
+ * @property string $capstr_relfamilia_enfermedad_esc
+ * @property string $capstr_relfamilia_enfermedad_val
  * @property string $creencia_religiosa
  * @property string $diagnostico_enfermera
  * @property Internado $Internado
@@ -129,6 +131,8 @@
  * @method string             getRepsexAlteracionSisreproductivoVal()    Returns the current record's "repsex_alteracion_sisreproductivo_val" value
  * @method string             getCapstrRelpacienteEnfermedadEsc()        Returns the current record's "capstr_relpaciente_enfermedad_esc" value
  * @method string             getCapstrRelpacienteEnfermedadVal()        Returns the current record's "capstr_relpaciente_enfermedad_val" value
+ * @method string             getCapstrRelfamiliaEnfermedadEsc()         Returns the current record's "capstr_relfamilia_enfermedad_esc" value
+ * @method string             getCapstrRelfamiliaEnfermedadVal()         Returns the current record's "capstr_relfamilia_enfermedad_val" value
  * @method string             getCreenciaReligiosa()                     Returns the current record's "creencia_religiosa" value
  * @method string             getDiagnosticoEnfermera()                  Returns the current record's "diagnostico_enfermera" value
  * @method Internado          getInternado()                             Returns the current record's "Internado" value
@@ -192,6 +196,8 @@
  * @method AtencionEnfermeria setRepsexAlteracionSisreproductivoVal()    Sets the current record's "repsex_alteracion_sisreproductivo_val" value
  * @method AtencionEnfermeria setCapstrRelpacienteEnfermedadEsc()        Sets the current record's "capstr_relpaciente_enfermedad_esc" value
  * @method AtencionEnfermeria setCapstrRelpacienteEnfermedadVal()        Sets the current record's "capstr_relpaciente_enfermedad_val" value
+ * @method AtencionEnfermeria setCapstrRelfamiliaEnfermedadEsc()         Sets the current record's "capstr_relfamilia_enfermedad_esc" value
+ * @method AtencionEnfermeria setCapstrRelfamiliaEnfermedadVal()         Sets the current record's "capstr_relfamilia_enfermedad_val" value
  * @method AtencionEnfermeria setCreenciaReligiosa()                     Sets the current record's "creencia_religiosa" value
  * @method AtencionEnfermeria setDiagnosticoEnfermera()                  Sets the current record's "diagnostico_enfermera" value
  * @method AtencionEnfermeria setInternado()                             Sets the current record's "Internado" value
@@ -441,6 +447,14 @@ abstract class BaseAtencionEnfermeria extends sfDoctrineRecord
              'length' => 1,
              ));
         $this->hasColumn('capstr_relpaciente_enfermedad_val', 'string', 150, array(
+             'type' => 'string',
+             'length' => 150,
+             ));
+        $this->hasColumn('capstr_relfamilia_enfermedad_esc', 'string', 1, array(
+             'type' => 'string',
+             'length' => 1,
+             ));
+        $this->hasColumn('capstr_relfamilia_enfermedad_val', 'string', 150, array(
              'type' => 'string',
              'length' => 150,
              ));

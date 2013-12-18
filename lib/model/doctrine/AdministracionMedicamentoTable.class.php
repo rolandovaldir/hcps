@@ -16,4 +16,24 @@ class AdministracionMedicamentoTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('AdministracionMedicamento');
     }
+    
+    
+    const TIPO_MEDICAMENTO = 'm';
+    const TIPO_SOLUCION = 's';
+    
+    static $descripciones_tipo = array('m'=>'Medicamento', 's'=>'Solucion');
+    
+    static function getDescripciones_tipo()
+    {
+        return self::$descripciones_tipo;
+    }
+    
+    static function getDescripcion_tipo($key,$default=null)
+    {
+        if (array_key_exists($key, self::$descripciones_tipo)){
+            return self::$descripciones_tipo[$key];
+        }
+        return $default;
+    }
+    
 }

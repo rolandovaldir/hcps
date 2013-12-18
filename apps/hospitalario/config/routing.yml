@@ -315,12 +315,12 @@ atencion_enfermeria:
     column:               id
     with_wildcard_routes: true
 
-uso_hospitalario:
+uso_hospitalario_uso_hospitalario:
   class: sfDoctrineRouteCollection
   options:
     model:                UsoHospitalario
-    module:               usohospitalario
-    prefix_path:          /usohospitalario
+    module:               uso_hospitalario
+    prefix_path:          /uso_hospitalario
     column:               id
     with_wildcard_routes: true
 

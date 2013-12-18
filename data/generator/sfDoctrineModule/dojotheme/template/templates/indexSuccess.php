@@ -1,4 +1,4 @@
-<?php if ($this->params['extra_url_custom_id']!=''): $aux_extra_url_custom_id = '\'extra_url_custom_id\' => $extra_url_custom_id' ?>
+<?php if (array_key_exists('extra_url_custom_id', $this->params)): $aux_extra_url_custom_id = '\'extra_url_custom_id\' => $extra_url_custom_id' ?>
 [?php $extra_url_custom_id = '<?php echo $this->params['extra_url_custom_id'] ?>=' . $sf_request->getParameter('<?php echo $this->params['extra_url_custom_id'] ?>') ?]
 <?php else: $aux_extra_url_custom_id = '' ?>
 <?php endif ?>

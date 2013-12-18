@@ -73,10 +73,12 @@ abstract class BaseAtencionEnfermeriaFormFilter extends BaseFormFilterDoctrine
       'repsex_alteracion_sisreproductivo_val' => new sfWidgetFormFilterInput(),
       'capstr_relpaciente_enfermedad_esc'     => new sfWidgetFormFilterInput(),
       'capstr_relpaciente_enfermedad_val'     => new sfWidgetFormFilterInput(),
+      'capstr_relfamilia_enfermedad_esc'      => new sfWidgetFormFilterInput(),
+      'capstr_relfamilia_enfermedad_val'      => new sfWidgetFormFilterInput(),
       'creencia_religiosa'                    => new sfWidgetFormFilterInput(),
       'diagnostico_enfermera'                 => new sfWidgetFormFilterInput(),
-      'created_at'                            => new sfWidgetFormFilterDate(array('from_date' => new myWidgetFormDojoDate(), 'to_date' => new myWidgetFormDojoDate(), 'with_empty' => false)),
-      'updated_at'                            => new sfWidgetFormFilterDate(array('from_date' => new myWidgetFormDojoDate(), 'to_date' => new myWidgetFormDojoDate(), 'with_empty' => false)),
+      'created_at'                            => new sfWidgetFormFilterDate(array('from_date' => new myWidgetFormDojoDate(), 'to_date' => new myWidgetFormDojoDate(), 'filter_template' => '%date_range% %empty_checkbox% %empty_label%', 'template' => '<table class="onlyFormat"><tr><td>from</td><td>%from_date%</td><tr/><tr><td>to</td><td>%to_date%</td></tr></table>', 'with_empty' => false)),
+      'updated_at'                            => new sfWidgetFormFilterDate(array('from_date' => new myWidgetFormDojoDate(), 'to_date' => new myWidgetFormDojoDate(), 'filter_template' => '%date_range% %empty_checkbox% %empty_label%', 'template' => '<table class="onlyFormat"><tr><td>from</td><td>%from_date%</td><tr/><tr><td>to</td><td>%to_date%</td></tr></table>', 'with_empty' => false)),
     ));
 
     $this->setValidators(array(
@@ -140,6 +142,8 @@ abstract class BaseAtencionEnfermeriaFormFilter extends BaseFormFilterDoctrine
       'repsex_alteracion_sisreproductivo_val' => new sfValidatorPass(array('required' => false)),
       'capstr_relpaciente_enfermedad_esc'     => new sfValidatorPass(array('required' => false)),
       'capstr_relpaciente_enfermedad_val'     => new sfValidatorPass(array('required' => false)),
+      'capstr_relfamilia_enfermedad_esc'      => new sfValidatorPass(array('required' => false)),
+      'capstr_relfamilia_enfermedad_val'      => new sfValidatorPass(array('required' => false)),
       'creencia_religiosa'                    => new sfValidatorPass(array('required' => false)),
       'diagnostico_enfermera'                 => new sfValidatorPass(array('required' => false)),
       'created_at'                            => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
@@ -224,6 +228,8 @@ abstract class BaseAtencionEnfermeriaFormFilter extends BaseFormFilterDoctrine
       'repsex_alteracion_sisreproductivo_val' => 'Text',
       'capstr_relpaciente_enfermedad_esc'     => 'Text',
       'capstr_relpaciente_enfermedad_val'     => 'Text',
+      'capstr_relfamilia_enfermedad_esc'      => 'Text',
+      'capstr_relfamilia_enfermedad_val'      => 'Text',
       'creencia_religiosa'                    => 'Text',
       'diagnostico_enfermera'                 => 'Text',
       'created_at'                            => 'Date',

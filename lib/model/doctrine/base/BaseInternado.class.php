@@ -45,7 +45,7 @@
  * @property Doctrine_Collection $AutorizacionesAltaSolicitada
  * @property Doctrine_Collection $AutorizacionesAutopsia
  * @property Doctrine_Collection $ProgracionesCirugia
- * @property Doctrine_Collection $SolicitudesExamenLaboratorio
+ * @property Doctrine_Collection $SolicitudesExamenLaboratorioClinico
  * @property Doctrine_Collection $AdministracionesMedicamento
  * @property Doctrine_Collection $ResumenesAlta
  * @property Doctrine_Collection $AtencionesEnfermeria
@@ -55,104 +55,104 @@
  * @property Doctrine_Collection $InformesEstadisticoAdmEgreso
  * @property Doctrine_Collection $PapeletasPedidoMaterial
  * 
- * @method integer             getAfiliadoId()                      Returns the current record's "afiliado_id" value
- * @method integer             getNoAfiliadoId()                    Returns the current record's "noAfiliado_id" value
- * @method integer             getCategoriaId()                     Returns the current record's "categoria_id" value
- * @method integer             getCamaId()                          Returns the current record's "cama_id" value
- * @method integer             getMedicoId()                        Returns the current record's "medico_id" value
- * @method integer             getMedicoConsultaId()                Returns the current record's "medico_consulta_id" value
- * @method integer             getMedicoReferenciaId()              Returns the current record's "medico_referencia_id" value
- * @method string              getFormularioReferencia()            Returns the current record's "formulario_referencia" value
- * @method string              getDiagnostico()                     Returns the current record's "diagnostico" value
- * @method string              getProcedencia()                     Returns the current record's "procedencia" value
- * @method string              getMedioReferencia()                 Returns the current record's "medio_referencia" value
- * @method string              getObservaciones()                   Returns the current record's "observaciones" value
- * @method date                getFecha()                           Returns the current record's "fecha" value
- * @method time                getHora()                            Returns the current record's "hora" value
- * @method string              getConducto()                        Returns the current record's "conducto" value
- * @method boolean             getEsAfiliado()                      Returns the current record's "es_afiliado" value
- * @method boolean             getAlta()                            Returns the current record's "alta" value
- * @method date                getAltaFecha()                       Returns the current record's "altaFecha" value
- * @method time                getAltaHora()                        Returns the current record's "altaHora" value
- * @method string              getDiagnosticoAlta()                 Returns the current record's "diagnostico_alta" value
- * @method string              getTratamientio()                    Returns the current record's "tratamientio" value
- * @method string              getLugarReferenciaSalida()           Returns the current record's "lugar_referencia_salida" value
- * @method string              getMedioReferenciaSalida()           Returns the current record's "medio_referencia_salida" value
- * @method string              getMotivoRefeRetorno()               Returns the current record's "motivo_refe_retorno" value
- * @method Afiliado            getAfiliado()                        Returns the current record's "Afiliado" value
- * @method PacienteOtroseguro  getPacienteOtroseguro()              Returns the current record's "PacienteOtroseguro" value
- * @method Doctrine_Collection getOrdenMedica()                     Returns the current record's "OrdenMedica" collection
- * @method Doctrine_Collection getServicioMantenimiento()           Returns the current record's "ServicioMantenimiento" collection
- * @method Doctrine_Collection getJuntaMedica()                     Returns the current record's "JuntaMedica" collection
- * @method Doctrine_Collection getExamenFisicoRecienNacido()        Returns the current record's "ExamenFisicoRecienNacido" collection
- * @method Doctrine_Collection getSolicitudInterconsulta()          Returns the current record's "SolicitudInterconsulta" collection
- * @method Doctrine_Collection getSolicitudServicio()               Returns the current record's "SolicitudServicio" collection
- * @method Doctrine_Collection getSolicitudReposicionMaterial()     Returns the current record's "SolicitudReposicionMaterial" collection
- * @method Doctrine_Collection getSignosVitalesNursery()            Returns the current record's "SignosVitalesNursery" collection
- * @method Doctrine_Collection getNotasEnfermeria()                 Returns the current record's "NotasEnfermeria" collection
- * @method Doctrine_Collection getNotasEvolucion()                  Returns the current record's "NotasEvolucion" collection
- * @method Doctrine_Collection getAutorizacionesTratamiento()       Returns the current record's "AutorizacionesTratamiento" collection
- * @method Doctrine_Collection getAutorizacionesAltaSolicitada()    Returns the current record's "AutorizacionesAltaSolicitada" collection
- * @method Doctrine_Collection getAutorizacionesAutopsia()          Returns the current record's "AutorizacionesAutopsia" collection
- * @method Doctrine_Collection getProgracionesCirugia()             Returns the current record's "ProgracionesCirugia" collection
- * @method Doctrine_Collection getSolicitudesExamenLaboratorio()    Returns the current record's "SolicitudesExamenLaboratorio" collection
- * @method Doctrine_Collection getAdministracionesMedicamento()     Returns the current record's "AdministracionesMedicamento" collection
- * @method Doctrine_Collection getResumenesAlta()                   Returns the current record's "ResumenesAlta" collection
- * @method Doctrine_Collection getAtencionesEnfermeria()            Returns the current record's "AtencionesEnfermeria" collection
- * @method Doctrine_Collection getListasDieta()                     Returns the current record's "ListasDieta" collection
- * @method Doctrine_Collection getDetallesListaDieta()              Returns the current record's "DetallesListaDieta" collection
- * @method Doctrine_Collection getSolicitudesTransfusionSanguinea() Returns the current record's "SolicitudesTransfusionSanguinea" collection
- * @method Doctrine_Collection getInformesEstadisticoAdmEgreso()    Returns the current record's "InformesEstadisticoAdmEgreso" collection
- * @method Doctrine_Collection getPapeletasPedidoMaterial()         Returns the current record's "PapeletasPedidoMaterial" collection
- * @method Internado           setAfiliadoId()                      Sets the current record's "afiliado_id" value
- * @method Internado           setNoAfiliadoId()                    Sets the current record's "noAfiliado_id" value
- * @method Internado           setCategoriaId()                     Sets the current record's "categoria_id" value
- * @method Internado           setCamaId()                          Sets the current record's "cama_id" value
- * @method Internado           setMedicoId()                        Sets the current record's "medico_id" value
- * @method Internado           setMedicoConsultaId()                Sets the current record's "medico_consulta_id" value
- * @method Internado           setMedicoReferenciaId()              Sets the current record's "medico_referencia_id" value
- * @method Internado           setFormularioReferencia()            Sets the current record's "formulario_referencia" value
- * @method Internado           setDiagnostico()                     Sets the current record's "diagnostico" value
- * @method Internado           setProcedencia()                     Sets the current record's "procedencia" value
- * @method Internado           setMedioReferencia()                 Sets the current record's "medio_referencia" value
- * @method Internado           setObservaciones()                   Sets the current record's "observaciones" value
- * @method Internado           setFecha()                           Sets the current record's "fecha" value
- * @method Internado           setHora()                            Sets the current record's "hora" value
- * @method Internado           setConducto()                        Sets the current record's "conducto" value
- * @method Internado           setEsAfiliado()                      Sets the current record's "es_afiliado" value
- * @method Internado           setAlta()                            Sets the current record's "alta" value
- * @method Internado           setAltaFecha()                       Sets the current record's "altaFecha" value
- * @method Internado           setAltaHora()                        Sets the current record's "altaHora" value
- * @method Internado           setDiagnosticoAlta()                 Sets the current record's "diagnostico_alta" value
- * @method Internado           setTratamientio()                    Sets the current record's "tratamientio" value
- * @method Internado           setLugarReferenciaSalida()           Sets the current record's "lugar_referencia_salida" value
- * @method Internado           setMedioReferenciaSalida()           Sets the current record's "medio_referencia_salida" value
- * @method Internado           setMotivoRefeRetorno()               Sets the current record's "motivo_refe_retorno" value
- * @method Internado           setAfiliado()                        Sets the current record's "Afiliado" value
- * @method Internado           setPacienteOtroseguro()              Sets the current record's "PacienteOtroseguro" value
- * @method Internado           setOrdenMedica()                     Sets the current record's "OrdenMedica" collection
- * @method Internado           setServicioMantenimiento()           Sets the current record's "ServicioMantenimiento" collection
- * @method Internado           setJuntaMedica()                     Sets the current record's "JuntaMedica" collection
- * @method Internado           setExamenFisicoRecienNacido()        Sets the current record's "ExamenFisicoRecienNacido" collection
- * @method Internado           setSolicitudInterconsulta()          Sets the current record's "SolicitudInterconsulta" collection
- * @method Internado           setSolicitudServicio()               Sets the current record's "SolicitudServicio" collection
- * @method Internado           setSolicitudReposicionMaterial()     Sets the current record's "SolicitudReposicionMaterial" collection
- * @method Internado           setSignosVitalesNursery()            Sets the current record's "SignosVitalesNursery" collection
- * @method Internado           setNotasEnfermeria()                 Sets the current record's "NotasEnfermeria" collection
- * @method Internado           setNotasEvolucion()                  Sets the current record's "NotasEvolucion" collection
- * @method Internado           setAutorizacionesTratamiento()       Sets the current record's "AutorizacionesTratamiento" collection
- * @method Internado           setAutorizacionesAltaSolicitada()    Sets the current record's "AutorizacionesAltaSolicitada" collection
- * @method Internado           setAutorizacionesAutopsia()          Sets the current record's "AutorizacionesAutopsia" collection
- * @method Internado           setProgracionesCirugia()             Sets the current record's "ProgracionesCirugia" collection
- * @method Internado           setSolicitudesExamenLaboratorio()    Sets the current record's "SolicitudesExamenLaboratorio" collection
- * @method Internado           setAdministracionesMedicamento()     Sets the current record's "AdministracionesMedicamento" collection
- * @method Internado           setResumenesAlta()                   Sets the current record's "ResumenesAlta" collection
- * @method Internado           setAtencionesEnfermeria()            Sets the current record's "AtencionesEnfermeria" collection
- * @method Internado           setListasDieta()                     Sets the current record's "ListasDieta" collection
- * @method Internado           setDetallesListaDieta()              Sets the current record's "DetallesListaDieta" collection
- * @method Internado           setSolicitudesTransfusionSanguinea() Sets the current record's "SolicitudesTransfusionSanguinea" collection
- * @method Internado           setInformesEstadisticoAdmEgreso()    Sets the current record's "InformesEstadisticoAdmEgreso" collection
- * @method Internado           setPapeletasPedidoMaterial()         Sets the current record's "PapeletasPedidoMaterial" collection
+ * @method integer             getAfiliadoId()                          Returns the current record's "afiliado_id" value
+ * @method integer             getNoAfiliadoId()                        Returns the current record's "noAfiliado_id" value
+ * @method integer             getCategoriaId()                         Returns the current record's "categoria_id" value
+ * @method integer             getCamaId()                              Returns the current record's "cama_id" value
+ * @method integer             getMedicoId()                            Returns the current record's "medico_id" value
+ * @method integer             getMedicoConsultaId()                    Returns the current record's "medico_consulta_id" value
+ * @method integer             getMedicoReferenciaId()                  Returns the current record's "medico_referencia_id" value
+ * @method string              getFormularioReferencia()                Returns the current record's "formulario_referencia" value
+ * @method string              getDiagnostico()                         Returns the current record's "diagnostico" value
+ * @method string              getProcedencia()                         Returns the current record's "procedencia" value
+ * @method string              getMedioReferencia()                     Returns the current record's "medio_referencia" value
+ * @method string              getObservaciones()                       Returns the current record's "observaciones" value
+ * @method date                getFecha()                               Returns the current record's "fecha" value
+ * @method time                getHora()                                Returns the current record's "hora" value
+ * @method string              getConducto()                            Returns the current record's "conducto" value
+ * @method boolean             getEsAfiliado()                          Returns the current record's "es_afiliado" value
+ * @method boolean             getAlta()                                Returns the current record's "alta" value
+ * @method date                getAltaFecha()                           Returns the current record's "altaFecha" value
+ * @method time                getAltaHora()                            Returns the current record's "altaHora" value
+ * @method string              getDiagnosticoAlta()                     Returns the current record's "diagnostico_alta" value
+ * @method string              getTratamientio()                        Returns the current record's "tratamientio" value
+ * @method string              getLugarReferenciaSalida()               Returns the current record's "lugar_referencia_salida" value
+ * @method string              getMedioReferenciaSalida()               Returns the current record's "medio_referencia_salida" value
+ * @method string              getMotivoRefeRetorno()                   Returns the current record's "motivo_refe_retorno" value
+ * @method Afiliado            getAfiliado()                            Returns the current record's "Afiliado" value
+ * @method PacienteOtroseguro  getPacienteOtroseguro()                  Returns the current record's "PacienteOtroseguro" value
+ * @method Doctrine_Collection getOrdenMedica()                         Returns the current record's "OrdenMedica" collection
+ * @method Doctrine_Collection getServicioMantenimiento()               Returns the current record's "ServicioMantenimiento" collection
+ * @method Doctrine_Collection getJuntaMedica()                         Returns the current record's "JuntaMedica" collection
+ * @method Doctrine_Collection getExamenFisicoRecienNacido()            Returns the current record's "ExamenFisicoRecienNacido" collection
+ * @method Doctrine_Collection getSolicitudInterconsulta()              Returns the current record's "SolicitudInterconsulta" collection
+ * @method Doctrine_Collection getSolicitudServicio()                   Returns the current record's "SolicitudServicio" collection
+ * @method Doctrine_Collection getSolicitudReposicionMaterial()         Returns the current record's "SolicitudReposicionMaterial" collection
+ * @method Doctrine_Collection getSignosVitalesNursery()                Returns the current record's "SignosVitalesNursery" collection
+ * @method Doctrine_Collection getNotasEnfermeria()                     Returns the current record's "NotasEnfermeria" collection
+ * @method Doctrine_Collection getNotasEvolucion()                      Returns the current record's "NotasEvolucion" collection
+ * @method Doctrine_Collection getAutorizacionesTratamiento()           Returns the current record's "AutorizacionesTratamiento" collection
+ * @method Doctrine_Collection getAutorizacionesAltaSolicitada()        Returns the current record's "AutorizacionesAltaSolicitada" collection
+ * @method Doctrine_Collection getAutorizacionesAutopsia()              Returns the current record's "AutorizacionesAutopsia" collection
+ * @method Doctrine_Collection getProgracionesCirugia()                 Returns the current record's "ProgracionesCirugia" collection
+ * @method Doctrine_Collection getSolicitudesExamenLaboratorioClinico() Returns the current record's "SolicitudesExamenLaboratorioClinico" collection
+ * @method Doctrine_Collection getAdministracionesMedicamento()         Returns the current record's "AdministracionesMedicamento" collection
+ * @method Doctrine_Collection getResumenesAlta()                       Returns the current record's "ResumenesAlta" collection
+ * @method Doctrine_Collection getAtencionesEnfermeria()                Returns the current record's "AtencionesEnfermeria" collection
+ * @method Doctrine_Collection getListasDieta()                         Returns the current record's "ListasDieta" collection
+ * @method Doctrine_Collection getDetallesListaDieta()                  Returns the current record's "DetallesListaDieta" collection
+ * @method Doctrine_Collection getSolicitudesTransfusionSanguinea()     Returns the current record's "SolicitudesTransfusionSanguinea" collection
+ * @method Doctrine_Collection getInformesEstadisticoAdmEgreso()        Returns the current record's "InformesEstadisticoAdmEgreso" collection
+ * @method Doctrine_Collection getPapeletasPedidoMaterial()             Returns the current record's "PapeletasPedidoMaterial" collection
+ * @method Internado           setAfiliadoId()                          Sets the current record's "afiliado_id" value
+ * @method Internado           setNoAfiliadoId()                        Sets the current record's "noAfiliado_id" value
+ * @method Internado           setCategoriaId()                         Sets the current record's "categoria_id" value
+ * @method Internado           setCamaId()                              Sets the current record's "cama_id" value
+ * @method Internado           setMedicoId()                            Sets the current record's "medico_id" value
+ * @method Internado           setMedicoConsultaId()                    Sets the current record's "medico_consulta_id" value
+ * @method Internado           setMedicoReferenciaId()                  Sets the current record's "medico_referencia_id" value
+ * @method Internado           setFormularioReferencia()                Sets the current record's "formulario_referencia" value
+ * @method Internado           setDiagnostico()                         Sets the current record's "diagnostico" value
+ * @method Internado           setProcedencia()                         Sets the current record's "procedencia" value
+ * @method Internado           setMedioReferencia()                     Sets the current record's "medio_referencia" value
+ * @method Internado           setObservaciones()                       Sets the current record's "observaciones" value
+ * @method Internado           setFecha()                               Sets the current record's "fecha" value
+ * @method Internado           setHora()                                Sets the current record's "hora" value
+ * @method Internado           setConducto()                            Sets the current record's "conducto" value
+ * @method Internado           setEsAfiliado()                          Sets the current record's "es_afiliado" value
+ * @method Internado           setAlta()                                Sets the current record's "alta" value
+ * @method Internado           setAltaFecha()                           Sets the current record's "altaFecha" value
+ * @method Internado           setAltaHora()                            Sets the current record's "altaHora" value
+ * @method Internado           setDiagnosticoAlta()                     Sets the current record's "diagnostico_alta" value
+ * @method Internado           setTratamientio()                        Sets the current record's "tratamientio" value
+ * @method Internado           setLugarReferenciaSalida()               Sets the current record's "lugar_referencia_salida" value
+ * @method Internado           setMedioReferenciaSalida()               Sets the current record's "medio_referencia_salida" value
+ * @method Internado           setMotivoRefeRetorno()                   Sets the current record's "motivo_refe_retorno" value
+ * @method Internado           setAfiliado()                            Sets the current record's "Afiliado" value
+ * @method Internado           setPacienteOtroseguro()                  Sets the current record's "PacienteOtroseguro" value
+ * @method Internado           setOrdenMedica()                         Sets the current record's "OrdenMedica" collection
+ * @method Internado           setServicioMantenimiento()               Sets the current record's "ServicioMantenimiento" collection
+ * @method Internado           setJuntaMedica()                         Sets the current record's "JuntaMedica" collection
+ * @method Internado           setExamenFisicoRecienNacido()            Sets the current record's "ExamenFisicoRecienNacido" collection
+ * @method Internado           setSolicitudInterconsulta()              Sets the current record's "SolicitudInterconsulta" collection
+ * @method Internado           setSolicitudServicio()                   Sets the current record's "SolicitudServicio" collection
+ * @method Internado           setSolicitudReposicionMaterial()         Sets the current record's "SolicitudReposicionMaterial" collection
+ * @method Internado           setSignosVitalesNursery()                Sets the current record's "SignosVitalesNursery" collection
+ * @method Internado           setNotasEnfermeria()                     Sets the current record's "NotasEnfermeria" collection
+ * @method Internado           setNotasEvolucion()                      Sets the current record's "NotasEvolucion" collection
+ * @method Internado           setAutorizacionesTratamiento()           Sets the current record's "AutorizacionesTratamiento" collection
+ * @method Internado           setAutorizacionesAltaSolicitada()        Sets the current record's "AutorizacionesAltaSolicitada" collection
+ * @method Internado           setAutorizacionesAutopsia()              Sets the current record's "AutorizacionesAutopsia" collection
+ * @method Internado           setProgracionesCirugia()                 Sets the current record's "ProgracionesCirugia" collection
+ * @method Internado           setSolicitudesExamenLaboratorioClinico() Sets the current record's "SolicitudesExamenLaboratorioClinico" collection
+ * @method Internado           setAdministracionesMedicamento()         Sets the current record's "AdministracionesMedicamento" collection
+ * @method Internado           setResumenesAlta()                       Sets the current record's "ResumenesAlta" collection
+ * @method Internado           setAtencionesEnfermeria()                Sets the current record's "AtencionesEnfermeria" collection
+ * @method Internado           setListasDieta()                         Sets the current record's "ListasDieta" collection
+ * @method Internado           setDetallesListaDieta()                  Sets the current record's "DetallesListaDieta" collection
+ * @method Internado           setSolicitudesTransfusionSanguinea()     Sets the current record's "SolicitudesTransfusionSanguinea" collection
+ * @method Internado           setInformesEstadisticoAdmEgreso()        Sets the current record's "InformesEstadisticoAdmEgreso" collection
+ * @method Internado           setPapeletasPedidoMaterial()             Sets the current record's "PapeletasPedidoMaterial" collection
  * 
  * @package    hcps
  * @subpackage model
@@ -334,7 +334,7 @@ abstract class BaseInternado extends sfDoctrineRecord
              'local' => 'id',
              'foreign' => 'internado_id'));
 
-        $this->hasMany('SolicitudExamenLaboratorio as SolicitudesExamenLaboratorio', array(
+        $this->hasMany('SolicitudExamenLaboratorioClinico as SolicitudesExamenLaboratorioClinico', array(
              'local' => 'id',
              'foreign' => 'internado_id'));
 

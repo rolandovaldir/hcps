@@ -1,4 +1,4 @@
-<?php $aux_extra_url_custom_id = $this->params['extra_url_custom_id']!='' ? '\'extra_url_custom_id\' => $extra_url_custom_id' : '' ?>
+<?php $aux_extra_url_custom_id = array_key_exists('extra_url_custom_id', $this->params) ? '\'extra_url_custom_id\' => $extra_url_custom_id' : '' ?>
 <div class="sf_admin_list">
   [?php if (!$pager->getNbResults()): ?]
     <p>[?php echo __('No result', array(), 'sf_admin') ?]</p>
