@@ -25,7 +25,8 @@ generator:
       form:    
         display:
           Datos Generales de la Solicitud de Reposición de Materiales: [unidad, encargado]
-          Nuevo Detalle(s) de Material: [detalle]
+          Items Adicionados: [ _listado_items ]
+          Adicionar Item: [ detalle ]
           #Detalle(s) de Material Registrados: [DetalleMaterial]
       edit:    
         title: Editar Solicitud de Reposicion de Material

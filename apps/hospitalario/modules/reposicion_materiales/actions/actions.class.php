@@ -27,4 +27,22 @@ class reposicion_materialesActions extends autoReposicion_materialesActions
         $filters['internado_id'] = sfContext::getInstance()->getRequest()->getParameter('internado_id');
         return $filters;
     }
+    
+    
+    public function executeDeleteItem(sfWebRequest $request)
+    {
+        $res = array('status'=>0,'message'=>'Error!');
+        $request->checkCSRFProtection();        
+        
+        $objectD = Doctrine::getTable('DetalleMaterial')->find($request->getParameter('id'));
+                        
+        if (is_object($objectD) && $objectD->delete())
+        {
+            $this->getUser()->setFlash('notice', 'The item was deleted successfully.');
+            $res = array('status'=>1,'message'=>'Ok');            
+        }
+        return $this->renderText(json_encode($res));
+    }
+    
+    
 }
