@@ -15,6 +15,7 @@
  * @property string $lugar
  * @property date $fecha
  * @property Internado $Internado
+ * @property Doctrine_Collection $TipoExamenLaboratorioClinico
  * @property Doctrine_Collection $DetalleSolicitudExamenLaboratorioClinico
  * 
  * @method integer                           getInternadoId()                              Returns the current record's "internado_id" value
@@ -27,6 +28,7 @@
  * @method string                            getLugar()                                    Returns the current record's "lugar" value
  * @method date                              getFecha()                                    Returns the current record's "fecha" value
  * @method Internado                         getInternado()                                Returns the current record's "Internado" value
+ * @method Doctrine_Collection               getTipoExamenLaboratorioClinico()             Returns the current record's "TipoExamenLaboratorioClinico" collection
  * @method Doctrine_Collection               getDetalleSolicitudExamenLaboratorioClinico() Returns the current record's "DetalleSolicitudExamenLaboratorioClinico" collection
  * @method SolicitudExamenLaboratorioClinico setInternadoId()                              Sets the current record's "internado_id" value
  * @method SolicitudExamenLaboratorioClinico setVoboMedicoId()                             Sets the current record's "vobo_medico_id" value
@@ -38,6 +40,7 @@
  * @method SolicitudExamenLaboratorioClinico setLugar()                                    Sets the current record's "lugar" value
  * @method SolicitudExamenLaboratorioClinico setFecha()                                    Sets the current record's "fecha" value
  * @method SolicitudExamenLaboratorioClinico setInternado()                                Sets the current record's "Internado" value
+ * @method SolicitudExamenLaboratorioClinico setTipoExamenLaboratorioClinico()             Sets the current record's "TipoExamenLaboratorioClinico" collection
  * @method SolicitudExamenLaboratorioClinico setDetalleSolicitudExamenLaboratorioClinico() Sets the current record's "DetalleSolicitudExamenLaboratorioClinico" collection
  * 
  * @package    hcps
@@ -90,6 +93,11 @@ abstract class BaseSolicitudExamenLaboratorioClinico extends sfDoctrineRecord
         $this->hasOne('Internado', array(
              'local' => 'internado_id',
              'foreign' => 'id'));
+
+        $this->hasMany('TipoExamenLaboratorioClinico', array(
+             'refClass' => 'DetalleSolicitudExamenLaboratorioClinico',
+             'local' => 'solicitud_examen_laboratorio_clinico_id',
+             'foreign' => 'tipo_examen_laboratorio_clinico_id'));
 
         $this->hasMany('DetalleSolicitudExamenLaboratorioClinico', array(
              'local' => 'id',

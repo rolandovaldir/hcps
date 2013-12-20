@@ -19,7 +19,7 @@ abstract class BaseUsoHospitalarioForm extends BaseFormDoctrine
       'internado_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => false)),
       'lugar'        => new sfWidgetFormInputText(),
       'fecha'        => new myWidgetFormDojoDate(),
-      'medico_id'    => new sfWidgetFormInputText(),
+      'medico_id'    => new myWidgetFormDojoInteger(),
       'codigo'       => new sfWidgetFormInputText(),
       'especialidad' => new sfWidgetFormInputText(),
       'created_at'   => new myWidgetFormDojoDateTime(),

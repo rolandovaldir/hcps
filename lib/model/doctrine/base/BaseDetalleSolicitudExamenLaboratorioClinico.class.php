@@ -49,9 +49,5 @@ abstract class BaseDetalleSolicitudExamenLaboratorioClinico extends sfDoctrineRe
         $this->hasOne('TipoExamenLaboratorioClinico', array(
              'local' => 'tipo_examen_laboratorio_clinico_id',
              'foreign' => 'id'));
-
-        $timestampable0 = new Doctrine_Template_Timestampable(array(
-             ));
-        $this->actAs($timestampable0);
     }
 }

@@ -8,12 +8,12 @@
  * @property integer $internado_id
  * @property integer $medico_id
  * @property date $operacion_fecha
- * @property time $operacion_hora
+ * @property string $operacion_hora
  * @property string $diagnostico_preoperatorio
  * @property string $tratamiento_quirurgico
  * @property string $anestesia
  * @property string $otros
- * @property string $examenes_auxiliares
+ * @property array $examenes_auxiliares
  * @property date $fecha
  * @property integer $enfermera_id
  * @property string $enviado
@@ -23,12 +23,12 @@
  * @method integer             getInternadoId()               Returns the current record's "internado_id" value
  * @method integer             getMedicoId()                  Returns the current record's "medico_id" value
  * @method date                getOperacionFecha()            Returns the current record's "operacion_fecha" value
- * @method time                getOperacionHora()             Returns the current record's "operacion_hora" value
+ * @method string              getOperacionHora()             Returns the current record's "operacion_hora" value
  * @method string              getDiagnosticoPreoperatorio()  Returns the current record's "diagnostico_preoperatorio" value
  * @method string              getTratamientoQuirurgico()     Returns the current record's "tratamiento_quirurgico" value
  * @method string              getAnestesia()                 Returns the current record's "anestesia" value
  * @method string              getOtros()                     Returns the current record's "otros" value
- * @method string              getExamenesAuxiliares()        Returns the current record's "examenes_auxiliares" value
+ * @method array               getExamenesAuxiliares()        Returns the current record's "examenes_auxiliares" value
  * @method date                getFecha()                     Returns the current record's "fecha" value
  * @method integer             getEnfermeraId()               Returns the current record's "enfermera_id" value
  * @method string              getEnviado()                   Returns the current record's "enviado" value
@@ -69,8 +69,9 @@ abstract class BaseProgramacionCirugia extends sfDoctrineRecord
         $this->hasColumn('operacion_fecha', 'date', null, array(
              'type' => 'date',
              ));
-        $this->hasColumn('operacion_hora', 'time', null, array(
-             'type' => 'time',
+        $this->hasColumn('operacion_hora', 'string', 100, array(
+             'type' => 'string',
+             'length' => 100,
              ));
         $this->hasColumn('diagnostico_preoperatorio', 'string', 600, array(
              'type' => 'string',
@@ -88,9 +89,8 @@ abstract class BaseProgramacionCirugia extends sfDoctrineRecord
              'type' => 'string',
              'length' => 250,
              ));
-        $this->hasColumn('examenes_auxiliares', 'string', 1, array(
-             'type' => 'string',
-             'length' => 1,
+        $this->hasColumn('examenes_auxiliares', 'array', null, array(
+             'type' => 'array',
              ));
         $this->hasColumn('fecha', 'date', null, array(
              'type' => 'date',

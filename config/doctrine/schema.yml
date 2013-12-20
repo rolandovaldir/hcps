@@ -477,12 +477,12 @@ ProgramacionCirugia:
     internado_id:                { type: integer , notnull: true }
     medico_id:                   { type: integer }
     operacion_fecha:             { type: date }
-    operacion_hora:              { type: time }
+    operacion_hora:              { type: string(100) }
     diagnostico_preoperatorio:   { type: string(600) }
     tratamiento_quirurgico:      { type: string(500) } 
     anestesia:                   { type: string(250) }
     otros:                       { type: string(250) } 
-    examenes_auxiliares:         { type: string(1) }
+    examenes_auxiliares:         { type: array }
     fecha:                       { type: date }
     enfermera_id:                { type: integer }
     enviado:                     { type: string(80) } 
@@ -505,9 +505,14 @@ SolicitudExamenLaboratorioClinico:
     fecha:                    { type: date } 
   relations:
     Internado: { local: internado_id, foreign: id, type: one, foreignAlias: SolicitudesExamenLaboratorioClinico }
+    TipoExamenLaboratorioClinico: 
+      class:     TipoExamenLaboratorioClinico
+      refClass:  DetalleSolicitudExamenLaboratorioClinico  
+      local:     solicitud_examen_laboratorio_clinico_id
+      foreign:   tipo_examen_laboratorio_clinico_id
 
 DetalleSolicitudExamenLaboratorioClinico:
-  actAs: [Timestampable]
+  actAs: []
   columns:     
     solicitud_examen_laboratorio_clinico_id:  { type: integer, notnull: true }
     tipo_examen_laboratorio_clinico_id:       { type: integer, notnull: true }    
@@ -518,14 +523,19 @@ DetalleSolicitudExamenLaboratorioClinico:
 
 # guillermo
 TipoExamenLaboratorioClinico:
-  actAs: [Timestampable]
+  actAs: []
   columns:
     grupo_orden:    { type: integer(3), notnull: true }
     grupo_nombre:   { type: string(50), notnull: true }
-    examen_orden:   { type: integer(5), notnull: true }
+    examen_orden:   { type: string(5),  notnull: true }
     examen_nombre:  { type: string(150), notnull: true }
     activo:         { type: boolean, notnull: true }  
-
+  relations:  
+    SolicitudExamenLaboratorioClinico:
+      class:     SolicitudExamenLaboratorioClinico
+      refClass:  DetalleSolicitudExamenLaboratorioClinico  
+      local:     tipo_examen_laboratorio_clinico_id
+      foreign:   solicitud_examen_laboratorio_clinico_id
 # guillermo
 #AdministracionMedicamento:
 #  actAs: [Timestampable]  

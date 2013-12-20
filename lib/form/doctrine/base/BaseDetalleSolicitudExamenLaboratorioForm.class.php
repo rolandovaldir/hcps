@@ -17,7 +17,7 @@ abstract class BaseDetalleSolicitudExamenLaboratorioForm extends BaseFormDoctrin
     $this->setWidgets(array(
       'id'                              => new sfWidgetFormInputHidden(),
       'solicitud_examen_laboratorio_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('SolicitudExamenLaboratorio'), 'add_empty' => false)),
-      'tipo'                            => new sfWidgetFormInputText(),
+      'tipo'                            => new myWidgetFormDojoInteger(),
       'created_at'                      => new myWidgetFormDojoDateTime(),
       'updated_at'                      => new myWidgetFormDojoDateTime(),
     ));

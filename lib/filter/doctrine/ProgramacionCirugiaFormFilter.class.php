@@ -12,5 +12,6 @@ class ProgramacionCirugiaFormFilter extends BaseProgramacionCirugiaFormFilter
 {
   public function configure()
   {
+      $this->widgetSchema['examenes_auxiliares'] = new sfWidgetFormChoice(array('choices'  => ProgramacionCirugiaTable::getDescripciones_examen_auxiliar(),'expanded' => true));
   }
 }

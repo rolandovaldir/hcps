@@ -12,4 +12,13 @@
  */
 class Internado extends BaseInternado
 {
+    public $objetoDatosPersona = null;
+    
+    function getNombreCompleto()
+    {        
+        if ($this->objetoDatosPersona==null){
+            $this->objetoDatosPersona = $this->getEsAfiliado() ? $this->getAfiliado() : $this->getPacienteOtroseguro();
+        }        
+        return $this->objetoDatosPersona->getNombre() . ' ' . $this->objetoDatosPersona->getPaterno() . ' ' . $this->objetoDatosPersona->getMaterno();
+    }
 }

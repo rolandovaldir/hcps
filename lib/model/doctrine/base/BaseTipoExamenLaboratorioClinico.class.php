@@ -7,22 +7,25 @@
  * 
  * @property integer $grupo_orden
  * @property string $grupo_nombre
- * @property integer $examen_orden
+ * @property string $examen_orden
  * @property string $examen_nombre
  * @property boolean $activo
+ * @property Doctrine_Collection $SolicitudExamenLaboratorioClinico
  * @property Doctrine_Collection $DetalleSolicitudExamenLaboratorioClinico
  * 
  * @method integer                      getGrupoOrden()                               Returns the current record's "grupo_orden" value
  * @method string                       getGrupoNombre()                              Returns the current record's "grupo_nombre" value
- * @method integer                      getExamenOrden()                              Returns the current record's "examen_orden" value
+ * @method string                       getExamenOrden()                              Returns the current record's "examen_orden" value
  * @method string                       getExamenNombre()                             Returns the current record's "examen_nombre" value
  * @method boolean                      getActivo()                                   Returns the current record's "activo" value
+ * @method Doctrine_Collection          getSolicitudExamenLaboratorioClinico()        Returns the current record's "SolicitudExamenLaboratorioClinico" collection
  * @method Doctrine_Collection          getDetalleSolicitudExamenLaboratorioClinico() Returns the current record's "DetalleSolicitudExamenLaboratorioClinico" collection
  * @method TipoExamenLaboratorioClinico setGrupoOrden()                               Sets the current record's "grupo_orden" value
  * @method TipoExamenLaboratorioClinico setGrupoNombre()                              Sets the current record's "grupo_nombre" value
  * @method TipoExamenLaboratorioClinico setExamenOrden()                              Sets the current record's "examen_orden" value
  * @method TipoExamenLaboratorioClinico setExamenNombre()                             Sets the current record's "examen_nombre" value
  * @method TipoExamenLaboratorioClinico setActivo()                                   Sets the current record's "activo" value
+ * @method TipoExamenLaboratorioClinico setSolicitudExamenLaboratorioClinico()        Sets the current record's "SolicitudExamenLaboratorioClinico" collection
  * @method TipoExamenLaboratorioClinico setDetalleSolicitudExamenLaboratorioClinico() Sets the current record's "DetalleSolicitudExamenLaboratorioClinico" collection
  * 
  * @package    hcps
@@ -45,8 +48,8 @@ abstract class BaseTipoExamenLaboratorioClinico extends sfDoctrineRecord
              'notnull' => true,
              'length' => 50,
              ));
-        $this->hasColumn('examen_orden', 'integer', 5, array(
-             'type' => 'integer',
+        $this->hasColumn('examen_orden', 'string', 5, array(
+             'type' => 'string',
              'notnull' => true,
              'length' => 5,
              ));
@@ -64,12 +67,13 @@ abstract class BaseTipoExamenLaboratorioClinico extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
+        $this->hasMany('SolicitudExamenLaboratorioClinico', array(
+             'refClass' => 'DetalleSolicitudExamenLaboratorioClinico',
+             'local' => 'tipo_examen_laboratorio_clinico_id',
+             'foreign' => 'solicitud_examen_laboratorio_clinico_id'));
+
         $this->hasMany('DetalleSolicitudExamenLaboratorioClinico', array(
              'local' => 'id',
              'foreign' => 'tipo_examen_laboratorio_clinico_id'));
-
-        $timestampable0 = new Doctrine_Template_Timestampable(array(
-             ));
-        $this->actAs($timestampable0);
     }
 }

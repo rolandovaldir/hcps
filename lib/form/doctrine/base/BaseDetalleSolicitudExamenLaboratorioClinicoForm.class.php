@@ -18,16 +18,12 @@ abstract class BaseDetalleSolicitudExamenLaboratorioClinicoForm extends BaseForm
       'id'                                      => new sfWidgetFormInputHidden(),
       'solicitud_examen_laboratorio_clinico_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('SolicitudExamenLaboratorioClinico'), 'add_empty' => false)),
       'tipo_examen_laboratorio_clinico_id'      => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('TipoExamenLaboratorioClinico'), 'add_empty' => false)),
-      'created_at'                              => new myWidgetFormDojoDateTime(),
-      'updated_at'                              => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(
       'id'                                      => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'solicitud_examen_laboratorio_clinico_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('SolicitudExamenLaboratorioClinico'))),
       'tipo_examen_laboratorio_clinico_id'      => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('TipoExamenLaboratorioClinico'))),
-      'created_at'                              => new myValidatorDojoDateTime(),
-      'updated_at'                              => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('detalle_solicitud_examen_laboratorio_clinico[%s]');

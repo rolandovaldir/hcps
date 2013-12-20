@@ -17,7 +17,7 @@ abstract class BaseResumenAltaForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'                       => new sfWidgetFormInputHidden(),
       'internado_id'             => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => false)),
-      'medico_id'                => new sfWidgetFormInputText(),
+      'medico_id'                => new myWidgetFormDojoInteger(),
       'servicio'                 => new sfWidgetFormInputText(),
       'servicio_egreso'          => new sfWidgetFormInputText(),
       'diagnostico_provisional'  => new sfWidgetFormTextarea(),

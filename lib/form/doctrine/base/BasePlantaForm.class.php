@@ -22,7 +22,7 @@ abstract class BasePlantaForm extends BaseFormDoctrine
       'observaciones' => new sfWidgetFormInputText(),
       'codigo'        => new sfWidgetFormInputText(),
       'plano'         => new sfWidgetFormInputText(),
-      'numero'        => new sfWidgetFormInputText(),
+      'numero'        => new myWidgetFormDojoInteger(),
       'created_at'    => new myWidgetFormDojoDateTime(),
       'updated_at'    => new myWidgetFormDojoDateTime(),
     ));

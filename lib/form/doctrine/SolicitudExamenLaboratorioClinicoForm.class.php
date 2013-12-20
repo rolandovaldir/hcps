@@ -12,5 +12,7 @@ class SolicitudExamenLaboratorioClinicoForm extends BaseSolicitudExamenLaborator
 {
   public function configure()
   {
+      $this->setWidget("internado_id", new sfWidgetFormInputHidden());
+      $this->widgetSchema['tipo_examen_laboratorio_clinico_list'] = new sfWidgetFormChoice(array('choices'  => array('HEMATOLOGIA'=>array('HEMATOLOGRAMA COMPLETO','RETICULOCITOS'),'ORINA'=>array(5=>'AMILASA')),'expanded' => true, 'multiple'=>true));
   }
 }

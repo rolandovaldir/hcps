@@ -1,3 +1,12 @@
+solicitud_examen_laboratorio_clinico:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                SolicitudExamenLaboratorioClinico
+    module:               solicitudes_examen_laboratorio
+    prefix_path:          /solicitudes_examen_laboratorio
+    column:               id
+    with_wildcard_routes: true
+
 atencion_enfermeria_atencion_enfermeria:
   class: sfDoctrineRouteCollection
   options:
@@ -22,15 +31,6 @@ administracion_medicamento_administracion_medicamento:
     model:                AdministracionMedicamento
     module:               administracion_medicamento
     prefix_path:          /administracion_medicamento
-    column:               id
-    with_wildcard_routes: true
-
-solicitud_examen_laboratorio_solicitudes_examen_laboratorio:
-  class: sfDoctrineRouteCollection
-  options:
-    model:                SolicitudExamenLaboratorio
-    module:               solicitudes_examen_laboratorio
-    prefix_path:          /solicitudes_examen_laboratorio
     column:               id
     with_wildcard_routes: true
 
@@ -339,24 +339,6 @@ administracion_medicamento:
     model:                AdministracionMedicamento
     module:               administracionmedicamento
     prefix_path:          /administracionmedicamento
-    column:               id
-    with_wildcard_routes: true
-
-solicitud_examen_laboratorio:
-  class: sfDoctrineRouteCollection
-  options:
-    model:                SolicitudExamenLaboratorio
-    module:               solicitudexamenlaboratorio
-    prefix_path:          /solicitudexamenlaboratorio
-    column:               id
-    with_wildcard_routes: true
-
-programacion_cirugias:
-  class: sfDoctrineRouteCollection
-  options:
-    model:                ProgramacionCirugias
-    module:               programacioncirugias
-    prefix_path:          /programacioncirugias
     column:               id
     with_wildcard_routes: true
 
