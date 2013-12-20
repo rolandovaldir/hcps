@@ -263,7 +263,9 @@ MedicoParticular:
   actAs: [Timestampable]
   columns:
     junta_medica_id: {type: integer, notnull: true}
-    nombre:              {type: string(150)}
+    nombre:          {type: string(150)}
+    especialidad:    {type: string(100)}
+    cargo:           {type: string(50)}
   relations:
     JuntaMedica: {local: junta_medica_id, foreign: id, type: one, foreignAlias: Particulares}
  

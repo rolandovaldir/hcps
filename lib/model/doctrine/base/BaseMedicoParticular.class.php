@@ -7,13 +7,19 @@
  * 
  * @property integer $junta_medica_id
  * @property string $nombre
+ * @property string $especialidad
+ * @property string $cargo
  * @property JuntaMedica $JuntaMedica
  * 
  * @method integer          getJuntaMedicaId()   Returns the current record's "junta_medica_id" value
  * @method string           getNombre()          Returns the current record's "nombre" value
+ * @method string           getEspecialidad()    Returns the current record's "especialidad" value
+ * @method string           getCargo()           Returns the current record's "cargo" value
  * @method JuntaMedica      getJuntaMedica()     Returns the current record's "JuntaMedica" value
  * @method MedicoParticular setJuntaMedicaId()   Sets the current record's "junta_medica_id" value
  * @method MedicoParticular setNombre()          Sets the current record's "nombre" value
+ * @method MedicoParticular setEspecialidad()    Sets the current record's "especialidad" value
+ * @method MedicoParticular setCargo()           Sets the current record's "cargo" value
  * @method MedicoParticular setJuntaMedica()     Sets the current record's "JuntaMedica" value
  * 
  * @package    hcps
@@ -33,6 +39,14 @@ abstract class BaseMedicoParticular extends sfDoctrineRecord
         $this->hasColumn('nombre', 'string', 150, array(
              'type' => 'string',
              'length' => 150,
+             ));
+        $this->hasColumn('especialidad', 'string', 100, array(
+             'type' => 'string',
+             'length' => 100,
+             ));
+        $this->hasColumn('cargo', 'string', 50, array(
+             'type' => 'string',
+             'length' => 50,
              ));
     }
 
