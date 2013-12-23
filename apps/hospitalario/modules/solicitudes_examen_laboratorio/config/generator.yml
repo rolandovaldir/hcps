@@ -27,7 +27,7 @@ generator:
         display: [ material_enviado, otros_examenes, diagnostico_presuntivo, lugar, fecha ]
       form:    
         display:
-          "&nbsp;": [ internado_id, tipo_examen_laboratorio_clinico_list ]
+          "Examenes: ": [ internado_id, _lista_tipos_examenes ]
           "&nbsp; ":   [ material_enviado, otros_examenes, diagnostico_presuntivo, lugar, fecha ]
       edit:    
         title: Edición Listado Solicitudes Examen Laboratorio

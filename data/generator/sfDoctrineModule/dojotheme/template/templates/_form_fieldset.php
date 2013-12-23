@@ -13,6 +13,7 @@
       'form'       => $form,
       'field'      => $field,
       'class'      => 'sf_admin_form_row sf_admin_'.strtolower($field->getType()).' sf_admin_form_field_'.$name,
+      <?php if (array_key_exists('extra_url_custom_id', $this->params)) { echo '\'extra_url_custom_id\' => $extra_url_custom_id, '; } ?>
     )) ?]
   [?php endforeach; ?]
 </fieldset>
