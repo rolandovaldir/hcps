@@ -15,6 +15,7 @@ $link_menus = array(
     array('link'=>'ordenes_medicas','label'=>'Ordenes Medicas'),
     array('link'=>'papeletapedidomaterial','label'=>'Papeleta Pedido Material'),
     array('link'=>'programacion_cirugia','label'=>'Programacion Cirugias'),
+    array('link'=>'uso_hospitalario','label'=>'Receta Uso Hospitalario'),
     array('link'=>'recien_nacidos','label'=>'Recien Nacidos'),
     array('link'=>'reposicion_materiales','label'=>'Reposicion Materiales'),
 //    array('link'=>'resumenalta','label'=>'Resumen Alta'),
@@ -22,8 +23,8 @@ $link_menus = array(
     array('link'=>'solicitudes_interconsultas','label'=>'Solicitudes Interconsultas'),
     array('link'=>'solicitudes_servicios','label'=>'Solicitudes Servicios'),
     array('link'=>'solicitudes_examen_laboratorio','label'=>'Solicitudes Examen Laboratorio'),
-    array('link'=>'solicitudes_transfusion_sanguinea','label'=>'Solicitudes Transfusiones'),
-    array('link'=>'uso_hospitalario','label'=>'Uso Hospitalario')
+    array('link'=>'solicitudes_transfusion_sanguinea','label'=>'Solicitudes Transfusiones')
+    
 );
 
 foreach ($link_menus as $val){ ?>

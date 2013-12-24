@@ -1,0 +1,587 @@
+## YAML Template.
+---
+TipoExamenLaboratorioClinico:
+  Tipo1:
+    grupo_orden:    1
+    grupo_nombre:   HEMATOLOGIA
+    examen_orden:   01
+    examen_nombre:  HEMOGRAMA COMPLETO
+    activo:         true
+  Tipo2:
+    grupo_orden:    1
+    grupo_nombre:   HEMATOLOGIA
+    examen_orden:   02
+    examen_nombre:  RETICULOCITOS
+    activo:         true
+  Tipo3:
+    grupo_orden:    1
+    grupo_nombre:   HEMATOLOGIA
+    examen_orden:   03
+    examen_nombre:  TIEMPO DE SANGRIA
+    activo:         true
+  Tipo4:
+    grupo_orden:    1
+    grupo_nombre:   HEMATOLOGIA
+    examen_orden:   04
+    examen_nombre:  TIEMPO DE PROTROMBINA
+    activo:         true
+  Tipo5:
+    grupo_orden:    1
+    grupo_nombre:   HEMATOLOGIA
+    examen_orden:   05
+    examen_nombre:  TIEMPO PARCIAL TROMBOPLASTINA
+    activo:         true
+  Tipo6:
+    grupo_orden:    1
+    grupo_nombre:   HEMATOLOGIA
+    examen_orden:   06
+    examen_nombre:  FIBRINOGENO
+    activo:         true
+  Tipo7:
+    grupo_orden:    1
+    grupo_nombre:   HEMATOLOGIA
+    examen_orden:   07
+    examen_nombre:  PROD. DE DEGRADACIÓN FIBRINOGENO
+    activo:         true
+  Tipo8:
+    grupo_orden:    1
+    grupo_nombre:   HEMATOLOGIA
+    examen_orden:   08
+    examen_nombre:  GRUPO SANGUINEO Y RH
+    activo:         true
+  Tipo9:
+    grupo_orden:    1
+    grupo_nombre:   HEMATOLOGIA
+    examen_orden:   09
+    examen_nombre:  SUB GRUPO RH
+    activo:         true
+  Tipo10:
+    grupo_orden:    1
+    grupo_nombre:   HEMATOLOGIA
+    examen_orden:   10
+    examen_nombre:  COOMBS DIRECTO
+    activo:         true
+  Tipo11:
+    grupo_orden:    1
+    grupo_nombre:   HEMATOLOGIA
+    examen_orden:   11
+    examen_nombre:  COOMBS INDIRECTO
+    activo:         true
+  Tipo12:
+    grupo_orden:    1
+    grupo_nombre:   HEMATOLOGIA
+    examen_orden:   12
+    examen_nombre:  CELULAS LE
+    activo:         true
+  Tipo13:
+    grupo_orden:    1
+    grupo_nombre:   HEMATOLOGIA
+    examen_orden:   13
+    examen_nombre:  INVESTIGACIÓN PLASMODIUM
+    activo:         true
+  Tipo14:
+    grupo_orden:    1
+    grupo_nombre:   HEMATOLOGIA
+    examen_orden:   14
+    examen_nombre:  CRIOGLUTININAS
+    activo:         true
+    
+  Tipo15:
+    grupo_orden:    2
+    grupo_nombre:   ORINA
+    examen_orden:   15
+    examen_nombre:  EXAMEN COMPLETO
+    activo:         true  
+  Tipo16:
+    grupo_orden:    2
+    grupo_nombre:   ORINA
+    examen_orden:   16
+    examen_nombre:  AMILASA
+    activo:         true
+  Tipo17:
+    grupo_orden:    2
+    grupo_nombre:   ORINA
+    examen_orden:   17
+    examen_nombre:  ACIDO URICO
+    activo:         true
+  Tipo18:
+    grupo_orden:    2
+    grupo_nombre:   ORINA
+    examen_orden:   18
+    examen_nombre:  CREATININA
+    activo:         true
+  Tipo19:
+    grupo_orden:    2
+    grupo_nombre:   ORINA
+    examen_orden:   19
+    examen_nombre:  CALCIO
+    activo:         true
+  Tipo20:
+    grupo_orden:    2
+    grupo_nombre:   ORINA
+    examen_orden:   20
+    examen_nombre:  FOSFORO
+    activo:         true
+  Tipo21:
+    grupo_orden:    2
+    grupo_nombre:   ORINA
+    examen_orden:   21
+    examen_nombre:  NITROGENO UREICO
+    activo:         true
+  Tipo22:
+    grupo_orden:    2
+    grupo_nombre:   ORINA
+    examen_orden:   22
+    examen_nombre:  SODIO POTASIO CLORO
+    activo:         true
+  Tipo23:
+    grupo_orden:    2
+    grupo_nombre:   ORINA
+    examen_orden:   23
+    examen_nombre:  PROTEINAS
+    activo:         true
+  Tipo24:
+    grupo_orden:    2
+    grupo_nombre:   ORINA
+    examen_orden:   24
+    examen_nombre:  PROTEINAS BENCE JONES
+    activo:         true
+  Tipo25:
+    grupo_orden:    2
+    grupo_nombre:   ORINA
+    examen_orden:   25
+    examen_nombre:  DIAGNOSTICO DE EMBARAZO
+    activo:         true
+  Tipo26:
+    grupo_orden:    3
+    grupo_nombre:   MATERIA FECAL
+    examen_orden:   26
+    examen_nombre:  PARASITOLOGICO
+    activo:         true
+  Tipo27:
+    grupo_orden:    3
+    grupo_nombre:   MATERIA FECAL
+    examen_orden:   27
+    examen_nombre:  PARASITOLOGICO SERIADO
+    activo:         true
+  Tipo28:
+    grupo_orden:    3
+    grupo_nombre:   MATERIA FECAL
+    examen_orden:   28
+    examen_nombre:  GRASA FECAL
+    activo:         true
+  Tipo29:
+    grupo_orden:    3
+    grupo_nombre:   MATERIA FECAL
+    examen_orden:   29
+    examen_nombre:  SANGRE OCULTA
+    activo:         true
+  Tipo30:
+    grupo_orden:    3
+    grupo_nombre:   MATERIA FECAL
+    examen_orden:   30
+    examen_nombre:  MOCO FECAL
+    activo:         true
+  Tipo31:
+    grupo_orden:    3
+    grupo_nombre:   MATERIA FECAL
+    examen_orden:   31
+    examen_nombre:  SUSTANCIA REDUCTORAS
+    activo:         true
+  Tipo32:
+    grupo_orden:    3
+    grupo_nombre:   MATERIA FECAL
+    examen_orden:   32
+    examen_nombre:  ROTA VIRUS
+    activo:         true
+  Tipo34:
+    grupo_orden:    3
+    grupo_nombre:   MATERIA FECAL
+    examen_orden:   34
+    examen_nombre:  GLUCOSA
+    activo:         true
+  Tipo35:
+    grupo_orden:    3
+    grupo_nombre:   MATERIA FECAL
+    examen_orden:   35
+    examen_nombre:  BUN
+    activo:         true
+  Tipo36:
+    grupo_orden:    3
+    grupo_nombre:   MATERIA FECAL
+    examen_orden:   36
+    examen_nombre:  CREATININA
+    activo:         true
+  Tipo37:
+    grupo_orden:    3
+    grupo_nombre:   MATERIA FECAL
+    examen_orden:   37
+    examen_nombre:  ACIDO URICO
+    activo:         true
+  Tipo38:
+    grupo_orden:    3
+    grupo_nombre:   MATERIA FECAL
+    examen_orden:   38
+    examen_nombre:  COLESTEROL
+    activo:         true
+  Tipo39:
+    grupo_orden:    3
+    grupo_nombre:   MATERIA FECAL
+    examen_orden:   39
+    examen_nombre:  HDL COLESTEROL
+    activo:         true
+  Tipo40:
+    grupo_orden:    3
+    grupo_nombre:   MATERIA FECAL
+    examen_orden:   40
+    examen_nombre:  LDL COLESTEROL
+    activo:         true
+  Tipo41:
+    grupo_orden:    3
+    grupo_nombre:   MATERIA FECAL
+    examen_orden:   41
+    examen_nombre:  VLDL COLESTEROL
+    activo:         true
+  Tipo42:
+    grupo_orden:    3
+    grupo_nombre:   MATERIA FECAL
+    examen_orden:   42
+    examen_nombre:  TRIGLICERIDOS
+    activo:         true
+  Tipo43:
+    grupo_orden:    3
+    grupo_nombre:   MATERIA FECAL
+    examen_orden:   43
+    examen_nombre:  ALBUMINA
+    activo:         true
+  Tipo44:
+    grupo_orden:    3
+    grupo_nombre:   MATERIA FECAL
+    examen_orden:   44
+    examen_nombre:  PROTEINAS TOTALES
+    activo:         true
+  Tipo45:
+    grupo_orden:    3
+    grupo_nombre:   MATERIA FECAL
+    examen_orden:   45
+    examen_nombre:  BILIRRUBINAS
+    activo:         true
+  Tipo46:
+    grupo_orden:    3
+    grupo_nombre:   MATERIA FECAL
+    examen_orden:   46
+    examen_nombre:  AST/ALT(GOT/GPT)
+    activo:         true
+  Tipo47:
+    grupo_orden:    3
+    grupo_nombre:   MATERIA FECAL
+    examen_orden:   47
+    examen_nombre:  FOSFATASA ALCALINA
+    activo:         true
+  Tipo48:
+    grupo_orden:    3
+    grupo_nombre:   MATERIA FECAL
+    examen_orden:   48
+    examen_nombre:  GGT
+    activo:         true
+  Tipo49:
+    grupo_orden:    3
+    grupo_nombre:   MATERIA FECAL
+    examen_orden:   49
+    examen_nombre:  AMILASA
+    activo:         true
+  Tipo50:
+    grupo_orden:    3
+    grupo_nombre:   MATERIA FECAL
+    examen_orden:   50
+    examen_nombre:  LIPASA
+    activo:         true
+  Tipo51:
+    grupo_orden:    3
+    grupo_nombre:   MATERIA FECAL
+    examen_orden:   51
+    examen_nombre:  CPK
+    activo:         true
+  Tipo52:
+    grupo_orden:    3
+    grupo_nombre:   MATERIA FECAL
+    examen_orden:   52
+    examen_nombre:  CPK-MB
+    activo:         true
+  Tipo53:
+    grupo_orden:    3
+    grupo_nombre:   MATERIA FECAL
+    examen_orden:   53
+    examen_nombre:  DESHIDROGENASA LACTICA
+    activo:         true
+  Tipo54:
+    grupo_orden:    3
+    grupo_nombre:   MATERIA FECAL
+    examen_orden:   54
+    examen_nombre:  SODIO/POTASIO/CLORO
+    activo:         true
+  Tipo55:
+    grupo_orden:    3
+    grupo_nombre:   MATERIA FECAL
+    examen_orden:   55
+    examen_nombre:  CALCIO
+    activo:         true
+  Tipo56:
+    grupo_orden:    3
+    grupo_nombre:   MATERIA FECAL
+    examen_orden:   56
+    examen_nombre:  FOSFORO
+    activo:         true
+  Tipo57:
+    grupo_orden:    3
+    grupo_nombre:   MATERIA FECAL
+    examen_orden:   57
+    examen_nombre:  HIERRO SERICO / C.F. HIERRO
+    activo:         true
+  Tipo58:
+    grupo_orden:    3
+    grupo_nombre:   MATERIA FECAL
+    examen_orden:   58
+    examen_nombre:  TOLERANCIA ORAL GLUCOSA
+    activo:         true
+  Tipo59:
+    grupo_orden:    3
+    grupo_nombre:   MATERIA FECAL
+    examen_orden:   59
+    examen_nombre:  HEMOGLOBINA GLICOSILADA
+    activo:         true
+  Tipo60:
+    grupo_orden:    3
+    grupo_nombre:   MATERIA FECAL
+    examen_orden:   60
+    examen_nombre:  TROPONINA
+    activo:         true
+  Tipo61:
+    grupo_orden:    3
+    grupo_nombre:   MATERIA FECAL
+    examen_orden:   61
+    examen_nombre:  GASOMETRIA
+    activo:         true
+  Tipo62:
+    grupo_orden:    4
+    grupo_nombre:   INMUNOLOGIA
+    examen_orden:   62
+    examen_nombre:  CHAGAS
+    activo:         true
+  Tipo63:
+    grupo_orden:    4
+    grupo_nombre:   INMUNOLOGIA
+    examen_orden:   63
+    examen_nombre:  TOXOPLASMOSIS
+    activo:         true
+  Tipo64:
+    grupo_orden:    4
+    grupo_nombre:   INMUNOLOGIA
+    examen_orden:   64
+    examen_nombre:  HIV
+    activo:         true
+  Tipo65:
+    grupo_orden:    4
+    grupo_nombre:   INMUNOLOGIA
+    examen_orden:   65
+    examen_nombre:  H B AgS
+    activo:         true
+  Tipo66:
+    grupo_orden:    4
+    grupo_nombre:   INMUNOLOGIA
+    examen_orden:   66
+    examen_nombre:  H BANTICORE
+    activo:         true  
+  Tipo67:
+    grupo_orden:    4
+    grupo_nombre:   INMUNOLOGIA
+    examen_orden:   67
+    examen_nombre:  HEPATITIS C
+    activo:         true
+  Tipo68:
+    grupo_orden:    4
+    grupo_nombre:   INMUNOLOGIA
+    examen_orden:   68
+    examen_nombre:  BRUCELOSIS
+    activo:         true
+  Tipo69:
+    grupo_orden:    4
+    grupo_nombre:   INMUNOLOGIA
+    examen_orden:   69
+    examen_nombre:  MONONUCLEOSIS INF.
+    activo:         true
+  Tipo70:
+    grupo_orden:    4
+    grupo_nombre:   INMUNOLOGIA
+    examen_orden:   70
+    examen_nombre:  RPR / VDRL
+    activo:         true
+  Tipo71:
+    grupo_orden:    4
+    grupo_nombre:   INMUNOLOGIA
+    examen_orden:   71
+    examen_nombre:  ANA
+    activo:         true
+  Tipo72:
+    grupo_orden:    4
+    grupo_nombre:   INMUNOLOGIA
+    examen_orden:   72
+    examen_nombre:  ASTO
+    activo:         true
+  Tipo73:
+    grupo_orden:    4
+    grupo_nombre:   INMUNOLOGIA
+    examen_orden:   73
+    examen_nombre:  PCR
+    activo:         true
+  Tipo74:
+    grupo_orden:    4
+    grupo_nombre:   INMUNOLOGIA
+    examen_orden:   74
+    examen_nombre:  F. REUMATOIDEO
+    activo:         true
+  Tipo75:
+    grupo_orden:    4
+    grupo_nombre:   INMUNOLOGIA
+    examen_orden:   75
+    examen_nombre:  WIDAL - WEIL FELIX
+    activo:         true
+  Tipo76:
+    grupo_orden:    4
+    grupo_nombre:   INMUNOLOGIA
+    examen_orden:   76
+    examen_nombre:  T3
+    activo:         true
+  Tipo77:
+    grupo_orden:    4
+    grupo_nombre:   INMUNOLOGIA
+    examen_orden:   77
+    examen_nombre:  T4
+    activo:         true
+  Tipo78:
+    grupo_orden:    4
+    grupo_nombre:   INMUNOLOGIA
+    examen_orden:   78
+    examen_nombre:  TJ4
+    activo:         true
+  Tipo79:
+    grupo_orden:    4
+    grupo_nombre:   INMUNOLOGIA
+    examen_orden:   79
+    examen_nombre:  ALFAFETOPROTEINA
+    activo:         true
+  Tipo80:
+    grupo_orden:    4
+    grupo_nombre:   INMUNOLOGIA
+    examen_orden:   80
+    examen_nombre:  ANTIGENO CARCIOEMRIONARIO
+    activo:         true
+  Tipo81:
+    grupo_orden:    4
+    grupo_nombre:   INMUNOLOGIA
+    examen_orden:   81
+    examen_nombre:  ANTIGENO PROSTATICOESPECIFICO
+    activo:         true
+  Tipo82:
+    grupo_orden:    4
+    grupo_nombre:   INMUNOLOGIA
+    examen_orden:   82
+    examen_nombre:  ANTIGENO PROSTATICOESPECIFICO LIBRE
+    activo:         true
+  Tipo83:
+    grupo_orden:    4
+    grupo_nombre:   INMUNOLOGIA
+    examen_orden:   83
+    examen_nombre:  HGC BETA
+    activo:         true
+  Tipo84:
+    grupo_orden:    4
+    grupo_nombre:   INMUNOLOGIA
+    examen_orden:   84
+    examen_nombre:  HELICOBACTER PILORY
+    activo:         true
+  Tipo85:
+    grupo_orden:    4
+    grupo_nombre:   INMUNOLOGIA
+    examen_orden:   85
+    examen_nombre:  PRL
+    activo:         true
+  Tipo86:
+    grupo_orden:    4
+    grupo_nombre:   INMUNOLOGIA
+    examen_orden:   86
+    examen_nombre:  FSH
+    activo:         true
+  Tipo87:
+    grupo_orden:    4
+    grupo_nombre:   INMUNOLOGIA
+    examen_orden:   87
+    examen_nombre:  LH
+    activo:         true
+  Tipo88:
+    grupo_orden:    4
+    grupo_nombre:   INMUNOLOGIA
+    examen_orden:   88
+    examen_nombre:  ESTRADIOL
+    activo:         true
+  Tipo89:
+    grupo_orden:    4
+    grupo_nombre:   INMUNOLOGIA
+    examen_orden:   89
+    examen_nombre:  PROGESTERONA
+    activo:         true
+  Tipo90:
+    grupo_orden:    4
+    grupo_nombre:   INMUNOLOGIA
+    examen_orden:   90
+    examen_nombre:  CA 15.3
+    activo:         true
+  Tipo91:
+    grupo_orden:    4
+    grupo_nombre:   INMUNOLOGIA
+    examen_orden:   91
+    examen_nombre:  CA 125
+    activo:         true
+  Tipo92:
+    grupo_orden:    4
+    grupo_nombre:   INMUNOLOGIA
+    examen_orden:   92
+    examen_nombre:  CA 19.9
+    activo:         true
+  Tipo93:
+    grupo_orden:    4
+    grupo_nombre:   INMUNOLOGIA
+    examen_orden:   93
+    examen_nombre:  TESTOSTERONA
+    activo:         true
+  Tipo94:
+    grupo_orden:    4
+    grupo_nombre:   INMUNOLOGIA
+    examen_orden:   94
+    examen_nombre:  FERRITINA
+    activo:         true
+  Tipo95:
+    grupo_orden:    4
+    grupo_nombre:   INMUNOLOGIA
+    examen_orden:   95
+    examen_nombre:  HORMONA DE CRECIMIENTO
+    activo:         true
+    
+  Tipo96:
+    grupo_orden:    5
+    grupo_nombre:   MICROBIOLOGIA
+    examen_orden:   96
+    examen_nombre:  TINCION GRAM
+    activo:         true
+  Tipo97:
+    grupo_orden:    5
+    grupo_nombre:   MICROBIOLOGIA
+    examen_orden:   97
+    examen_nombre:  TINCION ZIEHL NIELSEN
+    activo:         true
+  Tipo98:
+    grupo_orden:    5
+    grupo_nombre:   MICROBIOLOGIA
+    examen_orden:   98
+    examen_nombre:  CULTIVO Y ANTIBIOGRAMA
+    activo:         true

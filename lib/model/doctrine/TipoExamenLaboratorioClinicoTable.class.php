@@ -16,4 +16,23 @@ class TipoExamenLaboratorioClinicoTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('TipoExamenLaboratorioClinico');
     }
+    
+    public static function getExamenesActivosForChoice()
+    {
+        $q = self::getInstance()->createQuery('sol')
+            ->select('sol.id, sol.grupo_nombre, sol.examen_orden, sol.examen_nombre')
+            ->where('sol.activo = ?', true)
+            ->orderBy('sol.grupo_orden ASC')->execute();
+        $grupo = '';
+        $res = array();         
+        foreach ($q as $val){
+            if ($grupo!= $val->getGrupoNombre()){
+                $grupo = $val->getGrupoNombre();
+                $res[$grupo] = array();
+            }
+            $res[$grupo][$val->getId()] = $val->getExamenNombre();
+        }
+        return $res;
+    }
+    
 }

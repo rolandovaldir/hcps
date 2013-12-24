@@ -7,19 +7,35 @@ generator:
     with_show:             false
     singular:              ~
     plural:                ~
-    route_prefix:          uso_hospitalario_uso_hospitalario
+    route_prefix:          uso_hospitalario
     with_doctrine_route:   true
     actions_base_class:    sfActions
     extra_url_custom_id:   internado_id
-
+    
     config:
       actions: ~
-      fields:  ~
-      list:    ~
-      filter:  ~
+      fields: 
+#        fecha: { date_format: 'dd/MM/yyyy hh:mm' }
+        created_at: { date_format: dd/MM/yyyy }
+        updated_at: { date_format: dd/MM/yyyy }
+      list: 
+        title: Listado Recetas Uso Hospitalario
+        display: [ lugar, fecha, codigo, especialidad, created_at, updated_at ]
+        actions: {}
+        batch_actions: {}
+      filter: 
+        display: [ lugar, fecha, codigo, especialidad, created_at, updated_at ]
       form:    
         display:
-          Datos Uso Hospitalario: [ lugar, fecha, medico_id, codigo, especialidad ]
-          Detalle:   [ DetallesUsoHospitalario ]
-      edit:    ~
-      new:     ~
+          Datos Uso Hospitalario: [ internado_id, lugar, fecha, codigo, especialidad ]
+          Items Adicionados: [ _listado_items ]
+      edit:    
+        title: Edición Recetas Uso Hospitalario
+      new:        
+        title: Nueva Recetas Uso Hospitalario
+        display:
+          Datos Uso Hospitalario: [ internado_id, lugar, fecha, codigo, especialidad ] 
+        actions: 
+          _list: ~
+          _save: ~
+          

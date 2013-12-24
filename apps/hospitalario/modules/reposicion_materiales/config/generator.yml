@@ -32,8 +32,11 @@ generator:
         title: Editar Solicitud de Reposicion de Material
         actions:
           _save: ~
-      new:     
+      new:        
         title: Nueva Solicitud de Reposicion de Material
+        display:
+          Datos Generales de la Solicitud de Reposición de Materiales: [unidad, encargado]
+          Adicionar Item: [ detalle ]
         actions:
           _save: ~
           _save_and_add: ~

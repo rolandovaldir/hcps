@@ -18,7 +18,8 @@ class internadosActions extends autoInternadosActions
         $user = $this->getUser();
         $user-> setAttribute('internado',  $this->getRoute()->getObject());
         $internado = $user->getAttribute('internado');
-        $this->nombre_completo_internado = $this->getRoute()->getObject()->getNombreCompleto();        
+        $this->nombre_completo_internado = $this->getRoute()->getObject()->getNombreCompleto();                
+        $this->internado = $this->getRoute()->getObject();
         $this->setLayout('layout');
     }
    

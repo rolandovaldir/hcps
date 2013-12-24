@@ -13,11 +13,12 @@ class UsoHospitalarioForm extends BaseUsoHospitalarioForm
   public function configure()
   {
       unset($this['created_at'], $this['updated_at']);
-      //$this->embedRelation('DetallesUsoHospitalario');
+      $this->setWidget("internado_id", new sfWidgetFormInputHidden());
             
       $detalle = new DetalleUsoHospitalario();
       $detalle->setUsoHospitalario($this->object);
       $detalleForm = new DetalleUsoHospitalarioForm($detalle);
-      $this->embedForm('DetallesUsoHospitalario', $detalleForm);
+      $this->embedForm('detalle', $detalleForm);
   }
+  
 }

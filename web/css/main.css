@@ -55,3 +55,33 @@ ul.side_menu_forms li {
 
 #sf_admin_container .onlyFormat tr{ border:0; }
 #sf_admin_container .onlyFormat td{ border:0; }
+
+
+/*****/
+
+
+#sf_admin_container div.for-grouped-choices ul.checkbox_list{
+ width:815px;
+ margin:8px;
+}
+
+#sf_admin_container div.for-grouped-choices ul.checkbox_list li{
+ width: 270px;
+ float: left;
+}
+
+#sf_admin_container div.for-grouped-choices .group_title{
+ clear: both;
+ border-bottom: 1px solid #554466;
+ padding: 12px 5px 0;
+}
+
+/*tabla detalles para formularios*/
+#sf_admin_container table.for-form th{
+ background-color: #CCCCFF;
+ border:1px solid #9C9CDF;
+}
+
+#sf_admin_container table.for-form td{
+ border:1px solid #A2A3A1;
+}    

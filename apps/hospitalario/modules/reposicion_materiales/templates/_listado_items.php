@@ -2,7 +2,7 @@
 $q = Doctrine_Core::getTable('DetalleMaterial')->selectDetalles($form->getObject()->getId());
 $materiales = $q->execute();
 ?>
-<table width="100%">
+<table width="100%" class="for-form">
     <tr>
         <th>CÓDIGO</th>
         <th>DESCRIPCIÓN DEL PRODUCTO</th>

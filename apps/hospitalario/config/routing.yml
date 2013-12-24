@@ -1,3 +1,12 @@
+detalle_uso_hospitalario:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                DetalleUsoHospitalario
+    module:               detalle_uso_hospitalario
+    prefix_path:          /detalle_uso_hospitalario
+    column:               id
+    with_wildcard_routes: true
+
 solicitud_examen_laboratorio_clinico:
   class: sfDoctrineRouteCollection
   options:
@@ -315,7 +324,7 @@ atencion_enfermeria:
     column:               id
     with_wildcard_routes: true
 
-uso_hospitalario_uso_hospitalario:
+uso_hospitalario:
   class: sfDoctrineRouteCollection
   options:
     model:                UsoHospitalario
