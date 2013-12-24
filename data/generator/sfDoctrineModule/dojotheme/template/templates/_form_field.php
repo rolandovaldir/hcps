@@ -1,7 +1,7 @@
 [?php if ($field->isPartial()): ?]
-  [?php include_partial('<?php echo $this->getModuleName() ?>/'.$name, array('form' => $form, 'attributes' => $attributes instanceof sfOutputEscaper ? $attributes->getRawValue() : $attributes)) ?]
+  [?php include_partial('<?php echo $this->getModuleName() ?>/'.$name, array('form' => $form, 'attributes' => $attributes instanceof sfOutputEscaper ? $attributes->getRawValue() : $attributes<?php if (array_key_exists('extra_url_custom_id', $this->params)) { echo ', \'extra_url_custom_id\' => $extra_url_custom_id'; } ?>)) ?]
 [?php elseif ($field->isComponent()): ?]
-  [?php include_component('<?php echo $this->getModuleName() ?>', $name, array('form' => $form, 'attributes' => $attributes instanceof sfOutputEscaper ? $attributes->getRawValue() : $attributes)) ?]
+  [?php include_component('<?php echo $this->getModuleName() ?>', $name, array('form' => $form, 'attributes' => $attributes instanceof sfOutputEscaper ? $attributes->getRawValue() : $attributes<?php if (array_key_exists('extra_url_custom_id', $this->params)) { echo ', \'extra_url_custom_id\' => $extra_url_custom_id'; } ?>)) ?]
 [?php else: ?]
   <div class="[?php echo $class ?][?php $form[$name]->hasError() and print ' errors' ?]">
     [?php echo $form[$name]->renderError() ?]

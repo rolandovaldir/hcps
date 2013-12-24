@@ -16,4 +16,27 @@ class ProgramacionCirugiaTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('ProgramacionCirugia');
     }
+    
+    
+    
+    const EXAMEN_AUX_VALORACION_CARDIOLOGICA = 'C';
+    const EXAMEN_AUX_EXAMEN_LABORATORIO = 'L';
+    const EXAMEN_AUX_RADIOGRAFIAS = 'R';
+    const EXAMEN_AUX_OTROS = 'O';
+    
+    static $descripciones_examen_auxiliar = array('C'=>'Valoración Cordiologica', 'L'=>'Exámenes de Laboratorio', 'R'=>'Radiografias', 'O'=>'Otros Exámenes');
+    
+    static function getDescripciones_examen_auxiliar()
+    {
+        return self::$descripciones_examen_auxiliar;
+    }
+    
+    static function getDescripcion_examen_auxiliar($key,$default=null)
+    {
+        if (array_key_exists($key, self::$descripciones_examen_auxiliar)){
+            return self::$descripciones_examen_auxiliar[$key];
+        }
+        return $default;
+    }
+    
 }

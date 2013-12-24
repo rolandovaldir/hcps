@@ -25,7 +25,7 @@ abstract class BaseServicioMantenimientoForm extends BaseFormDoctrine
       'trabajo_solicitado' => new sfWidgetFormTextarea(),
       'conformidad'        => new sfWidgetFormInputText(),
       'reparado_por'       => new sfWidgetFormInputText(),
-      'importe'            => new sfWidgetFormInputText(),
+      'importe'            => new myWidgetFormDojoInteger(),
       'importe_fecha'      => new myWidgetFormDojoDate(),
       'created_at'         => new myWidgetFormDojoDateTime(),
       'updated_at'         => new myWidgetFormDojoDateTime(),

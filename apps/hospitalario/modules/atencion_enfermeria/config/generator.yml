@@ -14,12 +14,78 @@ generator:
 
     config:
       actions: ~
-      fields:        
+      fields:
+        per_apariencia_gral_esc:   { label: Apariencia General (Escala), attributes: { class: foo } }
+        per_apariencia_gral_val:   { label: Apariencia General (Valoracion), attributes: { class: foo } }
+        per_habitos_esc:           { label: Habitos (Escala) }
+        per_habitos_val:           { label: Habitos (Valoracion) }
+        per_alergias_esc:          { label: Alergias (Escala) } 
+        per_alergias_val:          { label: Alergias (Valoracion) }
+        per_inmunizaciones_esc:    { label: Inmunizaciones (Escala) }
+        per_inmunizaciones_val:    { label: Inmunizaciones (Valoracion) } 
+        per_medicacion_actual_esc: { label: Medicacion Actual (Escala) }
+        per_medicacion_actual_val: { label: Medicacion Actual (Valoracion) }
+        
+        nutmet_higiene_esc:               { label: 'Higiene e Integridad cutánea: piel, pelo, uñas (Escala)' }
+        nutmet_higiene_val:               { label: 'Higiene e Integridad cutánea: piel, pelo, uñas (Valoracion)' } 
+        nutmet_estado_nutricional_esc:    { label: 'Estado Nutricional: habito (Escala)' }
+        nutmet_estado_nutricional_val:    { label: 'Estado Nutricional: habito (Valoracion)' }
+        nutmet_protesis_dental_esc:       { label: Prótesis Dental (Escala) } 
+        nutmet_protesis_dental_val:       { label: Prótesis Dental (Valoracion) }
+        nutmet_liquidos_electrolitos_esc: { label: 'Líquidos electrolitos: Perdidas, drenajes (Escala)' } 
+        nutmet_liquidos_electrolitos_val: { label: 'Líquidos electrolitos: Perdidas, drenajes (Valoracion)' } 
+          
+        patelim_habito_intestinal_esc:   { label: Habito Intestinal (Escala) } 
+        patelim_habito_intestinal_val:   { label: Habito Intestinal (Valoracion) }  
+        patelim_habito_urinario_esc:     { label: Habito Urinario (Escala) } 
+        patelim_habito_urinario_val:     { label: Habito Urinario (Valoracion) } 
+          
+        acteje_valoracion_cardiopulmonar_esc: { label: Valoración Cardiopulmonar (Escala) }
+        acteje_valoracion_cardiopulmonar_val: { label: Valoración Cardiopulmonar (Valoracion) }
+        acteje_capacidad_motora_esc:          { label: Capacidad motora (Escala) } 
+        acteje_capacidad_motora_val:          { label: Capacidad motora (Valoracion) } 
+        acteje_act_diversion_esc:             { label: 'Actividad de diversión: Interés, hobbies (Escala)' }
+        acteje_act_diversion_val:             { label: 'Actividad de diversión: Interés, hobbies (Valoracion)' } 
+        acteje_deficit_autocuidado_esc:       { label: 'Déficit de autocuidado: Alimentarse, vestirse (Escala)' }
+        acteje_deficit_autocuidado_val:       { label: 'Déficit de autocuidado: Alimentarse, vestirse (Valoracion)' }
+        acteje_crecim_desarrollo_esc:         { label: Crecimiento y desarrollo (Escala) } 
+        acteje_crecim_desarrollo_val:         { label: Crecimiento y desarrollo (Valoracion) }  
+        
+        des_habito_descanso_esc:       { label: Hábitos de descanso (Escala) } 
+        des_habito_descanso_val:       { label: Hábitos de descanso (Valoracion) } 
+        des_transtorno_sueno_esc:      { label: Transtorno de sueño (Escala) } 
+        des_transtorno_sueno_val:      { label: Transtorno de sueño (Valoracion) } 
+        
+        cogper_alter_sensoriales_esc:      { label: 'Alteraciones sensoriales: vista, oido, piel, olfato y sabor (Escala)' }
+        cogper_alter_sensoriales_val:      { label: 'Alteraciones sensoriales: vista, oido, piel, olfato y sabor (Valoracion)' }
+        cogper_nivel_conciencia_esc:       { label: 'Nivel de conciencia: tiempo y espacio (Escala)' }
+        cogper_nivel_conciencia_val:       { label: 'Nivel de conciencia: tiempo y espacio (Valoracion)' }
+        cogper_alteracion_promentales_esc: { label: 'Alteración procesos mentales: Psiquiátrico (Escala)' }
+        cogper_alteracion_promentales_val: { label: 'Alteración procesos mentales: Psiquiátrico (Valoracion)' }
+        
+        auto_reaccion_emocional_esc:   { label: 'Estado de reacciones emocionales: Ansiedad, miedo, agresividad, llanto (Escala)' }
+        auto_reaccion_emocional_val:   { label: 'Estado de reacciones emocionales: Ansiedad, miedo, agresividad, llanto (Valoracion)' }
+          
+        relrol_relacion_interpersonal_esc:   { label: Relaciones interpersonales (Escala) } 
+        relrol_relacion_interpersonal_val:   { label: Relaciones interpersonales (Valoracion) } 
+        relrol_conducta_familia_esc:         { label: Conducta de la familia (Escala) } 
+        relrol_conducta_familia_val:         { label: Conducta de la familia (Valoracion) } 
+        relrol_cambio_personalfamiliar_esc:  { label: Cambio o perdida personal o familiar (Escala) } 
+        relrol_cambio_personalfamiliar_val:  { label: Cambio o perdida personal o familiar (Valoracion) } 
+        
+        repsex_alteracion_sisreproductivo_esc:  { label: Alteracion en el sistema reproductivo (Escala) } 
+        repsex_alteracion_sisreproductivo_val:  { label: Alteracion en el sistema reproductivo (Valoracion) } 
+        
+        capstr_relpaciente_enfermedad_esc:  { label: Relación del paciente a la enfermedad (Escala) } 
+        capstr_relpaciente_enfermedad_val:  { label: Relación del paciente a la enfermedad (Valoracion) } 
+        capstr_relfamilia_enfermedad_esc:   { label: Relación de la familia a la enfermedad (Escala) }  
+        capstr_relfamilia_enfermedad_val:   { label: Relación de la familia a la enfermedad (Valoracion) }  
+          
         created_at:     { date_format: dd/MM/yyyy }
         updated_at:     { date_format: dd/MM/yyyy }        
       list:  
         title:   Listado Atencion Enfermeria
-        display: [ per_apariencia_gral_esc, per_apariencia_gral_val, per_habitos_esc, per_habitos_val, per_alergias_esc, per_alergias_val, per_inmunizaciones_esc, per_inmunizaciones_val, per_medicacion_actual_esc, per_medicacion_actual_val, motivo_ingreso, nutmet_higiene_esc, nutmet_higiene_val, nutmet_estado_nutricional_esc, nutmet_estado_nutricional_val, nutmet_protesis_dental_esc, nutmet_protesis_dental_val, nutmet_liquidos_electrolitos_esc, nutmet_liquidos_electrolitos_val, patelim_habito_intestinal_esc, patelim_habito_intestinal_val, patelim_habito_urinario_esc, patelim_habito_urinario_val, acteje_valoracion_cardiopulmonar_esc, acteje_valoracion_cardiopulmonar_val, acteje_capacidad_motora_esc, acteje_capacidad_motora_val, acteje_act_diversion_esc, acteje_act_diversion_val, acteje_deficit_autocuidado_esc, acteje_deficit_autocuidado_val, acteje_crecim_desarrollo_esc, acteje_crecim_desarrollo_val, des_habito_descanso_esc, des_habito_descanso_val, des_transtorno_sueno_esc, des_transtorno_sueno_val, cogper_alter_sensoriales_esc, cogper_alter_sensoriales_val, cogper_nivel_conciencia_esc, cogper_nivel_conciencia_val, cogper_alteracion_promentales_esc, cogper_alteracion_promentales_val, auto_reaccion_emocional_esc, auto_reaccion_emocional_val, relrol_relacion_interpersonal_esc, relrol_relacion_interpersonal_val, relrol_conducta_familia_esc, relrol_conducta_familia_val, relrol_cambio_personalfamiliar_esc, relrol_cambio_personalfamiliar_val, repsex_alteracion_sisreproductivo_esc, repsex_alteracion_sisreproductivo_val, capstr_relpaciente_enfermedad_esc, capstr_relpaciente_enfermedad_val, creencia_religiosa, diagnostico_enfermera, created_at, updated_at ]
+        display: [ per_apariencia_gral_val, per_habitos_val, per_alergias_val, per_inmunizaciones_val, per_medicacion_actual_val, motivo_ingreso, nutmet_higiene_val,  nutmet_estado_nutricional_val,  nutmet_protesis_dental_val,  nutmet_liquidos_electrolitos_val,  patelim_habito_intestinal_val,  patelim_habito_urinario_val,  acteje_valoracion_cardiopulmonar_val,  acteje_capacidad_motora_val,  acteje_act_diversion_val,  acteje_deficit_autocuidado_val,  acteje_crecim_desarrollo_val,  des_habito_descanso_val,  des_transtorno_sueno_val, cogper_alter_sensoriales_val,  cogper_nivel_conciencia_val,  cogper_alteracion_promentales_val,  auto_reaccion_emocional_val,  relrol_relacion_interpersonal_val, relrol_conducta_familia_val,  relrol_cambio_personalfamiliar_val, repsex_alteracion_sisreproductivo_val, capstr_relpaciente_enfermedad_val, creencia_religiosa, diagnostico_enfermera, created_at, updated_at ]
         actions: {}
         batch_actions: {}
       filter: 
@@ -35,7 +101,7 @@ generator:
           "7. AUTOPERCEPCION Y AUTOCONCEPTO": [ auto_reaccion_emocional_esc, auto_reaccion_emocional_val ]
           "8. RELACION CON EL ROL":           [ relrol_relacion_interpersonal_esc, relrol_relacion_interpersonal_val, relrol_conducta_familia_esc, relrol_conducta_familia_val, relrol_cambio_personalfamiliar_esc, relrol_cambio_personalfamiliar_val ]
           "9. PEPRODUCTIVO-SEXUAL":           [ repsex_alteracion_sisreproductivo_esc, repsex_alteracion_sisreproductivo_val ]
-          "10. CAPACIDAD DE AFRONTAR SITUACIONES DE STRESS":  [ capstr_relpaciente_enfermedad_esc, capstr_relpaciente_enfermedad_val ]
+          "10. CAPACIDAD DE AFRONTAR SITUACIONES DE STRESS":  [ capstr_relpaciente_enfermedad_esc, capstr_relpaciente_enfermedad_val, capstr_relfamilia_enfermedad_esc, capstr_relfamilia_enfermedad_val ]
           "11. CREENCIAS Y VALORES":          [ creencia_religiosa ]
           "&nbsp;":                           [ diagnostico_enfermera ]
       edit:

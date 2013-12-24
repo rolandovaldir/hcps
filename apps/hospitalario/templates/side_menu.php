@@ -15,6 +15,7 @@ $link_menus = array(
     array('link'=>'ordenes_medicas','label'=>'Ordenes Medicas'),
     array('link'=>'papeletapedidomaterial','label'=>'Papeleta Pedido Material'),
     array('link'=>'programacion_cirugia','label'=>'Programacion Cirugias'),
+    array('link'=>'uso_hospitalario','label'=>'Receta Uso Hospitalario'),
     array('link'=>'recien_nacidos','label'=>'Recien Nacidos'),
     array('link'=>'reposicion_materiales','label'=>'Reposicion Materiales'),
 //    array('link'=>'resumenalta','label'=>'Resumen Alta'),
@@ -22,18 +23,18 @@ $link_menus = array(
     array('link'=>'solicitudes_interconsultas','label'=>'Solicitudes Interconsultas'),
     array('link'=>'solicitudes_servicios','label'=>'Solicitudes Servicios'),
     array('link'=>'solicitudes_examen_laboratorio','label'=>'Solicitudes Examen Laboratorio'),
-    array('link'=>'solicitudes_transfusion_sanguinea','label'=>'Solicitudes Transfusiones'),
-    array('link'=>'usohospitalario','label'=>'Uso Hospitalario')
+    array('link'=>'solicitudes_transfusion_sanguinea','label'=>'Solicitudes Transfusiones')
+    
 );
 
 foreach ($link_menus as $val){ ?>
     <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title: '<?php echo $val['label'] ?>'," >
         <ul class="side_menu_forms">            
             <li class="sf_admin_action_list">                
-                <?php echo  link_to_function('Ver Listado', "dijit.byId('dojotheme-maincontainer').set('href','" . public_path($val['link'] . "/index?internado_id=" . $aux_internado_id) . "')") ?>
+                <?php echo  link_to_function('Ver Listado', "dijit.byId('dojotheme-maincontainer').set('href','" . url_for($val['link'] . "/index?internado_id=" . $aux_internado_id) . "')") ?>
             </li>            
             <li class="sf_admin_action_new">
-                <?php echo  link_to_function('Crear Nuevo', "dijit.byId('dojotheme-maincontainer').set('href','" . public_path($val['link'] . "/new?internado_id=" . $aux_internado_id) . "')") ?>
+                <?php echo  link_to_function('Crear Nuevo', "dijit.byId('dojotheme-maincontainer').set('href','" . url_for($val['link'] . "/new?internado_id=" . $aux_internado_id) . "')") ?>
             </li>
         </ul>
     </div>

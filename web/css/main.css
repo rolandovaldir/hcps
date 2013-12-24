@@ -21,6 +21,12 @@ table.user-info td{
   white-space: nowrap;
   padding:2px 0;
 }
+
+table.user-info span{
+ color: #025A8D; 
+ font-size: 11px; 
+ font-weight: bold;
+}
 #footer-layout{
   border:0px;
   background-color: transparent;
@@ -42,3 +48,40 @@ ul.side_menu_forms li {
   margin-bottom: 1em;
   border: 1px solid #808080;    
 }
+
+#sf_admin_container .onlyFormat { margin: 0; }
+
+#sf_admin_container .onlyFormat label{ min-width: 5em; }
+
+#sf_admin_container .onlyFormat tr{ border:0; }
+#sf_admin_container .onlyFormat td{ border:0; }
+
+
+/*****/
+
+
+#sf_admin_container div.for-grouped-choices ul.checkbox_list{
+ width:815px;
+ margin:8px;
+}
+
+#sf_admin_container div.for-grouped-choices ul.checkbox_list li{
+ width: 270px;
+ float: left;
+}
+
+#sf_admin_container div.for-grouped-choices .group_title{
+ clear: both;
+ border-bottom: 1px solid #554466;
+ padding: 12px 5px 0;
+}
+
+/*tabla detalles para formularios*/
+#sf_admin_container table.for-form th{
+ background-color: #CCCCFF;
+ border:1px solid #9C9CDF;
+}
+
+#sf_admin_container table.for-form td{
+ border:1px solid #A2A3A1;
+}    

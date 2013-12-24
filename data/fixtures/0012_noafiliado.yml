@@ -1,0 +1,21 @@
+## YAML Template.
+---
+PacienteOtroseguro:
+  OTRO1:
+    nombre:           Joaquin
+    paterno:          Guzmán
+    materno:          Alave
+    casada:           
+    fechaNacimiento:  '1985-05-21'
+    sexo:             M
+    ci:               5968975
+    exp:              '2013-01-20'
+    domicilio:        El alto villa dolores
+    telefono:         2845925
+    celular:          70598754
+    email:            jguz@hotmail.com
+    hclinica:         ??
+    ocupacion:        empleado
+    departamento:     La Paz
+    ciudad:           El Alto
+    provincia:        Murillo

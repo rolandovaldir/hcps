@@ -477,12 +477,12 @@ ProgramacionCirugia:
     internado_id:                { type: integer , notnull: true }
     medico_id:                   { type: integer }
     operacion_fecha:             { type: date }
-    operacion_hora:              { type: time }
-    diagnostico_preoperatorio:   { type: string(250) }
-    tratamiento_quirurgico:      { type: string(250) } 
-    anestesia:                   { type: string(150) }
-    otros:                       { type: string(150) } 
-    examenes_auxiliares:         { type: string(1) }
+    operacion_hora:              { type: string(100) }
+    diagnostico_preoperatorio:   { type: string(600) }
+    tratamiento_quirurgico:      { type: string(500) } 
+    anestesia:                   { type: string(250) }
+    otros:                       { type: string(250) } 
+    examenes_auxiliares:         { type: array }
     fecha:                       { type: date }
     enfermera_id:                { type: integer }
     enviado:                     { type: string(80) } 
@@ -491,11 +491,12 @@ ProgramacionCirugia:
     Internado: { local: internado_id, foreign: id, type: one, foreignAlias: ProgracionesCirugia }
 
 # guillermo
-SolicitudExamenLaboratorio:
+SolicitudExamenLaboratorioClinico:
   actAs: [Timestampable]  
   columns:     
     internado_id:             { type: integer, notnull: true }
-    doctor_id:                { type: integer }
+    vobo_medico_id:           { type: integer }
+    examenes:                 { type: array }
     material_enviado:         { type: string(45) } 
     otros_examenes:           { type: string(45) }
     diagnostico_presuntivo:   { type: string(45) }
@@ -503,17 +504,38 @@ SolicitudExamenLaboratorio:
     lugar:                    { type: string(45) }
     fecha:                    { type: date } 
   relations:
-    Internado: { local: internado_id, foreign: id, type: one, foreignAlias: SolicitudesExamenLaboratorio }
+    Internado: { local: internado_id, foreign: id, type: one, foreignAlias: SolicitudesExamenLaboratorioClinico }
+    TipoExamenLaboratorioClinico: 
+      class:     TipoExamenLaboratorioClinico
+      refClass:  DetalleSolicitudExamenLaboratorioClinico  
+      local:     solicitud_examen_laboratorio_clinico_id
+      foreign:   tipo_examen_laboratorio_clinico_id
+
+DetalleSolicitudExamenLaboratorioClinico:
+  actAs: []
+  columns:     
+    solicitud_examen_laboratorio_clinico_id:  { type: integer, notnull: true }
+    tipo_examen_laboratorio_clinico_id:       { type: integer, notnull: true }    
+  relations:  
+    SolicitudExamenLaboratorioClinico: { local: solicitud_examen_laboratorio_clinico_id, foreign: id, type: one }  
+    TipoExamenLaboratorioClinico:      { local: tipo_examen_laboratorio_clinico_id, foreign: id, type: one }  
+
 
 # guillermo
-DetalleSolicitudExamenLaboratorio:
-  actAs: [Timestampable]
-  columns:     
-    solicitud_examen_laboratorio_id:  { type: integer, notnull: true }
-    tipo:                             { type: integer }
-  relations:
-    SolicitudExamenLaboratorio: { local: solicitud_examen_laboratorio_id, foreign: id, type: one, foreignAlias: DetallesSolicitudExamenLaboratorio }
-
+TipoExamenLaboratorioClinico:
+  actAs: []
+  columns:
+    grupo_orden:    { type: integer(3), notnull: true }
+    grupo_nombre:   { type: string(50), notnull: true }
+    examen_orden:   { type: string(5),  notnull: true }
+    examen_nombre:  { type: string(150), notnull: true }
+    activo:         { type: boolean, notnull: true }  
+  relations:  
+    SolicitudExamenLaboratorioClinico:
+      class:     SolicitudExamenLaboratorioClinico
+      refClass:  DetalleSolicitudExamenLaboratorioClinico  
+      local:     tipo_examen_laboratorio_clinico_id
+      foreign:   solicitud_examen_laboratorio_clinico_id
 # guillermo
 #AdministracionMedicamento:
 #  actAs: [Timestampable]  
@@ -560,8 +582,9 @@ UsoHospitalario:
   actAs: [Timestampable]  
   columns:     
     internado_id:           { type: integer, notnull: true }    
-    medico_id:              { type: integer }
     lugar:                  { type: string(60) }
+    fecha:                  { type: date }
+    medico_id:              { type: integer }    
     codigo:                 { type: string(45) }
     especialidad:           { type: string(45) }
   relations:
@@ -644,6 +667,8 @@ AtencionEnfermeria:
     repsex_alteracion_sisreproductivo_val:  { type: string(150) }
     capstr_relpaciente_enfermedad_esc:      { type: string(1) }
     capstr_relpaciente_enfermedad_val:      { type: string(150) }
+    capstr_relfamilia_enfermedad_esc:       { type: string(1) }
+    capstr_relfamilia_enfermedad_val:       { type: string(150) }
     creencia_religiosa:                     { type: string(80) }
     diagnostico_enfermera:                  { type: string(2500) }
   relations:

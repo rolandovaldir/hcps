@@ -11,16 +11,20 @@
     <script type="text/javascript" src="<?php echo public_path('js/dojo-1.9.1/dojo/dojo.js'); ?>" 
             data-dojo-config="has:{'dojo-firebug': true},parseOnLoad: true, async: 1" ></script>
     <script>        
-        require(["dijit/layout/BorderContainer", "dijit/layout/TabContainer", "dijit/layout/ContentPane",'dijit/Dialog','dijit/layout/SplitContainer','dijit/layout/AccordionContainer','dijit/MenuItem']);        
+        require(["dojo", "dijit/layout/BorderContainer", "dijit/layout/TabContainer", "dijit/layout/ContentPane",'dijit/Dialog','dijit/layout/SplitContainer','dijit/layout/AccordionContainer','dijit/MenuItem'],
+            function(){ dojo.fadeOut({ node: 'loading-page', onEnd: function(node){ node.style.display = 'none'; } }).play(); }
+        );        
     </script>
 </head>
 <body class="claro" >
+    <div id="loading-page" style="position:absolute;background-color: #ffffff;width: 100%;height: 100%;z-index: 99999;margin:0;padding: 20px;">Cargando ...</div>
     <div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design: 'headline',id:'container1'" style="height: 100%;margin:auto;" >
-        <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'top'" id="header-layout" >              
+        <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'top'" id="header-layout" style="padding:8px 10px 2px;" >
             <table class="user-info">
                 <tr>
-                    <td rowspan="3" style="width: 90%;">
-                    </td>    
+                    <td rowspan="2" style="width: 90%;">
+                        
+                    </td>                        
                     <td style="font-size: 11px">
                     <?php $week_days = array ("Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado");
                         $months = array ("", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
@@ -34,7 +38,7 @@
                 </tr>
                 <tr>
                     <td nowrap="nowrap" style="font-size: 11px">Usuario:
-                        <span style="color: #025A8D; font-size: 11px; font-weight: bold">
+                        <span>
                         <?php if($sf_user->isAuthenticated() == true): ?>
                             <?php if($sf_user->getProfile()->getMedicoId()) echo $sf_user->getProfile()->getMedico()->getNombrec(); ?>
                             <?php if($sf_user->getProfile()->getEmpleadoId()) echo $sf_user->getProfile()->getEmpleado()->getNombre(); ?>
@@ -44,8 +48,13 @@
                     </td>
                 </tr>
                 <tr>
+                    <td style="text-align: center;">
+                        Internado: 
+                        <span style="font-size: 1.2em;"><?php include_slot('internado_nombre') ?></span>
+                        <?php echo link_to('otro', 'internados/index') ?>
+                    </td>    
                     <td nowrap="nowrap" style="font-size: 11px">Especialidad:
-                        <span style="color: #025A8D; font-size: 11px; font-weight: bold">
+                        <span>
                         <?php if($sf_user->isAuthenticated() == true): ?>
                             <?php if($sf_user->getProfile()->getMedicoId()) echo $sf_user->getProfile()->getMedico()->getEspecialidad()->getNombre(); ?>
                             <?php if($sf_user->getProfile()->getEmpleadoId()) echo $sf_user->getProfile()->getEmpleado()->getProfesion(); ?>

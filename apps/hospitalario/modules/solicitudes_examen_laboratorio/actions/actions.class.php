@@ -13,6 +13,7 @@ require_once dirname(__FILE__).'/../lib/solicitudes_examen_laboratorioGeneratorH
  */
 class solicitudes_examen_laboratorioActions extends autoSolicitudes_examen_laboratorioActions
 {
+    
     /**
      * overwrite the filter to list only the rows for the chosen internado
      * @return string 

@@ -14,7 +14,8 @@ generator:
 
     config:
       actions: ~
-      fields:  
+      fields:
+        
         fecha_hora: { date_format: 'dd/MM/yyyy hh:mm' } 
         created_at: { date_format: dd/MM/yyyy }
         updated_at: { date_format: dd/MM/yyyy }
@@ -26,7 +27,21 @@ generator:
       filter:  
         display: [ nombre_familiar1, tipo_parentesco1, ci_familiar1,nombre_familiar2, tipo_parentesco2, ci_familiar2,nombre_familiar3, tipo_parentesco3, ci_familiar3, fecha_hora ]
       form:    
-        display: [internado_id, nombre_familiar1, tipo_parentesco1, ci_familiar1,nombre_familiar2, tipo_parentesco2, ci_familiar2,nombre_familiar3, tipo_parentesco3, ci_familiar3, fecha_hora]
+        display: 
+          'Familiar 1': [ internado_id, nombre_familiar1, tipo_parentesco1, ci_familiar1 ]
+          'Familiar 2': [ nombre_familiar2, tipo_parentesco2, ci_familiar2 ]
+          'Familiar 3': [ nombre_familiar3, tipo_parentesco3, ci_familiar3 ]
+          '&nbsp;' :   [ fecha_hora ]
+        fields:
+          nombre_familiar1: { label: Nombre }
+          nombre_familiar2: { label: Nombre }
+          nombre_familiar3: { label: Nombre }
+          tipo_parentesco1: { label: Tipo Parentezco }
+          tipo_parentesco2: { label: Tipo Parentezco }
+          tipo_parentesco3: { label: Tipo Parentezco }
+          ci_familiar1 :    { label: CI }
+          ci_familiar2 :    { label: CI }
+          ci_familiar3 :    { label: CI }
       edit:            
         title: Edición Autorizacion Autopsia
       new:        

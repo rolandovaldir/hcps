@@ -20,7 +20,10 @@ generator:
         batch_actions: {}
       filter:  ~
       form:    ~
-      edit:    ~
+      edit:    
+        actions:
+          _delete:    ~
+          _save:      ~
       new:     
         actions:
           _save: ~

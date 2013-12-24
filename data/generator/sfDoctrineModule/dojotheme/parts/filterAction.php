@@ -1,6 +1,6 @@
   public function executeFilter(sfWebRequest $request)
   {
-    <?php $aux_extra_url_custom_id = $this->params['extra_url_custom_id']!='' ? " . '?" . $this->params['extra_url_custom_id'] . '=\' . $request->getParameter(\'' .  $this->params['extra_url_custom_id'] . '\')' : '' ?>
+    <?php $aux_extra_url_custom_id = array_key_exists('extra_url_custom_id', $this->params) ? " . '?" . $this->params['extra_url_custom_id'] . '=\' . $request->getParameter(\'' .  $this->params['extra_url_custom_id'] . '\')' : '' ?>
     $this->setPage(1);
 
     if ($request->hasParameter('_reset'))

@@ -24,7 +24,7 @@ abstract class BaseExamenFisicoRecienNacidoForm extends BaseFormDoctrine
       'peso_nacimiento'      => new sfWidgetFormInputText(),
       'talla'                => new sfWidgetFormInputText(),
       'circunferencia_torax' => new sfWidgetFormInputText(),
-      'numero_cuna'          => new sfWidgetFormInputText(),
+      'numero_cuna'          => new myWidgetFormDojoInteger(),
       'fecha_adminision'     => new myWidgetFormDojoDate(),
       'fecha_egreso'         => new myWidgetFormDojoDate(),
       'created_at'           => new myWidgetFormDojoDateTime(),

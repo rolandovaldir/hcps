@@ -21,7 +21,7 @@ abstract class BaseCamaForm extends BaseFormDoctrine
       'ocupada'       => new sfWidgetFormInputCheckbox(),
       'observaciones' => new sfWidgetFormInputText(),
       'codigo_activo' => new sfWidgetFormInputText(),
-      'activo_id'     => new sfWidgetFormInputText(),
+      'activo_id'     => new myWidgetFormDojoInteger(),
       'created_at'    => new myWidgetFormDojoDateTime(),
       'updated_at'    => new myWidgetFormDojoDateTime(),
     ));

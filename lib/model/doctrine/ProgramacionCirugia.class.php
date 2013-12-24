@@ -13,4 +13,13 @@
 class ProgramacionCirugia extends BaseProgramacionCirugia
 {
 
+    public function getDescripcionExamenesAuxiliares($sepatator=", ") 
+    {
+        $res =array();
+        foreach ($this->getExamenesAuxiliares() as $ex){
+            $res[] = ProgramacionCirugiaTable::getDescripcion_examen_auxiliar($ex);
+        }
+        return implode($sepatator, $res);
+    }    
+    
 }

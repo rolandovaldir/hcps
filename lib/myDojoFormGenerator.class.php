@@ -28,9 +28,11 @@ class myDojoFormGenerator extends sfDoctrineFormGenerator
       case 'timestamp':
         return 'myWidgetFormDojoDateTime';
         break; 
-      default:
-        return parent::getWidgetClassForColumn($column); 
+      case 'integer':
+        if (!$column->isForeignKey() && !$column->isPrimaryKey()){ return 'myWidgetFormDojoInteger'; }        
+        break;              
     }
+    return parent::getWidgetClassForColumn($column); 
   }
   
   public function getValidatorClassForColumn($column)

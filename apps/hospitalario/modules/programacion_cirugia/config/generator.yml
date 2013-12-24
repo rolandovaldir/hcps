@@ -20,16 +20,16 @@ generator:
         updated_at: { date_format: dd/MM/yyyy }
       list:
         title: Listado Programacion Para Cirugias
-        display: [ operacion_fecha, operacion_hora,diagnostico_preoperatorio, tratamiento_quirurgico, anestesia, otros, examenes_auxiliares, created_at, updated_at]        
+        display: [ operacion_fecha, operacion_hora,diagnostico_preoperatorio, tratamiento_quirurgico, anestesia, otros, descripcion_examenes_auxiliares, created_at, updated_at]        
         actions: {}
         batch_actions: {}
       filter:
-        display: [ medico_id, operacion_fecha ]
+        display: [ medico_id, operacion_fecha, diagnostico_preoperatorio, tratamiento_quirurgico, anestesia, otros, examenes_auxiliares ]
       form:   
         display: 
-          Operacion:            [ internado_id, operacion_fecha, operacion_hora ]
-          "&nbsp;":             [ diagnostico_preoperatorio, tratamiento_quirurgico, anestesia, otros ]
-          Examenes Auxiliares:  [ examenes_auxiliares, created_at, updated_at ]          
+          Operacion:             [ internado_id, operacion_fecha, operacion_hora ]
+          "&nbsp;":              [ diagnostico_preoperatorio, tratamiento_quirurgico, anestesia, otros ]
+          "Examenes Auxiliares": [ examenes_auxiliares, created_at, updated_at ]          
       edit:            
         title: Edición Programación Para Cirugias
       new:        

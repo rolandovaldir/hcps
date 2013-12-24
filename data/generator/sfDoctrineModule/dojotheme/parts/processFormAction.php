@@ -26,13 +26,13 @@
       if ($request->hasParameter('_save_and_add'))
       {
         $this->getUser()->setFlash('notice', $notice.' You can add another one below.');
-        <?php $aux_extra_url_custom_id = $this->params['extra_url_custom_id']!='' ? " . '?" . $this->params['extra_url_custom_id'] . '=\' . $request->getParameter(\'' .  $this->params['extra_url_custom_id'] . '\')' : '' ?> 
+        <?php $aux_extra_url_custom_id = array_key_exists('extra_url_custom_id', $this->params) ? " . '?" . $this->params['extra_url_custom_id'] . '=\' . $request->getParameter(\'' .  $this->params['extra_url_custom_id'] . '\')' : '' ?> 
         $this->redirect('@<?php echo $this->getUrlForAction('new') ?>' <?php echo $aux_extra_url_custom_id ?>);
       }
       else
       {
         $this->getUser()->setFlash('notice', $notice);
-        <?php $aux_extra_url_custom_id = $this->params['extra_url_custom_id']!='' ? ' \'' . $this->params['extra_url_custom_id'] . '\'=> $request->getParameter(\'' .  $this->params['extra_url_custom_id'] . '\')' : '' ?> 
+        <?php $aux_extra_url_custom_id = array_key_exists('extra_url_custom_id', $this->params) ? ' \'' . $this->params['extra_url_custom_id'] . '\'=> $request->getParameter(\'' .  $this->params['extra_url_custom_id'] . '\')' : '' ?> 
         $this->redirect(array('sf_route' => '<?php echo $this->getUrlForAction('edit') ?>', 'sf_subject' => $<?php echo $this->getSingularName() ?>, <?php echo $aux_extra_url_custom_id ?>));
       }
     }

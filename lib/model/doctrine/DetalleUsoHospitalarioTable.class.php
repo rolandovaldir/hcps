@@ -16,4 +16,13 @@ class DetalleUsoHospitalarioTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('DetalleUsoHospitalario');
     }
+       
+    
+    public static function getAllDetalles($uso_id)
+    {
+        $d = self::getInstance()->createQuery('det')            
+            ->where('det.uso_hospitalario_id = ?', $uso_id)
+            ->orderBy('det.id ASC')->execute();
+        return $d;
+    }
 }

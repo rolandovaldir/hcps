@@ -51,3 +51,29 @@ Internado:
     lugar_referencia_salida: ''
     medio_referencia_salida: ''
     motivo_refe_retorno:     ''
+  INTER3:
+    afiliado_id:             null
+    PacienteOtroseguro:      OTRO1
+    categoria_id:            5
+    cama_id:                 6
+    medico_id:               0
+    medico_consulta_id:      0
+    medico_referencia_id:    0
+    formulario_referencia:   ''
+    diagnostico:             ''
+    procedencia:             ''
+    medio_referencia:        ''
+    observaciones:           'nuevo'
+    fecha:                   '2013-07-15'
+    hora:                    '12:01'
+    conducto:                ''
+    es_afiliado:             false
+    alta:                    false
+    altaFecha:               null
+    altaHora:                null
+    diagnostico_alta:        ''
+    tratamientio:            ''
+    lugar_referencia_salida: ''
+    medio_referencia_salida: ''
+    motivo_refe_retorno:     ''  
+    
