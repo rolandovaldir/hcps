@@ -21,8 +21,8 @@ abstract class BaseInformeEstadisticoAdmEgresoForm extends BaseFormDoctrine
       'urgencia_direccion_calle' => new sfWidgetFormInputText(),
       'urgencia_direccion_no'    => new sfWidgetFormInputText(),
       'urgencia_direccion_fono'  => new sfWidgetFormInputText(),
-      'created_at'               => new myWidgetFormDojoDateTime(),
-      'updated_at'               => new myWidgetFormDojoDateTime(),
+      'created_at'               => new sfWidgetFormDateTime(),
+      'updated_at'               => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(

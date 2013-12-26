@@ -25,8 +25,8 @@ abstract class BaseAfiliadoForm extends BaseFormDoctrine
       'tafiliado'  => new sfWidgetFormInputText(),
       'activo'     => new sfWidgetFormInputText(),
       'grupofam'   => new sfWidgetFormInputText(),
-      'created_at' => new myWidgetFormDojoDateTime(),
-      'updated_at' => new myWidgetFormDojoDateTime(),
+      'created_at' => new sfWidgetFormDateTime(),
+      'updated_at' => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(

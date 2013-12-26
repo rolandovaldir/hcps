@@ -17,12 +17,12 @@ abstract class BaseNotasEnfermeriaForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'             => new sfWidgetFormInputHidden(),
       'internado_id'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => false)),
-      'fecha'          => new myWidgetFormDojoDate(),
-      'hora'           => new myWidgetFormDojoTime(),
+      'fecha'          => new sfWidgetFormDate(),
+      'hora'           => new sfWidgetFormTime(),
       'procedimientos' => new sfWidgetFormInputText(),
       'observaciones'  => new sfWidgetFormTextarea(),
-      'created_at'     => new myWidgetFormDojoDateTime(),
-      'updated_at'     => new myWidgetFormDojoDateTime(),
+      'created_at'     => new sfWidgetFormDateTime(),
+      'updated_at'     => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(

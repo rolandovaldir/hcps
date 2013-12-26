@@ -78,8 +78,8 @@ abstract class BaseAtencionEnfermeriaForm extends BaseFormDoctrine
       'capstr_relpaciente_enfermedad_val'     => new sfWidgetFormInputText(),
       'creencia_religiosa'                    => new sfWidgetFormInputText(),
       'diagnostico_enfermera'                 => new sfWidgetFormTextarea(),
-      'created_at'                            => new myWidgetFormDojoDateTime(),
-      'updated_at'                            => new myWidgetFormDojoDateTime(),
+      'created_at'                            => new sfWidgetFormDateTime(),
+      'updated_at'                            => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(

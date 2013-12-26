@@ -19,10 +19,10 @@ abstract class BaseListaDietaForm extends BaseFormDoctrine
       'internado_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => true)),
       'enfermera_id' => new sfWidgetFormInputText(),
       'servicio_id'  => new sfWidgetFormInputText(),
-      'fecha'        => new myWidgetFormDojoDate(),
+      'fecha'        => new sfWidgetFormDate(),
       'observacion'  => new sfWidgetFormTextarea(),
-      'created_at'   => new myWidgetFormDojoDateTime(),
-      'updated_at'   => new myWidgetFormDojoDateTime(),
+      'created_at'   => new sfWidgetFormDateTime(),
+      'updated_at'   => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(

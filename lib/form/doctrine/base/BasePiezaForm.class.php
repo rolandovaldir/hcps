@@ -22,8 +22,8 @@ abstract class BasePiezaForm extends BaseFormDoctrine
       'descripcion'   => new sfWidgetFormInputText(),
       'observaciones' => new sfWidgetFormInputText(),
       'plano'         => new sfWidgetFormInputText(),
-      'created_at'    => new myWidgetFormDojoDateTime(),
-      'updated_at'    => new myWidgetFormDojoDateTime(),
+      'created_at'    => new sfWidgetFormDateTime(),
+      'updated_at'    => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(

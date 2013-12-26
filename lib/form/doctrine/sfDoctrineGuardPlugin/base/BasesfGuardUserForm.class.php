@@ -25,9 +25,9 @@ abstract class BasesfGuardUserForm extends BaseFormDoctrine
       'password'         => new sfWidgetFormInputText(),
       'is_active'        => new sfWidgetFormInputCheckbox(),
       'is_super_admin'   => new sfWidgetFormInputCheckbox(),
-      'last_login'       => new myWidgetFormDojoDateTime(),
-      'created_at'       => new myWidgetFormDojoDateTime(),
-      'updated_at'       => new myWidgetFormDojoDateTime(),
+      'last_login'       => new sfWidgetFormDateTime(),
+      'created_at'       => new sfWidgetFormDateTime(),
+      'updated_at'       => new sfWidgetFormDateTime(),
       'groups_list'      => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardGroup')),
       'permissions_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'sfGuardPermission')),
     ));

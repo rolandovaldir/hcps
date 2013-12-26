@@ -25,8 +25,8 @@ abstract class BaseFilialForm extends BaseFormDoctrine
       'codigo'        => new sfWidgetFormInputText(),
       'geoubicacion'  => new sfWidgetFormTextarea(),
       'geoubicacion2' => new sfWidgetFormTextarea(),
-      'created_at'    => new myWidgetFormDojoDateTime(),
-      'updated_at'    => new myWidgetFormDojoDateTime(),
+      'created_at'    => new sfWidgetFormDateTime(),
+      'updated_at'    => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(

@@ -22,8 +22,8 @@ abstract class BaseDetalleUsoHospitalarioForm extends BaseFormDoctrine
       'cantidad'            => new sfWidgetFormInputText(),
       'unidad'              => new sfWidgetFormInputText(),
       'cod_farmacia_ibm'    => new sfWidgetFormInputText(),
-      'created_at'          => new myWidgetFormDojoDateTime(),
-      'updated_at'          => new myWidgetFormDojoDateTime(),
+      'created_at'          => new sfWidgetFormDateTime(),
+      'updated_at'          => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(

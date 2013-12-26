@@ -20,10 +20,10 @@ abstract class BaseDetalleAdminMedicamentoForm extends BaseFormDoctrine
       'enfermera_id'                  => new sfWidgetFormInputText(),
       'medicamento_solucion'          => new sfWidgetFormInputText(),
       'tipo'                          => new sfWidgetFormInputText(),
-      'fecha'                         => new myWidgetFormDojoDate(),
-      'horario'                       => new myWidgetFormDojoTime(),
-      'created_at'                    => new myWidgetFormDojoDateTime(),
-      'updated_at'                    => new myWidgetFormDojoDateTime(),
+      'fecha'                         => new sfWidgetFormDate(),
+      'horario'                       => new sfWidgetFormTime(),
+      'created_at'                    => new sfWidgetFormDateTime(),
+      'updated_at'                    => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(

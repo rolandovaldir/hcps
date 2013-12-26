@@ -17,8 +17,8 @@ abstract class BaseViaAdministracionForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'         => new sfWidgetFormInputHidden(),
       'nombre'     => new sfWidgetFormInputText(),
-      'created_at' => new myWidgetFormDojoDateTime(),
-      'updated_at' => new myWidgetFormDojoDateTime(),
+      'created_at' => new sfWidgetFormDateTime(),
+      'updated_at' => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(

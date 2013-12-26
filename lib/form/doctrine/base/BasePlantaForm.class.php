@@ -23,8 +23,8 @@ abstract class BasePlantaForm extends BaseFormDoctrine
       'codigo'        => new sfWidgetFormInputText(),
       'plano'         => new sfWidgetFormInputText(),
       'numero'        => new sfWidgetFormInputText(),
-      'created_at'    => new myWidgetFormDojoDateTime(),
-      'updated_at'    => new myWidgetFormDojoDateTime(),
+      'created_at'    => new sfWidgetFormDateTime(),
+      'updated_at'    => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(

@@ -22,8 +22,8 @@ abstract class BaseEmpleadoForm extends BaseFormDoctrine
       'nombre'          => new sfWidgetFormInputText(),
       'apellido'        => new sfWidgetFormInputText(),
       'cargo'           => new sfWidgetFormInputText(),
-      'created_at'      => new myWidgetFormDojoDateTime(),
-      'updated_at'      => new myWidgetFormDojoDateTime(),
+      'created_at'      => new sfWidgetFormDateTime(),
+      'updated_at'      => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(

@@ -22,8 +22,8 @@ abstract class BaseEspecialidadForm extends BaseFormDoctrine
       'servicio_id' => new sfWidgetFormInputText(),
       'filial_id'   => new sfWidgetFormInputText(),
       'observacion' => new sfWidgetFormTextarea(),
-      'created_at'  => new myWidgetFormDojoDateTime(),
-      'updated_at'  => new myWidgetFormDojoDateTime(),
+      'created_at'  => new sfWidgetFormDateTime(),
+      'updated_at'  => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(

@@ -17,11 +17,11 @@ abstract class BaseNotasEvolucionForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'           => new sfWidgetFormInputHidden(),
       'internado_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => false)),
-      'fecha_hora'   => new myWidgetFormDojoDateTime(),
+      'fecha_hora'   => new sfWidgetFormDateTime(),
       'numero_prob'  => new sfWidgetFormInputText(),
       'nota_soap'    => new sfWidgetFormTextarea(),
-      'created_at'   => new myWidgetFormDojoDateTime(),
-      'updated_at'   => new myWidgetFormDojoDateTime(),
+      'created_at'   => new sfWidgetFormDateTime(),
+      'updated_at'   => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(

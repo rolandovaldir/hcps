@@ -19,16 +19,16 @@ abstract class BaseServicioMantenimientoForm extends BaseFormDoctrine
       'internado_id'       => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => false)),
       'solicitante'        => new sfWidgetFormInputText(),
       'sector'             => new sfWidgetFormInputText(),
-      'fecha_solicitante'  => new myWidgetFormDojoDate(),
+      'fecha_solicitante'  => new sfWidgetFormDate(),
       'objeto_reparado'    => new sfWidgetFormInputText(),
       'caracteristicas'    => new sfWidgetFormInputText(),
       'trabajo_solicitado' => new sfWidgetFormTextarea(),
       'conformidad'        => new sfWidgetFormInputText(),
       'reparado_por'       => new sfWidgetFormInputText(),
       'importe'            => new sfWidgetFormInputText(),
-      'importe_fecha'      => new myWidgetFormDojoDate(),
-      'created_at'         => new myWidgetFormDojoDateTime(),
-      'updated_at'         => new myWidgetFormDojoDateTime(),
+      'importe_fecha'      => new sfWidgetFormDate(),
+      'created_at'         => new sfWidgetFormDateTime(),
+      'updated_at'         => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(

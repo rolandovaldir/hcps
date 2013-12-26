@@ -23,8 +23,8 @@ abstract class BaseDetalleMaterialForm extends BaseFormDoctrine
       'saldo_anterior'                   => new sfWidgetFormInputText(),
       'reposicion_solicitada'            => new sfWidgetFormInputText(),
       'saldo_actual'                     => new sfWidgetFormInputText(),
-      'created_at'                       => new myWidgetFormDojoDateTime(),
-      'updated_at'                       => new myWidgetFormDojoDateTime(),
+      'created_at'                       => new sfWidgetFormDateTime(),
+      'updated_at'                       => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(
