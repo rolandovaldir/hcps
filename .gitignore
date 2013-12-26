@@ -1,7 +1,7 @@
-bases.yml
+/config/databases.yml
 .gitignore
 *~
-cache/
-log/
-nbproject/
-test/
+/cache/
+/log/
+/nbproject/
+/test/
