@@ -1,4 +1,5 @@
 <?php
+$esHistorial = get_slot('historial',false) ? '&historial=1' : '';
 use_helper('JavascriptBase'); 
 $aux_internado_id = sfContext::getInstance()->getRequest()->getParameter('id');
 $link_menus = array(
@@ -8,7 +9,7 @@ $link_menus = array(
     array('link'=>'autorizaciones_alta_solicitada','label'=>'Autorizacion Alta Solicitada'),
     array('link'=>'autorizaciones_autopsia','label'=>'Autorizacion Autopsia'),
     array('link'=>'juntas_medicas','label'=>'Juntas Medicas'),
-    array('link'=>'listadieta','label'=>'Lista Dieta'),
+    array('link'=>'lista_dieta','label'=>'Lista Dieta'),
     array('link'=>'notas_enfermeria','label'=>'Notas Enfermeria'),
     array('link'=>'notas_evolucion','label'=>'Notas Evolucion'),
     array('link'=>'nursery','label'=>'Nursery'),
@@ -31,11 +32,13 @@ foreach ($link_menus as $val){ ?>
     <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title: '<?php echo $val['label'] ?>'," >
         <ul class="side_menu_forms">            
             <li class="sf_admin_action_list">                
-                <?php echo  link_to_function('Ver Listado', "dijit.byId('dojotheme-maincontainer').set('href','" . url_for($val['link'] . "/index?internado_id=" . $aux_internado_id) . "')") ?>
+                <?php echo  link_to_function('Ver Listado', "dijit.byId('dojotheme-maincontainer').set('href','" . url_for($val['link'] . "/index?internado_id=" . $aux_internado_id . $esHistorial) . "')") ?>
             </li>            
+            <?php if (!get_slot('historial',false)): ?>
             <li class="sf_admin_action_new">
-                <?php echo  link_to_function('Crear Nuevo', "dijit.byId('dojotheme-maincontainer').set('href','" . url_for($val['link'] . "/new?internado_id=" . $aux_internado_id) . "')") ?>
+                <?php echo  link_to_function('Crear Nuevo', "dijit.byId('dojotheme-maincontainer').set('href','" . url_for($val['link'] . "/new?internado_id=" . $aux_internado_id . $esHistorial) . "')") ?>
             </li>
+            <?php endif ?>
         </ul>
     </div>
 <?php

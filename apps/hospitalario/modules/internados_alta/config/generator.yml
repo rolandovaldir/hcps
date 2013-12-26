@@ -1,0 +1,26 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Internado
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          internado_internados_alta
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:    
+        title: Historial de Personas Hopitalizadas dadas de Alta
+        display: [afiliado_id, diagnostico, procedencia]
+        object_actions:
+          visitar: {label: Visitar Paciente, action: visitar}          
+      filter:  
+        display: [cama_id]
+      form:    ~
+      edit:    ~        
+      new:     ~

@@ -750,7 +750,19 @@ PapeletaPedidoMaterial:
     fecha_solicitud:       { type: date }    
     numero:                { type: string(15) }
     detalle:               { type: string(150) }
-    cantidad:              { type: string(25) }
+    cantidad:               { type: string(25) }
     entregado:             { type: boolean }
   relations:
     Internado: { local: internado_id, foreign: id, type: one, foreignAlias: PapeletasPedidoMaterial }
+    DetallePapeletaPedidoMaterial: { local: id, foreign: papeleta_pedido_material_id, type: many, foreignAlias: DetallesPapeletaPedidoMaterial }
+    
+# guillermo
+DetallePapeletaPedidoMaterial:
+  actAs: [Timestampable]  
+  columns:
+    papeleta_pedido_material_id:  { type: integer }    
+    columna1:                     { type: string(15) }
+    columna2:                     { type: string(150) }
+    columna3:                     { type: string(25) }
+  relations:
+    PapeletaPedidoMaterial:    { local: papeleta_pedido_material_id, foreign: id, type: one, foreignAlias: PapeletaPedidoMaterial }

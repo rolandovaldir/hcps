@@ -19,6 +19,7 @@ class UsoHospitalarioForm extends BaseUsoHospitalarioForm
       $detalle->setUsoHospitalario($this->object);
       $detalleForm = new DetalleUsoHospitalarioForm($detalle);
       $this->embedForm('detalle', $detalleForm);
+      $this->validatorSchema['detalle']->setOption('required', false);
   }
   
 }

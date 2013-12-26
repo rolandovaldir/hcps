@@ -58,10 +58,19 @@
                     </td>
                 </tr>
                 </table>                        
-          </div>
-          <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'" id="main-container" >
-              <?php echo $sf_content; ?>              
-          </div>          
+        </div>
+        
+            <div data-dojo-type="dijit/layout/TabContainer" data-dojo-props="region: 'center'" >
+                <div data-dojo-type="dijit/layout/ContentPane" title="Internados" id="main-container-tab1" data-dojo-props="selected:true">
+                    <?php echo $sf_content; ?>              
+                </div>
+                <div data-dojo-type="dijit/layout/ContentPane" title="Pacientes Dados de alta" data-dojo-props="href:'<?php echo url_for("internados_alta/index") ?>'" >
+                </div>
+                <div data-dojo-type="dijit/layout/ContentPane" title="Reportes" data-dojo-props="href:'<?php ?>'">
+                Lorem ipsum and all around - last...
+                </div>
+            </div>            
+        
           <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'bottom'" id="footer-layout" >              
               <b>&quot;Caja Petrolera de Salud&quot;</b>
               <br/> Unidad Nacional de Sistemas

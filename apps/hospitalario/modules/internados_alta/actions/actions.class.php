@@ -1,32 +1,28 @@
 <?php
 
-require_once dirname(__FILE__).'/../lib/internadosGeneratorConfiguration.class.php';
-require_once dirname(__FILE__).'/../lib/internadosGeneratorHelper.class.php';
+require_once dirname(__FILE__).'/../lib/internados_altaGeneratorConfiguration.class.php';
+require_once dirname(__FILE__).'/../lib/internados_altaGeneratorHelper.class.php';
 
 /**
- * internados actions.
+ * internados_alta actions.
  *
  * @package    hcps
- * @subpackage internados
+ * @subpackage internados_alta
  * @author     Your name here
  * @version    SVN: $Id: actions.class.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
  */
-class internadosActions extends autoInternadosActions
+class internados_altaActions extends autoInternados_altaActions
 {
     
-    
     public function executeVisitar(sfWebRequest $request)
-    {        
+    {     
         $user = $this->getUser();
         $user-> setAttribute('internado',  $this->getRoute()->getObject());
         $internado = $user->getAttribute('internado');        
         $this->internado = $this->getRoute()->getObject();        
         $this->setLayout('layout');        
         $this->getResponse()->setSlot("nombre_completo_internado", $this->internado->getNombreCompleto());
-    }       
-       
-    public function executeSecure()
-    {
-        
+        $this->getResponse()->setSlot("historial",true);
     }
+    
 }

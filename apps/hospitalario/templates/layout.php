@@ -50,7 +50,7 @@
                 <tr>
                     <td style="text-align: center;">
                         Internado: 
-                        <span style="font-size: 1.2em;"><?php include_slot('internado_nombre') ?></span>
+                        <span style="font-size: 1.2em;"><?php echo get_slot('nombre_completo_internado','???') ?></span>
                         <?php echo link_to('otro', 'internados/index') ?>
                     </td>    
                     <td nowrap="nowrap" style="font-size: 11px">Especialidad:

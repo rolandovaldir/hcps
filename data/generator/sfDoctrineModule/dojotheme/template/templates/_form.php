@@ -5,6 +5,8 @@
 [?php use_stylesheets_for_form($form) ?]
 [?php use_javascripts_for_form($form) ?]
 
+<?php $dojo_forajax_component_id = array_key_exists('dojo_forajax_component_id', $this->params) ? $this->params['dojo_forajax_component_id'] : 'dojotheme-maincontainer' ?>
+
 <div class="sf_admin_form">
   [?php //echo form_tag_for($form, '@<?php echo $this->params['route_prefix'] ?>',array('data-dojo-type'=>'dijit/form/Form')) ?]
   [?php echo $form->renderFormTag(url_for_form($form, '@<?php echo $this->params['route_prefix'] ?>')<?php echo array_key_exists('extra_url_custom_id', $this->params) ? ' . \'?\' . $extra_url_custom_id ' : '' ?>, array('data-dojo-type'=>'dijit/form/Form')) ?]  
@@ -12,13 +14,13 @@
         dojo.xhrPost({
             form: this.get('id'),
             load: function(data) {
-                dijit.byId('dojotheme-maincontainer').set('content',data);
+                dijit.byId('<?php echo $dojo_forajax_component_id ?>').set('content',data);
             },
             error: function(error) {
                 console.log(error);
             }
         });
-        dijit.byId('dojotheme-maincontainer').set('content',dijit.byId('dojotheme-maincontainer').loadingMessage);
+        dijit.byId('<?php echo $dojo_forajax_component_id ?>').set('content',dijit.byId('<?php echo $dojo_forajax_component_id ?>').loadingMessage);
         return false;
     </script>
     [?php echo $form->renderHiddenFields(false) ?]

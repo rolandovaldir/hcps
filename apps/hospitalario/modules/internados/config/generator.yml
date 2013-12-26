@@ -2,14 +2,15 @@ generator:
   class: sfDoctrineGenerator
   param:
     model_class:           Internado
-    theme:                 admin
+    theme:                 dojotheme
     non_verbose_templates: true
     with_show:             false
     singular:              ~
     plural:                ~
     route_prefix:          internado
     with_doctrine_route:   true
-    actions_base_class:    sfActions    
+    actions_base_class:    sfActions        
+    dojo_forajax_component_id: main-container-tab1
 
     config:
       actions: ~
@@ -32,6 +33,4 @@ generator:
         title: Editar Internado %%%%
       new:
         title: Nuevo Hospitalizado
-        actions:
-          _save: ~
-          _save_and_add: ~
+        actions: ~

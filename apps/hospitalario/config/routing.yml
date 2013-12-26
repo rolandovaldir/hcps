@@ -1,3 +1,12 @@
+internado_internados_alta:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Internado
+    module:               internados_alta
+    prefix_path:          /internados_alta
+    column:               id
+    with_wildcard_routes: true
+
 detalle_uso_hospitalario:
   class: sfDoctrineRouteCollection
   options:
@@ -310,8 +319,8 @@ lista_dieta:
   class: sfDoctrineRouteCollection
   options:
     model:                ListaDieta
-    module:               listadieta
-    prefix_path:          /listadieta
+    module:               lista_dieta
+    prefix_path:          /lista_dieta
     column:               id
     with_wildcard_routes: true
 
