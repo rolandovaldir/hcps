@@ -52,6 +52,31 @@ Internado:
     medio_referencia_salida: ''
     motivo_refe_retorno:     ''
   INTER3:
+    Afiliado:                AFI3
+    noAfiliado_id:           NULL
+    categoria_id:            5
+    cama_id:                 9
+    medico_id:               0
+    medico_consulta_id:      0
+    medico_referencia_id:    0
+    formulario_referencia:   ''
+    diagnostico:             ''
+    procedencia:             ''
+    medio_referencia:        ''
+    observaciones:           'nuevo'
+    fecha:                   '2013-08-07'
+    hora:                    '16:25'
+    conducto:                ''
+    es_afiliado:             true
+    alta:                    true
+    altaFecha:               '2013-08-19'
+    altaHora:                '16:00'
+    diagnostico_alta:        'ok'
+    tratamientio:            ''
+    lugar_referencia_salida: 'clinica'
+    medio_referencia_salida: 'nada'
+    motivo_refe_retorno:     ''  
+  INTER4:
     afiliado_id:             null
     PacienteOtroseguro:      OTRO1
     categoria_id:            5
@@ -75,5 +100,5 @@ Internado:
     tratamientio:            ''
     lugar_referencia_salida: ''
     medio_referencia_salida: ''
-    motivo_refe_retorno:     ''  
+    motivo_refe_retorno:     ''
     

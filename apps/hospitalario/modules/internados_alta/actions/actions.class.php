@@ -14,8 +14,15 @@ require_once dirname(__FILE__).'/../lib/internados_altaGeneratorHelper.class.php
 class internados_altaActions extends autoInternados_altaActions
 {
     
-    public function executeVisitar(sfWebRequest $request)
-    {     
+    protected function getFilters()
+    {   
+        $filters = parent::getFilters();        
+        $filters['alta'] = true;
+        return $filters;
+    }
+    
+    public function executeVerHistorial(sfWebRequest $request)
+    {
         $user = $this->getUser();
         $user-> setAttribute('internado',  $this->getRoute()->getObject());
         $internado = $user->getAttribute('internado');        
@@ -24,5 +31,7 @@ class internados_altaActions extends autoInternados_altaActions
         $this->getResponse()->setSlot("nombre_completo_internado", $this->internado->getNombreCompleto());
         $this->getResponse()->setSlot("historial",true);
     }
+    
+        
     
 }

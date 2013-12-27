@@ -13,6 +13,28 @@ require_once dirname(__FILE__).'/../lib/administracion_medicamentoGeneratorHelpe
  */
 class administracion_medicamentoActions extends autoAdministracion_medicamentoActions
 {
+    
+    public function preExecute()
+    {
+        $request = $this->getRequest(); 
+        $user = $this->getUser();
+        $user->setAuthenticated(true);
+        $objInternado = InternadoTable::getInstance()->find($request->getParameter('internado_id'));
+        if (is_object($objInternado)){            
+            if ($objInternado->getAlta()){
+                $user->addCredential('siHistory');
+                $user->removeCredential('noHistory');
+            }
+            else{
+                $user->addCredential('noHistory');
+                $user->removeCredential('siHistory');
+            }
+        }
+        var_dump($user->hasCredential('siHistory'));
+        var_dump($user->hasCredential('noHistory'));
+        parent::preExecute();
+    }
+    
      /**
      * overwrite the filter to list only the rows for the chosen internado
      * @return string 

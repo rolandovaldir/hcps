@@ -11,7 +11,7 @@
     <script type="text/javascript" src="<?php echo public_path('js/dojo-1.9.1/dojo/dojo.js'); ?>" 
             data-dojo-config="has:{'dojo-firebug': true},parseOnLoad: true, async: 1" ></script>
     <script>        
-        require(["dojo", "dijit/layout/BorderContainer", "dijit/layout/TabContainer", "dijit/layout/ContentPane",'dijit/Dialog','dijit/layout/SplitContainer','dijit/layout/AccordionContainer','dijit/MenuItem'],
+        require(["dojo", 'dojo/hash', "dijit/layout/BorderContainer", "dijit/layout/TabContainer", "dijit/layout/ContentPane",'dijit/Dialog','dijit/layout/SplitContainer','dijit/layout/AccordionContainer','dijit/MenuItem', 'dojox/encoding/crypto/Blowfish'],
             function(){ dojo.fadeOut({ node: 'loading-page', onEnd: function(node){ node.style.display = 'none'; } }).play(); }
         );        
     </script>
@@ -40,8 +40,8 @@
                     <td nowrap="nowrap" style="font-size: 11px">Usuario:
                         <span>
                         <?php if($sf_user->isAuthenticated() == true): ?>
-                            <?php if($sf_user->getProfile()->getMedicoId()) echo $sf_user->getProfile()->getMedico()->getNombrec(); ?>
-                            <?php if($sf_user->getProfile()->getEmpleadoId()) echo $sf_user->getProfile()->getEmpleado()->getNombre(); ?>
+                            <?php //if($sf_user->getProfile()->getMedicoId()) echo $sf_user->getProfile()->getMedico()->getNombrec(); ?>
+                            <?php //if($sf_user->getProfile()->getEmpleadoId()) echo $sf_user->getProfile()->getEmpleado()->getNombre(); ?>
                             <?php else: echo 'Iniciar sesi&oacute;n!!!' ?>
                         <?php endif; ?>
                         </span>
@@ -56,29 +56,60 @@
                     <td nowrap="nowrap" style="font-size: 11px">Especialidad:
                         <span>
                         <?php if($sf_user->isAuthenticated() == true): ?>
-                            <?php if($sf_user->getProfile()->getMedicoId()) echo $sf_user->getProfile()->getMedico()->getEspecialidad()->getNombre(); ?>
-                            <?php if($sf_user->getProfile()->getEmpleadoId()) echo $sf_user->getProfile()->getEmpleado()->getProfesion(); ?>
+                            <?php //if($sf_user->getProfile()->getMedicoId()) echo $sf_user->getProfile()->getMedico()->getEspecialidad()->getNombre(); ?>
+                            <?php //if($sf_user->getProfile()->getEmpleadoId()) echo $sf_user->getProfile()->getEmpleado()->getProfesion(); ?>
                             <?php else: echo 'Iniciar sesi&oacute;n!!!' ?>
                         <?php endif; ?>
                         </span>
                     </td>
                 </tr>
                 </table>                        
-          </div>
-          <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'leading',style:'padding:0;',splitter: true" >
-              <div>
-              <div data-dojo-type="dijit/layout/AccordionContainer" data-dojo-props="style:'min-width:200px;'" >
+        </div>
+        <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'leading',style:'padding:0;',splitter: true" >
+            <div>
+                <div data-dojo-type="dijit/layout/AccordionContainer" data-dojo-props="style:'min-width:200px;'" >
                   <?php include 'side_menu.php' ?>
-              </div>
+                </div>
             </div>     
-            </div>
-          <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'" id="dojotheme-maincontainer" >
-              <?php echo $sf_content; ?>              
-          </div>          
-          <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'bottom'" id="footer-layout" >              
+        </div>
+        <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'" id="dojotheme-maincontainer" >
+            <?php echo $sf_content; ?>
+            <script type="dojo/method">      
+                var that = this;
+                that.hcpsLoader = {};
+                that.hcpsWeb = '<?php echo sfContext::getInstance()->getRequest()->getRelativeUrlRoot() ?>';
+                that.hcpsWebBase = '<?php echo sfContext::getInstance()->getRequest()->getUriPrefix() ?>';
+                that.hcpsLastPage = '';
+                that.watch("href", function(pro,val){
+                    if (this.hcpsLoader.cancel){ this.hcpsLoader.cancel(); }
+                });
+                dojo.subscribe("/dojo/hashchange", function(hash,otro){
+                    if (!hash || that.hcpsLastPage==hash){ return; }
+                    that.set('content',that.loadingMessage);
+                    that.hcpsLoader = dojo.xhrGet({
+                        url: that.hcpsWeb + dojox.encoding.crypto.Blowfish.decrypt(hash,''),
+                        load: function(data){ 
+                            that.set('content',data);                            
+                            that.hcpsLastPage = hash;
+                        },
+                        error: function(data){ that.set('content',"Error! Intente nuevamente."); }
+                    });                    
+                });
+            </script>
+            <script type="dojo/method" event="onDownloadEnd">
+                //console.log(this.href);
+                var lenBase = this.hcpsWeb.length;
+                if (this.href.indexOf(this.hcpsWebBase + this.hcpsWeb)===0){
+                    lenBase = (this.hcpsWebBase + this.hcpsWeb).length;
+                }
+                this.hcpsLastPage=dojox.encoding.crypto.Blowfish.encrypt(this.href.substring(lenBase),'');
+                dojo.hash( this.hcpsLastPage );
+            </script>
+        </div>          
+        <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'bottom'" id="footer-layout" >              
               <b>&quot;Caja Petrolera de Salud&quot;</b>
               <br/> Unidad Nacional de Sistemas
-          </div>
-      </div>      
+        </div>
+    </div>      
 </body>   
 </html>
