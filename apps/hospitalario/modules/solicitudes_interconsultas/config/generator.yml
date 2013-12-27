@@ -22,7 +22,10 @@ generator:
         batch_actions: {}
       filter:  
         display: [dirigida_a, especialidad]
-      form:    ~
+      form:    
+        display: 
+          Solicitud de Interconsulta: [dirigida_a, especialidad, motivo, datos_clinicos, informe_medico, conclusiones, hora_solicitud, fecha_solicitud]
+          Detalle de Medicaciones: [medicacion]
       edit:    
         title: Editar Solicitud de Interconsulta
         actions:

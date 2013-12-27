@@ -15,5 +15,10 @@ class SolicitudInterconsultaForm extends BaseSolicitudInterconsultaForm
       unset($this['created_at'], $this['updated_at']);
       
       $this->widgetSchema['internado_id'] = new sfWidgetFormInputHidden();
+      
+      $detalle_medicacion = new DetalleMedicacion();
+      $detalle_medicacion->setSolicitudInterconsulta($this->object);
+      $detalle_medicacion_form = new DetalleMedicacionForm($detalle_medicacion);
+      $this->embedForm('medicacion', $detalle_medicacion_form);
   }
 }

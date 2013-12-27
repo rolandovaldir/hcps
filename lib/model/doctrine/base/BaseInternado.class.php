@@ -41,6 +41,7 @@
  * @property Doctrine_Collection $SignosVitalesNursery
  * @property Doctrine_Collection $NotasEnfermeria
  * @property Doctrine_Collection $NotasEvolucion
+ * @property Cama $Cama
  * @property Doctrine_Collection $AutorizacionesTratamiento
  * @property Doctrine_Collection $AutorizacionesAltaSolicitada
  * @property Doctrine_Collection $AutorizacionesAutopsia
@@ -91,6 +92,7 @@
  * @method Doctrine_Collection getSignosVitalesNursery()                Returns the current record's "SignosVitalesNursery" collection
  * @method Doctrine_Collection getNotasEnfermeria()                     Returns the current record's "NotasEnfermeria" collection
  * @method Doctrine_Collection getNotasEvolucion()                      Returns the current record's "NotasEvolucion" collection
+ * @method Cama                getCama()                                Returns the current record's "Cama" value
  * @method Doctrine_Collection getAutorizacionesTratamiento()           Returns the current record's "AutorizacionesTratamiento" collection
  * @method Doctrine_Collection getAutorizacionesAltaSolicitada()        Returns the current record's "AutorizacionesAltaSolicitada" collection
  * @method Doctrine_Collection getAutorizacionesAutopsia()              Returns the current record's "AutorizacionesAutopsia" collection
@@ -140,6 +142,7 @@
  * @method Internado           setSignosVitalesNursery()                Sets the current record's "SignosVitalesNursery" collection
  * @method Internado           setNotasEnfermeria()                     Sets the current record's "NotasEnfermeria" collection
  * @method Internado           setNotasEvolucion()                      Sets the current record's "NotasEvolucion" collection
+ * @method Internado           setCama()                                Sets the current record's "Cama" value
  * @method Internado           setAutorizacionesTratamiento()           Sets the current record's "AutorizacionesTratamiento" collection
  * @method Internado           setAutorizacionesAltaSolicitada()        Sets the current record's "AutorizacionesAltaSolicitada" collection
  * @method Internado           setAutorizacionesAutopsia()              Sets the current record's "AutorizacionesAutopsia" collection
@@ -317,6 +320,10 @@ abstract class BaseInternado extends sfDoctrineRecord
         $this->hasMany('NotasEvolucion', array(
              'local' => 'id',
              'foreign' => 'internado_id'));
+
+        $this->hasOne('Cama', array(
+             'local' => 'cama_id',
+             'foreign' => 'id'));
 
         $this->hasMany('AutorizacionDiagnosticoTratamiento as AutorizacionesTratamiento', array(
              'local' => 'id',
