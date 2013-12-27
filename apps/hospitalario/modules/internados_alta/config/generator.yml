@@ -2,7 +2,7 @@ generator:
   class: sfDoctrineGenerator
   param:
     model_class:           Internado
-    theme:                 admin
+    theme:                 dojotheme
     non_verbose_templates: true
     with_show:             false
     singular:              ~
@@ -16,9 +16,11 @@ generator:
       fields:  ~
       list:    
         title: Historial de Personas Hopitalizadas dadas de Alta
-        display: [afiliado_id, diagnostico, procedencia]
+        display: [matricula, nombre_completo, empresa, ubicacion, diagnostico]
         object_actions:
-          visitar: {label: Visitar Paciente, action: visitar}          
+          visitar: {label: Visitar Paciente, action: visitar}     
+        actions: {}
+        batch_actions: {}
       filter:  
         display: [cama_id]
       form:    ~

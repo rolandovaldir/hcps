@@ -12,24 +12,24 @@
  * @property string $codigo_activo
  * @property integer $activo_id
  * @property Pieza $Pieza
- * @property Doctrine_Collection $Internado
+ * @property Internado $Internado
  * 
- * @method integer             getPiezaId()       Returns the current record's "pieza_id" value
- * @method string              getCodigo()        Returns the current record's "codigo" value
- * @method boolean             getOcupada()       Returns the current record's "ocupada" value
- * @method string              getObservaciones() Returns the current record's "observaciones" value
- * @method string              getCodigoActivo()  Returns the current record's "codigo_activo" value
- * @method integer             getActivoId()      Returns the current record's "activo_id" value
- * @method Pieza               getPieza()         Returns the current record's "Pieza" value
- * @method Doctrine_Collection getInternado()     Returns the current record's "Internado" collection
- * @method Cama                setPiezaId()       Sets the current record's "pieza_id" value
- * @method Cama                setCodigo()        Sets the current record's "codigo" value
- * @method Cama                setOcupada()       Sets the current record's "ocupada" value
- * @method Cama                setObservaciones() Sets the current record's "observaciones" value
- * @method Cama                setCodigoActivo()  Sets the current record's "codigo_activo" value
- * @method Cama                setActivoId()      Sets the current record's "activo_id" value
- * @method Cama                setPieza()         Sets the current record's "Pieza" value
- * @method Cama                setInternado()     Sets the current record's "Internado" collection
+ * @method integer   getPiezaId()       Returns the current record's "pieza_id" value
+ * @method string    getCodigo()        Returns the current record's "codigo" value
+ * @method boolean   getOcupada()       Returns the current record's "ocupada" value
+ * @method string    getObservaciones() Returns the current record's "observaciones" value
+ * @method string    getCodigoActivo()  Returns the current record's "codigo_activo" value
+ * @method integer   getActivoId()      Returns the current record's "activo_id" value
+ * @method Pieza     getPieza()         Returns the current record's "Pieza" value
+ * @method Internado getInternado()     Returns the current record's "Internado" value
+ * @method Cama      setPiezaId()       Sets the current record's "pieza_id" value
+ * @method Cama      setCodigo()        Sets the current record's "codigo" value
+ * @method Cama      setOcupada()       Sets the current record's "ocupada" value
+ * @method Cama      setObservaciones() Sets the current record's "observaciones" value
+ * @method Cama      setCodigoActivo()  Sets the current record's "codigo_activo" value
+ * @method Cama      setActivoId()      Sets the current record's "activo_id" value
+ * @method Cama      setPieza()         Sets the current record's "Pieza" value
+ * @method Cama      setInternado()     Sets the current record's "Internado" value
  * 
  * @package    hcps
  * @subpackage model
@@ -76,7 +76,7 @@ abstract class BaseCama extends sfDoctrineRecord
              'local' => 'pieza_id',
              'foreign' => 'id'));
 
-        $this->hasMany('Internado', array(
+        $this->hasOne('Internado', array(
              'local' => 'id',
              'foreign' => 'cama_id'));
 

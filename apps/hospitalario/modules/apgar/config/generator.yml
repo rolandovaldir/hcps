@@ -15,7 +15,7 @@ generator:
     config:
       actions: ~
       fields:  
-        nacer_egresar: {label: 'Recien Nacido?'}
+        nacer_egresar: {label: 'Es recien nacido?'}
       list:    
         title: APGAR
         actions: {}

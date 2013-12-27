@@ -1,0 +1,104 @@
+Cama:
+  cama1:
+    pieza_id:      1
+    codigo:        CMB123
+    ocupada:       SI
+    observaciones: ''
+    codigo_activo: CMB123S
+    activo_id:     NULL
+  cama2:
+    pieza_id:      1
+    codigo:        CMB124
+    ocupada:       NO
+    observaciones: ''
+    codigo_activo: CMB124S
+    activo_id:     NULL
+  cama3:
+    pieza_id:      2
+    codigo:        CMB125
+    ocupada:       NO
+    observaciones: ''
+    codigo_activo: CMB125S
+    activo_id:     NULL
+  cama4:
+    pieza_id:      3
+    codigo:        CMB126
+    ocupada:       SI
+    observaciones: ''
+    codigo_activo: CMB126S
+    activo_id:     NULL
+  cama5:
+    pieza_id:      4
+    codigo:        CMB127
+    ocupada:       SI
+    observaciones: ''
+    codigo_activo: CMB127S
+    activo_id:     NULL
+    
+Pieza:
+  pieza1:
+    planta_id:     1
+    nombre:        p1
+    codigo:        PZ1231
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  pieza2:
+    planta_id:     1
+    nombre:        p2
+    codigo:        PZ1232
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  pieza3:
+    planta_id:     2
+    nombre:        p3
+    codigo:        PZ1233
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  pieza4:
+    planta_id:     3
+    nombre:        p4
+    codigo:        PZ1234
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+    
+Planta:
+  planta1:
+    filial_id:     1
+    nombre:        Ginecología
+    descripcion:   ''
+    observaciones: ''
+    codigo:        PG1231
+    plano:         ''
+    numero:        2
+  planta2:
+    filial_id:     1
+    nombre:        Pediatría
+    descripcion:   ''
+    observaciones: ''
+    codigo:        PP1232
+    plano:         ''
+    numero:        2
+  planta3:
+    filial_id:     1
+    nombre:        Odontología
+    descripcion:   ''
+    observaciones: ''
+    codigo:        PO1233
+    plano:         ''
+    numero:        2
+    
+Filial:
+  Policonsultorio:
+    nombre:        Policonsultorio de la Arce
+    direccion:     Av. Arce
+    telefono:      2-222222
+    telefono2:     2-222223
+    telefono3:     2-222224
+    descripcion:   ''
+    codigo:        PA001
+    geoubicacion:  ''
+    geoubicacion2: ''

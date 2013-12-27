@@ -154,6 +154,8 @@ Filial:
     codigo:         { type: string(10) }
     geoubicacion:   { type: string(600) }
     geoubicacion2:  { type: string(600) }
+  relations:
+    Planta: {local: id, foreign: filial_id, type: many, foreignAlias: Planta}
 
 Planta:
   actAs: [Timestampable]  
@@ -180,6 +182,7 @@ Pieza:
     plano:         { type: string(200) }
   relations:  
     Planta:    { local: planta_id, foreign: id, type: one, foreignAlias: Piezas }  
+    Cama:      { local: id, foreign: pieza_id, type: many, foreignAlias: Cama}
 
 Cama:
   actAs: [Timestampable]  
@@ -191,7 +194,8 @@ Cama:
     codigo_activo: { type: string(16) }
     activo_id:     { type: integer, length: 2, notnull: false }
   relations:  
-    Pieza:    { local: pieza_id, foreign: id, type: one, foreignAlias: Camas }
+    Pieza:     { local: pieza_id, foreign: id, type: one, foreignAlias: Camas }
+    Internado: { local: id, foreign: cama_id, type: one, foreignAlias: Cama}
     
 #FileInternacion:
 #  actAs: [Timestampable]
@@ -329,17 +333,17 @@ SolicitudInterconsulta:
     fecha_solicitud: {type: date}
   relations:
     Internado:         {local: internado_id, foreign: id, type: one, foreignAlias: Interconsultas}
-    DetalleMedicacion: {local: id, foreign: solicitud_intercosultada_id, type: many, foreignAlias: Interconsulta}
+    DetalleMedicacion: {local: id, foreign: solicitud_interconsulta_id, type: many, foreignAlias: Interconsulta}
     
 DetalleMedicacion:
   actAs: [Timestampable]
   columns:
-    solicitud_intercosultada_id: {type: integer, notnull: true}
+    solicitud_interconsulta_id:  {type: integer, notnull: true}
     medicacion_utilizada:        {type: string(150)}
     dosis:                       {type: string(45)}
     fecha_inicio:                {type: date}
   relations:
-    SolicitudInterconsulta: {local: solicitud_intercosultada_id, foreign: id, type: one, foreignAlias: Medicaciones}
+    SolicitudInterconsulta: {local: solicitud_interconsulta_id, foreign: id, type: one, foreignAlias: Medicaciones}
     
 #--------------------------------------------------------
 

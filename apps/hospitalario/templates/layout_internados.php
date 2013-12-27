@@ -23,6 +23,7 @@
             <table class="user-info">
                 <tr>
                     <td rowspan="3" style="width: 90%;">
+                        <?php echo link_to(image_tag('logo_header.png', 'alt=cps' ), '/hospitalario.php/')?>
                     </td>    
                     <td style="font-size: 11px">
                     <?php $week_days = array ("Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado");
