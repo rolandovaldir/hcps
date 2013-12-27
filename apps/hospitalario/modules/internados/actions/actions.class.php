@@ -14,6 +14,13 @@ require_once dirname(__FILE__).'/../lib/internadosGeneratorHelper.class.php';
 class internadosActions extends autoInternadosActions
 {
     
+    public function preExecute()
+    {
+        $user = $this->getUser();
+        $user->setAuthenticated(true);
+        $user->setAttribute("id",1);
+        parent::preExecute();
+    }
     
     public function executeVisitar(sfWebRequest $request)
     {        

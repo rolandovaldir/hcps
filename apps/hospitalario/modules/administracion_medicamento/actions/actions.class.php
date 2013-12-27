@@ -18,7 +18,6 @@ class administracion_medicamentoActions extends autoAdministracion_medicamentoAc
     {
         $request = $this->getRequest(); 
         $user = $this->getUser();
-        $user->setAuthenticated(true);
         $objInternado = InternadoTable::getInstance()->find($request->getParameter('internado_id'));
         if (is_object($objInternado)){            
             if ($objInternado->getAlta()){
@@ -30,8 +29,9 @@ class administracion_medicamentoActions extends autoAdministracion_medicamentoAc
                 $user->removeCredential('siHistory');
             }
         }
-        var_dump($user->hasCredential('siHistory'));
-        var_dump($user->hasCredential('noHistory'));
+//        var_dump($user->hasCredential('siHistory'));
+//        var_dump($user->hasCredential('noHistory'));
+//        var_dump($this->getSecurityValue('credentials'));
         parent::preExecute();
     }
     
