@@ -66,8 +66,9 @@
                 </div>
                 <div data-dojo-type="dijit/layout/ContentPane" title="Pacientes Dados de alta" data-dojo-props="href:'<?php echo url_for("internados_alta/index") ?>'" >
                 </div>
-                <div data-dojo-type="dijit/layout/ContentPane" title="Reportes" data-dojo-props="href:'<?php ?>'">
-                Lorem ipsum and all around - last...
+                
+                <div data-dojo-type="dijit/layout/ContentPane" title="Reportes" data-dojo-props="href:''">
+                    <a href="reportes/index">Reportes</a>
                 </div>
             </div>            
         

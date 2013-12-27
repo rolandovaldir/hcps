@@ -17,10 +17,12 @@ generator:
       fields:  ~
       list:    
         title: Lista de Personas Hopitalizadas
-        display: [afiliado_id, diagnostico, procedencia]
+        display: [matricula, nombre_completo, empresa, ubicacion, diagnostico]
         object_actions:
           visitar: {label: Visitar Paciente, action: visitar}
           _edit: ~
+        actions: {}
+        batch_actions: {}
       filter:  
         display: [cama_id]
       form:    

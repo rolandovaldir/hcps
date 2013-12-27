@@ -30,4 +30,23 @@ class Internado extends BaseInternado
         }        
         return $this->objetoDatosPersona->getNombre() . ' ' . $this->objetoDatosPersona->getPaterno() . ' ' . $this->objetoDatosPersona->getMaterno();
     }
+    
+    public function getEmpresa()
+    {
+        if($this->Afiliado->getEmpresa()==null)
+            return "Otro seguro";
+        else
+            return $this->Afiliado->getEmpresa();
+    }
+
+    public function getMatricula()
+    {
+        return $this->Afiliado->getMatricula();
+    }
+    
+    public function getUbicacion()
+    {
+        return 'Planta: '.$this->Cama->Pieza->Planta->getNombre().' Pieza: '.$this->Cama->Pieza->getNombre().' Cama: '.$this->Cama->getCodigo();
+    }
+    
 }

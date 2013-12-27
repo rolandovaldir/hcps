@@ -92,6 +92,7 @@ Internado:
     SignosVitalesNursery:        {local: id, foreign: internado_id, type: many, foreignAlias: Internado}
     NotasEnfermeria:             {local: id, foreign: internado_id, type: many, foreignAlias: Internado}
     NotasEvolucion:              {local: id, foreign: internado_id, type: many, foreignAlias: Internado}
+    Cama:                        {local: cama_id, foreign: id, type: one, foreignAlias: Internado}
       
 Empleado:
   actAs: [Timestampable]  
@@ -166,6 +167,7 @@ Planta:
     numero:        { type: integer, length: 3 }
   relations:  
     Filial:    { local: filial_id, foreign: id, type: one, foreignAlias: Plantas }
+    Pieza:     { local: id, foreign: planta_id, type: one, foreignAlias: Planta }
 
 Pieza:
   actAs: [Timestampable]  
