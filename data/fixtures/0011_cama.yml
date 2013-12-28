@@ -1,0 +1,105 @@
+Filial:
+  Policonsultorio:
+    nombre:        Policonsultorio de la Arce
+    direccion:     Av. Arce
+    telefono:      2-222222
+    telefono2:     2-222223
+    telefono3:     2-222224
+    descripcion:   ''
+    codigo:        PA001
+    geoubicacion:  ''
+    geoubicacion2: ''
+    
+Planta:
+  planta1:
+    Filial:        Policonsultorio
+    nombre:        Ginecología
+    descripcion:   ''
+    observaciones: ''
+    codigo:        PG1231
+    plano:         ''
+    numero:        2
+  planta2:
+    Filial:        Policonsultorio
+    nombre:        Pediatría
+    descripcion:   ''
+    observaciones: ''
+    codigo:        PP1232
+    plano:         ''
+    numero:        2
+  planta3:
+    Filial:        Policonsultorio
+    nombre:        Odontología
+    descripcion:   ''
+    observaciones: ''
+    codigo:        PO1233
+    plano:         ''
+    numero:        2    
+    
+Pieza:
+  pieza1:
+    Planta:        planta1
+    nombre:        p1
+    codigo:        PZ1231
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  pieza2:
+    Planta:        planta1
+    nombre:        p2
+    codigo:        PZ1232
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  pieza3:
+    Planta:        planta2
+    nombre:        p3
+    codigo:        PZ1233
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  pieza4:
+    Planta:        planta3
+    nombre:        p4
+    codigo:        PZ1234
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+    
+Cama:
+  cama1:
+    Pieza:         pieza1
+    codigo:        CMB123
+    ocupada:       SI
+    observaciones: ''
+    codigo_activo: CMB123S
+    activo_id:     NULL
+  cama2:
+    Pieza:         pieza1
+    codigo:        CMB124
+    ocupada:       NO
+    observaciones: ''
+    codigo_activo: CMB124S
+    activo_id:     NULL
+  cama3:
+    Pieza:         pieza2
+    codigo:        CMB125
+    ocupada:       NO
+    observaciones: ''
+    codigo_activo: CMB125S
+    activo_id:     NULL
+  cama4:
+    Pieza:         pieza3
+    codigo:        CMB126
+    ocupada:       SI
+    observaciones: ''
+    codigo_activo: CMB126S
+    activo_id:     NULL
+  cama5:
+    Pieza:         pieza4
+    codigo:        CMB127
+    ocupada:       SI
+    observaciones: ''
+    codigo_activo: CMB127S
+    activo_id:     NULL
+       

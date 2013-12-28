@@ -13,26 +13,26 @@
  * @property string $plano
  * @property integer $numero
  * @property Filial $Filial
- * @property Doctrine_Collection $Piezas
+ * @property Pieza $Pieza
  * 
- * @method integer             getFilialId()      Returns the current record's "filial_id" value
- * @method string              getNombre()        Returns the current record's "nombre" value
- * @method string              getDescripcion()   Returns the current record's "descripcion" value
- * @method string              getObservaciones() Returns the current record's "observaciones" value
- * @method string              getCodigo()        Returns the current record's "codigo" value
- * @method string              getPlano()         Returns the current record's "plano" value
- * @method integer             getNumero()        Returns the current record's "numero" value
- * @method Filial              getFilial()        Returns the current record's "Filial" value
- * @method Doctrine_Collection getPiezas()        Returns the current record's "Piezas" collection
- * @method Planta              setFilialId()      Sets the current record's "filial_id" value
- * @method Planta              setNombre()        Sets the current record's "nombre" value
- * @method Planta              setDescripcion()   Sets the current record's "descripcion" value
- * @method Planta              setObservaciones() Sets the current record's "observaciones" value
- * @method Planta              setCodigo()        Sets the current record's "codigo" value
- * @method Planta              setPlano()         Sets the current record's "plano" value
- * @method Planta              setNumero()        Sets the current record's "numero" value
- * @method Planta              setFilial()        Sets the current record's "Filial" value
- * @method Planta              setPiezas()        Sets the current record's "Piezas" collection
+ * @method integer getFilialId()      Returns the current record's "filial_id" value
+ * @method string  getNombre()        Returns the current record's "nombre" value
+ * @method string  getDescripcion()   Returns the current record's "descripcion" value
+ * @method string  getObservaciones() Returns the current record's "observaciones" value
+ * @method string  getCodigo()        Returns the current record's "codigo" value
+ * @method string  getPlano()         Returns the current record's "plano" value
+ * @method integer getNumero()        Returns the current record's "numero" value
+ * @method Filial  getFilial()        Returns the current record's "Filial" value
+ * @method Pieza   getPieza()         Returns the current record's "Pieza" value
+ * @method Planta  setFilialId()      Sets the current record's "filial_id" value
+ * @method Planta  setNombre()        Sets the current record's "nombre" value
+ * @method Planta  setDescripcion()   Sets the current record's "descripcion" value
+ * @method Planta  setObservaciones() Sets the current record's "observaciones" value
+ * @method Planta  setCodigo()        Sets the current record's "codigo" value
+ * @method Planta  setPlano()         Sets the current record's "plano" value
+ * @method Planta  setNumero()        Sets the current record's "numero" value
+ * @method Planta  setFilial()        Sets the current record's "Filial" value
+ * @method Planta  setPieza()         Sets the current record's "Pieza" value
  * 
  * @package    hcps
  * @subpackage model
@@ -81,7 +81,7 @@ abstract class BasePlanta extends sfDoctrineRecord
              'local' => 'filial_id',
              'foreign' => 'id'));
 
-        $this->hasMany('Pieza as Piezas', array(
+        $this->hasOne('Pieza', array(
              'local' => 'id',
              'foreign' => 'planta_id'));
 

@@ -5,7 +5,7 @@ Internado:
     Afiliado:                AFI1
     noAfiliado_id:           null
     categoria_id:            0
-    cama_id:                 0
+    Cama:                    cama2
     medico_id:               0
     medico_consulta_id:      0
     medico_referencia_id:    0
@@ -30,7 +30,7 @@ Internado:
     Afiliado:                AFI2
     noAfiliado_id:           null
     categoria_id:            0
-    cama_id:                 0
+    Cama:                    cama1
     medico_id:               0
     medico_consulta_id:      0
     medico_referencia_id:    0
@@ -55,7 +55,7 @@ Internado:
     Afiliado:                AFI3
     noAfiliado_id:           NULL
     categoria_id:            5
-    cama_id:                 9
+    Cama:                    cama4
     medico_id:               0
     medico_consulta_id:      0
     medico_referencia_id:    0
@@ -80,7 +80,7 @@ Internado:
     afiliado_id:             null
     PacienteOtroseguro:      OTRO1
     categoria_id:            5
-    cama_id:                 6
+    Cama:                    cama5
     medico_id:               0
     medico_consulta_id:      0
     medico_referencia_id:    0

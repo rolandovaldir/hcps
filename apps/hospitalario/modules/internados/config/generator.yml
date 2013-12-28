@@ -17,12 +17,14 @@ generator:
       fields:  ~
       list:    
         title: Lista de Personas Hopitalizadas
-        display: [afiliado_id, diagnostico, procedencia]
+        display: [matricula, nombre_completo, empresa, ubicacion, diagnostico]
         object_actions:
           visitar: {label: Visitar Paciente, action: visitar}
           _edit: ~
+        actions: {}
+        batch_actions: {}
       filter:  
-        display: [cama_id]
+        display: [id]
       form:    
         display:
           Datos Internado: [formulario_referencia, diagnostico, procedencia, medio_referencia, observaciones, fecha, hora, conducto, es_afiliado]
@@ -30,7 +32,7 @@ generator:
           Ubicadion: [categoria_id, cama_id]
           Datos Alta: [alta, altaFecha, altaHora, diagnostico_alta, tratamientio, lugar_referencia_salida, medio_referencia_salida, motivo_refe_retorno]
       edit:    
-        title: Editar Internado %%%%
+        title: Editar Internado %%nombre_completo%%
       new:
         title: Nuevo Hospitalizado
         actions: ~
