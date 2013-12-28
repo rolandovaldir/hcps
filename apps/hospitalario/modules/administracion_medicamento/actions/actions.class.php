@@ -16,22 +16,18 @@ class administracion_medicamentoActions extends autoAdministracion_medicamentoAc
     
     public function preExecute()
     {
-        $request = $this->getRequest(); 
-        $user = $this->getUser();
+        $request = $this->getRequest();         
         $objInternado = InternadoTable::getInstance()->find($request->getParameter('internado_id'));
-        if (is_object($objInternado)){            
+        if (is_object($objInternado)){
             if ($objInternado->getAlta()){
-                $user->addCredential('siHistory');
-                $user->removeCredential('noHistory');
+                $this->getUser()->addCredential('siHistory');
+                $this->getUser()->removeCredential('noHistory');
             }
             else{
-                $user->addCredential('noHistory');
-                $user->removeCredential('siHistory');
+                $this->getUser()->addCredential('noHistory');
+                $this->getUser()->removeCredential('siHistory');
             }
-        }
-//        var_dump($user->hasCredential('siHistory'));
-//        var_dump($user->hasCredential('noHistory'));
-//        var_dump($this->getSecurityValue('credentials'));
+        }        
         parent::preExecute();
     }
     
