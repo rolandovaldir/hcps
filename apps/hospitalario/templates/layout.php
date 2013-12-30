@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html xml:lang="es" lang="es">
-<head>
-    <?php include_http_metas() ?>
-    <?php include_metas() ?>
-    <?php include_title() ?>
-    <link rel="shortcut icon" href="/favicon.ico" />    
-    <?php include_stylesheets() ?>
-    <link rel="stylesheet" href="<?php echo public_path('js/dojo-1.9.1/dijit/themes/claro/claro.css'); ?>" media="screen" />    
-    <?php include_javascripts() ?>    
-    <script type="text/javascript" src="<?php echo public_path('js/dojo-1.9.1/dojo/dojo.js'); ?>" 
-            data-dojo-config="has:{'dojo-firebug': true},parseOnLoad: true, async: 1" ></script>
-    <script>        
+    <head>
+        <?php include_http_metas() ?>
+        <?php include_metas() ?>
+        <?php include_title() ?>
+        <link rel="shortcut icon" href="/favicon.ico" />    
+        <?php include_stylesheets() ?>
+        <link rel="stylesheet" href="<?php echo public_path('js/dojo-1.9.1/dijit/themes/claro/claro.css'); ?>" media="screen" />    
+        <?php include_javascripts() ?>    
+        <script type="text/javascript" src="<?php echo public_path('js/dojo-1.9.1/dojo/dojo.js'); ?>" 
+        data-dojo-config="has:{'dojo-firebug': true},parseOnLoad: true, async: 1" ></script>
+        <script>
         require(["dojo", 'dojo/hash', "dijit/layout/BorderContainer", "dijit/layout/TabContainer", "dijit/layout/ContentPane",'dijit/Dialog','dijit/layout/SplitContainer','dijit/layout/AccordionContainer','dijit/MenuItem', 'dojox/encoding/crypto/Blowfish'],
             function(){ dojo.fadeOut({ node: 'loading-page', onEnd: function(node){ node.style.display = 'none'; } }).play(); }
-        );        
-    </script>
-</head>
-<body class="claro" >
-    <div id="loading-page" style="position:absolute;background-color: #ffffff;width: 100%;height: 100%;z-index: 99999;margin:0;padding: 20px;">Cargando ...</div>
-    <div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design: 'headline',id:'container1'" style="height: 100%;margin:auto;" >
-        <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'top'" id="header-layout" style="padding:8px 10px 2px;" >
+            );
+        </script>
+    </head>
+    <body class="claro" >
+        <div id="loading-page" style="position:absolute;background-color: #ffffff;width: 100%;height: 100%;z-index: 99999;margin:0;padding: 20px;">Cargando ...</div>
+        <div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design: 'headline',id:'container1'" style="height: 100%;margin:auto;" >
+            <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'top'" id="header-layout" style="padding:8px 10px 2px;" >
                 <table class="user-info">
                     <tr>
                         <td rowspan="3" style="width: 90%;">
@@ -44,8 +44,8 @@
                                 <?php if ($sf_user->isAuthenticated() == true): ?>
                                     <?php //if ($sf_user->getProfile()->getMedicoId()) echo $sf_user->getProfile()->getMedico()->getNombrec(); ?>
                                     <?php //if ($sf_user->getProfile()->getEmpleadoId()) echo $sf_user->getProfile()->getEmpleado()->getNombre(); ?>
-                                <?php else: echo 'Iniciar sesi&oacute;n!!!' ?>
-                                <?php endif; ?>
+<?php else: echo 'Iniciar sesi&oacute;n!!!' ?>
+<?php endif; ?>
                             </span>
                         </td>
                     </tr>
@@ -56,14 +56,14 @@
                                 <?php if ($sf_user->isAuthenticated() == true): ?>
                                     <?php //if ($sf_user->getProfile()->getMedicoId()) echo $sf_user->getProfile()->getMedico()->getEspecialidad()->getNombre(); ?>
                                     <?php //if ($sf_user->getProfile()->getEmpleadoId()) echo $sf_user->getProfile()->getEmpleado()->getProfesion(); ?>
-                                <?php else: echo 'Iniciar sesi&oacute;n!!!' ?>
-                                <?php endif; ?>
+<?php else: echo 'Iniciar sesi&oacute;n!!!' ?>
+                <?php endif; ?>
                             </span>
                         </td>
                     </tr>
                 </table> 
-                <?php if (has_slot('nombre_completo_internado')): ?>
-                    <?php $internado = $sf_user->getAttribute('internado'); ?>
+<?php if (has_slot('nombre_completo_internado')): ?>
+    <?php $internado = $sf_user->getAttribute('internado'); ?>
                     <table class="tbl-paciente">
                         <tbody>
                             <tr>
@@ -76,82 +76,88 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <?php echo $internado->Afiliado->getMatricula() ?>
+    <?php echo $internado->Afiliado->getMatricula() ?>
                                 </td>
                                 <td>
-                                    <?php echo $internado->Afiliado->getPaterno() . ' ' . $internado->Afiliado->getMaterno() . ' ' . $internado->Afiliado->getNombre() ?>
+    <?php echo $internado->Afiliado->getPaterno() . ' ' . $internado->Afiliado->getMaterno() . ' ' . $internado->Afiliado->getNombre() ?>
                                 </td>
                                 <td>
-                                    <?php echo $internado->Afiliado->getEmpresa() ?>
+    <?php echo $internado->Afiliado->getEmpresa() ?>
                                 </td>
                                 <td>
-                                    <?php echo $internado->Cama->Pieza->Planta->getNombre() ?>
+    <?php echo $internado->Cama->Pieza->Planta->getNombre() ?>
                                 </td>
                                 <td>
-                                    <?php echo $internado->Cama->Pieza->getNombre() ?>
+    <?php echo $internado->Cama->Pieza->getNombre() ?>
                                 </td>
                                 <td>
-                                    <?php echo $internado->Cama->getCodigo(); ?>
+    <?php echo $internado->Cama->getCodigo(); ?>
                                 </td>
                                 <td>
-                                    <?php echo link_to('INICIO', 'internados/index') ?>
+    <?php echo link_to(image_tag('inicio.png', 'alt=cps-inicio' ), 'internados/index') ?>
                                 </td>
                             </tr>
                         </tbody>
 
                     </table>
-                <?php else: ?>
-                    <b>Reportes de internación</b>
-                    <?php echo link_to('INICIO', 'internados/index') ?>
-                <?php endif; ?>
-                
+                            <?php else: ?>
+                    <table align="center">
+                        <tr>
+                            <td>
+                                <b>Reportes de internación</b>
+                            <?php echo link_to(image_tag('inicio.png', 'alt=cps-inicio' ), 'internados/index') ?>
+                            </td>
+                        </tr>
+                    </table>
+<?php endif; ?>
+
 
             </div>
-        <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'leading',style:'padding:0;',splitter: true" >
-            <div>
-                <div data-dojo-type="dijit/layout/AccordionContainer" data-dojo-props="style:'min-width:200px;'" >
-                  <?php include 'side_menu.php' ?>
-                </div>
-            </div>     
-        </div>
-        <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'" id="dojotheme-maincontainer" >
-            <?php echo $sf_content; ?>
-            <script type="dojo/method">      
-                var that = this;
-                that.hcpsLoader = {};
-                that.hcpsWeb = '<?php echo sfContext::getInstance()->getRequest()->getRelativeUrlRoot() ?>';
-                that.hcpsWebBase = '<?php echo sfContext::getInstance()->getRequest()->getUriPrefix() ?>';
-                that.hcpsLastPage = '';
-                that.watch("href", function(pro,val){
+            <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'leading',style:'padding:0;',splitter: true" >
+                <div>
+                    <div data-dojo-type="dijit/layout/AccordionContainer" data-dojo-props="style:'min-width:200px;'" >
+                <?php include 'side_menu.php' ?>
+                    </div>
+                </div>     
+            </div>
+            <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'" id="dojotheme-maincontainer" >
+<?php echo $sf_content; ?>
+                <script type="dojo/method">      
+                    var that = this;
+                    that.hcpsLoader = {};
+                    that.hcpsWeb = '<?php echo sfContext::getInstance()->getRequest()->getRelativeUrlRoot() ?>';
+                    that.hcpsWebBase = '<?php echo sfContext::getInstance()->getRequest()->getUriPrefix() ?>';
+                    that.hcpsLastPage = '';
+                    that.watch("href", function(pro,val){
                     if (this.hcpsLoader.cancel){ this.hcpsLoader.cancel(); }
-                });
-                dojo.subscribe("/dojo/hashchange", function(hash,otro){
+                    });
+                    dojo.subscribe("/dojo/hashchange", function(hash,otro){
                     if (!hash || that.hcpsLastPage==hash){ return; }
                     that.set('content',that.loadingMessage);
                     that.hcpsLoader = dojo.xhrGet({
-                        url: that.hcpsWeb + dojox.encoding.crypto.Blowfish.decrypt(hash,''),
-                        load: function(data){ 
-                            that.set('content',data);                            
-                            that.hcpsLastPage = hash;
-                        },
-                        error: function(data){ that.set('content',"Error! Intente nuevamente."); }
+                    url: that.hcpsWeb + dojox.encoding.crypto.Blowfish.decrypt(hash,''),
+                    load: function(data){ 
+                    that.set('content',data);                            
+                    that.hcpsLastPage = hash;
+                    },
+                    error: function(data){ that.set('content',"Error! Intente nuevamente."); }
                     });                    
-                });
-            </script>
-            <script type="dojo/method" event="onDownloadEnd">
-                //console.log(this.href);
-                var lenBase = this.hcpsWeb.length;
-                if (this.href.indexOf(this.hcpsWebBase + this.hcpsWeb)===0){
+                    });
+                </script>
+                <script type="dojo/method" event="onDownloadEnd">
+                    //console.log(this.href);
+                    var lenBase = this.hcpsWeb.length;
+                    if (this.href.indexOf(this.hcpsWebBase + this.hcpsWeb)===0){
                     lenBase = (this.hcpsWebBase + this.hcpsWeb).length;
-                }
-                this.hcpsLastPage=dojox.encoding.crypto.Blowfish.encrypt(this.href.substring(lenBase),'');
-                dojo.hash( this.hcpsLastPage );
-            </script>
-        </div>          
-        <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'bottom'" id="footer-layout" >              
-              <b>&quot;Caja Petrolera de Salud&quot;</b>
-              <br/> Unidad Nacional de Sistemas
-        </div>
-    </div>      
-</body>   
+                    }
+                    this.hcpsLastPage=dojox.encoding.crypto.Blowfish.encrypt(this.href.substring(lenBase),'');
+                    dojo.hash( this.hcpsLastPage );
+                </script>
+            </div>          
+            <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'bottom'" id="footer-layout" >              
+                <b>&quot;Caja Petrolera de Salud&quot;</b>
+                <br/> Unidad Nacional de Sistemas
+            </div>
+        </div>      
+    </body>   
 </html>
