@@ -13,4 +13,13 @@ class TipoExamenLaboratorioClinicoForm extends BaseTipoExamenLaboratorioClinicoF
   public function configure()
   {
   }
+  
+  public function disableAllWidgets()
+  {
+      foreach ($this->widgetSchema->getFields() as $v){          
+          $v->setAttribute('readonly', 'readonly');
+          $v->setAttribute('onclick', 'return false;');
+      }
+  }
+  
 }

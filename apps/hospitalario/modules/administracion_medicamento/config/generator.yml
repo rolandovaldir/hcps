@@ -24,9 +24,9 @@ generator:
         title: Listado Administracion de Medicamentos
         display: [ medicamento_solucion, descripcion_tipo, fecha, horario, created_at, updated_at ]
         object_actions:  
-          _edit:      ~
-          _delete:    { credentials: [noHistory] }
-#          visitar:    { label: Ver Detalle, action: edit, credentials: [siHistory] }
+          _edit:        { credentials: [noHistory] }
+          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [siHistory] }
+          _delete:      { credentials: [noHistory] }
         actions: {}
         batch_actions: {}
       filter: 
@@ -34,9 +34,9 @@ generator:
       form: 
         display: [ medicamento_solucion, tipo, fecha, horario ]
         actions:
-          _save: { credentials: [noHistory] }
           _list: ~
+          _save: { credentials: [noHistory] }
       edit:    
         title: Edición Administracion de Medicamentos        
       new:        
-        title: Nueva Administracion de Medicamentos        
+        title: Nueva Administracion de Medicamentos 

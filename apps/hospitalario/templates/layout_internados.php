@@ -68,9 +68,7 @@
                 <div data-dojo-type="dijit/layout/ContentPane" title="Pacientes Dados de alta"  id="main-container-tab2" data-dojo-props="href:'<?php echo url_for("internados_alta/index") ?>'" >
                 </div>
                 
-                <div data-dojo-type="dijit/layout/ContentPane" title="Reportes" data-dojo-props="href:''">
-                    <a href="reportes/index">Reportes</a>
-                </div>
+                <div data-dojo-type="dijit/layout/ContentPane" title="Reportes" data-dojo-props="href:'', onShow:function(){window.location='reportes/index';}"></div>
             </div>            
         
           <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'bottom'" id="footer-layout" >              

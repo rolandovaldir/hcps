@@ -86,6 +86,10 @@ generator:
       list:  
         title:   Listado Atencion Enfermeria
         display: [ per_apariencia_gral_val, per_habitos_val, per_alergias_val, per_inmunizaciones_val, per_medicacion_actual_val, motivo_ingreso, nutmet_higiene_val,  nutmet_estado_nutricional_val,  nutmet_protesis_dental_val,  nutmet_liquidos_electrolitos_val,  patelim_habito_intestinal_val,  patelim_habito_urinario_val,  acteje_valoracion_cardiopulmonar_val,  acteje_capacidad_motora_val,  acteje_act_diversion_val,  acteje_deficit_autocuidado_val,  acteje_crecim_desarrollo_val,  des_habito_descanso_val,  des_transtorno_sueno_val, cogper_alter_sensoriales_val,  cogper_nivel_conciencia_val,  cogper_alteracion_promentales_val,  auto_reaccion_emocional_val,  relrol_relacion_interpersonal_val, relrol_conducta_familia_val,  relrol_cambio_personalfamiliar_val, repsex_alteracion_sisreproductivo_val, capstr_relpaciente_enfermedad_val, creencia_religiosa, diagnostico_enfermera, created_at, updated_at ]
+        object_actions:  
+          _edit:        { credentials: [noHistory] }
+          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [siHistory] }
+          _delete:      { credentials: [noHistory] }
         actions: {}
         batch_actions: {}
       filter: 
@@ -104,8 +108,10 @@ generator:
           "10. CAPACIDAD DE AFRONTAR SITUACIONES DE STRESS":  [ capstr_relpaciente_enfermedad_esc, capstr_relpaciente_enfermedad_val, capstr_relfamilia_enfermedad_esc, capstr_relfamilia_enfermedad_val ]
           "11. CREENCIAS Y VALORES":          [ creencia_religiosa ]
           "&nbsp;":                           [ diagnostico_enfermera ]
+        actions:
+          _list: ~
+          _save: { credentials: [noHistory] }  
       edit:
         title: Edición Atencion Enfermeria
       new:        
-        title: Nueva Atencion Enfermeria
-        actions: {}
+        title: Nueva Atencion Enfermeria        

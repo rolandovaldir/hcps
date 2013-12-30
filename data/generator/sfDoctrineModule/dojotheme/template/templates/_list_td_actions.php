@@ -17,8 +17,15 @@
       
 <?php else: ?>
     <li class="sf_admin_action_<?php echo $params['class_suffix'] ?>">
-      <?php echo $this->addCredentialCondition($this->getLinkToAction($name, $params, true), $params) ?>
-        
+      <?php 
+          if (!array_key_exists('onclick', $params['params']) && !array_key_exists('onClick', $params['params'])){ 
+              $params['params']['onclick'] = "dijit.byId('" . $dojo_forajax_component_id . "').set('href',this.href); return false;"; 
+          }          
+          $action = isset($params['action']) ? $params['action'] : 'List'.sfInflector::camelize($name);
+          echo $this->addCredentialCondition('[?php ' . 'echo link_to(__(\''.$params['label'].'\', array(), \''.$this->getI18nCatalogue().'\'), \''.$this->getModuleName().'/'. $action . '?'. $this->getPrimaryKeyUrlParams() . (array_key_exists('extra_url_custom_id', $this->params)? ' . \'&\' . $extra_url_custom_id ' :'') .
+              ', ' . $this->asPhp($params['params']) . ') ?]', $params)
+      ?>  
+      <?php //echo $this->addCredentialCondition($this->getLinkToAction($name, $params, true), $params) ?>        
     </li>
 <?php endif; ?>
 <?php endforeach; ?>

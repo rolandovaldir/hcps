@@ -25,16 +25,17 @@ generator:
         batch_actions: {}
       filter: 
         display: [ lugar, fecha, codigo, especialidad, created_at, updated_at ]
-      form:    
-        display:
-          Datos Uso Hospitalario: [ internado_id, lugar, fecha, codigo, especialidad ]
-          Items Adicionados: [ _listado_items ]
+      form:     ~       
       edit:    
         title: Edición Recetas Uso Hospitalario
+        display:
+          Datos Uso Hospitalario: [ internado_id, lugar, fecha, codigo, especialidad ]
+          Items Adicionados:      [ _listado_items ]
       new:        
         title: Nueva Recetas Uso Hospitalario
         display:
-          Datos Uso Hospitalario: [ internado_id, lugar, fecha, codigo, especialidad ] 
+          Datos Uso Hospitalario: [ internado_id, lugar, fecha, codigo, especialidad ]
+          Adicionar Items:        [ _listado_items ]
         actions: 
           _list: ~
           _save: ~
