@@ -122,3 +122,28 @@ ul.side_menu_forms li {
     border-bottom: 1px solid #ddd;
     background-color: #EFFBEF;
 }
+
+.tbl-bienvenida{
+    width: auto;
+    margin-top: 0px;
+    padding: 5px;
+}
+
+.tbl-bienvenida td, .tbl-bienvenida th {
+    border: 0px solid #5C6F61;
+    /*width: 50%;*/
+}
+
+.tbl-bienvenida td {
+    padding: 5px;
+    width: auto;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+}
+
+.tbl-bienvenida th {
+    padding: 5px;
+    width: auto;
+    border-bottom: 1px solid #ddd;
+    background-color: #EFFBEF;
+}
