@@ -17,14 +17,14 @@ generator:
       fields: 
         descripcion_fecha_hora:       { label: 'Fecha Internacion' }
         descripcion_alta_fecha_hora:  { label: 'Fecha Alta' }
-        descripcion_es_afiliado:      { label: 'Es Afiliado' }        
+        descripcion_es_afiliado:      { label: 'Afiliado' }        
       list:    
         title:       Historial de Personas Hopitalizadas dadas de Alta
-        display:     [descripcion_fecha_hora, descripcion_es_afiliado, nombre_completo, diagnostico, procedencia, descripcion_alta_fecha_hora ]
+        display:     [descripcion_fecha_hora, matricula, nombre_completo, empresa, ubicacion, diagnostico, descripcion_es_afiliado, descripcion_alta_fecha_hora ]
         actions:       {}
         batch_actions: {}
         object_actions:
-          visitar: { label: Ver Historial, action: verHistorial }
+          ver_historial: { label: Ver Historial, action: verHistorial, params: { onclick: 'return true;' } }
       filter:  
         display: [cama_id]
       form:    false

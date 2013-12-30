@@ -21,4 +21,13 @@ class SolicitudInterconsultaForm extends BaseSolicitudInterconsultaForm
       $detalle_medicacion_form = new DetalleMedicacionForm($detalle_medicacion);
       $this->embedForm('medicacion', $detalle_medicacion_form);
   }
+  
+  public function disableAllWidgets()
+  {
+      foreach ($this->widgetSchema->getFields() as $v){          
+          $v->setAttribute('readonly', 'readonly');
+          $v->setAttribute('onclick', 'return false;');
+      }
+  }
+  
 }

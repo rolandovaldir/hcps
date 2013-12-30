@@ -16,4 +16,13 @@ class SolicitudTransfusionSanguineaForm extends BaseSolicitudTransfusionSanguine
       
       $this->widgetSchema['internado_id'] = new sfWidgetFormInputHidden();
   }
+  
+  public function disableAllWidgets()
+  {
+      foreach ($this->widgetSchema->getFields() as $v){          
+          $v->setAttribute('readonly', 'readonly');
+          $v->setAttribute('onclick', 'return false;');
+      }
+  }
+  
 }

@@ -14,4 +14,13 @@ class MedicoParticularForm extends BaseMedicoParticularForm
   {
       unset($this['created_at'], $this['updated_at'], $this['junta_medica_id']);
   }
+  
+  public function disableAllWidgets()
+  {
+      foreach ($this->widgetSchema->getFields() as $v){          
+          $v->setAttribute('readonly', 'readonly');
+          $v->setAttribute('onclick', 'return false;');
+      }
+  }
+  
 }

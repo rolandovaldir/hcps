@@ -21,4 +21,13 @@ class ExamenFisicoRecienNacidoForm extends BaseExamenFisicoRecienNacidoForm
       $apgarForm = new ApgarForm($apgar);
       $this->embedForm('apgar', $apgarForm);
   }
+  
+  public function disableAllWidgets()
+  {
+      foreach ($this->widgetSchema->getFields() as $v){          
+          $v->setAttribute('readonly', 'readonly');
+          $v->setAttribute('onclick', 'return false;');
+      }
+  }
+  
 }

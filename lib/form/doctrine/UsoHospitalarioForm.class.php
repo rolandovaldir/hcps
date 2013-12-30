@@ -18,8 +18,16 @@ class UsoHospitalarioForm extends BaseUsoHospitalarioForm
       $detalle = new DetalleUsoHospitalario();
       $detalle->setUsoHospitalario($this->object);
       $detalleForm = new DetalleUsoHospitalarioForm($detalle);
-      $this->embedForm('detalle', $detalleForm);
-      $this->validatorSchema['detalle']->setOption('required', false);
+      $this->embedForm('detalle', $detalleForm);      
   }
+  
+  public function disableAllWidgets()
+  {
+      foreach ($this->widgetSchema->getFields() as $v){          
+          $v->setAttribute('readonly', 'readonly');
+          $v->setAttribute('onclick', 'return false;');
+      }
+  }
+  
   
 }
