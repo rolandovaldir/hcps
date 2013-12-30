@@ -19,7 +19,7 @@ generator:
         title: Lista de Personas Hopitalizadas
         display: [matricula, nombre_completo, empresa, ubicacion, diagnostico]
         object_actions:
-          visitar: {label: Visitar Paciente, action: visitar}
+          visitar: {label: Visitar Paciente, action: visitar, params: { onclick: 'return true;' } }
           _edit: ~
         actions: {}
         batch_actions: {}

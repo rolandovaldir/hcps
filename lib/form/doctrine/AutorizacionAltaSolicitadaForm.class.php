@@ -15,4 +15,13 @@ class AutorizacionAltaSolicitadaForm extends BaseAutorizacionAltaSolicitadaForm
       unset($this['created_at'], $this['updated_at']);
       $this->setWidget("internado_id", new sfWidgetFormInputHidden());
   }
+  
+  public function disableAllWidgets()
+  {
+      foreach ($this->widgetSchema->getFields() as $v){          
+          $v->setAttribute('readonly', 'readonly');
+          $v->setAttribute('onclick', 'return false;');
+      }
+  }
+  
 }

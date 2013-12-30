@@ -24,4 +24,13 @@ class SolicitudReposicionMaterialForm extends BaseSolicitudReposicionMaterialFor
 //      $this->embedRelation('DetalleMaterial');
       
   }
+  
+  public function disableAllWidgets()
+  {
+      foreach ($this->widgetSchema->getFields() as $v){          
+          $v->setAttribute('readonly', 'readonly');
+          $v->setAttribute('onclick', 'return false;');
+      }
+  }
+  
 }

@@ -22,6 +22,10 @@ generator:
       list:   
         title: Listado Autorizacion Autopsia
         display: [ nombre_familiar1, tipo_parentesco1, ci_familiar1,nombre_familiar2, tipo_parentesco2, ci_familiar2,nombre_familiar3, tipo_parentesco3, ci_familiar3, fecha_hora, created_at, updated_at]        
+        object_actions:  
+          _edit:        { credentials: [noHistory] }
+          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [siHistory] }
+          _delete:      { credentials: [noHistory] }
         actions: {}
         batch_actions: {}
       filter:  
@@ -42,6 +46,9 @@ generator:
           ci_familiar1 :    { label: CI }
           ci_familiar2 :    { label: CI }
           ci_familiar3 :    { label: CI }
+        actions:
+          _list: ~
+          _save: { credentials: [noHistory] }
       edit:            
         title: Edición Autorizacion Autopsia
       new:        
