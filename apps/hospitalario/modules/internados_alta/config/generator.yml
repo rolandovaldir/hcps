@@ -20,7 +20,7 @@ generator:
         descripcion_es_afiliado:      { label: 'Afiliado' }        
       list:    
         title:       Historial de Personas Hopitalizadas dadas de Alta
-        display:     [descripcion_fecha_hora, matricula, nombre_completo, empresa, ubicacion, diagnostico, descripcion_es_afiliado, descripcion_alta_fecha_hora ]
+        display:     [descripcion_fecha_hora, matricula, nombre_completo, empresa, ubicacion, descripcion_es_afiliado, descripcion_alta_fecha_hora ]
         actions:       {}
         batch_actions: {}
         object_actions:
