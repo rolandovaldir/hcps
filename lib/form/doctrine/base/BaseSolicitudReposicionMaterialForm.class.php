@@ -19,8 +19,8 @@ abstract class BaseSolicitudReposicionMaterialForm extends BaseFormDoctrine
       'internado_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => false)),
       'unidad'       => new sfWidgetFormInputText(),
       'encargado'    => new sfWidgetFormInputText(),
-      'created_at'   => new myWidgetFormDojoDateTime(),
-      'updated_at'   => new myWidgetFormDojoDateTime(),
+      'created_at'   => new sfWidgetFormDateTime(),
+      'updated_at'   => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(
@@ -28,8 +28,8 @@ abstract class BaseSolicitudReposicionMaterialForm extends BaseFormDoctrine
       'internado_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'))),
       'unidad'       => new sfValidatorString(array('max_length' => 100, 'required' => false)),
       'encargado'    => new sfValidatorString(array('max_length' => 150, 'required' => false)),
-      'created_at'   => new myValidatorDojoDateTime(),
-      'updated_at'   => new myValidatorDojoDateTime(),
+      'created_at'   => new sfValidatorDateTime(),
+      'updated_at'   => new sfValidatorDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('solicitud_reposicion_material[%s]');

@@ -1,0 +1,17 @@
+## YAML Template.
+---
+Empleado:
+  empleado1:
+    matricula:        0023
+    profesion:        Enfermera
+    Filial:           Policonsultorio
+    nombre:           Amanda
+    apellido:         Yañez
+    cargo:            Enfermera
+  empleado1:
+    matricula:        0025
+    profesion:        Enfermera
+    Filial:           Policonsultorio
+    nombre:           Rosario Julieta
+    apellido:         Torrez
+    cargo:            Enfermera

@@ -32,8 +32,8 @@ abstract class BaseApgarForm extends BaseFormDoctrine
       'extremidades'                   => new sfWidgetFormInputText(),
       'reflejos'                       => new sfWidgetFormInputText(),
       'ano'                            => new sfWidgetFormInputText(),
-      'created_at'                     => new myWidgetFormDojoDateTime(),
-      'updated_at'                     => new myWidgetFormDojoDateTime(),
+      'created_at'                     => new sfWidgetFormDateTime(),
+      'updated_at'                     => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(
@@ -54,8 +54,8 @@ abstract class BaseApgarForm extends BaseFormDoctrine
       'extremidades'                   => new sfValidatorString(array('max_length' => 100, 'required' => false)),
       'reflejos'                       => new sfValidatorString(array('max_length' => 100, 'required' => false)),
       'ano'                            => new sfValidatorString(array('max_length' => 100, 'required' => false)),
-      'created_at'                     => new myValidatorDojoDateTime(),
-      'updated_at'                     => new myValidatorDojoDateTime(),
+      'created_at'                     => new sfValidatorDateTime(),
+      'updated_at'                     => new sfValidatorDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('apgar[%s]');

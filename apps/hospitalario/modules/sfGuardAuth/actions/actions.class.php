@@ -1,30 +1,13 @@
 <?php
 
-require_once dirname(__FILE__).'/../lib/servicios_mantenimientoGeneratorConfiguration.class.php';
-require_once dirname(__FILE__).'/../lib/servicios_mantenimientoGeneratorHelper.class.php';
+require_once(sfConfig::get('sf_plugins_dir').'/sfDoctrineGuardPlugin/modules/sfGuardAuth/lib/BasesfGuardAuthActions.class.php');
 
-/**
- * servicios_mantenimiento actions.
- *
- * @package    hcps
- * @subpackage servicios_mantenimiento
- * @author     Your name here
- * @version    SVN: $Id: actions.class.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
- */
-class servicios_mantenimientoActions extends autoServicios_mantenimientoActions
+class sfGuardAuthActions extends BasesfGuardAuthActions
 {
-    public function executeNew(sfWebRequest $request)
+    public function executeSignin($request)
     {
-        $this->form = $this->configuration->getForm();
-        $this->servicio_mantenimiento = $this->form->getObject();
-        $internado = $this->getUser()->getAttribute('internado');
-        $this->form->setDefault('internado_id', $internado->getId());
-    }
-    
-    protected function getFilters()
-    {   
-        $filters = parent::getFilters();        
-        $filters['internado_id'] = sfContext::getInstance()->getRequest()->getParameter('internado_id');
-        return $filters;
+        $this->setLayout('login');
+        parent::executeSignin($request);
+                
     }
 }

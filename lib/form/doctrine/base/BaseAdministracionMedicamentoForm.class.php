@@ -17,13 +17,13 @@ abstract class BaseAdministracionMedicamentoForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'                   => new sfWidgetFormInputHidden(),
       'internado_id'         => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => false)),
-      'enfermera_id'         => new myWidgetFormDojoInteger(),
+      'enfermera_id'         => new sfWidgetFormInputText(),
       'medicamento_solucion' => new sfWidgetFormTextarea(),
       'tipo'                 => new sfWidgetFormInputText(),
-      'fecha'                => new myWidgetFormDojoDate(),
-      'horario'              => new myWidgetFormDojoTime(),
-      'created_at'           => new myWidgetFormDojoDateTime(),
-      'updated_at'           => new myWidgetFormDojoDateTime(),
+      'fecha'                => new sfWidgetFormDate(),
+      'horario'              => new sfWidgetFormTime(),
+      'created_at'           => new sfWidgetFormDateTime(),
+      'updated_at'           => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(
@@ -32,10 +32,10 @@ abstract class BaseAdministracionMedicamentoForm extends BaseFormDoctrine
       'enfermera_id'         => new sfValidatorInteger(array('required' => false)),
       'medicamento_solucion' => new sfValidatorString(array('max_length' => 400)),
       'tipo'                 => new sfValidatorString(array('max_length' => 1)),
-      'fecha'                => new myValidatorDojoDate(),
+      'fecha'                => new sfValidatorDate(),
       'horario'              => new sfValidatorTime(),
-      'created_at'           => new myValidatorDojoDateTime(),
-      'updated_at'           => new myValidatorDojoDateTime(),
+      'created_at'           => new sfValidatorDateTime(),
+      'updated_at'           => new sfValidatorDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('administracion_medicamento[%s]');

@@ -13,4 +13,13 @@
 class Empleado extends BaseEmpleado
 {
 
+    /**
+     *
+     * 
+     */
+    public function getNombreCompleto()
+    {        
+        return $this->getNombre() . ' ' . $this->getApellido();        
+    }
+    
 }

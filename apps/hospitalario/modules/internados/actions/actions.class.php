@@ -14,12 +14,11 @@ require_once dirname(__FILE__).'/../lib/internadosGeneratorHelper.class.php';
 class internadosActions extends autoInternadosActions
 {
     
-    public function preExecute()
-    {
-        $user = $this->getUser();
-        $user->setAuthenticated(true);
-        $user->setAttribute("id",1);
-        parent::preExecute();
+    protected function getFilters()
+    {   
+        $filters = parent::getFilters();        
+        $filters['alta'] = false;
+        return $filters;
     }
     
     public function executeVisitar(sfWebRequest $request)
@@ -31,9 +30,5 @@ class internadosActions extends autoInternadosActions
         $this->setLayout('layout');        
         $this->getResponse()->setSlot("nombre_completo_internado", $this->internado->getNombreCompleto());
     }       
-       
-    public function executeSecure()
-    {
-        
-    }
+    
 }

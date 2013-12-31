@@ -12,4 +12,11 @@
  */
 class sfGuardUser extends PluginsfGuardUser
 {
+        
+    
+    public function getDescripcionTipo()
+    {
+        return sfGuardUserTable::getDescripcione_tipo($this->getTipo());
+    }
+    
 }

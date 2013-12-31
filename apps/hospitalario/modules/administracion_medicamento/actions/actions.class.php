@@ -20,16 +20,12 @@ class administracion_medicamentoActions extends autoAdministracion_medicamentoAc
     {
         $request = $this->getRequest();         
         $this->hcps_internado = InternadoTable::getInstance()->find($request->getParameter('internado_id'));
-        if (is_object($this->hcps_internado)){
-            if ($this->hcps_internado->getAlta()){//disable all links (links para internados y dados de alta)
-                $this->getUser()->addCredential('siHistory');
-                $this->getUser()->removeCredential('noHistory');
-            }
-            else{                
-                $this->getUser()->addCredential('noHistory');
-                $this->getUser()->removeCredential('siHistory');
-            }
-        }        
+        $this->getUser()->addCredential('siHistory');
+        $this->getUser()->removeCredential('noHistory');
+        if ((is_object($this->hcps_internado) && !$this->hcps_internado->getAlta())){
+            $this->getUser()->addCredential('noHistory');
+            $this->getUser()->removeCredential('siHistory');                    
+        }
         parent::preExecute();
     }
         

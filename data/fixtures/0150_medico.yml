@@ -1,0 +1,29 @@
+## YAML Template.
+---
+Medico:
+  medico1:
+    codigo:           001
+    nombrec:          Esteban Jordan
+    cargahor:         0
+    hor_ini:          '05:00'
+    hor_fin:          '08:00'
+    intervalo:        1
+    activo:           s
+    cupos:            5
+    consultorio:      ''
+    observacion:      null
+    Especialidad:     especialidad1
+    item_id:          0
+  medico2:
+    codigo:           002
+    nombrec:          Arturo Rojas
+    cargahor:         0
+    hor_ini:          '12:00'
+    hor_fin:          '16:00'
+    intervalo:        1
+    activo:           s
+    cupos:            5
+    consultorio:      ''
+    observacion:      null
+    Especialidad:     especialidad1
+    item_id:          0

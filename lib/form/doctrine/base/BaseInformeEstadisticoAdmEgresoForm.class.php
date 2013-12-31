@@ -21,8 +21,8 @@ abstract class BaseInformeEstadisticoAdmEgresoForm extends BaseFormDoctrine
       'urgencia_direccion_calle' => new sfWidgetFormInputText(),
       'urgencia_direccion_no'    => new sfWidgetFormInputText(),
       'urgencia_direccion_fono'  => new sfWidgetFormInputText(),
-      'created_at'               => new myWidgetFormDojoDateTime(),
-      'updated_at'               => new myWidgetFormDojoDateTime(),
+      'created_at'               => new sfWidgetFormDateTime(),
+      'updated_at'               => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(
@@ -32,8 +32,8 @@ abstract class BaseInformeEstadisticoAdmEgresoForm extends BaseFormDoctrine
       'urgencia_direccion_calle' => new sfValidatorString(array('max_length' => 70, 'required' => false)),
       'urgencia_direccion_no'    => new sfValidatorString(array('max_length' => 10, 'required' => false)),
       'urgencia_direccion_fono'  => new sfValidatorString(array('max_length' => 20, 'required' => false)),
-      'created_at'               => new myValidatorDojoDateTime(),
-      'updated_at'               => new myValidatorDojoDateTime(),
+      'created_at'               => new sfValidatorDateTime(),
+      'updated_at'               => new sfValidatorDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('informe_estadistico_adm_egreso[%s]');

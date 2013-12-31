@@ -19,12 +19,12 @@ abstract class BaseDetalleMaterialForm extends BaseFormDoctrine
       'solicitud_reposicion_material_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('SolicitudReposicionMaterial'), 'add_empty' => false)),
       'codigo'                           => new sfWidgetFormInputText(),
       'descripcion'                      => new sfWidgetFormInputText(),
-      'unidad'                           => new myWidgetFormDojoInteger(),
-      'saldo_anterior'                   => new myWidgetFormDojoInteger(),
-      'reposicion_solicitada'            => new myWidgetFormDojoInteger(),
-      'saldo_actual'                     => new myWidgetFormDojoInteger(),
-      'created_at'                       => new myWidgetFormDojoDateTime(),
-      'updated_at'                       => new myWidgetFormDojoDateTime(),
+      'unidad'                           => new sfWidgetFormInputText(),
+      'saldo_anterior'                   => new sfWidgetFormInputText(),
+      'reposicion_solicitada'            => new sfWidgetFormInputText(),
+      'saldo_actual'                     => new sfWidgetFormInputText(),
+      'created_at'                       => new sfWidgetFormDateTime(),
+      'updated_at'                       => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(
@@ -36,8 +36,8 @@ abstract class BaseDetalleMaterialForm extends BaseFormDoctrine
       'saldo_anterior'                   => new sfValidatorInteger(array('required' => false)),
       'reposicion_solicitada'            => new sfValidatorInteger(array('required' => false)),
       'saldo_actual'                     => new sfValidatorInteger(array('required' => false)),
-      'created_at'                       => new myValidatorDojoDateTime(),
-      'updated_at'                       => new myValidatorDojoDateTime(),
+      'created_at'                       => new sfValidatorDateTime(),
+      'updated_at'                       => new sfValidatorDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('detalle_material[%s]');

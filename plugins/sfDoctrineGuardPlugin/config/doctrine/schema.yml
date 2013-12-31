@@ -54,7 +54,7 @@ sfGuardUser:
   actAs: [Timestampable]
   columns:
     first_name: string(255)
-    last_name: string(255)
+    last_name: string(255)    
     email_address:
       type: string(255)
       notnull: true
@@ -77,6 +77,8 @@ sfGuardUser:
       default: false
     last_login:
       type: timestamp
+    tipo:               string(1)  #custom properties
+    empleado_id: integer    #custom properties
   indexes:
     is_active_idx:
       fields: [is_active]
