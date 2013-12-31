@@ -1,4 +1,8 @@
-<h1>Caja Petrolera de Salud</h1>
+<h2>Caja Petrolera de Salud</h2>
+<h2>DEPARTAMENTAL - LA PAZ</h2>
+
+<h2>ORDEN DE SERVICIOS HOSPITALARIOS</h2>
+<h2>PROGRAMACIÓN PARA CIRUGÍAS</h2>
 
 
 <table cellspacing="0" cellpadding="1" border="1">
