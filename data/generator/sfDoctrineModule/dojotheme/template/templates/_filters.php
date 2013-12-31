@@ -1,7 +1,7 @@
 [?php use_stylesheets_for_form($form) ?]
 [?php use_javascripts_for_form($form) ?]
 <?php $dojo_forajax_component_id = array_key_exists('dojo_forajax_component_id', $this->params) ? $this->params['dojo_forajax_component_id'] : 'dojotheme-maincontainer' ?>
-<div data-dojo-type="dijit/Fieldset"  data-dojo-props="open:false">
+<div data-dojo-type="dijit/Fieldset"  data-dojo-props="open:false" class="forFilterFieldset">
   <legend>Filtros</legend>
   [?php if ($form->hasGlobalErrors()): ?]
     [?php echo $form->renderGlobalErrors() ?]

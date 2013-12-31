@@ -753,10 +753,7 @@ PapeletaPedidoMaterial:
   columns:
     internado_id:          { type: integer }
     enfermera_id:          { type: integer }
-    fecha_solicitud:       { type: date }    
-    numero:                { type: string(15) }
-    detalle:               { type: string(150) }
-    cantidad:               { type: string(25) }
+    fecha_solicitud:       { type: date } 
     entregado:             { type: boolean }
   relations:
     Internado: { local: internado_id, foreign: id, type: one, foreignAlias: PapeletasPedidoMaterial }

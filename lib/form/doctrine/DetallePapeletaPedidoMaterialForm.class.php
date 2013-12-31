@@ -12,5 +12,6 @@ class DetallePapeletaPedidoMaterialForm extends BaseDetallePapeletaPedidoMateria
 {
   public function configure()
   {
+      unset($this['papeleta_pedido_material_id']);
   }
 }

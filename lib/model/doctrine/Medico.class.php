@@ -13,4 +13,13 @@
 class Medico extends BaseMedico
 {
 
+    /**
+     *
+     * 
+     */
+    public function getNombreCompleto()
+    {        
+        return $this->getNombrec();
+    }
+    
 }

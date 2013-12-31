@@ -2,8 +2,8 @@
 <?php use_stylesheet('/sfDoctrinePlugin/css/default.css', 'first') ?> 
 <br/>
 <div class="tbl-bienvenida" style="margin-left: 15%;">
-    <center><img  src="/images/bienvenida.png"></center>
-    <h2 align="center">Bienvenido al sistema de hospitalizacion</h2>
+<center><?php echo image_tag('bienvenida.png', 'alt=cps-inicio' ) ?></center>
+<h2 align="center">Bienvenido al sistema de hospitalizacion</h2>
 
     <table class="tbl-bienvenida" align="center">
         <tr>

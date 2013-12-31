@@ -1,3 +1,12 @@
+detalle_papeleta_pedido_material:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                DetallePapeletaPedidoMaterial
+    module:               detalle_papeleta_pedido_material
+    prefix_path:          /detalle_papeleta_pedido_material
+    column:               id
+    with_wildcard_routes: true
+
 internado_internados_alta:
   class: sfDoctrineRouteCollection
   options:
@@ -301,8 +310,8 @@ papeleta_pedido_material:
   class: sfDoctrineRouteCollection
   options:
     model:                PapeletaPedidoMaterial
-    module:               papeletapedidomaterial
-    prefix_path:          /papeletapedidomaterial
+    module:               papeleta_pedido_material
+    prefix_path:          /papeleta_pedido_material
     column:               id
     with_wildcard_routes: true
 

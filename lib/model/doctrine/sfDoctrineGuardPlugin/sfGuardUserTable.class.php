@@ -7,13 +7,17 @@
  */
 class sfGuardUserTable extends PluginsfGuardUserTable
 {
-    /**
-     * Returns an instance of this class.
-     *
-     * @return object sfGuardUserTable
-     */
-    public static function getInstance()
+    
+    const HCPS_USER_TIPO_MEDICO = 'm';
+    const HCPS_USER_TIPO_ENFERMERA = 'e';    
+    
+    static $descripciones_tipo = array('m'=>'Medico', 'e'=>'Enfermera');
+    
+    static public function getDescripcione_tipo($tipo,$default=null)
     {
-        return Doctrine_Core::getTable('sfGuardUser');
+        if (array_key_exists($tipo, self::$descripciones_tipo)){
+            return self::$descripciones_tipo[$tipo];
+        }
+        return $default;
     }
 }

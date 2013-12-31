@@ -38,23 +38,22 @@
                 </tr>
                 <tr>
                     <td nowrap="nowrap" style="font-size: 11px">Usuario:
-                        <span style="color: #025A8D; font-size: 11px; font-weight: bold">
-                        <?php if($sf_user->isAuthenticated() == true): ?>
-                            <?php //if($sf_user->getProfile()->getMedicoId()) echo $sf_user->getProfile()->getMedico()->getNombrec(); ?>
-                            <?php //if($sf_user->getProfile()->getEmpleadoId()) echo $sf_user->getProfile()->getEmpleado()->getNombre(); ?>
-                            <?php else: echo 'Iniciar sesi&oacute;n!!!' ?>
-                        <?php endif; ?>
+                        <span>
+                            <?php if ($sf_user->isAuthenticated() == true): ?>
+                                <?php if ($sf_user->getHcpsUser()) echo $sf_user->getHcpsUser()->getNombreCompleto(); ?>
+                                <?php else: echo 'Iniciar sesi&oacute;n!!!' ?>
+                                <?php endif; ?>
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td nowrap="nowrap" style="font-size: 11px">Especialidad:
-                        <span style="color: #025A8D; font-size: 11px; font-weight: bold">
-                        <?php if($sf_user->isAuthenticated() == true): ?>
-                            <?php //if($sf_user->getProfile()->getMedicoId()) echo $sf_user->getProfile()->getMedico()->getEspecialidad()->getNombre(); ?>
-                            <?php //if($sf_user->getProfile()->getEmpleadoId()) echo $sf_user->getProfile()->getEmpleado()->getProfesion(); ?>
-                            <?php else: echo 'Iniciar sesi&oacute;n!!!' ?>
-                        <?php endif; ?>
+                        <span>
+                            <?php if ($sf_user->isAuthenticated() == true): ?>
+                                <?php echo $sf_user->getGuardUser()->getDescripcionTipo() ?><br/>
+                                <?php echo link_to('Salir','sfGuardAuth/Signout')?> 
+                            <?php else: echo 'Iniciar sesi&oacute;n!!!'; ?>
+                            <?php endif; ?>
                         </span>
                     </td>
                 </tr>

@@ -50,9 +50,12 @@ ul.side_menu_forms li {
   border: 1px solid #808080;    
 }
 
+#sf_admin_container .forFilterFieldset label {min-width: 2em; width: auto; }
+#sf_admin_container .forFilterFieldset td { padding : 0 10px 0 0 } 
+
 #sf_admin_container .onlyFormat { margin: 0; }
 
-#sf_admin_container .onlyFormat label{ min-width: 5em; }
+#sf_admin_container .onlyFormat label{ min-width: 5em; width:auto; }
 
 #sf_admin_container .onlyFormat tr{ border:0; }
 #sf_admin_container .onlyFormat td{ border:0; }
@@ -92,7 +95,7 @@ ul.side_menu_forms li {
 .for-login { margin:20px 30%; }
 .for-login input[type=text], .for-login input[type=password]{ width:220px; }
 .for-login table{  background-color: #E8E2E4; }
-.for-login table th{  background-color: #E8E2E4; text-align: right; padding: 5px; }
+.for-login table th{  background-color: #EFFBEF; text-align: right; padding: 5px; }
 .for-login table td{  background-color: #FFFFFF; }
 .for-login table tfoot td { text-align: right;  }
 .for-login .error_list li{ color: red; }

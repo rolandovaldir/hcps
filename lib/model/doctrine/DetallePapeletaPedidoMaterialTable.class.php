@@ -16,4 +16,13 @@ class DetallePapeletaPedidoMaterialTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('DetallePapeletaPedidoMaterial');
     }
+    
+    public static function getAllDetalles($pap_id)
+    {
+        $d = self::getInstance()->createQuery('det')            
+            ->where('det.papeleta_pedido_material_id = ?', $pap_id)
+            ->orderBy('det.id ASC')->execute();
+        return $d;
+    }
+    
 }

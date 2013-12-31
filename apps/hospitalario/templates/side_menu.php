@@ -14,7 +14,7 @@ $link_menus = array(
     array('link'=>'notas_evolucion','label'=>'Notas Evolucion'),
     array('link'=>'nursery','label'=>'Nursery'),
     array('link'=>'ordenes_medicas','label'=>'Ordenes Medicas'),
-    array('link'=>'papeletapedidomaterial','label'=>'Papeleta Pedido Material'),
+    array('link'=>'papeleta_pedido_material','label'=>'Papeleta Pedido Material'),
     array('link'=>'programacion_cirugia','label'=>'Programacion Cirugias'),
     array('link'=>'uso_hospitalario','label'=>'Receta Uso Hospitalario'),
     array('link'=>'recien_nacidos','label'=>'Recien Nacidos'),
@@ -28,7 +28,8 @@ $link_menus = array(
     
 );
 
-foreach ($link_menus as $val){ ?>
+foreach ($link_menus as $val){ ?>    
+    <?php //if (get_slot('historial',false))?>
     <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title: '<?php echo $val['label'] ?>'," >
         <ul class="side_menu_forms">            
             <li class="sf_admin_action_list">                

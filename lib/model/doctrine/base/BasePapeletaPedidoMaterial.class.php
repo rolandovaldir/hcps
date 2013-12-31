@@ -8,9 +8,6 @@
  * @property integer $internado_id
  * @property integer $enfermera_id
  * @property date $fecha_solicitud
- * @property string $numero
- * @property string $detalle
- * @property string $cantidad
  * @property boolean $entregado
  * @property Internado $Internado
  * @property Doctrine_Collection $DetallePapeletaPedidoMaterial
@@ -18,18 +15,12 @@
  * @method integer                getInternadoId()                   Returns the current record's "internado_id" value
  * @method integer                getEnfermeraId()                   Returns the current record's "enfermera_id" value
  * @method date                   getFechaSolicitud()                Returns the current record's "fecha_solicitud" value
- * @method string                 getNumero()                        Returns the current record's "numero" value
- * @method string                 getDetalle()                       Returns the current record's "detalle" value
- * @method string                 getCantidad()                      Returns the current record's "cantidad" value
  * @method boolean                getEntregado()                     Returns the current record's "entregado" value
  * @method Internado              getInternado()                     Returns the current record's "Internado" value
  * @method Doctrine_Collection    getDetallePapeletaPedidoMaterial() Returns the current record's "DetallePapeletaPedidoMaterial" collection
  * @method PapeletaPedidoMaterial setInternadoId()                   Sets the current record's "internado_id" value
  * @method PapeletaPedidoMaterial setEnfermeraId()                   Sets the current record's "enfermera_id" value
  * @method PapeletaPedidoMaterial setFechaSolicitud()                Sets the current record's "fecha_solicitud" value
- * @method PapeletaPedidoMaterial setNumero()                        Sets the current record's "numero" value
- * @method PapeletaPedidoMaterial setDetalle()                       Sets the current record's "detalle" value
- * @method PapeletaPedidoMaterial setCantidad()                      Sets the current record's "cantidad" value
  * @method PapeletaPedidoMaterial setEntregado()                     Sets the current record's "entregado" value
  * @method PapeletaPedidoMaterial setInternado()                     Sets the current record's "Internado" value
  * @method PapeletaPedidoMaterial setDetallePapeletaPedidoMaterial() Sets the current record's "DetallePapeletaPedidoMaterial" collection
@@ -52,18 +43,6 @@ abstract class BasePapeletaPedidoMaterial extends sfDoctrineRecord
              ));
         $this->hasColumn('fecha_solicitud', 'date', null, array(
              'type' => 'date',
-             ));
-        $this->hasColumn('numero', 'string', 15, array(
-             'type' => 'string',
-             'length' => 15,
-             ));
-        $this->hasColumn('detalle', 'string', 150, array(
-             'type' => 'string',
-             'length' => 150,
-             ));
-        $this->hasColumn('cantidad', 'string', 25, array(
-             'type' => 'string',
-             'length' => 25,
              ));
         $this->hasColumn('entregado', 'boolean', null, array(
              'type' => 'boolean',
