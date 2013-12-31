@@ -19,9 +19,9 @@ abstract class BaseDetalleMedicacionForm extends BaseFormDoctrine
       'solicitud_interconsulta_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('SolicitudInterconsulta'), 'add_empty' => false)),
       'medicacion_utilizada'       => new sfWidgetFormInputText(),
       'dosis'                      => new sfWidgetFormInputText(),
-      'fecha_inicio'               => new sfWidgetFormDate(),
-      'created_at'                 => new sfWidgetFormDateTime(),
-      'updated_at'                 => new sfWidgetFormDateTime(),
+      'fecha_inicio'               => new myWidgetFormDojoDate(),
+      'created_at'                 => new myWidgetFormDojoDateTime(),
+      'updated_at'                 => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(
@@ -29,9 +29,9 @@ abstract class BaseDetalleMedicacionForm extends BaseFormDoctrine
       'solicitud_interconsulta_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('SolicitudInterconsulta'))),
       'medicacion_utilizada'       => new sfValidatorString(array('max_length' => 150, 'required' => false)),
       'dosis'                      => new sfValidatorString(array('max_length' => 45, 'required' => false)),
-      'fecha_inicio'               => new sfValidatorDate(array('required' => false)),
-      'created_at'                 => new sfValidatorDateTime(),
-      'updated_at'                 => new sfValidatorDateTime(),
+      'fecha_inicio'               => new myValidatorDojoDate(array('required' => false)),
+      'created_at'                 => new myValidatorDojoDateTime(),
+      'updated_at'                 => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('detalle_medicacion[%s]');

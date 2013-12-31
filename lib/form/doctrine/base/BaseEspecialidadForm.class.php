@@ -18,12 +18,12 @@ abstract class BaseEspecialidadForm extends BaseFormDoctrine
       'id'          => new sfWidgetFormInputHidden(),
       'nombre'      => new sfWidgetFormInputText(),
       'activo'      => new sfWidgetFormInputText(),
-      'cupos'       => new sfWidgetFormInputText(),
-      'servicio_id' => new sfWidgetFormInputText(),
-      'filial_id'   => new sfWidgetFormInputText(),
+      'cupos'       => new myWidgetFormDojoInteger(),
+      'servicio_id' => new myWidgetFormDojoInteger(),
+      'filial_id'   => new myWidgetFormDojoInteger(),
       'observacion' => new sfWidgetFormTextarea(),
-      'created_at'  => new sfWidgetFormDateTime(),
-      'updated_at'  => new sfWidgetFormDateTime(),
+      'created_at'  => new myWidgetFormDojoDateTime(),
+      'updated_at'  => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(
@@ -34,8 +34,8 @@ abstract class BaseEspecialidadForm extends BaseFormDoctrine
       'servicio_id' => new sfValidatorInteger(),
       'filial_id'   => new sfValidatorInteger(array('required' => false)),
       'observacion' => new sfValidatorString(array('max_length' => 2000, 'required' => false)),
-      'created_at'  => new sfValidatorDateTime(),
-      'updated_at'  => new sfValidatorDateTime(),
+      'created_at'  => new myValidatorDojoDateTime(),
+      'updated_at'  => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('especialidad[%s]');

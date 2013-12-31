@@ -17,23 +17,23 @@ abstract class BaseNotasEnfermeriaForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'             => new sfWidgetFormInputHidden(),
       'internado_id'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => false)),
-      'fecha'          => new sfWidgetFormDate(),
-      'hora'           => new sfWidgetFormTime(),
+      'fecha'          => new myWidgetFormDojoDate(),
+      'hora'           => new myWidgetFormDojoTime(),
       'procedimientos' => new sfWidgetFormInputText(),
       'observaciones'  => new sfWidgetFormTextarea(),
-      'created_at'     => new sfWidgetFormDateTime(),
-      'updated_at'     => new sfWidgetFormDateTime(),
+      'created_at'     => new myWidgetFormDojoDateTime(),
+      'updated_at'     => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(
       'id'             => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'internado_id'   => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'))),
-      'fecha'          => new sfValidatorDate(array('required' => false)),
+      'fecha'          => new myValidatorDojoDate(array('required' => false)),
       'hora'           => new sfValidatorTime(array('required' => false)),
       'procedimientos' => new sfValidatorString(array('max_length' => 150, 'required' => false)),
       'observaciones'  => new sfValidatorString(array('max_length' => 500, 'required' => false)),
-      'created_at'     => new sfValidatorDateTime(),
-      'updated_at'     => new sfValidatorDateTime(),
+      'created_at'     => new myValidatorDojoDateTime(),
+      'updated_at'     => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('notas_enfermeria[%s]');

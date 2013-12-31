@@ -18,6 +18,10 @@ generator:
       list:    
         title: Juntas Medicas
         display: [fecha_junta, medico_solicitante, diagnostico_establecido, conclusiones]
+        object_actions:  
+          _edit:        { credentials: [noHistory] }
+          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [siHistory] }
+          _delete:      { credentials: [noHistory] }
         actions: {}
         batch_actions: {}
       filter:  

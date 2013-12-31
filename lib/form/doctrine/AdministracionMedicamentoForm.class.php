@@ -22,7 +22,7 @@ class AdministracionMedicamentoForm extends BaseAdministracionMedicamentoForm
       foreach ($this->widgetSchema->getFields() as $v){          
           $v->setAttribute('readonly', 'readonly');
           $v->setAttribute('onclick', 'return false;');
-      }
+      }      
   }
   
 }

@@ -13,8 +13,13 @@ class PapeletaPedidoMaterialForm extends BasePapeletaPedidoMaterialForm
   public function configure()
   {
       unset($this['created_at'], $this['updated_at']);
-      
-      $this->widgetSchema['internado_id'] = new sfWidgetFormInputHidden();
+            
+      $this->setWidget("internado_id", new sfWidgetFormInputHidden());
+            
+      $detalle = new DetallePapeletaPedidoMaterial();
+      $detalle->setPapeletaPedidoMaterial($this->object);
+      $detalleForm = new DetallePapeletaPedidoMaterialForm($detalle);
+      $this->embedForm('detalle', $detalleForm);
   }
   
   

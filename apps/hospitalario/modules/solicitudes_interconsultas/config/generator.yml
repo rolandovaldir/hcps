@@ -18,6 +18,10 @@ generator:
       list:    
         title: Solicitudes de Interconsulta
         display: [dirigida_a, especialidad, motivo]
+        object_actions:  
+          _edit:        { credentials: [noHistory] }
+          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [siHistory] }
+          _delete:      { credentials: [noHistory] }
         actions: {}
         batch_actions: {}
       filter:  

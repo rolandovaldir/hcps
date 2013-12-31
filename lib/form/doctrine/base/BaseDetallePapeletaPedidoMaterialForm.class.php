@@ -20,8 +20,8 @@ abstract class BaseDetallePapeletaPedidoMaterialForm extends BaseFormDoctrine
       'columna1'                    => new sfWidgetFormInputText(),
       'columna2'                    => new sfWidgetFormInputText(),
       'columna3'                    => new sfWidgetFormInputText(),
-      'created_at'                  => new sfWidgetFormDateTime(),
-      'updated_at'                  => new sfWidgetFormDateTime(),
+      'created_at'                  => new myWidgetFormDojoDateTime(),
+      'updated_at'                  => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(
@@ -30,8 +30,8 @@ abstract class BaseDetallePapeletaPedidoMaterialForm extends BaseFormDoctrine
       'columna1'                    => new sfValidatorString(array('max_length' => 15, 'required' => false)),
       'columna2'                    => new sfValidatorString(array('max_length' => 150, 'required' => false)),
       'columna3'                    => new sfValidatorString(array('max_length' => 25, 'required' => false)),
-      'created_at'                  => new sfValidatorDateTime(),
-      'updated_at'                  => new sfValidatorDateTime(),
+      'created_at'                  => new myValidatorDojoDateTime(),
+      'updated_at'                  => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('detalle_papeleta_pedido_material[%s]');

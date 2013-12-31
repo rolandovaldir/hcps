@@ -13,6 +13,36 @@ require_once dirname(__FILE__).'/../lib/uso_hospitalarioGeneratorHelper.class.ph
  */
 class uso_hospitalarioActions extends autoUso_hospitalarioActions
 {
+   
+    private $hcps_internado = null;
+
+
+    public function preExecute()
+    {
+        $request = $this->getRequest();         
+        $this->hcps_internado = InternadoTable::getInstance()->find($request->getParameter('internado_id'));
+        
+        if ((is_object($this->hcps_internado) && !$this->hcps_internado->getAlta())){
+            $this->getUser()->addCredential('noHistory');
+            $this->getUser()->removeCredential('siHistory');                    
+        }
+        else{
+            $this->getUser()->addCredential('siHistory');
+            $this->getUser()->removeCredential('noHistory');
+        }
+        parent::preExecute();
+    }
+        
+    public function postExecute()
+    {
+        if ( !is_object($this->hcps_internado) || $this->hcps_internado->getAlta()){
+            if (is_object($this->form)){ //disable all widgets (si internado es dado de alta)
+                $this->form->disableAllWidgets();
+            }
+        }
+        parent::postExecute();
+    }
+    
     /**
      * overwrite the filter to list only the rows for the chosen internado
      * @return string 

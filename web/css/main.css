@@ -49,9 +49,12 @@ ul.side_menu_forms li {
   border: 1px solid #808080;    
 }
 
+#sf_admin_container .forFilterFieldset label {min-width: 2em; width: auto; }
+#sf_admin_container .forFilterFieldset td { padding : 0 10px 0 0 } 
+
 #sf_admin_container .onlyFormat { margin: 0; }
 
-#sf_admin_container .onlyFormat label{ min-width: 5em; }
+#sf_admin_container .onlyFormat label{ min-width: 5em; width:auto; }
 
 #sf_admin_container .onlyFormat tr{ border:0; }
 #sf_admin_container .onlyFormat td{ border:0; }

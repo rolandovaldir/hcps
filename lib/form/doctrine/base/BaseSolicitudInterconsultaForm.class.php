@@ -23,10 +23,10 @@ abstract class BaseSolicitudInterconsultaForm extends BaseFormDoctrine
       'datos_clinicos'  => new sfWidgetFormTextarea(),
       'informe_medico'  => new sfWidgetFormTextarea(),
       'conclusiones'    => new sfWidgetFormTextarea(),
-      'hora_solicitud'  => new sfWidgetFormTime(),
-      'fecha_solicitud' => new sfWidgetFormDate(),
-      'created_at'      => new sfWidgetFormDateTime(),
-      'updated_at'      => new sfWidgetFormDateTime(),
+      'hora_solicitud'  => new myWidgetFormDojoTime(),
+      'fecha_solicitud' => new myWidgetFormDojoDate(),
+      'created_at'      => new myWidgetFormDojoDateTime(),
+      'updated_at'      => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(
@@ -39,9 +39,9 @@ abstract class BaseSolicitudInterconsultaForm extends BaseFormDoctrine
       'informe_medico'  => new sfValidatorString(array('max_length' => 2500, 'required' => false)),
       'conclusiones'    => new sfValidatorString(array('max_length' => 2500, 'required' => false)),
       'hora_solicitud'  => new sfValidatorTime(array('required' => false)),
-      'fecha_solicitud' => new sfValidatorDate(array('required' => false)),
-      'created_at'      => new sfValidatorDateTime(),
-      'updated_at'      => new sfValidatorDateTime(),
+      'fecha_solicitud' => new myValidatorDojoDate(array('required' => false)),
+      'created_at'      => new myValidatorDojoDateTime(),
+      'updated_at'      => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('solicitud_interconsulta[%s]');

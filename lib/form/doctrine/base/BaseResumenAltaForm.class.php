@@ -17,7 +17,7 @@ abstract class BaseResumenAltaForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'                       => new sfWidgetFormInputHidden(),
       'internado_id'             => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => false)),
-      'medico_id'                => new sfWidgetFormInputText(),
+      'medico_id'                => new myWidgetFormDojoInteger(),
       'servicio'                 => new sfWidgetFormInputText(),
       'servicio_egreso'          => new sfWidgetFormInputText(),
       'diagnostico_provisional'  => new sfWidgetFormTextarea(),
@@ -27,9 +27,9 @@ abstract class BaseResumenAltaForm extends BaseFormDoctrine
       'hallazgos_lab_rayx'       => new sfWidgetFormTextarea(),
       'evolucion_complicacion'   => new sfWidgetFormTextarea(),
       'cond_trat_ref_pronostico' => new sfWidgetFormTextarea(),
-      'fecha'                    => new sfWidgetFormDate(),
-      'created_at'               => new sfWidgetFormDateTime(),
-      'updated_at'               => new sfWidgetFormDateTime(),
+      'fecha'                    => new myWidgetFormDojoDate(),
+      'created_at'               => new myWidgetFormDojoDateTime(),
+      'updated_at'               => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(
@@ -45,9 +45,9 @@ abstract class BaseResumenAltaForm extends BaseFormDoctrine
       'hallazgos_lab_rayx'       => new sfValidatorString(array('max_length' => 2000, 'required' => false)),
       'evolucion_complicacion'   => new sfValidatorString(array('max_length' => 2000, 'required' => false)),
       'cond_trat_ref_pronostico' => new sfValidatorString(array('max_length' => 2000, 'required' => false)),
-      'fecha'                    => new sfValidatorDate(array('required' => false)),
-      'created_at'               => new sfValidatorDateTime(),
-      'updated_at'               => new sfValidatorDateTime(),
+      'fecha'                    => new myValidatorDojoDate(array('required' => false)),
+      'created_at'               => new myValidatorDojoDateTime(),
+      'updated_at'               => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('resumen_alta[%s]');

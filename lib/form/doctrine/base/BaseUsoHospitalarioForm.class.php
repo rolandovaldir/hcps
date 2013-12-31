@@ -18,24 +18,24 @@ abstract class BaseUsoHospitalarioForm extends BaseFormDoctrine
       'id'           => new sfWidgetFormInputHidden(),
       'internado_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => false)),
       'lugar'        => new sfWidgetFormInputText(),
-      'fecha'        => new sfWidgetFormDate(),
-      'medico_id'    => new sfWidgetFormInputText(),
+      'fecha'        => new myWidgetFormDojoDate(),
+      'medico_id'    => new myWidgetFormDojoInteger(),
       'codigo'       => new sfWidgetFormInputText(),
       'especialidad' => new sfWidgetFormInputText(),
-      'created_at'   => new sfWidgetFormDateTime(),
-      'updated_at'   => new sfWidgetFormDateTime(),
+      'created_at'   => new myWidgetFormDojoDateTime(),
+      'updated_at'   => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(
       'id'           => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'internado_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'))),
       'lugar'        => new sfValidatorString(array('max_length' => 60, 'required' => false)),
-      'fecha'        => new sfValidatorDate(array('required' => false)),
+      'fecha'        => new myValidatorDojoDate(array('required' => false)),
       'medico_id'    => new sfValidatorInteger(array('required' => false)),
       'codigo'       => new sfValidatorString(array('max_length' => 45, 'required' => false)),
       'especialidad' => new sfValidatorString(array('max_length' => 45, 'required' => false)),
-      'created_at'   => new sfValidatorDateTime(),
-      'updated_at'   => new sfValidatorDateTime(),
+      'created_at'   => new myValidatorDojoDateTime(),
+      'updated_at'   => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('uso_hospitalario[%s]');

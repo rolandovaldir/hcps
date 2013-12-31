@@ -21,8 +21,8 @@ abstract class BaseSolicitudServicioForm extends BaseFormDoctrine
       'para'                   => new sfWidgetFormTextarea(),
       'diagnostico_presuncion' => new sfWidgetFormInputText(),
       'material_utilizado'     => new sfWidgetFormTextarea(),
-      'created_at'             => new sfWidgetFormDateTime(),
-      'updated_at'             => new sfWidgetFormDateTime(),
+      'created_at'             => new myWidgetFormDojoDateTime(),
+      'updated_at'             => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(
@@ -32,8 +32,8 @@ abstract class BaseSolicitudServicioForm extends BaseFormDoctrine
       'para'                   => new sfValidatorString(array('max_length' => 2000, 'required' => false)),
       'diagnostico_presuncion' => new sfValidatorString(array('max_length' => 250, 'required' => false)),
       'material_utilizado'     => new sfValidatorString(array('max_length' => 2000, 'required' => false)),
-      'created_at'             => new sfValidatorDateTime(),
-      'updated_at'             => new sfValidatorDateTime(),
+      'created_at'             => new myValidatorDojoDateTime(),
+      'updated_at'             => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('solicitud_servicio[%s]');
