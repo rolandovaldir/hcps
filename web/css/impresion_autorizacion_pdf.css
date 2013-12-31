@@ -1,5 +1,5 @@
 p {
-    font-size: 11px;
+    font-size: 9px;
     text-align: justify;
 }
 
@@ -29,7 +29,6 @@ td.td-head {
 .autorizacion-head {
     text-align: center;
     font-size: 15px;
-    
 }
 
 .titulo-autorizacion {
@@ -59,5 +58,28 @@ td.td-head {
 }
 
 .void {
-    width: 150px;
+    width: 80px;
+}
+
+.tbl-autopsia {
+    text-align: center;
+    font-size: 8px;
+/*    border-spacing: 10px;
+    border-collapse: separate;*/
+}
+
+.tbl-autopsia td {
+    
+}
+
+.autopsia-void {
+    width: 10px;
+}
+
+.tbl-autopsia {
+    width: 900px;
+}
+
+.general {
+    border-bottom: 1px dotted #000;
 }

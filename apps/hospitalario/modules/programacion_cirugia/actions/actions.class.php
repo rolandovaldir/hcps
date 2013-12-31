@@ -83,7 +83,7 @@ class programacion_cirugiaActions extends autoProgramacion_cirugiaActions
                   sfTCPDFPluginConfigHandler::includeLangFile($this->getUser()->getCulture());
 
         // pdf object, reescrito
-        $pdf = new sfTCPDF("P", PDF_UNIT, 'Letter', true, 'UTF-8');
+        $pdf = new ImpresionPDF("P", PDF_UNIT, 'Letter', true, 'UTF-8');
         // set document information
         $pdf->SetCreator(PDF_CREATOR);
         $pdf->SetAuthor('CPS');
@@ -101,18 +101,18 @@ class programacion_cirugiaActions extends autoProgramacion_cirugiaActions
         //$pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM); 
         $pdf->SetAutoPageBreak(TRUE, 6);
         
-        $pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
+//        $pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
         $pdf->SetFooterMargin(0);
         
         $pdf->SetDisplayMode('real','default');  
         // quitar la linea del header
-        $pdf->setHeaderData('',0,'','',array(0,0,0), array(255,255,255) );
+        //$pdf->setHeaderData('',20,'','',array(0,0,0), array(255,255,255) );
         
-        $pdf->setPrintHeader(false);
-        $pdf->setPrintFooter(false);
+//        $pdf->setPrintHeader(false);
+//        $pdf->setPrintFooter(false);
         
         // set default monospaced font
-        $pdf->SetMargins(30, 8, 15);
+        $pdf->SetMargins(10, 35, 10);
         $pdf->SetFont('dejavusans', '', 11, '', true);
         
         $pdf->AddPage();
