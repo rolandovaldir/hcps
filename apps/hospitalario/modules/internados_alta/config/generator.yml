@@ -2,7 +2,7 @@ generator:
   class: sfDoctrineGenerator
   param:
     model_class:           Internado
-    theme:                 admin
+    theme:                 dojotheme
     non_verbose_templates: true
     with_show:             false
     singular:              ~
@@ -10,17 +10,23 @@ generator:
     route_prefix:          internado_internados_alta
     with_doctrine_route:   true
     actions_base_class:    sfActions
+    dojo_forajax_component_id: main-container-tab2
 
     config:
-      actions: ~
-      fields:  ~
+      actions: {}
+      fields: 
+        descripcion_fecha_hora:       { label: 'Fecha Internacion' }
+        descripcion_alta_fecha_hora:  { label: 'Fecha Alta' }
+        descripcion_es_afiliado:      { label: 'Afiliado' }        
       list:    
-        title: Historial de Personas Hopitalizadas dadas de Alta
-        display: [afiliado_id, diagnostico, procedencia]
+        title:       Historial de Personas Hopitalizadas dadas de Alta
+        display:     [descripcion_fecha_hora, matricula, nombre_completo, empresa, ubicacion, descripcion_es_afiliado, descripcion_alta_fecha_hora ]
+        actions:       {}
+        batch_actions: {}
         object_actions:
-          visitar: {label: Visitar Paciente, action: visitar}          
+          ver_historial: { label: Ver Historial, action: verHistorial, params: { onclick: 'return true;' } }
       filter:  
         display: [cama_id]
-      form:    ~
-      edit:    ~        
-      new:     ~
+      form:    false
+      edit:    false    
+      new:     false

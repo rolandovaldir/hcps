@@ -38,3 +38,13 @@ Afiliado:
     tafiliado: ''
     activo: 1
     grupofam: 1  
+  AFI3:
+    matricula: '0003'
+    paterno: Rodriguez
+    materno: Quelca
+    nombre: Jose Luis
+    hclinica: null
+    empresa: Caja petrolera
+    tafiliado: ''
+    activo: 1
+    grupofam: 1  

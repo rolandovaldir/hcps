@@ -14,8 +14,8 @@
  * @property string $codigo
  * @property string $geoubicacion
  * @property string $geoubicacion2
+ * @property Doctrine_Collection $Planta
  * @property Doctrine_Collection $Empleados
- * @property Doctrine_Collection $Plantas
  * 
  * @method string              getNombre()        Returns the current record's "nombre" value
  * @method string              getDireccion()     Returns the current record's "direccion" value
@@ -26,8 +26,8 @@
  * @method string              getCodigo()        Returns the current record's "codigo" value
  * @method string              getGeoubicacion()  Returns the current record's "geoubicacion" value
  * @method string              getGeoubicacion2() Returns the current record's "geoubicacion2" value
+ * @method Doctrine_Collection getPlanta()        Returns the current record's "Planta" collection
  * @method Doctrine_Collection getEmpleados()     Returns the current record's "Empleados" collection
- * @method Doctrine_Collection getPlantas()       Returns the current record's "Plantas" collection
  * @method Filial              setNombre()        Sets the current record's "nombre" value
  * @method Filial              setDireccion()     Sets the current record's "direccion" value
  * @method Filial              setTelefono()      Sets the current record's "telefono" value
@@ -37,8 +37,8 @@
  * @method Filial              setCodigo()        Sets the current record's "codigo" value
  * @method Filial              setGeoubicacion()  Sets the current record's "geoubicacion" value
  * @method Filial              setGeoubicacion2() Sets the current record's "geoubicacion2" value
+ * @method Filial              setPlanta()        Sets the current record's "Planta" collection
  * @method Filial              setEmpleados()     Sets the current record's "Empleados" collection
- * @method Filial              setPlantas()       Sets the current record's "Plantas" collection
  * 
  * @package    hcps
  * @subpackage model
@@ -93,13 +93,13 @@ abstract class BaseFilial extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
+        $this->hasMany('Planta', array(
+             'local' => 'id',
+             'foreign' => 'filial_id'));
+
         $this->hasMany('Empleado as Empleados', array(
              'local' => 'id',
              'foreign' => 'centro_salud_id'));
-
-        $this->hasMany('Planta as Plantas', array(
-             'local' => 'id',
-             'foreign' => 'filial_id'));
 
         $timestampable0 = new Doctrine_Template_Timestampable(array(
              ));

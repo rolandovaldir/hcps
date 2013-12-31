@@ -15,4 +15,13 @@ class SolicitudExamenLaboratorioClinicoForm extends BaseSolicitudExamenLaborator
       $this->setWidget("internado_id", new sfWidgetFormInputHidden());
       $this->widgetSchema['tipo_examen_laboratorio_clinico_list'] = new sfWidgetFormChoice(array('choices'  => TipoExamenLaboratorioClinicoTable::getExamenesActivosForChoice(),'expanded' => true, 'multiple'=>true, 'renderer_options'=>array('separator'=>'', 'template' => '<div class="group_title">%group%</div>%options%')));
   }
+  
+  public function disableAllWidgets()
+  {
+      foreach ($this->widgetSchema->getFields() as $v){          
+          $v->setAttribute('readonly', 'readonly');
+          $v->setAttribute('onclick', 'return false;');
+      }
+  }
+  
 }

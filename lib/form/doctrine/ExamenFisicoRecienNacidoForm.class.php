@@ -15,5 +15,19 @@ class ExamenFisicoRecienNacidoForm extends BaseExamenFisicoRecienNacidoForm
       unset($this['created_at'], $this['updated_at']);
       
       $this->widgetSchema['internado_id'] = new sfWidgetFormInputHidden();
+      
+      $apgar = new Apgar();
+      $apgar->setExamenFisicoRecienNacido($this->object);
+      $apgarForm = new ApgarForm($apgar);
+      $this->embedForm('apgar', $apgarForm);
   }
+  
+  public function disableAllWidgets()
+  {
+      foreach ($this->widgetSchema->getFields() as $v){          
+          $v->setAttribute('readonly', 'readonly');
+          $v->setAttribute('onclick', 'return false;');
+      }
+  }
+  
 }

@@ -28,6 +28,10 @@ generator:
       list: 
         title:   Listado Solicitud de Tranfusiones sanguineas
         display: [ quirofano, descripcion_requiere_transfusion_de, descripcion_cumplirse_enforma, fecha_prog_quirurgica, hora_prog_quirurgica, quirofano_prog_quirurgica, cantidad_requerida, cantidad_requerida_unidad, observaciones, fecha_solicitud, hora_solicitud, medico_id, numero, fecha_recepcion_solicitud, bolsa_compatible1, bolsa_compatible2, bolsa_compatible3, bolsa_compatible4, bolsa_compatible5, grupo_sanguineo_receptor, hr_receptor, anticuerpos_irreg, nombre_res_bancosangre ,created_at, updated_at ]        
+        object_actions:  
+          _edit:        { credentials: [noHistory] }
+          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [siHistory] }
+          _delete:      { credentials: [noHistory] }
         actions: {}
         batch_actions: {}
       filter: 
@@ -37,8 +41,10 @@ generator:
           "&nbsp;": [ internado_id, quirofano ]
           "DIAGNOSTICO:": [ requiere_transfusion_de, cumplirse_enforma ]          
           "TRATAMIENTO AMBULATORIO": [fecha_prog_quirurgica, hora_prog_quirurgica, quirofano_prog_quirurgica, cantidad_requerida, cantidad_requerida_unidad, observaciones, fecha_solicitud, hora_solicitud, numero, fecha_recepcion_solicitud, bolsa_compatible1, bolsa_compatible2, bolsa_compatible3, bolsa_compatible4, bolsa_compatible5, grupo_sanguineo_receptor, hr_receptor, anticuerpos_irreg, nombre_res_bancosangre ]          
+        actions:
+          _list: ~
+          _save: { credentials: [noHistory] }  
       edit:            
         title: Edición Solicitud de Tranfusiones sanguineas
       new:        
-        title: Nueva Solicitud de Tranfusiones sanguineas
-        actions: {}
+        title: Nueva Solicitud de Tranfusiones sanguineas        

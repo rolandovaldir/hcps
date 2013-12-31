@@ -95,7 +95,7 @@ abstract class BaseSolicitudInterconsulta extends sfDoctrineRecord
 
         $this->hasMany('DetalleMedicacion', array(
              'local' => 'id',
-             'foreign' => 'solicitud_intercosultada_id'));
+             'foreign' => 'solicitud_interconsulta_id'));
 
         $timestampable0 = new Doctrine_Template_Timestampable(array(
              ));

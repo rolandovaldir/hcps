@@ -12,6 +12,6 @@ class DetalleMedicacionForm extends BaseDetalleMedicacionForm
 {
   public function configure()
   {
-      unset($this['created_at'], $this['updated_at']);
+      unset($this['created_at'], $this['updated_at'], $this['solicitud_interconsulta_id']);
   }
 }

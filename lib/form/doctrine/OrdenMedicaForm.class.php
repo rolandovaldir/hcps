@@ -17,4 +17,13 @@ class OrdenMedicaForm extends BaseOrdenMedicaForm
       $this->widgetSchema['internado_id'] = new sfWidgetFormInputHidden();
       $this->setWidget("fecha_hora", new myWidgetFormDojoDateTime());
   }
+  
+  public function disableAllWidgets()
+  {
+      foreach ($this->widgetSchema->getFields() as $v){          
+          $v->setAttribute('readonly', 'readonly');
+          $v->setAttribute('onclick', 'return false;');
+      }
+  }
+  
 }

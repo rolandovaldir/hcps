@@ -23,6 +23,7 @@
             <table class="user-info">
                 <tr>
                     <td rowspan="3" style="width: 90%;">
+                        <?php echo link_to(image_tag('logo_header.png', 'alt=cps' ), '/hospitalario.php/')?>
                     </td>    
                     <td style="font-size: 11px">
                     <?php $week_days = array ("Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado");
@@ -39,8 +40,8 @@
                     <td nowrap="nowrap" style="font-size: 11px">Usuario:
                         <span style="color: #025A8D; font-size: 11px; font-weight: bold">
                         <?php if($sf_user->isAuthenticated() == true): ?>
-                            <?php if($sf_user->getProfile()->getMedicoId()) echo $sf_user->getProfile()->getMedico()->getNombrec(); ?>
-                            <?php if($sf_user->getProfile()->getEmpleadoId()) echo $sf_user->getProfile()->getEmpleado()->getNombre(); ?>
+                            <?php //if($sf_user->getProfile()->getMedicoId()) echo $sf_user->getProfile()->getMedico()->getNombrec(); ?>
+                            <?php //if($sf_user->getProfile()->getEmpleadoId()) echo $sf_user->getProfile()->getEmpleado()->getNombre(); ?>
                             <?php else: echo 'Iniciar sesi&oacute;n!!!' ?>
                         <?php endif; ?>
                         </span>
@@ -50,8 +51,8 @@
                     <td nowrap="nowrap" style="font-size: 11px">Especialidad:
                         <span style="color: #025A8D; font-size: 11px; font-weight: bold">
                         <?php if($sf_user->isAuthenticated() == true): ?>
-                            <?php if($sf_user->getProfile()->getMedicoId()) echo $sf_user->getProfile()->getMedico()->getEspecialidad()->getNombre(); ?>
-                            <?php if($sf_user->getProfile()->getEmpleadoId()) echo $sf_user->getProfile()->getEmpleado()->getProfesion(); ?>
+                            <?php //if($sf_user->getProfile()->getMedicoId()) echo $sf_user->getProfile()->getMedico()->getEspecialidad()->getNombre(); ?>
+                            <?php //if($sf_user->getProfile()->getEmpleadoId()) echo $sf_user->getProfile()->getEmpleado()->getProfesion(); ?>
                             <?php else: echo 'Iniciar sesi&oacute;n!!!' ?>
                         <?php endif; ?>
                         </span>
@@ -64,11 +65,10 @@
                 <div data-dojo-type="dijit/layout/ContentPane" title="Internados" id="main-container-tab1" data-dojo-props="selected:true">
                     <?php echo $sf_content; ?>              
                 </div>
-                <div data-dojo-type="dijit/layout/ContentPane" title="Pacientes Dados de alta" data-dojo-props="href:'<?php echo url_for("internados_alta/index") ?>'" >
+                <div data-dojo-type="dijit/layout/ContentPane" title="Pacientes Dados de alta"  id="main-container-tab2" data-dojo-props="href:'<?php echo url_for("internados_alta/index") ?>'" >
                 </div>
-                <div data-dojo-type="dijit/layout/ContentPane" title="Reportes" data-dojo-props="href:'<?php ?>'">
-                Lorem ipsum and all around - last...
-                </div>
+                
+                <div data-dojo-type="dijit/layout/ContentPane" title="Reportes" data-dojo-props="href:'', onShow:function(){window.location='reportes/index';}"></div>
             </div>            
         
           <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'bottom'" id="footer-layout" >              

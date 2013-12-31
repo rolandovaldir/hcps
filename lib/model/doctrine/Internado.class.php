@@ -30,4 +30,41 @@ class Internado extends BaseInternado
         }        
         return $this->objetoDatosPersona->getNombre() . ' ' . $this->objetoDatosPersona->getPaterno() . ' ' . $this->objetoDatosPersona->getMaterno();
     }
+    
+
+    function getDescripcionEsAfiliado()
+    {
+        return $this->getEsAfiliado() ? 'Si' : 'No'; 
+    }
+    
+    function getDescripcionFechaHora($formatF='d/m/Y', $formatH='H:i')
+    {
+        return $this->getDateTimeObject('fecha')->format($formatF) . ' ' . substr($this->getHora(), 0, 5); 
+    }
+    
+    function getDescripcionAltaFechaHora($formatF='d/m/Y',$formatH='H:i')
+    {   
+        return $this->getDateTimeObject('altaFecha')->format($formatF) . ' ' . substr($this->getHora(), 0, 5);
+
+    }
+        
+    public function getEmpresa()
+    {
+        if($this->Afiliado->getEmpresa()==null)
+            return "Otro seguro";
+        else
+            return $this->Afiliado->getEmpresa();
+    }
+
+    public function getMatricula()
+    {
+        return $this->Afiliado->getMatricula();
+    }
+    
+    public function getUbicacion()
+    {
+        return 'Planta: '.$this->Cama->Pieza->Planta->getNombre().' Pieza: '.$this->Cama->Pieza->getNombre().' Cama: '.$this->Cama->getCodigo();
+
+    }
+    
 }

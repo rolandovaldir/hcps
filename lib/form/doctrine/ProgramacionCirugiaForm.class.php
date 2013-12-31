@@ -16,4 +16,14 @@ class ProgramacionCirugiaForm extends BaseProgramacionCirugiaForm
         $this->setWidget("internado_id", new sfWidgetFormInputHidden());
         $this->widgetSchema['examenes_auxiliares'] = new sfWidgetFormChoice(array('choices'  => ProgramacionCirugiaTable::getDescripciones_examen_auxiliar(),'expanded' => true, 'multiple'=>true));
     }
+    
+    
+  public function disableAllWidgets()
+  {
+      foreach ($this->widgetSchema->getFields() as $v){          
+          $v->setAttribute('readonly', 'readonly');
+          $v->setAttribute('onclick', 'return false;');
+      }
+  }
+  
 }

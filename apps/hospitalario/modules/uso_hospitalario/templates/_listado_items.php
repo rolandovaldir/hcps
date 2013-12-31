@@ -1,6 +1,7 @@
 <?php
 $detalles = Doctrine_Core::getTable('DetalleUsoHospitalario')->getAllDetalles($form->getObject()->getId());
 ?>
+<?php if (!$form->getObject()->isNew()): ?>
 <table width="100%" class="for-form">
     <tr>
         <th>CÓDIGO C.B.M.</th>
@@ -37,5 +38,6 @@ $detalles = Doctrine_Core::getTable('DetalleUsoHospitalario')->getAllDetalles($f
 </table>
 <br/>
 <h2>Adicionar Item</h2>
+<?php endif ?>
 <?php echo $form['detalle']; ?>
 <br/><br/>

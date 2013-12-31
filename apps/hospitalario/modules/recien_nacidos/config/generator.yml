@@ -25,7 +25,10 @@ generator:
         batch_actions: {}
       filter:  
         display: [ap_paterno, ap_materno, sexo]
-      form:    ~
+      form:    
+        display:
+          Examen Físico del Recien Nacido: [ap_paterno, ap_materno, fecha_nacimiento, sexo, peso_nacimiento, talla, circunferencia_torax, numero_cuna, fecha_adminision, fecha_egreso]
+          Apgar: [apgar]
       edit:    
         title: Editar Recien Nacido %%ap_paterno%% %%ap_materno%%
         actions:

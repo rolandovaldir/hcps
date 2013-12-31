@@ -12,7 +12,7 @@
  * @property string $observaciones
  * @property string $plano
  * @property Planta $Planta
- * @property Doctrine_Collection $Camas
+ * @property Doctrine_Collection $Cama
  * 
  * @method integer             getPlantaId()      Returns the current record's "planta_id" value
  * @method string              getNombre()        Returns the current record's "nombre" value
@@ -21,7 +21,7 @@
  * @method string              getObservaciones() Returns the current record's "observaciones" value
  * @method string              getPlano()         Returns the current record's "plano" value
  * @method Planta              getPlanta()        Returns the current record's "Planta" value
- * @method Doctrine_Collection getCamas()         Returns the current record's "Camas" collection
+ * @method Doctrine_Collection getCama()          Returns the current record's "Cama" collection
  * @method Pieza               setPlantaId()      Sets the current record's "planta_id" value
  * @method Pieza               setNombre()        Sets the current record's "nombre" value
  * @method Pieza               setCodigo()        Sets the current record's "codigo" value
@@ -29,7 +29,7 @@
  * @method Pieza               setObservaciones() Sets the current record's "observaciones" value
  * @method Pieza               setPlano()         Sets the current record's "plano" value
  * @method Pieza               setPlanta()        Sets the current record's "Planta" value
- * @method Pieza               setCamas()         Sets the current record's "Camas" collection
+ * @method Pieza               setCama()          Sets the current record's "Cama" collection
  * 
  * @package    hcps
  * @subpackage model
@@ -74,7 +74,7 @@ abstract class BasePieza extends sfDoctrineRecord
              'local' => 'planta_id',
              'foreign' => 'id'));
 
-        $this->hasMany('Cama as Camas', array(
+        $this->hasMany('Cama', array(
              'local' => 'id',
              'foreign' => 'pieza_id'));
 

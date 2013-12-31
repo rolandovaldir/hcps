@@ -25,7 +25,7 @@ generator:
       form:    
         display:
           Datos de la Junta Médica: [fecha_junta, medico_solicitante, servicio, especialidades, diagnostico_establecido, conclusiones, tac, contraste]
-          Medicos Particulares: [medico]
+          Médicos Participantes:    [medico]
       edit:    
         title: Editar Junta Médica
         actions:
