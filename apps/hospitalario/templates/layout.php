@@ -47,7 +47,7 @@
                                                 <?php echo $internado->Afiliado->getMatricula() ?>
                                             </td>
                                             <td>
-                                                <?php echo $internado->Afiliado->getPaterno() . ' ' . $internado->Afiliado->getMaterno() . ' ' . $internado->Afiliado->getNombre() ?>
+                                                <?php echo $internado->getNombreCompleto();//$internado->Afiliado->getPaterno() . ' ' . $internado->Afiliado->getMaterno() . ' ' . $internado->Afiliado->getNombre() ?>
                                             </td>
                                             <td>
                                                 <?php echo $internado->Afiliado->getEmpresa() ?>
