@@ -20,7 +20,7 @@ $link_menus = array(
     array('link'=>'recien_nacidos','label'=>'Recien Nacidos'),
     array('link'=>'reposicion_materiales','label'=>'Reposicion Materiales'),
 //    array('link'=>'resumenalta','label'=>'Resumen Alta'),
-    array('link'=>'servicios_mantenimiento','label'=>'Servicio Mantenimiento'),
+//    array('link'=>'servicios_mantenimiento','label'=>'Servicio Mantenimiento'),
     array('link'=>'solicitudes_interconsultas','label'=>'Solicitudes Interconsultas'),
     array('link'=>'solicitudes_servicios','label'=>'Solicitudes Servicios'),
     array('link'=>'solicitudes_examen_laboratorio','label'=>'Solicitudes Examen Laboratorio'),
