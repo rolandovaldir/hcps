@@ -28,6 +28,10 @@ generator:
           _delete:      { credentials: [noHistory] }
         actions: {}
         batch_actions: {}
+        object_actions:
+          _edit: ~
+          _delete: ~
+          imprimir: {label: Imprimir, action: exportPdf}
       filter:  
         display: [ nombre_familiar1, tipo_parentesco1, ci_familiar1,nombre_familiar2, tipo_parentesco2, ci_familiar2,nombre_familiar3, tipo_parentesco3, ci_familiar3, fecha_hora ]
       form:    

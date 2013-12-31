@@ -1,0 +1,63 @@
+p {
+    font-size: 11px;
+    text-align: justify;
+}
+
+table {
+    width: 100%;
+    font-size: 10px;
+}
+
+.info-paciente {
+    text-align: center;
+}
+
+td.info-paciente {
+    height: 25px;
+}
+
+td {
+    height: 25px;
+}
+
+td.td-head {
+    border: 1px solid #000;
+    width: 120px;
+    /*font-weight: bold;*/
+}
+
+.autorizacion-head {
+    text-align: center;
+    font-size: 15px;
+    
+}
+
+.titulo-autorizacion {
+    text-align: center;
+    font-size: 15px;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    /*font-weight: bold;*/
+}
+
+.lbl-head-right {
+    text-align: right;
+    width: 70px;
+}
+
+.td-head-void {
+    width: 40px;
+}
+
+.dato {
+    width: 150px;
+    text-align: center;
+}
+
+.firma {
+    border-bottom: 1px dotted #000;
+}
+
+.void {
+    width: 150px;
+}
