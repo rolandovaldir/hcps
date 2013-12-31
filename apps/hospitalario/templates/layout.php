@@ -11,8 +11,12 @@
         <script type="text/javascript" src="<?php echo public_path('js/dojo-1.9.1/dojo/dojo.js'); ?>" 
         data-dojo-config="has:{'dojo-firebug': true},parseOnLoad: true, async: 1" ></script>
         <script>
-        require(["dojo", 'dojo/hash', "dijit/layout/BorderContainer", "dijit/layout/TabContainer", "dijit/layout/ContentPane",'dijit/Dialog','dijit/layout/SplitContainer','dijit/layout/AccordionContainer','dijit/MenuItem', 'dojox/encoding/crypto/Blowfish'],
-            function(){ dojo.fadeOut({ node: 'loading-page', onEnd: function(node){ node.style.display = 'none'; } }).play(); }
+            require(["dojo", 'dojo/hash', "dijit/layout/BorderContainer", "dijit/layout/TabContainer", "dijit/layout/ContentPane", 'dijit/Dialog', 'dijit/layout/SplitContainer', 'dijit/layout/AccordionContainer', 'dijit/MenuItem', 'dojox/encoding/crypto/Blowfish'],
+                    function() {
+                        dojo.fadeOut({node: 'loading-page', onEnd: function(node) {
+                                node.style.display = 'none';
+                            }}).play();
+                    }
             );
         </script>
     </head>
@@ -22,9 +26,61 @@
             <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'top'" id="header-layout" style="padding:8px 10px 2px;" >
                 <table class="user-info">
                     <tr>
-                        <td rowspan="3" style="width: 90%;">
-                            <?php echo link_to(image_tag('logo_header.png', 'alt=cps' ), 'internados/index')?>
-                        </td>                        
+                        <td rowspan="3" style="width: 35%;">
+                            <?php echo link_to(image_tag('logo_header.png', 'alt=cps'), 'internados/index') ?>
+                        </td>   
+                        <td rowspan="3" style="width: 55%;">
+                            <?php if (has_slot('nombre_completo_internado')): ?>
+                                <?php $internado = $sf_user->getAttribute('internado'); ?>
+                                <table class="tbl-paciente">
+                                    <tbody>
+                                        <tr>
+                                            <th>Matrícula</th>
+                                            <th>Paciente</th>
+                                            <th>Empresa</th>
+                                            <th>Planta</th>
+                                            <th>Pieza</th>
+                                            <th>Cama</th>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <?php echo $internado->Afiliado->getMatricula() ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $internado->Afiliado->getPaterno() . ' ' . $internado->Afiliado->getMaterno() . ' ' . $internado->Afiliado->getNombre() ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $internado->Afiliado->getEmpresa() ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $internado->Cama->Pieza->Planta->getNombre() ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $internado->Cama->Pieza->getNombre() ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $internado->Cama->getCodigo(); ?>
+                                            </td>
+                                            <td style="padding-left: 10px;">
+                                                <?php echo link_to(image_tag('inicio.png', 'alt=cps-inicio'), 'internados/index') ?>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+
+                                </table>
+                            <?php else: ?>
+                                <table style="margin-left: 15%;">
+                                    <tr>
+                                        <td>
+                                            <b>Reportes de internación   </b>
+                                        </td>
+                                        <td style="padding-left: 10px;">
+                                            <?php echo link_to(image_tag('inicio.png', 'alt=cps-inicio'), 'internados/index') ?>
+                                        </td>
+                                    </tr>
+                                </table>
+                            <?php endif; ?>
+                        </td>
                         <td style="font-size: 11px">
                             <?php
                             $week_days = array("Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado");
@@ -44,8 +100,8 @@
                                 <?php if ($sf_user->isAuthenticated() == true): ?>
                                     <?php //if ($sf_user->getProfile()->getMedicoId()) echo $sf_user->getProfile()->getMedico()->getNombrec(); ?>
                                     <?php //if ($sf_user->getProfile()->getEmpleadoId()) echo $sf_user->getProfile()->getEmpleado()->getNombre(); ?>
-<?php else: echo 'Iniciar sesi&oacute;n!!!' ?>
-<?php endif; ?>
+                                <?php else: echo 'Iniciar sesi&oacute;n!!!' ?>
+                                <?php endif; ?>
                             </span>
                         </td>
                     </tr>
@@ -56,72 +112,22 @@
                                 <?php if ($sf_user->isAuthenticated() == true): ?>
                                     <?php //if ($sf_user->getProfile()->getMedicoId()) echo $sf_user->getProfile()->getMedico()->getEspecialidad()->getNombre(); ?>
                                     <?php //if ($sf_user->getProfile()->getEmpleadoId()) echo $sf_user->getProfile()->getEmpleado()->getProfesion(); ?>
-<?php else: echo 'Iniciar sesi&oacute;n!!!' ?>
-                <?php endif; ?>
+                                <?php else: echo 'Iniciar sesi&oacute;n!!!' ?>
+                                <?php endif; ?>
                             </span>
                         </td>
                     </tr>
                 </table> 
-<?php if (has_slot('nombre_completo_internado')): ?>
-    <?php $internado = $sf_user->getAttribute('internado'); ?>
-                    <table class="tbl-paciente">
-                        <tbody>
-                            <tr>
-                                <th>Matrícula</th>
-                                <th>Paciente</th>
-                                <th>Empresa</th>
-                                <th>Planta</th>
-                                <th>Pieza</th>
-                                <th>Cama</th>
-                            </tr>
-                            <tr>
-                                <td>
-    <?php echo $internado->Afiliado->getMatricula() ?>
-                                </td>
-                                <td>
-    <?php echo $internado->Afiliado->getPaterno() . ' ' . $internado->Afiliado->getMaterno() . ' ' . $internado->Afiliado->getNombre() ?>
-                                </td>
-                                <td>
-    <?php echo $internado->Afiliado->getEmpresa() ?>
-                                </td>
-                                <td>
-    <?php echo $internado->Cama->Pieza->Planta->getNombre() ?>
-                                </td>
-                                <td>
-    <?php echo $internado->Cama->Pieza->getNombre() ?>
-                                </td>
-                                <td>
-    <?php echo $internado->Cama->getCodigo(); ?>
-                                </td>
-                                <td>
-    <?php echo link_to(image_tag('inicio.png', 'alt=cps-inicio' ), 'internados/index') ?>
-                                </td>
-                            </tr>
-                        </tbody>
-
-                    </table>
-                            <?php else: ?>
-                    <table align="center">
-                        <tr>
-                            <td>
-                                <b>Reportes de internación</b>
-                            <?php echo link_to(image_tag('inicio.png', 'alt=cps-inicio' ), 'internados/index') ?>
-                            </td>
-                        </tr>
-                    </table>
-<?php endif; ?>
-
-
             </div>
             <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'leading',style:'padding:0;',splitter: true" >
                 <div>
                     <div data-dojo-type="dijit/layout/AccordionContainer" data-dojo-props="style:'min-width:200px;'" >
-                <?php include 'side_menu.php' ?>
+                        <?php include 'side_menu.php' ?>
                     </div>
                 </div>     
             </div>
             <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'" id="dojotheme-maincontainer" >
-<?php echo $sf_content; ?>
+                <?php echo $sf_content; ?>
                 <script type="dojo/method">      
                     var that = this;
                     that.hcpsLoader = {};
