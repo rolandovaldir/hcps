@@ -78,7 +78,7 @@ class autorizaciones_diagnostico_tratamientoActions extends autoAutorizaciones_d
         $pdf->setPrintFooter(false);
         
         // set default monospaced font
-        $pdf->SetMargins(30, 8, 15);
+        $pdf->SetMargins(10, 8, 10);
         $pdf->SetFont('dejavusans', '', 11, '', true);
         
         $pdf->AddPage();

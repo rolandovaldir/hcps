@@ -26,31 +26,37 @@
 <table cellspacing="0" cellpadding="1">
     <tbody>
         <tr>
+            <td class="void"></td>
             <td class="dato firma"></td>
             <td class="void"></td>
             <td class="dato firma"></td>
         </tr>
         <tr>
+            <td class="void"></td>
             <td class="dato">Nombre del Paciente</td>
             <td></td>
             <td class="dato">Firma del Paciente</td>
         </tr>
         <tr>
+            <td class="void"></td>
             <td>C.I._________________________</td>
             <td></td>
             <td></td>
         </tr>
         <tr>
+            <td class="void"></td>
             <td class="dato firma"></td>
             <td class="void"></td>
             <td class="dato firma"></td>
         </tr>
         <tr>
+            <td class="void"></td>
             <td class="dato">Nombre del familiar</td>
             <td></td>
             <td class="dato">Firma del Familiar</td>
         </tr>
         <tr>
+            <td class="void"></td>
             <td>C.I._________________________</td>
             <td></td>
             <td></td>

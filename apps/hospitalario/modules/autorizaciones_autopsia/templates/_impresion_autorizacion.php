@@ -23,40 +23,46 @@
  llegar a la causa (etiología) de la enfermedad que determino el fallecimiento de
  nuestro familiar.
 </p>
-<table cellspacing="0" cellpadding="1">
+<table cellspacing="0" cellpadding="0" class="tbl-autopsia">
     <tbody>
         <tr>
-            <td class="dato firma"></td>
-            <td class="void"></td>
-            <td class="dato firma"></td>
+            <th class="nombre-familiar">Nombre de los familiares</th>
+            <td class="autopsia-void"></td>
+            <th class="tipo-parentesco">Tipo de Parentesco</th>
+            <td class="autopsia-void"></td>
+            <th class="firma-familiar">Firma de los familiares</th>
+            <td class="autopsia-void"></td>
+            <th class="ci">N C.I.</th>
         </tr>
         <tr>
-            <td class="dato">Nombre del Paciente</td>
-            <td></td>
-            <td class="dato">Firma del Paciente</td>
+            <td class="general"></td>
+            <td class="autopsia-void"></td>
+            <td class="general"></td>
+            <td class="autopsia-void"></td>
+            <td class="general"></td>
+            <td class="autopsia-void"></td>
+            <td class="general"></td>
         </tr>
         <tr>
-            <td>C.I._________________________</td>
-            <td></td>
-            <td></td>
+            <td class="general"></td>
+            <td class="autopsia-void"></td>
+            <td class="general"></td>
+            <td class="autopsia-void"></td>
+            <td class="general"></td>
+            <td class="autopsia-void"></td>
+            <td class="general"></td>
         </tr>
         <tr>
-            <td class="dato firma"></td>
-            <td class="void"></td>
-            <td class="dato firma"></td>
-        </tr>
-        <tr>
-            <td class="dato">Nombre del familiar</td>
-            <td></td>
-            <td class="dato">Firma del Familiar</td>
-        </tr>
-        <tr>
-            <td>C.I._________________________</td>
-            <td></td>
-            <td></td>
+            <td class="general"></td>
+            <td class="autopsia-void"></td>
+            <td class="general"></td>
+            <td class="autopsia-void"></td>
+            <td class="general"></td>
+            <td class="autopsia-void"></td>
+            <td class="general"></td>
         </tr>
     </tbody>
 </table>
 
 
-<p>Fecha y Hora ___________________________________________________</p>
+<p>Fecha y Hora ________________________________</p>
