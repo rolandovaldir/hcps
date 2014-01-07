@@ -14,7 +14,10 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
+      fields:  
+        fecha_hora:  {label: 'Fecha y Hora'}
+        numero_prob: {label: 'PROB N°'}
+        nota_soap:   {label: 'Nota'}
       list:    
         title: Notas de Evolucion
         display: [fecha_hora, numero_prob, nota_soap]
@@ -26,13 +29,15 @@ generator:
         batch_actions: {}
       filter:  
         display: [fecha_hora]
-      form:    ~
+      form:    
+        display:
+          S.O.A.P. Subjetivo - Objetivo - Analisis - Planes a)Diagnóstico b)Tratamiento c)Educativo: [fecha_hora, numero_prob, nota_soap]
       edit:    
-        title: Editar Nota de Evolucion
+        title: Editar Nota de Evolución
         actions:
           _save: ~
       new:     
-        title: Nueva Nota de Evolucion
+        title: Nueva Nota de Evolución
         actions:
           _save: ~
           _save_and_add: ~

@@ -4,13 +4,13 @@ $materiales = $q->execute();
 ?>
 <table width="100%" class="for-form">
     <tr>
-        <th>CÓDIGO</th>
-        <th>DESCRIPCIÓN DEL PRODUCTO</th>
-        <th>UNIDAD</th>
-        <th>SALDO ANTERIOR</th>
-        <th>REPOSICIÓN SOLICITADA</th>
-        <th>SALDO ACTUAL</th>
-        <th> </th>
+        <th>Código</th>
+        <th>Descripción</th>
+        <th>Unidad</th>
+        <th>Saldo anterior</th>
+        <th>Reposición solicitada</th>
+        <th>Saldo actual</th>
+        <th>Acciones</th>
     </tr>
     <tbody>
         <?php

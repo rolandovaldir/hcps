@@ -28,14 +28,18 @@ generator:
         display: [fecha_junta, medico_solicitante]
       form:    
         display:
-          Datos de la Junta Médica: [fecha_junta, medico_solicitante, servicio, especialidades, diagnostico_establecido, conclusiones, tac, contraste]
-          Médicos Participantes:    [medico]
+          Datos de la Junta Médica:       [fecha_junta, medico_solicitante, servicio, especialidades, diagnostico_establecido, conclusiones, tac, contraste]
+          Lista de Médicos Participantes: [_medicos_participantes]
+          Adicionar Médico Participante:  [medico]
       edit:    
         title: Editar Junta Médica
         actions:
           _save: ~
       new:     
         title: Nueva Junta Médica
+        display:
+          Datos de la Junta Médica:      [fecha_junta, medico_solicitante, servicio, especialidades, diagnostico_establecido, conclusiones, tac, contraste]
+          Adicionar Médico Participante: [medico]    
         actions:
           _save: ~
           _save_and_add: ~

@@ -14,7 +14,13 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
+      fields:  
+        fc_nursery:  {label: FC}
+        fr_nursery:  {label: FR}
+        to_nursery:  {label: To}
+        diu_nursery: {label: DIU}
+        cat_nursery: {label: CAT}
+        lm_nursery:  {label: LM}
       list:    
         title: Signos Vitales Nursery
         display: [hora, fc_nursery, fr_nursery, to_nursery]

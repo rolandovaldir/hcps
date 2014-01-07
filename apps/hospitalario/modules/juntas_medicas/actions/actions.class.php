@@ -56,4 +56,18 @@ class juntas_medicasActions extends autoJuntas_medicasActions
         $filters['internado_id'] = sfContext::getInstance()->getRequest()->getParameter('internado_id');
         return $filters;
     }
+    
+    public function executeDeleteMedico(sfWebRequest $request)
+    {        
+        $request->checkCSRFProtection();
+        
+        $objectD = Doctrine::getTable('MedicoParticular')->find($request->getParameter('id'));
+                        
+        if (is_object($objectD) && $objectD->delete())
+        {
+            $this->getUser()->setFlash('notice', 'The item was deleted successfully.');
+        }
+        $this->redirect(array('sf_route' => 'junta_medica_edit', 'id' => $objectD->getJuntaMedica(),  'internado_id'=> $request->getParameter('internado_id')));
+                
+    }
 }

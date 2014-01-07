@@ -26,13 +26,15 @@ generator:
         batch_actions: {}
       filter:  
         display: [fecha]
-      form:    ~
+      form:    
+        display:
+          S.O.P.E. Sujeto - Objetivo - Plan - Evaluación: [fecha, hora, procedimientos, observaciones]
       edit:    
-        title: Editar Nota de Enfermeria
+        title: Editar Nota de Enfermería
         actions:
           _save: ~
       new:     
-        title: Nueva Nota de Enfermeria
+        title: Nueva Nota de Enfermería
         actions:
           _save: ~
           _save_and_add: ~
