@@ -50,6 +50,7 @@ generator:
           ci_familiar2 :    { label: CI }
           ci_familiar3 :    { label: CI }
         actions:
+          _delete: ~
           _list: ~
           _save: { credentials: [noHistory] }
       edit:            

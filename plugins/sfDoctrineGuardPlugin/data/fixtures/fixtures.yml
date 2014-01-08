@@ -6,22 +6,34 @@ sfGuardUser:
     username:       admin
     password:       admin
     is_super_admin: true
-    Groups:         [Group_admin]
+    Permissions:    [Permission_admin]
   User1:  
     first_name:     ''
     last_name:      ''
-    email_address:  ''
+    email_address:  doc1@example.com
     username:       doc1
     password:       doc1
+    is_super_admin: false    
+    Permissions:    [Permission_medico]
+  User2:
+    first_name:     ''
+    last_name:      ''
+    email_address:  enf1@example.com
+    username:       enf1
+    password:       enf1
     is_super_admin: false
-    Groups:         []
-sfGuardGroup:
-  Group_admin:
-    name:           admin
-    description:    Administrator group
-    Permissions:    [Permission_admin]
+    Permissions:    [Permission_enfermera]
 
 sfGuardPermission:
   Permission_admin:
     name:           admin
     description:    Administrator permission
+  Permission_medico:
+    name:           medico 
+    description:    Permisos de Medico
+  Permission_enfermera:
+    name:           enfermera
+    description:    Permisos de Enfermera
+  Permission_administrativo:
+    name:           administrativo
+    description:    Permisos de administrativo

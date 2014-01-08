@@ -26,13 +26,11 @@ generator:
         batch_actions: {}
       filter:  
         display: [fecha]
-      form:    ~
+      form:
+        actions:
+          _list: ~
+          _save: { credentials: [noHistory] }
       edit:    
-        title: Editar Nota de Enfermeria
-        actions:
-          _save: ~
+        title: Editar Nota de Enfermeria        
       new:     
-        title: Nueva Nota de Enfermeria
-        actions:
-          _save: ~
-          _save_and_add: ~
+        title: Nueva Nota de Enfermeria       

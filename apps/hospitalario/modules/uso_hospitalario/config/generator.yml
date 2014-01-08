@@ -29,7 +29,11 @@ generator:
         batch_actions: {}
       filter: 
         display: [ lugar, fecha, codigo, especialidad, created_at, updated_at ]
-      form:     ~       
+      form:
+        actions:
+          _delete: ~
+          _list:   ~
+          _save:   { credentials: [noHistory] }
       edit:    
         title: Edición Recetas Uso Hospitalario
         display:
@@ -39,8 +43,5 @@ generator:
         title: Nueva Recetas Uso Hospitalario
         display:
           Datos Uso Hospitalario: [ internado_id, lugar, fecha, codigo, especialidad ]
-          Adicionar Items:        [ _listado_items ]
-        actions: 
-          _list: ~
-          _save: ~
+          Adicionar Items:        [ _listado_items ]        
           

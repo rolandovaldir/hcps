@@ -1,3 +1,7 @@
+<?php if (array_key_exists('extra_url_custom_id', $this->params)): $aux_extra_url_custom_id = '\'extra_url_custom_id\' => $extra_url_custom_id' ?>
+[?php $extra_url_custom_id = '<?php echo $this->params['extra_url_custom_id'] ?>=' . $sf_request->getParameter('<?php echo $this->params['extra_url_custom_id'] ?>') ?]
+<?php else: $aux_extra_url_custom_id = '' ?>
+<?php endif ?>
 [?php use_helper('I18N', 'Date') ?]
 [?php include_partial('<?php echo $this->getModuleName() ?>/assets') ?]
 
@@ -15,6 +19,6 @@
   </div>
 
   <div id="sf_admin_footer">
-    [?php include_partial('<?php echo $this->getModuleName() ?>/form_footer', array('<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>, 'form' => $form, 'configuration' => $configuration)) ?]
+    [?php include_partial('<?php echo $this->getModuleName() ?>/form_footer', array('<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>, 'form' => $form, 'configuration' => $configuration, <?php echo $aux_extra_url_custom_id ?>)) ?]
   </div>
 </div>

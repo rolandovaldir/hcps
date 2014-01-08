@@ -33,7 +33,7 @@ $detalles = Doctrine_Core::getTable('DetallePapeletaPedidoMaterial')->getAllDeta
     </tbody>
 </table>
 <br/>
-<h2>Adicionar Item</h2>
+<h2>Adicionar Material</h2>
 <?php endif ?>
 <?php echo $form['detalle']; ?>
 <br/><br/>

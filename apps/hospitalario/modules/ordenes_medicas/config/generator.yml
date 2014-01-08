@@ -31,13 +31,11 @@ generator:
         batch_actions: {}
       filter:  
         display: [fecha_inicio, fecha_terminacion]
-      form:    ~
+      form:    
+        actions:
+          _list: ~
+          _save: { credentials: [noHistory] }
       edit:    
-        title: Editar Orden Médica
-        actions:
-          _save: ~
+        title: Editar Orden Médica        
       new:     
-        title: Nueva Orden Médica
-        actions:
-          _save: ~
-          _save_and_add: ~
+        title: Nueva Orden Médica        

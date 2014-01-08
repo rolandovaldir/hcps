@@ -47,8 +47,11 @@ class myWidgetFormDojoDate extends sfWidgetForm
    * @see sfWidgetForm
    */
   public function render($name, $value = null, $attributes = array(), $errors = array())
-  {
+  {    
     $default = '';
+    if (is_array($value) && array_key_exists('date', $value))  {
+        $value = $value['date'];
+    }
     if (is_array($value))
     {
       $value = $value['year'] . '-' . $value['month'] . '-' . $value['day'];

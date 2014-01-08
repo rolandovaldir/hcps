@@ -1,3 +1,4 @@
+<?php if (!$form->getObject()->isNew()): ?>
 <?php
 $q = Doctrine_Core::getTable('DetalleMaterial')->selectDetalles($form->getObject()->getId());
 $materiales = $q->execute();
@@ -41,3 +42,8 @@ $materiales = $q->execute();
         ?>    
     </tbody>
 </table>
+<br/>
+<h2>Adicionar Material</h2>
+<?php endif ?>
+<?php echo $form['detalle']; ?>
+<br/><br/>

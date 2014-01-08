@@ -21,13 +21,13 @@ class administracion_medicamentoActions extends autoAdministracion_medicamentoAc
         $request = $this->getRequest();         
         $this->hcps_internado = InternadoTable::getInstance()->find($request->getParameter('internado_id'));
         
-        if (is_object($this->hcps_internado) && !$this->hcps_internado->getAlta()){
-            $this->getUser()->addCredential('noHistory');
-            $this->getUser()->removeCredential('siHistory');                    
-        }
-        else{            
+        if (!$this->getUser()->hasCredential('enfermera') || !is_object($this->hcps_internado) || $this->hcps_internado->getAlta() ){
             $this->getUser()->addCredential('siHistory');
             $this->getUser()->removeCredential('noHistory');
+        }
+        else{
+            $this->getUser()->addCredential('noHistory');
+            $this->getUser()->removeCredential('siHistory');                    
         }
         parent::preExecute();
     }
@@ -53,11 +53,33 @@ class administracion_medicamentoActions extends autoAdministracion_medicamentoAc
         return $filters;
     }
     
-    public function executeNew(sfWebRequest $request)
-    {        
-        parent::executeNew($request);        
-        $this->form->setDefault('internado_id',$request->getParameter('internado_id'));
-        //var_dump($this->form->getDefault('file_internacion_id'));
+    
+    protected function processForm(sfWebRequest $request, sfForm $form)
+    {
+        $vals = $request->getParameter($form->getName());        
+                
+        if ($form->getObject()->isNew()){        
+            $vals['internado_id'] = $request->getParameter('internado_id');
+        }        
+        else{
+            $vals['internado_id'] = $form->getObject()->getInternadoId();
+            if ($form->getObject()->getEnfermeraId()!=$this->getUser()->getHcpsUser()->getId()){
+                $this->forward(sfConfig::get('sf_secure_module'),'secure');
+            }
+        }
+        $vals['enfermera_id'] = $this->getUser()->getHcpsUser()->getId();
+        
+        $request->setParameter($form->getName(),$vals);
+        
+        parent::processForm($request, $form);
+    }
+    
+    public function executeDelete(sfWebRequest $request)
+    {
+        if ($this->getRoute()->getObject()->getEnfermeraId()!=$this->getUser()->getHcpsUser()->getId()){
+            $this->forward(sfConfig::get('sf_secure_module'),'secure');
+        }
+        parent::executeDelete($request);
     }
     
 }

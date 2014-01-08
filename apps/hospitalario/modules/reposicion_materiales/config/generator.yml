@@ -26,19 +26,17 @@ generator:
         batch_actions: {}
       filter:  
         display: [unidad, encargado]
-      form:    
-        display:
-          Datos Generales de la Solicitud de Reposición de Materiales: [unidad, encargado]
-          Items Adicionados: [ _listado_items ]
-          Adicionar Item: [ detalle ]
-          #Detalle(s) de Material Registrados: [DetalleMaterial]
+      form:            
         actions:
           _list: ~
-          _save: { credentials: [noHistory] }  
+          _save: { credentials: [noHistory] }
       edit:    
         title: Editar Solicitud de Reposicion de Material        
+        display:
+          Datos Generales de la Solicitud de Reposición de Materiales: [unidad, encargado]
+          Materiales Adicionados: [ _listado_items ]
       new:        
         title: Nueva Solicitud de Reposicion de Material
         display:
           Datos Generales de la Solicitud de Reposición de Materiales: [unidad, encargado]
-          Adicionar Item: [ detalle ]        
+          Adicionar Material:   [ _listado_items ]

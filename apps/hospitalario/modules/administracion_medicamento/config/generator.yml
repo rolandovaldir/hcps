@@ -24,18 +24,19 @@ generator:
         title: Listado Administracion de Medicamentos
         display: [ medicamento_solucion, descripcion_tipo, fecha, horario, created_at, updated_at ]
         object_actions:  
-          _edit:        { credentials: [noHistory] }
+          _edit:        { credentials: [noHistory, enfermera] }
           ver_detalle:  { label: Ver Detalle, action: edit, credentials: [siHistory] }
-          _delete:      { credentials: [noHistory] }
+          _delete:      { credentials: [noHistory, enfermera] }
         actions: {}
-        batch_actions: {}
+        batch_actions: {}        
       filter: 
         display: [ medicamento_solucion, tipo, fecha, horario ]
       form: 
         display: [ medicamento_solucion, tipo, fecha, horario ]
         actions:
-          _list: ~
-          _save: { credentials: [noHistory] }
+          _delete: { credentials: [noHistory, enfermera] }
+          _list:   ~
+          _save:   { credentials: [noHistory, enfermera] }
       edit:    
         title: Edición Administracion de Medicamentos        
       new:        

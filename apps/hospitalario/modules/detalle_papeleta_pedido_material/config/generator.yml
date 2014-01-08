@@ -17,6 +17,8 @@ generator:
       fields:  ~
       list:    ~
       filter:  ~
-      form:    ~
+      form:    
+        actions:          
+          _save: { credentials: [noHistory] }
       edit:    ~
       new:     ~

@@ -26,13 +26,11 @@ generator:
         batch_actions: {}
       filter:  
         display: [atencion_id]
-      form:    ~
+      form:   
+        actions:
+          _list: ~
+          _save: { credentials: [noHistory] }
       edit:    
-        title: Editar Solicitud de Servicio
-        actions:
-          _save: ~
+        title: Editar Solicitud de Servicio        
       new:     
-        title: Nueva Solicitud de Servicios
-        actions:
-          _save: ~
-          _save_and_add: ~
+        title: Nueva Solicitud de Servicios        

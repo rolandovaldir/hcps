@@ -31,4 +31,9 @@ class internadosActions extends autoInternadosActions
         $this->getResponse()->setSlot("nombre_completo_internado", $this->internado->getNombreCompleto());
     }       
     
+    public function executeSecure(sfWebRequest $request)
+    {
+        return $this->renderText('<div id="sf_admin_container"><div class="error">Usted No tiene los permisos necesarios (o el registro que quiere editar no fue creado por usted)</div></div>');
+    }
+    
 }

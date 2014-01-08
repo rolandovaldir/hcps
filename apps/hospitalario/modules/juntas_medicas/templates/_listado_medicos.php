@@ -1,5 +1,6 @@
+<?php if (!$form->getObject()->isNew()): ?>
 <?php
-$q = Doctrine_Core::getTable('MedicoParticular')->selectMedicos($junta_medica->getId());
+$q = Doctrine_Core::getTable('MedicoParticular')->selectMedicos($form->getObject()->getId());
 $medicos = $q->execute();
 ?>
 <table width="50%">
@@ -27,3 +28,8 @@ $medicos = $q->execute();
         ?>    
     </tbody>
 </table>
+<br/>
+<h2>Adicionar Medico</h2>
+<?php endif ?>
+<?php echo $form['medico']; ?>
+<br/><br/>
