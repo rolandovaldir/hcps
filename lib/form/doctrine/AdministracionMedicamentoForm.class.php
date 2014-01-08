@@ -14,15 +14,16 @@ class AdministracionMedicamentoForm extends BaseAdministracionMedicamentoForm
   {
       unset($this['created_at'], $this['updated_at']);
       $this->setWidget("internado_id", new sfWidgetFormInputHidden());
+      $this->setWidget("enfermera_id", new sfWidgetFormInputHidden());
       $this->widgetSchema['tipo'] = new sfWidgetFormChoice(array('choices'  => AdministracionMedicamentoTable::getDescripciones_tipo(),'expanded' => true));
   }
   
   public function disableAllWidgets()
   {
-      foreach ($this->widgetSchema->getFields() as $v){          
+      foreach ($this->widgetSchema->getFields() as $v){
           $v->setAttribute('readonly', 'readonly');
           $v->setAttribute('onclick', 'return false;');
-      }      
+      }            
   }
   
 }

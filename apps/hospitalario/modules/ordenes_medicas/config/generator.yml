@@ -38,9 +38,12 @@ generator:
       edit:    
         title: Editar Orden Médica
         actions:
-          _save: ~
+          _list: ~
+          _save: { credentials: [noHistory] }
+      edit:    
+        title: Editar Orden Médica        
       new:     
-        title: Nueva Orden Médica
+        title: Nueva Orden Médica        
         actions:
+          _list: ~
           _save: ~
-          _save_and_add: ~

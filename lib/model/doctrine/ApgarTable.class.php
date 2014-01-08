@@ -16,4 +16,13 @@ class ApgarTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('Apgar');
     }
+    
+    public static function getAllDetalles($examen_fisico_id)
+    {
+        $d = self::getInstance()->createQuery('ap')            
+            ->where('ap.examen_fisico_recien_nacido_id = ?', $examen_fisico_id)
+            ->orderBy('ap.id ASC')->execute();
+        return $d;
+    }   
+    
 }

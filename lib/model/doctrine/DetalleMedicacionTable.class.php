@@ -16,4 +16,13 @@ class DetalleMedicacionTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('DetalleMedicacion');
     }
+    
+    public static function getAllDetalles($sol_id)
+    {
+        $d = self::getInstance()->createQuery('det')            
+            ->where('det.solicitud_interconsulta_id = ?', $sol_id)
+            ->orderBy('det.id ASC')->execute();
+        return $d;
+    }
+    
 }

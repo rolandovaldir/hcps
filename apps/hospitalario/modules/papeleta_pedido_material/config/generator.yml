@@ -29,14 +29,17 @@ generator:
         batch_actions: {}
       filter:  
         display: [ fecha_solicitud ]
-      form:    
-        display:           
-          Datos Papeleta Pedido Material: [ internado_id, fecha_solicitud ]
-          Items Adicionados:              [ _listado_items ]
+      form:            
         actions:
           _list: ~
           _save: { credentials: [noHistory] }
       edit:    
         title: Edición Pepeleta Pedido material
+        display:           
+          Datos Papeleta Pedido Material: [ internado_id, fecha_solicitud ]
+          Materiales Adicionados:         [ _listado_items ]
       new:        
         title: Nueva Pepeleta Pedido material
+        display:           
+          Datos Papeleta Pedido Material: [ internado_id, fecha_solicitud ]
+          Adicionar Material:             [ _listado_items ]

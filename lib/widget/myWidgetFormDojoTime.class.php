@@ -51,6 +51,9 @@ class myWidgetFormDojoTime extends sfWidgetForm
   {
     // convert value to an array
     $default = '';
+    if (is_array($value) && array_key_exists('time', $value))  {
+        $value = $value['time'];
+    }
     if (is_array($value))
     {
       $value = 'T' . $value['hour'] . ':' . $value['minute'] . ($this->getOption('with_seconds') ? ':' . $value['second'] : '');

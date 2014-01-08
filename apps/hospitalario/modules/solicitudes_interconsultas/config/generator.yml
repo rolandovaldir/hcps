@@ -27,15 +27,16 @@ generator:
       filter:  
         display: [dirigida_a, especialidad]
       form:    
-        display: 
-          Solicitud de Interconsulta: [dirigida_a, especialidad, motivo, datos_clinicos, informe_medico, conclusiones, hora_solicitud, fecha_solicitud]
-          Detalle de Medicaciones: [medicacion]
+        actions:
+          _list: ~
+          _save: { credentials: [noHistory] }        
       edit:    
         title: Editar Solicitud de Interconsulta
-        actions:
-          _save: ~
+        display:           
+          Solicitud de Interconsulta: [ dirigida_a, especialidad, motivo, datos_clinicos, informe_medico, conclusiones, hora_solicitud, fecha_solicitud ]
+          Medicaciones Adicionadas: [ _listado_items ]
       new:     
         title: Nueva Solicitud de Interconsulta
-        actions:
-          _save: ~
-          _save_and_add: ~
+        display:           
+          Solicitud de Interconsulta: [ dirigida_a, especialidad, motivo, datos_clinicos, informe_medico, conclusiones, hora_solicitud, fecha_solicitud ]
+          Adicionar Medicacion: [ _listado_items ]

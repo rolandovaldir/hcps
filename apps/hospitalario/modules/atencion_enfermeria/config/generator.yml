@@ -109,6 +109,7 @@ generator:
           "11. CREENCIAS Y VALORES":          [ creencia_religiosa ]
           "&nbsp;":                           [ diagnostico_enfermera ]
         actions:
+          _delete: ~
           _list: ~
           _save: { credentials: [noHistory] }  
       edit:

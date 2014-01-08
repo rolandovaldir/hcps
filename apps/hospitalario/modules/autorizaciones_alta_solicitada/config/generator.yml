@@ -36,6 +36,7 @@ generator:
       form:    
         display: [ internado_id,nombre_familiar,ci_familiar,fecha_hora ]
         actions:
+          _delete: ~
           _list: ~
           _save: { credentials: [noHistory] }
       edit:    

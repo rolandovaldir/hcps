@@ -27,15 +27,16 @@ generator:
       filter:  
         display: [ap_paterno, ap_materno, sexo]
       form:    
+        actions:
+          _list: ~
+          _save: { credentials: [noHistory] }        
+      edit:    
+        title: Editar Recien Nacido %%ap_paterno%% %%ap_materno%%
         display:
           Examen Físico del Recien Nacido: [ap_paterno, ap_materno, fecha_nacimiento, sexo, peso_nacimiento, talla, circunferencia_torax, numero_cuna, fecha_adminision, fecha_egreso]
           Apgar: [apgar]
-      edit:    
-        title: Editar Recien Nacido %%ap_paterno%% %%ap_materno%%
-        actions:
-          _save: ~
       new:     
         title: Nuevo Recien Nacido
-        actions:
-          _save: ~
-          _save_and_add: ~
+        display:
+          Examen Físico del Recien Nacido: [ap_paterno, ap_materno, fecha_nacimiento, sexo, peso_nacimiento, talla, circunferencia_torax, numero_cuna, fecha_adminision, fecha_egreso]
+          Adicionar Apgar: [apgar]

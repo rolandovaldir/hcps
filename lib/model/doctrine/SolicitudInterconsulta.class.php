@@ -12,4 +12,5 @@
  */
 class SolicitudInterconsulta extends BaseSolicitudInterconsulta
 {
+    
 }

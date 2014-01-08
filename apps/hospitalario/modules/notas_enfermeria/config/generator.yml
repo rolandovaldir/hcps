@@ -32,9 +32,12 @@ generator:
       edit:    
         title: Editar Nota de Enfermería
         actions:
-          _save: ~
+          _list: ~
+          _save: { credentials: [noHistory] }
+      edit:    
+        title: Editar Nota de Enfermeria        
       new:     
         title: Nueva Nota de Enfermería
         actions:
+          _list: ~
           _save: ~
-          _save_and_add: ~

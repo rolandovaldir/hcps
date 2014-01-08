@@ -26,7 +26,12 @@ generator:
         batch_actions: {}
       filter:  
         display: [fecha_junta, medico_solicitante]
-      form:    
+      form:            
+        actions:
+          _list: ~
+          _save: { credentials: [noHistory] }
+      edit:    
+        title: Editar Junta Médica        
         display:
           Datos de la Junta Médica:       [fecha_junta, medico_solicitante, servicio, especialidades, diagnostico_establecido, relacion_junta, conclusiones, tac, contraste]
           Lista de Médicos Participantes: [_medicos_participantes]
@@ -41,5 +46,5 @@ generator:
           Datos de la Junta Médica:      [fecha_junta, medico_solicitante, servicio, especialidades, diagnostico_establecido, conclusiones, tac, contraste]
           Adicionar Médico Participante: [medico]    
         actions:
+          _list: ~
           _save: ~
-          _save_and_add: ~

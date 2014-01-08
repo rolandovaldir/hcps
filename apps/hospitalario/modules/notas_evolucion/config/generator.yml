@@ -35,9 +35,12 @@ generator:
       edit:    
         title: Editar Nota de Evolución
         actions:
-          _save: ~
+          _list: ~
+          _save: { credentials: [noHistory] }
+      edit:    
+        title: Editar Nota de Evolucion        
       new:     
         title: Nueva Nota de Evolución
         actions:
+          _list: ~
           _save: ~
-          _save_and_add: ~

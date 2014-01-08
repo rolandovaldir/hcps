@@ -1,0 +1,9 @@
+## YAML Template.
+---
+index:
+  credentials: []  
+  
+new:
+  credentials: [enfermera]
+delete: 
+  credentials: [enfermera]
