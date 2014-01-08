@@ -38,12 +38,15 @@ abstract class BaseNotasEvolucion extends sfDoctrineRecord
              ));
         $this->hasColumn('fecha_hora', 'timestamp', null, array(
              'type' => 'timestamp',
+             'notnull' => true,
              ));
         $this->hasColumn('numero_prob', 'integer', null, array(
              'type' => 'integer',
+             'notnull' => true,
              ));
         $this->hasColumn('nota_soap', 'string', 1500, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 1500,
              ));
     }

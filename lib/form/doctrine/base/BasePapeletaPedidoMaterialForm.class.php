@@ -16,7 +16,7 @@ abstract class BasePapeletaPedidoMaterialForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'id'              => new sfWidgetFormInputHidden(),
-      'internado_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => true)),
+      'internado_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => false)),
       'enfermera_id'    => new myWidgetFormDojoInteger(),
       'fecha_solicitud' => new myWidgetFormDojoDate(),
       'entregado'       => new sfWidgetFormInputCheckbox(),
@@ -26,9 +26,9 @@ abstract class BasePapeletaPedidoMaterialForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'id'              => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'internado_id'    => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'required' => false)),
+      'internado_id'    => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'))),
       'enfermera_id'    => new sfValidatorInteger(array('required' => false)),
-      'fecha_solicitud' => new myValidatorDojoDate(array('required' => false)),
+      'fecha_solicitud' => new myValidatorDojoDate(),
       'entregado'       => new sfValidatorBoolean(array('required' => false)),
       'created_at'      => new myValidatorDojoDateTime(),
       'updated_at'      => new myValidatorDojoDateTime(),

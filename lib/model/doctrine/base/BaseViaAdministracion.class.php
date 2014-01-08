@@ -25,6 +25,7 @@ abstract class BaseViaAdministracion extends sfDoctrineRecord
         $this->setTableName('via_administracion');
         $this->hasColumn('nombre', 'string', 100, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 100,
              ));
     }

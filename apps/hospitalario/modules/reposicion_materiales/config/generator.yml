@@ -14,7 +14,9 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
+      fields:  
+        unidad:    {label: 'Unidad solicitante'}
+        encargado: {label: 'Encargado de la solicitud'}
       list:    
         title: Solicitudes de Reposicion de Material
         display: [unidad, encargado]

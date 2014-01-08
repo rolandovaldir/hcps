@@ -59,18 +59,22 @@ abstract class BaseJuntaMedica extends sfDoctrineRecord
              ));
         $this->hasColumn('medico_solicitante', 'string', 100, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 100,
              ));
         $this->hasColumn('servicio', 'string', 45, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 45,
              ));
         $this->hasColumn('especialidades', 'string', 45, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 45,
              ));
         $this->hasColumn('fecha_junta', 'date', null, array(
              'type' => 'date',
+             'notnull' => true,
              ));
         $this->hasColumn('diagnostico_establecido', 'string', 2000, array(
              'type' => 'string',

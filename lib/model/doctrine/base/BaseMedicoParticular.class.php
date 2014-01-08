@@ -38,10 +38,12 @@ abstract class BaseMedicoParticular extends sfDoctrineRecord
              ));
         $this->hasColumn('nombre', 'string', 150, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 150,
              ));
         $this->hasColumn('especialidad', 'string', 100, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 100,
              ));
         $this->hasColumn('cargo', 'string', 50, array(

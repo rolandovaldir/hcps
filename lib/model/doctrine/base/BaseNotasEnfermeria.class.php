@@ -41,16 +41,20 @@ abstract class BaseNotasEnfermeria extends sfDoctrineRecord
              ));
         $this->hasColumn('fecha', 'date', null, array(
              'type' => 'date',
+             'notnull' => true,
              ));
         $this->hasColumn('hora', 'time', null, array(
              'type' => 'time',
+             'notnull' => true,
              ));
         $this->hasColumn('procedimientos', 'string', 150, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 150,
              ));
         $this->hasColumn('observaciones', 'string', 500, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 500,
              ));
     }

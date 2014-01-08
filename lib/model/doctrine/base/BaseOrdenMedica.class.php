@@ -57,17 +57,21 @@ abstract class BaseOrdenMedica extends sfDoctrineRecord
              ));
         $this->hasColumn('nombre_medicamento_indicacion', 'string', 150, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 150,
              ));
         $this->hasColumn('dosis_intervalo', 'string', 150, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 150,
              ));
         $this->hasColumn('fecha_inicio', 'date', null, array(
              'type' => 'date',
+             'notnull' => true,
              ));
         $this->hasColumn('fecha_terminacion', 'date', null, array(
              'type' => 'date',
+             'notnull' => true,
              ));
     }
 

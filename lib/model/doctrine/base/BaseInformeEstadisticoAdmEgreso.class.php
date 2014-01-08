@@ -37,6 +37,7 @@ abstract class BaseInformeEstadisticoAdmEgreso extends sfDoctrineRecord
         $this->setTableName('informe_estadistico_adm_egreso');
         $this->hasColumn('internado_id', 'integer', null, array(
              'type' => 'integer',
+             'notnull' => true,
              ));
         $this->hasColumn('urgencia_persona_ref', 'string', 150, array(
              'type' => 'string',

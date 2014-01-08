@@ -59,36 +59,45 @@ abstract class BaseSignosVitalesNursery extends sfDoctrineRecord
              ));
         $this->hasColumn('fecha', 'date', null, array(
              'type' => 'date',
+             'notnull' => true,
              ));
         $this->hasColumn('hora', 'time', null, array(
              'type' => 'time',
+             'notnull' => true,
              ));
         $this->hasColumn('fc_nursery', 'string', 45, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 45,
              ));
         $this->hasColumn('fr_nursery', 'string', 45, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 45,
              ));
         $this->hasColumn('to_nursery', 'string', 45, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 45,
              ));
         $this->hasColumn('diu_nursery', 'string', 45, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 45,
              ));
         $this->hasColumn('cat_nursery', 'string', 45, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 45,
              ));
         $this->hasColumn('lm_nursery', 'string', 45, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 45,
              ));
         $this->hasColumn('residuo', 'string', 45, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 45,
              ));
         $this->hasColumn('observaciones', 'string', 45, array(

@@ -48,14 +48,17 @@ abstract class BaseSolicitudServicio extends sfDoctrineRecord
              ));
         $this->hasColumn('para', 'string', 2000, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 2000,
              ));
         $this->hasColumn('diagnostico_presuncion', 'string', 250, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 250,
              ));
         $this->hasColumn('material_utilizado', 'string', 2000, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 2000,
              ));
     }

@@ -34,17 +34,21 @@ abstract class BaseDetallePapeletaPedidoMaterial extends sfDoctrineRecord
         $this->setTableName('detalle_papeleta_pedido_material');
         $this->hasColumn('papeleta_pedido_material_id', 'integer', null, array(
              'type' => 'integer',
+             'notnull' => true,
              ));
         $this->hasColumn('columna1', 'string', 15, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 15,
              ));
         $this->hasColumn('columna2', 'string', 150, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 150,
              ));
         $this->hasColumn('columna3', 'string', 25, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 25,
              ));
     }

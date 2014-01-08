@@ -29,11 +29,11 @@ abstract class BaseUsoHospitalarioForm extends BaseFormDoctrine
     $this->setValidators(array(
       'id'           => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'internado_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'))),
-      'lugar'        => new sfValidatorString(array('max_length' => 60, 'required' => false)),
-      'fecha'        => new myValidatorDojoDate(array('required' => false)),
+      'lugar'        => new sfValidatorString(array('max_length' => 60)),
+      'fecha'        => new myValidatorDojoDate(),
       'medico_id'    => new sfValidatorInteger(array('required' => false)),
-      'codigo'       => new sfValidatorString(array('max_length' => 45, 'required' => false)),
-      'especialidad' => new sfValidatorString(array('max_length' => 45, 'required' => false)),
+      'codigo'       => new sfValidatorString(array('max_length' => 45)),
+      'especialidad' => new sfValidatorString(array('max_length' => 45)),
       'created_at'   => new myValidatorDojoDateTime(),
       'updated_at'   => new myValidatorDojoDateTime(),
     ));

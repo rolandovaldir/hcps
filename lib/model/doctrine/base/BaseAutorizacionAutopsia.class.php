@@ -59,14 +59,17 @@ abstract class BaseAutorizacionAutopsia extends sfDoctrineRecord
              ));
         $this->hasColumn('nombre_familiar1', 'string', 100, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 100,
              ));
         $this->hasColumn('tipo_parentesco1', 'string', 30, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 30,
              ));
         $this->hasColumn('ci_familiar1', 'string', 10, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 10,
              ));
         $this->hasColumn('nombre_familiar2', 'string', 100, array(
@@ -95,6 +98,7 @@ abstract class BaseAutorizacionAutopsia extends sfDoctrineRecord
              ));
         $this->hasColumn('fecha_hora', 'timestamp', null, array(
              'type' => 'timestamp',
+             'notnull' => true,
              ));
     }
 

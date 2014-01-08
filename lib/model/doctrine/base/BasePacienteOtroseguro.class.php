@@ -22,44 +22,44 @@
  * @property string $departamento
  * @property string $ciudad
  * @property string $provincia
- * @property Doctrine_Collection $Internaciones
+ * @property Internado $Internado
  * 
- * @method string              getNombre()          Returns the current record's "nombre" value
- * @method string              getPaterno()         Returns the current record's "paterno" value
- * @method string              getMaterno()         Returns the current record's "materno" value
- * @method string              getCasada()          Returns the current record's "casada" value
- * @method date                getFechaNacimiento() Returns the current record's "fechaNacimiento" value
- * @method string              getSexo()            Returns the current record's "sexo" value
- * @method string              getCi()              Returns the current record's "ci" value
- * @method string              getExp()             Returns the current record's "exp" value
- * @method string              getDomicilio()       Returns the current record's "domicilio" value
- * @method string              getTelefono()        Returns the current record's "telefono" value
- * @method string              getCelular()         Returns the current record's "celular" value
- * @method string              getEmail()           Returns the current record's "email" value
- * @method string              getHclinica()        Returns the current record's "hclinica" value
- * @method string              getOcupacion()       Returns the current record's "ocupacion" value
- * @method string              getDepartamento()    Returns the current record's "departamento" value
- * @method string              getCiudad()          Returns the current record's "ciudad" value
- * @method string              getProvincia()       Returns the current record's "provincia" value
- * @method Doctrine_Collection getInternaciones()   Returns the current record's "Internaciones" collection
- * @method PacienteOtroseguro  setNombre()          Sets the current record's "nombre" value
- * @method PacienteOtroseguro  setPaterno()         Sets the current record's "paterno" value
- * @method PacienteOtroseguro  setMaterno()         Sets the current record's "materno" value
- * @method PacienteOtroseguro  setCasada()          Sets the current record's "casada" value
- * @method PacienteOtroseguro  setFechaNacimiento() Sets the current record's "fechaNacimiento" value
- * @method PacienteOtroseguro  setSexo()            Sets the current record's "sexo" value
- * @method PacienteOtroseguro  setCi()              Sets the current record's "ci" value
- * @method PacienteOtroseguro  setExp()             Sets the current record's "exp" value
- * @method PacienteOtroseguro  setDomicilio()       Sets the current record's "domicilio" value
- * @method PacienteOtroseguro  setTelefono()        Sets the current record's "telefono" value
- * @method PacienteOtroseguro  setCelular()         Sets the current record's "celular" value
- * @method PacienteOtroseguro  setEmail()           Sets the current record's "email" value
- * @method PacienteOtroseguro  setHclinica()        Sets the current record's "hclinica" value
- * @method PacienteOtroseguro  setOcupacion()       Sets the current record's "ocupacion" value
- * @method PacienteOtroseguro  setDepartamento()    Sets the current record's "departamento" value
- * @method PacienteOtroseguro  setCiudad()          Sets the current record's "ciudad" value
- * @method PacienteOtroseguro  setProvincia()       Sets the current record's "provincia" value
- * @method PacienteOtroseguro  setInternaciones()   Sets the current record's "Internaciones" collection
+ * @method string             getNombre()          Returns the current record's "nombre" value
+ * @method string             getPaterno()         Returns the current record's "paterno" value
+ * @method string             getMaterno()         Returns the current record's "materno" value
+ * @method string             getCasada()          Returns the current record's "casada" value
+ * @method date               getFechaNacimiento() Returns the current record's "fechaNacimiento" value
+ * @method string             getSexo()            Returns the current record's "sexo" value
+ * @method string             getCi()              Returns the current record's "ci" value
+ * @method string             getExp()             Returns the current record's "exp" value
+ * @method string             getDomicilio()       Returns the current record's "domicilio" value
+ * @method string             getTelefono()        Returns the current record's "telefono" value
+ * @method string             getCelular()         Returns the current record's "celular" value
+ * @method string             getEmail()           Returns the current record's "email" value
+ * @method string             getHclinica()        Returns the current record's "hclinica" value
+ * @method string             getOcupacion()       Returns the current record's "ocupacion" value
+ * @method string             getDepartamento()    Returns the current record's "departamento" value
+ * @method string             getCiudad()          Returns the current record's "ciudad" value
+ * @method string             getProvincia()       Returns the current record's "provincia" value
+ * @method Internado          getInternado()       Returns the current record's "Internado" value
+ * @method PacienteOtroseguro setNombre()          Sets the current record's "nombre" value
+ * @method PacienteOtroseguro setPaterno()         Sets the current record's "paterno" value
+ * @method PacienteOtroseguro setMaterno()         Sets the current record's "materno" value
+ * @method PacienteOtroseguro setCasada()          Sets the current record's "casada" value
+ * @method PacienteOtroseguro setFechaNacimiento() Sets the current record's "fechaNacimiento" value
+ * @method PacienteOtroseguro setSexo()            Sets the current record's "sexo" value
+ * @method PacienteOtroseguro setCi()              Sets the current record's "ci" value
+ * @method PacienteOtroseguro setExp()             Sets the current record's "exp" value
+ * @method PacienteOtroseguro setDomicilio()       Sets the current record's "domicilio" value
+ * @method PacienteOtroseguro setTelefono()        Sets the current record's "telefono" value
+ * @method PacienteOtroseguro setCelular()         Sets the current record's "celular" value
+ * @method PacienteOtroseguro setEmail()           Sets the current record's "email" value
+ * @method PacienteOtroseguro setHclinica()        Sets the current record's "hclinica" value
+ * @method PacienteOtroseguro setOcupacion()       Sets the current record's "ocupacion" value
+ * @method PacienteOtroseguro setDepartamento()    Sets the current record's "departamento" value
+ * @method PacienteOtroseguro setCiudad()          Sets the current record's "ciudad" value
+ * @method PacienteOtroseguro setProvincia()       Sets the current record's "provincia" value
+ * @method PacienteOtroseguro setInternado()       Sets the current record's "Internado" value
  * 
  * @package    hcps
  * @subpackage model
@@ -153,7 +153,7 @@ abstract class BasePacienteOtroseguro extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasMany('Internado as Internaciones', array(
+        $this->hasOne('Internado', array(
              'local' => 'id',
              'foreign' => 'noAfiliado_id'));
 

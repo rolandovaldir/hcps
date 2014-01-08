@@ -37,12 +37,14 @@ abstract class BasePapeletaPedidoMaterial extends sfDoctrineRecord
         $this->setTableName('papeleta_pedido_material');
         $this->hasColumn('internado_id', 'integer', null, array(
              'type' => 'integer',
+             'notnull' => true,
              ));
         $this->hasColumn('enfermera_id', 'integer', null, array(
              'type' => 'integer',
              ));
         $this->hasColumn('fecha_solicitud', 'date', null, array(
              'type' => 'date',
+             'notnull' => true,
              ));
         $this->hasColumn('entregado', 'boolean', null, array(
              'type' => 'boolean',

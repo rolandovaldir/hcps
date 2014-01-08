@@ -38,14 +38,17 @@ abstract class BaseAutorizacionAltaSolicitada extends sfDoctrineRecord
              ));
         $this->hasColumn('nombre_familiar', 'string', 100, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 100,
              ));
         $this->hasColumn('ci_familiar', 'string', 10, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 10,
              ));
         $this->hasColumn('fecha_hora', 'timestamp', null, array(
              'type' => 'timestamp',
+             'notnull' => true,
              ));
     }
 

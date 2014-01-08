@@ -38,10 +38,12 @@ abstract class BaseSolicitudReposicionMaterial extends sfDoctrineRecord
              ));
         $this->hasColumn('unidad', 'string', 100, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 100,
              ));
         $this->hasColumn('encargado', 'string', 150, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 150,
              ));
     }

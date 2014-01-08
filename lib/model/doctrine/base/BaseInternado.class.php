@@ -32,7 +32,6 @@
  * @property Afiliado $Afiliado
  * @property PacienteOtroseguro $PacienteOtroseguro
  * @property Doctrine_Collection $OrdenMedica
- * @property Doctrine_Collection $ServicioMantenimiento
  * @property Doctrine_Collection $JuntaMedica
  * @property Doctrine_Collection $ExamenFisicoRecienNacido
  * @property Doctrine_Collection $SolicitudInterconsulta
@@ -83,7 +82,6 @@
  * @method Afiliado            getAfiliado()                            Returns the current record's "Afiliado" value
  * @method PacienteOtroseguro  getPacienteOtroseguro()                  Returns the current record's "PacienteOtroseguro" value
  * @method Doctrine_Collection getOrdenMedica()                         Returns the current record's "OrdenMedica" collection
- * @method Doctrine_Collection getServicioMantenimiento()               Returns the current record's "ServicioMantenimiento" collection
  * @method Doctrine_Collection getJuntaMedica()                         Returns the current record's "JuntaMedica" collection
  * @method Doctrine_Collection getExamenFisicoRecienNacido()            Returns the current record's "ExamenFisicoRecienNacido" collection
  * @method Doctrine_Collection getSolicitudInterconsulta()              Returns the current record's "SolicitudInterconsulta" collection
@@ -133,7 +131,6 @@
  * @method Internado           setAfiliado()                            Sets the current record's "Afiliado" value
  * @method Internado           setPacienteOtroseguro()                  Sets the current record's "PacienteOtroseguro" value
  * @method Internado           setOrdenMedica()                         Sets the current record's "OrdenMedica" collection
- * @method Internado           setServicioMantenimiento()               Sets the current record's "ServicioMantenimiento" collection
  * @method Internado           setJuntaMedica()                         Sets the current record's "JuntaMedica" collection
  * @method Internado           setExamenFisicoRecienNacido()            Sets the current record's "ExamenFisicoRecienNacido" collection
  * @method Internado           setSolicitudInterconsulta()              Sets the current record's "SolicitudInterconsulta" collection
@@ -282,10 +279,6 @@ abstract class BaseInternado extends sfDoctrineRecord
              'foreign' => 'id'));
 
         $this->hasMany('OrdenMedica', array(
-             'local' => 'id',
-             'foreign' => 'internado_id'));
-
-        $this->hasMany('ServicioMantenimiento', array(
              'local' => 'id',
              'foreign' => 'internado_id'));
 

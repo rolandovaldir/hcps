@@ -27,8 +27,8 @@ abstract class BaseMedicoParticularForm extends BaseFormDoctrine
     $this->setValidators(array(
       'id'              => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'junta_medica_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('JuntaMedica'))),
-      'nombre'          => new sfValidatorString(array('max_length' => 150, 'required' => false)),
-      'especialidad'    => new sfValidatorString(array('max_length' => 100, 'required' => false)),
+      'nombre'          => new sfValidatorString(array('max_length' => 150)),
+      'especialidad'    => new sfValidatorString(array('max_length' => 100)),
       'cargo'           => new sfValidatorString(array('max_length' => 50, 'required' => false)),
       'created_at'      => new myValidatorDojoDateTime(),
       'updated_at'      => new myValidatorDojoDateTime(),

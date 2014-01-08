@@ -16,7 +16,7 @@ abstract class BaseDetallePapeletaPedidoMaterialForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'id'                          => new sfWidgetFormInputHidden(),
-      'papeleta_pedido_material_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('PapeletaPedidoMaterial'), 'add_empty' => true)),
+      'papeleta_pedido_material_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('PapeletaPedidoMaterial'), 'add_empty' => false)),
       'columna1'                    => new sfWidgetFormInputText(),
       'columna2'                    => new sfWidgetFormInputText(),
       'columna3'                    => new sfWidgetFormInputText(),
@@ -26,10 +26,10 @@ abstract class BaseDetallePapeletaPedidoMaterialForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'id'                          => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'papeleta_pedido_material_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('PapeletaPedidoMaterial'), 'required' => false)),
-      'columna1'                    => new sfValidatorString(array('max_length' => 15, 'required' => false)),
-      'columna2'                    => new sfValidatorString(array('max_length' => 150, 'required' => false)),
-      'columna3'                    => new sfValidatorString(array('max_length' => 25, 'required' => false)),
+      'papeleta_pedido_material_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('PapeletaPedidoMaterial'))),
+      'columna1'                    => new sfValidatorString(array('max_length' => 15)),
+      'columna2'                    => new sfValidatorString(array('max_length' => 150)),
+      'columna3'                    => new sfValidatorString(array('max_length' => 25)),
       'created_at'                  => new myValidatorDojoDateTime(),
       'updated_at'                  => new myValidatorDojoDateTime(),
     ));

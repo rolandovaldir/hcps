@@ -47,20 +47,24 @@ abstract class BaseUsoHospitalario extends sfDoctrineRecord
              ));
         $this->hasColumn('lugar', 'string', 60, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 60,
              ));
         $this->hasColumn('fecha', 'date', null, array(
              'type' => 'date',
+             'notnull' => true,
              ));
         $this->hasColumn('medico_id', 'integer', null, array(
              'type' => 'integer',
              ));
         $this->hasColumn('codigo', 'string', 45, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 45,
              ));
         $this->hasColumn('especialidad', 'string', 45, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 45,
              ));
     }

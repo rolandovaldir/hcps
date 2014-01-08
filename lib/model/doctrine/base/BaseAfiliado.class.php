@@ -14,28 +14,28 @@
  * @property string $tafiliado
  * @property string $activo
  * @property string $grupofam
- * @property Doctrine_Collection $Internaciones
+ * @property Internado $Internado
  * 
- * @method string              getMatricula()     Returns the current record's "matricula" value
- * @method string              getPaterno()       Returns the current record's "paterno" value
- * @method string              getMaterno()       Returns the current record's "materno" value
- * @method string              getNombre()        Returns the current record's "nombre" value
- * @method string              getHclinica()      Returns the current record's "hclinica" value
- * @method string              getEmpresa()       Returns the current record's "empresa" value
- * @method string              getTafiliado()     Returns the current record's "tafiliado" value
- * @method string              getActivo()        Returns the current record's "activo" value
- * @method string              getGrupofam()      Returns the current record's "grupofam" value
- * @method Doctrine_Collection getInternaciones() Returns the current record's "Internaciones" collection
- * @method Afiliado            setMatricula()     Sets the current record's "matricula" value
- * @method Afiliado            setPaterno()       Sets the current record's "paterno" value
- * @method Afiliado            setMaterno()       Sets the current record's "materno" value
- * @method Afiliado            setNombre()        Sets the current record's "nombre" value
- * @method Afiliado            setHclinica()      Sets the current record's "hclinica" value
- * @method Afiliado            setEmpresa()       Sets the current record's "empresa" value
- * @method Afiliado            setTafiliado()     Sets the current record's "tafiliado" value
- * @method Afiliado            setActivo()        Sets the current record's "activo" value
- * @method Afiliado            setGrupofam()      Sets the current record's "grupofam" value
- * @method Afiliado            setInternaciones() Sets the current record's "Internaciones" collection
+ * @method string    getMatricula() Returns the current record's "matricula" value
+ * @method string    getPaterno()   Returns the current record's "paterno" value
+ * @method string    getMaterno()   Returns the current record's "materno" value
+ * @method string    getNombre()    Returns the current record's "nombre" value
+ * @method string    getHclinica()  Returns the current record's "hclinica" value
+ * @method string    getEmpresa()   Returns the current record's "empresa" value
+ * @method string    getTafiliado() Returns the current record's "tafiliado" value
+ * @method string    getActivo()    Returns the current record's "activo" value
+ * @method string    getGrupofam()  Returns the current record's "grupofam" value
+ * @method Internado getInternado() Returns the current record's "Internado" value
+ * @method Afiliado  setMatricula() Sets the current record's "matricula" value
+ * @method Afiliado  setPaterno()   Sets the current record's "paterno" value
+ * @method Afiliado  setMaterno()   Sets the current record's "materno" value
+ * @method Afiliado  setNombre()    Sets the current record's "nombre" value
+ * @method Afiliado  setHclinica()  Sets the current record's "hclinica" value
+ * @method Afiliado  setEmpresa()   Sets the current record's "empresa" value
+ * @method Afiliado  setTafiliado() Sets the current record's "tafiliado" value
+ * @method Afiliado  setActivo()    Sets the current record's "activo" value
+ * @method Afiliado  setGrupofam()  Sets the current record's "grupofam" value
+ * @method Afiliado  setInternado() Sets the current record's "Internado" value
  * 
  * @package    hcps
  * @subpackage model
@@ -97,7 +97,7 @@ abstract class BaseAfiliado extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasMany('Internado as Internaciones', array(
+        $this->hasOne('Internado', array(
              'local' => 'id',
              'foreign' => 'afiliado_id'));
 

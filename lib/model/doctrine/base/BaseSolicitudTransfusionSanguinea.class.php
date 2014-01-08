@@ -94,24 +94,30 @@ abstract class BaseSolicitudTransfusionSanguinea extends sfDoctrineRecord
         $this->setTableName('solicitud_transfusion_sanguinea');
         $this->hasColumn('internado_id', 'integer', null, array(
              'type' => 'integer',
+             'notnull' => true,
              ));
         $this->hasColumn('quirofano', 'string', 50, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 50,
              ));
         $this->hasColumn('requiere_transfusion_de', 'string', 1, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 1,
              ));
         $this->hasColumn('cumplirse_enforma', 'string', 1, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 1,
              ));
         $this->hasColumn('fecha_prog_quirurgica', 'date', null, array(
              'type' => 'date',
+             'notnull' => true,
              ));
         $this->hasColumn('hora_prog_quirurgica', 'time', null, array(
              'type' => 'time',
+             'notnull' => true,
              ));
         $this->hasColumn('quirofano_prog_quirurgica', 'string', 10, array(
              'type' => 'string',
@@ -120,9 +126,11 @@ abstract class BaseSolicitudTransfusionSanguinea extends sfDoctrineRecord
         $this->hasColumn('cantidad_requerida', 'integer', 4, array(
              'type' => 'integer',
              'length' => 4,
+             'notnull' => true,
              ));
         $this->hasColumn('cantidad_requerida_unidad', 'string', 10, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 10,
              ));
         $this->hasColumn('observaciones', 'string', 200, array(
@@ -131,9 +139,11 @@ abstract class BaseSolicitudTransfusionSanguinea extends sfDoctrineRecord
              ));
         $this->hasColumn('fecha_solicitud', 'date', null, array(
              'type' => 'date',
+             'notnull' => true,
              ));
         $this->hasColumn('hora_solicitud', 'time', null, array(
              'type' => 'time',
+             'notnull' => true,
              ));
         $this->hasColumn('medico_id', 'integer', null, array(
              'type' => 'integer',

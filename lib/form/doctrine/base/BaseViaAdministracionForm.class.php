@@ -23,7 +23,7 @@ abstract class BaseViaAdministracionForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'id'         => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'nombre'     => new sfValidatorString(array('max_length' => 100, 'required' => false)),
+      'nombre'     => new sfValidatorString(array('max_length' => 100)),
       'created_at' => new myValidatorDojoDateTime(),
       'updated_at' => new myValidatorDojoDateTime(),
     ));

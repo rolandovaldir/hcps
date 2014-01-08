@@ -28,6 +28,8 @@ Afiliado:
     tafiliado:  { type: string(12), notnull: true } 
     activo:     { type: string(1), notnull: true, default: 1 } 
     grupofam:   { type: string(1), notnull: true, default: 1 } 
+  relations:
+    Internado: {local: id, foreign: afiliado_id, type: one, foreignAlias: Afiliados}
 
 PacienteOtroseguro:
   actAs: [Timestampable]
@@ -49,9 +51,11 @@ PacienteOtroseguro:
     departamento:     { type: string(45) }
     ciudad:           { type: string(45) }
     provincia:        { type: string(45) }
+  relations:
+    Internado: {local: id, foreign: noAfiliado_id, type: one, foreignAlias: OtroSeguro}
     
 Internado:
-  actAs: [Timestampable]  
+  actAs: [Timestampable] 
   columns:     
     afiliado_id:             { type: integer, notnull: false }
     noAfiliado_id:           { type: integer, notnull: false }
@@ -80,8 +84,8 @@ Internado:
     medio_referencia_salida: { type: string(200), notnull: true }
     motivo_refe_retorno:     { type: string(200), notnull: true }    
   relations: 
-    Afiliado:                    {local: afiliado_id, foreign: id, type: one, foreignAlias: Internaciones }      
-    PacienteOtroseguro:          {local: noAfiliado_id, foreign: id, type: one, foreignAlias: Internaciones }      
+    Afiliado:                    {local: afiliado_id, foreign: id, type: one, foreignAlias: Internado}      
+    PacienteOtroseguro:          {local: noAfiliado_id, foreign: id, type: one, foreignAlias: Internado}      
     OrdenMedica:                 {local: id, foreign: internado_id, type: many, foreignAlias: Internado}
     ServicioMantenimiento:       {local: id, foreign: internado_id, type: many, foreignAlias: Internado}
     JuntaMedica:                 {local: id, foreign: internado_id, type: many, foreignAlias: Internado}
@@ -212,10 +216,10 @@ OrdenMedica:
     internado_id:                  {type: integer, notnull: true}
     via_administracion_id:         {type: integer, notnull: true}
     fecha_hora:                    {type: timestamp}
-    nombre_medicamento_indicacion: {type: string(150)}
-    dosis_intervalo:               {type: string(150)}
-    fecha_inicio:                  {type: date}
-    fecha_terminacion:             {type: date}
+    nombre_medicamento_indicacion: {type: string(150), notnull: true}
+    dosis_intervalo:               {type: string(150), notnull: true}
+    fecha_inicio:                  {type: date, notnull: true}
+    fecha_terminacion:             {type: date, notnull: true}
   relations:  
     Internado:          {local: internado_id, foreign: id, type: one, foreignAlias: Ordenes} 
     ViaAdministracion:  {local: via_administracion_id, foreign: id, type: one, foreignAlias: Ordenes}
@@ -223,28 +227,28 @@ OrdenMedica:
 ViaAdministracion:
   actAs: [Timestampable]
   columns:
-    nombre: {type: string(100)}
+    nombre: {type: string(100), notnull: true}
   relations:
     OrdenMedica: {local: id, foreign: via_administracion_id, type: many, foreignAlias: Administracion}
 
 #--------------------------------------------------------
 
-ServicioMantenimiento:
-  actAs: [Timestampable]
-  columns:
-    internado_id:        {type: integer, notnull: true}
-    solicitante:         {type: string(80)}
-    sector:              {type: string(50)}
-    fecha_solicitante:   {type: date}
-    objeto_reparado:     {type: string(100)}
-    caracteristicas:     {type: string(250)}
-    trabajo_solicitado:  {type: string(2000)}
-    conformidad:         {type: string(250)}
-    reparado_por:        {type: string(150)}
-    importe :            {type: integer}
-    importe_fecha:       {type: date}
-  relations:
-    Internado: {local: internado_id, foreign: id, type: one, foreignAlias: Mantenimientos}
+#ServicioMantenimiento:
+#  actAs: [Timestampable]
+#  columns:
+#    internado_id:        {type: integer, notnull: true}
+#    solicitante:         {type: string(80), notnull: true}
+#    sector:              {type: string(50), notnull: true}
+#    fecha_solicitante:   {type: date, notnull: true}
+#    objeto_reparado:     {type: string(100), notnull: true}
+#    caracteristicas:     {type: string(250), notnull: true}
+#    trabajo_solicitado:  {type: string(2000)}
+#    conformidad:         {type: string(250)}
+#    reparado_por:        {type: string(150)}
+#    importe :            {type: integer}
+#    importe_fecha:       {type: date}
+#  relations:
+#    Internado: {local: internado_id, foreign: id, type: one, foreignAlias: Mantenimientos}
 
 #--------------------------------------------------------
 
@@ -252,10 +256,10 @@ JuntaMedica:
   actAs: [Timestampable]
   columns:
     internado_id:     {type: integer, notnull: true}
-    medico_solicitante:      {type: string(100)}
-    servicio:                {type: string(45)}
-    especialidades:          {type: string(45)}
-    fecha_junta:             {type: date}
+    medico_solicitante:      {type: string(100), notnull: true}
+    servicio:                {type: string(45), notnull: true}
+    especialidades:          {type: string(45), notnull: true}
+    fecha_junta:             {type: date, notnull: true}
     diagnostico_establecido: {type: string(2000)}
     relacion_junta:          {type: string(2500)}
     conclusiones:            {type: string(2000)}
@@ -269,8 +273,8 @@ MedicoParticular:
   actAs: [Timestampable]
   columns:
     junta_medica_id: {type: integer, notnull: true}
-    nombre:          {type: string(150)}
-    especialidad:    {type: string(100)}
+    nombre:          {type: string(150), notnull: true}
+    especialidad:    {type: string(100), notnull: true}
     cargo:           {type: string(50)}
   relations:
     JuntaMedica: {local: junta_medica_id, foreign: id, type: one, foreignAlias: Particulares}
@@ -281,14 +285,14 @@ ExamenFisicoRecienNacido:
   actAs: [Timestampable]
   columns:
     internado_id:         {type: integer, notnull: true}
-    ap_paterno:           {type: string(45)}
-    ap_materno:           {type: string(45)}
-    fecha_nacimiento:     {type: date}
-    sexo:                 {type: string(20)}
-    peso_nacimiento:      {type: string(45)}
-    talla:                {type: string(45)}
-    circunferencia_torax: {type: string(20)}
-    numero_cuna:          {type: integer}
+    ap_paterno:           {type: string(45), notnull: true}
+    ap_materno:           {type: string(45), notnull: true}
+    fecha_nacimiento:     {type: date, notnull: true}
+    sexo:                 {type: boolean, notnull: true}
+    peso_nacimiento:      {type: string(45), notnull: true}
+    talla:                {type: string(45), notnull: true}
+    circunferencia_torax: {type: string(20), notnull: true}
+    numero_cuna:          {type: integer, notnull: true}
     fecha_adminision:     {type: date}
     fecha_egreso:         {type: date}
   relations:
@@ -299,21 +303,21 @@ Apgar:
   actAs: [Timestampable]
   columns:
     examen_fisico_recien_nacido_id: {type: integer, notnull: true}
-    nacer_egresar:                  {type: boolean}
-    apariencia:                     {type: string(100)}
-    piel:                           {type: string(100)}
-    cabeza:                         {type: string(100)}
-    ojos:                           {type: string(100)}
-    oidos_nariz_garganta:           {type: string(100)}
-    torax:                          {type: string(100)}
-    pulmones:                       {type: string(100)}
-    corazon:                        {type: string(100)}
-    abdomen:                        {type: string(100)}
-    genitales:                      {type: string(100)}
-    torso_espina:                   {type: string(100)}
-    extremidades:                   {type: string(100)}
-    reflejos:                       {type: string(100)}
-    ano:                            {type: string(100)}
+    nacer_egresar:                  {type: boolean, notnull: true}
+    apariencia:                     {type: string(100), notnull: true}
+    piel:                           {type: string(100), notnull: true}
+    cabeza:                         {type: string(100), notnull: true}
+    ojos:                           {type: string(100), notnull: true}
+    oidos_nariz_garganta:           {type: string(100), notnull: true}
+    torax:                          {type: string(100), notnull: true}
+    pulmones:                       {type: string(100), notnull: true}
+    corazon:                        {type: string(100), notnull: true}
+    abdomen:                        {type: string(100), notnull: true}
+    genitales:                      {type: string(100), notnull: true}
+    torso_espina:                   {type: string(100), notnull: true}
+    extremidades:                   {type: string(100), notnull: true}
+    reflejos:                       {type: string(100), notnull: true}
+    ano:                            {type: string(100), notnull: true}
   relations:
     ExamenFisicoRecienNacido: {local: examen_fisico_recien_nacido_id, foreign: id, type: one, foreignAlias: Apgars}
 
@@ -323,14 +327,14 @@ SolicitudInterconsulta:
   actAs: [Timestampable]
   columns:
     internado_id:    {type: integer, notnull: true}
-    dirigida_a:      {type: string(50)}
-    especialidad:    {type: string(50)}
-    motivo:          {type: string(2000)}
-    datos_clinicos:  {type: string(2000)}
-    informe_medico:  {type: string(2500)}
+    dirigida_a:      {type: string(50), notnull: true}
+    especialidad:    {type: string(50), notnull: true}
+    motivo:          {type: string(2000), notnull: true}
+    datos_clinicos:  {type: string(2000), notnull: true}
+    informe_medico:  {type: string(2500), notnull: true}
     conclusiones:    {type: string(2500)}
-    hora_solicitud:  {type: time}
-    fecha_solicitud: {type: date}
+    hora_solicitud:  {type: time, notnull: true}
+    fecha_solicitud: {type: date, notnull: true}
   relations:
     Internado:         {local: internado_id, foreign: id, type: one, foreignAlias: Interconsultas}
     DetalleMedicacion: {local: id, foreign: solicitud_interconsulta_id, type: many, foreignAlias: Interconsulta}
@@ -339,9 +343,9 @@ DetalleMedicacion:
   actAs: [Timestampable]
   columns:
     solicitud_interconsulta_id:  {type: integer, notnull: true}
-    medicacion_utilizada:        {type: string(150)}
-    dosis:                       {type: string(45)}
-    fecha_inicio:                {type: date}
+    medicacion_utilizada:        {type: string(150), notnull: true}
+    dosis:                       {type: string(45), notnull: true}
+    fecha_inicio:                {type: date, notnull: true}
   relations:
     SolicitudInterconsulta: {local: solicitud_interconsulta_id, foreign: id, type: one, foreignAlias: Medicaciones}
     
@@ -352,9 +356,9 @@ SolicitudServicio:
   columns:
     internado_id:           {type: integer, notnull: true}
     atencion_id:            {type: integer, notnull: true}
-    para:                   {type: string(2000)}
-    diagnostico_presuncion: {type: string(250)}
-    material_utilizado:     {type: string(2000)}
+    para:                   {type: string(2000), notnull: true}
+    diagnostico_presuncion: {type: string(250), notnull: true}
+    material_utilizado:     {type: string(2000), notnull: true}
   relations:
     Internado: {local: internado_id, foreign: id, type: one, foreignAlias: SolicitudServicios}
     Atencion:  {local: atencion_id, foreign: id, type: one, foreignAlias: SolicitudServicios}
@@ -362,7 +366,7 @@ SolicitudServicio:
 Atencion:
   actAs: [Timestampable]
   columns:
-    nombre: {type: string(100)}
+    nombre: {type: string(100), notnull: true}
   relations:
     SolicitudServicio: {local: id, foreign: atencion_id, type: many, foreignAlias: Atencion}
 #--------------------------------------------------------
@@ -371,8 +375,8 @@ SolicitudReposicionMaterial:
   actAs: [Timestampable]
   columns:
     internado_id: {type: integer, notnull: true}
-    unidad:       {type: string(100)}
-    encargado:    {type: string(150)}
+    unidad:       {type: string(100), notnull: true}
+    encargado:    {type: string(150), notnull: true}
   relations:
     Internado:       {local: internado_id, foreign: id, type: one, foreignAlias: SolicitudMateriales}
     DetalleMaterial: {local: id, foreign: solicitud_reposicion_material_id, type: many, foreignAlias: SolicitudMaterial}
@@ -381,12 +385,12 @@ DetalleMaterial:
   actAs: [Timestampable]
   columns:
     solicitud_reposicion_material_id: {type: integer, notnull: true}
-    codigo:                           {type: string(45)}
-    descripcion:                      {type: string(100)}
-    unidad:                           {type: integer}
-    saldo_anterior:                   {type: integer}
-    reposicion_solicitada:            {type: integer}
-    saldo_actual:                     {type: integer}
+    codigo:                           {type: string(45), notnull: true}
+    descripcion:                      {type: string(100), notnull: true}
+    unidad:                           {type: string(10), notnull: true}
+    saldo_anterior:                   {type: integer, notnull: true}
+    reposicion_solicitada:            {type: integer, notnull: true}
+    saldo_actual:                     {type: integer, notnull: true}
   relations:
     SolicitudReposicionMaterial: {local: solicitud_reposicion_material_id, foreign: id, type: one,foreignAlias: Materiales}
 
@@ -396,15 +400,15 @@ SignosVitalesNursery:
   actAs: [Timestampable]
   columns:
     internado_id:  {type: integer, notnull: true}
-    fecha:         {type: date}
-    hora:          {type: time}
-    fc_nursery:    {type: string(45)}
-    fr_nursery:    {type: string(45)}
-    to_nursery:    {type: string(45)}
-    diu_nursery:   {type: string(45)}
-    cat_nursery:   {type: string(45)}
-    lm_nursery:    {type: string(45)}
-    residuo:       {type: string(45)}
+    fecha:         {type: date, notnull: true}
+    hora:          {type: time, notnull: true}
+    fc_nursery:    {type: string(45), notnull: true}
+    fr_nursery:    {type: string(45), notnull: true}
+    to_nursery:    {type: string(45), notnull: true}
+    diu_nursery:   {type: string(45), notnull: true}
+    cat_nursery:   {type: string(45), notnull: true}
+    lm_nursery:    {type: string(45), notnull: true}
+    residuo:       {type: string(45), notnull: true}
     observaciones: {type: string(45)}
   relations:
     Internado: {local: internado_id, foreign: id, type: one, foreignAlias: Nurserys}
@@ -415,10 +419,10 @@ NotasEnfermeria:
   actAs: [Timestampable]
   columns:
     internado_id:  {type: integer, notnull: true}
-    fecha:          {type: date}
-    hora:           {type: time}
-    procedimientos: {type: string(150)}
-    observaciones:  {type: string(500)}
+    fecha:          {type: date, notnull: true}
+    hora:           {type: time, notnull: true}
+    procedimientos: {type: string(150), notnull: true}
+    observaciones:  {type: string(500), notnull: true}
   relations:
     Internado:   {local: internado_id, foreign: id, type: one, foreignAlias: Enfermerias}
 
@@ -428,9 +432,9 @@ NotasEvolucion:
   actAs: [Timestampable]
   columns:
     internado_id: {type: integer, notnull: true}
-    fecha_hora:   {type: timestamp}
-    numero_prob:  {type: integer}
-    nota_soap:    {type: string(1500)}
+    fecha_hora:   {type: timestamp, notnull: true}
+    numero_prob:  {type: integer, notnull: true}
+    nota_soap:    {type: string(1500), notnull: true}
   relations:
     Internado:  {local: internado_id, foreign: id, type: one, foreignAlias: Evoluciones}
 
@@ -452,9 +456,9 @@ AutorizacionAltaSolicitada:
   actAs: [Timestampable]
   columns:     
     internado_id:          { type: integer , notnull: true }
-    nombre_familiar:       { type: string(100) }
-    ci_familiar:           { type: string(10) } 
-    fecha_hora:            { type: timestamp }
+    nombre_familiar:       { type: string(100), notnull: true}
+    ci_familiar:           { type: string(10), notnull: true} 
+    fecha_hora:            { type: timestamp, notnull: true}
   relations: 
     Internado: { local: internado_id, foreign: id, type: one, foreignAlias: AutorizacionesAltaSolicitada }
 
@@ -463,16 +467,16 @@ AutorizacionAutopsia:
   actAs: [Timestampable]  
   columns:     
     internado_id:          { type: integer , notnull: true }
-    nombre_familiar1:      { type: string(100) }
-    tipo_parentesco1:      { type: string(30) }
-    ci_familiar1:          { type: string(10) } 
-    nombre_familiar2:      { type: string(100) }
+    nombre_familiar1:      { type: string(100), notnull: true}
+    tipo_parentesco1:      { type: string(30), notnull: true}
+    ci_familiar1:          { type: string(10), notnull: true} 
+    nombre_familiar2:      { type: string(100)}
     tipo_parentesco2:      { type: string(30) }
     ci_familiar2:          { type: string(10) } 
     nombre_familiar3:      { type: string(100) }
     tipo_parentesco3:      { type: string(30) }
     ci_familiar3:          { type: string(10) } 
-    fecha_hora:            { type: timestamp }
+    fecha_hora:            { type: timestamp, notnull: true}
   relations:
     Internado: { local: internado_id, foreign: id, type: one, foreignAlias: AutorizacionesAutopsia }
 
@@ -482,12 +486,12 @@ ProgramacionCirugia:
   columns:     
     internado_id:                { type: integer , notnull: true }
     medico_id:                   { type: integer }
-    operacion_fecha:             { type: date }
-    operacion_hora:              { type: string(100) }
-    diagnostico_preoperatorio:   { type: string(600) }
-    tratamiento_quirurgico:      { type: string(500) } 
-    anestesia:                   { type: string(250) }
-    otros:                       { type: string(250) } 
+    operacion_fecha:             { type: date, notnull: true }
+    operacion_hora:              { type: string(100), notnull: true }
+    diagnostico_preoperatorio:   { type: string(600), notnull: true }
+    tratamiento_quirurgico:      { type: string(500), notnull: true } 
+    anestesia:                   { type: string(250), notnull: true }
+    otros:                       { type: string(250), notnull: true } 
     examenes_auxiliares:         { type: array }
     fecha:                       { type: date }
     enfermera_id:                { type: integer }
@@ -502,13 +506,13 @@ SolicitudExamenLaboratorioClinico:
   columns:     
     internado_id:             { type: integer, notnull: true }
     vobo_medico_id:           { type: integer }
-    examenes:                 { type: array }
-    material_enviado:         { type: string(45) } 
+    examenes:                 { type: array, notnull: true }
+    material_enviado:         { type: string(45), notnull: true } 
     otros_examenes:           { type: string(45) }
-    diagnostico_presuntivo:   { type: string(45) }
+    diagnostico_presuntivo:   { type: string(45), notnull: true }
     medico_id:                { type: integer }
-    lugar:                    { type: string(45) }
-    fecha:                    { type: date } 
+    lugar:                    { type: string(45), notnull: true }
+    fecha:                    { type: date, notnull: true } 
   relations:
     Internado: { local: internado_id, foreign: id, type: one, foreignAlias: SolicitudesExamenLaboratorioClinico }
     TipoExamenLaboratorioClinico: 
@@ -588,11 +592,11 @@ UsoHospitalario:
   actAs: [Timestampable]  
   columns:     
     internado_id:           { type: integer, notnull: true }    
-    lugar:                  { type: string(60) }
-    fecha:                  { type: date }
+    lugar:                  { type: string(60), notnull: true }
+    fecha:                  { type: date, notnull: true }
     medico_id:              { type: integer }    
-    codigo:                 { type: string(45) }
-    especialidad:           { type: string(45) }
+    codigo:                 { type: string(45), notnull: true }
+    especialidad:           { type: string(45), notnull: true }
   relations:
     Internado: { local: internado_id, foreign: id, type: one, foreignAlias: ResumenesAlta }
 
@@ -601,11 +605,11 @@ DetalleUsoHospitalario:
   actAs: [Timestampable]  
   columns:     
     uso_hospitalario_id:    { type: integer, notnull: true }
-    codigo_cbm:             { type: string(40) }
-    detalle:                { type: string(150) }    
-    cantidad:               { type: string(10) }
-    unidad:                 { type: string(20) }
-    cod_farmacia_ibm:       { type: string(25) }
+    codigo_cbm:             { type: string(40), notnull: true }
+    detalle:                { type: string(150), notnull: true }    
+    cantidad:               { type: string(10), notnull: true }
+    unidad:                 { type: string(20), notnull: true }
+    cod_farmacia_ibm:       { type: string(25), notnull: true }
   relations:
     UsoHospitalario: { local: uso_hospitalario_id, foreign: id, type: one, foreignAlias: DetallesUsoHospitalario }
       
@@ -708,18 +712,18 @@ DetalleListaDieta:
 SolicitudTransfusionSanguinea:
   actAs: [Timestampable]  
   columns:     
-    internado_id:                 { type: integer }
-    quirofano:                    { type: string(50) }
-    requiere_transfusion_de:      { type: string(1) }    
-    cumplirse_enforma:            { type: string(1) }
-    fecha_prog_quirurgica:        { type: date }
-    hora_prog_quirurgica:         { type: time }
+    internado_id:                 { type: integer, notnull: true }
+    quirofano:                    { type: string(50), notnull: true }
+    requiere_transfusion_de:      { type: string(1), notnull: true }    
+    cumplirse_enforma:            { type: string(1), notnull: true }
+    fecha_prog_quirurgica:        { type: date, notnull: true }
+    hora_prog_quirurgica:         { type: time, notnull: true }
     quirofano_prog_quirurgica:    { type: string(10) }    
-    cantidad_requerida:           { type: integer, length: 4 }
-    cantidad_requerida_unidad:    { type: string(10) }
+    cantidad_requerida:           { type: integer, length: 4, notnull: true }
+    cantidad_requerida_unidad:    { type: string(10), notnull: true }
     observaciones:                { type: string(200) }
-    fecha_solicitud:              { type: date }
-    hora_solicitud:               { type: time }
+    fecha_solicitud:              { type: date, notnull: true }
+    hora_solicitud:               { type: time, notnull: true }
     medico_id:                    { type: integer }
     numero:                       { type: string(45) }
     fecha_recepcion_solicitud:    { type: date }
@@ -739,7 +743,7 @@ SolicitudTransfusionSanguinea:
 InformeEstadisticoAdmEgreso:
   actAs: [Timestampable]  
   columns:     
-    internado_id:               { type: integer }
+    internado_id:               { type: integer, notnull: true }
     urgencia_persona_ref:       { type: string(150) }    
     urgencia_direccion_calle:   { type: string(70) }
     urgencia_direccion_no:      { type: string(10) }
@@ -751,9 +755,9 @@ InformeEstadisticoAdmEgreso:
 PapeletaPedidoMaterial:
   actAs: [Timestampable]  
   columns:
-    internado_id:          { type: integer }
+    internado_id:          { type: integer, notnull: true }
     enfermera_id:          { type: integer }
-    fecha_solicitud:       { type: date } 
+    fecha_solicitud:       { type: date, notnull: true } 
     entregado:             { type: boolean }
   relations:
     Internado: { local: internado_id, foreign: id, type: one, foreignAlias: PapeletasPedidoMaterial }
@@ -763,9 +767,9 @@ PapeletaPedidoMaterial:
 DetallePapeletaPedidoMaterial:
   actAs: [Timestampable]  
   columns:
-    papeleta_pedido_material_id:  { type: integer }    
-    columna1:                     { type: string(15) }
-    columna2:                     { type: string(150) }
-    columna3:                     { type: string(25) }
+    papeleta_pedido_material_id:  { type: integer, notnull: true }    
+    columna1:                     { type: string(15), notnull: true }
+    columna2:                     { type: string(150), notnull: true }
+    columna3:                     { type: string(25), notnull: true }
   relations:
     PapeletaPedidoMaterial:    { local: papeleta_pedido_material_id, foreign: id, type: one, foreignAlias: PapeletaPedidoMaterial }

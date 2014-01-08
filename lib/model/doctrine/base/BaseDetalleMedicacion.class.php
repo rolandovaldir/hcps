@@ -38,14 +38,17 @@ abstract class BaseDetalleMedicacion extends sfDoctrineRecord
              ));
         $this->hasColumn('medicacion_utilizada', 'string', 150, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 150,
              ));
         $this->hasColumn('dosis', 'string', 45, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 45,
              ));
         $this->hasColumn('fecha_inicio', 'date', null, array(
              'type' => 'date',
+             'notnull' => true,
              ));
     }
 

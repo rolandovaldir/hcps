@@ -56,22 +56,27 @@ abstract class BaseSolicitudInterconsulta extends sfDoctrineRecord
              ));
         $this->hasColumn('dirigida_a', 'string', 50, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 50,
              ));
         $this->hasColumn('especialidad', 'string', 50, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 50,
              ));
         $this->hasColumn('motivo', 'string', 2000, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 2000,
              ));
         $this->hasColumn('datos_clinicos', 'string', 2000, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 2000,
              ));
         $this->hasColumn('informe_medico', 'string', 2500, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 2500,
              ));
         $this->hasColumn('conclusiones', 'string', 2500, array(
@@ -80,9 +85,11 @@ abstract class BaseSolicitudInterconsulta extends sfDoctrineRecord
              ));
         $this->hasColumn('hora_solicitud', 'time', null, array(
              'type' => 'time',
+             'notnull' => true,
              ));
         $this->hasColumn('fecha_solicitud', 'date', null, array(
              'type' => 'date',
+             'notnull' => true,
              ));
     }
 

@@ -68,25 +68,31 @@ abstract class BaseProgramacionCirugia extends sfDoctrineRecord
              ));
         $this->hasColumn('operacion_fecha', 'date', null, array(
              'type' => 'date',
+             'notnull' => true,
              ));
         $this->hasColumn('operacion_hora', 'string', 100, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 100,
              ));
         $this->hasColumn('diagnostico_preoperatorio', 'string', 600, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 600,
              ));
         $this->hasColumn('tratamiento_quirurgico', 'string', 500, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 500,
              ));
         $this->hasColumn('anestesia', 'string', 250, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 250,
              ));
         $this->hasColumn('otros', 'string', 250, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 250,
              ));
         $this->hasColumn('examenes_auxiliares', 'array', null, array(

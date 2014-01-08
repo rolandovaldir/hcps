@@ -44,22 +44,27 @@ abstract class BaseDetalleUsoHospitalario extends sfDoctrineRecord
              ));
         $this->hasColumn('codigo_cbm', 'string', 40, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 40,
              ));
         $this->hasColumn('detalle', 'string', 150, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 150,
              ));
         $this->hasColumn('cantidad', 'string', 10, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 10,
              ));
         $this->hasColumn('unidad', 'string', 20, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 20,
              ));
         $this->hasColumn('cod_farmacia_ibm', 'string', 25, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 25,
              ));
     }

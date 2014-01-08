@@ -8,7 +8,7 @@
  * @property integer $solicitud_reposicion_material_id
  * @property string $codigo
  * @property string $descripcion
- * @property integer $unidad
+ * @property string $unidad
  * @property integer $saldo_anterior
  * @property integer $reposicion_solicitada
  * @property integer $saldo_actual
@@ -17,7 +17,7 @@
  * @method integer                     getSolicitudReposicionMaterialId()    Returns the current record's "solicitud_reposicion_material_id" value
  * @method string                      getCodigo()                           Returns the current record's "codigo" value
  * @method string                      getDescripcion()                      Returns the current record's "descripcion" value
- * @method integer                     getUnidad()                           Returns the current record's "unidad" value
+ * @method string                      getUnidad()                           Returns the current record's "unidad" value
  * @method integer                     getSaldoAnterior()                    Returns the current record's "saldo_anterior" value
  * @method integer                     getReposicionSolicitada()             Returns the current record's "reposicion_solicitada" value
  * @method integer                     getSaldoActual()                      Returns the current record's "saldo_actual" value
@@ -47,23 +47,30 @@ abstract class BaseDetalleMaterial extends sfDoctrineRecord
              ));
         $this->hasColumn('codigo', 'string', 45, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 45,
              ));
         $this->hasColumn('descripcion', 'string', 100, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 100,
              ));
-        $this->hasColumn('unidad', 'integer', null, array(
-             'type' => 'integer',
+        $this->hasColumn('unidad', 'string', 10, array(
+             'type' => 'string',
+             'notnull' => true,
+             'length' => 10,
              ));
         $this->hasColumn('saldo_anterior', 'integer', null, array(
              'type' => 'integer',
+             'notnull' => true,
              ));
         $this->hasColumn('reposicion_solicitada', 'integer', null, array(
              'type' => 'integer',
+             'notnull' => true,
              ));
         $this->hasColumn('saldo_actual', 'integer', null, array(
              'type' => 'integer',
+             'notnull' => true,
              ));
     }
 

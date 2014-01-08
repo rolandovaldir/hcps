@@ -28,7 +28,7 @@ generator:
         display: [fecha_junta, medico_solicitante]
       form:    
         display:
-          Datos de la Junta Médica:       [fecha_junta, medico_solicitante, servicio, especialidades, diagnostico_establecido, conclusiones, tac, contraste]
+          Datos de la Junta Médica:       [fecha_junta, medico_solicitante, servicio, especialidades, diagnostico_establecido, relacion_junta, conclusiones, tac, contraste]
           Lista de Médicos Participantes: [_medicos_participantes]
           Adicionar Médico Participante:  [medico]
       edit:    

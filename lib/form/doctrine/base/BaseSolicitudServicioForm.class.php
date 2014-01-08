@@ -29,9 +29,9 @@ abstract class BaseSolicitudServicioForm extends BaseFormDoctrine
       'id'                     => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'internado_id'           => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'))),
       'atencion_id'            => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Atencion'))),
-      'para'                   => new sfValidatorString(array('max_length' => 2000, 'required' => false)),
-      'diagnostico_presuncion' => new sfValidatorString(array('max_length' => 250, 'required' => false)),
-      'material_utilizado'     => new sfValidatorString(array('max_length' => 2000, 'required' => false)),
+      'para'                   => new sfValidatorString(array('max_length' => 2000)),
+      'diagnostico_presuncion' => new sfValidatorString(array('max_length' => 250)),
+      'material_utilizado'     => new sfValidatorString(array('max_length' => 2000)),
       'created_at'             => new myValidatorDojoDateTime(),
       'updated_at'             => new myValidatorDojoDateTime(),
     ));

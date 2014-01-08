@@ -62,9 +62,11 @@ abstract class BaseSolicitudExamenLaboratorioClinico extends sfDoctrineRecord
              ));
         $this->hasColumn('examenes', 'array', null, array(
              'type' => 'array',
+             'notnull' => true,
              ));
         $this->hasColumn('material_enviado', 'string', 45, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 45,
              ));
         $this->hasColumn('otros_examenes', 'string', 45, array(
@@ -73,6 +75,7 @@ abstract class BaseSolicitudExamenLaboratorioClinico extends sfDoctrineRecord
              ));
         $this->hasColumn('diagnostico_presuntivo', 'string', 45, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 45,
              ));
         $this->hasColumn('medico_id', 'integer', null, array(
@@ -80,10 +83,12 @@ abstract class BaseSolicitudExamenLaboratorioClinico extends sfDoctrineRecord
              ));
         $this->hasColumn('lugar', 'string', 45, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 45,
              ));
         $this->hasColumn('fecha', 'date', null, array(
              'type' => 'date',
+             'notnull' => true,
              ));
     }
 

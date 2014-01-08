@@ -14,14 +14,14 @@ abstract class BaseSolicitudInterconsultaFormFilter extends BaseFormFilterDoctri
   {
     $this->setWidgets(array(
       'internado_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => true)),
-      'dirigida_a'      => new sfWidgetFormFilterInput(),
-      'especialidad'    => new sfWidgetFormFilterInput(),
-      'motivo'          => new sfWidgetFormFilterInput(),
-      'datos_clinicos'  => new sfWidgetFormFilterInput(),
-      'informe_medico'  => new sfWidgetFormFilterInput(),
+      'dirigida_a'      => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'especialidad'    => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'motivo'          => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'datos_clinicos'  => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'informe_medico'  => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'conclusiones'    => new sfWidgetFormFilterInput(),
-      'hora_solicitud'  => new sfWidgetFormFilterInput(),
-      'fecha_solicitud' => new sfWidgetFormFilterDate(array('from_date' => new myWidgetFormDojoDate(), 'to_date' => new myWidgetFormDojoDate(), 'filter_template' => '%date_range% %empty_checkbox% %empty_label%', 'template' => '<table class="onlyFormat"><tr><td>from</td><td>%from_date%</td><tr/><tr><td>to</td><td>%to_date%</td></tr></table>')),
+      'hora_solicitud'  => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'fecha_solicitud' => new sfWidgetFormFilterDate(array('from_date' => new myWidgetFormDojoDate(), 'to_date' => new myWidgetFormDojoDate(), 'filter_template' => '%date_range% %empty_checkbox% %empty_label%', 'template' => '<table class="onlyFormat"><tr><td>from</td><td>%from_date%</td><tr/><tr><td>to</td><td>%to_date%</td></tr></table>', 'with_empty' => false)),
       'created_at'      => new sfWidgetFormFilterDate(array('from_date' => new myWidgetFormDojoDate(), 'to_date' => new myWidgetFormDojoDate(), 'filter_template' => '%date_range% %empty_checkbox% %empty_label%', 'template' => '<table class="onlyFormat"><tr><td>from</td><td>%from_date%</td><tr/><tr><td>to</td><td>%to_date%</td></tr></table>', 'with_empty' => false)),
       'updated_at'      => new sfWidgetFormFilterDate(array('from_date' => new myWidgetFormDojoDate(), 'to_date' => new myWidgetFormDojoDate(), 'filter_template' => '%date_range% %empty_checkbox% %empty_label%', 'template' => '<table class="onlyFormat"><tr><td>from</td><td>%from_date%</td><tr/><tr><td>to</td><td>%to_date%</td></tr></table>', 'with_empty' => false)),
     ));

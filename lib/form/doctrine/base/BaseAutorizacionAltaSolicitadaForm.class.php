@@ -27,9 +27,9 @@ abstract class BaseAutorizacionAltaSolicitadaForm extends BaseFormDoctrine
     $this->setValidators(array(
       'id'              => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'internado_id'    => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'))),
-      'nombre_familiar' => new sfValidatorString(array('max_length' => 100, 'required' => false)),
-      'ci_familiar'     => new sfValidatorString(array('max_length' => 10, 'required' => false)),
-      'fecha_hora'      => new myValidatorDojoDateTime(array('required' => false)),
+      'nombre_familiar' => new sfValidatorString(array('max_length' => 100)),
+      'ci_familiar'     => new sfValidatorString(array('max_length' => 10)),
+      'fecha_hora'      => new myValidatorDojoDateTime(),
       'created_at'      => new myValidatorDojoDateTime(),
       'updated_at'      => new myValidatorDojoDateTime(),
     ));

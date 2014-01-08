@@ -25,6 +25,7 @@ abstract class BaseAtencion extends sfDoctrineRecord
         $this->setTableName('atencion');
         $this->hasColumn('nombre', 'string', 100, array(
              'type' => 'string',
+             'notnull' => true,
              'length' => 100,
              ));
     }
