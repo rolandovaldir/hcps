@@ -1,6 +1,6 @@
 AdministracionMedicamento:
   AdministracionMedicamento_1:
-    Internado: Internado_3
+    Internado: INTER3
     enfermera_id: '1'
     medicamento_solucion: suero
     tipo: s
@@ -9,7 +9,7 @@ AdministracionMedicamento:
     created_at: '2014-01-08 19:07:19'
     updated_at: '2014-01-08 19:07:19'
   AdministracionMedicamento_2:
-    Internado: Internado_1
+    Internado: INTER1
     enfermera_id: '1'
     medicamento_solucion: 'fddsa fdsafdsa'
     tipo: s
@@ -18,7 +18,7 @@ AdministracionMedicamento:
     created_at: '2014-01-08 19:55:38'
     updated_at: '2014-01-08 19:58:36'
   AdministracionMedicamento_3:
-    Internado: Internado_1
+    Internado: INTER1
     enfermera_id: '1'
     medicamento_solucion: 'infusion de plasma'
     tipo: s
@@ -27,7 +27,7 @@ AdministracionMedicamento:
     created_at: '2014-01-09 16:57:59'
     updated_at: '2014-01-09 16:57:59'
   AdministracionMedicamento_4:
-    Internado: Internado_2
+    Internado: INTER2
     enfermera_id: '1'
     medicamento_solucion: penicilina
     tipo: m
@@ -36,7 +36,7 @@ AdministracionMedicamento:
     created_at: '2014-01-09 17:13:54'
     updated_at: '2014-01-09 17:13:54'
   AdministracionMedicamento_5:
-    Internado: Internado_2
+    Internado: INTER2
     enfermera_id: '1'
     medicamento_solucion: 'antiinflamatorio x'
     tipo: m
@@ -45,7 +45,7 @@ AdministracionMedicamento:
     created_at: '2014-01-09 17:14:18'
     updated_at: '2014-01-09 17:14:18'
   AdministracionMedicamento_6:
-    Internado: Internado_4
+    Internado: INTER4
     enfermera_id: '1'
     medicamento_solucion: 'pastillas desinflamantes'
     tipo: m
@@ -54,7 +54,7 @@ AdministracionMedicamento:
     created_at: '2014-01-09 17:27:18'
     updated_at: '2014-01-09 17:27:18'
   AdministracionMedicamento_7:
-    Internado: Internado_4
+    Internado: INTER4
     enfermera_id: '1'
     medicamento_solucion: analgesico
     tipo: m
@@ -63,7 +63,7 @@ AdministracionMedicamento:
     created_at: '2014-01-09 17:27:37'
     updated_at: '2014-01-09 17:27:37'
   AdministracionMedicamento_8:
-    Internado: Internado_4
+    Internado: INTER4
     enfermera_id: '1'
     medicamento_solucion: analgesico
     tipo: m
@@ -72,7 +72,7 @@ AdministracionMedicamento:
     created_at: '2014-01-09 17:27:54'
     updated_at: '2014-01-09 17:27:54'
   AdministracionMedicamento_9:
-    Internado: Internado_4
+    Internado: INTER4
     enfermera_id: '1'
     medicamento_solucion: 'suero '
     tipo: s
@@ -87,7 +87,7 @@ Atencion:
     updated_at: '2014-01-08 14:03:26'
 AtencionEnfermeria:
   AtencionEnfermeria_1:
-    Internado: Internado_1
+    Internado: INTER1
     enfermera_id: null
     lugar: ''
     codigo: ''
@@ -154,7 +154,7 @@ AtencionEnfermeria:
     created_at: '2014-01-09 16:58:47'
     updated_at: '2014-01-09 16:58:47'
   AtencionEnfermeria_2:
-    Internado: Internado_2
+    Internado: INTER2
     enfermera_id: null
     lugar: ''
     codigo: ''
@@ -221,7 +221,7 @@ AtencionEnfermeria:
     created_at: '2014-01-09 17:15:44'
     updated_at: '2014-01-09 17:15:44'
   AtencionEnfermeria_3:
-    Internado: Internado_4
+    Internado: INTER4
     enfermera_id: null
     lugar: ''
     codigo: ''
@@ -289,21 +289,21 @@ AtencionEnfermeria:
     updated_at: '2014-01-09 17:29:05'
 AutorizacionAltaSolicitada:
   AutorizacionAltaSolicitada_1:
-    Internado: Internado_1
+    Internado: INTER1
     nombre_familiar: 'joaqui terrazas'
     ci_familiar: '56678548'
     fecha_hora: '2014-01-01 01:45:00'
     created_at: '2014-01-09 16:59:21'
     updated_at: '2014-01-09 16:59:21'
   AutorizacionAltaSolicitada_2:
-    Internado: Internado_2
+    Internado: INTER2
     nombre_familiar: 'Guido Aruquipa'
     ci_familiar: '954985'
     fecha_hora: '2014-01-01 02:00:00'
     created_at: '2014-01-09 17:17:06'
     updated_at: '2014-01-09 17:17:06'
   AutorizacionAltaSolicitada_3:
-    Internado: Internado_4
+    Internado: INTER4
     nombre_familiar: 'Genoveba Jimenez'
     ci_familiar: '4875875'
     fecha_hora: '2014-01-01 08:00:00'
@@ -311,7 +311,7 @@ AutorizacionAltaSolicitada:
     updated_at: '2014-01-09 17:30:29'
 AutorizacionAutopsia:
   AutorizacionAutopsia_1:
-    Internado: Internado_4
+    Internado: INTER4
     nombre_familiar1: 'Genoveba Jimenez'
     tipo_parentesco1: Prima
     ci_familiar1: '5875632'
@@ -326,14 +326,14 @@ AutorizacionAutopsia:
     updated_at: '2014-01-09 17:31:22'
 AutorizacionDiagnosticoTratamiento:
   AutorizacionDiagnosticoTratamiento_1:
-    Internado: Internado_2
+    Internado: INTER2
     nombre_familiar: 'Guido Aruquipa'
     ci_familiar: '595856'
     fecha_hora: '2013-12-12 01:00:00'
     created_at: '2014-01-09 17:16:14'
     updated_at: '2014-01-09 17:16:14'
   AutorizacionDiagnosticoTratamiento_2:
-    Internado: Internado_4
+    Internado: INTER4
     nombre_familiar: 'Genoveba Jimenez'
     ci_familiar: '386449'
     fecha_hora: '2014-01-01 08:45:00'
@@ -356,7 +356,7 @@ DetallePapeletaPedidoMaterial:
     updated_at: '2014-01-08 20:11:29'
 JuntaMedica:
   JuntaMedica_1:
-    Internado: Internado_1
+    Internado: INTER1
     medico_solicitante: 'Hugo Armando Patrick'
     servicio: urgencia
     especialidades: 'traumatologia, infeccion'
@@ -369,7 +369,7 @@ JuntaMedica:
     created_at: '2014-01-09 17:01:58'
     updated_at: '2014-01-09 17:01:58'
   JuntaMedica_2:
-    Internado: Internado_2
+    Internado: INTER2
     medico_solicitante: 'Fernando Soto'
     servicio: Ginecologia
     especialidades: Ginecologia
@@ -382,7 +382,7 @@ JuntaMedica:
     created_at: '2014-01-09 17:18:35'
     updated_at: '2014-01-09 17:18:35'
   JuntaMedica_3:
-    Internado: Internado_4
+    Internado: INTER4
     medico_solicitante: 'Arturo Moscoso'
     servicio: Cirugia
     especialidades: Cirujano
@@ -396,7 +396,7 @@ JuntaMedica:
     updated_at: '2014-01-09 17:33:00'
 ListaDieta:
   ListaDieta_1:
-    Internado: Internado_1
+    Internado: INTER1
     enfermera_id: '1'
     servicio_id: null
     fecha: '2014-01-06'
@@ -406,7 +406,7 @@ ListaDieta:
     created_at: '2014-01-09 17:11:14'
     updated_at: '2014-01-09 17:11:14'
   ListaDieta_2:
-    Internado: Internado_1
+    Internado: INTER1
     enfermera_id: '1'
     servicio_id: null
     fecha: '2014-01-05'
@@ -416,7 +416,7 @@ ListaDieta:
     created_at: '2014-01-09 17:11:43'
     updated_at: '2014-01-09 17:11:43'
   ListaDieta_3:
-    Internado: Internado_2
+    Internado: INTER2
     enfermera_id: '1'
     servicio_id: null
     fecha: '2013-12-30'
@@ -426,7 +426,7 @@ ListaDieta:
     created_at: '2014-01-09 17:20:16'
     updated_at: '2014-01-09 17:20:16'
   ListaDieta_4:
-    Internado: Internado_2
+    Internado: INTER2
     enfermera_id: '1'
     servicio_id: null
     fecha: '2013-12-20'
@@ -436,7 +436,7 @@ ListaDieta:
     created_at: '2014-01-09 17:20:33'
     updated_at: '2014-01-09 17:20:33'
   ListaDieta_5:
-    Internado: Internado_4
+    Internado: INTER4
     enfermera_id: '1'
     servicio_id: null
     fecha: '2013-12-19'
@@ -476,7 +476,7 @@ MedicoParticular:
     updated_at: '2014-01-09 17:33:00'
 NotasEnfermeria:
   NotasEnfermeria_1:
-    Internado: Internado_3
+    Internado: INTER3
     fecha: '2014-01-01'
     hora: '01:00:00'
     procedimientos: dffg
@@ -484,7 +484,7 @@ NotasEnfermeria:
     created_at: '2014-01-08 19:08:25'
     updated_at: '2014-01-08 19:08:25'
   NotasEnfermeria_2:
-    Internado: Internado_1
+    Internado: INTER1
     fecha: '2013-12-13'
     hora: '01:30:00'
     procedimientos: 'cambio de vendaje'
@@ -492,7 +492,7 @@ NotasEnfermeria:
     created_at: '2014-01-09 17:12:43'
     updated_at: '2014-01-09 17:12:43'
   NotasEnfermeria_3:
-    Internado: Internado_2
+    Internado: INTER2
     fecha: '2014-01-01'
     hora: '02:15:00'
     procedimientos: 'revision paciente'
@@ -500,7 +500,7 @@ NotasEnfermeria:
     created_at: '2014-01-09 17:21:04'
     updated_at: '2014-01-09 17:21:04'
   NotasEnfermeria_4:
-    Internado: Internado_4
+    Internado: INTER4
     fecha: '2013-12-26'
     hora: '15:15:00'
     procedimientos: 'revision paciente'
@@ -508,7 +508,7 @@ NotasEnfermeria:
     created_at: '2014-01-09 17:34:16'
     updated_at: '2014-01-09 17:34:16'
   NotasEnfermeria_5:
-    Internado: Internado_4
+    Internado: INTER4
     fecha: '2013-12-20'
     hora: '15:15:00'
     procedimientos: 'revision paciente'
@@ -517,35 +517,35 @@ NotasEnfermeria:
     updated_at: '2014-01-09 17:34:33'
 NotasEvolucion:
   NotasEvolucion_1:
-    Internado: Internado_1
+    Internado: INTER1
     fecha_hora: '2013-12-30 00:15:00'
     numero_prob: '8'
     nota_soap: 'infecccion sanando normal'
     created_at: '2014-01-09 17:13:21'
     updated_at: '2014-01-09 17:13:21'
   NotasEvolucion_2:
-    Internado: Internado_2
+    Internado: INTER2
     fecha_hora: '2014-01-01 00:45:00'
     numero_prob: '98'
     nota_soap: 'evolucion lenta'
     created_at: '2014-01-09 17:22:01'
     updated_at: '2014-01-09 17:22:01'
   NotasEvolucion_3:
-    Internado: Internado_2
+    Internado: INTER2
     fecha_hora: '2013-12-31 01:30:00'
     numero_prob: '8978'
     nota_soap: 'evolucion de acuerdo a pronostico'
     created_at: '2014-01-09 17:23:04'
     updated_at: '2014-01-09 17:23:04'
   NotasEvolucion_4:
-    Internado: Internado_4
+    Internado: INTER4
     fecha_hora: '2013-12-18 12:30:00'
     numero_prob: '97'
     nota_soap: 'evolucion segun pronostico'
     created_at: '2014-01-09 17:34:58'
     updated_at: '2014-01-09 17:34:58'
   NotasEvolucion_5:
-    Internado: Internado_4
+    Internado: INTER4
     fecha_hora: '2013-12-28 14:00:00'
     numero_prob: '98'
     nota_soap: 'evolucion normal'
@@ -553,14 +553,14 @@ NotasEvolucion:
     updated_at: '2014-01-09 17:35:19'
 PapeletaPedidoMaterial:
   PapeletaPedidoMaterial_1:
-    Internado: Internado_3
+    Internado: INTER3
     enfermera_id: null
     fecha_solicitud: '2014-01-07'
     entregado: false
     created_at: '2014-01-08 19:18:52'
     updated_at: '2014-01-08 19:18:52'
   PapeletaPedidoMaterial_2:
-    Internado: Internado_1
+    Internado: INTER1
     enfermera_id: null
     fecha_solicitud: '2014-01-22'
     entregado: false
