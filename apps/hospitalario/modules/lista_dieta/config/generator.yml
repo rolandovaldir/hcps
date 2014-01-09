@@ -10,14 +10,31 @@ generator:
     route_prefix:          lista_dieta
     with_doctrine_route:   true
     actions_base_class:    sfActions
+    extra_url_custom_id:   internado_id
 
     config:
       actions: ~
-      fields:  ~
+      fields:         
+        fecha:            { date_format: dd/MM/yyyy }
+        created_at:       { date_format: dd/MM/yyyy }
+        updated_at:       { date_format: dd/MM/yyyy }
       list:    
+        title: Listado Dietas
+        display: [ fecha, dieta, diagnostico, observacion ]
+        object_actions:  
+          _edit:        { credentials: [noHistory, enfermera] }
+          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [siHistory] }
+          _delete:      { credentials: [noHistory, enfermera] }
         actions: {}
-        batch_actions: {}
+        batch_actions: {}        
       filter:  ~
-      form:    ~
-      edit:    ~
-      new:     ~
+      form:    
+        display: [ fecha, dieta, diagnostico, observacion, created_at, updated_at ]
+        actions:
+          _delete: { credentials: [noHistory, enfermera] }
+          _list:   ~
+          _save:   { credentials: [noHistory, enfermera] }
+      edit:    
+        title: Edición Dieta
+      new:        
+        title: Nueva Dieta

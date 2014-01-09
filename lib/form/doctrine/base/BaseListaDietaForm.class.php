@@ -20,7 +20,9 @@ abstract class BaseListaDietaForm extends BaseFormDoctrine
       'enfermera_id' => new myWidgetFormDojoInteger(),
       'servicio_id'  => new myWidgetFormDojoInteger(),
       'fecha'        => new myWidgetFormDojoDate(),
-      'observacion'  => new sfWidgetFormTextarea(),
+      'dieta'        => new sfWidgetFormInputText(),
+      'diagnostico'  => new sfWidgetFormInputText(),
+      'observacion'  => new sfWidgetFormInputText(),
       'created_at'   => new myWidgetFormDojoDateTime(),
       'updated_at'   => new myWidgetFormDojoDateTime(),
     ));
@@ -31,7 +33,9 @@ abstract class BaseListaDietaForm extends BaseFormDoctrine
       'enfermera_id' => new sfValidatorInteger(array('required' => false)),
       'servicio_id'  => new sfValidatorInteger(array('required' => false)),
       'fecha'        => new myValidatorDojoDate(array('required' => false)),
-      'observacion'  => new sfValidatorString(array('max_length' => 500, 'required' => false)),
+      'dieta'        => new sfValidatorString(array('max_length' => 250, 'required' => false)),
+      'diagnostico'  => new sfValidatorString(array('max_length' => 250, 'required' => false)),
+      'observacion'  => new sfValidatorString(array('max_length' => 250, 'required' => false)),
       'created_at'   => new myValidatorDojoDateTime(),
       'updated_at'   => new myValidatorDojoDateTime(),
     ));

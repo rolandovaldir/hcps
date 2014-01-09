@@ -9,24 +9,27 @@
  * @property integer $enfermera_id
  * @property integer $servicio_id
  * @property date $fecha
+ * @property string $dieta
+ * @property string $diagnostico
  * @property string $observacion
  * @property Internado $Internado
- * @property Doctrine_Collection $DetallesListaDieta
  * 
- * @method integer             getInternadoId()        Returns the current record's "internado_id" value
- * @method integer             getEnfermeraId()        Returns the current record's "enfermera_id" value
- * @method integer             getServicioId()         Returns the current record's "servicio_id" value
- * @method date                getFecha()              Returns the current record's "fecha" value
- * @method string              getObservacion()        Returns the current record's "observacion" value
- * @method Internado           getInternado()          Returns the current record's "Internado" value
- * @method Doctrine_Collection getDetallesListaDieta() Returns the current record's "DetallesListaDieta" collection
- * @method ListaDieta          setInternadoId()        Sets the current record's "internado_id" value
- * @method ListaDieta          setEnfermeraId()        Sets the current record's "enfermera_id" value
- * @method ListaDieta          setServicioId()         Sets the current record's "servicio_id" value
- * @method ListaDieta          setFecha()              Sets the current record's "fecha" value
- * @method ListaDieta          setObservacion()        Sets the current record's "observacion" value
- * @method ListaDieta          setInternado()          Sets the current record's "Internado" value
- * @method ListaDieta          setDetallesListaDieta() Sets the current record's "DetallesListaDieta" collection
+ * @method integer    getInternadoId()  Returns the current record's "internado_id" value
+ * @method integer    getEnfermeraId()  Returns the current record's "enfermera_id" value
+ * @method integer    getServicioId()   Returns the current record's "servicio_id" value
+ * @method date       getFecha()        Returns the current record's "fecha" value
+ * @method string     getDieta()        Returns the current record's "dieta" value
+ * @method string     getDiagnostico()  Returns the current record's "diagnostico" value
+ * @method string     getObservacion()  Returns the current record's "observacion" value
+ * @method Internado  getInternado()    Returns the current record's "Internado" value
+ * @method ListaDieta setInternadoId()  Sets the current record's "internado_id" value
+ * @method ListaDieta setEnfermeraId()  Sets the current record's "enfermera_id" value
+ * @method ListaDieta setServicioId()   Sets the current record's "servicio_id" value
+ * @method ListaDieta setFecha()        Sets the current record's "fecha" value
+ * @method ListaDieta setDieta()        Sets the current record's "dieta" value
+ * @method ListaDieta setDiagnostico()  Sets the current record's "diagnostico" value
+ * @method ListaDieta setObservacion()  Sets the current record's "observacion" value
+ * @method ListaDieta setInternado()    Sets the current record's "Internado" value
  * 
  * @package    hcps
  * @subpackage model
@@ -50,9 +53,17 @@ abstract class BaseListaDieta extends sfDoctrineRecord
         $this->hasColumn('fecha', 'date', null, array(
              'type' => 'date',
              ));
-        $this->hasColumn('observacion', 'string', 500, array(
+        $this->hasColumn('dieta', 'string', 250, array(
              'type' => 'string',
-             'length' => 500,
+             'length' => 250,
+             ));
+        $this->hasColumn('diagnostico', 'string', 250, array(
+             'type' => 'string',
+             'length' => 250,
+             ));
+        $this->hasColumn('observacion', 'string', 250, array(
+             'type' => 'string',
+             'length' => 250,
              ));
     }
 
@@ -62,10 +73,6 @@ abstract class BaseListaDieta extends sfDoctrineRecord
         $this->hasOne('Internado', array(
              'local' => 'internado_id',
              'foreign' => 'id'));
-
-        $this->hasMany('DetalleListaDieta as DetallesListaDieta', array(
-             'local' => 'id',
-             'foreign' => 'lista_dieta_id'));
 
         $timestampable0 = new Doctrine_Template_Timestampable(array(
              ));

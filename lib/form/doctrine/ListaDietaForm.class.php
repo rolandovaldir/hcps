@@ -15,6 +15,7 @@ class ListaDietaForm extends BaseListaDietaForm
       unset($this['created_at'], $this['updated_at']);
       
       $this->widgetSchema['internado_id'] = new sfWidgetFormInputHidden();
+      $this->widgetSchema['enfermera_id'] = new sfWidgetFormInputHidden();
   }
   
   public function disableAllWidgets()

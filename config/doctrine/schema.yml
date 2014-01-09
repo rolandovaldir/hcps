@@ -686,27 +686,17 @@ AtencionEnfermeria:
 
 # guillermo
 ListaDieta:
-  actAs: [Timestampable]  
+  actAs: [Timestampable]
   columns:
     internado_id:          { type: integer }
     enfermera_id:          { type: integer }
     servicio_id:           { type: integer }
     fecha:                 { type: date }
-    observacion:           { type: string(500) }
+    dieta:                 { type: string(250) }
+    diagnostico:           { type: string(250) }
+    observacion:           { type: string(250) }
   relations:
     Internado: { local: internado_id, foreign: id, type: one, foreignAlias: ListasDieta }
-
-# guillermo
-DetalleListaDieta:
-  actAs: [Timestampable]  
-  columns:     
-    lista_dieta_id:        { type: integer }
-    internado_id:          { type: integer }
-    dieta:                 { type: string(250) }    
-    diagnostico:           { type: string(150) }
-  relations:
-    Internado:         { local: internado_id, foreign: id, type: one, foreignAlias: DetallesListaDieta }
-    ListaDieta:        { local: lista_dieta_id, foreign: id, type: one, foreignAlias: DetallesListaDieta }
 
 # guillermo
 SolicitudTransfusionSanguinea:

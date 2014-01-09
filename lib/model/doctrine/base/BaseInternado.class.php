@@ -50,7 +50,6 @@
  * @property Doctrine_Collection $ResumenesAlta
  * @property Doctrine_Collection $AtencionesEnfermeria
  * @property Doctrine_Collection $ListasDieta
- * @property Doctrine_Collection $DetallesListaDieta
  * @property Doctrine_Collection $SolicitudesTransfusionSanguinea
  * @property Doctrine_Collection $InformesEstadisticoAdmEgreso
  * @property Doctrine_Collection $PapeletasPedidoMaterial
@@ -100,7 +99,6 @@
  * @method Doctrine_Collection getResumenesAlta()                       Returns the current record's "ResumenesAlta" collection
  * @method Doctrine_Collection getAtencionesEnfermeria()                Returns the current record's "AtencionesEnfermeria" collection
  * @method Doctrine_Collection getListasDieta()                         Returns the current record's "ListasDieta" collection
- * @method Doctrine_Collection getDetallesListaDieta()                  Returns the current record's "DetallesListaDieta" collection
  * @method Doctrine_Collection getSolicitudesTransfusionSanguinea()     Returns the current record's "SolicitudesTransfusionSanguinea" collection
  * @method Doctrine_Collection getInformesEstadisticoAdmEgreso()        Returns the current record's "InformesEstadisticoAdmEgreso" collection
  * @method Doctrine_Collection getPapeletasPedidoMaterial()             Returns the current record's "PapeletasPedidoMaterial" collection
@@ -149,7 +147,6 @@
  * @method Internado           setResumenesAlta()                       Sets the current record's "ResumenesAlta" collection
  * @method Internado           setAtencionesEnfermeria()                Sets the current record's "AtencionesEnfermeria" collection
  * @method Internado           setListasDieta()                         Sets the current record's "ListasDieta" collection
- * @method Internado           setDetallesListaDieta()                  Sets the current record's "DetallesListaDieta" collection
  * @method Internado           setSolicitudesTransfusionSanguinea()     Sets the current record's "SolicitudesTransfusionSanguinea" collection
  * @method Internado           setInformesEstadisticoAdmEgreso()        Sets the current record's "InformesEstadisticoAdmEgreso" collection
  * @method Internado           setPapeletasPedidoMaterial()             Sets the current record's "PapeletasPedidoMaterial" collection
@@ -351,10 +348,6 @@ abstract class BaseInternado extends sfDoctrineRecord
              'foreign' => 'internado_id'));
 
         $this->hasMany('ListaDieta as ListasDieta', array(
-             'local' => 'id',
-             'foreign' => 'internado_id'));
-
-        $this->hasMany('DetalleListaDieta as DetallesListaDieta', array(
              'local' => 'id',
              'foreign' => 'internado_id'));
 
