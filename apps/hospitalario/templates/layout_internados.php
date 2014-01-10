@@ -64,10 +64,16 @@
                 <div data-dojo-type="dijit/layout/ContentPane" title="Internados" id="main-container-tab1" data-dojo-props="selected:true">
                     <?php echo $sf_content; ?>              
                 </div>
+                
                 <div data-dojo-type="dijit/layout/ContentPane" title="Pacientes Dados de alta"  id="main-container-tab2" data-dojo-props="href:'<?php echo url_for("internados_alta/index") ?>'" >
                 </div>
                 
-                <div data-dojo-type="dijit/layout/ContentPane" title="Reportes" data-dojo-props="href:'<?php echo url_for("reportes/index") ?>',style:'padding:0;'"></div>
+                <div data-dojo-type="dijit/layout/ContentPane" title="Reportes"  id="main-container-tab3" data-dojo-props="href:'<?php echo url_for("reportes/index") ?>',style:'padding:0;'">
+                </div>
+                <?php if($sf_user->getGuardUser()->getIsSuperAdmin()): ?>
+                    <div data-dojo-type="dijit/layout/ContentPane" title="Usuarios" id="main-container-tab4"  data-dojo-props="href:'<?php echo url_for("sfGuardUser/index") ?>',style:'padding:0;'">
+                    </div>
+                <?php endif ?>
             </div>            
         
           <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'bottom'" id="footer-layout" >              
