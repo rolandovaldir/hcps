@@ -36,8 +36,6 @@ generator:
           Datos de la Junta Médica:       [fecha_junta, medico_solicitante, servicio, especialidades, diagnostico_establecido, relacion_junta, conclusiones, tac, contraste]
           Lista de Médicos Participantes: [_medicos_participantes]
           Adicionar Médico Participante:  [medico]
-      edit:    
-        title: Editar Junta Médica
         actions:
           _save: ~
       new:     
