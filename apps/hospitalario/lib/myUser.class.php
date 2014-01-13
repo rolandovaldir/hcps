@@ -14,8 +14,8 @@ class myUser extends sfGuardSecurityUser
             $tipo = sfGuardUserTable::HCPS_USER_TIPO_MEDICO;
             $ret = MedicoTable::getInstance()->find($this->getGuardUser()->getEmpleadoId());
         }
-        elseif($this->getGuardUser()->getTipo()==sfGuardUserTable::HCPS_USER_TIPO_ENFERMERA){
-            $tipo = sfGuardUserTable::HCPS_USER_TIPO_ENFERMERA;
+        elseif($this->getGuardUser()->getTipo()==sfGuardUserTable::HCPS_USER_TIPO_EMPLEADO){
+            $tipo = sfGuardUserTable::HCPS_USER_TIPO_EMPLEADO;
             $ret = EmpleadoTable::getInstance()->find($this->getGuardUser()->getEmpleadoId());
         }
         

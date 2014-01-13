@@ -19,4 +19,14 @@ class sfGuardUser extends PluginsfGuardUser
         return sfGuardUserTable::getDescripcione_tipo($this->getTipo());
     }
     
+    public function getCustomTipoEmpleadoId()
+    {
+        return $this->getTipo() . $this->getEmpleadoId();
+    }
+    
+    public function setCustomTipoEmpleadoId($val)
+    {
+       $this->setTipo(substr($val, 0,1));
+       $this->setEmpleadoId(intval(substr($val, 1)));
+    }
 }

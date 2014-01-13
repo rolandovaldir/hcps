@@ -8,10 +8,14 @@
 class sfGuardUserTable extends PluginsfGuardUserTable
 {
     
+    /*
+     * tipo describe con que tabla se vincula el usuario
+     * (actualmente 2 tablas medico y empleado)
+     */
     const HCPS_USER_TIPO_MEDICO = 'm';
-    const HCPS_USER_TIPO_ENFERMERA = 'e';    
+    const HCPS_USER_TIPO_EMPLEADO = 'e';    
     
-    static $descripciones_tipo = array('m'=>'Medico', 'e'=>'Enfermera');
+    static $descripciones_tipo = array('m'=>'Medico', 'e'=>'Empleado');
     
     static public function getDescripcione_tipo($tipo,$default=null)
     {
