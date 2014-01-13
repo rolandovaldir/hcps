@@ -17,7 +17,7 @@ abstract class BaseAtencionEnfermeriaForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'                                    => new sfWidgetFormInputHidden(),
       'internado_id'                          => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => true)),
-      'enfermera_id'                          => new myWidgetFormDojoInteger(),
+      'enfermera_id'                          => new sfWidgetFormInputText(),
       'lugar'                                 => new sfWidgetFormInputText(),
       'codigo'                                => new sfWidgetFormInputText(),
       'especialidad'                          => new sfWidgetFormInputText(),
@@ -80,8 +80,10 @@ abstract class BaseAtencionEnfermeriaForm extends BaseFormDoctrine
       'capstr_relfamilia_enfermedad_val'      => new sfWidgetFormInputText(),
       'creencia_religiosa'                    => new sfWidgetFormInputText(),
       'diagnostico_enfermera'                 => new sfWidgetFormTextarea(),
-      'created_at'                            => new myWidgetFormDojoDateTime(),
-      'updated_at'                            => new myWidgetFormDojoDateTime(),
+      'created_at'                            => new sfWidgetFormDateTime(),
+      'updated_at'                            => new sfWidgetFormDateTime(),
+      'created_by'                            => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Creator'), 'add_empty' => true)),
+      'updated_by'                            => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Updator'), 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
@@ -150,8 +152,10 @@ abstract class BaseAtencionEnfermeriaForm extends BaseFormDoctrine
       'capstr_relfamilia_enfermedad_val'      => new sfValidatorString(array('max_length' => 150, 'required' => false)),
       'creencia_religiosa'                    => new sfValidatorString(array('max_length' => 80, 'required' => false)),
       'diagnostico_enfermera'                 => new sfValidatorString(array('max_length' => 2500, 'required' => false)),
-      'created_at'                            => new myValidatorDojoDateTime(),
-      'updated_at'                            => new myValidatorDojoDateTime(),
+      'created_at'                            => new sfValidatorDateTime(),
+      'updated_at'                            => new sfValidatorDateTime(),
+      'created_by'                            => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Creator'), 'required' => false)),
+      'updated_by'                            => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Updator'), 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('atencion_enfermeria[%s]');

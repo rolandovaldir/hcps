@@ -61,6 +61,9 @@ abstract class BaseAutorizacionAltaSolicitada extends sfDoctrineRecord
 
         $timestampable0 = new Doctrine_Template_Timestampable(array(
              ));
+        $signable0 = new Doctrine_Template_Signable(array(
+             ));
         $this->actAs($timestampable0);
+        $this->actAs($signable0);
     }
 }

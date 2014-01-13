@@ -21,9 +21,9 @@ abstract class BaseCamaForm extends BaseFormDoctrine
       'ocupada'       => new sfWidgetFormInputCheckbox(),
       'observaciones' => new sfWidgetFormInputText(),
       'codigo_activo' => new sfWidgetFormInputText(),
-      'activo_id'     => new myWidgetFormDojoInteger(),
-      'created_at'    => new myWidgetFormDojoDateTime(),
-      'updated_at'    => new myWidgetFormDojoDateTime(),
+      'activo_id'     => new sfWidgetFormInputText(),
+      'created_at'    => new sfWidgetFormDateTime(),
+      'updated_at'    => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(
@@ -34,8 +34,8 @@ abstract class BaseCamaForm extends BaseFormDoctrine
       'observaciones' => new sfValidatorString(array('max_length' => 250, 'required' => false)),
       'codigo_activo' => new sfValidatorString(array('max_length' => 16, 'required' => false)),
       'activo_id'     => new sfValidatorInteger(array('required' => false)),
-      'created_at'    => new myValidatorDojoDateTime(),
-      'updated_at'    => new myValidatorDojoDateTime(),
+      'created_at'    => new sfValidatorDateTime(),
+      'updated_at'    => new sfValidatorDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('cama[%s]');
