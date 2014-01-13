@@ -14,10 +14,11 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
+      fields:  
+        fecha: { date_format: 'dd/MM/yyyy' }
       list:    
         title: Notas de Enfermeria
-        display: [fecha, hora, procedimientos]
+        display: [fecha, hora, procedimientos, observaciones]
         object_actions:  
           _edit:        { credentials: [noHistory] }
           ver_detalle:  { label: Ver Detalle, action: edit, credentials: [siHistory] }

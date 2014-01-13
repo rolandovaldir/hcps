@@ -15,15 +15,14 @@ generator:
     config:
       actions: ~
       fields:  
-        fecha_hora:                    {label: 'Fecha y Hora'}
         nombre_medicamento_indicacion: {label: 'Nombre del Medicamento o Indicación'}
         via_administracion_id:         {label: 'Via de Administración'}
         dosis_intervalo:               {label: 'Dosis - Intérvalo'}
-        fecha_inicio:                  {label: 'Fecha de Inicio'}
-        fecha_terminacion:             {label: 'Fecha de Terminación'}
+        fecha_inicio:                  {label: 'Inicio', date_format: 'dd/MM/yyyy hh:mm'}
+        fecha_terminacion:             {label: 'Terminación', date_format: 'dd/MM/yyyy hh:mm'}
       list:    
         title: Ordenes Médicas
-        display: [nombre_medicamento_indicacion, via_administracion_id, dosis_intervalo, fecha_inicio, fecha_terminacion]
+        display: [nombre_medicamento_indicacion, dosis_intervalo, fecha_inicio, fecha_terminacion]
         object_actions:  
           _edit:        { credentials: [noHistory] }
           ver_detalle:  { label: Ver Detalle, action: edit, credentials: [siHistory] }

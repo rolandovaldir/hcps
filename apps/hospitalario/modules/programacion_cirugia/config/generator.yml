@@ -15,12 +15,13 @@ generator:
     config:      
       actions: ~
       fields:          
-        operacion_fecha: { date_format: dd/MM/yyyy }
-        created_at: { date_format: dd/MM/yyyy }
-        updated_at: { date_format: dd/MM/yyyy }
+        operacion_fecha: { label: 'Fecha', date_format: dd/MM/yyyy }
+        operacion_hora:  {label: 'Hora'}
+        created_at:      { date_format: dd/MM/yyyy }
+        updated_at:      { date_format: dd/MM/yyyy }
       list:
         title: Listado Programacion Para Cirugias
-        display: [ operacion_fecha, operacion_hora,diagnostico_preoperatorio, tratamiento_quirurgico, anestesia, otros, descripcion_examenes_auxiliares, created_at, updated_at]        
+        display: [ operacion_fecha, operacion_hora,diagnostico_preoperatorio, tratamiento_quirurgico, descripcion_examenes_auxiliares]        
         object_actions:  
           _edit:        { credentials: [noHistory] }
           ver_detalle:  { label: Ver Detalle, action: edit, credentials: [siHistory] }

@@ -15,7 +15,7 @@ generator:
     config:
       actions: ~
       fields:  
-        fecha_hora:  {label: 'Fecha y Hora'}
+        fecha_hora:  {label: 'Fecha y Hora', date_format: 'dd/MM/yyyy hh:mm'}
         numero_prob: {label: 'PROB N°'}
         nota_soap:   {label: 'Nota'}
       list:    
