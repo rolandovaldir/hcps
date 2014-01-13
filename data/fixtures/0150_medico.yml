@@ -25,5 +25,31 @@ Medico:
     cupos:            5
     consultorio:      ''
     observacion:      null
-    Especialidad:     especialidad1
+    Especialidad:     especialidad2
+    item_id:          0
+  medico3:
+    codigo:           003
+    nombrec:          Fernando Humerez
+    cargahor:         0
+    hor_ini:          '12:00'
+    hor_fin:          '16:00'
+    intervalo:        1
+    activo:           s
+    cupos:            5
+    consultorio:      ''
+    observacion:      null
+    Especialidad:     especialidad2
+    item_id:          0
+  medico4:
+    codigo:           004
+    nombrec:          Alicia Durán
+    cargahor:         0
+    hor_ini:          '08:00'
+    hor_fin:          '12:00'
+    intervalo:        1
+    activo:           s
+    cupos:            5
+    consultorio:      ''
+    observacion:      null
+    Especialidad:     especialidad3
     item_id:          0

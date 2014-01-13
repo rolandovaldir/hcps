@@ -1,0 +1,35 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           sfGuardUser
+    theme:                 dojotheme
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          sf_guard_user
+    with_doctrine_route:   true
+    dojo_forajax_component_id: main-container-tab4    
+
+    config:
+      fields:
+        password_again: { label: "Password (again)" }
+
+      list:
+        title:   Listado de Usuarios
+        display: [=username, created_at, updated_at, last_login]         
+        batch_actions: {}         
+      form:
+        class: sfGuardUserAdminForm
+        display:
+          "User":                   [ _form_listado_empleado, email_address, username, password, password_again]
+          "Permissions and groups": [is_active, is_super_admin, groups_list, permissions_list]                
+        actions:
+          _delete:  ~
+          _list:    ~
+          _save:    ~
+      edit:
+        title: Edición de Usuario "%%username%%"
+
+      new:
+        title: Nuevo Usuario

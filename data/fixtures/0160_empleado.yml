@@ -8,10 +8,24 @@ Empleado:
     nombre:           Amanda
     apellido:         Yañez
     cargo:            Enfermera
-  empleado1:
+  empleado2:
     matricula:        0025
     profesion:        Enfermera
     Filial:           Policonsultorio
-    nombre:           Rosario Julieta
-    apellido:         Torrez
+    nombre:           Ana Maria
+    apellido:         Quenta
     cargo:            Enfermera
+  empleado3:
+    matricula:        0028
+    profesion:        Enfermera
+    Filial:           Policonsultorio
+    nombre:           Gisel 
+    apellido:         Patzi
+    cargo:            Enfermera
+  empleado4:
+    matricula:        0031
+    profesion:        Enfermera
+    Filial:           Policonsultorio
+    nombre:           Genobeva
+    apellido:         Flores
+    cargo:            Farmaceutica
