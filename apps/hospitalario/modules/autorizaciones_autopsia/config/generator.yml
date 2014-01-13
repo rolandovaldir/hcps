@@ -20,7 +20,7 @@ generator:
         updated_at: { date_format: dd/MM/yyyy }
       list:   
         title: Listado Autorizacion Autopsia
-        display: [ nombre_familiar1, tipo_parentesco1, ci_familiar1,nombre_familiar2, tipo_parentesco2, ci_familiar2,nombre_familiar3, tipo_parentesco3, ci_familiar3, fecha_hora, created_at, updated_at]        
+        display: [ fecha_hora, nombre_familiar1, tipo_parentesco1, ci_familiar1]        
         object_actions:  
           _edit:        { credentials: [noHistory] }
           ver_detalle:  { label: Ver Detalle, action: edit, credentials: [siHistory] }

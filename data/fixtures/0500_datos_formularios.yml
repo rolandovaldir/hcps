@@ -1,0 +1,1175 @@
+NotasEnfermeria:
+  NotasEnfermeria_1:
+    Internado: INTER3
+    fecha: '2014-01-01'
+    hora: '01:00:00'
+    procedimientos: dffg
+    observaciones: safads
+    created_at: '2014-01-08 19:08:25'
+    updated_at: '2014-01-08 19:08:25'
+  NotasEnfermeria_2:
+    Internado: INTER1
+    fecha: '2013-12-13'
+    hora: '01:30:00'
+    procedimientos: 'cambio de vendaje'
+    observaciones: 'se cambio todo el vendaje'
+    created_at: '2014-01-09 17:12:43'
+    updated_at: '2014-01-09 17:12:43'
+  NotasEnfermeria_3:
+    Internado: INTER2
+    fecha: '2014-01-01'
+    hora: '02:15:00'
+    procedimientos: 'revision paciente'
+    observaciones: 'todo ok'
+    created_at: '2014-01-09 17:21:04'
+    updated_at: '2014-01-09 17:21:04'
+  NotasEnfermeria_4:
+    Internado: INTER4
+    fecha: '2013-12-26'
+    hora: '15:15:00'
+    procedimientos: 'revision paciente'
+    observaciones: 'todo normal'
+    created_at: '2014-01-09 17:34:16'
+    updated_at: '2014-01-09 17:34:16'
+  NotasEnfermeria_5:
+    Internado: INTER4
+    fecha: '2013-12-20'
+    hora: '15:15:00'
+    procedimientos: 'revision paciente'
+    observaciones: 'todo ok'
+    created_at: '2014-01-09 17:34:33'
+    updated_at: '2014-01-09 17:34:33'
+ListaDieta:
+  ListaDieta_1:
+    Internado: INTER1
+    enfermera_id: '1'
+    servicio_id: null
+    fecha: '2014-01-06'
+    dieta: 'dieta blanca'
+    diagnostico: 'infeccion intestinal'
+    observacion: ''
+    created_at: '2014-01-09 17:11:14'
+    updated_at: '2014-01-09 17:11:14'
+  ListaDieta_2:
+    Internado: INTER1
+    enfermera_id: '1'
+    servicio_id: null
+    fecha: '2014-01-05'
+    dieta: 'dieta blanca'
+    diagnostico: 'infeccion intestinal'
+    observacion: ''
+    created_at: '2014-01-09 17:11:43'
+    updated_at: '2014-01-09 17:11:43'
+  ListaDieta_3:
+    Internado: INTER2
+    enfermera_id: '1'
+    servicio_id: null
+    fecha: '2013-12-30'
+    dieta: 'base liquidos'
+    diagnostico: ''
+    observacion: 'paciente con posible diabetes'
+    created_at: '2014-01-09 17:20:16'
+    updated_at: '2014-01-09 17:20:16'
+  ListaDieta_4:
+    Internado: INTER2
+    enfermera_id: '1'
+    servicio_id: null
+    fecha: '2013-12-20'
+    dieta: 'dieta blanca'
+    diagnostico: ''
+    observacion: ''
+    created_at: '2014-01-09 17:20:33'
+    updated_at: '2014-01-09 17:20:33'
+  ListaDieta_5:
+    Internado: INTER4
+    enfermera_id: '1'
+    servicio_id: null
+    fecha: '2013-12-19'
+    dieta: 'normal (sin sal)'
+    diagnostico: ''
+    observacion: ''
+    created_at: '2014-01-09 17:33:45'
+    updated_at: '2014-01-09 17:33:45'
+Afiliado:
+  Afiliado_1:
+    matricula: '0001'
+    paterno: Arteaga
+    materno: Torrez
+    nombre: Jose
+    hclinica: ''
+    empresa: 'caja petrolera'
+    tafiliado: ''
+    activo: '1'
+    grupofam: '1'
+    created_at: '2014-01-13 11:21:12'
+    updated_at: '2014-01-13 11:21:12'
+  Afiliado_2:
+    matricula: '0002'
+    paterno: Mamani
+    materno: Perez
+    nombre: Maria
+    hclinica: ''
+    empresa: alcaldia
+    tafiliado: ''
+    activo: '1'
+    grupofam: '1'
+    created_at: '2014-01-13 11:21:12'
+    updated_at: '2014-01-13 11:21:12'
+  Afiliado_3:
+    matricula: '0003'
+    paterno: Rodriguez
+    materno: Quelca
+    nombre: 'Jose Luis'
+    hclinica: ''
+    empresa: 'Caja petrolera'
+    tafiliado: ''
+    activo: '1'
+    grupofam: '1'
+    created_at: '2014-01-13 11:21:12'
+    updated_at: '2014-01-13 11:21:12'
+Apgar:
+  Apgar_1:
+    ExamenFisicoRecienNacido: ExamenFisicoRecienNacido_1
+    nacer_egresar: true
+    apariencia: bien
+    piel: bien
+    cabeza: bien
+    ojos: bien
+    oidos_nariz_garganta: bien
+    torax: bien
+    pulmones: bien
+    corazon: bien
+    abdomen: bien
+    genitales: bien
+    torso_espina: bien
+    extremidades: bien
+    reflejos: bien
+    ano: bien
+    created_at: '2014-01-13 11:26:53'
+    updated_at: '2014-01-13 11:26:53'
+  Apgar_2:
+    ExamenFisicoRecienNacido: ExamenFisicoRecienNacido_2
+    nacer_egresar: false
+    apariencia: bien
+    piel: bien
+    cabeza: bien
+    ojos: bien
+    oidos_nariz_garganta: bien
+    torax: bien
+    pulmones: bien
+    corazon: bien
+    abdomen: bien
+    genitales: bien
+    torso_espina: bien
+    extremidades: bien
+    reflejos: bien
+    ano: bien
+    created_at: '2014-01-13 11:27:26'
+    updated_at: '2014-01-13 11:27:26'
+  Apgar_3:
+    ExamenFisicoRecienNacido: ExamenFisicoRecienNacido_2
+    nacer_egresar: true
+    apariencia: bien
+    piel: bien
+    cabeza: bien
+    ojos: bien
+    oidos_nariz_garganta: bien
+    torax: bien
+    pulmones: bien
+    corazon: bien
+    abdomen: bien
+    genitales: bien
+    torso_espina: bien
+    extremidades: bien
+    reflejos: bien
+    ano: bien
+    created_at: '2014-01-13 11:27:35'
+    updated_at: '2014-01-13 11:27:35'
+Especialidad:
+  Especialidad_1:
+    nombre: general
+    activo: '1'
+    cupos: '1'
+    servicio_id: '0'
+    filial_id: '0'
+    observacion: ''
+    created_at: '2014-01-13 11:21:12'
+    updated_at: '2014-01-13 11:21:12'
+AtencionEnfermeria:
+  AtencionEnfermeria_1:
+    Internado: INTER1
+    enfermera_id: null
+    lugar: ''
+    codigo: ''
+    especialidad: ''
+    per_apariencia_gral_esc: A
+    per_apariencia_gral_val: buena
+    per_habitos_esc: ''
+    per_habitos_val: ''
+    per_alergias_esc: ''
+    per_alergias_val: ''
+    per_inmunizaciones_esc: ''
+    per_inmunizaciones_val: ''
+    per_medicacion_actual_esc: ''
+    per_medicacion_actual_val: ''
+    motivo_ingreso: ''
+    nutmet_higiene_esc: ''
+    nutmet_higiene_val: ''
+    nutmet_estado_nutricional_esc: ''
+    nutmet_estado_nutricional_val: ''
+    nutmet_protesis_dental_esc: ''
+    nutmet_protesis_dental_val: ''
+    nutmet_liquidos_electrolitos_esc: ''
+    nutmet_liquidos_electrolitos_val: ''
+    patelim_habito_intestinal_esc: ''
+    patelim_habito_intestinal_val: ''
+    patelim_habito_urinario_esc: ''
+    patelim_habito_urinario_val: ''
+    acteje_valoracion_cardiopulmonar_esc: ''
+    acteje_valoracion_cardiopulmonar_val: ''
+    acteje_capacidad_motora_esc: ''
+    acteje_capacidad_motora_val: ''
+    acteje_act_diversion_esc: ''
+    acteje_act_diversion_val: ''
+    acteje_deficit_autocuidado_esc: ''
+    acteje_deficit_autocuidado_val: ''
+    acteje_crecim_desarrollo_esc: ''
+    acteje_crecim_desarrollo_val: ''
+    des_habito_descanso_esc: ''
+    des_habito_descanso_val: ''
+    des_transtorno_sueno_esc: ''
+    des_transtorno_sueno_val: ''
+    cogper_alter_sensoriales_esc: ''
+    cogper_alter_sensoriales_val: ''
+    cogper_nivel_conciencia_esc: ''
+    cogper_nivel_conciencia_val: ''
+    cogper_alteracion_promentales_esc: ''
+    cogper_alteracion_promentales_val: ''
+    auto_reaccion_emocional_esc: ''
+    auto_reaccion_emocional_val: ''
+    relrol_relacion_interpersonal_esc: ''
+    relrol_relacion_interpersonal_val: ''
+    relrol_conducta_familia_esc: ''
+    relrol_conducta_familia_val: ''
+    relrol_cambio_personalfamiliar_esc: ''
+    relrol_cambio_personalfamiliar_val: ''
+    repsex_alteracion_sisreproductivo_esc: ''
+    repsex_alteracion_sisreproductivo_val: ''
+    capstr_relpaciente_enfermedad_esc: A
+    capstr_relpaciente_enfermedad_val: ''
+    capstr_relfamilia_enfermedad_esc: ''
+    capstr_relfamilia_enfermedad_val: ''
+    creencia_religiosa: ''
+    diagnostico_enfermera: ''
+    created_at: '2014-01-09 16:58:47'
+    updated_at: '2014-01-09 16:58:47'
+  AtencionEnfermeria_2:
+    Internado: INTER2
+    enfermera_id: null
+    lugar: ''
+    codigo: ''
+    especialidad: ''
+    per_apariencia_gral_esc: N
+    per_apariencia_gral_val: buena
+    per_habitos_esc: S
+    per_habitos_val: normales
+    per_alergias_esc: N
+    per_alergias_val: ''
+    per_inmunizaciones_esc: N
+    per_inmunizaciones_val: ''
+    per_medicacion_actual_esc: N
+    per_medicacion_actual_val: ''
+    motivo_ingreso: ''
+    nutmet_higiene_esc: A
+    nutmet_higiene_val: buena
+    nutmet_estado_nutricional_esc: A
+    nutmet_estado_nutricional_val: ''
+    nutmet_protesis_dental_esc: S
+    nutmet_protesis_dental_val: ''
+    nutmet_liquidos_electrolitos_esc: N
+    nutmet_liquidos_electrolitos_val: ''
+    patelim_habito_intestinal_esc: ''
+    patelim_habito_intestinal_val: ''
+    patelim_habito_urinario_esc: ''
+    patelim_habito_urinario_val: ''
+    acteje_valoracion_cardiopulmonar_esc: ''
+    acteje_valoracion_cardiopulmonar_val: ''
+    acteje_capacidad_motora_esc: ''
+    acteje_capacidad_motora_val: ''
+    acteje_act_diversion_esc: ''
+    acteje_act_diversion_val: ''
+    acteje_deficit_autocuidado_esc: ''
+    acteje_deficit_autocuidado_val: ''
+    acteje_crecim_desarrollo_esc: ''
+    acteje_crecim_desarrollo_val: ''
+    des_habito_descanso_esc: ''
+    des_habito_descanso_val: ''
+    des_transtorno_sueno_esc: ''
+    des_transtorno_sueno_val: ''
+    cogper_alter_sensoriales_esc: ''
+    cogper_alter_sensoriales_val: ''
+    cogper_nivel_conciencia_esc: ''
+    cogper_nivel_conciencia_val: ''
+    cogper_alteracion_promentales_esc: ''
+    cogper_alteracion_promentales_val: ''
+    auto_reaccion_emocional_esc: ''
+    auto_reaccion_emocional_val: ''
+    relrol_relacion_interpersonal_esc: ''
+    relrol_relacion_interpersonal_val: ''
+    relrol_conducta_familia_esc: ''
+    relrol_conducta_familia_val: ''
+    relrol_cambio_personalfamiliar_esc: ''
+    relrol_cambio_personalfamiliar_val: ''
+    repsex_alteracion_sisreproductivo_esc: ''
+    repsex_alteracion_sisreproductivo_val: ''
+    capstr_relpaciente_enfermedad_esc: ''
+    capstr_relpaciente_enfermedad_val: ''
+    capstr_relfamilia_enfermedad_esc: ''
+    capstr_relfamilia_enfermedad_val: ''
+    creencia_religiosa: catolica
+    diagnostico_enfermera: ''
+    created_at: '2014-01-09 17:15:44'
+    updated_at: '2014-01-09 17:15:44'
+  AtencionEnfermeria_3:
+    Internado: INTER4
+    enfermera_id: null
+    lugar: ''
+    codigo: ''
+    especialidad: ''
+    per_apariencia_gral_esc: A
+    per_apariencia_gral_val: regular
+    per_habitos_esc: N
+    per_habitos_val: senetario
+    per_alergias_esc: N
+    per_alergias_val: ''
+    per_inmunizaciones_esc: S
+    per_inmunizaciones_val: antipolio
+    per_medicacion_actual_esc: N
+    per_medicacion_actual_val: ninguna
+    motivo_ingreso: ''
+    nutmet_higiene_esc: ''
+    nutmet_higiene_val: ''
+    nutmet_estado_nutricional_esc: ''
+    nutmet_estado_nutricional_val: ''
+    nutmet_protesis_dental_esc: ''
+    nutmet_protesis_dental_val: ''
+    nutmet_liquidos_electrolitos_esc: ''
+    nutmet_liquidos_electrolitos_val: ''
+    patelim_habito_intestinal_esc: ''
+    patelim_habito_intestinal_val: ''
+    patelim_habito_urinario_esc: ''
+    patelim_habito_urinario_val: ''
+    acteje_valoracion_cardiopulmonar_esc: ''
+    acteje_valoracion_cardiopulmonar_val: ''
+    acteje_capacidad_motora_esc: ''
+    acteje_capacidad_motora_val: ''
+    acteje_act_diversion_esc: ''
+    acteje_act_diversion_val: ''
+    acteje_deficit_autocuidado_esc: ''
+    acteje_deficit_autocuidado_val: ''
+    acteje_crecim_desarrollo_esc: ''
+    acteje_crecim_desarrollo_val: ''
+    des_habito_descanso_esc: ''
+    des_habito_descanso_val: ''
+    des_transtorno_sueno_esc: ''
+    des_transtorno_sueno_val: ''
+    cogper_alter_sensoriales_esc: ''
+    cogper_alter_sensoriales_val: ''
+    cogper_nivel_conciencia_esc: ''
+    cogper_nivel_conciencia_val: ''
+    cogper_alteracion_promentales_esc: ''
+    cogper_alteracion_promentales_val: ''
+    auto_reaccion_emocional_esc: ''
+    auto_reaccion_emocional_val: ''
+    relrol_relacion_interpersonal_esc: ''
+    relrol_relacion_interpersonal_val: ''
+    relrol_conducta_familia_esc: ''
+    relrol_conducta_familia_val: ''
+    relrol_cambio_personalfamiliar_esc: ''
+    relrol_cambio_personalfamiliar_val: ''
+    repsex_alteracion_sisreproductivo_esc: ''
+    repsex_alteracion_sisreproductivo_val: ''
+    capstr_relpaciente_enfermedad_esc: ''
+    capstr_relpaciente_enfermedad_val: ''
+    capstr_relfamilia_enfermedad_esc: ''
+    capstr_relfamilia_enfermedad_val: ''
+    creencia_religiosa: ''
+    diagnostico_enfermera: ''
+    created_at: '2014-01-09 17:29:05'
+    updated_at: '2014-01-09 17:29:05'
+UsoHospitalario:
+  UsoHospitalario_1:
+    Internado: INTER1
+    lugar: 'la paz'
+    fecha: '2014-01-10'
+    medico_id: null
+    codigo: 1103nn
+    especialidad: traumatologia
+    created_at: '2014-01-13 11:25:55'
+    updated_at: '2014-01-13 11:25:55'
+  UsoHospitalario_2:
+    Internado: INTER1
+    lugar: 'la paz'
+    fecha: '2014-01-23'
+    medico_id: null
+    codigo: 11011a
+    especialidad: traumatologia
+    created_at: '2014-01-13 11:26:12'
+    updated_at: '2014-01-13 11:26:12'
+SolicitudTransfusionSanguinea:
+  SolicitudTransfusionSanguinea_1:
+    Internado: INTER1
+    quirofano: '1'
+    requiere_transfusion_de: s
+    cumplirse_enforma: e
+    fecha_prog_quirurgica: '2014-01-22'
+    hora_prog_quirurgica: '04:45:00'
+    quirofano_prog_quirurgica: si
+    cantidad_requerida: '12'
+    cantidad_requerida_unidad: bolsas
+    observaciones: 'el paciente padece de leucemia'
+    fecha_solicitud: '2014-01-21'
+    hora_solicitud: '04:45:00'
+    medico_id: null
+    numero: '23'
+    fecha_recepcion_solicitud: '2014-02-04'
+    bolsa_compatible1: '0004001'
+    bolsa_compatible2: '0004012'
+    bolsa_compatible3: '0001234'
+    bolsa_compatible4: ''
+    bolsa_compatible5: ''
+    grupo_sanguineo_receptor: 'rh a-'
+    hr_receptor: 'rh o+'
+    anticuerpos_irreg: no
+    nombre_res_bancosangre: 'banco de sagre ramirez'
+    created_at: '2014-01-13 11:33:23'
+    updated_at: '2014-01-13 11:33:23'
+  SolicitudTransfusionSanguinea_2:
+    Internado: INTER1
+    quirofano: '2'
+    requiere_transfusion_de: s
+    cumplirse_enforma: e
+    fecha_prog_quirurgica: '2014-01-22'
+    hora_prog_quirurgica: '05:15:00'
+    quirofano_prog_quirurgica: si
+    cantidad_requerida: '12'
+    cantidad_requerida_unidad: bolsas
+    observaciones: ninguna
+    fecha_solicitud: '2014-01-30'
+    hora_solicitud: '07:00:00'
+    medico_id: null
+    numero: '23'
+    fecha_recepcion_solicitud: '2014-01-23'
+    bolsa_compatible1: '44133'
+    bolsa_compatible2: '33124'
+    bolsa_compatible3: '0001234'
+    bolsa_compatible4: ''
+    bolsa_compatible5: ''
+    grupo_sanguineo_receptor: 'rh o+'
+    hr_receptor: 'rh o+'
+    anticuerpos_irreg: no
+    nombre_res_bancosangre: 'Vida sana'
+    created_at: '2014-01-13 11:34:10'
+    updated_at: '2014-01-13 11:34:10'
+DetalleMedicacion:
+  DetalleMedicacion_1:
+    SolicitudInterconsulta: SolicitudInterconsulta_1
+    medicacion_utilizada: diclofenaco
+    dosis: '2 pastillas por dia'
+    fecha_inicio: '2014-01-22'
+    created_at: '2014-01-13 11:29:45'
+    updated_at: '2014-01-13 11:29:45'
+  DetalleMedicacion_2:
+    SolicitudInterconsulta: SolicitudInterconsulta_1
+    medicacion_utilizada: ibuprofeno
+    dosis: '3 pastillas por dia'
+    fecha_inicio: '2014-01-29'
+    created_at: '2014-01-13 11:29:53'
+    updated_at: '2014-01-13 11:29:53'
+OrdenMedica:
+  OrdenMedica_1:
+    Internado: INTER1
+    ViaAdministracion: Topica
+    fecha_hora: '2014-01-09 01:15:00'
+    nombre_medicamento_indicacion: 'tiene q guardar reposo por 1 semana'
+    dosis_intervalo: ninguna
+    fecha_inicio: '2014-01-16'
+    fecha_terminacion: '2014-01-22'
+    created_at: '2014-01-13 11:23:16'
+    updated_at: '2014-01-13 11:23:16'
+  OrdenMedica_2:
+    Internado: INTER1
+    ViaAdministracion: Oral
+    fecha_hora: '2014-01-16 02:30:00'
+    nombre_medicamento_indicacion: 'Administrar esteroides y observar cambios en el funcionamiento hepatico'
+    dosis_intervalo: 'cada 1 hora'
+    fecha_inicio: '2014-01-02'
+    fecha_terminacion: '2014-01-24'
+    created_at: '2014-01-13 11:23:33'
+    updated_at: '2014-01-13 11:23:33'
+  OrdenMedica_3:
+    Internado: INTER1
+    ViaAdministracion: Sublingual
+    fecha_hora: '2014-01-22 03:00:00'
+    nombre_medicamento_indicacion: 'Tomar ibuprofeno con el estomago lleno'
+    dosis_intervalo: 'cada 8 horas'
+    fecha_inicio: '2014-01-15'
+    fecha_terminacion: '2014-01-22'
+    created_at: '2014-01-13 11:23:56'
+    updated_at: '2014-01-13 11:23:56'
+DetalleMaterial:
+  DetalleMaterial_1:
+    SolicitudReposicionMaterial: SolicitudReposicionMaterial_1
+    codigo: avasa33
+    descripcion: bisturis
+    unidad: pza
+    saldo_anterior: '1'
+    reposicion_solicitada: '2'
+    saldo_actual: '34'
+    created_at: '2014-01-13 11:27:49'
+    updated_at: '2014-01-13 11:27:49'
+  DetalleMaterial_2:
+    SolicitudReposicionMaterial: SolicitudReposicionMaterial_1
+    codigo: asdf1
+    descripcion: gazas
+    unidad: pza
+    saldo_anterior: '31'
+    reposicion_solicitada: '12'
+    saldo_actual: '12'
+    created_at: '2014-01-13 11:28:05'
+    updated_at: '2014-01-13 11:28:05'
+  DetalleMaterial_3:
+    SolicitudReposicionMaterial: SolicitudReposicionMaterial_2
+    codigo: va123
+    descripcion: bisturis
+    unidad: pza
+    saldo_anterior: '21'
+    reposicion_solicitada: '23'
+    saldo_actual: '41'
+    created_at: '2014-01-13 11:28:27'
+    updated_at: '2014-01-13 11:28:27'
+  DetalleMaterial_4:
+    SolicitudReposicionMaterial: SolicitudReposicionMaterial_2
+    codigo: '2'
+    descripcion: 'tijeras quirurgicas'
+    unidad: pza
+    saldo_anterior: '12'
+    reposicion_solicitada: '31'
+    saldo_actual: '12'
+    created_at: '2014-01-13 11:28:40'
+    updated_at: '2014-01-13 11:28:40'
+SignosVitalesNursery:
+  SignosVitalesNursery_1:
+    Internado: INTER1
+    fecha: '2014-01-08'
+    hora: '02:30:00'
+    fc_nursery: '1'
+    fr_nursery: '2'
+    to_nursery: '2'
+    diu_nursery: '1'
+    cat_nursery: '1'
+    lm_nursery: '1'
+    residuo: ninguno
+    observaciones: mejorando
+    created_at: '2014-01-13 11:22:50'
+    updated_at: '2014-01-13 11:22:50'
+AutorizacionAutopsia:
+  AutorizacionAutopsia_1:
+    Internado: INTER4
+    nombre_familiar1: 'Genoveba Jimenez'
+    tipo_parentesco1: Prima
+    ci_familiar1: '5875632'
+    nombre_familiar2: 'Teresa Alave'
+    tipo_parentesco2: Tia
+    ci_familiar2: '959854'
+    nombre_familiar3: ''
+    tipo_parentesco3: ''
+    ci_familiar3: ''
+    fecha_hora: '2014-01-09 13:45:00'
+    created_at: '2014-01-09 17:31:22'
+    updated_at: '2014-01-09 17:31:22'
+  AutorizacionAutopsia_2:
+    Internado: INTER1
+    nombre_familiar1: Juan
+    tipo_parentesco1: Tio
+    ci_familiar1: '6781444'
+    nombre_familiar2: ''
+    tipo_parentesco2: ''
+    ci_familiar2: ''
+    nombre_familiar3: ''
+    tipo_parentesco3: ''
+    ci_familiar3: ''
+    fecha_hora: '2014-01-23 05:00:00'
+    created_at: '2014-01-13 11:22:22'
+    updated_at: '2014-01-13 11:22:22'
+SolicitudExamenLaboratorioClinico:
+  SolicitudExamenLaboratorioClinico_1:
+    Internado: INTER1
+    vobo_medico_id: null
+    examenes: null
+    material_enviado: 'fecal, orinal, sangre'
+    otros_examenes: no
+    diagnostico_presuntivo: 'tiene gripe'
+    medico_id: null
+    lugar: 'la paz'
+    fecha: '2014-01-30'
+    created_at: '2014-01-13 11:32:17'
+    updated_at: '2014-01-13 11:32:17'
+AutorizacionDiagnosticoTratamiento:
+  AutorizacionDiagnosticoTratamiento_1:
+    Internado: INTER2
+    nombre_familiar: 'Guido Aruquipa'
+    ci_familiar: '595856'
+    fecha_hora: '2013-12-12 01:00:00'
+    created_at: '2014-01-09 17:16:14'
+    updated_at: '2014-01-09 17:16:14'
+  AutorizacionDiagnosticoTratamiento_2:
+    Internado: INTER4
+    nombre_familiar: 'Genoveba Jimenez'
+    ci_familiar: '386449'
+    fecha_hora: '2014-01-01 08:45:00'
+    created_at: '2014-01-09 17:29:52'
+    updated_at: '2014-01-09 17:29:52'
+  AutorizacionDiagnosticoTratamiento_3:
+    Internado: INTER1
+    nombre_familiar: Mabuel
+    ci_familiar: '7768585'
+    fecha_hora: '2014-01-02 02:00:00'
+    created_at: '2014-01-13 11:22:08'
+    updated_at: '2014-01-13 11:22:08'
+PapeletaPedidoMaterial:
+  PapeletaPedidoMaterial_1:
+    Internado: INTER3
+    enfermera_id: null
+    fecha_solicitud: '2014-01-07'
+    entregado: false
+    created_at: '2014-01-08 19:18:52'
+    updated_at: '2014-01-08 19:18:52'
+  PapeletaPedidoMaterial_2:
+    Internado: INTER1
+    enfermera_id: null
+    fecha_solicitud: '2014-01-22'
+    entregado: false
+    created_at: '2014-01-08 20:11:29'
+    updated_at: '2014-01-08 20:11:29'
+ProgramacionCirugia:
+  ProgramacionCirugia_1:
+    Internado: INTER1
+    medico_id: null
+    operacion_fecha: '2014-01-16'
+    operacion_hora: 'a continuacion'
+    diagnostico_preoperatorio: 'estado critico, apendice inflamado'
+    tratamiento_quirurgico: operacion
+    anestesia: local
+    otros: 'no tiene'
+    examenes_auxiliares:
+      - C
+      - L
+      - O
+    fecha: null
+    enfermera_id: null
+    enviado: ''
+    recibido: ''
+    created_at: '2014-01-13 11:25:14'
+    updated_at: '2014-01-13 11:25:14'
+  ProgramacionCirugia_2:
+    Internado: INTER1
+    medico_id: null
+    operacion_fecha: '2014-01-22'
+    operacion_hora: 'a continuacion'
+    diagnostico_preoperatorio: 'nariz rota golpeada contra el suelo'
+    tratamiento_quirurgico: 'operacion de la nariz y tabique'
+    anestesia: general
+    otros: no
+    examenes_auxiliares:
+      - C
+      - L
+      - R
+      - O
+    fecha: null
+    enfermera_id: null
+    enviado: ''
+    recibido: ''
+    created_at: '2014-01-13 11:25:41'
+    updated_at: '2014-01-13 11:25:41'
+AdministracionMedicamento:
+  AdministracionMedicamento_1:
+    Internado: INTER3
+    enfermera_id: '1'
+    medicamento_solucion: suero
+    tipo: s
+    fecha: '2014-01-08'
+    horario: '04:30:00'
+    created_at: '2014-01-08 19:07:19'
+    updated_at: '2014-01-08 19:07:19'
+  AdministracionMedicamento_2:
+    Internado: INTER1
+    enfermera_id: '1'
+    medicamento_solucion: 'fddsa fdsafdsa'
+    tipo: s
+    fecha: '2014-01-10'
+    horario: '05:00:00'
+    created_at: '2014-01-08 19:55:38'
+    updated_at: '2014-01-08 19:58:36'
+  AdministracionMedicamento_3:
+    Internado: INTER1
+    enfermera_id: '1'
+    medicamento_solucion: 'infusion de plasma'
+    tipo: s
+    fecha: '2013-12-03'
+    horario: '03:45:00'
+    created_at: '2014-01-09 16:57:59'
+    updated_at: '2014-01-09 16:57:59'
+  AdministracionMedicamento_4:
+    Internado: INTER2
+    enfermera_id: '1'
+    medicamento_solucion: penicilina
+    tipo: m
+    fecha: '2013-12-31'
+    horario: '04:00:00'
+    created_at: '2014-01-09 17:13:54'
+    updated_at: '2014-01-09 17:13:54'
+  AdministracionMedicamento_5:
+    Internado: INTER2
+    enfermera_id: '1'
+    medicamento_solucion: 'antiinflamatorio x'
+    tipo: m
+    fecha: '2013-12-25'
+    horario: '04:15:00'
+    created_at: '2014-01-09 17:14:18'
+    updated_at: '2014-01-09 17:14:18'
+  AdministracionMedicamento_6:
+    Internado: INTER4
+    enfermera_id: '1'
+    medicamento_solucion: 'pastillas desinflamantes'
+    tipo: m
+    fecha: '2013-12-10'
+    horario: '04:00:00'
+    created_at: '2014-01-09 17:27:18'
+    updated_at: '2014-01-09 17:27:18'
+  AdministracionMedicamento_7:
+    Internado: INTER4
+    enfermera_id: '1'
+    medicamento_solucion: analgesico
+    tipo: m
+    fecha: '2013-12-11'
+    horario: '04:00:00'
+    created_at: '2014-01-09 17:27:37'
+    updated_at: '2014-01-09 17:27:37'
+  AdministracionMedicamento_8:
+    Internado: INTER4
+    enfermera_id: '1'
+    medicamento_solucion: analgesico
+    tipo: m
+    fecha: '2013-12-12'
+    horario: '04:45:00'
+    created_at: '2014-01-09 17:27:54'
+    updated_at: '2014-01-09 17:27:54'
+  AdministracionMedicamento_9:
+    Internado: INTER4
+    enfermera_id: '1'
+    medicamento_solucion: 'suero '
+    tipo: s
+    fecha: '2013-12-13'
+    horario: '11:00:00'
+    created_at: '2014-01-09 17:28:25'
+    updated_at: '2014-01-09 17:28:25'
+AutorizacionAltaSolicitada:
+  AutorizacionAltaSolicitada_1:
+    Internado: INTER1
+    nombre_familiar: 'joaqui terrazas'
+    ci_familiar: '56678548'
+    fecha_hora: '2014-01-01 01:45:00'
+    created_at: '2014-01-09 16:59:21'
+    updated_at: '2014-01-09 16:59:21'
+  AutorizacionAltaSolicitada_2:
+    Internado: INTER2
+    nombre_familiar: 'Guido Aruquipa'
+    ci_familiar: '954985'
+    fecha_hora: '2014-01-01 02:00:00'
+    created_at: '2014-01-09 17:17:06'
+    updated_at: '2014-01-09 17:17:06'
+  AutorizacionAltaSolicitada_3:
+    Internado: INTER4
+    nombre_familiar: 'Genoveba Jimenez'
+    ci_familiar: '4875875'
+    fecha_hora: '2014-01-01 08:00:00'
+    created_at: '2014-01-09 17:30:29'
+    updated_at: '2014-01-09 17:30:29'
+DetalleSolicitudExamenLaboratorioClinico:
+  DetalleSolicitudExamenLaboratorioClinico_1:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo1
+  DetalleSolicitudExamenLaboratorioClinico_2:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo2
+  DetalleSolicitudExamenLaboratorioClinico_3:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo4
+  DetalleSolicitudExamenLaboratorioClinico_4:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo5
+  DetalleSolicitudExamenLaboratorioClinico_5:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo7
+  DetalleSolicitudExamenLaboratorioClinico_6:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo8
+  DetalleSolicitudExamenLaboratorioClinico_7:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo9
+  DetalleSolicitudExamenLaboratorioClinico_8:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo10
+  DetalleSolicitudExamenLaboratorioClinico_9:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo11
+  DetalleSolicitudExamenLaboratorioClinico_10:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo15
+  DetalleSolicitudExamenLaboratorioClinico_11:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo19
+  DetalleSolicitudExamenLaboratorioClinico_12:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo21
+  DetalleSolicitudExamenLaboratorioClinico_13:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo22
+  DetalleSolicitudExamenLaboratorioClinico_14:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo25
+  DetalleSolicitudExamenLaboratorioClinico_15:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo26
+  DetalleSolicitudExamenLaboratorioClinico_16:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo28
+  DetalleSolicitudExamenLaboratorioClinico_17:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo34
+  DetalleSolicitudExamenLaboratorioClinico_18:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo36
+  DetalleSolicitudExamenLaboratorioClinico_19:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo37
+  DetalleSolicitudExamenLaboratorioClinico_20:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo39
+  DetalleSolicitudExamenLaboratorioClinico_21:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo43
+  DetalleSolicitudExamenLaboratorioClinico_22:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo45
+  DetalleSolicitudExamenLaboratorioClinico_23:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo46
+  DetalleSolicitudExamenLaboratorioClinico_24:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo47
+  DetalleSolicitudExamenLaboratorioClinico_25:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo48
+  DetalleSolicitudExamenLaboratorioClinico_26:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo54
+  DetalleSolicitudExamenLaboratorioClinico_27:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo55
+  DetalleSolicitudExamenLaboratorioClinico_28:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo56
+  DetalleSolicitudExamenLaboratorioClinico_29:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo57
+  DetalleSolicitudExamenLaboratorioClinico_30:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo58
+  DetalleSolicitudExamenLaboratorioClinico_31:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo61
+  DetalleSolicitudExamenLaboratorioClinico_32:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo62
+  DetalleSolicitudExamenLaboratorioClinico_33:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo63
+  DetalleSolicitudExamenLaboratorioClinico_34:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo64
+  DetalleSolicitudExamenLaboratorioClinico_35:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo66
+  DetalleSolicitudExamenLaboratorioClinico_36:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo67
+  DetalleSolicitudExamenLaboratorioClinico_37:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo68
+  DetalleSolicitudExamenLaboratorioClinico_38:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo69
+  DetalleSolicitudExamenLaboratorioClinico_39:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo78
+  DetalleSolicitudExamenLaboratorioClinico_40:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo79
+  DetalleSolicitudExamenLaboratorioClinico_41:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo81
+  DetalleSolicitudExamenLaboratorioClinico_42:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo82
+  DetalleSolicitudExamenLaboratorioClinico_43:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo84
+  DetalleSolicitudExamenLaboratorioClinico_44:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo85
+  DetalleSolicitudExamenLaboratorioClinico_45:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo88
+  DetalleSolicitudExamenLaboratorioClinico_46:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo89
+  DetalleSolicitudExamenLaboratorioClinico_47:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo91
+  DetalleSolicitudExamenLaboratorioClinico_48:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo95
+  DetalleSolicitudExamenLaboratorioClinico_49:
+    SolicitudExamenLaboratorioClinico: SolicitudExamenLaboratorioClinico_1
+    TipoExamenLaboratorioClinico: Tipo96
+NotasEvolucion:
+  NotasEvolucion_1:
+    Internado: INTER1
+    fecha_hora: '2013-12-30 00:15:00'
+    numero_prob: '8'
+    nota_soap: 'infecccion sanando normal'
+    created_at: '2014-01-09 17:13:21'
+    updated_at: '2014-01-09 17:13:21'
+  NotasEvolucion_2:
+    Internado: INTER2
+    fecha_hora: '2014-01-01 00:45:00'
+    numero_prob: '98'
+    nota_soap: 'evolucion lenta'
+    created_at: '2014-01-09 17:22:01'
+    updated_at: '2014-01-09 17:22:01'
+  NotasEvolucion_3:
+    Internado: INTER2
+    fecha_hora: '2013-12-31 01:30:00'
+    numero_prob: '8978'
+    nota_soap: 'evolucion de acuerdo a pronostico'
+    created_at: '2014-01-09 17:23:04'
+    updated_at: '2014-01-09 17:23:04'
+  NotasEvolucion_4:
+    Internado: INTER4
+    fecha_hora: '2013-12-18 12:30:00'
+    numero_prob: '97'
+    nota_soap: 'evolucion segun pronostico'
+    created_at: '2014-01-09 17:34:58'
+    updated_at: '2014-01-09 17:34:58'
+  NotasEvolucion_5:
+    Internado: INTER4
+    fecha_hora: '2013-12-28 14:00:00'
+    numero_prob: '98'
+    nota_soap: 'evolucion normal'
+    created_at: '2014-01-09 17:35:19'
+    updated_at: '2014-01-09 17:35:19'
+SolicitudInterconsulta:
+  SolicitudInterconsulta_1:
+    Internado: INTER1
+    dirigida_a: Manuel
+    especialidad: Otorrinonaringologo
+    motivo: 'nariz rota'
+    datos_clinicos: no
+    informe_medico: 'necesita operacion'
+    conclusiones: ninguna
+    hora_solicitud: '04:00:00'
+    fecha_solicitud: '2014-02-05'
+    created_at: '2014-01-13 11:29:45'
+    updated_at: '2014-01-13 11:29:45'
+ExamenFisicoRecienNacido:
+  ExamenFisicoRecienNacido_1:
+    Internado: INTER1
+    ap_paterno: torrez
+    ap_materno: callecina
+    fecha_nacimiento: '2014-01-02'
+    sexo: true
+    peso_nacimiento: '50 g'
+    talla: 'super s'
+    circunferencia_torax: '30 cm'
+    numero_cuna: '13'
+    fecha_adminision: '2014-01-23'
+    fecha_egreso: '2014-01-16'
+    created_at: '2014-01-13 11:26:53'
+    updated_at: '2014-01-13 11:26:53'
+  ExamenFisicoRecienNacido_2:
+    Internado: INTER1
+    ap_paterno: mamani
+    ap_materno: calle
+    fecha_nacimiento: '2014-01-22'
+    sexo: false
+    peso_nacimiento: 80g
+    talla: 'super s'
+    circunferencia_torax: '30 cm'
+    numero_cuna: '41'
+    fecha_adminision: '2014-01-31'
+    fecha_egreso: '2014-01-16'
+    created_at: '2014-01-13 11:27:26'
+    updated_at: '2014-01-13 11:27:26'
+MedicoParticular:
+  MedicoParticular_1:
+    JuntaMedica: JuntaMedica_1
+    nombre: 'Arminda Guzman'
+    especialidad: Traumatologia
+    cargo: ''
+    created_at: '2014-01-09 17:01:58'
+    updated_at: '2014-01-09 17:01:58'
+  MedicoParticular_2:
+    JuntaMedica: JuntaMedica_1
+    nombre: 'Arminda Guzman'
+    especialidad: Traumatologia
+    cargo: ''
+    created_at: '2014-01-09 17:06:12'
+    updated_at: '2014-01-09 17:06:12'
+  MedicoParticular_3:
+    JuntaMedica: JuntaMedica_2
+    nombre: 'Benjamin Martinez'
+    especialidad: Ginecologia
+    cargo: ''
+    created_at: '2014-01-09 17:18:35'
+    updated_at: '2014-01-09 17:18:35'
+  MedicoParticular_4:
+    JuntaMedica: JuntaMedica_3
+    nombre: 'Daniel Peredo'
+    especialidad: Traumatologo
+    cargo: ''
+    created_at: '2014-01-09 17:33:00'
+    updated_at: '2014-01-09 17:33:00'
+SolicitudServicio:
+  SolicitudServicio_1:
+    Internado: INTER1
+    Atencion: Atencion_1
+    para: 'analisis de sangre'
+    diagnostico_presuncion: 'tiene gripe'
+    material_utilizado: 'jeringas y gazas'
+    created_at: '2014-01-13 11:31:05'
+    updated_at: '2014-01-13 11:31:05'
+  SolicitudServicio_2:
+    Internado: INTER1
+    Atencion: Atencion_1
+    para: ecografia
+    diagnostico_presuncion: 'paralisis parcial'
+    material_utilizado: 'Hojas de radiografia'
+    created_at: '2014-01-13 11:31:32'
+    updated_at: '2014-01-13 11:31:32'
+DetalleUsoHospitalario:
+  DetalleUsoHospitalario_1:
+    UsoHospitalario: UsoHospitalario_1
+    codigo_cbm: af112a
+    detalle: 'cadera metalica'
+    cantidad: '1'
+    unidad: pza
+    cod_farmacia_ibm: '04014'
+    created_at: '2014-01-13 11:25:55'
+    updated_at: '2014-01-13 11:25:55'
+  DetalleUsoHospitalario_2:
+    UsoHospitalario: UsoHospitalario_2
+    codigo_cbm: la114la
+    detalle: diclofenaco
+    cantidad: '2'
+    unidad: pza
+    cod_farmacia_ibm: 040lla
+    created_at: '2014-01-13 11:26:12'
+    updated_at: '2014-01-13 11:26:12'
+  DetalleUsoHospitalario_3:
+    UsoHospitalario: UsoHospitalario_2
+    codigo_cbm: nnf12
+    detalle: 'rodillera ortopedica'
+    cantidad: '2'
+    unidad: pza
+    cod_farmacia_ibm: ggja1313
+    created_at: '2014-01-13 11:26:22'
+    updated_at: '2014-01-13 11:26:22'
+Atencion:
+  Atencion_1:
+    nombre: SERVICIO
+    created_at: '2014-01-13 11:21:19'
+    updated_at: '2014-01-13 11:21:19'
+  Atencion_2:
+    nombre: SERVICIO
+    created_at: '2014-01-08 14:03:26'
+    updated_at: '2014-01-08 14:03:26'
+SolicitudReposicionMaterial:
+  SolicitudReposicionMaterial_1:
+    Internado: INTER1
+    unidad: enfermeria
+    encargado: jorge
+    created_at: '2014-01-13 11:27:49'
+    updated_at: '2014-01-13 11:27:49'
+  SolicitudReposicionMaterial_2:
+    Internado: INTER1
+    unidad: quirofano
+    encargado: jorge
+    created_at: '2014-01-13 11:28:27'
+    updated_at: '2014-01-13 11:28:27'
+JuntaMedica:
+  JuntaMedica_1:
+    Internado: INTER1
+    medico_solicitante: 'Hugo Armando Patrick'
+    servicio: urgencia
+    especialidades: 'traumatologia, infeccion'
+    fecha_junta: '2014-01-06'
+    diagnostico_establecido: infeccion
+    relacion_junta: ''
+    conclusiones: ''
+    tac: true
+    contraste: false
+    created_at: '2014-01-09 17:01:58'
+    updated_at: '2014-01-09 17:01:58'
+  JuntaMedica_2:
+    Internado: INTER2
+    medico_solicitante: 'Fernando Soto'
+    servicio: Ginecologia
+    especialidades: Ginecologia
+    fecha_junta: '2013-12-29'
+    diagnostico_establecido: 'complicacion parto'
+    relacion_junta: ''
+    conclusiones: 'cesarea necesaria'
+    tac: true
+    contraste: false
+    created_at: '2014-01-09 17:18:35'
+    updated_at: '2014-01-09 17:18:35'
+  JuntaMedica_3:
+    Internado: INTER4
+    medico_solicitante: 'Arturo Moscoso'
+    servicio: Cirugia
+    especialidades: Cirujano
+    fecha_junta: '2013-12-26'
+    diagnostico_establecido: peritonitis
+    relacion_junta: ''
+    conclusiones: 'operacion urgente'
+    tac: false
+    contraste: true
+    created_at: '2014-01-09 17:33:00'
+    updated_at: '2014-01-09 17:33:00'
+DetallePapeletaPedidoMaterial:
+  DetallePapeletaPedidoMaterial_1:
+    PapeletaPedidoMaterial: PapeletaPedidoMaterial_1
+    columna1: jjaajsdfa
+    columna2: lk
+    columna3: jlkjkñl
+    created_at: '2014-01-08 19:18:52'
+    updated_at: '2014-01-08 19:18:52'
+  DetallePapeletaPedidoMaterial_2:
+    PapeletaPedidoMaterial: PapeletaPedidoMaterial_2
+    columna1: jhk
+    columna2: kjhkj
+    columna3: kj
+    created_at: '2014-01-08 20:11:29'
+    updated_at: '2014-01-08 20:11:29'

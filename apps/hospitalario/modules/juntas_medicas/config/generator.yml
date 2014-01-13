@@ -14,7 +14,8 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
+      fields:  
+        fecha_junta: {date_format: 'dd/MM/yyyy hh:mm' }
       list:    
         title: Juntas Medicas
         display: [fecha_junta, medico_solicitante, diagnostico_establecido, conclusiones]

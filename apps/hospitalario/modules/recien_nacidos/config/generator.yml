@@ -14,10 +14,15 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
+      fields:  
+        fecha_nacimiento: {label: 'Nacimiento', date_format: 'dd/MM/yyyy'}
+        ap_paterno:       {label: 'Apellido Paterno'}
+        ap_materno:       {label: 'Apellido Materno'}
+        peso_nacimiento:  {label: 'Peso'}
+        numero_cuna:      {label: 'Cuna'}
       list:    
         title: Examen Físico del Recien Nacido
-        display: [ap_paterno, ap_materno, sexo, peso_nacimiento]
+        display: [fecha_nacimiento, ap_paterno, ap_materno, numero_cuna, sexo, peso_nacimiento]
         object_actions:  
           _edit:        { credentials: [noHistory] }
           ver_detalle:  { label: Ver Detalle, action: edit, credentials: [siHistory] }

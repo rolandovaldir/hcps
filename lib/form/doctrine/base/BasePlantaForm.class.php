@@ -22,9 +22,9 @@ abstract class BasePlantaForm extends BaseFormDoctrine
       'observaciones' => new sfWidgetFormInputText(),
       'codigo'        => new sfWidgetFormInputText(),
       'plano'         => new sfWidgetFormInputText(),
-      'numero'        => new myWidgetFormDojoInteger(),
-      'created_at'    => new myWidgetFormDojoDateTime(),
-      'updated_at'    => new myWidgetFormDojoDateTime(),
+      'numero'        => new sfWidgetFormInputText(),
+      'created_at'    => new sfWidgetFormDateTime(),
+      'updated_at'    => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(
@@ -36,8 +36,8 @@ abstract class BasePlantaForm extends BaseFormDoctrine
       'codigo'        => new sfValidatorString(array('max_length' => 10, 'required' => false)),
       'plano'         => new sfValidatorString(array('max_length' => 100, 'required' => false)),
       'numero'        => new sfValidatorInteger(array('required' => false)),
-      'created_at'    => new myValidatorDojoDateTime(),
-      'updated_at'    => new myValidatorDojoDateTime(),
+      'created_at'    => new sfValidatorDateTime(),
+      'updated_at'    => new sfValidatorDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('planta[%s]');

@@ -211,7 +211,7 @@ Cama:
 #--------------------------------------------------------
 
 OrdenMedica:
-  actAs: [Timestampable]
+  actAs: [Timestampable, Signable]
   columns:
     internado_id:                  {type: integer, notnull: true}
     via_administracion_id:         {type: integer, notnull: true}
@@ -253,7 +253,7 @@ ViaAdministracion:
 #--------------------------------------------------------
 
 JuntaMedica:
-  actAs: [Timestampable]
+  actAs: [Timestampable, Signable]
   columns:
     internado_id:     {type: integer, notnull: true}
     medico_solicitante:      {type: string(100), notnull: true}
@@ -282,7 +282,7 @@ MedicoParticular:
 #--------------------------------------------------------
     
 ExamenFisicoRecienNacido:
-  actAs: [Timestampable]
+  actAs: [Timestampable, Signable]
   columns:
     internado_id:         {type: integer, notnull: true}
     ap_paterno:           {type: string(45), notnull: true}
@@ -300,7 +300,7 @@ ExamenFisicoRecienNacido:
     Apgar:     {local: id, foreign: examen_fisico_recien_nacido_id, type: many, foreignAlias: RecienNacido}
     
 Apgar:
-  actAs: [Timestampable]
+  actAs: [Timestampable, Signable]
   columns:
     examen_fisico_recien_nacido_id: {type: integer, notnull: true}
     nacer_egresar:                  {type: boolean, notnull: true}
@@ -324,7 +324,7 @@ Apgar:
 #--------------------------------------------------------
 
 SolicitudInterconsulta:
-  actAs: [Timestampable]
+  actAs: [Timestampable, Signable]
   columns:
     internado_id:    {type: integer, notnull: true}
     dirigida_a:      {type: string(50), notnull: true}
@@ -340,7 +340,7 @@ SolicitudInterconsulta:
     DetalleMedicacion: {local: id, foreign: solicitud_interconsulta_id, type: many, foreignAlias: Interconsulta}
     
 DetalleMedicacion:
-  actAs: [Timestampable]
+  actAs: [Timestampable, Signable]
   columns:
     solicitud_interconsulta_id:  {type: integer, notnull: true}
     medicacion_utilizada:        {type: string(150), notnull: true}
@@ -352,7 +352,7 @@ DetalleMedicacion:
 #--------------------------------------------------------
 
 SolicitudServicio:
-  actAs: [Timestampable]
+  actAs: [Timestampable, Signable]
   columns:
     internado_id:           {type: integer, notnull: true}
     atencion_id:            {type: integer, notnull: true}
@@ -372,7 +372,7 @@ Atencion:
 #--------------------------------------------------------
 
 SolicitudReposicionMaterial:
-  actAs: [Timestampable]
+  actAs: [Timestampable, Signable]
   columns:
     internado_id: {type: integer, notnull: true}
     unidad:       {type: string(100), notnull: true}
@@ -397,7 +397,7 @@ DetalleMaterial:
 #--------------------------------------------------------
 
 SignosVitalesNursery:
-  actAs: [Timestampable]
+  actAs: [Timestampable, Signable]
   columns:
     internado_id:  {type: integer, notnull: true}
     fecha:         {type: date, notnull: true}
@@ -416,7 +416,7 @@ SignosVitalesNursery:
 #--------------------------------------------------------
 
 NotasEnfermeria:
-  actAs: [Timestampable]
+  actAs: [Timestampable, Signable]
   columns:
     internado_id:  {type: integer, notnull: true}
     fecha:          {type: date, notnull: true}
@@ -429,7 +429,7 @@ NotasEnfermeria:
 #--------------------------------------------------------
 
 NotasEvolucion:
-  actAs: [Timestampable]
+  actAs: [Timestampable, Signable]
   columns:
     internado_id: {type: integer, notnull: true}
     fecha_hora:   {type: timestamp, notnull: true}
@@ -442,7 +442,7 @@ NotasEvolucion:
 
 # guillermo
 AutorizacionDiagnosticoTratamiento:
-  actAs: [Timestampable]  
+  actAs: [Timestampable, Signable]  
   columns:     
     internado_id:        { type: integer , notnull: true }
     nombre_familiar:        { type: string(200) }
@@ -453,7 +453,7 @@ AutorizacionDiagnosticoTratamiento:
   
 # guillermo  
 AutorizacionAltaSolicitada:
-  actAs: [Timestampable]
+  actAs: [Timestampable, Signable]
   columns:     
     internado_id:          { type: integer , notnull: true }
     nombre_familiar:       { type: string(100), notnull: true}
@@ -464,7 +464,7 @@ AutorizacionAltaSolicitada:
 
 # guillermo
 AutorizacionAutopsia:
-  actAs: [Timestampable]  
+  actAs: [Timestampable, Signable]  
   columns:     
     internado_id:          { type: integer , notnull: true }
     nombre_familiar1:      { type: string(100), notnull: true}
@@ -482,7 +482,7 @@ AutorizacionAutopsia:
 
 # guillermo
 ProgramacionCirugia:
-  actAs: [Timestampable]  
+  actAs: [Timestampable, Signable]  
   columns:     
     internado_id:                { type: integer , notnull: true }
     medico_id:                   { type: integer }
@@ -502,7 +502,7 @@ ProgramacionCirugia:
 
 # guillermo
 SolicitudExamenLaboratorioClinico:
-  actAs: [Timestampable]  
+  actAs: [Timestampable, Signable]  
   columns:     
     internado_id:             { type: integer, notnull: true }
     vobo_medico_id:           { type: integer }
@@ -556,7 +556,7 @@ TipoExamenLaboratorioClinico:
 
 # guillermo
 AdministracionMedicamento:
-  actAs: [Timestampable]  
+  actAs: [Timestampable, Signable]  
   columns:     
     internado_id:               { type: integer, notnull: true }
     enfermera_id:               { type: integer }
@@ -570,7 +570,7 @@ AdministracionMedicamento:
 
 # guillermo
 ResumenAlta:
-  actAs: [Timestampable]  
+  actAs: [Timestampable, Signable]  
   columns:     
     internado_id:              { type: integer, notnull: true }
     medico_id:                 { type: integer }
@@ -589,7 +589,7 @@ ResumenAlta:
 
 # guillermo
 UsoHospitalario:
-  actAs: [Timestampable]  
+  actAs: [Timestampable, Signable]  
   columns:     
     internado_id:           { type: integer, notnull: true }    
     lugar:                  { type: string(60), notnull: true }
@@ -615,7 +615,7 @@ DetalleUsoHospitalario:
       
 # guillermo    
 AtencionEnfermeria:
-  actAs: [Timestampable]  
+  actAs: [Timestampable, Signable]  
   columns:     
     internado_id:                           { type: integer }    
     enfermera_id:                           { type: integer }
@@ -686,7 +686,7 @@ AtencionEnfermeria:
 
 # guillermo
 ListaDieta:
-  actAs: [Timestampable]
+  actAs: [Timestampable, Signable]
   columns:
     internado_id:          { type: integer }
     enfermera_id:          { type: integer }
@@ -700,7 +700,7 @@ ListaDieta:
 
 # guillermo
 SolicitudTransfusionSanguinea:
-  actAs: [Timestampable]  
+  actAs: [Timestampable, Signable]  
   columns:     
     internado_id:                 { type: integer, notnull: true }
     quirofano:                    { type: string(50), notnull: true }
@@ -731,7 +731,7 @@ SolicitudTransfusionSanguinea:
 
 # guillermo
 InformeEstadisticoAdmEgreso:
-  actAs: [Timestampable]  
+  actAs: [Timestampable, Signable]  
   columns:     
     internado_id:               { type: integer, notnull: true }
     urgencia_persona_ref:       { type: string(150) }    
@@ -743,7 +743,7 @@ InformeEstadisticoAdmEgreso:
 
 # guillermo
 PapeletaPedidoMaterial:
-  actAs: [Timestampable]  
+  actAs: [Timestampable, Signable]  
   columns:
     internado_id:          { type: integer, notnull: true }
     enfermera_id:          { type: integer }

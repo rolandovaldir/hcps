@@ -15,12 +15,13 @@ generator:
     config:
       actions: ~
       fields:  
-        fecha_hora:  {label: 'Fecha y Hora'}
+        fecha_hora:  {label: 'Fecha y Hora', date_format: 'dd/MM/yyyy hh:mm'}
         numero_prob: {label: 'PROB N°'}
         nota_soap:   {label: 'Nota'}
+        created_by:  {label: 'Responsable'}
       list:    
         title: Notas de Evolucion
-        display: [fecha_hora, numero_prob, nota_soap]
+        display: [fecha_hora, numero_prob, nota_soap, created_by]
         object_actions:  
           _edit:        { credentials: [noHistory] }
           ver_detalle:  { label: Ver Detalle, action: edit, credentials: [siHistory] }
