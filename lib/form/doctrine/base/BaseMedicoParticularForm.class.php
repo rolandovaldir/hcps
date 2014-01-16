@@ -20,8 +20,8 @@ abstract class BaseMedicoParticularForm extends BaseFormDoctrine
       'nombre'          => new sfWidgetFormInputText(),
       'especialidad'    => new sfWidgetFormInputText(),
       'cargo'           => new sfWidgetFormInputText(),
-      'created_at'      => new sfWidgetFormDateTime(),
-      'updated_at'      => new sfWidgetFormDateTime(),
+      'created_at'      => new myWidgetFormDojoDateTime(),
+      'updated_at'      => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(
@@ -30,8 +30,8 @@ abstract class BaseMedicoParticularForm extends BaseFormDoctrine
       'nombre'          => new sfValidatorString(array('max_length' => 150)),
       'especialidad'    => new sfValidatorString(array('max_length' => 100)),
       'cargo'           => new sfValidatorString(array('max_length' => 50, 'required' => false)),
-      'created_at'      => new sfValidatorDateTime(),
-      'updated_at'      => new sfValidatorDateTime(),
+      'created_at'      => new myValidatorDojoDateTime(),
+      'updated_at'      => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('medico_particular[%s]');

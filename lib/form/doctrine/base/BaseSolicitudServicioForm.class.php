@@ -21,8 +21,8 @@ abstract class BaseSolicitudServicioForm extends BaseFormDoctrine
       'para'                   => new sfWidgetFormTextarea(),
       'diagnostico_presuncion' => new sfWidgetFormInputText(),
       'material_utilizado'     => new sfWidgetFormTextarea(),
-      'created_at'             => new sfWidgetFormDateTime(),
-      'updated_at'             => new sfWidgetFormDateTime(),
+      'created_at'             => new myWidgetFormDojoDateTime(),
+      'updated_at'             => new myWidgetFormDojoDateTime(),
       'created_by'             => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Creator'), 'add_empty' => true)),
       'updated_by'             => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Updator'), 'add_empty' => true)),
     ));
@@ -34,8 +34,8 @@ abstract class BaseSolicitudServicioForm extends BaseFormDoctrine
       'para'                   => new sfValidatorString(array('max_length' => 2000)),
       'diagnostico_presuncion' => new sfValidatorString(array('max_length' => 250)),
       'material_utilizado'     => new sfValidatorString(array('max_length' => 2000)),
-      'created_at'             => new sfValidatorDateTime(),
-      'updated_at'             => new sfValidatorDateTime(),
+      'created_at'             => new myValidatorDojoDateTime(),
+      'updated_at'             => new myValidatorDojoDateTime(),
       'created_by'             => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Creator'), 'required' => false)),
       'updated_by'             => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Updator'), 'required' => false)),
     ));

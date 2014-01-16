@@ -22,8 +22,8 @@ abstract class BasePiezaForm extends BaseFormDoctrine
       'descripcion'   => new sfWidgetFormInputText(),
       'observaciones' => new sfWidgetFormInputText(),
       'plano'         => new sfWidgetFormInputText(),
-      'created_at'    => new sfWidgetFormDateTime(),
-      'updated_at'    => new sfWidgetFormDateTime(),
+      'created_at'    => new myWidgetFormDojoDateTime(),
+      'updated_at'    => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(
@@ -34,8 +34,8 @@ abstract class BasePiezaForm extends BaseFormDoctrine
       'descripcion'   => new sfValidatorString(array('max_length' => 250, 'required' => false)),
       'observaciones' => new sfValidatorString(array('max_length' => 250, 'required' => false)),
       'plano'         => new sfValidatorString(array('max_length' => 200, 'required' => false)),
-      'created_at'    => new sfValidatorDateTime(),
-      'updated_at'    => new sfValidatorDateTime(),
+      'created_at'    => new myValidatorDojoDateTime(),
+      'updated_at'    => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('pieza[%s]');

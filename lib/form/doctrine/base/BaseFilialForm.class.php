@@ -25,8 +25,8 @@ abstract class BaseFilialForm extends BaseFormDoctrine
       'codigo'        => new sfWidgetFormInputText(),
       'geoubicacion'  => new sfWidgetFormTextarea(),
       'geoubicacion2' => new sfWidgetFormTextarea(),
-      'created_at'    => new sfWidgetFormDateTime(),
-      'updated_at'    => new sfWidgetFormDateTime(),
+      'created_at'    => new myWidgetFormDojoDateTime(),
+      'updated_at'    => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(
@@ -40,8 +40,8 @@ abstract class BaseFilialForm extends BaseFormDoctrine
       'codigo'        => new sfValidatorString(array('max_length' => 10, 'required' => false)),
       'geoubicacion'  => new sfValidatorString(array('max_length' => 600, 'required' => false)),
       'geoubicacion2' => new sfValidatorString(array('max_length' => 600, 'required' => false)),
-      'created_at'    => new sfValidatorDateTime(),
-      'updated_at'    => new sfValidatorDateTime(),
+      'created_at'    => new myValidatorDojoDateTime(),
+      'updated_at'    => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('filial[%s]');

@@ -22,8 +22,8 @@ abstract class BaseEmpleadoForm extends BaseFormDoctrine
       'nombre'          => new sfWidgetFormInputText(),
       'apellido'        => new sfWidgetFormInputText(),
       'cargo'           => new sfWidgetFormInputText(),
-      'created_at'      => new sfWidgetFormDateTime(),
-      'updated_at'      => new sfWidgetFormDateTime(),
+      'created_at'      => new myWidgetFormDojoDateTime(),
+      'updated_at'      => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(
@@ -34,8 +34,8 @@ abstract class BaseEmpleadoForm extends BaseFormDoctrine
       'nombre'          => new sfValidatorString(array('max_length' => 45)),
       'apellido'        => new sfValidatorString(array('max_length' => 45)),
       'cargo'           => new sfValidatorString(array('max_length' => 45)),
-      'created_at'      => new sfValidatorDateTime(),
-      'updated_at'      => new sfValidatorDateTime(),
+      'created_at'      => new myValidatorDojoDateTime(),
+      'updated_at'      => new myValidatorDojoDateTime(),
     ));
 
     $this->validatorSchema->setPostValidator(

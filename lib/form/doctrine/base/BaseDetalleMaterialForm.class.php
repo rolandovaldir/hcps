@@ -20,11 +20,11 @@ abstract class BaseDetalleMaterialForm extends BaseFormDoctrine
       'codigo'                           => new sfWidgetFormInputText(),
       'descripcion'                      => new sfWidgetFormInputText(),
       'unidad'                           => new sfWidgetFormInputText(),
-      'saldo_anterior'                   => new sfWidgetFormInputText(),
-      'reposicion_solicitada'            => new sfWidgetFormInputText(),
-      'saldo_actual'                     => new sfWidgetFormInputText(),
-      'created_at'                       => new sfWidgetFormDateTime(),
-      'updated_at'                       => new sfWidgetFormDateTime(),
+      'saldo_anterior'                   => new myWidgetFormDojoInteger(),
+      'reposicion_solicitada'            => new myWidgetFormDojoInteger(),
+      'saldo_actual'                     => new myWidgetFormDojoInteger(),
+      'created_at'                       => new myWidgetFormDojoDateTime(),
+      'updated_at'                       => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(
@@ -36,8 +36,8 @@ abstract class BaseDetalleMaterialForm extends BaseFormDoctrine
       'saldo_anterior'                   => new sfValidatorInteger(),
       'reposicion_solicitada'            => new sfValidatorInteger(),
       'saldo_actual'                     => new sfValidatorInteger(),
-      'created_at'                       => new sfValidatorDateTime(),
-      'updated_at'                       => new sfValidatorDateTime(),
+      'created_at'                       => new myValidatorDojoDateTime(),
+      'updated_at'                       => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('detalle_material[%s]');

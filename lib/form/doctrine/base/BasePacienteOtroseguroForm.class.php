@@ -20,7 +20,7 @@ abstract class BasePacienteOtroseguroForm extends BaseFormDoctrine
       'paterno'         => new sfWidgetFormInputText(),
       'materno'         => new sfWidgetFormInputText(),
       'casada'          => new sfWidgetFormInputText(),
-      'fechaNacimiento' => new sfWidgetFormDate(),
+      'fechaNacimiento' => new myWidgetFormDojoDate(),
       'sexo'            => new sfWidgetFormInputText(),
       'ci'              => new sfWidgetFormInputText(),
       'exp'             => new sfWidgetFormInputText(),
@@ -33,8 +33,8 @@ abstract class BasePacienteOtroseguroForm extends BaseFormDoctrine
       'departamento'    => new sfWidgetFormInputText(),
       'ciudad'          => new sfWidgetFormInputText(),
       'provincia'       => new sfWidgetFormInputText(),
-      'created_at'      => new sfWidgetFormDateTime(),
-      'updated_at'      => new sfWidgetFormDateTime(),
+      'created_at'      => new myWidgetFormDojoDateTime(),
+      'updated_at'      => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(
@@ -43,7 +43,7 @@ abstract class BasePacienteOtroseguroForm extends BaseFormDoctrine
       'paterno'         => new sfValidatorString(array('max_length' => 50)),
       'materno'         => new sfValidatorString(array('max_length' => 50)),
       'casada'          => new sfValidatorString(array('max_length' => 50, 'required' => false)),
-      'fechaNacimiento' => new sfValidatorDate(),
+      'fechaNacimiento' => new myValidatorDojoDate(),
       'sexo'            => new sfValidatorString(array('max_length' => 10)),
       'ci'              => new sfValidatorString(array('max_length' => 20)),
       'exp'             => new sfValidatorString(array('max_length' => 10)),
@@ -56,8 +56,8 @@ abstract class BasePacienteOtroseguroForm extends BaseFormDoctrine
       'departamento'    => new sfValidatorString(array('max_length' => 45, 'required' => false)),
       'ciudad'          => new sfValidatorString(array('max_length' => 45, 'required' => false)),
       'provincia'       => new sfValidatorString(array('max_length' => 45, 'required' => false)),
-      'created_at'      => new sfValidatorDateTime(),
-      'updated_at'      => new sfValidatorDateTime(),
+      'created_at'      => new myValidatorDojoDateTime(),
+      'updated_at'      => new myValidatorDojoDateTime(),
     ));
 
     $this->validatorSchema->setPostValidator(

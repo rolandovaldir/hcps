@@ -20,8 +20,8 @@ abstract class BaseDetalleListaDietaForm extends BaseFormDoctrine
       'internado_id'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => true)),
       'dieta'          => new sfWidgetFormInputText(),
       'diagnostico'    => new sfWidgetFormInputText(),
-      'created_at'     => new sfWidgetFormDateTime(),
-      'updated_at'     => new sfWidgetFormDateTime(),
+      'created_at'     => new myWidgetFormDojoDateTime(),
+      'updated_at'     => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(
@@ -30,8 +30,8 @@ abstract class BaseDetalleListaDietaForm extends BaseFormDoctrine
       'internado_id'   => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'required' => false)),
       'dieta'          => new sfValidatorString(array('max_length' => 250, 'required' => false)),
       'diagnostico'    => new sfValidatorString(array('max_length' => 150, 'required' => false)),
-      'created_at'     => new sfValidatorDateTime(),
-      'updated_at'     => new sfValidatorDateTime(),
+      'created_at'     => new myValidatorDojoDateTime(),
+      'updated_at'     => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('detalle_lista_dieta[%s]');
