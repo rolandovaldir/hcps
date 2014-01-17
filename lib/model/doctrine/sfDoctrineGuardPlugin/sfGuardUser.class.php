@@ -12,7 +12,6 @@
  */
 class sfGuardUser extends PluginsfGuardUser
 {
-        
     
     public function getDescripcionTipo()
     {

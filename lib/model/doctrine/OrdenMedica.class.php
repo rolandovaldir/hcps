@@ -12,4 +12,8 @@
  */
 class OrdenMedica extends BaseOrdenMedica
 {
+    public function __toString()
+    {
+       return $this->getNombre();
+    }
 }
