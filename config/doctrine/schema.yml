@@ -140,9 +140,10 @@ Medico:
     especialidad_id:  { type: integer, notnull: true }
     item_id:          { type: integer, notnull: true }    
   relations:  
-    Especialidad:       { local: especialidad_id, foreign: id, type: one, foreignAlias: Medicos }
-    AtencionEnfermeria: { local: id, foreign: medico_id, type: many, foreignAlias: Medico }
-    UsoHospitalario:    { local: id, foreign: medico_id, type: many, foreignAlias: Medico }
+    Especialidad:        { local: especialidad_id, foreign: id, type: one, foreignAlias: Medicos }
+    AtencionEnfermeria:  { local: id, foreign: medico_id, type: many, foreignAlias: Medico }
+    UsoHospitalario:     { local: id, foreign: medico_id, type: many, foreignAlias: Medico }
+    ProgramacionCirugia: { local: id, foreign: medico_id, type: many, foreignAlias: Medico }
   indexes:
     medico_unique1:
       type: unique
@@ -358,6 +359,7 @@ SolicitudServicio:
   columns:
     internado_id:           {type: integer, notnull: true}
     atencion_id:            {type: integer, notnull: true}
+    fecha:                  {type: date, notnull: true}
     para:                   {type: string(2000), notnull: true}
     diagnostico_presuncion: {type: string(250), notnull: true}
     material_utilizado:     {type: string(2000), notnull: true}
@@ -377,6 +379,7 @@ SolicitudReposicionMaterial:
   actAs: [Timestampable, Signable]
   columns:
     internado_id: {type: integer, notnull: true}
+    fecha:        {type: date, notnull: true}
     unidad:       {type: string(100), notnull: true}
     encargado:    {type: string(150), notnull: true}
   relations:
@@ -500,7 +503,8 @@ ProgramacionCirugia:
     enviado:                     { type: string(80) } 
     recibido:                    { type: string(80) } 
   relations:
-    Internado: { local: internado_id, foreign: id, type: one, foreignAlias: ProgracionesCirugia }
+    Internado: { local: internado_id, foreign: id, type: one, foreignAlias: ProgramacionesCirugia }
+    Medico:    { local: medico_id, foreign: id, type: one, foreignAlias: ProgramacionesCirugia }
 
 # guillermo
 SolicitudExamenLaboratorioClinico:
@@ -775,9 +779,10 @@ PapeletaPedidoMaterial:
 DetallePapeletaPedidoMaterial:
   actAs: [Timestampable]  
   columns:
-    papeleta_pedido_material_id:  { type: integer, notnull: true }    
-    columna1:                     { type: string(15), notnull: true }
-    columna2:                     { type: string(150), notnull: true }
-    columna3:                     { type: string(25), notnull: true }
+    papeleta_pedido_material_id: { type: integer, notnull: true }   
+    codigo:                      { type: string(20), notnull: true }
+    cantidad:                    { type: integer, notnull: true }
+    unidad:                      { type: string(10), notnull: true }
+    detalle:                     { type: string(150), notnull: true }
   relations:
     PapeletaPedidoMaterial:    { local: papeleta_pedido_material_id, foreign: id, type: one, foreignAlias: PapeletaPedidoMaterial }

@@ -17,7 +17,7 @@ abstract class BaseProgramacionCirugiaForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'                        => new sfWidgetFormInputHidden(),
       'internado_id'              => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => false)),
-      'medico_id'                 => new myWidgetFormDojoInteger(),
+      'medico_id'                 => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Medico'), 'add_empty' => true)),
       'operacion_fecha'           => new myWidgetFormDojoDate(),
       'operacion_hora'            => new sfWidgetFormInputText(),
       'diagnostico_preoperatorio' => new sfWidgetFormTextarea(),
@@ -38,7 +38,7 @@ abstract class BaseProgramacionCirugiaForm extends BaseFormDoctrine
     $this->setValidators(array(
       'id'                        => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'internado_id'              => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'))),
-      'medico_id'                 => new sfValidatorInteger(array('required' => false)),
+      'medico_id'                 => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Medico'), 'required' => false)),
       'operacion_fecha'           => new myValidatorDojoDate(),
       'operacion_hora'            => new sfValidatorString(array('max_length' => 100)),
       'diagnostico_preoperatorio' => new sfValidatorString(array('max_length' => 600)),

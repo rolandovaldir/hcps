@@ -91,6 +91,7 @@ generator:
         especificar_derivado: {label: 'En caso de otro especificar procedencia'}
         especificar_cuidador: {label: 'En caso de otro especificar cuidador'}
         nombre_medico:        {label: 'Medico Tratante'}
+        medico_id:            {label: 'Medico Tratante'}
         
       list:  
         title:   Listado Atencion Enfermeria

@@ -15,6 +15,7 @@ abstract class BaseSolicitudServicioFormFilter extends BaseFormFilterDoctrine
     $this->setWidgets(array(
       'internado_id'           => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => true)),
       'atencion_id'            => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Atencion'), 'add_empty' => true)),
+      'fecha'                  => new sfWidgetFormFilterDate(array('from_date' => new myWidgetFormDojoDate(), 'to_date' => new myWidgetFormDojoDate(), 'filter_template' => '%date_range% %empty_checkbox% %empty_label%', 'template' => '<table class="onlyFormat"><tr><td>from</td><td>%from_date%</td><tr/><tr><td>to</td><td>%to_date%</td></tr></table>', 'with_empty' => false)),
       'para'                   => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'diagnostico_presuncion' => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'material_utilizado'     => new sfWidgetFormFilterInput(array('with_empty' => false)),
@@ -27,6 +28,7 @@ abstract class BaseSolicitudServicioFormFilter extends BaseFormFilterDoctrine
     $this->setValidators(array(
       'internado_id'           => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Internado'), 'column' => 'id')),
       'atencion_id'            => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Atencion'), 'column' => 'id')),
+      'fecha'                  => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDateTime(array('required' => false)))),
       'para'                   => new sfValidatorPass(array('required' => false)),
       'diagnostico_presuncion' => new sfValidatorPass(array('required' => false)),
       'material_utilizado'     => new sfValidatorPass(array('required' => false)),
@@ -56,6 +58,7 @@ abstract class BaseSolicitudServicioFormFilter extends BaseFormFilterDoctrine
       'id'                     => 'Number',
       'internado_id'           => 'ForeignKey',
       'atencion_id'            => 'ForeignKey',
+      'fecha'                  => 'Date',
       'para'                   => 'Text',
       'diagnostico_presuncion' => 'Text',
       'material_utilizado'     => 'Text',

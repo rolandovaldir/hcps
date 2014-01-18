@@ -22,4 +22,9 @@ class ProgramacionCirugia extends BaseProgramacionCirugia
         return implode($sepatator, $res);
     }    
     
+    
+    function getNombreMedico()
+    {          
+        return $this->Medico->getNombrec();
+    }
 }

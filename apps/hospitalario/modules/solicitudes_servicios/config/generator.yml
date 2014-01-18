@@ -15,11 +15,11 @@ generator:
     config:
       actions: ~
       fields:  
-        creator:    {label: 'Reponsable'}
-        created_at: {label: 'Fecha', date_format: 'dd/MM/yyyy'}
+        creator:  {label: 'Reponsable'}
+        fecha:    {label: 'Fecha', date_format: 'dd/MM/yyyy'}
       list:    
         title: Solicitudes de Servicios
-        display: [created_at, atencion, para, diagnostico_presuncion, creator]
+        display: [fecha, atencion, para, diagnostico_presuncion, creator]
         object_actions:  
           _edit:        { credentials: [noHistory] }
           ver_detalle:  { label: Ver Detalle, action: edit, credentials: [siHistory] }
@@ -27,7 +27,7 @@ generator:
         actions: {}
         batch_actions: {}
       filter:  
-        display: [atencion_id]
+        display: [fecha, atencion_id]
       form:   
         actions:
           _list: ~

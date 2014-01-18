@@ -19,9 +19,9 @@ generator:
         created_at:      { date_format: dd/MM/yyyy }
         updated_at:      { date_format: dd/MM/yyyy }
         creator:         { label: Responsable }
-        nombre_familiar: {label: Nombre del Familiar}
-        tipo_parentesco: {label: Parentezco}
-        ci_familiar:     {label: C.I.}
+        nombre_familiar: { label: Nombre del Familiar }
+        tipo_parentesco: { label: Parentezco }
+        ci_familiar:     { label: C.I. }
       list:    
         title: Listado Autorizacion Diagnostico Tratamiento
         display: [ fecha_hora, nombre_familiar, ci_familiar, creator]
@@ -36,7 +36,7 @@ generator:
           _delete: ~
           imprimir: {label: Imprimir, action: exportPdf}
       filter: 
-        display: [ nombre_familiar,ci_familiar,fecha_hora ]
+        display: [ fecha_hora, nombre_familiar,ci_familiar ]
       form:    
         display: [ internado_id, nombre_familiar,ci_familiar,fecha_hora ]
         actions:

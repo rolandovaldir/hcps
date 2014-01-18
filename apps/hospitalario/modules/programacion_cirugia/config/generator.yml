@@ -20,9 +20,11 @@ generator:
         created_at:      { date_format: dd/MM/yyyy }
         updated_at:      { date_format: dd/MM/yyyy }
         creator:         { label: 'Responsable'}
+        nombre_medico:   { label: 'Cirujano' }
+        medico_id:       { label: 'Cirujano' }
       list:
         title: Listado Programacion Para Cirugias
-        display: [ operacion_fecha, operacion_hora, diagnostico_preoperatorio, tratamiento_quirurgico, creator]        
+        display: [ operacion_fecha, operacion_hora, nombre_medico, diagnostico_preoperatorio, creator]        
         object_actions:  
           _edit:        { credentials: [noHistory] }
           ver_detalle:  { label: Ver Detalle, action: edit, credentials: [siHistory] }
@@ -34,12 +36,12 @@ generator:
           _delete: ~
           imprimir: {label: Imprimir, action: exportPdf}
       filter:
-        display: [ medico_id, operacion_fecha, diagnostico_preoperatorio, tratamiento_quirurgico, anestesia, otros, examenes_auxiliares ]
+        display: [ operacion_fecha, medico_id]
       form:   
         display: 
-          Operacion:             [ internado_id, operacion_fecha, operacion_hora ]
+          Operacion:             [ operacion_fecha, operacion_hora, medico_id ]
           "&nbsp;":              [ diagnostico_preoperatorio, tratamiento_quirurgico, anestesia, otros ]
-          "Examenes Auxiliares": [ examenes_auxiliares, created_at, updated_at ]          
+          "Examenes Auxiliares": [ examenes_auxiliares ]          
         actions:
           _list: ~
           _save: { credentials: [noHistory] }  

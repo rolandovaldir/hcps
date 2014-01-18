@@ -29,7 +29,7 @@ generator:
         actions: {}
         batch_actions: {}
       filter:
-        display: [ material_enviado, otros_examenes, diagnostico_presuntivo, lugar, fecha ]
+        display: [ fecha, diagnostico_presuntivo ]
       form:    
         display:
           "Examenes: ": [ internado_id, _lista_tipos_examenes ]

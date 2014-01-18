@@ -37,7 +37,7 @@ generator:
           _delete: ~
           imprimir: {label: Imprimir, action: exportPdf}
       filter:  
-        display: [ nombre_familiar,ci_familiar,fecha_hora ]
+        display: [ fecha_hora, nombre_familiar,ci_familiar ]
       form:    
         display: [ internado_id,nombre_familiar,ci_familiar,fecha_hora ]
         actions:

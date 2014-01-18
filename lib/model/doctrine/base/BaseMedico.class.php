@@ -20,37 +20,40 @@
  * @property Especialidad $Especialidad
  * @property Doctrine_Collection $AtencionEnfermeria
  * @property Doctrine_Collection $UsoHospitalario
+ * @property Doctrine_Collection $ProgramacionCirugia
  * 
- * @method string              getCodigo()             Returns the current record's "codigo" value
- * @method string              getNombrec()            Returns the current record's "nombrec" value
- * @method integer             getCargahor()           Returns the current record's "cargahor" value
- * @method string              getHorIni()             Returns the current record's "hor_ini" value
- * @method string              getHorFin()             Returns the current record's "hor_fin" value
- * @method integer             getIntervalo()          Returns the current record's "intervalo" value
- * @method string              getActivo()             Returns the current record's "activo" value
- * @method integer             getCupos()              Returns the current record's "cupos" value
- * @method string              getConsultorio()        Returns the current record's "consultorio" value
- * @method string              getObservacion()        Returns the current record's "observacion" value
- * @method integer             getEspecialidadId()     Returns the current record's "especialidad_id" value
- * @method integer             getItemId()             Returns the current record's "item_id" value
- * @method Especialidad        getEspecialidad()       Returns the current record's "Especialidad" value
- * @method Doctrine_Collection getAtencionEnfermeria() Returns the current record's "AtencionEnfermeria" collection
- * @method Doctrine_Collection getUsoHospitalario()    Returns the current record's "UsoHospitalario" collection
- * @method Medico              setCodigo()             Sets the current record's "codigo" value
- * @method Medico              setNombrec()            Sets the current record's "nombrec" value
- * @method Medico              setCargahor()           Sets the current record's "cargahor" value
- * @method Medico              setHorIni()             Sets the current record's "hor_ini" value
- * @method Medico              setHorFin()             Sets the current record's "hor_fin" value
- * @method Medico              setIntervalo()          Sets the current record's "intervalo" value
- * @method Medico              setActivo()             Sets the current record's "activo" value
- * @method Medico              setCupos()              Sets the current record's "cupos" value
- * @method Medico              setConsultorio()        Sets the current record's "consultorio" value
- * @method Medico              setObservacion()        Sets the current record's "observacion" value
- * @method Medico              setEspecialidadId()     Sets the current record's "especialidad_id" value
- * @method Medico              setItemId()             Sets the current record's "item_id" value
- * @method Medico              setEspecialidad()       Sets the current record's "Especialidad" value
- * @method Medico              setAtencionEnfermeria() Sets the current record's "AtencionEnfermeria" collection
- * @method Medico              setUsoHospitalario()    Sets the current record's "UsoHospitalario" collection
+ * @method string              getCodigo()              Returns the current record's "codigo" value
+ * @method string              getNombrec()             Returns the current record's "nombrec" value
+ * @method integer             getCargahor()            Returns the current record's "cargahor" value
+ * @method string              getHorIni()              Returns the current record's "hor_ini" value
+ * @method string              getHorFin()              Returns the current record's "hor_fin" value
+ * @method integer             getIntervalo()           Returns the current record's "intervalo" value
+ * @method string              getActivo()              Returns the current record's "activo" value
+ * @method integer             getCupos()               Returns the current record's "cupos" value
+ * @method string              getConsultorio()         Returns the current record's "consultorio" value
+ * @method string              getObservacion()         Returns the current record's "observacion" value
+ * @method integer             getEspecialidadId()      Returns the current record's "especialidad_id" value
+ * @method integer             getItemId()              Returns the current record's "item_id" value
+ * @method Especialidad        getEspecialidad()        Returns the current record's "Especialidad" value
+ * @method Doctrine_Collection getAtencionEnfermeria()  Returns the current record's "AtencionEnfermeria" collection
+ * @method Doctrine_Collection getUsoHospitalario()     Returns the current record's "UsoHospitalario" collection
+ * @method Doctrine_Collection getProgramacionCirugia() Returns the current record's "ProgramacionCirugia" collection
+ * @method Medico              setCodigo()              Sets the current record's "codigo" value
+ * @method Medico              setNombrec()             Sets the current record's "nombrec" value
+ * @method Medico              setCargahor()            Sets the current record's "cargahor" value
+ * @method Medico              setHorIni()              Sets the current record's "hor_ini" value
+ * @method Medico              setHorFin()              Sets the current record's "hor_fin" value
+ * @method Medico              setIntervalo()           Sets the current record's "intervalo" value
+ * @method Medico              setActivo()              Sets the current record's "activo" value
+ * @method Medico              setCupos()               Sets the current record's "cupos" value
+ * @method Medico              setConsultorio()         Sets the current record's "consultorio" value
+ * @method Medico              setObservacion()         Sets the current record's "observacion" value
+ * @method Medico              setEspecialidadId()      Sets the current record's "especialidad_id" value
+ * @method Medico              setItemId()              Sets the current record's "item_id" value
+ * @method Medico              setEspecialidad()        Sets the current record's "Especialidad" value
+ * @method Medico              setAtencionEnfermeria()  Sets the current record's "AtencionEnfermeria" collection
+ * @method Medico              setUsoHospitalario()     Sets the current record's "UsoHospitalario" collection
+ * @method Medico              setProgramacionCirugia() Sets the current record's "ProgramacionCirugia" collection
  * 
  * @package    hcps
  * @subpackage model
@@ -137,6 +140,10 @@ abstract class BaseMedico extends sfDoctrineRecord
              'foreign' => 'medico_id'));
 
         $this->hasMany('UsoHospitalario', array(
+             'local' => 'id',
+             'foreign' => 'medico_id'));
+
+        $this->hasMany('ProgramacionCirugia', array(
              'local' => 'id',
              'foreign' => 'medico_id'));
 

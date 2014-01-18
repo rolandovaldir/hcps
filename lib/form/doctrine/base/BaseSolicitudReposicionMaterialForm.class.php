@@ -17,6 +17,7 @@ abstract class BaseSolicitudReposicionMaterialForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'           => new sfWidgetFormInputHidden(),
       'internado_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => false)),
+      'fecha'        => new myWidgetFormDojoDate(),
       'unidad'       => new sfWidgetFormInputText(),
       'encargado'    => new sfWidgetFormInputText(),
       'created_at'   => new myWidgetFormDojoDateTime(),
@@ -28,6 +29,7 @@ abstract class BaseSolicitudReposicionMaterialForm extends BaseFormDoctrine
     $this->setValidators(array(
       'id'           => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'internado_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'))),
+      'fecha'        => new myValidatorDojoDate(),
       'unidad'       => new sfValidatorString(array('max_length' => 100)),
       'encargado'    => new sfValidatorString(array('max_length' => 150)),
       'created_at'   => new myValidatorDojoDateTime(),

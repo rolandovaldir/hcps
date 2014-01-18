@@ -7,6 +7,7 @@
  * 
  * @property integer $internado_id
  * @property integer $atencion_id
+ * @property date $fecha
  * @property string $para
  * @property string $diagnostico_presuncion
  * @property string $material_utilizado
@@ -15,6 +16,7 @@
  * 
  * @method integer           getInternadoId()            Returns the current record's "internado_id" value
  * @method integer           getAtencionId()             Returns the current record's "atencion_id" value
+ * @method date              getFecha()                  Returns the current record's "fecha" value
  * @method string            getPara()                   Returns the current record's "para" value
  * @method string            getDiagnosticoPresuncion()  Returns the current record's "diagnostico_presuncion" value
  * @method string            getMaterialUtilizado()      Returns the current record's "material_utilizado" value
@@ -22,6 +24,7 @@
  * @method Atencion          getAtencion()               Returns the current record's "Atencion" value
  * @method SolicitudServicio setInternadoId()            Sets the current record's "internado_id" value
  * @method SolicitudServicio setAtencionId()             Sets the current record's "atencion_id" value
+ * @method SolicitudServicio setFecha()                  Sets the current record's "fecha" value
  * @method SolicitudServicio setPara()                   Sets the current record's "para" value
  * @method SolicitudServicio setDiagnosticoPresuncion()  Sets the current record's "diagnostico_presuncion" value
  * @method SolicitudServicio setMaterialUtilizado()      Sets the current record's "material_utilizado" value
@@ -44,6 +47,10 @@ abstract class BaseSolicitudServicio extends sfDoctrineRecord
              ));
         $this->hasColumn('atencion_id', 'integer', null, array(
              'type' => 'integer',
+             'notnull' => true,
+             ));
+        $this->hasColumn('fecha', 'date', null, array(
+             'type' => 'date',
              'notnull' => true,
              ));
         $this->hasColumn('para', 'string', 2000, array(

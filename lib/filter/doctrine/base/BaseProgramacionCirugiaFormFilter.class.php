@@ -14,7 +14,7 @@ abstract class BaseProgramacionCirugiaFormFilter extends BaseFormFilterDoctrine
   {
     $this->setWidgets(array(
       'internado_id'              => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => true)),
-      'medico_id'                 => new sfWidgetFormFilterInput(),
+      'medico_id'                 => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Medico'), 'add_empty' => true)),
       'operacion_fecha'           => new sfWidgetFormFilterDate(array('from_date' => new myWidgetFormDojoDate(), 'to_date' => new myWidgetFormDojoDate(), 'filter_template' => '%date_range% %empty_checkbox% %empty_label%', 'template' => '<table class="onlyFormat"><tr><td>from</td><td>%from_date%</td><tr/><tr><td>to</td><td>%to_date%</td></tr></table>', 'with_empty' => false)),
       'operacion_hora'            => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'diagnostico_preoperatorio' => new sfWidgetFormFilterInput(array('with_empty' => false)),
@@ -34,7 +34,7 @@ abstract class BaseProgramacionCirugiaFormFilter extends BaseFormFilterDoctrine
 
     $this->setValidators(array(
       'internado_id'              => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Internado'), 'column' => 'id')),
-      'medico_id'                 => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'medico_id'                 => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Medico'), 'column' => 'id')),
       'operacion_fecha'           => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDateTime(array('required' => false)))),
       'operacion_hora'            => new sfValidatorPass(array('required' => false)),
       'diagnostico_preoperatorio' => new sfValidatorPass(array('required' => false)),
@@ -71,7 +71,7 @@ abstract class BaseProgramacionCirugiaFormFilter extends BaseFormFilterDoctrine
     return array(
       'id'                        => 'Number',
       'internado_id'              => 'ForeignKey',
-      'medico_id'                 => 'Number',
+      'medico_id'                 => 'ForeignKey',
       'operacion_fecha'           => 'Date',
       'operacion_hora'            => 'Text',
       'diagnostico_preoperatorio' => 'Text',

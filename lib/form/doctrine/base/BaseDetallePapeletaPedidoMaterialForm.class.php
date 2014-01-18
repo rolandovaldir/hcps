@@ -17,9 +17,10 @@ abstract class BaseDetallePapeletaPedidoMaterialForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'                          => new sfWidgetFormInputHidden(),
       'papeleta_pedido_material_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('PapeletaPedidoMaterial'), 'add_empty' => false)),
-      'columna1'                    => new sfWidgetFormInputText(),
-      'columna2'                    => new sfWidgetFormInputText(),
-      'columna3'                    => new sfWidgetFormInputText(),
+      'codigo'                      => new sfWidgetFormInputText(),
+      'cantidad'                    => new myWidgetFormDojoInteger(),
+      'unidad'                      => new sfWidgetFormInputText(),
+      'detalle'                     => new sfWidgetFormInputText(),
       'created_at'                  => new myWidgetFormDojoDateTime(),
       'updated_at'                  => new myWidgetFormDojoDateTime(),
     ));
@@ -27,9 +28,10 @@ abstract class BaseDetallePapeletaPedidoMaterialForm extends BaseFormDoctrine
     $this->setValidators(array(
       'id'                          => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'papeleta_pedido_material_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('PapeletaPedidoMaterial'))),
-      'columna1'                    => new sfValidatorString(array('max_length' => 15)),
-      'columna2'                    => new sfValidatorString(array('max_length' => 150)),
-      'columna3'                    => new sfValidatorString(array('max_length' => 25)),
+      'codigo'                      => new sfValidatorString(array('max_length' => 20)),
+      'cantidad'                    => new sfValidatorInteger(),
+      'unidad'                      => new sfValidatorString(array('max_length' => 10)),
+      'detalle'                     => new sfValidatorString(array('max_length' => 150)),
       'created_at'                  => new myValidatorDojoDateTime(),
       'updated_at'                  => new myValidatorDojoDateTime(),
     ));

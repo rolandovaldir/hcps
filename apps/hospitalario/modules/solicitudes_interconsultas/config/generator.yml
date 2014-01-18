@@ -27,7 +27,7 @@ generator:
         actions: {}
         batch_actions: {}
       filter:  
-        display: [dirigida_a, especialidad]
+        display: [fecha_solicitud, dirigida_a]
       form:    
         actions:
           _list: ~

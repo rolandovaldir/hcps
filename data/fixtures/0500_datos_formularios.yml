@@ -1197,15 +1197,17 @@ JuntaMedica:
 DetallePapeletaPedidoMaterial:
   DetallePapeletaPedidoMaterial_1:
     PapeletaPedidoMaterial: PapeletaPedidoMaterial_1
-    columna1: jjaajsdfa
-    columna2: lk
-    columna3: jlkjkñl
+    codigo: jjaajsdfa
+    cantidad: 31
+    unidad: jlkjkñl
+    detalle: Hojas
     created_at: '2014-01-08 19:18:52'
     updated_at: '2014-01-08 19:18:52'
   DetallePapeletaPedidoMaterial_2:
     PapeletaPedidoMaterial: PapeletaPedidoMaterial_2
-    columna1: jhk
-    columna2: kjhkj
-    columna3: kj
+    codigo: jhk
+    cantidad: 12
+    unidad: kj
+    detalle: Hojas
     created_at: '2014-01-08 20:11:29'
     updated_at: '2014-01-08 20:11:29'

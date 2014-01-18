@@ -31,7 +31,7 @@ generator:
         actions: {}
         batch_actions: {}
       filter:  
-        display: [ap_paterno, ap_materno, sexo]
+        display: [fecha_nacimiento, ap_paterno, ap_materno]
       form:    
         actions:
           _list: ~

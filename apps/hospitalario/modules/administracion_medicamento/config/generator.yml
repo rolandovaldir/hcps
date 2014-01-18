@@ -31,7 +31,7 @@ generator:
         actions: {}
         batch_actions: {}        
       filter: 
-        display: [ medicamento_solucion, tipo, fecha, horario ]
+        display: [ fecha, medicamento_solucion, tipo]
       form: 
         display: [ medicamento_solucion, tipo, fecha, horario ]
         actions:

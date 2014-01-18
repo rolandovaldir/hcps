@@ -15,12 +15,13 @@ generator:
     config:
       actions: ~
       fields:  
+        fecha:     {label: 'Fecha de Solicitud', date_format: 'dd/MM/yyyy'}
         unidad:    {label: 'Unidad solicitante'}
         encargado: {label: 'Encargado de la solicitud'}
         creator:   {label: 'Responsable'}
       list:    
         title: Solicitudes de Reposicion de Material
-        display: [unidad, encargado, creator]
+        display: [fecha, unidad, encargado, creator]
         object_actions:  
           _edit:        { credentials: [noHistory] }
           ver_detalle:  { label: Ver Detalle, action: edit, credentials: [siHistory] }
@@ -28,7 +29,7 @@ generator:
         actions: {}
         batch_actions: {}
       filter:  
-        display: [unidad, encargado]
+        display: [fecha, unidad, encargado]
       form:            
         actions:
           _list: ~

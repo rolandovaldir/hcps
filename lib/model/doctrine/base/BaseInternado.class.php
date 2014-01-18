@@ -44,7 +44,7 @@
  * @property Doctrine_Collection $AutorizacionesTratamiento
  * @property Doctrine_Collection $AutorizacionesAltaSolicitada
  * @property Doctrine_Collection $AutorizacionesAutopsia
- * @property Doctrine_Collection $ProgracionesCirugia
+ * @property Doctrine_Collection $ProgramacionesCirugia
  * @property Doctrine_Collection $SolicitudesExamenLaboratorioClinico
  * @property Doctrine_Collection $AdministracionesMedicamento
  * @property Doctrine_Collection $ResumenesAlta
@@ -93,7 +93,7 @@
  * @method Doctrine_Collection getAutorizacionesTratamiento()           Returns the current record's "AutorizacionesTratamiento" collection
  * @method Doctrine_Collection getAutorizacionesAltaSolicitada()        Returns the current record's "AutorizacionesAltaSolicitada" collection
  * @method Doctrine_Collection getAutorizacionesAutopsia()              Returns the current record's "AutorizacionesAutopsia" collection
- * @method Doctrine_Collection getProgracionesCirugia()                 Returns the current record's "ProgracionesCirugia" collection
+ * @method Doctrine_Collection getProgramacionesCirugia()               Returns the current record's "ProgramacionesCirugia" collection
  * @method Doctrine_Collection getSolicitudesExamenLaboratorioClinico() Returns the current record's "SolicitudesExamenLaboratorioClinico" collection
  * @method Doctrine_Collection getAdministracionesMedicamento()         Returns the current record's "AdministracionesMedicamento" collection
  * @method Doctrine_Collection getResumenesAlta()                       Returns the current record's "ResumenesAlta" collection
@@ -141,7 +141,7 @@
  * @method Internado           setAutorizacionesTratamiento()           Sets the current record's "AutorizacionesTratamiento" collection
  * @method Internado           setAutorizacionesAltaSolicitada()        Sets the current record's "AutorizacionesAltaSolicitada" collection
  * @method Internado           setAutorizacionesAutopsia()              Sets the current record's "AutorizacionesAutopsia" collection
- * @method Internado           setProgracionesCirugia()                 Sets the current record's "ProgracionesCirugia" collection
+ * @method Internado           setProgramacionesCirugia()               Sets the current record's "ProgramacionesCirugia" collection
  * @method Internado           setSolicitudesExamenLaboratorioClinico() Sets the current record's "SolicitudesExamenLaboratorioClinico" collection
  * @method Internado           setAdministracionesMedicamento()         Sets the current record's "AdministracionesMedicamento" collection
  * @method Internado           setResumenesAlta()                       Sets the current record's "ResumenesAlta" collection
@@ -327,7 +327,7 @@ abstract class BaseInternado extends sfDoctrineRecord
              'local' => 'id',
              'foreign' => 'internado_id'));
 
-        $this->hasMany('ProgramacionCirugia as ProgracionesCirugia', array(
+        $this->hasMany('ProgramacionCirugia as ProgramacionesCirugia', array(
              'local' => 'id',
              'foreign' => 'internado_id'));
 

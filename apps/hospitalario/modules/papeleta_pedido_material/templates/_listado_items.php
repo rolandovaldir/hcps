@@ -4,9 +4,10 @@ $detalles = Doctrine_Core::getTable('DetallePapeletaPedidoMaterial')->getAllDeta
 <?php if (!$form->getObject()->isNew()): ?>
 <table width="100%" class="for-form">
     <tr>
-        <th>&nbsp;</th>
-        <th>DETALLE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
-        <th>&nbsp;</th>
+        <th>Codigo</th>
+        <th>Cantidad</th>
+        <th>Unidad</th>
+        <th>Detalle</th>
         <th> </th>
     </tr>
     <tbody>
@@ -14,9 +15,10 @@ $detalles = Doctrine_Core::getTable('DetallePapeletaPedidoMaterial')->getAllDeta
         foreach ($detalles as $det) {
             ?>
             <tr>
-                <td><?php echo $det->getColumna1() ?></td>
-                <td><?php echo $det->getColumna2() ?></td>
-                <td><?php echo $det->getColumna3() ?></td>
+                <td><?php echo $det->getCodigo() ?></td>
+                <td><?php echo $det->getCantidad() ?></td>
+                <td><?php echo $det->getUnidad() ?></td>
+                <td><?php echo $det->getDetalle() ?></td>
                 <td>
                     <ul class="sf_admin_td_actions">
                         <?php                                           

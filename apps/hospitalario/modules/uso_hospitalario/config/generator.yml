@@ -30,7 +30,7 @@ generator:
         actions: {}
         batch_actions: {}
       filter: 
-        display: [ lugar, fecha, codigo, especialidad, created_at, updated_at ]
+        display: [ fecha, codigo ]
       form:
         actions:
           _delete: ~

@@ -19,6 +19,7 @@
  * @property string $enviado
  * @property string $recibido
  * @property Internado $Internado
+ * @property Medico $Medico
  * 
  * @method integer             getInternadoId()               Returns the current record's "internado_id" value
  * @method integer             getMedicoId()                  Returns the current record's "medico_id" value
@@ -34,6 +35,7 @@
  * @method string              getEnviado()                   Returns the current record's "enviado" value
  * @method string              getRecibido()                  Returns the current record's "recibido" value
  * @method Internado           getInternado()                 Returns the current record's "Internado" value
+ * @method Medico              getMedico()                    Returns the current record's "Medico" value
  * @method ProgramacionCirugia setInternadoId()               Sets the current record's "internado_id" value
  * @method ProgramacionCirugia setMedicoId()                  Sets the current record's "medico_id" value
  * @method ProgramacionCirugia setOperacionFecha()            Sets the current record's "operacion_fecha" value
@@ -48,6 +50,7 @@
  * @method ProgramacionCirugia setEnviado()                   Sets the current record's "enviado" value
  * @method ProgramacionCirugia setRecibido()                  Sets the current record's "recibido" value
  * @method ProgramacionCirugia setInternado()                 Sets the current record's "Internado" value
+ * @method ProgramacionCirugia setMedico()                    Sets the current record's "Medico" value
  * 
  * @package    hcps
  * @subpackage model
@@ -119,6 +122,10 @@ abstract class BaseProgramacionCirugia extends sfDoctrineRecord
         parent::setUp();
         $this->hasOne('Internado', array(
              'local' => 'internado_id',
+             'foreign' => 'id'));
+
+        $this->hasOne('Medico', array(
+             'local' => 'medico_id',
              'foreign' => 'id'));
 
         $timestampable0 = new Doctrine_Template_Timestampable(array(
