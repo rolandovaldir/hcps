@@ -16,9 +16,9 @@ class JuntaMedicaForm extends BaseJuntaMedicaForm
       
       $this->widgetSchema['internado_id'] = new sfWidgetFormInputHidden();
       
-      $medico = new MedicoParticular();
+      $medico = new MedicoParticipante();
       $medico->setJuntaMedica($this->object);
-      $medicoForm = new MedicoParticularForm($medico);
+      $medicoForm = new MedicoParticipanteForm($medico);
       $this->embedForm('medico', $medicoForm);
 
   }

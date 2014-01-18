@@ -80,12 +80,20 @@ generator:
         capstr_relpaciente_enfermedad_val:  { label: Relación del paciente a la enfermedad (Valoracion) } 
         capstr_relfamilia_enfermedad_esc:   { label: Relación de la familia a la enfermedad (Escala) }  
         capstr_relfamilia_enfermedad_val:   { label: Relación de la familia a la enfermedad (Valoracion) }  
-          
+
+        fecha_ingreso:  {date_format: 'dd/MM/yyyy hh:mm' }  
         created_at:     { date_format: dd/MM/yyyy }
-        updated_at:     { date_format: dd/MM/yyyy }        
+        updated_at:     { date_format: dd/MM/yyyy }      
+        
+        edad: {label: Edad (años)}
+        peso: {label: Peso (kilogramos)}
+        talla: {label: Talla (metros)}
+        especificar_derivado: {label: 'En caso de otro especificar procedencia'}
+        especificar_cuidador: {label: 'En caso de otro especificar cuidador'}
+        
       list:  
         title:   Listado Atencion Enfermeria
-        display: [ lugar, codigo, especialidad, diagnostico_enfermera]
+        display: [ fecha_ingreso, medico_id, diagnostico_medico, diagnostico_enfermera]
         object_actions:  
           _edit:        { credentials: [noHistory] }
           ver_detalle:  { label: Ver Detalle, action: edit, credentials: [siHistory] }
@@ -93,10 +101,10 @@ generator:
         actions: {}
         batch_actions: {}
       filter: 
-        display: [ per_apariencia_gral_esc, per_apariencia_gral_val, per_habitos_esc, per_habitos_val, per_alergias_esc, per_alergias_val, per_inmunizaciones_esc, per_inmunizaciones_val, per_medicacion_actual_esc, per_medicacion_actual_val, motivo_ingreso, nutmet_higiene_esc, nutmet_higiene_val, nutmet_estado_nutricional_esc, nutmet_estado_nutricional_val, nutmet_protesis_dental_esc, nutmet_protesis_dental_val, nutmet_liquidos_electrolitos_esc, nutmet_liquidos_electrolitos_val, patelim_habito_intestinal_esc, patelim_habito_intestinal_val, patelim_habito_urinario_esc, patelim_habito_urinario_val, acteje_valoracion_cardiopulmonar_esc, acteje_valoracion_cardiopulmonar_val, acteje_capacidad_motora_esc, acteje_capacidad_motora_val, acteje_act_diversion_esc, acteje_act_diversion_val, acteje_deficit_autocuidado_esc, acteje_deficit_autocuidado_val, acteje_crecim_desarrollo_esc, acteje_crecim_desarrollo_val, des_habito_descanso_esc, des_habito_descanso_val, des_transtorno_sueno_esc, des_transtorno_sueno_val, cogper_alter_sensoriales_esc, cogper_alter_sensoriales_val, cogper_nivel_conciencia_esc, cogper_nivel_conciencia_val, cogper_alteracion_promentales_esc, cogper_alteracion_promentales_val, auto_reaccion_emocional_esc, auto_reaccion_emocional_val, relrol_relacion_interpersonal_esc, relrol_relacion_interpersonal_val, relrol_conducta_familia_esc, relrol_conducta_familia_val, relrol_cambio_personalfamiliar_esc, relrol_cambio_personalfamiliar_val, repsex_alteracion_sisreproductivo_esc, repsex_alteracion_sisreproductivo_val, capstr_relpaciente_enfermedad_esc, capstr_relpaciente_enfermedad_val, creencia_religiosa, diagnostico_enfermera ]
+        display: [ fecha_ingreso, medico_id ]
       form:
         display: 
-          "Datos del formulario":             [lugar, codigo, especialidad]
+          "Datos del formulario":             [fecha_ingreso, medico_id, diagnostico_medico, acompaño_por, estado, derivado_de, especificar_derivado, cuidador_principal, especificar_cuidador, edad, peso, talla, sexo, temperatura, pulso, respiracion, presion_arterial]
           "1. PERCEPCION DE LA SALUD":        [ internado_id, per_apariencia_gral_esc, per_apariencia_gral_val, per_habitos_esc, per_habitos_val, per_alergias_esc, per_alergias_val, per_inmunizaciones_esc, per_inmunizaciones_val, per_medicacion_actual_esc, per_medicacion_actual_val, motivo_ingreso ]
           "2. NUTRICIONAL-METABOLICO":        [ nutmet_higiene_esc, nutmet_higiene_val, nutmet_estado_nutricional_esc, nutmet_estado_nutricional_val, nutmet_protesis_dental_esc, nutmet_protesis_dental_val, nutmet_liquidos_electrolitos_esc, nutmet_liquidos_electrolitos_val ]
           "3. PATRON ELIMINACION":            [ patelim_habito_intestinal_esc, patelim_habito_intestinal_val, patelim_habito_urinario_esc, patelim_habito_urinario_val ]

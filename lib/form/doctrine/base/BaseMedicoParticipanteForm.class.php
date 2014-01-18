@@ -1,16 +1,16 @@
 <?php
 
 /**
- * MedicoParticular form base class.
+ * MedicoParticipante form base class.
  *
- * @method MedicoParticular getObject() Returns the current form's model object
+ * @method MedicoParticipante getObject() Returns the current form's model object
  *
  * @package    hcps
  * @subpackage form
  * @author     Your name here
  * @version    SVN: $Id: sfDoctrineFormGeneratedTemplate.php 29553 2010-05-20 14:33:00Z Kris.Wallsmith $
  */
-abstract class BaseMedicoParticularForm extends BaseFormDoctrine
+abstract class BaseMedicoParticipanteForm extends BaseFormDoctrine
 {
   public function setup()
   {
@@ -34,7 +34,7 @@ abstract class BaseMedicoParticularForm extends BaseFormDoctrine
       'updated_at'      => new myValidatorDojoDateTime(),
     ));
 
-    $this->widgetSchema->setNameFormat('medico_particular[%s]');
+    $this->widgetSchema->setNameFormat('medico_participante[%s]');
 
     $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
 
@@ -45,7 +45,7 @@ abstract class BaseMedicoParticularForm extends BaseFormDoctrine
 
   public function getModelName()
   {
-    return 'MedicoParticular';
+    return 'MedicoParticipante';
   }
 
 }

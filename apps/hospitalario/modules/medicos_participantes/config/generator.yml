@@ -1,13 +1,13 @@
 generator:
   class: sfDoctrineGenerator
   param:
-    model_class:           MedicoParticular
+    model_class:           MedicoParticipante
     theme:                 dojotheme
     non_verbose_templates: true
     with_show:             false
     singular:              ~
     plural:                ~
-    route_prefix:          medico_particular
+    route_prefix:          medico_participante
     with_doctrine_route:   true
     actions_base_class:    sfActions
     extra_url_custom_id:   internado_id
@@ -20,8 +20,9 @@ generator:
         batch_actions: {}
       filter:  ~
       form:    ~
-      edit:    ~
+      edit:    
+        actions:
+          _save: ~
       new:     
         actions:
           _save: ~
-          _save_and_add: ~

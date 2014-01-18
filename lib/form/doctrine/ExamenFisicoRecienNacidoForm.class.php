@@ -10,11 +10,16 @@
  */
 class ExamenFisicoRecienNacidoForm extends BaseExamenFisicoRecienNacidoForm
 {
+    
+    protected static $sexo = array(
+                                    'masculino' => 'Masculino',
+                                    'femenino'  => 'Femenino');
   public function configure()
   {
       unset($this['created_at'], $this['updated_at']);
       
       $this->widgetSchema['internado_id'] = new sfWidgetFormInputHidden();
+      $this->widgetSchema['sexo'] = new sfWidgetFormChoice(array('choices' => self::$sexo, 'expanded' => true));
       
       $apgar = new Apgar();
       $apgar->setExamenFisicoRecienNacido($this->object);

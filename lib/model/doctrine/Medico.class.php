@@ -22,4 +22,8 @@ class Medico extends BaseMedico
         return $this->getNombrec();
     }
     
+        public function __toString()
+    {
+       return $this->getNombrec();
+    }
 }

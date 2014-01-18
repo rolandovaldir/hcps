@@ -1,3 +1,12 @@
+medico_participante:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                MedicoParticipante
+    module:               medicos_participantes
+    prefix_path:          /medicos_participantes
+    column:               id
+    with_wildcard_routes: true
+
 detalle_papeleta_pedido_material:
   class: sfDoctrineRouteCollection
   options:
@@ -175,15 +184,6 @@ apgar:
     model:                Apgar
     module:               apgar
     prefix_path:          /apgar
-    column:               id
-    with_wildcard_routes: true
-
-medico_particular:
-  class: sfDoctrineRouteCollection
-  options:
-    model:                MedicoParticular
-    module:               medicos_particulares
-    prefix_path:          /medicos_particulares
     column:               id
     with_wildcard_routes: true
 

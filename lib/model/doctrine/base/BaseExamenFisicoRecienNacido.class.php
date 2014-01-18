@@ -9,7 +9,7 @@
  * @property string $ap_paterno
  * @property string $ap_materno
  * @property date $fecha_nacimiento
- * @property boolean $sexo
+ * @property string $sexo
  * @property string $peso_nacimiento
  * @property string $talla
  * @property string $circunferencia_torax
@@ -23,7 +23,7 @@
  * @method string                   getApPaterno()            Returns the current record's "ap_paterno" value
  * @method string                   getApMaterno()            Returns the current record's "ap_materno" value
  * @method date                     getFechaNacimiento()      Returns the current record's "fecha_nacimiento" value
- * @method boolean                  getSexo()                 Returns the current record's "sexo" value
+ * @method string                   getSexo()                 Returns the current record's "sexo" value
  * @method string                   getPesoNacimiento()       Returns the current record's "peso_nacimiento" value
  * @method string                   getTalla()                Returns the current record's "talla" value
  * @method string                   getCircunferenciaTorax()  Returns the current record's "circunferencia_torax" value
@@ -74,9 +74,10 @@ abstract class BaseExamenFisicoRecienNacido extends sfDoctrineRecord
              'type' => 'date',
              'notnull' => true,
              ));
-        $this->hasColumn('sexo', 'boolean', null, array(
-             'type' => 'boolean',
+        $this->hasColumn('sexo', 'string', 10, array(
+             'type' => 'string',
              'notnull' => true,
+             'length' => 10,
              ));
         $this->hasColumn('peso_nacimiento', 'string', 45, array(
              'type' => 'string',

@@ -16,7 +16,7 @@
  * @property boolean $tac
  * @property boolean $contraste
  * @property Internado $Internado
- * @property Doctrine_Collection $MedicoParticular
+ * @property Doctrine_Collection $MedicoParticipante
  * 
  * @method integer             getInternadoId()             Returns the current record's "internado_id" value
  * @method string              getMedicoSolicitante()       Returns the current record's "medico_solicitante" value
@@ -29,7 +29,7 @@
  * @method boolean             getTac()                     Returns the current record's "tac" value
  * @method boolean             getContraste()               Returns the current record's "contraste" value
  * @method Internado           getInternado()               Returns the current record's "Internado" value
- * @method Doctrine_Collection getMedicoParticular()        Returns the current record's "MedicoParticular" collection
+ * @method Doctrine_Collection getMedicoParticipante()      Returns the current record's "MedicoParticipante" collection
  * @method JuntaMedica         setInternadoId()             Sets the current record's "internado_id" value
  * @method JuntaMedica         setMedicoSolicitante()       Sets the current record's "medico_solicitante" value
  * @method JuntaMedica         setServicio()                Sets the current record's "servicio" value
@@ -41,7 +41,7 @@
  * @method JuntaMedica         setTac()                     Sets the current record's "tac" value
  * @method JuntaMedica         setContraste()               Sets the current record's "contraste" value
  * @method JuntaMedica         setInternado()               Sets the current record's "Internado" value
- * @method JuntaMedica         setMedicoParticular()        Sets the current record's "MedicoParticular" collection
+ * @method JuntaMedica         setMedicoParticipante()      Sets the current record's "MedicoParticipante" collection
  * 
  * @package    hcps
  * @subpackage model
@@ -103,7 +103,7 @@ abstract class BaseJuntaMedica extends sfDoctrineRecord
              'local' => 'internado_id',
              'foreign' => 'id'));
 
-        $this->hasMany('MedicoParticular', array(
+        $this->hasMany('MedicoParticipante', array(
              'local' => 'id',
              'foreign' => 'junta_medica_id'));
 

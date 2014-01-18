@@ -10,10 +10,34 @@
  */
 class AtencionEnfermeriaForm extends BaseAtencionEnfermeriaForm
 {
+    protected static $estado = array(
+                                      'caminando'       => 'Caminando',
+                                      'silla de ruedas' => 'Silla de ruedas',
+                                      'camilla'         => 'Camilla',
+                                      'en brazos'       => 'En brazos');
+
+    protected static $derivado = array(
+                                        'consulta externa' => 'Consulta externa',
+                                        'emergencias'      => 'Emergencia',
+                                        'otro'             => 'Otro');
+    
+    protected static $cuidador = array(
+                                        'padres'   => 'Padres',
+                                        'empleada' => 'Empleada',
+                                        'otro'     => 'Otro');
+    
+    protected static $sexo = array(
+                                    'masculino' => 'Masculino',
+                                    'femenino'  => 'Femenino');
+    
   public function configure()
   {
       unset($this['created_at'], $this['updated_at'], $this['file_internacion_id']);
       $this->setWidget("internado_id", new sfWidgetFormInputHidden());
+      $this->widgetSchema['estado'] = new sfWidgetFormChoice(array('choices' => self::$estado, 'expanded' => true));
+      $this->widgetSchema['derivado_de'] = new sfWidgetFormChoice(array('choices' => self::$derivado, 'expanded' => true));
+      $this->widgetSchema['cuidador_principal'] = new sfWidgetFormChoice(array('choices' => self::$cuidador, 'expanded' => true));
+      $this->widgetSchema['sexo'] = new sfWidgetFormChoice(array('choices' => self::$sexo, 'expanded' => true));
       $this->widgetSchema['per_apariencia_gral_esc'] = new sfWidgetFormChoice(array('choices'  => AtencionEnfermeriaTable::getDescripciones_escala_tipo1(),'expanded' => true));
       $this->widgetSchema['per_habitos_esc'] = new sfWidgetFormChoice(array('choices'  => AtencionEnfermeriaTable::getDescripciones_escala_tipo2(),'expanded' => true));
       $this->widgetSchema['per_alergias_esc'] = new sfWidgetFormChoice(array('choices'  => AtencionEnfermeriaTable::getDescripciones_escala_tipo2(),'expanded' => true));

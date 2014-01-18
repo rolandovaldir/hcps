@@ -7,9 +7,23 @@
  * 
  * @property integer $internado_id
  * @property integer $enfermera_id
- * @property string $lugar
- * @property string $codigo
- * @property string $especialidad
+ * @property integer $medico_id
+ * @property string $diagnostico_medico
+ * @property timestamp $fecha_ingreso
+ * @property string $acompaño_por
+ * @property string $estado
+ * @property string $derivado_de
+ * @property string $especificar_derivado
+ * @property string $cuidador_principal
+ * @property string $especificar_cuidador
+ * @property integer $edad
+ * @property integer $peso
+ * @property integer $talla
+ * @property string $sexo
+ * @property string $temperatura
+ * @property string $pulso
+ * @property string $respiracion
+ * @property string $presion_arterial
  * @property string $per_apariencia_gral_esc
  * @property string $per_apariencia_gral_val
  * @property string $per_habitos_esc
@@ -70,12 +84,27 @@
  * @property string $creencia_religiosa
  * @property string $diagnostico_enfermera
  * @property Internado $Internado
+ * @property Medico $Medico
  * 
  * @method integer            getInternadoId()                           Returns the current record's "internado_id" value
  * @method integer            getEnfermeraId()                           Returns the current record's "enfermera_id" value
- * @method string             getLugar()                                 Returns the current record's "lugar" value
- * @method string             getCodigo()                                Returns the current record's "codigo" value
- * @method string             getEspecialidad()                          Returns the current record's "especialidad" value
+ * @method integer            getMedicoId()                              Returns the current record's "medico_id" value
+ * @method string             getDiagnosticoMedico()                     Returns the current record's "diagnostico_medico" value
+ * @method timestamp          getFechaIngreso()                          Returns the current record's "fecha_ingreso" value
+ * @method string             getAcompa()                                Returns the current record's "acompa" value
+ * @method string             getEstado()                                Returns the current record's "estado" value
+ * @method string             getDerivadoDe()                            Returns the current record's "derivado_de" value
+ * @method string             getEspecificarDerivado()                   Returns the current record's "especificar_derivado" value
+ * @method string             getCuidadorPrincipal()                     Returns the current record's "cuidador_principal" value
+ * @method string             getEspecificarCuidador()                   Returns the current record's "especificar_cuidador" value
+ * @method integer            getEdad()                                  Returns the current record's "edad" value
+ * @method integer            getPeso()                                  Returns the current record's "peso" value
+ * @method integer            getTalla()                                 Returns the current record's "talla" value
+ * @method string             getSexo()                                  Returns the current record's "sexo" value
+ * @method string             getTemperatura()                           Returns the current record's "temperatura" value
+ * @method string             getPulso()                                 Returns the current record's "pulso" value
+ * @method string             getRespiracion()                           Returns the current record's "respiracion" value
+ * @method string             getPresionArterial()                       Returns the current record's "presion_arterial" value
  * @method string             getPerAparienciaGralEsc()                  Returns the current record's "per_apariencia_gral_esc" value
  * @method string             getPerAparienciaGralVal()                  Returns the current record's "per_apariencia_gral_val" value
  * @method string             getPerHabitosEsc()                         Returns the current record's "per_habitos_esc" value
@@ -136,11 +165,26 @@
  * @method string             getCreenciaReligiosa()                     Returns the current record's "creencia_religiosa" value
  * @method string             getDiagnosticoEnfermera()                  Returns the current record's "diagnostico_enfermera" value
  * @method Internado          getInternado()                             Returns the current record's "Internado" value
+ * @method Medico             getMedico()                                Returns the current record's "Medico" value
  * @method AtencionEnfermeria setInternadoId()                           Sets the current record's "internado_id" value
  * @method AtencionEnfermeria setEnfermeraId()                           Sets the current record's "enfermera_id" value
- * @method AtencionEnfermeria setLugar()                                 Sets the current record's "lugar" value
- * @method AtencionEnfermeria setCodigo()                                Sets the current record's "codigo" value
- * @method AtencionEnfermeria setEspecialidad()                          Sets the current record's "especialidad" value
+ * @method AtencionEnfermeria setMedicoId()                              Sets the current record's "medico_id" value
+ * @method AtencionEnfermeria setDiagnosticoMedico()                     Sets the current record's "diagnostico_medico" value
+ * @method AtencionEnfermeria setFechaIngreso()                          Sets the current record's "fecha_ingreso" value
+ * @method AtencionEnfermeria setAcompa()                                Sets the current record's "acompa" value
+ * @method AtencionEnfermeria setEstado()                                Sets the current record's "estado" value
+ * @method AtencionEnfermeria setDerivadoDe()                            Sets the current record's "derivado_de" value
+ * @method AtencionEnfermeria setEspecificarDerivado()                   Sets the current record's "especificar_derivado" value
+ * @method AtencionEnfermeria setCuidadorPrincipal()                     Sets the current record's "cuidador_principal" value
+ * @method AtencionEnfermeria setEspecificarCuidador()                   Sets the current record's "especificar_cuidador" value
+ * @method AtencionEnfermeria setEdad()                                  Sets the current record's "edad" value
+ * @method AtencionEnfermeria setPeso()                                  Sets the current record's "peso" value
+ * @method AtencionEnfermeria setTalla()                                 Sets the current record's "talla" value
+ * @method AtencionEnfermeria setSexo()                                  Sets the current record's "sexo" value
+ * @method AtencionEnfermeria setTemperatura()                           Sets the current record's "temperatura" value
+ * @method AtencionEnfermeria setPulso()                                 Sets the current record's "pulso" value
+ * @method AtencionEnfermeria setRespiracion()                           Sets the current record's "respiracion" value
+ * @method AtencionEnfermeria setPresionArterial()                       Sets the current record's "presion_arterial" value
  * @method AtencionEnfermeria setPerAparienciaGralEsc()                  Sets the current record's "per_apariencia_gral_esc" value
  * @method AtencionEnfermeria setPerAparienciaGralVal()                  Sets the current record's "per_apariencia_gral_val" value
  * @method AtencionEnfermeria setPerHabitosEsc()                         Sets the current record's "per_habitos_esc" value
@@ -201,6 +245,7 @@
  * @method AtencionEnfermeria setCreenciaReligiosa()                     Sets the current record's "creencia_religiosa" value
  * @method AtencionEnfermeria setDiagnosticoEnfermera()                  Sets the current record's "diagnostico_enfermera" value
  * @method AtencionEnfermeria setInternado()                             Sets the current record's "Internado" value
+ * @method AtencionEnfermeria setMedico()                                Sets the current record's "Medico" value
  * 
  * @package    hcps
  * @subpackage model
@@ -214,21 +259,86 @@ abstract class BaseAtencionEnfermeria extends sfDoctrineRecord
         $this->setTableName('atencion_enfermeria');
         $this->hasColumn('internado_id', 'integer', null, array(
              'type' => 'integer',
+             'notnull' => true,
              ));
         $this->hasColumn('enfermera_id', 'integer', null, array(
              'type' => 'integer',
              ));
-        $this->hasColumn('lugar', 'string', 60, array(
-             'type' => 'string',
-             'length' => 60,
+        $this->hasColumn('medico_id', 'integer', null, array(
+             'type' => 'integer',
              ));
-        $this->hasColumn('codigo', 'string', 45, array(
+        $this->hasColumn('diagnostico_medico', 'string', 200, array(
              'type' => 'string',
-             'length' => 45,
+             'notnull' => true,
+             'length' => 200,
              ));
-        $this->hasColumn('especialidad', 'string', 45, array(
+        $this->hasColumn('fecha_ingreso', 'timestamp', null, array(
+             'type' => 'timestamp',
+             'notnull' => true,
+             ));
+        $this->hasColumn('acompaño_por', 'string', 50, array(
              'type' => 'string',
-             'length' => 45,
+             'length' => 50,
+             ));
+        $this->hasColumn('estado', 'string', 20, array(
+             'type' => 'string',
+             'notnull' => true,
+             'length' => 20,
+             ));
+        $this->hasColumn('derivado_de', 'string', 30, array(
+             'type' => 'string',
+             'notnull' => true,
+             'length' => 30,
+             ));
+        $this->hasColumn('especificar_derivado', 'string', 80, array(
+             'type' => 'string',
+             'length' => 80,
+             ));
+        $this->hasColumn('cuidador_principal', 'string', 15, array(
+             'type' => 'string',
+             'notnull' => true,
+             'length' => 15,
+             ));
+        $this->hasColumn('especificar_cuidador', 'string', 80, array(
+             'type' => 'string',
+             'length' => 80,
+             ));
+        $this->hasColumn('edad', 'integer', null, array(
+             'type' => 'integer',
+             'notnull' => true,
+             ));
+        $this->hasColumn('peso', 'integer', null, array(
+             'type' => 'integer',
+             'notnull' => true,
+             ));
+        $this->hasColumn('talla', 'integer', null, array(
+             'type' => 'integer',
+             'notnull' => true,
+             ));
+        $this->hasColumn('sexo', 'string', 10, array(
+             'type' => 'string',
+             'notnull' => true,
+             'length' => 10,
+             ));
+        $this->hasColumn('temperatura', 'string', 20, array(
+             'type' => 'string',
+             'notnull' => true,
+             'length' => 20,
+             ));
+        $this->hasColumn('pulso', 'string', 20, array(
+             'type' => 'string',
+             'notnull' => true,
+             'length' => 20,
+             ));
+        $this->hasColumn('respiracion', 'string', 30, array(
+             'type' => 'string',
+             'notnull' => true,
+             'length' => 30,
+             ));
+        $this->hasColumn('presion_arterial', 'string', 25, array(
+             'type' => 'string',
+             'notnull' => true,
+             'length' => 25,
              ));
         $this->hasColumn('per_apariencia_gral_esc', 'string', 1, array(
              'type' => 'string',
@@ -473,6 +583,10 @@ abstract class BaseAtencionEnfermeria extends sfDoctrineRecord
         parent::setUp();
         $this->hasOne('Internado', array(
              'local' => 'internado_id',
+             'foreign' => 'id'));
+
+        $this->hasOne('Medico', array(
+             'local' => 'medico_id',
              'foreign' => 'id'));
 
         $timestampable0 = new Doctrine_Template_Timestampable(array(

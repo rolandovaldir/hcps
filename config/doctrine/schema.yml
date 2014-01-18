@@ -140,7 +140,8 @@ Medico:
     especialidad_id:  { type: integer, notnull: true }
     item_id:          { type: integer, notnull: true }    
   relations:  
-    Especialidad:     { local: especialidad_id, foreign: id, type: one, foreignAlias: Medicos }
+    Especialidad:       { local: especialidad_id, foreign: id, type: one, foreignAlias: Medicos }
+    AtencionEnfermeria: { local: id, foreign: medico_id, type: many, foreignAlias: Medico }
   indexes:
     medico_unique1:
       type: unique
@@ -266,10 +267,10 @@ JuntaMedica:
     tac:                     {type: boolean}
     contraste:               {type: boolean}
   relations:
-    Internado:        {local: internado_id, foreign: id, type: one, foreignAlias: Juntas}
-    MedicoParticular: {local: id, foreign: junta_medica_id, type: many ,foreignAlias: Junta}
+    Internado:          {local: internado_id, foreign: id, type: one, foreignAlias: Juntas}
+    MedicoParticipante: {local: id, foreign: junta_medica_id, type: many ,foreignAlias: Junta}
     
-MedicoParticular:
+MedicoParticipante:
   actAs: [Timestampable]
   columns:
     junta_medica_id: {type: integer, notnull: true}
@@ -288,7 +289,7 @@ ExamenFisicoRecienNacido:
     ap_paterno:           {type: string(45), notnull: true}
     ap_materno:           {type: string(45), notnull: true}
     fecha_nacimiento:     {type: date, notnull: true}
-    sexo:                 {type: boolean, notnull: true}
+    sexo:                 {type: string(10), notnull: true}
     peso_nacimiento:      {type: string(45), notnull: true}
     talla:                {type: string(45), notnull: true}
     circunferencia_torax: {type: string(20), notnull: true}
@@ -617,11 +618,25 @@ DetalleUsoHospitalario:
 AtencionEnfermeria:
   actAs: [Timestampable, Signable]  
   columns:     
-    internado_id:                           { type: integer }    
+    internado_id:                           { type: integer, notnull: true }
     enfermera_id:                           { type: integer }
-    lugar:                                  { type: string(60) }
-    codigo:                                 { type: string(45) }
-    especialidad:                           { type: string(45) }
+    medico_id:                              { type: integer }
+    diagnostico_medico:                      { type: string(200), notnull: true }
+    fecha_ingreso:                          { type: timestamp, notnull: true }
+    acompaño_por:                           { type: string(50) }
+    estado:                                 { type: string(20), notnull: true }
+    derivado_de:                            { type: string(30), notnull: true }
+    especificar_derivado:                   { type: string(80) }
+    cuidador_principal:                     { type: string(15), notnull: true }
+    especificar_cuidador:                   { type: string(80) }
+    edad:                                   { type: integer, notnull: true }
+    peso:                                   { type: integer, notnull: true }
+    talla:                                  { type: integer, notnull: true }
+    sexo:                                   { type: string(10), notnull: true }
+    temperatura:                            { type: string(20), notnull: true }
+    pulso:                                  { type: string(20), notnull: true }
+    respiracion:                            { type: string(30), notnull: true }
+    presion_arterial:                       { type: string(25), notnull: true }
     per_apariencia_gral_esc:                { type: string(1) }
     per_apariencia_gral_val:                { type: string(150) }
     per_habitos_esc:                        { type: string(1) }
@@ -683,7 +698,8 @@ AtencionEnfermeria:
     diagnostico_enfermera:                  { type: string(2500) }
   relations:
     Internado: { local: internado_id, foreign: id, type: one, foreignAlias: AtencionesEnfermeria }
-
+    Medico:    { local: medico_id, foreign: id, type: one, foreignAlias: AtencionesEnfermeria }
+    
 # guillermo
 ListaDieta:
   actAs: [Timestampable, Signable]
