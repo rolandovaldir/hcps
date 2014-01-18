@@ -15,12 +15,14 @@ generator:
     config:
       actions: ~
       fields: 
-        fecha:      { date_format: 'dd/MM/yyyy' }
-        created_at: { date_format: dd/MM/yyyy }
-        updated_at: { date_format: dd/MM/yyyy }
+        fecha:         { date_format: 'dd/MM/yyyy' }
+        created_at:    { date_format: dd/MM/yyyy }
+        updated_at:    { date_format: dd/MM/yyyy }
+        creator:       { lable: Responsable }
+        nombre_medico: {label: Medico}
       list: 
         title: Listado Recetas Uso Hospitalario
-        display: [ lugar, fecha, codigo, especialidad]
+        display: [ fecha, codigo, nombre_medico, especialidad, creator]
         object_actions:  
           _edit:        { credentials: [noHistory] }
           ver_detalle:  { label: Ver Detalle, action: edit, credentials: [siHistory] }

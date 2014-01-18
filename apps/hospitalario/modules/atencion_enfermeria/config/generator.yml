@@ -85,15 +85,16 @@ generator:
         created_at:     { date_format: dd/MM/yyyy }
         updated_at:     { date_format: dd/MM/yyyy }      
         
-        edad: {label: Edad (años)}
-        peso: {label: Peso (kilogramos)}
-        talla: {label: Talla (metros)}
+        edad:                 {label: 'Edad (años)'}
+        peso:                 {label: 'Peso (kilogramos)'}
+        talla:                {label: 'Talla (metros)'}
         especificar_derivado: {label: 'En caso de otro especificar procedencia'}
         especificar_cuidador: {label: 'En caso de otro especificar cuidador'}
+        nombre_medico:        {label: 'Medico Tratante'}
         
       list:  
         title:   Listado Atencion Enfermeria
-        display: [ fecha_ingreso, medico_id, diagnostico_medico, diagnostico_enfermera]
+        display: [ fecha_ingreso, nombre_medico, diagnostico_medico, diagnostico_enfermera]
         object_actions:  
           _edit:        { credentials: [noHistory] }
           ver_detalle:  { label: Ver Detalle, action: edit, credentials: [siHistory] }

@@ -23,7 +23,7 @@ generator:
         creator:          {label: 'Responsable'}
       list:    
         title: Examen Físico del Recien Nacido
-        display: [fecha_nacimiento, ap_paterno, ap_materno, numero_cuna, sexo, peso_nacimiento, responsable]
+        display: [fecha_nacimiento, ap_paterno, ap_materno, numero_cuna, sexo, creator]
         object_actions:  
           _edit:        { credentials: [noHistory] }
           ver_detalle:  { label: Ver Detalle, action: edit, credentials: [siHistory] }

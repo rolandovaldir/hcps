@@ -12,4 +12,8 @@
  */
 class UsoHospitalario extends BaseUsoHospitalario
 {
+    function getNombreMedico()
+    {          
+        return $this->Medico->getNombrec();
+    }
 }

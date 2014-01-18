@@ -142,6 +142,7 @@ Medico:
   relations:  
     Especialidad:       { local: especialidad_id, foreign: id, type: one, foreignAlias: Medicos }
     AtencionEnfermeria: { local: id, foreign: medico_id, type: many, foreignAlias: Medico }
+    UsoHospitalario:    { local: id, foreign: medico_id, type: many, foreignAlias: Medico }
   indexes:
     medico_unique1:
       type: unique
@@ -446,7 +447,7 @@ AutorizacionDiagnosticoTratamiento:
   actAs: [Timestampable, Signable]  
   columns:     
     internado_id:        { type: integer , notnull: true }
-    nombre_familiar:        { type: string(200) }
+    nombre_familiar:     { type: string(200) }
     ci_familiar:         { type: string(10) }
     fecha_hora:          { type: timestamp }  
   relations: 
@@ -600,6 +601,7 @@ UsoHospitalario:
     especialidad:           { type: string(45), notnull: true }
   relations:
     Internado: { local: internado_id, foreign: id, type: one, foreignAlias: ResumenesAlta }
+    Medico:    { local: medico_id, foreign: id, type: one, foreignAlias: ResumenesAlta}
 
 # guillermo
 DetalleUsoHospitalario:

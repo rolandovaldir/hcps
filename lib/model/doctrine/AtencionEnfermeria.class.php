@@ -12,4 +12,8 @@
  */
 class AtencionEnfermeria extends BaseAtencionEnfermeria
 {
+    function getNombreMedico()
+    {          
+        return $this->Medico->getNombrec();
+    }
 }

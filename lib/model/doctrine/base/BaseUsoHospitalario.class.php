@@ -12,6 +12,7 @@
  * @property string $codigo
  * @property string $especialidad
  * @property Internado $Internado
+ * @property Medico $Medico
  * @property Doctrine_Collection $DetallesUsoHospitalario
  * 
  * @method integer             getInternadoId()             Returns the current record's "internado_id" value
@@ -21,6 +22,7 @@
  * @method string              getCodigo()                  Returns the current record's "codigo" value
  * @method string              getEspecialidad()            Returns the current record's "especialidad" value
  * @method Internado           getInternado()               Returns the current record's "Internado" value
+ * @method Medico              getMedico()                  Returns the current record's "Medico" value
  * @method Doctrine_Collection getDetallesUsoHospitalario() Returns the current record's "DetallesUsoHospitalario" collection
  * @method UsoHospitalario     setInternadoId()             Sets the current record's "internado_id" value
  * @method UsoHospitalario     setLugar()                   Sets the current record's "lugar" value
@@ -29,6 +31,7 @@
  * @method UsoHospitalario     setCodigo()                  Sets the current record's "codigo" value
  * @method UsoHospitalario     setEspecialidad()            Sets the current record's "especialidad" value
  * @method UsoHospitalario     setInternado()               Sets the current record's "Internado" value
+ * @method UsoHospitalario     setMedico()                  Sets the current record's "Medico" value
  * @method UsoHospitalario     setDetallesUsoHospitalario() Sets the current record's "DetallesUsoHospitalario" collection
  * 
  * @package    hcps
@@ -74,6 +77,10 @@ abstract class BaseUsoHospitalario extends sfDoctrineRecord
         parent::setUp();
         $this->hasOne('Internado', array(
              'local' => 'internado_id',
+             'foreign' => 'id'));
+
+        $this->hasOne('Medico', array(
+             'local' => 'medico_id',
              'foreign' => 'id'));
 
         $this->hasMany('DetalleUsoHospitalario as DetallesUsoHospitalario', array(

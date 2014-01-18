@@ -19,6 +19,7 @@
  * @property integer $item_id
  * @property Especialidad $Especialidad
  * @property Doctrine_Collection $AtencionEnfermeria
+ * @property Doctrine_Collection $UsoHospitalario
  * 
  * @method string              getCodigo()             Returns the current record's "codigo" value
  * @method string              getNombrec()            Returns the current record's "nombrec" value
@@ -34,6 +35,7 @@
  * @method integer             getItemId()             Returns the current record's "item_id" value
  * @method Especialidad        getEspecialidad()       Returns the current record's "Especialidad" value
  * @method Doctrine_Collection getAtencionEnfermeria() Returns the current record's "AtencionEnfermeria" collection
+ * @method Doctrine_Collection getUsoHospitalario()    Returns the current record's "UsoHospitalario" collection
  * @method Medico              setCodigo()             Sets the current record's "codigo" value
  * @method Medico              setNombrec()            Sets the current record's "nombrec" value
  * @method Medico              setCargahor()           Sets the current record's "cargahor" value
@@ -48,6 +50,7 @@
  * @method Medico              setItemId()             Sets the current record's "item_id" value
  * @method Medico              setEspecialidad()       Sets the current record's "Especialidad" value
  * @method Medico              setAtencionEnfermeria() Sets the current record's "AtencionEnfermeria" collection
+ * @method Medico              setUsoHospitalario()    Sets the current record's "UsoHospitalario" collection
  * 
  * @package    hcps
  * @subpackage model
@@ -130,6 +133,10 @@ abstract class BaseMedico extends sfDoctrineRecord
              'foreign' => 'id'));
 
         $this->hasMany('AtencionEnfermeria', array(
+             'local' => 'id',
+             'foreign' => 'medico_id'));
+
+        $this->hasMany('UsoHospitalario', array(
              'local' => 'id',
              'foreign' => 'medico_id'));
 
