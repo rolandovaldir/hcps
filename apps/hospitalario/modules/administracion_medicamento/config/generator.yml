@@ -22,7 +22,7 @@ generator:
         updated_at:       { date_format: dd/MM/yyyy }        
       list: 
         title: Listado Administracion de Medicamentos
-        display: [ fecha, horario, medicamento_solucion, descripcion_tipo ]
+        display: [ fecha, horario, medicamento_solucion, descripcion_tipo, creator ]
         object_actions:  
           _edit:        { credentials: [noHistory, enfermera] }
           ver_detalle:  { label: Ver Detalle, action: edit, credentials: [siHistory] }

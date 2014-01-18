@@ -22,9 +22,10 @@ generator:
         diu_nursery: {label: DIU}
         cat_nursery: {label: CAT}
         lm_nursery:  {label: LM}
+        creator:     {lable: 'Responsable'}
       list:    
         title: Signos Vitales Nursery
-        display: [fecha, hora, fc_nursery, fr_nursery, to_nursery, residuo, observaciones]
+        display: [fecha, hora, fc_nursery, fr_nursery, to_nursery, residuo, observaciones, creator]
         object_actions:  
           _edit:        { credentials: [noHistory] }
           ver_detalle:  { label: Ver Detalle, action: edit, credentials: [siHistory] }
