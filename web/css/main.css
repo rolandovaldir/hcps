@@ -103,7 +103,7 @@ ul.side_menu_forms li {
 
 .tbl-paciente{
     width: auto;
-    margin-top: 0px;
+    margin: 0px;
 /*    margin-left: 33%;*/
     padding: 5px;
 }
@@ -127,6 +127,9 @@ ul.side_menu_forms li {
     background-color: #EFFBEF;
 }
 
+.tbl-paciente tfoot td {    
+    background-color: #EFFBEF;
+}
 .tbl-bienvenida{
     width: 50%;
     margin-top: 0px;

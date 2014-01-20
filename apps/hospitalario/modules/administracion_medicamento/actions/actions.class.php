@@ -15,20 +15,24 @@ class administracion_medicamentoActions extends autoAdministracion_medicamentoAc
 {
     private $hcps_internado = null;
 
-
     public function preExecute()
-    {
-        $request = $this->getRequest();         
-        $this->hcps_internado = InternadoTable::getInstance()->find($request->getParameter('internado_id'));
-        
-        if (!$this->getUser()->hasCredential('enfermera') || !is_object($this->hcps_internado) || $this->hcps_internado->getAlta() ){
-            $this->getUser()->addCredential('siHistory');
-            $this->getUser()->removeCredential('noHistory');
+    {        
+        $this->hcps_internado = InternadoTable::getInstance()->find($this->getRequest()->getParameter('internado_id'));
+        $siAlta = false;        
+        if (is_object($this->hcps_internado)){
+            if ($this->hcps_internado->getAlta()){
+                if (!$this->getUser()->hasCredential('ver_historial'))
+                {
+                    $this->forward(sfConfig::get('sf_secure_module'),'secure');
+                }
+                $siAlta = true;                
+            }            
         }
-        else{
-            $this->getUser()->addCredential('noHistory');
-            $this->getUser()->removeCredential('siHistory');                    
-        }
+        else{ $siAlta = true; }//si es en reportes misma vista de pacientes dados de alta (sin opciones de edicion y eliminacion)
+
+        $this->getUser()->addCredential($siAlta ? 'Alta' : 'noAlta');
+        $this->getUser()->removeCredential($siAlta ? 'noAlta' : 'Alta');
+
         parent::preExecute();
     }
         
@@ -58,28 +62,15 @@ class administracion_medicamentoActions extends autoAdministracion_medicamentoAc
     {
         $vals = $request->getParameter($form->getName());        
                 
-        if ($form->getObject()->isNew()){        
+        if ($form->getObject()->isNew()){
             $vals['internado_id'] = $request->getParameter('internado_id');
         }        
         else{
-            $vals['internado_id'] = $form->getObject()->getInternadoId();
-            if ($form->getObject()->getEnfermeraId()!=$this->getUser()->getHcpsUser()->getId()){
-                $this->forward(sfConfig::get('sf_secure_module'),'secure');
-            }
+            $vals['internado_id'] = $form->getObject()->getInternadoId();            
         }
-        $vals['enfermera_id'] = $this->getUser()->getHcpsUser()->getId();
-        
         $request->setParameter($form->getName(),$vals);
         
         parent::processForm($request, $form);
-    }
-    
-    public function executeDelete(sfWebRequest $request)
-    {
-        if ($this->getRoute()->getObject()->getEnfermeraId()!=$this->getUser()->getHcpsUser()->getId()){
-            $this->forward(sfConfig::get('sf_secure_module'),'secure');
-        }
-        parent::executeDelete($request);
-    }
+    }    
     
 }

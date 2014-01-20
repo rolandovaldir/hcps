@@ -18,13 +18,13 @@ abstract class BasePlantaForm extends BaseFormDoctrine
       'id'            => new sfWidgetFormInputHidden(),
       'filial_id'     => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Filial'), 'add_empty' => false)),
       'nombre'        => new sfWidgetFormInputText(),
-      'descripcion'   => new sfWidgetFormInputText(),
-      'observaciones' => new sfWidgetFormInputText(),
+      'descripcion'   => new sfWidgetFormTextarea(),
+      'observaciones' => new sfWidgetFormTextarea(),
       'codigo'        => new sfWidgetFormInputText(),
       'plano'         => new sfWidgetFormInputText(),
-      'numero'        => new sfWidgetFormInputText(),
-      'created_at'    => new sfWidgetFormDateTime(),
-      'updated_at'    => new sfWidgetFormDateTime(),
+      'numero'        => new myWidgetFormDojoInteger(),
+      'created_at'    => new myWidgetFormDojoDateTime(),
+      'updated_at'    => new myWidgetFormDojoDateTime(),
     ));
 
     $this->setValidators(array(
@@ -36,8 +36,8 @@ abstract class BasePlantaForm extends BaseFormDoctrine
       'codigo'        => new sfValidatorString(array('max_length' => 10, 'required' => false)),
       'plano'         => new sfValidatorString(array('max_length' => 100, 'required' => false)),
       'numero'        => new sfValidatorInteger(array('required' => false)),
-      'created_at'    => new sfValidatorDateTime(),
-      'updated_at'    => new sfValidatorDateTime(),
+      'created_at'    => new myValidatorDojoDateTime(),
+      'updated_at'    => new myValidatorDojoDateTime(),
     ));
 
     $this->widgetSchema->setNameFormat('planta[%s]');

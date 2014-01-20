@@ -11,6 +11,7 @@ generator:
     with_doctrine_route:   true
     actions_base_class:    sfActions
     extra_url_custom_id:   internado_id
+    sfGuard_check_created_by: user_id
 
     config:
       actions: ~
@@ -26,9 +27,9 @@ generator:
         title: Ordenes Médicas
         display: [created_at, nombre_medicamento_indicacion, dosis_intervalo, fecha_inicio, fecha_terminacion, created_by]
         object_actions:  
-          _edit:        { credentials: [noHistory] }
-          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [siHistory] }
-          _delete:      { credentials: [noHistory] }
+          _edit:        { credentials: [noAlta, crear, medico] }
+          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [[medico, ver_todo_datos], alta] }
+          _delete:      { credentials: [noAlta, crear, medico] }
         actions: {}
         batch_actions: {}
       filter:  
@@ -36,15 +37,11 @@ generator:
       form:    
         display:
           Orden Médica: [fecha_hora, nombre_medicamento_indicacion, dosis_intervalo, via_administracion_id, fecha_inicio, fecha_terminacion]
-      edit:    
-        title: Editar Orden Médica
         actions:
-          _list: ~
-          _save: { credentials: [noHistory] }
+          _delete: { credentials: [noAlta, crear, medico] }
+          _list:   ~
+          _save:   { credentials: [noAlta, crear, medico] }
       edit:    
         title: Editar Orden Médica        
       new:     
-        title: Nueva Orden Médica        
-        actions:
-          _list: ~
-          _save: ~
+        title: Nueva Orden Médica                

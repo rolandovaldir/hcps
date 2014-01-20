@@ -5,8 +5,7 @@ sfGuardUser:
     email_address:  john.doe@gmail.com
     username:       admin
     password:       admin
-    is_super_admin: true
-    Permissions:    [Permission_admin]
+    is_super_admin: true    
   User1:  
     first_name:     ''
     last_name:      ''
@@ -14,26 +13,76 @@ sfGuardUser:
     username:       doc1
     password:       doc1
     is_super_admin: false    
-    Permissions:    [Permission_medico]
-  User2:
+    Groups:         [Group_medico_asistencial]
+  User2:  
+    first_name:     ''
+    last_name:      ''
+    email_address:  doc2@example.com
+    username:       doc2
+    password:       doc2
+    is_super_admin: false    
+    Groups:         [Group_medico_asistencial]  
+  User3:
     first_name:     ''
     last_name:      ''
     email_address:  enf1@example.com
     username:       enf1
     password:       enf1
     is_super_admin: false
-    Permissions:    [Permission_enfermera]
+    Groups:         [Group_enfermera]
+  User4:
+    first_name:     ''
+    last_name:      ''
+    email_address:  enf2@example.com
+    username:       enf2
+    password:       enf2
+    is_super_admin: false
+    Groups:         [Group_enfermera]  
 
 sfGuardPermission:
-  Permission_admin:
-    name:           admin
-    description:    Administrator permission
   Permission_medico:
-    name:           medico 
-    description:    Permisos de Medico
+    name:           medico
+    description:    Permiso para los formularios de medicos (solo internados del area asignada) 
   Permission_enfermera:
     name:           enfermera
-    description:    Permisos de Enfermera
-  Permission_administrativo:
-    name:           administrativo
-    description:    Permisos de administrativo
+    description:    Permiso para los formularios de enfermera (solo internados del area asignada) 
+  Permission_crear:
+    name:           crear
+    description:    Permisos para crea datos en sus formularios asignados (solo internados del area asignada) 
+  Permission_ver_todo_datos:
+    name:           ver_todo_datos
+    description:    Permisos para ver datos creados por cualquier tipo de formulario (solo internados del area asignada) 
+  Permission_ver_toda_area:
+    name:           ver_toda_area
+    description:    Permisos para ver datos de internados de todas las areas (solo los formularios asignados)
+  Permission_ver_historial:
+    name:           ver_historial
+    description:    Permisos para ver datos del historial de internados (solo internados del area asignada)
+    
+sfGuardGroup:
+   Group_medico_asistencial:
+     name:           medico asistencial
+     description:    medico asignado al tratamiento de internados
+   Group_enfermera:
+     name:           enfermera
+     description:    enfermera asignada al tratamiento de internados
+     
+sfGuardGroupPermission:
+  RelationGP1:
+    Group:       Group_medico_asistencial
+    Permission:  Permission_medico
+  RelationGP2:
+    Group:       Group_medico_asistencial
+    Permission:  Permission_crear
+  RelationGP3:
+    Group:       Group_medico_asistencial
+    Permission:  Permission_ver_todo_datos
+  RelationGP4:
+    Group:       Group_medico_asistencial
+    Permission:  Permission_ver_historial  
+  RelationGP6:
+    Group:       Group_enfermera
+    Permission:  Permission_enfermera
+  RelationGP7:
+    Group:       Group_enfermera
+    Permission:  Permission_crear  

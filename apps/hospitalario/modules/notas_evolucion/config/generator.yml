@@ -11,6 +11,7 @@ generator:
     with_doctrine_route:   true
     actions_base_class:    sfActions
     extra_url_custom_id:   internado_id
+    sfGuard_check_created_by: user_id
 
     config:
       actions: ~
@@ -23,9 +24,9 @@ generator:
         title: Notas de Evolucion
         display: [fecha_hora, numero_prob, nota_soap, created_by]
         object_actions:  
-          _edit:        { credentials: [noHistory] }
-          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [siHistory] }
-          _delete:      { credentials: [noHistory] }
+          _edit:        { credentials: [noAlta, crear, enfermera] }
+          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [[enfermera, ver_todo_datos], alta] }
+          _delete:      { credentials: [noAlta, crear, enfermera] }
         actions: {}
         batch_actions: {}
       filter:  
@@ -33,15 +34,11 @@ generator:
       form:    
         display:
           S.O.A.P. Subjetivo - Objetivo - Analisis - Planes a)Diagnóstico b)Tratamiento c)Educativo: [fecha_hora, numero_prob, nota_soap]
-      edit:    
-        title: Editar Nota de Evolución
         actions:
-          _list: ~
-          _save: { credentials: [noHistory] }
+          _delete: { credentials: [noAlta, crear, enfermera] }
+          _list:   ~
+          _save:   { credentials: [noAlta, crear, enfermera] }  
       edit:    
-        title: Editar Nota de Evolucion        
+        title: Editar Nota de Evolución            
       new:     
         title: Nueva Nota de Evolución
-        actions:
-          _list: ~
-          _save: ~

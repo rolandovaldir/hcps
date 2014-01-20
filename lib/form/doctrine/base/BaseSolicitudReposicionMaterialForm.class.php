@@ -19,8 +19,8 @@ abstract class BaseSolicitudReposicionMaterialForm extends BaseFormDoctrine
       'internado_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => false)),
       'unidad'       => new sfWidgetFormInputText(),
       'encargado'    => new sfWidgetFormInputText(),
-      'created_at'   => new sfWidgetFormDateTime(),
-      'updated_at'   => new sfWidgetFormDateTime(),
+      'created_at'   => new myWidgetFormDojoDateTime(),
+      'updated_at'   => new myWidgetFormDojoDateTime(),
       'created_by'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Creator'), 'add_empty' => true)),
       'updated_by'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Updator'), 'add_empty' => true)),
     ));
@@ -30,8 +30,8 @@ abstract class BaseSolicitudReposicionMaterialForm extends BaseFormDoctrine
       'internado_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'))),
       'unidad'       => new sfValidatorString(array('max_length' => 100)),
       'encargado'    => new sfValidatorString(array('max_length' => 150)),
-      'created_at'   => new sfValidatorDateTime(),
-      'updated_at'   => new sfValidatorDateTime(),
+      'created_at'   => new myValidatorDojoDateTime(),
+      'updated_at'   => new myValidatorDojoDateTime(),
       'created_by'   => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Creator'), 'required' => false)),
       'updated_by'   => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Updator'), 'required' => false)),
     ));

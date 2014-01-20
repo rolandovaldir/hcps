@@ -11,6 +11,7 @@ generator:
     with_doctrine_route:   true
     actions_base_class:    sfActions
     extra_url_custom_id:   internado_id
+    sfGuard_check_created_by: user_id
     
     config:
       actions: ~
@@ -22,18 +23,18 @@ generator:
         title: Listado Recetas Uso Hospitalario
         display: [ lugar, fecha, codigo, especialidad]
         object_actions:  
-          _edit:        { credentials: [noHistory] }
-          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [siHistory] }
-          _delete:      { credentials: [noHistory] }
+          _edit:        { credentials: [noAlta, crear, enfermera] }
+          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [[enfermera, ver_todo_datos], alta] }
+          _delete:      { credentials: [noAlta, crear, enfermera] }
         actions: {}
         batch_actions: {}
       filter: 
         display: [ lugar, fecha, codigo, especialidad, created_at, updated_at ]
       form:
         actions:
-          _delete: ~
+          _delete: { credentials: [noAlta, crear, enfermera] }
           _list:   ~
-          _save:   { credentials: [noHistory] }
+          _save:   { credentials: [noAlta, crear, enfermera] }
       edit:    
         title: Edición Recetas Uso Hospitalario
         display:

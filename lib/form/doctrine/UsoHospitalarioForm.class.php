@@ -13,12 +13,16 @@ class UsoHospitalarioForm extends BaseUsoHospitalarioForm
   public function configure()
   {
       unset($this['created_at'], $this['updated_at']);
-      $this->setWidget("internado_id", new sfWidgetFormInputHidden());
-            
+      $this->setWidget("internado_id", new sfWidgetFormInputHidden());   
+      $this->incluirDetalles();
+  }
+  
+  public function incluirDetalles($nombre_campo='detalle')
+  {
       $detalle = new DetalleUsoHospitalario();
       $detalle->setUsoHospitalario($this->object);
       $detalleForm = new DetalleUsoHospitalarioForm($detalle);
-      $this->embedForm('detalle', $detalleForm);      
+      $this->embedForm($nombre_campo, $detalleForm);
   }
   
   public function disableAllWidgets()

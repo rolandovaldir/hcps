@@ -11,6 +11,7 @@ generator:
     with_doctrine_route:   true
     actions_base_class:    sfActions
     extra_url_custom_id:       internado_id
+    sfGuard_check_created_by: user_id
     
     config:
       actions: ~
@@ -22,23 +23,20 @@ generator:
         title: Listado Autorizacion Alta Solicitada
         display: [ fecha_hora, internado_id,nombre_familiar,ci_familiar]        
         object_actions:  
-          _edit:        { credentials: [noHistory] }
-          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [siHistory] }
-          _delete:      { credentials: [noHistory] }
+          _edit:        { credentials: [noAlta, crear, enfermera] }
+          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [[enfermera, ver_todo_datos], alta] }
+          _delete:      { credentials: [noAlta, crear, enfermera] }
+          imprimir:     { credentials: [noAlta, crear, enfermera] }
         actions: {}
         batch_actions: {}
-        object_actions:
-          _edit: ~
-          _delete: ~
-          imprimir: {label: Imprimir, action: exportPdf}
       filter:  
         display: [ nombre_familiar,ci_familiar,fecha_hora ]
       form:    
         display: [ internado_id,nombre_familiar,ci_familiar,fecha_hora ]
         actions:
-          _delete: ~
-          _list: ~
-          _save: { credentials: [noHistory] }
+          _delete: { credentials: [noAlta, crear, enfermera] }
+          _list:   ~
+          _save:   { credentials: [noAlta, crear, enfermera] }
       edit:    
         title: Edición Autorizacion Alta Solicitada
       new:        

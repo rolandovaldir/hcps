@@ -1,0 +1,10 @@
+## YAML Template.
+---
+index:
+  credentials: [[medico, ver_todo_datos]]
+new:
+  credentials: [crear, medico]
+edit:
+  credentials: [crear, medico]
+delete: 
+  credentials: [crear, medico]
