@@ -20,7 +20,7 @@ abstract class BaseSolicitudServicioForm extends BaseFormDoctrine
       'atencion_id'            => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Atencion'), 'add_empty' => false)),
       'fecha'                  => new myWidgetFormDojoDate(),
       'para'                   => new sfWidgetFormTextarea(),
-      'diagnostico_presuncion' => new sfWidgetFormInputText(),
+      'diagnostico_presuncion' => new sfWidgetFormTextarea(),
       'material_utilizado'     => new sfWidgetFormTextarea(),
       'created_at'             => new myWidgetFormDojoDateTime(),
       'updated_at'             => new myWidgetFormDojoDateTime(),

@@ -19,9 +19,9 @@ abstract class BasePiezaForm extends BaseFormDoctrine
       'planta_id'     => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Planta'), 'add_empty' => false)),
       'nombre'        => new sfWidgetFormInputText(),
       'codigo'        => new sfWidgetFormInputText(),
-      'descripcion'   => new sfWidgetFormInputText(),
-      'observaciones' => new sfWidgetFormInputText(),
-      'plano'         => new sfWidgetFormInputText(),
+      'descripcion'   => new sfWidgetFormTextarea(),
+      'observaciones' => new sfWidgetFormTextarea(),
+      'plano'         => new sfWidgetFormTextarea(),
       'created_at'    => new myWidgetFormDojoDateTime(),
       'updated_at'    => new myWidgetFormDojoDateTime(),
     ));

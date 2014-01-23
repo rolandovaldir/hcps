@@ -19,7 +19,7 @@ abstract class BaseAtencionEnfermeriaForm extends BaseFormDoctrine
       'internado_id'                          => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => false)),
       'enfermera_id'                          => new myWidgetFormDojoInteger(),
       'medico_id'                             => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Medico'), 'add_empty' => true)),
-      'diagnostico_medico'                    => new sfWidgetFormInputText(),
+      'diagnostico_medico'                    => new sfWidgetFormTextarea(),
       'fecha_ingreso'                         => new myWidgetFormDojoDateTime(),
       'acompaño_por'                         => new sfWidgetFormInputText(),
       'estado'                                => new sfWidgetFormInputText(),

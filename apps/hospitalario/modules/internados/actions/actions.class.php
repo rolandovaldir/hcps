@@ -24,16 +24,20 @@ class internadosActions extends autoInternadosActions
     public function executeVisitar(sfWebRequest $request)
     {        
         $user = $this->getUser();
-        $user-> setAttribute('internado',  $this->getRoute()->getObject());
+        $user->setAttribute('internado',  $this->getRoute()->getObject());
         $internado = $user->getAttribute('internado');        
         $this->internado = $this->getRoute()->getObject();        
-        $this->setLayout('layout');        
-        $this->getResponse()->setSlot("nombre_completo_internado", $this->internado->getNombreCompleto());
+        $this->setLayout('layout');                
+        
+        $his = InternadoTable::getInstance()->createQuery('h')->select('h.id, h.fecha, h.diagnostico, h.diagnostico_alta')
+            ->where( ($internado->getEsAfiliado() ? 'h.afiliado_id': 'h.noafiliado_id') . '=? and h.alta=1',$internado->getEsAfiliado() ? $internado->getAfiliadoId() : $internado->getNoafiliadoId())
+            ->orderBy('h.fecha')->execute()->toArray();
+        $this->getResponse()->setSlot("historial_array",$his);        
     }       
     
     public function executeSecure(sfWebRequest $request)
     {
-        return $this->renderText('<div id="sf_admin_container"><div class="error">Usted No tiene los permisos necesarios (o el registro que quiere editar no fue creado por usted)</div></div>');
+        return $this->renderText('<div id="sf_admin_container"><div class="error">Usted No tiene los permisos necesarios (o el registro que quiere editar/eliminar no fue creado por usted)</div></div>');
     }
     
 }

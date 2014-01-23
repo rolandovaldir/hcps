@@ -1,5 +1,10 @@
   public function executeDelete(sfWebRequest $request)
   {
+<?php if (array_key_exists('sfGuard_check_created_by', $this->params)): ?>      
+    if ($this->getRoute()->getObject()->getCreatedBy()!=$this->getUser()->getAttribute('<?php echo $this->params['sfGuard_check_created_by']?>', 'sfGuardSecurityUser')){
+        $this->forward(sfConfig::get('sf_secure_module'),'secure');
+    }
+<?php endif ?>    
     $request->checkCSRFProtection();
 
     $this->dispatcher->notify(new sfEvent($this, 'admin.delete_object', array('object' => $this->getRoute()->getObject())));

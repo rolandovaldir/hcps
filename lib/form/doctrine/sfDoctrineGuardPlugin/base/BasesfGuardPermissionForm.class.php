@@ -16,7 +16,7 @@ abstract class BasesfGuardPermissionForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'id'          => new sfWidgetFormInputHidden(),
-      'name'        => new sfWidgetFormInputText(),
+      'name'        => new sfWidgetFormTextarea(),
       'description' => new sfWidgetFormTextarea(),
       'created_at'  => new myWidgetFormDojoDateTime(),
       'updated_at'  => new myWidgetFormDojoDateTime(),

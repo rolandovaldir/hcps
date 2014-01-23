@@ -19,7 +19,7 @@ abstract class BaseCamaForm extends BaseFormDoctrine
       'pieza_id'      => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Pieza'), 'add_empty' => false)),
       'codigo'        => new sfWidgetFormInputText(),
       'ocupada'       => new sfWidgetFormInputCheckbox(),
-      'observaciones' => new sfWidgetFormInputText(),
+      'observaciones' => new sfWidgetFormTextarea(),
       'codigo_activo' => new sfWidgetFormInputText(),
       'activo_id'     => new myWidgetFormDojoInteger(),
       'created_at'    => new myWidgetFormDojoDateTime(),

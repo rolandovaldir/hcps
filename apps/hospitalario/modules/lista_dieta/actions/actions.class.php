@@ -16,20 +16,24 @@ class lista_dietaActions extends autoLista_dietaActions
     
     private $hcps_internado = null;
 
-
     public function preExecute()
-    {
-        $request = $this->getRequest();         
-        $this->hcps_internado = InternadoTable::getInstance()->find($request->getParameter('internado_id'));
-        
-        if (!$this->getUser()->hasCredential('enfermera') || !is_object($this->hcps_internado) || $this->hcps_internado->getAlta() ){
-            $this->getUser()->addCredential('siHistory');
-            $this->getUser()->removeCredential('noHistory');
+    {        
+        $this->hcps_internado = InternadoTable::getInstance()->find($this->getRequest()->getParameter('internado_id'));
+        $siAlta = false;        
+        if (is_object($this->hcps_internado)){
+            if ($this->hcps_internado->getAlta()){
+                if (!$this->getUser()->hasCredential('ver_historial'))
+                {
+                    $this->forward(sfConfig::get('sf_secure_module'),'secure');
+                }
+                $siAlta = true;                
+            }            
         }
-        else{
-            $this->getUser()->addCredential('noHistory');
-            $this->getUser()->removeCredential('siHistory');                    
-        }
+        else{ $siAlta = true; }//si es en reportes misma vista de pacientes dados de alta (sin opciones de edicion y eliminacion)
+
+        $this->getUser()->addCredential($siAlta ? 'Alta' : 'noAlta');
+        $this->getUser()->removeCredential($siAlta ? 'noAlta' : 'Alta');
+
         parent::preExecute();
     }
         
@@ -50,7 +54,10 @@ class lista_dietaActions extends autoLista_dietaActions
     protected function getFilters()
     {   
         $filters = parent::getFilters();        
-        $filters['internado_id'] = sfContext::getInstance()->getRequest()->getParameter('internado_id');
+        $filters['internado_id'] = $this->getRequest()->getParameter('internado_id');
+        if ($this->getRequest()->getParameter('internado_id','')=='' && $this->getRequest()->hasParameter('historial')){
+            $filters['internados_id'] = array(1,3);
+        }        
         return $filters;
     }
     

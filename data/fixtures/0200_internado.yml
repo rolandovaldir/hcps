@@ -1,6 +1,56 @@
 ## YAML Template.
 ---
 Internado:  
+  ALTA1:
+    Afiliado:                AFI2
+    noAfiliado_id:           null
+    categoria_id:            0
+    Cama:                    cama2
+    medico_id:               0
+    medico_consulta_id:      0
+    medico_referencia_id:    0
+    formulario_referencia:   ''
+    diagnostico:             'infeccion'
+    procedencia:             ''
+    medio_referencia:        ''
+    observaciones:           'DADO DE ALTA'
+    fecha:                   '2012-12-08'
+    hora:                    '14:09'
+    conducto:                ''
+    es_afiliado:             true
+    alta:                    true
+    altaFecha:               '2012-12-12'
+    altaHora:                '09:00'
+    diagnostico_alta:        'infeccion curada'
+    tratamientio:            ''
+    lugar_referencia_salida: ''
+    medio_referencia_salida: ''
+    motivo_refe_retorno:     ''
+  ALTA2:
+    Afiliado:                AFI2
+    noAfiliado_id:           null
+    categoria_id:            0
+    Cama:                    cama1
+    medico_id:               0
+    medico_consulta_id:      0
+    medico_referencia_id:    0
+    formulario_referencia:   ''
+    diagnostico:             'apendicitis'
+    procedencia:             ''
+    medio_referencia:        ''
+    observaciones:           'DADO DE ALTA'
+    fecha:                   '2013-05-20'
+    hora:                    '16:25'
+    conducto:                ''
+    es_afiliado:             true
+    alta:                    true
+    altaFecha:               '2013-05-30'
+    altaHora:                '09:00'
+    diagnostico_alta:        'operacion'
+    tratamientio:            ''
+    lugar_referencia_salida: ''
+    medio_referencia_salida: ''
+    motivo_refe_retorno:     ''
   INTER1:     
     Afiliado:                AFI1
     noAfiliado_id:           null

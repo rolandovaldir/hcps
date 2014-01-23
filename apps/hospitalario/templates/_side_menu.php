@@ -12,7 +12,7 @@ $link_menus = array(
     array('link'=>'lista_dieta','label'=>'Lista Dieta', 'table'=>'ListaDieta'),
     array('link'=>'notas_enfermeria','label'=>'Notas Enfermeria', 'table'=>'NotasEnfermeria'),
     array('link'=>'notas_evolucion','label'=>'Notas Evolucion', 'table'=>'NotasEvolucion'),
-    array('link'=>'nursery','label'=>'Nursery'),
+    array('link'=>'nursery','label'=>'Nursery', 'table'=>'SignosVitalesNursery'),
     array('link'=>'ordenes_medicas','label'=>'Ordenes Medicas', 'table'=>'OrdenMedica'),
     array('link'=>'papeleta_pedido_material','label'=>'Papeleta Pedido Material', 'table'=>'PapeletaPedidoMaterial'),
     array('link'=>'programacion_cirugia','label'=>'Programacion Cirugias', 'table'=>'ProgramacionCirugia'),

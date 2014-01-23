@@ -16,20 +16,24 @@ class uso_hospitalarioActions extends autoUso_hospitalarioActions
    
     private $hcps_internado = null;
 
-
     public function preExecute()
-    {
-        $request = $this->getRequest();         
-        $this->hcps_internado = InternadoTable::getInstance()->find($request->getParameter('internado_id'));
-        
-        if ((is_object($this->hcps_internado) && !$this->hcps_internado->getAlta())){
-            $this->getUser()->addCredential('noHistory');
-            $this->getUser()->removeCredential('siHistory');                    
+    {        
+        $this->hcps_internado = InternadoTable::getInstance()->find($this->getRequest()->getParameter('internado_id'));
+        $siAlta = false;        
+        if (is_object($this->hcps_internado)){
+            if ($this->hcps_internado->getAlta()){
+                if (!$this->getUser()->hasCredential('ver_historial'))
+                {
+                    $this->forward(sfConfig::get('sf_secure_module'),'secure');
+                }
+                $siAlta = true;                
+            }            
         }
-        else{
-            $this->getUser()->addCredential('siHistory');
-            $this->getUser()->removeCredential('noHistory');
-        }
+        else{ $siAlta = true; }//si es en reportes misma vista de pacientes dados de alta (sin opciones de edicion y eliminacion)
+
+        $this->getUser()->addCredential($siAlta ? 'Alta' : 'noAlta');
+        $this->getUser()->removeCredential($siAlta ? 'noAlta' : 'Alta');
+
         parent::preExecute();
     }
         
@@ -54,11 +58,20 @@ class uso_hospitalarioActions extends autoUso_hospitalarioActions
         return $filters;
     }
     
-    public function executeNew(sfWebRequest $request)
-    {        
-        parent::executeNew($request);        
-        $this->form->setDefault('internado_id',$request->getParameter('internado_id'));
-        //var_dump($this->form->getDefault('file_internacion_id'));
+    protected function processForm(sfWebRequest $request, sfForm $form)
+    {
+        $vals = $request->getParameter($form->getName());        
+        
+        if ($form->getObject()->isNew()){        
+            $vals['internado_id'] = $request->getParameter('internado_id');
+        }        
+        else{
+            $vals['internado_id'] = $form->getObject()->getInternadoId();            
+        }        
+        
+        $request->setParameter($form->getName(),$vals);        
+        parent::processForm($request, $form);
+        
     }
     
     public function executeDeleteItem(sfWebRequest $request)

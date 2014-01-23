@@ -1,5 +1,10 @@
   protected function processForm(sfWebRequest $request, sfForm $form)
   {  
+<?php if (array_key_exists('sfGuard_check_created_by', $this->params)): ?>      
+    if (!$form->getObject()->isNew() && $this->getRoute()->getObject()->getCreatedBy()!=$this->getUser()->getAttribute('<?php echo $this->params['sfGuard_check_created_by']?>', 'sfGuardSecurityUser')){
+        $this->forward(sfConfig::get('sf_secure_module'),'secure');
+    }
+<?php endif ?> 
     $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
     if ($form->isValid())
     {

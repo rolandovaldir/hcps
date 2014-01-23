@@ -50,7 +50,7 @@
                     <td nowrap="nowrap" style="font-size: 11px">Especialidad:
                         <span>
                             <?php if ($sf_user->isAuthenticated() == true): ?>
-                                <?php echo $sf_user->getGuardUser()->getDescripcionTipo() ?><br/>
+                                <?php if ($sf_user->getHcpsUser()) echo $sf_user->getGuardUser()->getDescripcionTipo() ?><br/>
                                 <?php echo link_to('Salir','sfGuardAuth/Signout')?> 
                             <?php else: echo 'Iniciar sesi&oacute;n!!!'; ?>
                             <?php endif; ?>

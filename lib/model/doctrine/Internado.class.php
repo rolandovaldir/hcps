@@ -65,6 +65,6 @@ class Internado extends BaseInternado
     {
         return 'Planta: '.$this->Cama->Pieza->Planta->getNombre().' Pieza: '.$this->Cama->Pieza->getNombre().' Cama: '.$this->Cama->getCodigo();
 
-    }
+    }       
     
 }

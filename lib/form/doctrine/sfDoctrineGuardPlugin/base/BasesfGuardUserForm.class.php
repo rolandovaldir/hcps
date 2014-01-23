@@ -16,9 +16,9 @@ abstract class BasesfGuardUserForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'id'               => new sfWidgetFormInputHidden(),
-      'first_name'       => new sfWidgetFormInputText(),
-      'last_name'        => new sfWidgetFormInputText(),
-      'email_address'    => new sfWidgetFormInputText(),
+      'first_name'       => new sfWidgetFormTextarea(),
+      'last_name'        => new sfWidgetFormTextarea(),
+      'email_address'    => new sfWidgetFormTextarea(),
       'username'         => new sfWidgetFormInputText(),
       'algorithm'        => new sfWidgetFormInputText(),
       'salt'             => new sfWidgetFormInputText(),

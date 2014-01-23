@@ -17,7 +17,7 @@ abstract class BaseEmpleadoForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'              => new sfWidgetFormInputHidden(),
       'matricula'       => new sfWidgetFormInputText(),
-      'profesion'       => new sfWidgetFormInputText(),
+      'profesion'       => new sfWidgetFormTextarea(),
       'centro_salud_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Filial'), 'add_empty' => false)),
       'nombre'          => new sfWidgetFormInputText(),
       'apellido'        => new sfWidgetFormInputText(),

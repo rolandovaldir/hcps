@@ -25,7 +25,7 @@ abstract class BaseSolicitudTransfusionSanguineaForm extends BaseFormDoctrine
       'quirofano_prog_quirurgica' => new sfWidgetFormInputText(),
       'cantidad_requerida'        => new myWidgetFormDojoInteger(),
       'cantidad_requerida_unidad' => new sfWidgetFormInputText(),
-      'observaciones'             => new sfWidgetFormInputText(),
+      'observaciones'             => new sfWidgetFormTextarea(),
       'fecha_solicitud'           => new myWidgetFormDojoDate(),
       'hora_solicitud'            => new myWidgetFormDojoTime(),
       'medico_id'                 => new myWidgetFormDojoInteger(),

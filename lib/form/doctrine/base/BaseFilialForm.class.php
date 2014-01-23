@@ -17,11 +17,11 @@ abstract class BaseFilialForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'            => new sfWidgetFormInputHidden(),
       'nombre'        => new sfWidgetFormInputText(),
-      'direccion'     => new sfWidgetFormInputText(),
+      'direccion'     => new sfWidgetFormTextarea(),
       'telefono'      => new sfWidgetFormInputText(),
       'telefono2'     => new sfWidgetFormInputText(),
       'telefono3'     => new sfWidgetFormInputText(),
-      'descripcion'   => new sfWidgetFormInputText(),
+      'descripcion'   => new sfWidgetFormTextarea(),
       'codigo'        => new sfWidgetFormInputText(),
       'geoubicacion'  => new sfWidgetFormTextarea(),
       'geoubicacion2' => new sfWidgetFormTextarea(),

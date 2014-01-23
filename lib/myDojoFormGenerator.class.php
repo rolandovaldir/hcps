@@ -19,6 +19,9 @@ class myDojoFormGenerator extends sfDoctrineFormGenerator
   { 
     switch ($column->getDoctrineType())
     {
+      case 'string':
+        return (null=== $column->getLength() || $column->getLength() >= 200 ? 'sfWidgetFormTextarea' : 'sfWidgetFormInputText');
+        break;
       case 'date':
         return 'myWidgetFormDojoDate';
         break;

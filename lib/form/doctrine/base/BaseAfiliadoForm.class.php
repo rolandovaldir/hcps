@@ -21,7 +21,7 @@ abstract class BaseAfiliadoForm extends BaseFormDoctrine
       'materno'    => new sfWidgetFormInputText(),
       'nombre'     => new sfWidgetFormInputText(),
       'hclinica'   => new sfWidgetFormInputText(),
-      'empresa'    => new sfWidgetFormInputText(),
+      'empresa'    => new sfWidgetFormTextarea(),
       'tafiliado'  => new sfWidgetFormInputText(),
       'activo'     => new sfWidgetFormInputText(),
       'grupofam'   => new sfWidgetFormInputText(),
