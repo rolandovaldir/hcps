@@ -15,7 +15,6 @@ class recien_nacidosActions extends autoRecien_nacidosActions
 {
     private $hcps_internado = null;
 
-
     public function preExecute()
     {
         $request = $this->getRequest();         
@@ -68,5 +67,12 @@ class recien_nacidosActions extends autoRecien_nacidosActions
             $env = '_dev';
         }
         $this->redirect('/hospitalario'.$env.'.php/apgar');   
+    }
+    
+    public function executeVerForm(sfWebRequest $request)
+    {
+        $this->recien_nacido = $this->getRoute()->getObject();
+        $this->internado_id = $request->getParameter('id');
+        
     }
 }

@@ -10,7 +10,7 @@ generator:
     route_prefix:          autorizacion_alta_solicitada_autorizaciones_alta_solicitada
     with_doctrine_route:   true
     actions_base_class:    sfActions
-    extra_url_custom_id:       internado_id
+    extra_url_custom_id:   internado_id
     
     config:
       actions: ~

@@ -16,7 +16,7 @@ abstract class BaseTipoExamenLaboratorioClinicoForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'id'                                        => new sfWidgetFormInputHidden(),
-      'grupo_orden'                               => new myWidgetFormDojoInteger(),
+      'grupo_orden'                               => new sfWidgetFormInputText(),
       'grupo_nombre'                              => new sfWidgetFormInputText(),
       'examen_orden'                              => new sfWidgetFormInputText(),
       'examen_nombre'                             => new sfWidgetFormInputText(),

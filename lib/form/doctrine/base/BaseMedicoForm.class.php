@@ -18,18 +18,18 @@ abstract class BaseMedicoForm extends BaseFormDoctrine
       'id'              => new sfWidgetFormInputHidden(),
       'codigo'          => new sfWidgetFormInputText(),
       'nombrec'         => new sfWidgetFormInputText(),
-      'cargahor'        => new myWidgetFormDojoInteger(),
+      'cargahor'        => new sfWidgetFormInputText(),
       'hor_ini'         => new sfWidgetFormInputText(),
       'hor_fin'         => new sfWidgetFormInputText(),
-      'intervalo'       => new myWidgetFormDojoInteger(),
+      'intervalo'       => new sfWidgetFormInputText(),
       'activo'          => new sfWidgetFormInputText(),
-      'cupos'           => new myWidgetFormDojoInteger(),
+      'cupos'           => new sfWidgetFormInputText(),
       'consultorio'     => new sfWidgetFormInputText(),
       'observacion'     => new sfWidgetFormTextarea(),
       'especialidad_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Especialidad'), 'add_empty' => false)),
-      'item_id'         => new myWidgetFormDojoInteger(),
-      'created_at'      => new myWidgetFormDojoDateTime(),
-      'updated_at'      => new myWidgetFormDojoDateTime(),
+      'item_id'         => new sfWidgetFormInputText(),
+      'created_at'      => new sfWidgetFormDateTime(),
+      'updated_at'      => new sfWidgetFormDateTime(),
     ));
 
     $this->setValidators(array(
@@ -46,8 +46,8 @@ abstract class BaseMedicoForm extends BaseFormDoctrine
       'observacion'     => new sfValidatorString(array('max_length' => 2000, 'required' => false)),
       'especialidad_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Especialidad'))),
       'item_id'         => new sfValidatorInteger(),
-      'created_at'      => new myValidatorDojoDateTime(),
-      'updated_at'      => new myValidatorDojoDateTime(),
+      'created_at'      => new sfValidatorDateTime(),
+      'updated_at'      => new sfValidatorDateTime(),
     ));
 
     $this->validatorSchema->setPostValidator(

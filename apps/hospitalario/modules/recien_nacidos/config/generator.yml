@@ -11,37 +11,37 @@ generator:
     with_doctrine_route:   true
     actions_base_class:    sfActions
     extra_url_custom_id:   internado_id
-
     config:
       actions: ~
-      fields:  
+      fields:
         fecha_nacimiento: {label: 'Nacimiento', date_format: 'dd/MM/yyyy'}
         ap_paterno:       {label: 'Apellido Paterno'}
         ap_materno:       {label: 'Apellido Materno'}
         peso_nacimiento:  {label: 'Peso'}
         numero_cuna:      {label: 'Cuna'}
-      list:    
+      list:
         title: Examen Físico del Recien Nacido
         display: [fecha_nacimiento, ap_paterno, ap_materno, numero_cuna, sexo, peso_nacimiento]
-        object_actions:  
-          _edit:        { credentials: [noHistory] }
-          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [siHistory] }
-          _delete:      { credentials: [noHistory] }
+        object_actions:
+          _edit:        {credentials: [noHistory]}
+          _delete:      {credentials: [noHistory]}
+          ver_detalle:  {label: Ver detalle, action: edit, credentials: [siHistory]}
+          ver_form:     {label: Ver fomulario, action: verForm}
         actions: {}
         batch_actions: {}
-      filter:  
+      filter:
         display: [ap_paterno, ap_materno, sexo]
-      form:    
+      form:
         actions:
           _list: ~
-          _save: { credentials: [noHistory] }        
-      edit:    
+          _save: {credentials: [noHistory]}
+      edit:
         title: Editar Recien Nacido %%ap_paterno%% %%ap_materno%%
         display:
           Examen Físico del Recien Nacido: [ap_paterno, ap_materno, fecha_nacimiento, sexo, peso_nacimiento, talla, circunferencia_torax, numero_cuna, fecha_adminision, fecha_egreso]
           Al Nacer: [_apgar]
-#          Apgar: [apgar]
-      new:     
+          Apgar: [apgar]
+      new:
         title: Nuevo Recien Nacido
         display:
           Examen Físico del Recien Nacido: [ap_paterno, ap_materno, fecha_nacimiento, sexo, peso_nacimiento, talla, circunferencia_torax, numero_cuna, fecha_adminision, fecha_egreso]
