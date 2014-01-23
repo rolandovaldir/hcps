@@ -31,7 +31,6 @@ generator:
         display: [fecha_junta, medico_solicitante]
       form:            
         actions:
-          actions:
           _delete: { credentials: [noAlta, crear, medico] }
           _list:   ~
           _save:   { credentials: [noAlta, crear, medico] }
