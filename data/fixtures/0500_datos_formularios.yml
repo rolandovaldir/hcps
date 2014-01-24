@@ -202,7 +202,7 @@ AtencionEnfermeria:
     medico_id: null
     diagnostico_medico: ''
     fecha_ingreso: ''
-    acompaño_por: ''  
+    'acompano_por': ''  
     estado: ''   
     derivado_de: ''
     cuidador_principal: ''
@@ -281,7 +281,7 @@ AtencionEnfermeria:
     medico_id: null
     diagnostico_medico: ''
     fecha_ingreso: ''
-    acompaño_por: ''  
+    'acompano_por': ''  
     estado: ''   
     derivado_de: ''
     cuidador_principal: ''
@@ -360,7 +360,7 @@ AtencionEnfermeria:
     medico_id: null
     diagnostico_medico: ''
     fecha_ingreso: ''
-    acompaño_por: ''  
+    'acompano_por': ''  
     estado: ''   
     derivado_de: ''
     cuidador_principal: ''

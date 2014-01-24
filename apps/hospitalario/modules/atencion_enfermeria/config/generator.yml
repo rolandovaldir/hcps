@@ -107,7 +107,7 @@ generator:
         display: [ fecha_ingreso, medico_id ]
       form:
         display: 
-          "Datos del formulario":             [fecha_ingreso, medico_id, diagnostico_medico, acompaño_por, estado, derivado_de, especificar_derivado, cuidador_principal, especificar_cuidador, edad, peso, talla, sexo, temperatura, pulso, respiracion, presion_arterial]
+          "Datos del formulario":             [fecha_ingreso, medico_id, diagnostico_medico, acompano_por, estado, derivado_de, especificar_derivado, cuidador_principal, especificar_cuidador, edad, peso, talla, sexo, temperatura, pulso, respiracion, presion_arterial]
           "1. PERCEPCION DE LA SALUD":        [ internado_id, per_apariencia_gral_esc, per_apariencia_gral_val, per_habitos_esc, per_habitos_val, per_alergias_esc, per_alergias_val, per_inmunizaciones_esc, per_inmunizaciones_val, per_medicacion_actual_esc, per_medicacion_actual_val, motivo_ingreso ]
           "2. NUTRICIONAL-METABOLICO":        [ nutmet_higiene_esc, nutmet_higiene_val, nutmet_estado_nutricional_esc, nutmet_estado_nutricional_val, nutmet_protesis_dental_esc, nutmet_protesis_dental_val, nutmet_liquidos_electrolitos_esc, nutmet_liquidos_electrolitos_val ]
           "3. PATRON ELIMINACION":            [ patelim_habito_intestinal_esc, patelim_habito_intestinal_val, patelim_habito_urinario_esc, patelim_habito_urinario_val ]

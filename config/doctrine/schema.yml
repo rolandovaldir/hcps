@@ -629,7 +629,7 @@ AtencionEnfermeria:
     medico_id:                              { type: integer }
     diagnostico_medico:                      { type: string(200), notnull: true }
     fecha_ingreso:                          { type: timestamp, notnull: true }
-    acompaño_por:                           { type: string(50) }
+    acompano_por:                           { type: string(50) }
     estado:                                 { type: string(20), notnull: true }
     derivado_de:                            { type: string(30), notnull: true }
     especificar_derivado:                   { type: string(80) }

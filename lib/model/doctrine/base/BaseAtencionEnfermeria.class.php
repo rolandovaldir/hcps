@@ -10,7 +10,7 @@
  * @property integer $medico_id
  * @property string $diagnostico_medico
  * @property timestamp $fecha_ingreso
- * @property string $acompaño_por
+ * @property string $acompano_por
  * @property string $estado
  * @property string $derivado_de
  * @property string $especificar_derivado
@@ -91,7 +91,7 @@
  * @method integer            getMedicoId()                              Returns the current record's "medico_id" value
  * @method string             getDiagnosticoMedico()                     Returns the current record's "diagnostico_medico" value
  * @method timestamp          getFechaIngreso()                          Returns the current record's "fecha_ingreso" value
- * @method string             getAcompa()                                Returns the current record's "acompa" value
+ * @method string             getAcompanoPor()                           Returns the current record's "acompano_por" value
  * @method string             getEstado()                                Returns the current record's "estado" value
  * @method string             getDerivadoDe()                            Returns the current record's "derivado_de" value
  * @method string             getEspecificarDerivado()                   Returns the current record's "especificar_derivado" value
@@ -171,7 +171,7 @@
  * @method AtencionEnfermeria setMedicoId()                              Sets the current record's "medico_id" value
  * @method AtencionEnfermeria setDiagnosticoMedico()                     Sets the current record's "diagnostico_medico" value
  * @method AtencionEnfermeria setFechaIngreso()                          Sets the current record's "fecha_ingreso" value
- * @method AtencionEnfermeria setAcompa()                                Sets the current record's "acompa" value
+ * @method AtencionEnfermeria setAcompanoPor()                           Sets the current record's "acompano_por" value
  * @method AtencionEnfermeria setEstado()                                Sets the current record's "estado" value
  * @method AtencionEnfermeria setDerivadoDe()                            Sets the current record's "derivado_de" value
  * @method AtencionEnfermeria setEspecificarDerivado()                   Sets the current record's "especificar_derivado" value
@@ -276,7 +276,7 @@ abstract class BaseAtencionEnfermeria extends sfDoctrineRecord
              'type' => 'timestamp',
              'notnull' => true,
              ));
-        $this->hasColumn('acompaño_por', 'string', 50, array(
+        $this->hasColumn('acompano_por', 'string', 50, array(
              'type' => 'string',
              'length' => 50,
              ));
