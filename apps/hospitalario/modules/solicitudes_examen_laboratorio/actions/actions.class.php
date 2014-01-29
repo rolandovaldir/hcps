@@ -22,10 +22,6 @@ class solicitudes_examen_laboratorioActions extends autoSolicitudes_examen_labor
         $siAlta = false;        
         if (is_object($this->hcps_internado)){
             if ($this->hcps_internado->getAlta()){
-                if (!$this->getUser()->hasCredential('ver_historial'))
-                {
-                    $this->forward(sfConfig::get('sf_secure_module'),'secure');
-                }
                 $siAlta = true;                
             }            
         }

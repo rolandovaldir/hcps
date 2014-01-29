@@ -21,11 +21,7 @@ class autorizaciones_alta_solicitadaActions extends autoAutorizaciones_alta_soli
         $this->hcps_internado = InternadoTable::getInstance()->find($this->getRequest()->getParameter('internado_id'));
         $siAlta = false;        
         if (is_object($this->hcps_internado)){
-            if ($this->hcps_internado->getAlta()){
-                if (!$this->getUser()->hasCredential('ver_historial'))
-                {
-                    $this->forward(sfConfig::get('sf_secure_module'),'secure');
-                }
+            if ($this->hcps_internado->getAlta()){                
                 $siAlta = true;                
             }            
         }

@@ -11,7 +11,7 @@ generator:
     with_doctrine_route:   true
     actions_base_class:    sfActions
     extra_url_custom_id:   internado_id
-    sfGuard_check_created_by: user_id
+#    sfGuard_check_created_by: user_id
 
     config:
       actions: ~
@@ -98,9 +98,9 @@ generator:
         title:   Listado Atencion Enfermeria
         display: [ fecha_ingreso, nombre_medico, diagnostico_medico, diagnostico_enfermera]
         object_actions:  
-          _edit:        { credentials: [noAlta, crear, enfermera] }
-          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [[enfermera, ver_todo_datos], alta] }
-          _delete:      { credentials: [noAlta, crear, enfermera] }
+          _edit:        { credentials: [noAlta] }
+          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [Alta] }
+          _delete:      { credentials: [noAlta] }
         actions: {}
         batch_actions: {}
       filter: 
@@ -121,9 +121,9 @@ generator:
           "11. CREENCIAS Y VALORES":          [ creencia_religiosa ]
           "&nbsp;":                           [ diagnostico_enfermera ]
         actions:
-          _delete: { credentials: [noAlta, crear, enfermera] }
+          _delete: { credentials: [noAlta] }
           _list: ~
-          _save:   { credentials: [noAlta, crear, enfermera] }
+          _save:   { credentials: [noAlta] }
       edit:
         title: Edición Atencion Enfermeria
       new:        
