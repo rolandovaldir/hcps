@@ -52,12 +52,9 @@ class lista_dietaActions extends autoLista_dietaActions
      * @return string 
      */
     protected function getFilters()
-    {   
+    {
         $filters = parent::getFilters();        
-        $filters['internado_id'] = $this->getRequest()->getParameter('internado_id');
-        if ($this->getRequest()->getParameter('internado_id','')=='' && $this->getRequest()->hasParameter('historial')){
-            $filters['internados_id'] = array(1,3);
-        }        
+        $filters['internado_id'] = is_object($this->hcps_internado) ? $this->hcps_internado->getId() : array();
         return $filters;
     }
     

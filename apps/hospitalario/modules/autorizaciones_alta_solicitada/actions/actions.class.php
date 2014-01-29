@@ -54,7 +54,7 @@ class autorizaciones_alta_solicitadaActions extends autoAutorizaciones_alta_soli
     protected function getFilters()
     {   
         $filters = parent::getFilters();        
-        $filters['internado_id'] = sfContext::getInstance()->getRequest()->getParameter('internado_id');
+        $filters['internado_id'] = is_object($this->hcps_internado) ? $this->hcps_internado->getId() : array();
         return $filters;
     }
     

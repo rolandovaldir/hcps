@@ -55,11 +55,22 @@ sfGuardPermission:
     
 sfGuardGroup:
    Group_medico_asistencial:
-     name:           medico asistencial
+     name:           Medico asistencial
      description:    medico asignado al tratamiento de internados
    Group_enfermera:
      name:           enfermera
      description:    enfermera asignada al tratamiento de internados
+   Group_medico_diagnostico:
+     name:           medico diagnostico
+     description:    Médico de Exámenes Auxiliares al Diagnóstico
+   Group_laboratorio:
+     name:           laboratorio
+     description:    Profesional para Exámenes de Laboratorio
+   Group_administrativo:
+     name:           administrativo
+     description:    Director de Clínica  
+     
+     
      
 sfGuardGroupPermission:
   RelationGP1:
@@ -80,3 +91,31 @@ sfGuardGroupPermission:
   RelationGP7:
     Group:       Group_enfermera
     Permission:  Permission_crear  
+  RelationGP8:
+    Group:       Group_medico_diagnostico
+    Permission:  Permission_medico
+  RelationGP9:
+    Group:       Group_medico_diagnostico
+    Permission:  Permission_enfermera
+  RelationGP10:
+    Group:       Group_medico_diagnostico
+    Permission:  Permission_ver_historial
+  RelationGP11:
+    Group:       Group_laboratorio
+    Permission:  Permission_medico  
+  RelationGP12:
+    Group:       Group_laboratorio
+    Permission:  Permission_enfermera
+  RelationGP13:
+    Group:       Group_laboratorio
+    Permission:  Permission_historial  
+  RelationGP14:
+    Group:       Group_administrativo
+    Permission:  Permission_medico
+  RelationGP15:
+    Group:       Group_administrativo
+    Permission:  Permission_enfermera
+  RelationGP16:
+    Group:       Group_administrativo
+    Permission:  Permission_ver_historial  
+    

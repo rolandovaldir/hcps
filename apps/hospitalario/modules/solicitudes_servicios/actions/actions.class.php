@@ -46,18 +46,25 @@ class solicitudes_serviciosActions extends autoSolicitudes_serviciosActions
         parent::postExecute();
     }
     
-    public function executeNew(sfWebRequest $request)
+    protected function processForm(sfWebRequest $request, sfForm $form)
     {
-        $this->form = $this->configuration->getForm();
-        $this->solicitud_servicio = $this->form->getObject();
-        $internado = $this->getUser()->getAttribute('internado');
-        $this->form->setDefault('internado_id', $internado->getId());
-    }
+        $vals = $request->getParameter($form->getName());        
+                
+        if ($form->getObject()->isNew()){
+            $vals['internado_id'] = $request->getParameter('internado_id');
+        }        
+        else{
+            $vals['internado_id'] = $form->getObject()->getInternadoId();            
+        }
+        $request->setParameter($form->getName(),$vals);
+        
+        parent::processForm($request, $form);
+    } 
     
     protected function getFilters()
     {   
         $filters = parent::getFilters();        
-        $filters['internado_id'] = sfContext::getInstance()->getRequest()->getParameter('internado_id');
+        $filters['internado_id'] = is_object($this->hcps_internado) ? $this->hcps_internado->getId() : array();
         return $filters;
     }
 }

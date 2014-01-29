@@ -53,16 +53,24 @@ class solicitudes_transfusion_sanguineaActions extends autoSolicitudes_transfusi
     protected function getFilters()
     {   
         $filters = parent::getFilters();        
-        $filters['internado_id'] = sfContext::getInstance()->getRequest()->getParameter('internado_id');
+        $filters['internado_id'] = is_object($this->hcps_internado) ? $this->hcps_internado->getId() : array();
         return $filters;
     }
     
-    public function executeNew(sfWebRequest $request)
-    {        
-        parent::executeNew($request);        
-        $this->form->setDefault('internado_id',$request->getParameter('internado_id'));
-        //var_dump($this->form->getDefault('file_internacion_id'));
-    }
+    protected function processForm(sfWebRequest $request, sfForm $form)
+    {
+        $vals = $request->getParameter($form->getName());        
+                
+        if ($form->getObject()->isNew()){
+            $vals['internado_id'] = $request->getParameter('internado_id');
+        }        
+        else{
+            $vals['internado_id'] = $form->getObject()->getInternadoId();            
+        }
+        $request->setParameter($form->getName(),$vals);
+        
+        parent::processForm($request, $form);
+    } 
     
     
 }

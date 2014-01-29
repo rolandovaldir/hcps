@@ -47,12 +47,19 @@ class ordenes_medicasActions extends autoOrdenes_medicasActions
         parent::postExecute();
     }
     
-    public function executeNew(sfWebRequest $request)
+    protected function processForm(sfWebRequest $request, sfForm $form)
     {
-        $this->form = $this->configuration->getForm();
-        $this->orden_medica = $this->form->getObject();
-        $internado = $this->getUser()->getAttribute('internado');
-        $this->form->setDefault('internado_id', $internado->getId());
+        $vals = $request->getParameter($form->getName());        
+                
+        if ($form->getObject()->isNew()){
+            $vals['internado_id'] = $request->getParameter('internado_id');
+        }        
+        else{
+            $vals['internado_id'] = $form->getObject()->getInternadoId();            
+        }
+        $request->setParameter($form->getName(),$vals);
+        
+        parent::processForm($request, $form);
     }
     
     protected function getFilters()

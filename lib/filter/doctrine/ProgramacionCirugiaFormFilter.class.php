@@ -14,4 +14,22 @@ class ProgramacionCirugiaFormFilter extends BaseProgramacionCirugiaFormFilter
   {
       $this->widgetSchema['examenes_auxiliares'] = new sfWidgetFormChoice(array('choices'  => ProgramacionCirugiaTable::getDescripciones_examen_auxiliar(),'expanded' => true));
   }
+  
+    public function getFields()
+    {
+        $fields = parent::getFields();
+        $fields['internado_id'] = 'InternadoId';
+        return $fields;
+    }
+    public function addInternadoIdQuery(Doctrine_Query $query, $field, $values)
+    {   
+        $alias = $query->getRootAlias();
+        $fieldName = $this->getFieldName($field);
+        if (is_array($values)){
+            $query->innerJoin($alias . '.Internado ii')->addWhere('ii.alta = 0');
+        }
+        else {
+            $query->addWhere($alias . '.' . $fieldName . ' = ? ' , $values);
+        }
+    }
 }

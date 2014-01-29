@@ -13,4 +13,22 @@ class SolicitudInterconsultaFormFilter extends BaseSolicitudInterconsultaFormFil
   public function configure()
   {
   }
+  
+    public function getFields()
+    {
+        $fields = parent::getFields();
+        $fields['internado_id'] = 'InternadoId';
+        return $fields;
+    }
+    public function addInternadoIdQuery(Doctrine_Query $query, $field, $values)
+    {   
+        $alias = $query->getRootAlias();
+        $fieldName = $this->getFieldName($field);
+        if (is_array($values)){
+            $query->innerJoin($alias . '.Internado ii')->addWhere('ii.alta = 0');
+        }
+        else {
+            $query->addWhere($alias . '.' . $fieldName . ' = ? ' , $values);
+        }
+    }
 }
