@@ -108,7 +108,7 @@ sfGuardGroupPermission:
     Permission:  Permission_enfermera
   RelationGP13:
     Group:       Group_laboratorio
-    Permission:  Permission_historial  
+    Permission:  Permission_ver_historial  
   RelationGP14:
     Group:       Group_administrativo
     Permission:  Permission_medico
