@@ -31,4 +31,13 @@ class JuntaMedicaForm extends BaseJuntaMedicaForm
       }
   }
   
+  protected function doBind(array $values) {
+
+    if ('' === trim($values['medico']['nombre']) AND
+        '' === trim($values['medico']['especialidad']) AND
+        '' === trim($values['medico']['cargo'])) {
+      $this->validatorSchema['medico'] = new sfValidatorPass();
+    }
+    parent::doBind($values);
+  }
 }
