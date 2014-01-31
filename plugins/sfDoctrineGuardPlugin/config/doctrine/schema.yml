@@ -79,6 +79,7 @@ sfGuardUser:
       type: timestamp
     tipo:               string(1)  #custom properties
     empleado_id: integer    #custom properties
+    planta_id:   integer
   indexes:
     is_active_idx:
       fields: [is_active]
@@ -95,6 +96,11 @@ sfGuardUser:
       foreign: permission_id
       refClass: sfGuardUserPermission
       foreignAlias: Users
+    Planta:      
+      local: planta_id
+      foreign: id      
+      type: one
+      foreignAlias: Usuarios
 
 sfGuardUserPermission:
   options:

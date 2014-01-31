@@ -13,4 +13,8 @@
 class Planta extends BasePlanta
 {
 
+    public function __toString()
+    {
+        return $this->getNombre();
+    }
 }

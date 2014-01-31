@@ -19,8 +19,17 @@ class myUser extends sfGuardSecurityUser
             $ret = EmpleadoTable::getInstance()->find($this->getGuardUser()->getEmpleadoId());
         }
         
+        $camas = CamaTable::getInstance()->createQuery('cc')->select('cc.id')
+            ->innerJoin('cc.Pieza pp')->addWhere('pp.planta_id=?', $this->getGuardUser()->getPlantaId())
+            ->execute()->toArray();
+        $camas_array = array();
+        foreach ($camas as $ca){ 
+            $camas_array[] = $ca['id'];
+        }
+        
         $this->setAttribute('hcps_tipo', $tipo, 'hcps');
         $this->setAttribute('hcps_user', $ret, 'hcps');
+        $this->setAttribute('hcps_camas', $camas_array, 'hcps');
     }
     
     public function getHcpsUser()
@@ -32,4 +41,10 @@ class myUser extends sfGuardSecurityUser
         return $ret;
     }    
     
+    
+    public function checkPlantaAllowedByCamaId($idCama)
+    {        
+        $array = $this->getAttribute('hcps_camas', array(), 'hcps');
+        return array_search($idCama, $array)===false ? false : true;
+    }
 }
