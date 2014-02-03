@@ -1,20 +1,23 @@
 <?php if (!$form->getObject()->isNew()): ?>
-<?php $medicaciones = Doctrine_Core::getTable('DetalleMedicacion')->getAllDetalles($form->getObject()->getId()) ?>
+<?php 
+$q = Doctrine_Core::getTable('DetalleMedicacion')->selectDetalles($form->getObject()->getId());
+$medicaciones = $q->execute();
+?>
 <table width="100%" class="for-form">
     <tr>
-        <th>MEDICACIÓN UTILIZADA</th>
-        <th>DOSIS</th>
-        <th>FECHA INICIO</th>        
-        <th> </th>
+        <th>Fecha de Inicio</th> 
+        <th>Medicación Utilizada</th>
+        <th>Dosis</th>       
+        <th>Acciones </th>
     </tr>
     <tbody>
         <?php
         foreach ($medicaciones as $medicacion) {
             ?>
             <tr>
+                <td><?php echo $medicacion->getFechaInicio() ?></td>
                 <td><?php echo $medicacion->getMedicacionUtilizada() ?></td>
                 <td><?php echo $medicacion->getDosis() ?></td>
-                <td><?php echo $medicacion->getFechaInicio() ?></td>
                 <td>
                     <ul class="sf_admin_td_actions">
                         <?php                        
@@ -34,7 +37,7 @@
     </tbody>
 </table>
 <br/>
-<h2>Adicionar Medicacion</h2>
+<h2>Adicionar Medicación</h2>
 <?php endif ?>
 <?php echo $form['medicacion']; ?>
 <br/><br/>

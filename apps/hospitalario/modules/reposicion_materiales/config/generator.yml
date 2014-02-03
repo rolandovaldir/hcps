@@ -39,10 +39,10 @@ generator:
       edit:    
         title: Editar Solicitud de Reposicion de Material        
         display:
-          Datos Generales de la Solicitud de Reposición de Materiales: [unidad, encargado]
+          Datos Generales de la Solicitud de Reposición de Materiales: [fecha, unidad, encargado]
           Materiales Adicionados: [ _listado_items ]
       new:        
         title: Nueva Solicitud de Reposicion de Material
         display:
-          Datos Generales de la Solicitud de Reposición de Materiales: [unidad, encargado]
+          Datos Generales de la Solicitud de Reposición de Materiales: [fecha, unidad, encargado]
           Adicionar Material:   [ _listado_items ]

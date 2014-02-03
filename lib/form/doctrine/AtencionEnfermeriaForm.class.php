@@ -32,7 +32,8 @@ class AtencionEnfermeriaForm extends BaseAtencionEnfermeriaForm
     
   public function configure()
   {
-      unset($this['created_at'], $this['updated_at'], $this['file_internacion_id']);
+      unset($this['created_at'], $this['updated_at'], $this['file_internacion_id'],
+            $this['created_by'], $this['updated_by']);
       $this->setWidget("internado_id", new sfWidgetFormInputHidden());
       $this->widgetSchema['estado'] = new sfWidgetFormChoice(array('choices' => self::$estado, 'expanded' => true));
       $this->widgetSchema['derivado_de'] = new sfWidgetFormChoice(array('choices' => self::$derivado, 'expanded' => true));

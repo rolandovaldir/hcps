@@ -12,6 +12,7 @@ class DetallePapeletaPedidoMaterialForm extends BaseDetallePapeletaPedidoMateria
 {
   public function configure()
   {
-      unset($this['papeleta_pedido_material_id']);
+      unset($this['created_at'], $this['updated_at'], $this['papeleta_pedido_material_id'], 
+            $this['created_by'], $this['updated_by']);
   }
 }

@@ -12,7 +12,7 @@ class SolicitudReposicionMaterialForm extends BaseSolicitudReposicionMaterialFor
 {
   public function configure()
   {
-      unset($this['created_at'], $this['updated_at']);
+      unset($this['created_at'], $this['updated_at'], $this['created_by'], $this['updated_by']);
       
       $this->widgetSchema['internado_id'] = new sfWidgetFormInputHidden();
             
@@ -20,9 +20,6 @@ class SolicitudReposicionMaterialForm extends BaseSolicitudReposicionMaterialFor
       $detalle->setSolicitudReposicionMaterial($this->object);
       $detalleForm = new DetalleMaterialForm($detalle);
       $this->embedForm('detalle', $detalleForm);  
-
-//      $this->embedRelation('DetalleMaterial');
-      
   }
   
   public function disableAllWidgets()
@@ -33,4 +30,46 @@ class SolicitudReposicionMaterialForm extends BaseSolicitudReposicionMaterialFor
       }
   }
   
+  protected function doBind(array $values) {
+
+    if ('' === trim($values['detalle']['codigo']) AND
+        '' === trim($values['detalle']['descripcion']) AND
+        '' === trim($values['detalle']['unidad']) AND
+        '' === trim($values['detalle']['saldo_anterior']) AND
+        '' === trim($values['detalle']['reposicion_solicitada']) AND
+        '' === trim($values['detalle']['saldo_actual'])) {
+      $this->validatorSchema['detalle'] = new sfValidatorPass();
+    }
+    parent::doBind($values);
+  }
+
+  public function saveEmbeddedForms($con = null, $forms = null) {
+    if (null === $con) {
+      $con = $this->getConnection();
+    }
+
+    // step 3.2
+    if (null === $forms) {
+      $detalle = $this->getValue('detalle');
+      $forms = $this->embeddedForms;
+     
+      if ('' === trim($detalle['codigo']) AND
+          '' === trim($detalle['descripcion']) AND
+          '' === trim($detalle['unidad'])AND
+          '' === trim($detalle['saldo_anterior']) AND
+          '' === trim($detalle['reposicion_solicitada']) AND
+          '' === trim($detalle['saldo_actual'])) {
+          unset($forms['detalle']);
+      }
+    }
+
+    foreach ($forms as $form) {
+      if ($form instanceof sfFormObject) {
+        $form->saveEmbeddedForms($con);
+        $form->getObject()->save($con);
+      } else {
+        $this->saveEmbeddedForms($con, $form->getEmbeddedForms());
+      }
+    }
+  }
 }

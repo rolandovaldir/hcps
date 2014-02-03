@@ -12,7 +12,7 @@ class JuntaMedicaForm extends BaseJuntaMedicaForm
 {
   public function configure()
   {
-      unset($this['created_at'], $this['updated_at']);
+      unset($this['created_at'], $this['updated_at'], $this['created_by'], $this['updated_by']);
       
       $this->widgetSchema['internado_id'] = new sfWidgetFormInputHidden();
       
@@ -39,5 +39,32 @@ class JuntaMedicaForm extends BaseJuntaMedicaForm
       $this->validatorSchema['medico'] = new sfValidatorPass();
     }
     parent::doBind($values);
+  }
+
+  public function saveEmbeddedForms($con = null, $forms = null) {
+    if (null === $con) {
+      $con = $this->getConnection();
+    }
+
+    // step 3.2
+    if (null === $forms) {
+      $medico = $this->getValue('medico');
+      $forms = $this->embeddedForms;
+     
+      if ('' === trim($medico['nombre']) AND
+          '' === trim($medico['especialidad']) AND
+          '' === trim($medico['cargo'])) {
+          unset($forms['medico']);
+      }
+    }
+
+    foreach ($forms as $form) {
+      if ($form instanceof sfFormObject) {
+        $form->saveEmbeddedForms($con);
+        $form->getObject()->save($con);
+      } else {
+        $this->saveEmbeddedForms($con, $form->getEmbeddedForms());
+      }
+    }
   }
 }

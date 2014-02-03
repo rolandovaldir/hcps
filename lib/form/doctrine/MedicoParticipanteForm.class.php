@@ -12,7 +12,8 @@ class MedicoParticipanteForm extends BaseMedicoParticipanteForm
 {
   public function configure()
   {
-      unset($this['created_at'], $this['updated_at'], $this['junta_medica_id']);
+      unset($this['created_at'], $this['updated_at'], $this['junta_medica_id'],
+            $this['created_by'], $this['updated_by']);
   }
   
   public function disableAllWidgets()

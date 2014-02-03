@@ -19,7 +19,8 @@ generator:
         actions: {}
         batch_actions: {}
       filter:  ~
-      form:    ~
+      form:    
+        display: [fecha_inicio, medicacion_utilizada, dosis]
       edit:    ~
       new:     
         actions:

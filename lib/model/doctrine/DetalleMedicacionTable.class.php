@@ -17,12 +17,14 @@ class DetalleMedicacionTable extends Doctrine_Table
         return Doctrine_Core::getTable('DetalleMedicacion');
     }
     
-    public static function getAllDetalles($sol_id)
+    public static function selectDetalles($solicitud_id)
     {
-        $d = self::getInstance()->createQuery('det')            
-            ->where('det.solicitud_interconsulta_id = ?', $sol_id)
-            ->orderBy('det.id ASC')->execute();
-        return $d;
+        $q =  Doctrine_Query::create()
+                ->from('DetalleMedicacion dm')
+                ->leftJoin('dm.SolicitudInterconsulta si')
+                ->where('dm.solicitud_interconsulta_id = ?', $solicitud_id)
+                ->orderBy('dm.id ASC');
+        return $q;
     }
     
 }

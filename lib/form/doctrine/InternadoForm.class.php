@@ -12,6 +12,7 @@ class InternadoForm extends BaseInternadoForm
 {
   public function configure()
   {
-      unset($this['created_at'], $this['updated_at'], $this['afiliado_id'], $this['noAfiliado_id']);
+      unset($this['created_at'], $this['updated_at'], $this['afiliado_id'], 
+            $this['noAfiliado_id'], $this['created_by'], $this['updated_by']);
   }
 }
