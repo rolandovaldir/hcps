@@ -786,3 +786,17 @@ DetallePapeletaPedidoMaterial:
     detalle:                     { type: string(150), notnull: true }
   relations:
     PapeletaPedidoMaterial:    { local: papeleta_pedido_material_id, foreign: id, type: one, foreignAlias: PapeletaPedidoMaterial }
+    
+ResumenAlta:
+  actAs: [Timestampable, Signable]  
+  columns:
+    internado_id:                      { type: integer, notnull: true }    
+    diagnostico_provisional:           { type: string(1000) } 
+    diagnostico_definitivo:            { type: string(1000) }
+    operaciones:                       { type: string(1000) }
+    anamesis_examenfisico:             { type: string(1000) }
+    hallazgos_labo_interconsultas:     { type: string(1000) }
+    evolucion_complicacion:            { type: string(1000) }
+    condicion_tratamiento_pronostico:  { type: string(8000) }
+  relations:
+    Internado: { local: internado_id, foreign: id, type: one, foreignAlias: ResumenAlta }    

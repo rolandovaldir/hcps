@@ -47,6 +47,7 @@
  * @property Doctrine_Collection $ProgramacionesCirugia
  * @property Doctrine_Collection $SolicitudesExamenLaboratorioClinico
  * @property Doctrine_Collection $AdministracionesMedicamento
+ * @property Doctrine_Collection $ResumenAlta
  * @property Doctrine_Collection $ResumenesAlta
  * @property Doctrine_Collection $AtencionesEnfermeria
  * @property Doctrine_Collection $ListasDieta
@@ -96,6 +97,7 @@
  * @method Doctrine_Collection getProgramacionesCirugia()               Returns the current record's "ProgramacionesCirugia" collection
  * @method Doctrine_Collection getSolicitudesExamenLaboratorioClinico() Returns the current record's "SolicitudesExamenLaboratorioClinico" collection
  * @method Doctrine_Collection getAdministracionesMedicamento()         Returns the current record's "AdministracionesMedicamento" collection
+ * @method Doctrine_Collection getResumenAlta()                         Returns the current record's "ResumenAlta" collection
  * @method Doctrine_Collection getResumenesAlta()                       Returns the current record's "ResumenesAlta" collection
  * @method Doctrine_Collection getAtencionesEnfermeria()                Returns the current record's "AtencionesEnfermeria" collection
  * @method Doctrine_Collection getListasDieta()                         Returns the current record's "ListasDieta" collection
@@ -144,6 +146,7 @@
  * @method Internado           setProgramacionesCirugia()               Sets the current record's "ProgramacionesCirugia" collection
  * @method Internado           setSolicitudesExamenLaboratorioClinico() Sets the current record's "SolicitudesExamenLaboratorioClinico" collection
  * @method Internado           setAdministracionesMedicamento()         Sets the current record's "AdministracionesMedicamento" collection
+ * @method Internado           setResumenAlta()                         Sets the current record's "ResumenAlta" collection
  * @method Internado           setResumenesAlta()                       Sets the current record's "ResumenesAlta" collection
  * @method Internado           setAtencionesEnfermeria()                Sets the current record's "AtencionesEnfermeria" collection
  * @method Internado           setListasDieta()                         Sets the current record's "ListasDieta" collection
@@ -339,7 +342,11 @@ abstract class BaseInternado extends sfDoctrineRecord
              'local' => 'id',
              'foreign' => 'internado_id'));
 
-        $this->hasMany('ResumenAlta as ResumenesAlta', array(
+        $this->hasMany('ResumenAlta', array(
+             'local' => 'id',
+             'foreign' => 'internado_id'));
+
+        $this->hasMany('UsoHospitalario as ResumenesAlta', array(
              'local' => 'id',
              'foreign' => 'internado_id'));
 

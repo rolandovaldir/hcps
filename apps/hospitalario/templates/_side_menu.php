@@ -19,7 +19,7 @@ $link_menus = array(
     array('link'=>'uso_hospitalario','label'=>'Receta Uso Hospitalario', 'table'=>'UsoHospitalario'),
     array('link'=>'recien_nacidos','label'=>'Recien Nacidos', 'table'=>'ExamenFisicoRecienNacido'),
     array('link'=>'reposicion_materiales','label'=>'Reposicion Materiales', 'table'=>'SolicitudReposicionMaterial'),
-//    array('link'=>'resumenalta','label'=>'Resumen Alta'),
+    array('link'=>'resumen_alta','label'=>'Resumen Alta', 'table'=>'ResumenAlta'),
 //    array('link'=>'servicios_mantenimiento','label'=>'Servicio Mantenimiento'),
     array('link'=>'solicitudes_interconsultas','label'=>'Solicitudes Interconsultas', 'table'=>'SolicitudInterconsulta'),
     array('link'=>'solicitudes_servicios','label'=>'Solicitudes Servicios', 'table'=>'SolicitudServicio'),

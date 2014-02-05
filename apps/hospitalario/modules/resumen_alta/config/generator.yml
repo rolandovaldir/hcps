@@ -1,0 +1,48 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           ResumenAlta
+    theme:                 dojotheme
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          resumen_alta
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    extra_url_custom_id:   internado_id
+
+    config:
+      actions: ~
+      fields: 
+        diagnostico_provisional:      { label: "Diagnostico Provisional" }
+        diagnostico_definitivo:       { label: "Diagnostico Definitivo"  }
+        operaciones:                  { label: "Operaciones"  }
+        anamesis_examenfisico:        { label: "Anamesis y Examen Físico"  } 
+        hallazgos_labo_interconsultas:     { label: "Hallazgos significativos de Lab. y Rayos X e Interconsultas"  } 
+        evolucion_complicacion:            { label: "Evolución en el Hospital, con complicación, si la hubo"  } 
+        condicion_tratamiento_pronostico:  { label: "Codición, tratamiento, referencia final al dar de alta y pronóstico"  }
+        created_at:           { date_format: dd/MM/yyyy }
+        updated_at:           { date_format: dd/MM/yyyy }
+        creator:              { label: Responsable }
+      list:  
+        title: Listado Resumen Alta
+        display:    [diagnostico_provisional, diagnostico_definitivo, 	operaciones, anamesis_examenfisico, hallazgos_labo_interconsultas, evolucion_complicacion, condicion_tratamiento_pronostico]
+        object_actions:  
+          _edit:        { credentials: [noAlta] }
+          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [Alta] }
+          _delete:      { credentials: [noAlta] }
+        actions: {}
+        batch_actions: {}
+      filter: 
+        display: [diagnostico_provisional, diagnostico_definitivo]
+      form: 
+        display: [diagnostico_provisional, diagnostico_definitivo, 	operaciones, anamesis_examenfisico, hallazgos_labo_interconsultas, evolucion_complicacion, condicion_tratamiento_pronostico]
+        actions:
+          _delete: { credentials: [noAlta] }
+          _list:   ~
+          _save:   { credentials: [noAlta] }
+      edit:    
+        title: Edición Resumen Alta
+      new:        
+        title: Nueva Resumen Alta

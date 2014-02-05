@@ -355,8 +355,8 @@ resumen_alta:
   class: sfDoctrineRouteCollection
   options:
     model:                ResumenAlta
-    module:               resumenalta
-    prefix_path:          /resumenalta
+    module:               resumen_alta
+    prefix_path:          /resumen_alta
     column:               id
     with_wildcard_routes: true
 
