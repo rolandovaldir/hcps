@@ -36,9 +36,9 @@ foreach ($link_menus as $val){ ?>
             }
         } 
     ?>
-    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title: '<?php echo $val['label'] ?>'," >
+    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="title: '<?php echo $val['label'] ?>',style:'padding:2px;'" >
         <ul class="side_menu_forms">            
-            <li class="sf_admin_action_list">                
+            <li class="sf_admin_action_list">
                 <?php echo  link_to_function('Ver Listado', "dijit.byId('dojotheme-maincontainer').set('href','" . url_for($val['link'] . "/index?internado_id=" . $aux_internado_id . $esHistorial) . "')") ?>
             </li>            
             <?php if (!get_slot('historial',false)): ?>

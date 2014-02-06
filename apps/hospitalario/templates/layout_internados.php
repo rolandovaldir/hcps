@@ -61,17 +61,21 @@
         </div>
         
             <div data-dojo-type="dijit/layout/TabContainer" data-dojo-props="region: 'center'" >
-                <div data-dojo-type="dijit/layout/ContentPane" title="Internados" id="main-container-tab1" data-dojo-props="selected:true">
+                <div data-dojo-type="dijit/layout/ContentPane" title="Internados" 
+                     id="main-container-tab1" data-dojo-props="selected:true,class:'containainer_background'">
                     <?php echo $sf_content; ?>              
                 </div>
                 
-                <div data-dojo-type="dijit/layout/ContentPane" title="Pacientes Dados de alta"  id="main-container-tab2" data-dojo-props="href:'<?php echo url_for("internados_alta/index") ?>'" >
+                <div data-dojo-type="dijit/layout/ContentPane" title="Pacientes Dados de alta"  
+                     id="main-container-tab2" data-dojo-props="href:'<?php echo url_for("internados_alta/index") ?>',class:'containainer_background'" >
                 </div>
                 
-                <div data-dojo-type="dijit/layout/ContentPane" title="Reportes"  id="main-container-tab3" data-dojo-props="href:'<?php echo url_for("reportes/index") ?>',style:'padding:0;'">
+                <div data-dojo-type="dijit/layout/ContentPane" title="Reportes"  
+                     id="main-container-tab3" data-dojo-props="href:'<?php echo url_for("reportes/index") ?>',style:'padding:0;'">
                 </div>
                 <?php if($sf_user->getGuardUser()->getIsSuperAdmin()): ?>
-                    <div data-dojo-type="dijit/layout/ContentPane" title="Usuarios" id="main-container-tab4"  data-dojo-props="href:'<?php echo url_for("sfGuardUser/index") ?>',style:'padding:0;'">
+                    <div data-dojo-type="dijit/layout/ContentPane" title="Usuarios" 
+                         id="main-container-tab4"  data-dojo-props="href:'<?php echo url_for("sfGuardUser/index") ?>',style:'padding:0;',class:'containainer_background'">
                     </div>
                 <?php endif ?>
             </div>            
