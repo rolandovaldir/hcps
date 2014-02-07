@@ -17,7 +17,7 @@ abstract class BaseAutorizacionDiagnosticoTratamientoForm extends BaseFormDoctri
     $this->setWidgets(array(
       'id'              => new sfWidgetFormInputHidden(),
       'internado_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => false)),
-      'nombre_familiar' => new sfWidgetFormTextarea(),
+      'nombre_familiar' => new sfWidgetFormInputText(),
       'ci_familiar'     => new sfWidgetFormInputText(),
       'fecha_hora'      => new myWidgetFormDojoDateTime(),
       'created_at'      => new myWidgetFormDojoDateTime(),
@@ -29,7 +29,7 @@ abstract class BaseAutorizacionDiagnosticoTratamientoForm extends BaseFormDoctri
     $this->setValidators(array(
       'id'              => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'internado_id'    => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'))),
-      'nombre_familiar' => new sfValidatorString(array('max_length' => 200, 'required' => false)),
+      'nombre_familiar' => new sfValidatorString(array('max_length' => 100, 'required' => false)),
       'ci_familiar'     => new sfValidatorString(array('max_length' => 10, 'required' => false)),
       'fecha_hora'      => new myValidatorDojoDateTime(array('required' => false)),
       'created_at'      => new myValidatorDojoDateTime(),

@@ -64,19 +64,19 @@ abstract class BaseSolicitudExamenLaboratorioClinico extends sfDoctrineRecord
              'type' => 'array',
              'notnull' => true,
              ));
-        $this->hasColumn('material_enviado', 'string', 45, array(
+        $this->hasColumn('material_enviado', 'string', 100, array(
              'type' => 'string',
              'notnull' => true,
-             'length' => 45,
+             'length' => 100,
              ));
-        $this->hasColumn('otros_examenes', 'string', 45, array(
+        $this->hasColumn('otros_examenes', 'string', 200, array(
              'type' => 'string',
-             'length' => 45,
+             'length' => 200,
              ));
-        $this->hasColumn('diagnostico_presuntivo', 'string', 45, array(
+        $this->hasColumn('diagnostico_presuntivo', 'string', 200, array(
              'type' => 'string',
              'notnull' => true,
-             'length' => 45,
+             'length' => 200,
              ));
         $this->hasColumn('medico_id', 'integer', null, array(
              'type' => 'integer',

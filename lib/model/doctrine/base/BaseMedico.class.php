@@ -21,6 +21,7 @@
  * @property Doctrine_Collection $AtencionEnfermeria
  * @property Doctrine_Collection $UsoHospitalario
  * @property Doctrine_Collection $ProgramacionCirugia
+ * @property Doctrine_Collection $JuntaMedica
  * 
  * @method string              getCodigo()              Returns the current record's "codigo" value
  * @method string              getNombrec()             Returns the current record's "nombrec" value
@@ -38,6 +39,7 @@
  * @method Doctrine_Collection getAtencionEnfermeria()  Returns the current record's "AtencionEnfermeria" collection
  * @method Doctrine_Collection getUsoHospitalario()     Returns the current record's "UsoHospitalario" collection
  * @method Doctrine_Collection getProgramacionCirugia() Returns the current record's "ProgramacionCirugia" collection
+ * @method Doctrine_Collection getJuntaMedica()         Returns the current record's "JuntaMedica" collection
  * @method Medico              setCodigo()              Sets the current record's "codigo" value
  * @method Medico              setNombrec()             Sets the current record's "nombrec" value
  * @method Medico              setCargahor()            Sets the current record's "cargahor" value
@@ -54,6 +56,7 @@
  * @method Medico              setAtencionEnfermeria()  Sets the current record's "AtencionEnfermeria" collection
  * @method Medico              setUsoHospitalario()     Sets the current record's "UsoHospitalario" collection
  * @method Medico              setProgramacionCirugia() Sets the current record's "ProgramacionCirugia" collection
+ * @method Medico              setJuntaMedica()         Sets the current record's "JuntaMedica" collection
  * 
  * @package    hcps
  * @subpackage model
@@ -144,6 +147,10 @@ abstract class BaseMedico extends sfDoctrineRecord
              'foreign' => 'medico_id'));
 
         $this->hasMany('ProgramacionCirugia', array(
+             'local' => 'id',
+             'foreign' => 'medico_id'));
+
+        $this->hasMany('JuntaMedica', array(
              'local' => 'id',
              'foreign' => 'medico_id'));
 

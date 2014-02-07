@@ -53,10 +53,10 @@ abstract class BaseDetallePapeletaPedidoMaterial extends sfDoctrineRecord
              'notnull' => true,
              'length' => 10,
              ));
-        $this->hasColumn('detalle', 'string', 150, array(
+        $this->hasColumn('detalle', 'string', 200, array(
              'type' => 'string',
              'notnull' => true,
-             'length' => 150,
+             'length' => 200,
              ));
     }
 

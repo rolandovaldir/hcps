@@ -20,7 +20,7 @@ abstract class BaseDetallePapeletaPedidoMaterialForm extends BaseFormDoctrine
       'codigo'                      => new sfWidgetFormInputText(),
       'cantidad'                    => new myWidgetFormDojoInteger(),
       'unidad'                      => new sfWidgetFormInputText(),
-      'detalle'                     => new sfWidgetFormInputText(),
+      'detalle'                     => new sfWidgetFormTextarea(),
       'created_at'                  => new myWidgetFormDojoDateTime(),
       'updated_at'                  => new myWidgetFormDojoDateTime(),
     ));
@@ -31,7 +31,7 @@ abstract class BaseDetallePapeletaPedidoMaterialForm extends BaseFormDoctrine
       'codigo'                      => new sfValidatorString(array('max_length' => 20)),
       'cantidad'                    => new sfValidatorInteger(),
       'unidad'                      => new sfValidatorString(array('max_length' => 10)),
-      'detalle'                     => new sfValidatorString(array('max_length' => 150)),
+      'detalle'                     => new sfValidatorString(array('max_length' => 200)),
       'created_at'                  => new myValidatorDojoDateTime(),
       'updated_at'                  => new myValidatorDojoDateTime(),
     ));
