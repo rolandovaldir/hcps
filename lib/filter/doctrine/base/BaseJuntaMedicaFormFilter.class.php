@@ -14,7 +14,7 @@ abstract class BaseJuntaMedicaFormFilter extends BaseFormFilterDoctrine
   {
     $this->setWidgets(array(
       'internado_id'            => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Internado'), 'add_empty' => true)),
-      'medico_solicitante'      => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'medico_id'               => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Medico'), 'add_empty' => true)),
       'servicio'                => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'especialidades'          => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'fecha_junta'             => new sfWidgetFormFilterDate(array('from_date' => new myWidgetFormDojoDate(), 'to_date' => new myWidgetFormDojoDate(), 'filter_template' => '%date_range% %empty_checkbox% %empty_label%', 'template' => '<table class="onlyFormat"><tr><td>from</td><td>%from_date%</td><tr/><tr><td>to</td><td>%to_date%</td></tr></table>', 'with_empty' => false)),
@@ -31,7 +31,7 @@ abstract class BaseJuntaMedicaFormFilter extends BaseFormFilterDoctrine
 
     $this->setValidators(array(
       'internado_id'            => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Internado'), 'column' => 'id')),
-      'medico_solicitante'      => new sfValidatorPass(array('required' => false)),
+      'medico_id'               => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Medico'), 'column' => 'id')),
       'servicio'                => new sfValidatorPass(array('required' => false)),
       'especialidades'          => new sfValidatorPass(array('required' => false)),
       'fecha_junta'             => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDate(array('required' => false)), 'to_date' => new sfValidatorDateTime(array('required' => false)))),
@@ -65,7 +65,7 @@ abstract class BaseJuntaMedicaFormFilter extends BaseFormFilterDoctrine
     return array(
       'id'                      => 'Number',
       'internado_id'            => 'ForeignKey',
-      'medico_solicitante'      => 'Text',
+      'medico_id'               => 'ForeignKey',
       'servicio'                => 'Text',
       'especialidades'          => 'Text',
       'fecha_junta'             => 'Date',

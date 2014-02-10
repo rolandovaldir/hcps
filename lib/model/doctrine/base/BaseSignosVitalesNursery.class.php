@@ -95,14 +95,14 @@ abstract class BaseSignosVitalesNursery extends sfDoctrineRecord
              'notnull' => true,
              'length' => 45,
              ));
-        $this->hasColumn('residuo', 'string', 45, array(
+        $this->hasColumn('residuo', 'string', 200, array(
              'type' => 'string',
              'notnull' => true,
-             'length' => 45,
+             'length' => 200,
              ));
-        $this->hasColumn('observaciones', 'string', 45, array(
+        $this->hasColumn('observaciones', 'string', 200, array(
              'type' => 'string',
-             'length' => 45,
+             'length' => 200,
              ));
     }
 

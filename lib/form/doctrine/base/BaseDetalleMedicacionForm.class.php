@@ -17,7 +17,7 @@ abstract class BaseDetalleMedicacionForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'                         => new sfWidgetFormInputHidden(),
       'solicitud_interconsulta_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('SolicitudInterconsulta'), 'add_empty' => false)),
-      'medicacion_utilizada'       => new sfWidgetFormInputText(),
+      'medicacion_utilizada'       => new sfWidgetFormTextarea(),
       'dosis'                      => new sfWidgetFormInputText(),
       'fecha_inicio'               => new myWidgetFormDojoDate(),
       'created_at'                 => new myWidgetFormDojoDateTime(),
@@ -29,7 +29,7 @@ abstract class BaseDetalleMedicacionForm extends BaseFormDoctrine
     $this->setValidators(array(
       'id'                         => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'solicitud_interconsulta_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('SolicitudInterconsulta'))),
-      'medicacion_utilizada'       => new sfValidatorString(array('max_length' => 150)),
+      'medicacion_utilizada'       => new sfValidatorString(array('max_length' => 200)),
       'dosis'                      => new sfValidatorString(array('max_length' => 45)),
       'fecha_inicio'               => new myValidatorDojoDate(),
       'created_at'                 => new myValidatorDojoDateTime(),

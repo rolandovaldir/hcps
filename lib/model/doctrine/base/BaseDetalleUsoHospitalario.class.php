@@ -8,7 +8,7 @@
  * @property integer $uso_hospitalario_id
  * @property string $codigo_cbm
  * @property string $detalle
- * @property string $cantidad
+ * @property integer $cantidad
  * @property string $unidad
  * @property string $cod_farmacia_ibm
  * @property UsoHospitalario $UsoHospitalario
@@ -16,7 +16,7 @@
  * @method integer                getUsoHospitalarioId()   Returns the current record's "uso_hospitalario_id" value
  * @method string                 getCodigoCbm()           Returns the current record's "codigo_cbm" value
  * @method string                 getDetalle()             Returns the current record's "detalle" value
- * @method string                 getCantidad()            Returns the current record's "cantidad" value
+ * @method integer                getCantidad()            Returns the current record's "cantidad" value
  * @method string                 getUnidad()              Returns the current record's "unidad" value
  * @method string                 getCodFarmaciaIbm()      Returns the current record's "cod_farmacia_ibm" value
  * @method UsoHospitalario        getUsoHospitalario()     Returns the current record's "UsoHospitalario" value
@@ -42,30 +42,29 @@ abstract class BaseDetalleUsoHospitalario extends sfDoctrineRecord
              'type' => 'integer',
              'notnull' => true,
              ));
-        $this->hasColumn('codigo_cbm', 'string', 40, array(
+        $this->hasColumn('codigo_cbm', 'string', 50, array(
              'type' => 'string',
              'notnull' => true,
-             'length' => 40,
+             'length' => 50,
              ));
-        $this->hasColumn('detalle', 'string', 150, array(
+        $this->hasColumn('detalle', 'string', 200, array(
              'type' => 'string',
              'notnull' => true,
-             'length' => 150,
+             'length' => 200,
              ));
-        $this->hasColumn('cantidad', 'string', 10, array(
-             'type' => 'string',
+        $this->hasColumn('cantidad', 'integer', null, array(
+             'type' => 'integer',
              'notnull' => true,
-             'length' => 10,
              ));
         $this->hasColumn('unidad', 'string', 20, array(
              'type' => 'string',
              'notnull' => true,
              'length' => 20,
              ));
-        $this->hasColumn('cod_farmacia_ibm', 'string', 25, array(
+        $this->hasColumn('cod_farmacia_ibm', 'string', 50, array(
              'type' => 'string',
              'notnull' => true,
-             'length' => 25,
+             'length' => 50,
              ));
     }
 
