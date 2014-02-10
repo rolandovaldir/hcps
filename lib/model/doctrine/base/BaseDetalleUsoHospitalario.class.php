@@ -73,7 +73,8 @@ abstract class BaseDetalleUsoHospitalario extends sfDoctrineRecord
         parent::setUp();
         $this->hasOne('UsoHospitalario', array(
              'local' => 'uso_hospitalario_id',
-             'foreign' => 'id'));
+             'foreign' => 'id',
+             'onDelete' => 'CASCADE'));
 
         $timestampable0 = new Doctrine_Template_Timestampable(array(
              ));

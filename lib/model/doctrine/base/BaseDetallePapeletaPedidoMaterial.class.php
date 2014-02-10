@@ -65,7 +65,8 @@ abstract class BaseDetallePapeletaPedidoMaterial extends sfDoctrineRecord
         parent::setUp();
         $this->hasOne('PapeletaPedidoMaterial', array(
              'local' => 'papeleta_pedido_material_id',
-             'foreign' => 'id'));
+             'foreign' => 'id',
+             'onDelete' => 'CASCADE'));
 
         $timestampable0 = new Doctrine_Template_Timestampable(array(
              ));

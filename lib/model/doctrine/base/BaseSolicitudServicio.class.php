@@ -79,7 +79,8 @@ abstract class BaseSolicitudServicio extends sfDoctrineRecord
 
         $this->hasOne('Atencion', array(
              'local' => 'atencion_id',
-             'foreign' => 'id'));
+             'foreign' => 'id',
+             'onDelete' => 'CASCADE'));
 
         $timestampable0 = new Doctrine_Template_Timestampable(array(
              ));

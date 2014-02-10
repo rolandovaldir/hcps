@@ -57,7 +57,8 @@ abstract class BaseMedicoParticipante extends sfDoctrineRecord
         parent::setUp();
         $this->hasOne('JuntaMedica', array(
              'local' => 'junta_medica_id',
-             'foreign' => 'id'));
+             'foreign' => 'id',
+             'onDelete' => 'CASCADE'));
 
         $timestampable0 = new Doctrine_Template_Timestampable(array(
              ));

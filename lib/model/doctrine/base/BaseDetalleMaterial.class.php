@@ -79,7 +79,8 @@ abstract class BaseDetalleMaterial extends sfDoctrineRecord
         parent::setUp();
         $this->hasOne('SolicitudReposicionMaterial', array(
              'local' => 'solicitud_reposicion_material_id',
-             'foreign' => 'id'));
+             'foreign' => 'id',
+             'onDelete' => 'CASCADE'));
 
         $timestampable0 = new Doctrine_Template_Timestampable(array(
              ));

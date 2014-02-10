@@ -153,7 +153,8 @@ abstract class BaseApgar extends sfDoctrineRecord
         parent::setUp();
         $this->hasOne('ExamenFisicoRecienNacido', array(
              'local' => 'examen_fisico_recien_nacido_id',
-             'foreign' => 'id'));
+             'foreign' => 'id',
+             'onDelete' => 'CASCADE'));
 
         $timestampable0 = new Doctrine_Template_Timestampable(array(
              ));

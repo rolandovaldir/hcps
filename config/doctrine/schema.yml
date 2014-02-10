@@ -283,7 +283,7 @@ MedicoParticipante:
     especialidad:    {type: string(100), notnull: true}
     cargo:           {type: string(50)}
   relations:
-    JuntaMedica: {local: junta_medica_id, foreign: id, type: one, foreignAlias: Particulares}
+    JuntaMedica: {onDelete: CASCADE, local: junta_medica_id, foreign: id, type: one, foreignAlias: Particulares}
  
 #--------------------------------------------------------
     
@@ -325,7 +325,7 @@ Apgar:
     reflejos:                       {type: string(200), notnull: true}
     ano:                            {type: string(200), notnull: true}
   relations:
-    ExamenFisicoRecienNacido: {local: examen_fisico_recien_nacido_id, foreign: id, type: one, foreignAlias: Apgars}
+    ExamenFisicoRecienNacido: {onDelete: CASCADE, local: examen_fisico_recien_nacido_id, foreign: id, type: one, foreignAlias: Apgars}
 
 #--------------------------------------------------------
 
@@ -353,7 +353,7 @@ DetalleMedicacion:
     dosis:                       {type: string(45), notnull: true}
     fecha_inicio:                {type: date, notnull: true}
   relations:
-    SolicitudInterconsulta: {local: solicitud_interconsulta_id, foreign: id, type: one, foreignAlias: Medicaciones}
+    SolicitudInterconsulta: {onDelete: CASCADE, local: solicitud_interconsulta_id, foreignAlias: Medicaciones}
     
 #--------------------------------------------------------
 
@@ -368,7 +368,7 @@ SolicitudServicio:
     material_utilizado:     {type: string(2000), notnull: true}
   relations:
     Internado: {local: internado_id, foreign: id, type: one, foreignAlias: SolicitudServicios}
-    Atencion:  {local: atencion_id, foreign: id, type: one, foreignAlias: SolicitudServicios}
+    Atencion:  {onDelete: CASCADE, local: atencion_id, foreignAlias: SolicitudServicios}
 
 Atencion:
   actAs: [Timestampable]
@@ -400,7 +400,7 @@ DetalleMaterial:
     reposicion_solicitada:            {type: integer, notnull: true}
     saldo_actual:                     {type: integer, notnull: true}
   relations:
-    SolicitudReposicionMaterial: {local: solicitud_reposicion_material_id, foreign: id, type: one,foreignAlias: Materiales}
+    SolicitudReposicionMaterial: {onDelete: CASCADE, local: solicitud_reposicion_material_id, foreignAlias: Materiales}
 
 #--------------------------------------------------------
 
@@ -536,7 +536,7 @@ DetalleSolicitudExamenLaboratorioClinico:
     solicitud_examen_laboratorio_clinico_id:  { type: integer, notnull: true }
     tipo_examen_laboratorio_clinico_id:       { type: integer, notnull: true }    
   relations:  
-    SolicitudExamenLaboratorioClinico: { local: solicitud_examen_laboratorio_clinico_id, foreign: id, type: one }  
+    SolicitudExamenLaboratorioClinico: {onDelete: CASCADE, local: solicitud_examen_laboratorio_clinico_id}  
     TipoExamenLaboratorioClinico:      { local: tipo_examen_laboratorio_clinico_id, foreign: id, type: one }  
 
 
@@ -621,7 +621,7 @@ DetalleUsoHospitalario:
     unidad:                 { type: string(20), notnull: true }
     cod_farmacia_ibm:       { type: string(50), notnull: true }
   relations:
-    UsoHospitalario: { local: uso_hospitalario_id, foreign: id, type: one, foreignAlias: DetallesUsoHospitalario }
+    UsoHospitalario: {onDelete: CASCADE, foreignAlias: DetallesUsoHospitalario, local: uso_hospitalario_id}
       
 # guillermo    
 AtencionEnfermeria:
@@ -788,7 +788,7 @@ DetallePapeletaPedidoMaterial:
     unidad:                      { type: string(10), notnull: true }
     detalle:                     { type: string(200), notnull: true }
   relations:
-    PapeletaPedidoMaterial:    { local: papeleta_pedido_material_id, foreign: id, type: one, foreignAlias: PapeletaPedidoMaterial }
+    PapeletaPedidoMaterial:    {onDelete: CASCADE, local: papeleta_pedido_material_id, foreignAlias: PapeletaPedidoMaterial }
     
 ResumenAlta:
   actAs: [Timestampable, Signable]  

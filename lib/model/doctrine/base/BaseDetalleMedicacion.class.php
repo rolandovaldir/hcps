@@ -57,7 +57,8 @@ abstract class BaseDetalleMedicacion extends sfDoctrineRecord
         parent::setUp();
         $this->hasOne('SolicitudInterconsulta', array(
              'local' => 'solicitud_interconsulta_id',
-             'foreign' => 'id'));
+             'foreign' => 'id',
+             'onDelete' => 'CASCADE'));
 
         $timestampable0 = new Doctrine_Template_Timestampable(array(
              ));

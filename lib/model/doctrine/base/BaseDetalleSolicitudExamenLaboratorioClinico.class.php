@@ -44,7 +44,8 @@ abstract class BaseDetalleSolicitudExamenLaboratorioClinico extends sfDoctrineRe
         parent::setUp();
         $this->hasOne('SolicitudExamenLaboratorioClinico', array(
              'local' => 'solicitud_examen_laboratorio_clinico_id',
-             'foreign' => 'id'));
+             'foreign' => 'id',
+             'onDelete' => 'CASCADE'));
 
         $this->hasOne('TipoExamenLaboratorioClinico', array(
              'local' => 'tipo_examen_laboratorio_clinico_id',

@@ -28,4 +28,29 @@ class sfGuardUser extends PluginsfGuardUser
        $this->setTipo(substr($val, 0,1));
        $this->setEmpleadoId(intval(substr($val, 1)));
     }
+    
+    
+    /**
+    * Returns the string representation of the object: "Full Name (username)"
+    *
+    * @return string
+    */
+    public function __toString()
+    {
+        return (string) $this->getNombreCompleto().' ('.$this->getUsername().')';
+    }
+    
+    
+    
+        /**
+    * Returns the first and last name of the user concatenated together
+    *
+    * @return string $name
+    */
+    public function getNombreCompleto()
+    {   
+        return trim('- -');
+    }
+    
+    
 }
