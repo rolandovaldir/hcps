@@ -62,7 +62,8 @@ class juntas_medicasActions extends autoJuntas_medicasActions
     {        
         $request->checkCSRFProtection();
         
-        $objectD = Doctrine::getTable('MedicoParticular')->find($request->getParameter('id'));
+        $objectD = MedicoParticipanteTable::getInstance()
+            ->find($request->getParameter('id'));
                         
         if (is_object($objectD) && $objectD->delete())
         {
