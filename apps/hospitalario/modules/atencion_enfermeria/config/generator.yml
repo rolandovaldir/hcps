@@ -98,9 +98,9 @@ generator:
         title:   Listado Atencion Enfermeria
         display: [ fecha_ingreso, nombre_medico, diagnostico_medico, diagnostico_enfermera]
         object_actions:  
-          _edit:        { credentials: [noAlta] }
-          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [Alta] }
-          _delete:      { credentials: [noAlta] }
+          _edit:        { credentials: [noAlta, crear, enfermera] }
+          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [[enfermera, ver_todo_datos], Alta] }
+          _delete:      { credentials: [noAlta, crear, enfermera] }
         actions: {}
         batch_actions: {}
       filter: 

@@ -13,7 +13,8 @@ generator:
 
     config:
       fields:
-        password_again: { label: "Password (again)" }
+        password_again: {label: "Password (again)"}
+        planta_id:      {label: "Planta"}
 
       list:
         title:   Listado de Usuarios
@@ -22,8 +23,8 @@ generator:
       form:
         class: sfGuardUserAdminForm
         display:
-          "Usuario":           [ _form_listado_empleado, email_address, username, password, password_again]
-          "Permisos y grupos": [ is_active, is_super_admin, groups_list ]
+          "Usuario":           [_form_listado_empleado, email_address, username, password, password_again]
+          "Permisos y grupos": [is_active, is_super_admin, groups_list, planta_id]
         actions:
           _delete:  ~
           _list:    ~
