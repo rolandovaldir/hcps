@@ -12,6 +12,7 @@
  */
 class sfGuardUser extends PluginsfGuardUser
 {
+    private $hcps_user = false;
     
     public function getDescripcionTipo()
     {
@@ -49,8 +50,28 @@ class sfGuardUser extends PluginsfGuardUser
     */
     public function getNombreCompleto()
     {   
-        return trim('- -');
+        $u = $this->getHcpsUser();        
+        if (is_object($u)){            
+            return trim($u->getNombreCompleto());
+        }
+        return '';
     }
+    
+    
+    public function getHcpsUser()            
+    {
+        if ($this->hcps_user===false){
+            if ($this->getTipo()==sfGuardUserTable::HCPS_USER_TIPO_MEDICO ){                
+                $this->hcps_user = MedicoTable::getInstance()->find($this->getEmpleadoId());
+            }
+            elseif($this->getTipo()==sfGuardUserTable::HCPS_USER_TIPO_EMPLEADO){                
+                $this->hcps_user = EmpleadoTable::getInstance()->find($this->getEmpleadoId());
+            }
+        }
+        
+        return $this->hcps_user;
+    }
+            
     
     
 }
