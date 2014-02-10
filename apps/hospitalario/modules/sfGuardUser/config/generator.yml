@@ -14,10 +14,11 @@ generator:
     config:
       fields:
         password_again: { label: "Password (again)" }
-
+        nombre_completo: {label: nombre completo}
+        descripcion_tipo: {label: tipo}
       list:
         title:   Listado de Usuarios
-        display: [=username, created_at, updated_at, last_login]         
+        display: [=username, nombre_completo, descripcion_tipo, created_at, updated_at, last_login]         
         batch_actions: {}         
       form:
         class: sfGuardUserAdminForm
