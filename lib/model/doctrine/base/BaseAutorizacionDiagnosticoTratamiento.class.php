@@ -36,9 +36,9 @@ abstract class BaseAutorizacionDiagnosticoTratamiento extends sfDoctrineRecord
              'type' => 'integer',
              'notnull' => true,
              ));
-        $this->hasColumn('nombre_familiar', 'string', 200, array(
+        $this->hasColumn('nombre_familiar', 'string', 100, array(
              'type' => 'string',
-             'length' => 200,
+             'length' => 100,
              ));
         $this->hasColumn('ci_familiar', 'string', 10, array(
              'type' => 'string',

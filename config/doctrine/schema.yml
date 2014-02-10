@@ -144,6 +144,7 @@ Medico:
     AtencionEnfermeria:  { local: id, foreign: medico_id, type: many, foreignAlias: Medico }
     UsoHospitalario:     { local: id, foreign: medico_id, type: many, foreignAlias: Medico }
     ProgramacionCirugia: { local: id, foreign: medico_id, type: many, foreignAlias: Medico }
+    JuntaMedica:         { local: id, foreign: medico_id, type: many, foreignAlias: Medico }
   indexes:
     medico_unique1:
       type: unique
@@ -216,13 +217,14 @@ Cama:
 OrdenMedica:
   actAs: [Timestampable, Signable]
   columns:
-    internado_id:                  {type: integer, notnull: true}
-    via_administracion_id:         {type: integer, notnull: true}
-    fecha_hora:                    {type: timestamp}
-    nombre_medicamento_indicacion: {type: string(150), notnull: true}
-    dosis_intervalo:               {type: string(150), notnull: true}
-    fecha_inicio:                  {type: date, notnull: true}
-    fecha_terminacion:             {type: date, notnull: true}
+    internado_id:          {type: integer, notnull: true}
+    via_administracion_id: {type: integer, notnull: true}
+    fecha_hora:            {type: timestamp}
+    nombre_medicamento:    {type: string(200), notnull: true}
+    indicacion:            {type: string(200)}
+    dosis_intervalo:       {type: string(200), notnull: true}
+    fecha_inicio:          {type: date, notnull: true}
+    fecha_terminacion:     {type: date, notnull: true}
   relations:  
     Internado:          {local: internado_id, foreign: id, type: one, foreignAlias: Ordenes} 
     ViaAdministracion:  {local: via_administracion_id, foreign: id, type: one, foreignAlias: Ordenes}
@@ -258,8 +260,8 @@ ViaAdministracion:
 JuntaMedica:
   actAs: [Timestampable, Signable]
   columns:
-    internado_id:     {type: integer, notnull: true}
-    medico_solicitante:      {type: string(100), notnull: true}
+    internado_id:            {type: integer, notnull: true}
+    medico_id:               {type: integer, notnull: true}
     servicio:                {type: string(45), notnull: true}
     especialidades:          {type: string(45), notnull: true}
     fecha_junta:             {type: date, notnull: true}
@@ -271,6 +273,7 @@ JuntaMedica:
   relations:
     Internado:          {local: internado_id, foreign: id, type: one, foreignAlias: Juntas}
     MedicoParticipante: {local: id, foreign: junta_medica_id, type: many ,foreignAlias: Junta}
+    Medico:             {local: medico_id, foreign: id, type: one, foreignAlias: Juntas}
     
 MedicoParticipante:
   actAs: [Timestampable]
@@ -307,20 +310,20 @@ Apgar:
   columns:
     examen_fisico_recien_nacido_id: {type: integer, notnull: true}
     nacer_egresar:                  {type: boolean, notnull: true}
-    apariencia:                     {type: string(100), notnull: true}
-    piel:                           {type: string(100), notnull: true}
-    cabeza:                         {type: string(100), notnull: true}
-    ojos:                           {type: string(100), notnull: true}
-    oidos_nariz_garganta:           {type: string(100), notnull: true}
-    torax:                          {type: string(100), notnull: true}
-    pulmones:                       {type: string(100), notnull: true}
-    corazon:                        {type: string(100), notnull: true}
-    abdomen:                        {type: string(100), notnull: true}
-    genitales:                      {type: string(100), notnull: true}
-    torso_espina:                   {type: string(100), notnull: true}
-    extremidades:                   {type: string(100), notnull: true}
-    reflejos:                       {type: string(100), notnull: true}
-    ano:                            {type: string(100), notnull: true}
+    apariencia:                     {type: string(200), notnull: true}
+    piel:                           {type: string(200), notnull: true}
+    cabeza:                         {type: string(200), notnull: true}
+    ojos:                           {type: string(200), notnull: true}
+    oidos_nariz_garganta:           {type: string(200), notnull: true}
+    torax:                          {type: string(200), notnull: true}
+    pulmones:                       {type: string(200), notnull: true}
+    corazon:                        {type: string(200), notnull: true}
+    abdomen:                        {type: string(200), notnull: true}
+    genitales:                      {type: string(200), notnull: true}
+    torso_espina:                   {type: string(200), notnull: true}
+    extremidades:                   {type: string(200), notnull: true}
+    reflejos:                       {type: string(200), notnull: true}
+    ano:                            {type: string(200), notnull: true}
   relations:
     ExamenFisicoRecienNacido: {local: examen_fisico_recien_nacido_id, foreign: id, type: one, foreignAlias: Apgars}
 
@@ -346,7 +349,7 @@ DetalleMedicacion:
   actAs: [Timestampable, Signable]
   columns:
     solicitud_interconsulta_id:  {type: integer, notnull: true}
-    medicacion_utilizada:        {type: string(150), notnull: true}
+    medicacion_utilizada:        {type: string(200), notnull: true}
     dosis:                       {type: string(45), notnull: true}
     fecha_inicio:                {type: date, notnull: true}
   relations:
@@ -413,8 +416,8 @@ SignosVitalesNursery:
     diu_nursery:   {type: string(45), notnull: true}
     cat_nursery:   {type: string(45), notnull: true}
     lm_nursery:    {type: string(45), notnull: true}
-    residuo:       {type: string(45), notnull: true}
-    observaciones: {type: string(45)}
+    residuo:       {type: string(200), notnull: true}
+    observaciones: {type: string(200)}
   relations:
     Internado: {local: internado_id, foreign: id, type: one, foreignAlias: Nurserys}
 
@@ -426,7 +429,7 @@ NotasEnfermeria:
     internado_id:  {type: integer, notnull: true}
     fecha:          {type: date, notnull: true}
     hora:           {type: time, notnull: true}
-    procedimientos: {type: string(150), notnull: true}
+    procedimientos: {type: string(200), notnull: true}
     observaciones:  {type: string(500), notnull: true}
   relations:
     Internado:   {local: internado_id, foreign: id, type: one, foreignAlias: Enfermerias}
@@ -450,7 +453,7 @@ AutorizacionDiagnosticoTratamiento:
   actAs: [Timestampable, Signable]  
   columns:     
     internado_id:        { type: integer , notnull: true }
-    nombre_familiar:     { type: string(200) }
+    nombre_familiar:     { type: string(100) }
     ci_familiar:         { type: string(10) }
     fecha_hora:          { type: timestamp }  
   relations: 
@@ -513,9 +516,9 @@ SolicitudExamenLaboratorioClinico:
     internado_id:             { type: integer, notnull: true }
     vobo_medico_id:           { type: integer }
     examenes:                 { type: array, notnull: true }
-    material_enviado:         { type: string(45), notnull: true } 
-    otros_examenes:           { type: string(45) }
-    diagnostico_presuntivo:   { type: string(45), notnull: true }
+    material_enviado:         { type: string(100), notnull: true } 
+    otros_examenes:           { type: string(200) }
+    diagnostico_presuntivo:   { type: string(200), notnull: true }
     medico_id:                { type: integer }
     lugar:                    { type: string(45), notnull: true }
     fecha:                    { type: date, notnull: true } 
@@ -601,8 +604,8 @@ UsoHospitalario:
     lugar:                  { type: string(60), notnull: true }
     fecha:                  { type: date, notnull: true }
     medico_id:              { type: integer }    
-    codigo:                 { type: string(45), notnull: true }
-    especialidad:           { type: string(45), notnull: true }
+    codigo:                 { type: string(50), notnull: true }
+    especialidad:           { type: string(100), notnull: true }
   relations:
     Internado: { local: internado_id, foreign: id, type: one, foreignAlias: ResumenesAlta }
     Medico:    { local: medico_id, foreign: id, type: one, foreignAlias: ResumenesAlta}
@@ -612,11 +615,11 @@ DetalleUsoHospitalario:
   actAs: [Timestampable]  
   columns:     
     uso_hospitalario_id:    { type: integer, notnull: true }
-    codigo_cbm:             { type: string(40), notnull: true }
-    detalle:                { type: string(150), notnull: true }    
-    cantidad:               { type: string(10), notnull: true }
+    codigo_cbm:             { type: string(50), notnull: true }
+    detalle:                { type: string(200), notnull: true }    
+    cantidad:               { type: integer, notnull: true }
     unidad:                 { type: string(20), notnull: true }
-    cod_farmacia_ibm:       { type: string(25), notnull: true }
+    cod_farmacia_ibm:       { type: string(50), notnull: true }
   relations:
     UsoHospitalario: { local: uso_hospitalario_id, foreign: id, type: one, foreignAlias: DetallesUsoHospitalario }
       
@@ -783,6 +786,6 @@ DetallePapeletaPedidoMaterial:
     codigo:                      { type: string(20), notnull: true }
     cantidad:                    { type: integer, notnull: true }
     unidad:                      { type: string(10), notnull: true }
-    detalle:                     { type: string(150), notnull: true }
+    detalle:                     { type: string(200), notnull: true }
   relations:
     PapeletaPedidoMaterial:    { local: papeleta_pedido_material_id, foreign: id, type: one, foreignAlias: PapeletaPedidoMaterial }

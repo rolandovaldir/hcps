@@ -76,75 +76,75 @@ abstract class BaseApgar extends sfDoctrineRecord
              'type' => 'boolean',
              'notnull' => true,
              ));
-        $this->hasColumn('apariencia', 'string', 100, array(
+        $this->hasColumn('apariencia', 'string', 200, array(
              'type' => 'string',
              'notnull' => true,
-             'length' => 100,
+             'length' => 200,
              ));
-        $this->hasColumn('piel', 'string', 100, array(
+        $this->hasColumn('piel', 'string', 200, array(
              'type' => 'string',
              'notnull' => true,
-             'length' => 100,
+             'length' => 200,
              ));
-        $this->hasColumn('cabeza', 'string', 100, array(
+        $this->hasColumn('cabeza', 'string', 200, array(
              'type' => 'string',
              'notnull' => true,
-             'length' => 100,
+             'length' => 200,
              ));
-        $this->hasColumn('ojos', 'string', 100, array(
+        $this->hasColumn('ojos', 'string', 200, array(
              'type' => 'string',
              'notnull' => true,
-             'length' => 100,
+             'length' => 200,
              ));
-        $this->hasColumn('oidos_nariz_garganta', 'string', 100, array(
+        $this->hasColumn('oidos_nariz_garganta', 'string', 200, array(
              'type' => 'string',
              'notnull' => true,
-             'length' => 100,
+             'length' => 200,
              ));
-        $this->hasColumn('torax', 'string', 100, array(
+        $this->hasColumn('torax', 'string', 200, array(
              'type' => 'string',
              'notnull' => true,
-             'length' => 100,
+             'length' => 200,
              ));
-        $this->hasColumn('pulmones', 'string', 100, array(
+        $this->hasColumn('pulmones', 'string', 200, array(
              'type' => 'string',
              'notnull' => true,
-             'length' => 100,
+             'length' => 200,
              ));
-        $this->hasColumn('corazon', 'string', 100, array(
+        $this->hasColumn('corazon', 'string', 200, array(
              'type' => 'string',
              'notnull' => true,
-             'length' => 100,
+             'length' => 200,
              ));
-        $this->hasColumn('abdomen', 'string', 100, array(
+        $this->hasColumn('abdomen', 'string', 200, array(
              'type' => 'string',
              'notnull' => true,
-             'length' => 100,
+             'length' => 200,
              ));
-        $this->hasColumn('genitales', 'string', 100, array(
+        $this->hasColumn('genitales', 'string', 200, array(
              'type' => 'string',
              'notnull' => true,
-             'length' => 100,
+             'length' => 200,
              ));
-        $this->hasColumn('torso_espina', 'string', 100, array(
+        $this->hasColumn('torso_espina', 'string', 200, array(
              'type' => 'string',
              'notnull' => true,
-             'length' => 100,
+             'length' => 200,
              ));
-        $this->hasColumn('extremidades', 'string', 100, array(
+        $this->hasColumn('extremidades', 'string', 200, array(
              'type' => 'string',
              'notnull' => true,
-             'length' => 100,
+             'length' => 200,
              ));
-        $this->hasColumn('reflejos', 'string', 100, array(
+        $this->hasColumn('reflejos', 'string', 200, array(
              'type' => 'string',
              'notnull' => true,
-             'length' => 100,
+             'length' => 200,
              ));
-        $this->hasColumn('ano', 'string', 100, array(
+        $this->hasColumn('ano', 'string', 200, array(
              'type' => 'string',
              'notnull' => true,
-             'length' => 100,
+             'length' => 200,
              ));
     }
 

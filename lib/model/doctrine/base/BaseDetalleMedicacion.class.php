@@ -36,10 +36,10 @@ abstract class BaseDetalleMedicacion extends sfDoctrineRecord
              'type' => 'integer',
              'notnull' => true,
              ));
-        $this->hasColumn('medicacion_utilizada', 'string', 150, array(
+        $this->hasColumn('medicacion_utilizada', 'string', 200, array(
              'type' => 'string',
              'notnull' => true,
-             'length' => 150,
+             'length' => 200,
              ));
         $this->hasColumn('dosis', 'string', 45, array(
              'type' => 'string',

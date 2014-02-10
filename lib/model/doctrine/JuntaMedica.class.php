@@ -12,4 +12,8 @@
  */
 class JuntaMedica extends BaseJuntaMedica
 {
+    function getNombreMedico()
+    {          
+        return $this->Medico->getNombrec();
+    }
 }

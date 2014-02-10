@@ -527,7 +527,8 @@ OrdenMedica:
     Internado: INTER1
     ViaAdministracion: Topica
     fecha_hora: '2014-01-09 01:15:00'
-    nombre_medicamento_indicacion: 'tiene q guardar reposo por 1 semana'
+    nombre_medicamento: 'Ibuprofeno'
+    indicacion: 'tiene q guardar reposo por 1 semana'
     dosis_intervalo: ninguna
     fecha_inicio: '2014-01-16'
     fecha_terminacion: '2014-01-22'
@@ -537,7 +538,8 @@ OrdenMedica:
     Internado: INTER1
     ViaAdministracion: Oral
     fecha_hora: '2014-01-16 02:30:00'
-    nombre_medicamento_indicacion: 'Administrar esteroides y observar cambios en el funcionamiento hepatico'
+    nombre_medicamento: 'Diclofenaco'
+    indicacion: 'Observar cambios en el funcionamiento hepatico'
     dosis_intervalo: 'cada 1 hora'
     fecha_inicio: '2014-01-02'
     fecha_terminacion: '2014-01-24'
@@ -547,7 +549,8 @@ OrdenMedica:
     Internado: INTER1
     ViaAdministracion: Sublingual
     fecha_hora: '2014-01-22 03:00:00'
-    nombre_medicamento_indicacion: 'Tomar ibuprofeno con el estomago lleno'
+    nombre_medicamento: 'Ibuprofeno'
+    indicacion: 'Con el estomago lleno'
     dosis_intervalo: 'cada 8 horas'
     fecha_inicio: '2014-01-15'
     fecha_terminacion: '2014-01-22'
@@ -1157,7 +1160,7 @@ SolicitudReposicionMaterial:
 JuntaMedica:
   JuntaMedica_1:
     Internado: INTER1
-    medico_solicitante: 'Hugo Armando Patrick'
+    medico_id: 1
     servicio: urgencia
     especialidades: 'traumatologia, infeccion'
     fecha_junta: '2014-01-06'
@@ -1170,7 +1173,7 @@ JuntaMedica:
     updated_at: '2014-01-09 17:01:58'
   JuntaMedica_2:
     Internado: INTER2
-    medico_solicitante: 'Fernando Soto'
+    medico_id: 2
     servicio: Ginecologia
     especialidades: Ginecologia
     fecha_junta: '2013-12-29'
@@ -1183,7 +1186,7 @@ JuntaMedica:
     updated_at: '2014-01-09 17:18:35'
   JuntaMedica_3:
     Internado: INTER4
-    medico_solicitante: 'Arturo Moscoso'
+    medico_id: 1
     servicio: Cirugia
     especialidades: Cirujano
     fecha_junta: '2013-12-26'

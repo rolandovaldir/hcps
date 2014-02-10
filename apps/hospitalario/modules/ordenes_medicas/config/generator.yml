@@ -16,16 +16,17 @@ generator:
     config:
       actions: ~
       fields:  
-        nombre_medicamento_indicacion: {label: 'Nombre del Medicamento o Indicación'}
-        via_administracion_id:         {label: 'Via de Administración'}
-        dosis_intervalo:               {label: 'Dosis - Intérvalo'}
-        fecha_inicio:                  {label: 'Inicio', date_format: 'dd/MM/yyyy'}
-        fecha_terminacion:             {label: 'Terminación', date_format: 'dd/MM/yyyy'}
-        created_at:                    {label: 'Fecha', date_format: 'dd/MM/yyyy'}
-        creator:                       {label: 'Responsable'}
+        nombre_medicamento:    {label: 'Nombre del Medicamento'}
+        indicacion:            {label: 'Indicación'}
+        via_administracion_id: {label: 'Via de Administración'}
+        dosis_intervalo:       {label: 'Dosis - Intérvalo'}
+        fecha_inicio:          {label: 'Inicio', date_format: 'dd/MM/yyyy'}
+        fecha_terminacion:     {label: 'Terminación', date_format: 'dd/MM/yyyy'}
+        created_at:            {label: 'Fecha', date_format: 'dd/MM/yyyy'}
+        creator:               {label: 'Responsable'}
       list:    
         title: Ordenes Médicas
-        display: [created_at, nombre_medicamento_indicacion, dosis_intervalo, fecha_inicio, fecha_terminacion, creator]
+        display: [fecha_hora, nombre_medicamento, indicacion, dosis_intervalo, creator]
         object_actions:  
           _edit:        { credentials: [noAlta] }
           ver_detalle:  { label: Ver Detalle, action: edit, credentials: [Alta] }
@@ -36,7 +37,7 @@ generator:
         display: [fecha_inicio, fecha_terminacion]
       form:    
         display:
-          Orden Médica: [fecha_hora, nombre_medicamento_indicacion, dosis_intervalo, via_administracion_id, fecha_inicio, fecha_terminacion]
+          Orden Médica: [fecha_hora, nombre_medicamento, indicacion, dosis_intervalo, via_administracion_id, fecha_inicio, fecha_terminacion]
         actions:
           _delete: { credentials: [noAlta] }
           _list:   ~

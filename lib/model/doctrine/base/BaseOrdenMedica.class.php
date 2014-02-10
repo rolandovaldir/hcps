@@ -8,31 +8,34 @@
  * @property integer $internado_id
  * @property integer $via_administracion_id
  * @property timestamp $fecha_hora
- * @property string $nombre_medicamento_indicacion
+ * @property string $nombre_medicamento
+ * @property string $indicacion
  * @property string $dosis_intervalo
  * @property date $fecha_inicio
  * @property date $fecha_terminacion
  * @property Internado $Internado
  * @property ViaAdministracion $ViaAdministracion
  * 
- * @method integer           getInternadoId()                   Returns the current record's "internado_id" value
- * @method integer           getViaAdministracionId()           Returns the current record's "via_administracion_id" value
- * @method timestamp         getFechaHora()                     Returns the current record's "fecha_hora" value
- * @method string            getNombreMedicamentoIndicacion()   Returns the current record's "nombre_medicamento_indicacion" value
- * @method string            getDosisIntervalo()                Returns the current record's "dosis_intervalo" value
- * @method date              getFechaInicio()                   Returns the current record's "fecha_inicio" value
- * @method date              getFechaTerminacion()              Returns the current record's "fecha_terminacion" value
- * @method Internado         getInternado()                     Returns the current record's "Internado" value
- * @method ViaAdministracion getViaAdministracion()             Returns the current record's "ViaAdministracion" value
- * @method OrdenMedica       setInternadoId()                   Sets the current record's "internado_id" value
- * @method OrdenMedica       setViaAdministracionId()           Sets the current record's "via_administracion_id" value
- * @method OrdenMedica       setFechaHora()                     Sets the current record's "fecha_hora" value
- * @method OrdenMedica       setNombreMedicamentoIndicacion()   Sets the current record's "nombre_medicamento_indicacion" value
- * @method OrdenMedica       setDosisIntervalo()                Sets the current record's "dosis_intervalo" value
- * @method OrdenMedica       setFechaInicio()                   Sets the current record's "fecha_inicio" value
- * @method OrdenMedica       setFechaTerminacion()              Sets the current record's "fecha_terminacion" value
- * @method OrdenMedica       setInternado()                     Sets the current record's "Internado" value
- * @method OrdenMedica       setViaAdministracion()             Sets the current record's "ViaAdministracion" value
+ * @method integer           getInternadoId()           Returns the current record's "internado_id" value
+ * @method integer           getViaAdministracionId()   Returns the current record's "via_administracion_id" value
+ * @method timestamp         getFechaHora()             Returns the current record's "fecha_hora" value
+ * @method string            getNombreMedicamento()     Returns the current record's "nombre_medicamento" value
+ * @method string            getIndicacion()            Returns the current record's "indicacion" value
+ * @method string            getDosisIntervalo()        Returns the current record's "dosis_intervalo" value
+ * @method date              getFechaInicio()           Returns the current record's "fecha_inicio" value
+ * @method date              getFechaTerminacion()      Returns the current record's "fecha_terminacion" value
+ * @method Internado         getInternado()             Returns the current record's "Internado" value
+ * @method ViaAdministracion getViaAdministracion()     Returns the current record's "ViaAdministracion" value
+ * @method OrdenMedica       setInternadoId()           Sets the current record's "internado_id" value
+ * @method OrdenMedica       setViaAdministracionId()   Sets the current record's "via_administracion_id" value
+ * @method OrdenMedica       setFechaHora()             Sets the current record's "fecha_hora" value
+ * @method OrdenMedica       setNombreMedicamento()     Sets the current record's "nombre_medicamento" value
+ * @method OrdenMedica       setIndicacion()            Sets the current record's "indicacion" value
+ * @method OrdenMedica       setDosisIntervalo()        Sets the current record's "dosis_intervalo" value
+ * @method OrdenMedica       setFechaInicio()           Sets the current record's "fecha_inicio" value
+ * @method OrdenMedica       setFechaTerminacion()      Sets the current record's "fecha_terminacion" value
+ * @method OrdenMedica       setInternado()             Sets the current record's "Internado" value
+ * @method OrdenMedica       setViaAdministracion()     Sets the current record's "ViaAdministracion" value
  * 
  * @package    hcps
  * @subpackage model
@@ -55,15 +58,19 @@ abstract class BaseOrdenMedica extends sfDoctrineRecord
         $this->hasColumn('fecha_hora', 'timestamp', null, array(
              'type' => 'timestamp',
              ));
-        $this->hasColumn('nombre_medicamento_indicacion', 'string', 150, array(
+        $this->hasColumn('nombre_medicamento', 'string', 200, array(
              'type' => 'string',
              'notnull' => true,
-             'length' => 150,
+             'length' => 200,
              ));
-        $this->hasColumn('dosis_intervalo', 'string', 150, array(
+        $this->hasColumn('indicacion', 'string', 200, array(
+             'type' => 'string',
+             'length' => 200,
+             ));
+        $this->hasColumn('dosis_intervalo', 'string', 200, array(
              'type' => 'string',
              'notnull' => true,
-             'length' => 150,
+             'length' => 200,
              ));
         $this->hasColumn('fecha_inicio', 'date', null, array(
              'type' => 'date',
