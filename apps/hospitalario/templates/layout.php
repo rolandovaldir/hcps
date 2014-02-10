@@ -27,10 +27,10 @@
             <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'top'" id="header-layout" style="padding:0;" >
                 <table class="user-info">
                     <tr>
-                        <td rowspan="4" style="width: 35%;">
+                        <td rowspan="5" style="width: 35%;">
                             <?php echo link_to(image_tag('logo_header.png', 'alt=cps'), 'internados/index') ?>
                         </td>   
-                        <td rowspan="4" style="width: 55%;">
+                        <td rowspan="5" style="width: 55%;">
                             <?php $internado = $sf_user->getAttribute('internado'); ?>
                             <?php if (is_object($internado)): ?>                                
                                 <table class="tbl-paciente">
@@ -80,7 +80,7 @@
                                 <table style="margin-left: 15%;">
                                     <tr>
                                         <td>
-                                            <b>Reportes de internaciÃ³n   </b>
+                                            <b>Reportes de internación   </b>
                                         </td>
                                         <td style="padding-left: 10px;">
                                             <?php echo link_to(image_tag('inicio.png', 'alt=cps-inicio'), 'internados/index') ?>
@@ -116,15 +116,15 @@
                         <td nowrap="nowrap" style="font-size: 11px">Especialidad:
                             <span>
                                 <?php if ($sf_user->isAuthenticated() == true): ?>
-                                    <?php echo $sf_user->getGuardUser()->getDescripcionTipo() ?><br/>
-                                    <?php echo link_to('Salir','sfGuardAuth/Signout')?>                                
+                                    <?php echo $sf_user->getGuardUser()->getDescripcionTipo() ?>                                                                    
                                 <?php else: echo 'Iniciar sesi&oacute;n!!!'; ?>
                                 <?php endif; ?>
                             </span>
                             
                         </td>
                     </tr>
-                    <tr><td>&nbsp;</td></tr>
+                    <tr><td><?php echo link_to('Salir','sfGuardAuth/Signout',array('title'=>'Cerrar sesión'))?></td></tr>
+                    <tr><td>&nbsp;</td></tr> 
                 </table> 
             </div>
             <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'leading',style:'padding:0;',splitter: true" >
