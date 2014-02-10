@@ -5,8 +5,17 @@ html, body {
     padding: 0;
     font-family: Geneva, Arial, Helvetica, sans-serif;
     font-size: 12px;
-    background-color: #eee;
+    background-color: #FFFFEF;
 }
+a:link, a:visited, a:hover, a:active{ 
+ text-decoration: none;
+ color: #464646; 
+}
+a:hover{  
+ color: #000000; 
+ text-decoration: underline; 
+}
+
 #header-layout{
   /*background-image: url("../images/logo_header.png");*/
   background-repeat: no-repeat;
@@ -28,6 +37,11 @@ table.user-info span{
  font-size: 11px; 
  font-weight: bold;
 }
+
+#dojotheme-maincontainer, .containainer_background {
+ background: url("../images/logo-fondo1.png") no-repeat right bottom; 
+}
+
 #footer-layout{
   border:0px;
   background-color: transparent;
@@ -41,6 +55,28 @@ ul.side_menu_forms {
 
 ul.side_menu_forms li {
   list-style: none;
+  padding:0;
+}
+
+ul.side_menu_forms li.sf_admin_action_list {
+  background: url(../sfDoctrinePlugin/images/list.png) no-repeat 1px 2px;
+}
+
+ul.side_menu_forms li.sf_admin_action_new {
+  background: url(../sfDoctrinePlugin/images/new.png) no-repeat 1px 2px;
+}
+
+ul.side_menu_forms li a:link, ul.side_menu_forms li a:visited, ul.side_menu_forms li a:hover, ul.side_menu_forms li a:active{ 
+ text-decoration: none;
+ color: #464646;
+ display: block;
+ padding:3px 5px 3px 18px;
+}
+ul.side_menu_forms li a:hover{ 
+ font-weight: bold;   
+ color: #101030; 
+ border:1px solid #e1e1e1;
+ padding:2px 4px 2px 17px;
 }
 
 /*OVERWRITE SF ADMIN STYLES*/
