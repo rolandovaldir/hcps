@@ -38,7 +38,7 @@ generator:
       form:    
         display: [ internado_id, nombre_familiar,ci_familiar,fecha_hora ]
         actions:
-          _delete: { credentials: [noAlta] }
+#          _delete: { credentials: [noAlta] }
           _list:   ~
           _save:   { credentials: [noAlta] }
       edit:    

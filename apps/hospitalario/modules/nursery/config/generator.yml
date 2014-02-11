@@ -37,7 +37,7 @@ generator:
         display: [fecha, hora, fc_nursery, fr_nursery, to_nursery]
       form:    
         actions:
-          _delete: { credentials: [noAlta] }
+#          _delete: { credentials: [noAlta] }
           _list:   ~
           _save:   { credentials: [noAlta] }
       edit:    

@@ -39,7 +39,7 @@ generator:
         display:
           Orden Médica: [fecha_hora, nombre_medicamento, indicacion, dosis_intervalo, via_administracion_id, fecha_inicio, fecha_terminacion]
         actions:
-          _delete: { credentials: [noAlta] }
+#          _delete: { credentials: [noAlta] }
           _list:   ~
           _save:   { credentials: [noAlta] }
       edit:    

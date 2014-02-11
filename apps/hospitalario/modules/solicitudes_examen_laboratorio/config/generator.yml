@@ -36,7 +36,7 @@ generator:
           "Examenes: ": [ internado_id, _lista_tipos_examenes ]
           "&nbsp; ":   [ material_enviado, otros_examenes, diagnostico_presuntivo, lugar, fecha ]
         actions:
-          _delete: { credentials: [noAlta] }
+#          _delete: { credentials: [noAlta] }
           _list:   ~
           _save:   { credentials: [noAlta] }
       edit:    

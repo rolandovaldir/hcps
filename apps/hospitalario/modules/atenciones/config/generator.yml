@@ -25,11 +25,11 @@ generator:
         batch_actions: {}
       filter:  
         display: [nombre]
-      form:    ~
+      form:    
+        actions:
+          _list: ~
+          _save: { credentials: [noAlta] }
       edit:    
         title: Editar Atencion %%nombre%%
       new:    
         title: Nueva Atencion
-        actions:
-          _save: ~
-          _save_and_add: ~

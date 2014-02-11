@@ -35,4 +35,3 @@ generator:
         title: Nueva Solicitud de Servicio de Mantenimiento
         actions:
           _save: ~
-          _save_and_add: ~

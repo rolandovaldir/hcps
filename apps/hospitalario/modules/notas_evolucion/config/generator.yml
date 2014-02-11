@@ -35,7 +35,7 @@ generator:
         display:
           S.O.A.P. Subjetivo - Objetivo - Analisis - Planes a)Diagnóstico b)Tratamiento c)Educativo: [fecha_hora, numero_prob, nota_soap]
         actions:
-          _delete: { credentials: [noAlta] }
+#          _delete: { credentials: [noAlta] }
           _list:   ~
           _save:   { credentials: [noAlta] }  
       edit:    

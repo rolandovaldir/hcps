@@ -22,9 +22,8 @@ generator:
       form:    ~
       edit:    
         actions:
-          _delete:    ~
+#          _delete:    ~
           _save:      ~
       new:     
         actions:
           _save: ~
-          _save_and_add: ~

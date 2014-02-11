@@ -39,7 +39,7 @@ generator:
       form: 
         display: [diagnostico_provisional, diagnostico_definitivo, 	operaciones, anamesis_examenfisico, hallazgos_labo_interconsultas, evolucion_complicacion, condicion_tratamiento_pronostico]
         actions:
-          _delete: { credentials: [noAlta] }
+#          _delete: { credentials: [noAlta] }
           _list:   ~
           _save:   { credentials: [noAlta] }
       edit:    

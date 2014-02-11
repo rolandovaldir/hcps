@@ -24,4 +24,3 @@ generator:
       new:     
         actions:
           _save: ~
-          _save_and_add: ~

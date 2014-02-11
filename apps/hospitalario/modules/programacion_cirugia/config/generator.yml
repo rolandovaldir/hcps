@@ -41,7 +41,7 @@ generator:
           "&nbsp;":              [ diagnostico_preoperatorio, tratamiento_quirurgico, anestesia, otros ]
           "Examenes Auxiliares": [ examenes_auxiliares ]          
         actions:
-          _delete: { credentials: [noAlta] }
+#          _delete: { credentials: [noAlta] }
           _list:   ~
           _save:   { credentials: [noAlta] }
       edit:            

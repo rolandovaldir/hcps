@@ -22,11 +22,11 @@ generator:
         batch_actions: {}
       filter:  
         display: [nacer_egresar]
-      form:    ~
+      form:    
+        actions:
+          _list: ~
+          _save: { credentials: [noAlta] }
       edit:    
         title: Editar Registro Apgar
       new:     
         title: Registro Apgar
-        actions:
-          _save: ~
-          _save_and_add: ~
