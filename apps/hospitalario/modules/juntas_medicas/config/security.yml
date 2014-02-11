@@ -5,6 +5,6 @@ index:
 new:
   credentials: [crear, medico]
 edit:
-  credentials: [crear, medico]
+  credentials: [[medico, ver_todo_datos]]
 delete: 
   credentials: [crear, medico]

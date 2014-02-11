@@ -5,6 +5,6 @@ index:
 new:
   credentials: [crear, enfermera]
 edit:
-  credentials: [crear, enfermera]
+  credentials: [[enfermera, ver_todo_datos]]
 delete: 
   credentials: [crear, enfermera]

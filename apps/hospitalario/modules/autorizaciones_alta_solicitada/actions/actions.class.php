@@ -18,19 +18,30 @@ class autorizaciones_alta_solicitadaActions extends autoAutorizaciones_alta_soli
 
     public function preExecute()
     {        
-        $this->hcps_internado = InternadoTable::getInstance()->find($this->getRequest()->getParameter('internado_id'));
-        $siAlta = false;        
-        if (is_object($this->hcps_internado)){
-            if ($this->hcps_internado->getAlta()){
-                if (!$this->getUser()->hasCredential('ver_historial'))
-                {
-                    $this->forward(sfConfig::get('sf_secure_module'),'secure');
-                }
-                $siAlta = true;                
+        $internado_id = $this->getRequest()->getParameter('internado_id',null);        
+        if ($internado_id){
+            $this->hcps_internado = InternadoTable::getInstance()->find($internado_id);
+        }       
+        
+        if (is_object($this->hcps_internado) && !$this->getUser()->isSuperAdmin()){
+            /*si el internado esta de alta solo los usuarios con permiso ver_historial 
+              pueden ver los registros del intenado*/
+            if ($this->hcps_internado->getAlta() && !$this->getUser()->hasCredential('ver_historial')){
+                $this->forward(sfConfig::get('sf_secure_module'),'secure');
+            }
+            /*si el internado esta en una planta diferente del asignado al usuario
+              solo los usuarios con permiso ver_toda_area pueden ver los registros del intenado*/
+            if (!$this->getUser()->checkPlantaAllowedByCamaId($this->hcps_internado->getCamaId())
+                && !$this->getUser()->hasCredential('ver_toda_area')){
+                $this->forward(sfConfig::get('sf_secure_module'),'secure');
             }            
         }
-        else{ $siAlta = true; }//si es en reportes misma vista de pacientes dados de alta (sin opciones de edicion y eliminacion)
-
+        if (!is_object($this->hcps_internado) || $this->hcps_internado->getAlta() 
+                || !$this->getUser()->hasCredential(array('crear','enfermera'))){
+            $siAlta = true;
+        }
+        else { $siAlta = false; }
+        
         $this->getUser()->addCredential($siAlta ? 'Alta' : 'noAlta');
         $this->getUser()->removeCredential($siAlta ? 'noAlta' : 'Alta');
 
@@ -39,12 +50,10 @@ class autorizaciones_alta_solicitadaActions extends autoAutorizaciones_alta_soli
         
     public function postExecute()
     {
-        if ( !is_object($this->hcps_internado) || $this->hcps_internado->getAlta()){
-            if (is_object($this->form)){ //disable all widgets (si internado es dado de alta)
-                $this->form->disableAllWidgets();
-            }
-        }
-        parent::postExecute();
+        if ($this->getUser()->hasCredential('Alta') && is_object($this->form)){            
+            $this->form->disableAllWidgets();
+        }        
+        parent::postExecute();        
     }
     
     /**
