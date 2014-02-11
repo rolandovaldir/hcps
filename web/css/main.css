@@ -5,7 +5,7 @@ html, body {
     padding: 0;
     font-family: Geneva, Arial, Helvetica, sans-serif;
     font-size: 12px;
-    background-color: #FFFFEF;
+    background-color: #FAFFFA;
 }
 a:link, a:visited, a:hover, a:active{ 
  text-decoration: none;
@@ -16,11 +16,30 @@ a:hover{
  text-decoration: underline; 
 }
 
+textarea, input[type=text], input[type=password]{
+ vertical-align: middle; 
+ width: 25em;
+ color: #000000;
+ padding: 2px;
+ border:1px solid #B5BCC7; 
+ background-color: #FFFFFF; 
+}
+
 #header-layout{
   /*background-image: url("../images/logo_header.png");*/
   background-repeat: no-repeat;
   background-position: 0 center;
 }
+
+/*OVERWRITE CLARO STYLE*/
+.claro .dijitSplitContainer-child, .claro .dijitBorderContainer-child, 
+.claro .dijitTabPaneWrapper, .claro .dijitTabContainerTop-tabs, .claro .dijitTabContainerBottom-tabs, .claro .dijitTabContainerLeft-tabs, .claro .dijitTabContainerRight-tabs,
+.claro .dijitTab
+{
+ border-color:#95B79C !important;
+}
+/************/
+
 table.user-info{   
   width: auto;
   margin: 0;
