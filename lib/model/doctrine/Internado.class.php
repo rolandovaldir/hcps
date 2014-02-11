@@ -10,61 +10,61 @@
  * @author     Your name here
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
-class Internado extends BaseInternado
-{
+class Internado extends BaseInternado {
+
     public $objetoDatosPersona = null;
-    
-    function getObjetoDatosPersona()
-    {
-        if ($this->objetoDatosPersona==null){
+
+    function getObjetoDatosPersona() {
+        if ($this->objetoDatosPersona == null) {
             $this->objetoDatosPersona = $this->getEsAfiliado() ? $this->getAfiliado() : $this->getPacienteOtroseguro();
-        }        
+        }
         return $this->objetoDatosPersona;
     }
-    
-    
-    function getNombreCompleto()
-    {        
-        if ($this->objetoDatosPersona==null){
+
+    function getNombreCompleto() {
+        if ($this->objetoDatosPersona == null) {
             $this->objetoDatosPersona = $this->getEsAfiliado() ? $this->getAfiliado() : $this->getPacienteOtroseguro();
-        }        
+        }
         return $this->objetoDatosPersona->getNombre() . ' ' . $this->objetoDatosPersona->getPaterno() . ' ' . $this->objetoDatosPersona->getMaterno();
     }
-    
 
-    function getDescripcionEsAfiliado()
-    {
-        return $this->getEsAfiliado() ? 'Si' : 'No'; 
+    function getDescripcionEsAfiliado() {
+        return $this->getEsAfiliado() ? 'Si' : 'No';
     }
-    
-    function getDescripcionFechaHora($formatF='d/m/Y', $formatH='H:i')
-    {
-        return $this->getDateTimeObject('fecha')->format($formatF) . ' ' . substr($this->getHora(), 0, 5); 
+
+    function getDescripcionFechaHora($formatF = 'd/m/Y', $formatH = 'H:i') {
+        return $this->getDateTimeObject('fecha')->format($formatF) . ' ' . substr($this->getHora(), 0, 5);
     }
-    
-    function getDescripcionAltaFechaHora($formatF='d/m/Y',$formatH='H:i')
-    {   
+
+    function getDescripcionAltaFechaHora($formatF = 'd/m/Y', $formatH = 'H:i') {
         return $this->getDateTimeObject('altaFecha')->format($formatF) . ' ' . substr($this->getHora(), 0, 5);
-
     }
-        
-    public function getEmpresa()
-    {
-        if($this->Afiliado->getEmpresa()==null)
+
+    public function getEmpresa() {
+
+        if ($this->Afiliado == "")
             return "Otro seguro";
-        else
-            return $this->Afiliado->getEmpresa();
+        else {
+            if ($this->Afiliado->getEmpresa() != "")
+                return $this->Afiliado->getEmpresa();
+            else
+                return "Otro seguro";
+        }
     }
 
-    public function getMatricula()
-    {
-        return $this->Afiliado->getMatricula();
+    public function getMatricula() {
+        if ($this->Afiliado == "") {
+            return "Sin matricula";
+        } else {
+            if ($this->Afiliado->getMatricula() != "")
+                return $this->Afiliado->getMatricula();
+            else
+                return "Sin matricula";
+        }
     }
-    
-    public function getUbicacion()
-    {
-        return 'Planta: '.$this->Cama->Pieza->Planta->getNombre().' Pieza: '.$this->Cama->Pieza->getNombre().' Cama: '.$this->Cama->getCodigo();
 
-    }       
-    
+    public function getUbicacion() {
+        return 'Planta: ' . $this->Cama->Pieza->Planta->getNombre() . ' Pieza: ' . $this->Cama->Pieza->getNombre() . ' Cama: ' . $this->Cama->getCodigo();
+    }
+
 }

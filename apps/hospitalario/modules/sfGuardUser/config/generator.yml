@@ -13,12 +13,20 @@ generator:
 
     config:
       fields:
-        password_again: { label: "Password (again)" }
-
+        password_again: {label: "Repetir password"}
+        username:       {label: "Usuario"}
+        email_address:  {label: "Correo electronico"}
+        is_active:      {label: "Esta activo"}
+        is_super_admin: {label: "Es super usuario"}
+        groups_list:    {label: "Lista de grupos"}
+        created_at:     {label: "Creado en"}
+        last_login:     {label: "Ultimo ingreso"}
       list:
         title:   Listado de Usuarios
-        display: [=username, created_at, updated_at, last_login]         
-        batch_actions: {}         
+        display: [username, nombre_completo, email_address, is_active, is_super_admin, created_at, last_login]         
+        batch_actions: {}
+      filter:
+        display: [username]
       form:
         class: sfGuardUserAdminForm
         display:

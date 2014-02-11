@@ -12,6 +12,7 @@
  */
 abstract class PluginsfGuardUser extends BasesfGuardUser
 {
+    public $objetoDatosPersona = null;
     protected
     $_groups = null,
     $_permissions = null,
@@ -37,6 +38,20 @@ abstract class PluginsfGuardUser extends BasesfGuardUser
         return trim($this->getFirstName().' '.$this->getLastName());
     }
 
+    function getObjetoDatosPersona() {
+        if ($this->objetoDatosPersona == null) {
+            $this->objetoDatosPersona = $this->getEsAfiliado() ? $this->getAfiliado() : $this->getPacienteOtroseguro();
+        }
+        return $this->objetoDatosPersona;
+    }
+
+    function getNombreCompleto() {
+        if ($this->objetoDatosPersona == null) {
+            $this->objetoDatosPersona = $this->getEsAfiliado() ? $this->getAfiliado() : $this->getPacienteOtroseguro();
+        }
+        return $this->objetoDatosPersona->getNombre() . ' ' . $this->objetoDatosPersona->getPaterno() . ' ' . $this->objetoDatosPersona->getMaterno();
+    }
+    
     /**
     * Sets the user password.
     *

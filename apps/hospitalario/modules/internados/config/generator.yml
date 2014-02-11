@@ -27,7 +27,7 @@ generator:
         actions: {}
         batch_actions: {}
       filter:  
-        display: [id]
+        display: [matricula, empresa, nombre, paterno, materno]
       form:    
         display:
           Datos Internado: [formulario_referencia, diagnostico, procedencia, medio_referencia, observaciones, fecha, hora, conducto, es_afiliado]

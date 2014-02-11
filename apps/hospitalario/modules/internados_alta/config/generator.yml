@@ -26,7 +26,7 @@ generator:
         object_actions:
           ver_historial: { label: Ver Historial, action: verHistorial, params: { onclick: 'return true;' } }
       filter:  
-        display: [cama_id]
+        display: [matricula, empresa, nombre, paterno, materno]
       form:    false
       edit:    false    
       new:     false
