@@ -11,7 +11,7 @@
         <script type="text/javascript" src="<?php echo public_path('js/dojo-1.9.1/dojo/dojo.js'); ?>" 
         data-dojo-config="has:{'dojo-firebug': true},parseOnLoad: true, async: 1" ></script>
         <script>
-            require(["dojo", 'dojo/hash', "dijit/layout/BorderContainer", "dijit/layout/TabContainer", "dijit/layout/ContentPane", 'dijit/Dialog', 'dijit/layout/SplitContainer', 'dijit/layout/AccordionContainer', 'dijit/MenuItem', 'dojox/encoding/crypto/Blowfish'],
+            require(["dojo", 'dojo/hash', "dijit/layout/BorderContainer", "dijit/layout/TabContainer", "dijit/layout/ContentPane", 'dijit/Dialog', 'dijit/layout/SplitContainer', 'dijit/layout/AccordionContainer', 'dijit/MenuItem', 'dojox/encoding/crypto/Blowfish', 'dijit/MenuBar'],
                     function() {
                         dojo.fadeOut({node: 'loading-page', onEnd: function(node) {
                                 node.style.display = 'none';
@@ -61,17 +61,29 @@
                                             </td>
                                             <td>
                                                 <?php echo $internado->Cama->getCodigo(); ?>
-                                            </td>
-                                            <td style="padding-left: 10px;">
-                                                <?php echo link_to(image_tag('inicio.png', 'alt=cps-inicio, title=Volver a la lista de internados'), 'internados/index') ?>
-                                            </td>
+                                            </td>                                            
                                         </tr>
                                     </tbody>                                    
                                     <tfoot>
                                         <tr>
-                                            <td colspan="6">                                                
-                                                <?php echo link_to_function('Ver internaciones previas', "dijit.byId('panel_historial').show();") ?>
-                                                <?php if (has_slot('actual_internado'))echo link_to('Ver Internacion actual', 'internados/visitar?id=' . get_slot('actual_internado'), array('onClick'=>"dojo.byId('loading-page').style.display='';dojo.fadeIn({node: 'loading-page'}).play();")) ?>
+                                            <td colspan="6">
+                                                <div data-dojo-type="dijit/MenuBar">
+                                                    <div data-dojo-type="dijit/MenuBarItem" style="background: url('<?php echo image_path('inicio.png') ?>') no-repeat;"
+                                                         data-dojo-props="onClick:function(){ window.location = '<?php echo url_for('internados/index') ?>'; },
+                                                         title:'Volver a la lista de internados'">
+                                                        &nbsp; &nbsp; &nbsp;
+                                                    </div>
+                                                    <div data-dojo-type="dijit/MenuBarItem"  
+                                                         data-dojo-props="label:'Ver internaciones previas',
+                                                         onClick:function(){ dijit.byId('panel_historial').show(); }" >
+                                                    </div>
+                                                    <?php if (has_slot('actual_internado')):?>
+                                                    <div data-dojo-type="dijit/MenuBarItem"                                         
+                                                         data-dojo-props="label:'Ver Internacion actual',
+                                                         onClick:function(){ dojo.byId('loading-page').style.display='';dojo.fadeIn({node: 'loading-page'}).play(); window.location = '<?php echo url_for('internados/visitar?id=' . get_slot('actual_internado')) ?>'; }" >                                                        
+                                                    </div>
+                                                    <?php endif ?>                                                    
+                                                </div>                                                
                                             </td>
                                         </tr>
                                     </tfoot>
