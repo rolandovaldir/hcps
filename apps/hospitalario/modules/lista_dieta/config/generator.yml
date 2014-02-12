@@ -33,7 +33,7 @@ generator:
       form:    
         display: [ fecha, dieta, diagnostico, observacion, created_at, updated_at ]
         actions:
-          _delete: { credentials: [noAlta, crear, enfermera] }
+#          _delete: { credentials: [noAlta, crear, enfermera] }
           _list:   ~
           _save:   { credentials: [noAlta, crear, enfermera] }
       edit:    

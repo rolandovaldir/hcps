@@ -35,7 +35,7 @@ generator:
         display: [fecha_nacimiento, ap_paterno, ap_materno]
       form:    
         actions:
-          _delete: { credentials: [noAlta, crear, enfermera] }
+#          _delete: { credentials: [noAlta, crear, enfermera] }
           _list:   ~
           _save:   { credentials: [noAlta, crear, enfermera] }
       edit:    

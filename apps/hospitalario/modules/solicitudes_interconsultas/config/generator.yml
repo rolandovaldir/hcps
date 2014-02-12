@@ -31,7 +31,7 @@ generator:
         display: [fecha_solicitud, dirigida_a]
       form:    
         actions:
-          _delete: { credentials: [noAlta, crear, medico] }
+#          _delete: { credentials: [noAlta, crear, medico] }
           _list:   ~
           _save:   { credentials: [noAlta, crear, medico] }
       edit:    

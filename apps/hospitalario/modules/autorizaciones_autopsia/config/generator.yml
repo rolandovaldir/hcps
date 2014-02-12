@@ -58,7 +58,7 @@ generator:
           ci_familiar2 :    { label: CI }
           ci_familiar3 :    { label: CI }
         actions:
-          _delete: { credentials: [noAlta, crear, enfermera] }
+#          _delete: { credentials: [noAlta, crear, enfermera] }
           _list:   ~
           _save:   { credentials: [noAlta, crear, enfermera] }
       edit:            
