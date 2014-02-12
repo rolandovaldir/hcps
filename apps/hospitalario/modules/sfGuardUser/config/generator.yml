@@ -30,8 +30,8 @@ generator:
       form:
         class: sfGuardUserAdminForm
         display:
-          "Usuario":           [ _form_listado_empleado, email_address, username, password, password_again]
-          "Permisos y grupos": [ is_active, is_super_admin, groups_list ]
+          "Usuario":           [_form_listado_empleado, email_address, username, password, password_again]
+          "Permisos y grupos": [is_active, is_super_admin, groups_list, planta_id]
         actions:
           _delete:  ~
           _list:    ~

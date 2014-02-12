@@ -1,0 +1,10 @@
+## YAML Template.
+---
+index:
+  credentials: [[enfermera, ver_todo_datos]]
+new:
+  credentials: [crear, enfermera]
+edit:
+  credentials: [[enfermera, ver_todo_datos]]
+delete: 
+  credentials: [crear, enfermera]

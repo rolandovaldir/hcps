@@ -11,39 +11,37 @@ generator:
     with_doctrine_route:   true
     actions_base_class:    sfActions
     extra_url_custom_id:   internado_id
-#    sfGuard_check_created_by: user_id
+    sfGuard_check_created_by: user_id
 
     config:
       actions: ~
       fields:  
-        medico_id:     {label: Medico Solicitante}
-        nombre_medico: {label: Medico Solicitante}
-        creator:       {label: Responsable}
-        fecha_junta:   {date_format: 'dd/MM/yyyy hh:mm' }
+        creator:     {label: Responsable}
+        fecha_junta: {date_format: 'dd/MM/yyyy hh:mm' }
       list:    
         title: Juntas Medicas
-        display: [fecha_junta, nombre_medico, diagnostico_establecido, conclusiones, creator]
+        display: [fecha_junta, medico_solicitante, diagnostico_establecido, conclusiones, creator]
         object_actions:  
-          _edit:        { credentials: [noAlta] }
-          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [Alta] }
-          _delete:      { credentials: [noAlta] }
+          _edit:        { credentials: [noAlta, crear, enfermera] }
+          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [[enfermera, ver_todo_datos], alta] }
+          _delete:      { credentials: [noAlta, crear, enfermera] }
         actions: {}
         batch_actions: {}
       filter:  
-        display: [fecha_junta, medico_id]
+        display: [fecha_junta, medico_solicitante]
       form:            
         actions:
-#          _delete: { credentials: [noAlta] }
+          _delete: { credentials: [noAlta, crear, medico] }
           _list:   ~
-          _save:   { credentials: [noAlta] }
+          _save:   { credentials: [noAlta, crear, medico] }
       edit:    
         title: Editar Junta Médica        
         display:
-          Datos de la Junta Médica:       [fecha_junta, medico_id, servicio, especialidades, diagnostico_establecido, relacion_junta, conclusiones, tac, contraste]
+          Datos de la Junta Médica:       [fecha_junta, medico_solicitante, servicio, especialidades, diagnostico_establecido, relacion_junta, conclusiones, tac, contraste]
           Lista de Médicos Participantes: [_medicos_participantes]
           Adicionar Médico Participante:  [medico]        
       new:     
         title: Nueva Junta Médica
         display:
-          Datos de la Junta Médica:      [fecha_junta, medico_id, servicio, especialidades, diagnostico_establecido, relacion_junta, conclusiones, tac, contraste]
-          Adicionar Médico Participante: [medico]            
+          Datos de la Junta Médica:      [fecha_junta, medico_solicitante, servicio, especialidades, diagnostico_establecido, relacion_junta, conclusiones, tac, contraste]
+          Adicionar Médico Participante: [medico]   

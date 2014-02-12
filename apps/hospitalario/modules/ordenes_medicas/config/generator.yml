@@ -11,38 +11,37 @@ generator:
     with_doctrine_route:   true
     actions_base_class:    sfActions
     extra_url_custom_id:   internado_id
-#    sfGuard_check_created_by: user_id
+    sfGuard_check_created_by: user_id
 
     config:
       actions: ~
       fields:  
-        nombre_medicamento:    {label: 'Nombre del Medicamento'}
-        indicacion:            {label: 'Indicación'}
-        via_administracion_id: {label: 'Via de Administración'}
-        dosis_intervalo:       {label: 'Dosis - Intérvalo'}
-        fecha_inicio:          {label: 'Inicio', date_format: 'dd/MM/yyyy'}
-        fecha_terminacion:     {label: 'Terminación', date_format: 'dd/MM/yyyy'}
-        created_at:            {label: 'Fecha', date_format: 'dd/MM/yyyy'}
-        creator:               {label: 'Responsable'}
+        nombre_medicamento_indicacion: {label: 'Nombre del Medicamento o Indicación'}
+        via_administracion_id:         {label: 'Via de Administración'}
+        dosis_intervalo:               {label: 'Dosis - Intérvalo'}
+        fecha_inicio:                  {label: 'Inicio', date_format: 'dd/MM/yyyy'}
+        fecha_terminacion:             {label: 'Terminación', date_format: 'dd/MM/yyyy'}
+        created_at:                    {label: 'Fecha', date_format: 'dd/MM/yyyy'}
+        creator:                       {label: 'Responsable'}
       list:    
         title: Ordenes Médicas
-        display: [fecha_hora, nombre_medicamento, indicacion, dosis_intervalo, creator]
+        display: [created_at, nombre_medicamento_indicacion, dosis_intervalo, fecha_inicio, fecha_terminacion, creator]
         object_actions:  
-          _edit:        { credentials: [noAlta] }
-          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [Alta] }
-          _delete:      { credentials: [noAlta] }
+          _edit:        { credentials: [noAlta, crear, medico] }
+          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [[medico, ver_todo_datos], alta] }
+          _delete:      { credentials: [noAlta, crear, medico] }
         actions: {}
         batch_actions: {}
       filter:  
         display: [fecha_inicio, fecha_terminacion]
       form:    
         display:
-          Orden Médica: [fecha_hora, nombre_medicamento, indicacion, dosis_intervalo, via_administracion_id, fecha_inicio, fecha_terminacion]
+          Orden Médica: [fecha_hora, nombre_medicamento_indicacion, dosis_intervalo, via_administracion_id, fecha_inicio, fecha_terminacion]
         actions:
-#          _delete: { credentials: [noAlta] }
+          _delete: { credentials: [noAlta, crear, medico] }
           _list:   ~
-          _save:   { credentials: [noAlta] }
+          _save:   { credentials: [noAlta, crear, medico] }
       edit:    
         title: Editar Orden Médica        
       new:     
-        title: Nueva Orden Médica                
+        title: Nueva Orden Médica    

@@ -11,7 +11,7 @@ generator:
     with_doctrine_route:   true
     actions_base_class:    sfActions
     extra_url_custom_id:   internado_id
-#    sfGuard_check_created_by: user_id
+    sfGuard_check_created_by: user_id
 
     config:
       actions: ~
@@ -22,9 +22,9 @@ generator:
         title: Notas de Enfermeria
         display: [fecha, hora, procedimientos, observaciones, creator]
         object_actions:  
-          _edit:        { credentials: [noAlta] }
-          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [Alta] }
-          _delete:      { credentials: [noAlta] }
+          _edit:        { credentials: [noHistory] }
+          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [siHistory] }
+          _delete:      { credentials: [noHistory] }
         actions: {}
         batch_actions: {}
       filter:  
@@ -33,10 +33,10 @@ generator:
         display:
           S.O.P.E. Sujeto - Objetivo - Plan - Evaluación: [fecha, hora, procedimientos, observaciones]
         actions:
-#          _delete: { credentials: [noAlta] }
+          _delete: { credentials: [noAlta, crear, enfermera] }
           _list:   ~
-          _save:   { credentials: [noAlta] }        
+          _save:   { credentials: [noAlta, crear, enfermera] }        
       edit:
         title: Editar Nota de Enfermeria        
       new:     
-        title: Nueva Nota de Enfermería        
+        title: Nueva Nota de Enfermería

@@ -11,7 +11,7 @@ generator:
     with_doctrine_route:   true
     actions_base_class:    sfActions
     extra_url_custom_id:   internado_id
-#    sfGuard_check_created_by: user_id
+    sfGuard_check_created_by: user_id
 
     config:
       actions: ~
@@ -35,9 +35,9 @@ generator:
         title:   Listado Solicitud de Tranfusiones sanguineas
         display: [ fecha_solicitud, hora_solicitud, cantidad_requerida, cantidad_requerida_unidad, observaciones, grupo_sanguineo_receptor, hr_receptor, creator]        
         object_actions:  
-          _edit:        { credentials: [noAlta] }
-          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [Alta] }
-          _delete:      { credentials: [noAlta] }
+          _edit:        { credentials: [noAlta, crear, enfermera] }
+          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [[enfermera, ver_todo_datos], alta] }
+          _delete:      { credentials: [noAlta, crear, enfermera] }
         actions: {}
         batch_actions: {}
       filter: 
@@ -48,10 +48,10 @@ generator:
           "DIAGNOSTICO:": [ requiere_transfusion_de, cumplirse_enforma ]          
           "TRATAMIENTO AMBULATORIO": [fecha_prog_quirurgica, hora_prog_quirurgica, quirofano_prog_quirurgica, cantidad_requerida, cantidad_requerida_unidad, observaciones, fecha_solicitud, hora_solicitud, numero, fecha_recepcion_solicitud, bolsa_compatible1, bolsa_compatible2, bolsa_compatible3, bolsa_compatible4, bolsa_compatible5, grupo_sanguineo_receptor, hr_receptor, anticuerpos_irreg, nombre_res_bancosangre ]          
         actions:
-#          _delete: { credentials: [noAlta] }
+          _delete: { credentials: [noAlta, crear, enfermera] }
           _list:   ~
-          _save:   { credentials: [noAlta] }
+          _save:   { credentials: [noAlta, crear, enfermera] }
       edit:            
         title: Edición Solicitud de Tranfusiones sanguineas
       new:        
-        title: Nueva Solicitud de Tranfusiones sanguineas        
+        title: Nueva Solicitud de Tranfusiones sanguineas          
