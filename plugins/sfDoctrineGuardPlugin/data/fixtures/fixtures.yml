@@ -11,12 +11,16 @@ sfGuardUser:
     is_super_admin: false    
     tipo:           m
     empleado_id:    1
+    planta_id:      1
     Groups:         [Group_medico_asistencial]
   User2:  
     email_address:  doc2@example.com
     username:       doc2
     password:       doc2
     is_super_admin: false    
+    tipo:           m
+    empleado_id:    2
+    planta_id:      3
     Groups:         [Group_medico_asistencial]  
   User3:
     email_address:  enf1@example.com
@@ -25,12 +29,16 @@ sfGuardUser:
     is_super_admin: false
     tipo:           e
     empleado_id:    1
+    planta_id:      2
     Groups:         [Group_enfermera]
   User4:
     email_address:  enf2@example.com
     username:       enf2
     password:       enf2
     is_super_admin: false
+    tipo:           e
+    empleado_id:    2
+    planta_id:      1
     Groups:         [Group_enfermera]  
 
 sfGuardPermission:
@@ -85,6 +93,9 @@ sfGuardGroupPermission:
   RelationGP4:
     Group:       Group_medico_asistencial
     Permission:  Permission_ver_historial  
+  RelationGP5:
+    Group:       Group_medico_asistencial
+    Permission:  Permission_ver_toda_area
   RelationGP6:
     Group:       Group_enfermera
     Permission:  Permission_enfermera
