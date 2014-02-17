@@ -5,7 +5,7 @@
 <h2>PROGRAMACIÓN PARA CIRUGÍAS</h2>
 
 
-<table cellspacing="0" cellpadding="1" border="1">
+<table cellspacing="0" cellpadding="2" border="1">
     <tbody>
         <tr>
             <td class="info-paciente"></td>  

@@ -1,0 +1,533 @@
+/* 
+    Document   : formulario_medico_pdf
+    Created on : 15-feb-2014, 17:49:49
+    Author     : mario
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+
+table {
+    /*border: 1px solid #000;*/
+    
+}
+
+table td, table th{
+    /*border: 2px solid #000;*/
+    /*font-size: 9pt;*/
+}
+
+
+/* form apgar // FORM 1*/
+.tbl-apgar td,
+.tbl-apgar th{
+    border: 1px solid #000;
+    font-size: 7pt;
+}
+
+/*.tbl-info-apgar td,
+.tbl-info-apgar th{
+    border: 1px solid #000;
+}*/
+
+.tbl-info-apgar {
+    font-size: 7pt !important;
+}
+
+.tbl-info-apgar td{
+    height: 80px;
+    border: 1px solid #000;
+}
+
+
+.apgar-nombre-col {
+    width: 470px;
+}
+
+.apgar-nombre-col {
+    font-size: 7pt !important;
+    width: 500px;
+    height: 130px;
+}
+
+.apgar-nombre-col-th {
+    font-size: 9pt;
+    width: 500px;
+}
+
+.tbl-info {
+    font-size: 9pt !important;
+}
+.tbl-info td{
+    border: 1px solid #000;
+}
+
+.apgar-exm-nacer, .apgar-exm-egresar {
+    width: 770px;
+    font-size: 10pt;
+    text-align: center;
+}
+
+.tbl-firmas td{ 
+    border: 1px solid #000;
+}
+.tbl-firmas {
+    font-size: 9pt;
+    text-align: center;
+}
+.tbl-firmas .rubrica{
+    height: 250px;
+}
+.apgar-leyenda-pie{
+    font-size: 7pt;
+}
+
+/* FORM PROCESO DE ATENCION DE ENFERMERIA // FORM 2*/
+.div-aten-enfermeria {
+    font-size: 8pt;
+}
+.div-aten-enfermeria h1 {
+    font-size: 12pt;
+    text-align: center;
+}
+
+.tbl-datos th,
+.tbl-datos td { 
+    border: 1px solid #000;
+}
+.tbl-datos .titulo {
+    width: 350px;
+    height: 60px;
+}
+.tbl-datos .detalle {
+    width: 670px;
+}
+
+.tbl-info-medico th{
+    width: 430px;
+    height: 60px;
+    border: 1px solid #000;
+}
+
+.tbl-info-medico td{
+    width: 1610px;
+    border: 1px solid #000;
+}
+
+.tbl-ingreso td {
+    border: 1px solid #000;
+}
+.tbl-ingreso .titulo-1 {
+    width: 350px;
+    height: 60px;
+}
+.tbl-ingreso .titulo-2 {
+    width: 150px;
+    height: 60px;
+}
+.tbl-ingreso .titulo-3 {
+    width: 340px;
+    height: 60px;
+}
+.tbl-ingreso .des-3 {
+    width: 690px;
+    height: 60px;
+}
+.tbl-ingreso .titulo-4 {
+    width: 200px;
+    height: 60px;
+}
+.tbl-ingreso .des-4 {
+    width: 260px;
+    height: 60px;
+}
+.tbl-ingreso .checks {
+    /*width: 200px;*/
+    height: 250px;
+}
+.titulo-seccion {
+    height: 70px;
+}
+
+.tbl-head-contenido td{
+    height: 50px;
+    border: 1px solid #000;
+}
+
+.tbl-body-contenido td{
+    height: 50px;
+    border: 1px solid #000;
+}
+.tbl-body-contenido .title-col-1{
+    width: 700px;
+}
+.tbl-body-contenido .title-col-2,
+.tbl-body-contenido .title-col-3{
+    width: 150px;
+}
+.tbl-body-contenido .title-col-4{
+    width: 1040px;
+}
+
+.tbl-head-contenido .title-col-1{
+    width: 700px;
+}
+.tbl-head-contenido .title-col-2{
+    width: 300px;
+}
+.tbl-head-contenido .title-col-3{
+    width: 1040px;
+    text-align: center;
+}
+
+/*AUTORIZACIÓN LEGAL CON CONSENTIMIENTO INFORMADO form 3*/
+.autorizacion p {
+    font-size: 9pt;
+    text-align: justify;
+}
+
+.autori-titulo {
+    font-size: 11pt;
+    text-align: center;
+    border-bottom: 2px solid #000;
+    border-top: 2px solid #000;
+}
+
+.aut-info-paciente .box-border {
+    border: 1px solid #000;
+}
+
+.aut-info-paciente td{
+    font-size: 9pt;
+    height: 60px;
+}
+
+.aut-diagnostico td{
+    font-size: 9pt;
+    height: 80px;
+}
+
+.aut-diagnostico .col-1 {
+    width: 400px;
+}
+
+.aut-diagnostico .border-col {
+    border-top: 2px solid #000;
+    text-align: center;
+}
+
+.tbl-autopsia th {
+    font-size: 8pt;
+}
+
+.tbl-autopsia td {
+    border-top: 1px dotted #000;
+}
+
+.tbl-autopsia-nombre {
+    width: 550px;
+}
+
+.tbl-autopsia-tipo {
+    width: 450px;
+}
+
+.tbl-autopsia-firma {
+    width: 450px;
+}
+.tbl-autopsia-ci {
+    width: 450px;
+}
+
+
+.tbl-autopsia-blank {
+    width: 50px;
+}
+
+/* PROGRAMACION PARA CIRUGIAS - FORM4 */
+.progra-cirugia td {
+    text-align: center;
+    font-size: 7pt;
+    border: 1px solid #000;
+    height: 60px;
+}
+
+.tbl-progra-content td {
+    border: 1px solid #000;
+    font-size: 9pt;
+    height: 60px;
+}
+
+.tbl-progra-content th {
+    border: 1px solid #000;
+    font-size: 9pt;
+}
+
+.tbl-progra-content .medico-cirujano,
+.tbl-progra-content .adm-clinica {
+    text-align: center;
+}
+
+.tbl-progra-content .rubrica {
+    height: 260px;
+}
+
+/* INFORME ESTADISTICO DE ADMISION Y EGRESO // FORM 5*/
+.info-datos td {
+    border: 1px solid #000;
+    font-size: 9pt;
+    height: 60px;
+}
+.info-datos .diagno-ingreso {
+    height: 120px;
+}
+.info-datos .rubrica {
+    height: 140px;
+}
+.h1-titulo{
+    font-size: 9pt;
+}
+
+/* USO HOSPITALARIO // form 6*/
+.uso-hosp td{
+    border: 1px solid #000;
+    font-size: 9pt;
+    height: 60px;
+}
+
+.uso-hosp-datos td{
+    font-size: 9pt;
+    height: 60px;
+}
+
+.uso-hosp-info-empresa td {
+    font-size: 9pt;
+    height: 60px;
+    border: 1px solid #000;
+}
+.uso-hosp-info-prescripcion th {
+    font-size: 9pt;
+    height: 60px;
+    border: 1px solid #000;
+    text-align: center;
+}
+.uso-hosp-info-prescripcion td {
+    font-size: 9pt;
+    height: 60px;
+    border: 1px solid #000;
+}
+.uso-hosp-datos-medico th {
+    font-size: 9pt;
+    height: 60px;
+    width: 250px;
+}
+.uso-hosp-datos-medico td {
+    font-size: 9pt;
+    height: 60px;
+    border-bottom: 1px solid #000;
+}
+.uso-hosp-datos-medico .medico {
+    width: 1030px;
+}
+.uso-hosp-firma td {
+    height: 200px;
+}
+
+.uso-hosp-firma .rubrica {
+    border-top: 1px dotted #000;
+    text-align: center;
+}
+
+/* JUNTA MEDICA // FORM 7 */
+.junta-medica-paciente th {
+    font-size: 9pt;
+    height: 60px;
+    /*width: 350px;*/
+}
+.junta-medica-paciente td {
+    font-size: 9pt;
+    height: 60px;
+    border-bottom: 1px dotted #000;
+}
+.junta-medica-paciente {
+    border: 1px solid #000;
+}
+
+.junta-medica-medico-soli th {
+    font-size: 9pt;
+    height: 60px;
+    width: 310px;
+}
+.junta-medica-medico-soli td {
+    font-size: 9pt;
+    height: 60px;
+    border-bottom: 1px dotted #000;
+    width: 705px;
+}
+
+.junta-medica-titulo-seccion {
+    font-size: 10pt;
+    height: 60px;
+}
+
+.junta-medica-particulares th {
+    font-size: 9pt;
+    height: 60px;
+    width: 50px;
+}
+.junta-medica-particulares td {
+    font-size: 9pt;
+    height: 60px;
+    border-bottom: 1px dotted #000;
+    width: 970px;
+}
+.diagnostico {
+    border: 1px dotted #000;
+}
+.diagnostico td{
+    height: 150px;
+}
+.relacion {
+    border: 1px dotted #000;
+}
+.relacion td{
+    height: 350px;
+}
+.conclusion {
+    border: 1px dotted #000;
+}
+.conclusion td{
+    height: 250px;
+}
+
+.requiere {
+    font-size: 9pt;
+    height: 60px;
+}
+
+/* SOLICITUD DE REPOSICION DE MATERIALES*/
+.solic-material-datos th{
+    font-size: 9pt;
+    height: 60px;
+    width: 600px;
+    text-align: right;
+}
+.solic-material-datos td{
+    font-size: 9pt;
+    height: 60px;
+    border-bottom:  1px dotted #000;
+    width: 1500px;
+}
+.solic-material-tbl th{
+    font-size: 7pt;
+    height: 60px;
+    border: 1px solid #000;
+    text-align: center;
+}
+.solic-material-tbl td{
+    font-size: 7pt;
+    height: 60px;
+    border: 1px solid #000;
+}
+.solic-material-tbl .codigo {
+    width: 200px;
+}
+.solic-material-tbl .descripcion {
+    width: 900px;
+}
+.solic-material-tbl .col-generica {
+    width: 250px;
+}
+.uso-hosp-firma-materiales td {
+    font-size: 7pt;
+    height: 200px;
+}
+
+.uso-hosp-firma-materiales .rubrica {
+    border-top: 1px dotted #000;
+    text-align: center;
+    font-size: 8pt;
+}
+
+/*SOLICITUD DE TRANSFUCION SANGUINEA // FORM 9*/
+h1.soli-trans-sanguinea-h1 {
+    border-bottom: 1px solid #000;
+    border-top: 1px solid #000;
+    text-align: center;
+    font-size: 12pt;
+}
+h2.soli-trans-sanguinea-h2 {
+    text-align: left;
+    font-size: 9pt;
+}
+.soli-trans-paciente th{
+    font-size: 7pt;
+    width: 210px;
+    height: 60px;
+}
+.soli-trans-paciente td{
+    border-bottom: 1px solid #000;
+    width: 470px;
+    font-size: 7pt;
+    height: 60px;
+}
+.soli-trans-requiere th{
+    font-size: 7pt;
+    width: 295px;
+    height: 60px;
+}
+.soli-trans-requiere td{
+    border-bottom: 1px solid #000;
+    font-size: 7pt;
+    height: 60px;
+    /*width: 215px;*/
+}
+.soli-trans-requiere .blank-1{
+    width: 90px;
+}
+.soli-trans-requiere .blank-2{
+    width: 1060px;
+}
+.soli-trans-cumplir th{
+    font-size: 7pt;
+    height: 60px;
+}
+.soli-trans-cumplir td{
+    border-bottom: 1px solid #000;
+    font-size: 7pt;
+    height: 60px;
+    /*width: 215px;*/
+}
+.border-top {
+    border-top: 1px solid #000;
+}
+.soli-trans-progra{
+    border-top: 1px solid #000;
+}
+.soli-trans-progra th{
+    font-size: 7pt;
+    height: 60px;
+}
+.soli-trans-progra td{
+    border-bottom: 1px solid #000;
+    font-size: 7pt;
+    height: 60px;
+    /*width: 215px;*/
+}
+.llamado-donacion {
+    font-size: 9pt;
+    border-top: 4px solid #000;
+}
+.pie-blank {
+    width: 600px;
+}
+
+/*HOJA PARA SOLICITUD DE INTERCONSULTA // FORM 10*/
+.intercon-paciente th {
+    font-size: 9pt;
+    /*border-top: 4px solid #000;*/
+}
+.intercon-paciente td {
+    font-size: 9pt;
+    border-bottom: 1px solid #000;
+}

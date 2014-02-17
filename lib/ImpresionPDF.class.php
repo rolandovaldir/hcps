@@ -2,15 +2,49 @@
 
 class ImpresionPDF extends TCPDF 
 {
-    //Page header
-    public function Header() {
-        // Logo
-        $image_file = K_PATH_IMAGES.'cps/logo-cps.png';
-        $this->Image($image_file, 10, 10, 15, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false);
-        // Set font
-        $this->SetFont('helvetica', 'B', 20);
-        // Title
-        $this->Cell(0, 15, 'Caja Petrolera de Salud', 0, false, 'C', 0, '', 0, false, 'M', 'M');
+    protected $titulo_form;
+    protected $codigo_form;
+    protected $font_size_titulo;
+    
+    public function setTituloForm($titulo = 'Formulario') {
+        $this->titulo_form = $titulo;
+    }
+    
+    public function setCodigoForm($titulo = '') {
+        $this->codigo_form = $titulo;
+    }
+    
+    public function setFontSizeTituloForm($size = '16') {
+        $this->font_size_titulo = $size;
+    }
+    
+    public function Header()
+    {
+        
+        //$user = sfContext::getInstance()->getUser();
+        
+        $img = K_PATH_IMAGES.'logo-fonfo-blanco.png';
+        $this->Image($img, 10, 8, 21, '', 'PNG', '', 'T', false, true, '', false, false, 0, false, false, false);
+        
+        // Caja Petrolera
+        $this->SetFont('helvetica', 'N', 15);
+        $this->MultiCell(60, 0, 'Caja Petrolera de Salud', 0, 'L', 0, 0, 35, 8, true);
+        
+        // Codigo formulario
+        $this->SetFont('helvetica', 'N', 15);
+        $this->MultiCell(50, 0, $this->codigo_form, 1, 'R', 0, 0, 150, 8, true);
+        
+        // Sistema Informático Hospitalario
+        $this->SetFont('helvetica', 'N', 11);
+        $this->MultiCell(60, 0, 'Sistema Informático Hospitalario', 0, 'L', 0, 0, 35, 14, true);
+        
+        // Sistema Informático Hospitalario
+        $this->SetFont('helvetica', 'N', $this->font_size_titulo);
+        $this->MultiCell(165, 0, $this->titulo_form, 'B', 'L', 0, 0, 35, 21, true);
+        
+        //$this->MultiCell(50, 0, 'Regional '.$user->getAttribute('regional_nombre'), 0, 'R', 0, 0, 145, 8, true);
+        
+        //$this->Cell(89, 10, "Sistema de activos fijos", 0, 1,'C'); 
         
     }
 }

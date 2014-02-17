@@ -26,7 +26,7 @@ generator:
           _edit:        {credentials: [noHistory]}
           _delete:      {credentials: [noHistory]}
           ver_detalle:  {label: Ver detalle, action: edit, credentials: [siHistory]}
-          ver_form:     {label: Ver fomulario, action: verForm}
+          ver_form:     {label: Información, action: verForm}
         actions: {}
         batch_actions: {}
       filter:

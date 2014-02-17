@@ -12,7 +12,7 @@ default:
   K_PATH_FONTS:
   K_PATH_CACHE:
   K_PATH_URL_CACHE:
-  K_PATH_IMAGES:
+  K_PATH_IMAGES: '<?php echo sfConfig::get('sf_root_dir'); ?>/web/images/cps/'
   K_BLANK_IMAGE:
 
   # Other parameters  ##########################################################
