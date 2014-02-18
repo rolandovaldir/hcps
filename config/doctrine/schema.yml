@@ -565,7 +565,7 @@ TipoExamenLaboratorioClinico:
 
 # guillermo
 AdministracionMedicamento:
-  actAs: [Timestampable, Signable]  
+  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 50, name: motivo_anulacion}}
   columns:     
     internado_id:               { type: integer, notnull: true }
     enfermera_id:               { type: integer }

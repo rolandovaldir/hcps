@@ -12,6 +12,7 @@ generator:
     actions_base_class:    sfActions
     extra_url_custom_id:   internado_id
     sfGuard_check_created_by: user_id
+    AnulableField: 'MotivoAnulacion'
 
     config:
       actions: ~
@@ -26,9 +27,9 @@ generator:
         title: Listado Administracion de Medicamentos
         display: [ fecha, horario, medicamento_solucion, descripcion_tipo, creator ]
         object_actions:  
-          _edit:        { credentials: [noAlta, crear, enfermera] }
-          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [[enfermera, ver_todo_datos], Alta] }
-          _delete:      { credentials: [noAlta, crear, enfermera] }
+#          _edit:        { credentials: [noAlta, crear, enfermera] }
+          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [[enfermera, ver_todo_datos]] }
+          _delete:      { credentials: [noAlta, crear, enfermera], onClickJsFunction: "dijit.byId('panel_anular').iniciar", AnulableField: 'MotivoAnulacion' }
         actions: {}
         batch_actions: {}        
       filter: 
@@ -38,8 +39,11 @@ generator:
         actions:
 #          _delete: { credentials: [noAlta] }
           _list:   ~
-          _save:   { credentials: [noAlta] }
+#          _save:   { credentials: [noAlta] }
       edit:    
         title: Edición Administracion de Medicamentos        
-      new:        
-        title: Nueva Administracion de Medicamentos 
+      new:
+        title: Nueva Administracion de Medicamentos
+        actions:
+          _list:   ~
+          _save:   ~

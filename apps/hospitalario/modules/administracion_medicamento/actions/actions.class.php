@@ -49,7 +49,7 @@ class administracion_medicamentoActions extends autoAdministracion_medicamentoAc
         
     public function postExecute()
     {
-        if ($this->getUser()->hasCredential('Alta') && is_object($this->form)){            
+        if (is_object($this->form) && !$this->form->getObject()->isNew()){            
             $this->form->disableAllWidgets();
         }        
         parent::postExecute();        

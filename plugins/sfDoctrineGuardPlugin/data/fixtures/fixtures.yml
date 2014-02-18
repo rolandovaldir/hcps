@@ -11,7 +11,7 @@ sfGuardUser:
     is_super_admin: false    
     tipo:           m
     empleado_id:    1
-    planta_id:      1
+    Planta:         planta1
     Groups:         [Group_medico_asistencial]
   User2:  
     email_address:  doc2@example.com
@@ -20,7 +20,7 @@ sfGuardUser:
     is_super_admin: false    
     tipo:           m
     empleado_id:    2
-    planta_id:      3
+    Planta:         planta3
     Groups:         [Group_medico_asistencial]  
   User3:
     email_address:  enf1@example.com
@@ -29,7 +29,7 @@ sfGuardUser:
     is_super_admin: false
     tipo:           e
     empleado_id:    1
-    planta_id:      2
+    Planta:         planta1
     Groups:         [Group_enfermera]
   User4:
     email_address:  enf2@example.com
@@ -38,7 +38,7 @@ sfGuardUser:
     is_super_admin: false
     tipo:           e
     empleado_id:    2
-    planta_id:      1
+    Planta:         planta3
     Groups:         [Group_enfermera]  
 
 sfGuardPermission:

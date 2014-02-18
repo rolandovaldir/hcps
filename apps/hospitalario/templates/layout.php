@@ -215,6 +215,32 @@
             <div class="dijitDialogPaneActionBar" >
                 <button data-dojo-type="dijit/form/Button" data-dojo-props="label:'Cerrar',type: 'submit'" ></button>
             </div>
-        </div>        
+        </div>
+        <div id="panel_anular" data-dojo-type="dijit/Dialog" data-dojo-props="title: 'Anulación de registro',
+             execute:function(ff){ var co = dijit.byId('dojotheme-maincontainer');
+                 var val = dojo.query('textarea',this.get('containerNode'))[0].value; 
+                 dojo.xhrPost({url:this._hcpAction, postData: this._hcpData + '&motivo_anulacion=' + val,
+                     load:function(data){ co.set('content',data); },error: function(error){ co.set('content',error);} });
+                 co.set('content',co.loadingMessage);
+             }"  >
+            <div class="dijitDialogPaneContentArea">
+                <br/>Debe de indicar el motivo de la anulacion de este registro!!<br/><br/>
+                <textarea name="motivo_anulacion"></textarea><br/><br/>
+            </div>
+            
+            <div class="dijitDialogPaneActionBar" >
+                <button data-dojo-type="dijit/form/Button" data-dojo-props="label:'Anular Registro',type: 'submit'" ></button>
+                <button data-dojo-type="dijit/form/Button" 
+                        data-dojo-props="label:'Cancelar',onClick: function(){ dijit.byId('panel_anular').hide(); }" ></button>
+            </div>
+            <script type="dojo/method">
+                this.iniciar = function (url, data){
+                    dojo.query('textarea',this.get('containerNode'))[0].value = '';
+                    this.show();
+                    this._hcpAction = url;
+                    this._hcpData = data;
+                };                
+            </script>
+        </div>
     </body>   
 </html>

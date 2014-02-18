@@ -31,7 +31,14 @@
       </tfoot>
       <tbody>
         [?php foreach ($pager->getResults() as $i => $<?php echo $this->getSingularName() ?>): $odd = fmod(++$i, 2) ? 'odd' : 'even' ?]
-          <tr class="sf_admin_row [?php echo $odd ?]">
+        <?php 
+            $aux_attib1 = '';
+            if (array_key_exists('AnulableField', $this->params)){ 
+                $aux_attib1 = '[?php if ($' . $this->getSingularName() . '->get' . $this->params['AnulableField'] . "() !== null)" . 
+                    " { echo 'style=\"color:red;\" title=\"Eliminado: ' . $" . $this->getSingularName() . "->get" . $this->params['AnulableField'] . "() . '\"'; } ?] \n";                 
+            }
+        ?>      
+          <tr class="sf_admin_row [?php echo $odd ?]" <?php echo $aux_attib1?> >
 <?php if ($this->configuration->getValue('list.batch_actions')): ?>
             [?php include_partial('<?php echo $this->getModuleName() ?>/list_td_batch_actions', array('<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>, 'helper' => $helper)) ?]
 <?php endif; ?>
