@@ -25,6 +25,7 @@ abstract class BaseInformeEstadisticoAdmEgresoForm extends BaseFormDoctrine
       'updated_at'               => new myWidgetFormDojoDateTime(),
       'created_by'               => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Creator'), 'add_empty' => true)),
       'updated_by'               => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Updator'), 'add_empty' => true)),
+      'motivo_anulacion'         => new sfWidgetFormTextarea(),
     ));
 
     $this->setValidators(array(
@@ -38,6 +39,7 @@ abstract class BaseInformeEstadisticoAdmEgresoForm extends BaseFormDoctrine
       'updated_at'               => new myValidatorDojoDateTime(),
       'created_by'               => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Creator'), 'required' => false)),
       'updated_by'               => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Updator'), 'required' => false)),
+      'motivo_anulacion'         => new sfValidatorString(array('max_length' => 200, 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('informe_estadistico_adm_egreso[%s]');

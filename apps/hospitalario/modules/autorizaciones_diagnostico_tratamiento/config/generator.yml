@@ -12,6 +12,7 @@ generator:
     actions_base_class:    sfActions
     extra_url_custom_id:   internado_id
     sfGuard_check_created_by: user_id
+    AnulableField:         MotivoAnulacion
 
     config:
       actions: ~
@@ -27,9 +28,9 @@ generator:
         title: Listado Autorizacion Diagnostico Tratamiento
         display: [ fecha_hora, nombre_familiar, ci_familiar, creator]
         object_actions:  
-          _edit:        { credentials: [noAlta, crear, enfermera] }
-          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [[enfermera, ver_todo_datos], alta] }
-          _delete:      { credentials: [noAlta, crear, enfermera] }
+#          _edit:        { credentials: [noAlta, crear, enfermera] }
+          ver_detalle:  {label: Ver Detalle, action: edit, credentials: [[enfermera, ver_todo_datos]] }
+          _delete:      {label: Anular, credentials: [noAlta, crear, enfermera], onClickJsFunction: "dijit.byId('panel_anular').iniciar", AnulableField: 'MotivoAnulacion' }
           imprimir:     {label: Imprimir, action: exportPdf, params: { onclick: "var w=window.open(this.href,'popupWindow','width=900,height=700,left=320,top=100,scrollbars=yes,menubar=no,resizable=no');w.focus();return false;" } }
         actions: {}
         batch_actions: {}          
@@ -40,8 +41,11 @@ generator:
         actions:
 #          _delete: { credentials: [noAlta, crear, enfermera] }
           _list:   ~
-          _save:   { credentials: [noAlta, crear, enfermera] }
+#          _save:   { credentials: [noAlta, crear, enfermera] }
       edit:    
         title: Edición Autorizacion Diagnostico Tratamiento
       new:        
         title: Nueva Autorizacion Diagnostico Tratamiento
+        actions:
+          _list:   ~
+          _save:   ~

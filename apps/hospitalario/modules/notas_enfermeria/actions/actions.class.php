@@ -50,18 +50,19 @@ class notas_enfermeriaActions extends autoNotas_enfermeriaActions
         
     public function postExecute()
     {
-        if ($this->getUser()->hasCredential('Alta') && is_object($this->form)){            
+        if (is_object($this->form) && !$this->form->getObject()->isNew()){
             $this->form->disableAllWidgets();
         }        
         parent::postExecute();        
     }
     
-    public function executeNew(sfWebRequest $request)
+    protected function processForm(sfWebRequest $request, sfForm $form)
     {
-        $this->form = $this->configuration->getForm();
-        $this->notas_enfermeria = $this->form->getObject();
-        $internado = $this->getUser()->getAttribute('internado');
-        $this->form->setDefault('internado_id', $internado->getId());
+        if(!$form->getObject()->isNew()){ exit(); }
+        $vals = $request->getParameter($form->getName());                
+        $vals['internado_id'] = $request->getParameter('internado_id');        
+        $request->setParameter($form->getName(),$vals);
+        parent::processForm($request, $form);
     }
     
     protected function getFilters()

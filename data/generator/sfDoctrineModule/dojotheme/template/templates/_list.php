@@ -35,7 +35,7 @@
             $aux_attib1 = '';
             if (array_key_exists('AnulableField', $this->params)){ 
                 $aux_attib1 = '[?php if ($' . $this->getSingularName() . '->get' . $this->params['AnulableField'] . "() !== null)" . 
-                    " { echo 'style=\"color:red;\" title=\"Eliminado: ' . $" . $this->getSingularName() . "->get" . $this->params['AnulableField'] . "() . '\"'; } ?] \n";                 
+                    " { echo 'style=\"color:red;\" title=\"Anulado: ' . $" . $this->getSingularName() . "->get" . $this->params['AnulableField'] . "() . '\"'; } ?] \n";                 
             }
         ?>      
           <tr class="sf_admin_row [?php echo $odd ?]" <?php echo $aux_attib1?> >

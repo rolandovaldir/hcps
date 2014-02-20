@@ -11,7 +11,7 @@
     <script type="text/javascript" src="<?php echo public_path('js/dojo-1.9.1/dojo/dojo.js'); ?>" 
             data-dojo-config="has:{'dojo-firebug': true},parseOnLoad: true, async: 1" ></script>
     <script>        
-        require(["dojo", 'dojo/hash', "dijit/layout/BorderContainer", "dijit/layout/TabContainer", "dijit/layout/ContentPane",'dijit/Dialog','dijit/layout/SplitContainer','dijit/layout/AccordionContainer','dijit/MenuItem', 'dojox/encoding/crypto/Blowfish'],
+        require(["dojo", 'dojo/domReady!', 'dojo/hash', "dijit/layout/BorderContainer", "dijit/layout/TabContainer", "dijit/layout/ContentPane",'dijit/Dialog','dijit/layout/SplitContainer','dijit/layout/AccordionContainer','dijit/MenuItem', 'dojox/encoding/crypto/Blowfish'],
             function(){ dojo.fadeOut({ node: 'loading-page', onEnd: function(node){ node.style.display = 'none'; } }).play(); }
         );        
     </script>

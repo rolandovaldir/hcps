@@ -62,11 +62,15 @@ abstract class BasePapeletaPedidoMaterial extends sfDoctrineRecord
              'local' => 'id',
              'foreign' => 'papeleta_pedido_material_id'));
 
-        $timestampable0 = new Doctrine_Template_Timestampable(array(
-             ));
-        $signable0 = new Doctrine_Template_Signable(array(
+        $timestampable0 = new Doctrine_Template_Timestampable();
+        $signable0 = new Doctrine_Template_Signable();
+        $anulablebehavior0 = new AnulableBehavior(array(
+             'type' => 'string',
+             'length' => 200,
+             'name' => 'motivo_anulacion',
              ));
         $this->actAs($timestampable0);
         $this->actAs($signable0);
+        $this->actAs($anulablebehavior0);
     }
 }

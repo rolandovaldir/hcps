@@ -49,7 +49,7 @@ class solicitudes_serviciosActions extends autoSolicitudes_serviciosActions
         
     public function postExecute()
     {
-        if ($this->getUser()->hasCredential('Alta') && is_object($this->form)){            
+        if (is_object($this->form) && !$this->form->getObject()->isNew()){           
             $this->form->disableAllWidgets();
         }        
         parent::postExecute();        
@@ -57,18 +57,12 @@ class solicitudes_serviciosActions extends autoSolicitudes_serviciosActions
     
     protected function processForm(sfWebRequest $request, sfForm $form)
     {
-        $vals = $request->getParameter($form->getName());        
-                
-        if ($form->getObject()->isNew()){
-            $vals['internado_id'] = $request->getParameter('internado_id');
-        }        
-        else{
-            $vals['internado_id'] = $form->getObject()->getInternadoId();            
-        }
+        if(!$form->getObject()->isNew()){ exit(); }
+        $vals = $request->getParameter($form->getName());                
+        $vals['internado_id'] = $request->getParameter('internado_id');        
         $request->setParameter($form->getName(),$vals);
-        
         parent::processForm($request, $form);
-    } 
+    }
     
     protected function getFilters()
     {   

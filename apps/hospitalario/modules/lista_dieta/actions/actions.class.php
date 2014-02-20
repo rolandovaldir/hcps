@@ -50,7 +50,7 @@ class lista_dietaActions extends autoLista_dietaActions
         
     public function postExecute()
     {
-        if ($this->getUser()->hasCredential('Alta') && is_object($this->form)){            
+        if (is_object($this->form) && !$this->form->getObject()->isNew()){
             $this->form->disableAllWidgets();
         }        
         parent::postExecute();        
@@ -69,29 +69,11 @@ class lista_dietaActions extends autoLista_dietaActions
     
     protected function processForm(sfWebRequest $request, sfForm $form)
     {
-        $vals = $request->getParameter($form->getName());        
-                
-        if ($form->getObject()->isNew()){        
-            $vals['internado_id'] = $request->getParameter('internado_id');
-        }        
-        else{
-            $vals['internado_id'] = $form->getObject()->getInternadoId();
-            if ($form->getObject()->getEnfermeraId()!=$this->getUser()->getHcpsUser()->getId()){
-                $this->forward(sfConfig::get('sf_secure_module'),'secure');
-            }
-        }
-        $vals['enfermera_id'] = $this->getUser()->getHcpsUser()->getId();
-        
+        if(!$form->getObject()->isNew()){ exit(); }
+        $vals = $request->getParameter($form->getName());                
+        $vals['internado_id'] = $request->getParameter('internado_id');        
         $request->setParameter($form->getName(),$vals);
-        
         parent::processForm($request, $form);
-    }
+    }    
     
-    public function executeDelete(sfWebRequest $request)
-    {
-        if ($this->getRoute()->getObject()->getEnfermeraId()!=$this->getUser()->getHcpsUser()->getId()){
-            $this->forward(sfConfig::get('sf_secure_module'),'secure');
-        }
-        parent::executeDelete($request);
-    }
 }

@@ -26,6 +26,7 @@ abstract class BaseSolicitudExamenLaboratorioClinicoFormFilter extends BaseFormF
       'updated_at'                           => new sfWidgetFormFilterDate(array('from_date' => new myWidgetFormDojoDate(), 'to_date' => new myWidgetFormDojoDate(), 'filter_template' => '%date_range% %empty_checkbox% %empty_label%', 'template' => '<table class="onlyFormat"><tr><td>from</td><td>%from_date%</td><tr/><tr><td>to</td><td>%to_date%</td></tr></table>', 'with_empty' => false)),
       'created_by'                           => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Creator'), 'add_empty' => true)),
       'updated_by'                           => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Updator'), 'add_empty' => true)),
+      'motivo_anulacion'                     => new sfWidgetFormFilterInput(),
       'tipo_examen_laboratorio_clinico_list' => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'TipoExamenLaboratorioClinico')),
     ));
 
@@ -43,6 +44,7 @@ abstract class BaseSolicitudExamenLaboratorioClinicoFormFilter extends BaseFormF
       'updated_at'                           => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
       'created_by'                           => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Creator'), 'column' => 'id')),
       'updated_by'                           => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Updator'), 'column' => 'id')),
+      'motivo_anulacion'                     => new sfValidatorPass(array('required' => false)),
       'tipo_examen_laboratorio_clinico_list' => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'TipoExamenLaboratorioClinico', 'required' => false)),
     ));
 
@@ -95,6 +97,7 @@ abstract class BaseSolicitudExamenLaboratorioClinicoFormFilter extends BaseFormF
       'updated_at'                           => 'Date',
       'created_by'                           => 'ForeignKey',
       'updated_by'                           => 'ForeignKey',
+      'motivo_anulacion'                     => 'Text',
       'tipo_examen_laboratorio_clinico_list' => 'ManyKey',
     );
   }

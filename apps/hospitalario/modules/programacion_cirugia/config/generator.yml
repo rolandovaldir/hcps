@@ -12,6 +12,7 @@ generator:
     actions_base_class:    sfActions
     extra_url_custom_id:   internado_id
     sfGuard_check_created_by: user_id
+    AnulableField:         MotivoAnulacion
 
     config:      
       actions: ~
@@ -27,10 +28,10 @@ generator:
         title: Listado Programacion Para Cirugias
         display: [ operacion_fecha, operacion_hora, nombre_medico, diagnostico_preoperatorio, creator]        
         object_actions:  
-          _edit:        { credentials: [noAlta, crear, medico] }
-          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [[medico, ver_todo_datos], alta] }
-          _delete:      { credentials: [noAlta, crear, medico] }
-          imprimir:     { label: Imprimir, action: exportPdf, params: { onclick: "var w=window.open(this.href,'popupWindow','width=900,height=700,left=320,top=100,scrollbars=yes,menubar=no,resizable=no');w.focus();return false;"} }
+#          _edit:        { credentials: [noAlta, crear, medico] }
+          ver_detalle:  {label: Ver Detalle, action: edit, credentials: [[medico, ver_todo_datos]]}
+          _delete:      {label: Anular, credentials: [noAlta, crear, medico], onClickJsFunction: "dijit.byId('panel_anular').iniciar", AnulableField: 'MotivoAnulacion'}
+          imprimir:     {label: Imprimir, action: exportPdf, params: { onclick: "var w=window.open(this.href,'popupWindow','width=900,height=700,left=320,top=100,scrollbars=yes,menubar=no,resizable=no');w.focus();return false;"} }
         actions: {}
         batch_actions: {}
       filter:
@@ -43,8 +44,11 @@ generator:
         actions:
 #          _delete: { credentials: [noAlta, crear, medico] }
           _list:   ~
-          _save:   { credentials: [noAlta, crear, medico] }
+#          _save:   { credentials: [noAlta, crear, medico] }
       edit:            
         title: Edición Programación Para Cirugias
       new:        
-        title: Nueva Programación Para Cirugias       
+        title: Nueva Programación Para Cirugias
+        actions:
+          _list:   ~
+          _save:   ~

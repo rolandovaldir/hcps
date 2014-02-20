@@ -11,7 +11,7 @@
     <script type="text/javascript" src="<?php echo public_path('js/dojo-1.9.1/dojo/dojo.js'); ?>" 
             data-dojo-config="has:{'dojo-firebug': true},parseOnLoad: true, async: 1" ></script>
     <script>        
-        require(["dojo","dijit/layout/BorderContainer", "dijit/layout/TabContainer", "dijit/layout/ContentPane",'dijit/Dialog','dijit/layout/SplitContainer','dijit/layout/AccordionContainer','dijit/MenuItem'],
+        require(["dojo", 'dojo/domReady!', "dijit/layout/BorderContainer", "dijit/layout/TabContainer", "dijit/layout/ContentPane",'dijit/Dialog','dijit/layout/SplitContainer','dijit/layout/AccordionContainer','dijit/MenuItem'],
             function(){ dojo.fadeOut({ node: 'loading-page', onEnd: function(node){ node.style.display = 'none'; } }).play(); }
         );        
     </script>
@@ -62,12 +62,12 @@
         
             <div data-dojo-type="dijit/layout/TabContainer" data-dojo-props="region: 'center'" >
                 <div data-dojo-type="dijit/layout/ContentPane" title="Internados" 
-                     id="main-container-tab1" data-dojo-props="selected:true,class:'containainer_background'">
+                     id="main-container-tab1" data-dojo-props="selected:true,'class':'containainer_background'">
                     <?php echo $sf_content; ?>              
                 </div>
                 
                 <div data-dojo-type="dijit/layout/ContentPane" title="Pacientes Dados de alta"  
-                     id="main-container-tab2" data-dojo-props="href:'<?php echo url_for("internados_alta/index") ?>',class:'containainer_background'" >
+                     id="main-container-tab2" data-dojo-props="href:'<?php echo url_for("internados_alta/index") ?>','class':'containainer_background'" >
                 </div>
                 
                 <div data-dojo-type="dijit/layout/ContentPane" title="Reportes"  
@@ -75,7 +75,7 @@
                 </div>
                 <?php if($sf_user->getGuardUser()->getIsSuperAdmin()): ?>
                     <div data-dojo-type="dijit/layout/ContentPane" title="Usuarios" 
-                         id="main-container-tab4"  data-dojo-props="href:'<?php echo url_for("sfGuardUser/index") ?>',style:'padding:0;',class:'containainer_background'">
+                         id="main-container-tab4"  data-dojo-props="href:'<?php echo url_for("sfGuardUser/index") ?>',style:'padding:0;','class':'containainer_background'">
                     </div>
                 <?php endif ?>
             </div>            

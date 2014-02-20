@@ -215,7 +215,7 @@ Cama:
 #--------------------------------------------------------
 
 OrdenMedica:
-  actAs: [Timestampable, Signable]
+  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}}
   columns:
     internado_id:          {type: integer, notnull: true}
     via_administracion_id: {type: integer, notnull: true}
@@ -258,7 +258,7 @@ ViaAdministracion:
 #--------------------------------------------------------
 
 JuntaMedica:
-  actAs: [Timestampable, Signable]
+  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}}
   columns:
     internado_id:            {type: integer, notnull: true}
     medico_id:               {type: integer, notnull: true}
@@ -288,7 +288,7 @@ MedicoParticipante:
 #--------------------------------------------------------
     
 ExamenFisicoRecienNacido:
-  actAs: [Timestampable, Signable]
+  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}}
   columns:
     internado_id:         {type: integer, notnull: true}
     ap_paterno:           {type: string(45), notnull: true}
@@ -306,7 +306,7 @@ ExamenFisicoRecienNacido:
     Apgar:     {local: id, foreign: examen_fisico_recien_nacido_id, type: many, foreignAlias: RecienNacido}
     
 Apgar:
-  actAs: [Timestampable, Signable]
+  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}}
   columns:
     examen_fisico_recien_nacido_id: {type: integer, notnull: true}
     nacer_egresar:                  {type: boolean, notnull: true}
@@ -330,7 +330,7 @@ Apgar:
 #--------------------------------------------------------
 
 SolicitudInterconsulta:
-  actAs: [Timestampable, Signable]
+  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}}
   columns:
     internado_id:    {type: integer, notnull: true}
     dirigida_a:      {type: string(50), notnull: true}
@@ -358,7 +358,7 @@ DetalleMedicacion:
 #--------------------------------------------------------
 
 SolicitudServicio:
-  actAs: [Timestampable, Signable]
+  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}}
   columns:
     internado_id:           {type: integer, notnull: true}
     atencion_id:            {type: integer, notnull: true}
@@ -379,7 +379,7 @@ Atencion:
 #--------------------------------------------------------
 
 SolicitudReposicionMaterial:
-  actAs: [Timestampable, Signable]
+  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}}
   columns:
     internado_id: {type: integer, notnull: true}
     fecha:        {type: date, notnull: true}
@@ -405,7 +405,7 @@ DetalleMaterial:
 #--------------------------------------------------------
 
 SignosVitalesNursery:
-  actAs: [Timestampable, Signable]
+  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}}
   columns:
     internado_id:  {type: integer, notnull: true}
     fecha:         {type: date, notnull: true}
@@ -424,7 +424,7 @@ SignosVitalesNursery:
 #--------------------------------------------------------
 
 NotasEnfermeria:
-  actAs: [Timestampable, Signable]
+  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}}
   columns:
     internado_id:  {type: integer, notnull: true}
     fecha:          {type: date, notnull: true}
@@ -437,7 +437,7 @@ NotasEnfermeria:
 #--------------------------------------------------------
 
 NotasEvolucion:
-  actAs: [Timestampable, Signable]
+  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}}
   columns:
     internado_id: {type: integer, notnull: true}
     fecha_hora:   {type: timestamp, notnull: true}
@@ -450,7 +450,7 @@ NotasEvolucion:
 
 # guillermo
 AutorizacionDiagnosticoTratamiento:
-  actAs: [Timestampable, Signable]  
+  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}}
   columns:     
     internado_id:        { type: integer , notnull: true }
     nombre_familiar:     { type: string(100) }
@@ -461,7 +461,7 @@ AutorizacionDiagnosticoTratamiento:
   
 # guillermo  
 AutorizacionAltaSolicitada:
-  actAs: [Timestampable, Signable]
+  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}}
   columns:     
     internado_id:          { type: integer , notnull: true }
     nombre_familiar:       { type: string(100), notnull: true}
@@ -472,7 +472,7 @@ AutorizacionAltaSolicitada:
 
 # guillermo
 AutorizacionAutopsia:
-  actAs: [Timestampable, Signable]  
+  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}}  
   columns:     
     internado_id:          { type: integer , notnull: true }
     nombre_familiar1:      { type: string(100), notnull: true}
@@ -490,7 +490,7 @@ AutorizacionAutopsia:
 
 # guillermo
 ProgramacionCirugia:
-  actAs: [Timestampable, Signable]  
+  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}} 
   columns:     
     internado_id:                { type: integer , notnull: true }
     medico_id:                   { type: integer }
@@ -511,7 +511,7 @@ ProgramacionCirugia:
 
 # guillermo
 SolicitudExamenLaboratorioClinico:
-  actAs: [Timestampable, Signable]  
+  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}} 
   columns:     
     internado_id:             { type: integer, notnull: true }
     vobo_medico_id:           { type: integer }
@@ -565,7 +565,7 @@ TipoExamenLaboratorioClinico:
 
 # guillermo
 AdministracionMedicamento:
-  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 50, name: motivo_anulacion}}
+  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}}
   columns:     
     internado_id:               { type: integer, notnull: true }
     enfermera_id:               { type: integer }
@@ -577,28 +577,10 @@ AdministracionMedicamento:
     Internado: { local: internado_id, foreign: id, type: one, foreignAlias: AdministracionesMedicamento }
 #    AdministracionMedicamento: { local: administracion_medicamento_id, foreign: id, type: one, foreignAlias: DetallesAdminMedicamento }
 
-# guillermo
-ResumenAlta:
-  actAs: [Timestampable, Signable]  
-  columns:     
-    internado_id:              { type: integer, notnull: true }
-    medico_id:                 { type: integer }
-    servicio:                  { type: string(50) }
-    servicio_egreso:           { type: string(50) }
-    diagnostico_provisional:   { type: string(2000) }
-    diagnostico_definitivo:    { type: string(2000) }
-    operaciones:               { type: string(2000) }
-    anamnesis_examfisico:      { type: string(2000) }
-    hallazgos_lab_rayx:        { type: string(2000) }
-    evolucion_complicacion:    { type: string(2000) }
-    cond_trat_ref_pronostico:  { type: string(2000) }
-    fecha:                     { type: date }
-  relations:
-    Internado: { local: internado_id, foreign: id, type: one, foreignAlias: ResumenesAlta }
 
 # guillermo
 UsoHospitalario:
-  actAs: [Timestampable, Signable]  
+  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}} 
   columns:     
     internado_id:           { type: integer, notnull: true }    
     lugar:                  { type: string(60), notnull: true }
@@ -625,7 +607,7 @@ DetalleUsoHospitalario:
       
 # guillermo    
 AtencionEnfermeria:
-  actAs: [Timestampable, Signable]  
+  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}}  
   columns:     
     internado_id:                           { type: integer, notnull: true }
     enfermera_id:                           { type: integer }
@@ -711,7 +693,7 @@ AtencionEnfermeria:
     
 # guillermo
 ListaDieta:
-  actAs: [Timestampable, Signable]
+  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}}
   columns:
     internado_id:          { type: integer }
     enfermera_id:          { type: integer }
@@ -725,7 +707,7 @@ ListaDieta:
 
 # guillermo
 SolicitudTransfusionSanguinea:
-  actAs: [Timestampable, Signable]  
+  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}} 
   columns:     
     internado_id:                 { type: integer, notnull: true }
     quirofano:                    { type: string(50), notnull: true }
@@ -756,7 +738,7 @@ SolicitudTransfusionSanguinea:
 
 # guillermo
 InformeEstadisticoAdmEgreso:
-  actAs: [Timestampable, Signable]  
+  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}}  
   columns:     
     internado_id:               { type: integer, notnull: true }
     urgencia_persona_ref:       { type: string(150) }    
@@ -768,7 +750,7 @@ InformeEstadisticoAdmEgreso:
 
 # guillermo
 PapeletaPedidoMaterial:
-  actAs: [Timestampable, Signable]  
+  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}} 
   columns:
     internado_id:          { type: integer, notnull: true }
     enfermera_id:          { type: integer }
@@ -791,7 +773,7 @@ DetallePapeletaPedidoMaterial:
     PapeletaPedidoMaterial:    {onDelete: CASCADE, local: papeleta_pedido_material_id, foreignAlias: PapeletaPedidoMaterial }
     
 ResumenAlta:
-  actAs: [Timestampable, Signable]  
+  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}}
   columns:
     internado_id:                      { type: integer, notnull: true }    
     diagnostico_provisional:           { type: string(1000) } 
@@ -802,4 +784,4 @@ ResumenAlta:
     evolucion_complicacion:            { type: string(1000) }
     condicion_tratamiento_pronostico:  { type: string(8000) }
   relations:
-    Internado: { local: internado_id, foreign: id, type: one, foreignAlias: ResumenAlta }    
+    Internado: { local: internado_id, foreign: id, type: one, foreignAlias: ResumenAlta }  

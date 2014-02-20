@@ -69,10 +69,10 @@ class administracion_medicamentoActions extends autoAdministracion_medicamentoAc
     
     protected function processForm(sfWebRequest $request, sfForm $form)
     {
+        if(!$form->getObject()->isNew()){ exit(); }
         $vals = $request->getParameter($form->getName());                
-        $vals['internado_id'] = $form->getObject()->isNew() ? 
-            $request->getParameter('internado_id') : $form->getObject()->getInternadoId();        
-        $request->setParameter($form->getName(),$vals);        
+        $vals['internado_id'] = $request->getParameter('internado_id');        
+        $request->setParameter($form->getName(),$vals);
         parent::processForm($request, $form);
     }    
     

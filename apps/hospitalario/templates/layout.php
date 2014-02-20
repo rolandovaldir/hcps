@@ -11,8 +11,8 @@
         <script type="text/javascript" src="<?php echo public_path('js/dojo-1.9.1/dojo/dojo.js'); ?>" 
         data-dojo-config="has:{'dojo-firebug': true},parseOnLoad: true, async: 1" ></script>
         <script>
-            require(["dojo", 'dojo/hash', "dijit/layout/BorderContainer", "dijit/layout/TabContainer", "dijit/layout/ContentPane", 'dijit/Dialog', 'dijit/layout/SplitContainer', 'dijit/layout/AccordionContainer', 'dijit/MenuItem', 'dojox/encoding/crypto/Blowfish', 'dijit/MenuBar'],
-                    function() {
+            require(["dojo", 'dojo/domReady!', "dijit/layout/BorderContainer", "dijit/layout/TabContainer", "dijit/layout/ContentPane", 'dijit/Dialog', 'dijit/layout/SplitContainer', 'dijit/layout/AccordionContainer', 'dijit/MenuItem', 'dojox/encoding/crypto/Blowfish', 'dijit/MenuBar'],
+                    function() {                        
                         dojo.fadeOut({node: 'loading-page', onEnd: function(node) {
                                 node.style.display = 'none';
                             }}).play();
@@ -68,7 +68,7 @@
                                         <tr>
                                             <td colspan="6">
                                                 <div data-dojo-type="dijit/MenuBar">
-                                                    <div data-dojo-type="dijit/MenuBarItem" style="background: url('<?php echo image_path('inicio.png') ?>') no-repeat;"
+                                                    <div data-dojo-type="dijit/MenuBarItem" style="background: url('<?php echo image_path('inicio.png') ?>') no-repeat center;width:22px;height:22px;"
                                                          data-dojo-props="onClick:function(){ window.location = '<?php echo url_for('internados/index') ?>'; },
                                                          title:'Volver a la lista de internados'">
                                                         &nbsp; &nbsp; &nbsp;
@@ -140,8 +140,8 @@
                 </table> 
             </div>
             <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'leading',style:'padding:0;',splitter: true" >
-                <div>                    
-                    <div data-dojo-type="dijit/layout/AccordionContainer" data-dojo-props="style:'min-width:200px;'" >
+                <div>
+                    <div data-dojo-type="dijit/layout/AccordionContainer" data-dojo-props="style:'min-width:260px;'" >
                         <?php include '_side_menu.php' ?>
                     </div>
                 </div>     

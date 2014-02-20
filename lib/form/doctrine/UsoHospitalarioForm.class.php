@@ -12,7 +12,7 @@ class UsoHospitalarioForm extends BaseUsoHospitalarioForm
 {
   public function configure()
   {
-      unset($this['created_at'], $this['updated_at'], $this['created_by'], $this['updated_by']);
+      unset($this['created_at'], $this['updated_at'], $this['created_by'], $this['updated_by'], $this['motivo_anulacion']);
       $this->setWidget("internado_id", new sfWidgetFormInputHidden());   
       $this->incluirDetalles();
   }

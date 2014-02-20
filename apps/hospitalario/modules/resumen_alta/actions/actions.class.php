@@ -34,11 +34,9 @@ class resumen_altaActions extends autoResumen_altaActions
         
     public function postExecute()
     {
-        if ( !is_object($this->hcps_internado) || $this->hcps_internado->getAlta()){
-            if (is_object($this->form)){ //disable all widgets (si internado es dado de alta)
-                $this->form->disableAllWidgets();
-            }
-        }
+        if (is_object($this->form) && !$this->form->getObject()->isNew()){            
+            $this->form->disableAllWidgets();
+        }        
         parent::postExecute();
     }
     
@@ -56,16 +54,10 @@ class resumen_altaActions extends autoResumen_altaActions
     
     protected function processForm(sfWebRequest $request, sfForm $form)
     {
-        $vals = $request->getParameter($form->getName());        
-                
-        if ($form->getObject()->isNew()){
-            $vals['internado_id'] = $request->getParameter('internado_id');
-        }        
-        else{
-            $vals['internado_id'] = $form->getObject()->getInternadoId();            
-        }
+        if(!$form->getObject()->isNew()){ exit(); }
+        $vals = $request->getParameter($form->getName());                
+        $vals['internado_id'] = $request->getParameter('internado_id');        
         $request->setParameter($form->getName(),$vals);
-        
         parent::processForm($request, $form);
     }   
     

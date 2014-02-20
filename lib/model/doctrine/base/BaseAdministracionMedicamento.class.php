@@ -76,7 +76,7 @@ abstract class BaseAdministracionMedicamento extends sfDoctrineRecord
         $signable0 = new Doctrine_Template_Signable();
         $anulablebehavior0 = new AnulableBehavior(array(
              'type' => 'string',
-             'length' => 50,
+             'length' => 200,
              'name' => 'motivo_anulacion',
              ));
         $this->actAs($timestampable0);

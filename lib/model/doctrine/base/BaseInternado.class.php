@@ -47,13 +47,13 @@
  * @property Doctrine_Collection $ProgramacionesCirugia
  * @property Doctrine_Collection $SolicitudesExamenLaboratorioClinico
  * @property Doctrine_Collection $AdministracionesMedicamento
- * @property Doctrine_Collection $ResumenAlta
  * @property Doctrine_Collection $ResumenesAlta
  * @property Doctrine_Collection $AtencionesEnfermeria
  * @property Doctrine_Collection $ListasDieta
  * @property Doctrine_Collection $SolicitudesTransfusionSanguinea
  * @property Doctrine_Collection $InformesEstadisticoAdmEgreso
  * @property Doctrine_Collection $PapeletasPedidoMaterial
+ * @property Doctrine_Collection $ResumenAlta
  * 
  * @method integer             getAfiliadoId()                          Returns the current record's "afiliado_id" value
  * @method integer             getNoAfiliadoId()                        Returns the current record's "noAfiliado_id" value
@@ -97,13 +97,13 @@
  * @method Doctrine_Collection getProgramacionesCirugia()               Returns the current record's "ProgramacionesCirugia" collection
  * @method Doctrine_Collection getSolicitudesExamenLaboratorioClinico() Returns the current record's "SolicitudesExamenLaboratorioClinico" collection
  * @method Doctrine_Collection getAdministracionesMedicamento()         Returns the current record's "AdministracionesMedicamento" collection
- * @method Doctrine_Collection getResumenAlta()                         Returns the current record's "ResumenAlta" collection
  * @method Doctrine_Collection getResumenesAlta()                       Returns the current record's "ResumenesAlta" collection
  * @method Doctrine_Collection getAtencionesEnfermeria()                Returns the current record's "AtencionesEnfermeria" collection
  * @method Doctrine_Collection getListasDieta()                         Returns the current record's "ListasDieta" collection
  * @method Doctrine_Collection getSolicitudesTransfusionSanguinea()     Returns the current record's "SolicitudesTransfusionSanguinea" collection
  * @method Doctrine_Collection getInformesEstadisticoAdmEgreso()        Returns the current record's "InformesEstadisticoAdmEgreso" collection
  * @method Doctrine_Collection getPapeletasPedidoMaterial()             Returns the current record's "PapeletasPedidoMaterial" collection
+ * @method Doctrine_Collection getResumenAlta()                         Returns the current record's "ResumenAlta" collection
  * @method Internado           setAfiliadoId()                          Sets the current record's "afiliado_id" value
  * @method Internado           setNoAfiliadoId()                        Sets the current record's "noAfiliado_id" value
  * @method Internado           setCategoriaId()                         Sets the current record's "categoria_id" value
@@ -146,13 +146,13 @@
  * @method Internado           setProgramacionesCirugia()               Sets the current record's "ProgramacionesCirugia" collection
  * @method Internado           setSolicitudesExamenLaboratorioClinico() Sets the current record's "SolicitudesExamenLaboratorioClinico" collection
  * @method Internado           setAdministracionesMedicamento()         Sets the current record's "AdministracionesMedicamento" collection
- * @method Internado           setResumenAlta()                         Sets the current record's "ResumenAlta" collection
  * @method Internado           setResumenesAlta()                       Sets the current record's "ResumenesAlta" collection
  * @method Internado           setAtencionesEnfermeria()                Sets the current record's "AtencionesEnfermeria" collection
  * @method Internado           setListasDieta()                         Sets the current record's "ListasDieta" collection
  * @method Internado           setSolicitudesTransfusionSanguinea()     Sets the current record's "SolicitudesTransfusionSanguinea" collection
  * @method Internado           setInformesEstadisticoAdmEgreso()        Sets the current record's "InformesEstadisticoAdmEgreso" collection
  * @method Internado           setPapeletasPedidoMaterial()             Sets the current record's "PapeletasPedidoMaterial" collection
+ * @method Internado           setResumenAlta()                         Sets the current record's "ResumenAlta" collection
  * 
  * @package    hcps
  * @subpackage model
@@ -342,10 +342,6 @@ abstract class BaseInternado extends sfDoctrineRecord
              'local' => 'id',
              'foreign' => 'internado_id'));
 
-        $this->hasMany('ResumenAlta', array(
-             'local' => 'id',
-             'foreign' => 'internado_id'));
-
         $this->hasMany('UsoHospitalario as ResumenesAlta', array(
              'local' => 'id',
              'foreign' => 'internado_id'));
@@ -367,6 +363,10 @@ abstract class BaseInternado extends sfDoctrineRecord
              'foreign' => 'internado_id'));
 
         $this->hasMany('PapeletaPedidoMaterial as PapeletasPedidoMaterial', array(
+             'local' => 'id',
+             'foreign' => 'internado_id'));
+
+        $this->hasMany('ResumenAlta', array(
              'local' => 'id',
              'foreign' => 'internado_id'));
 

@@ -49,7 +49,7 @@ class autorizaciones_autopsiaActions extends autoAutorizaciones_autopsiaActions
         
     public function postExecute()
     {
-        if ($this->getUser()->hasCredential('Alta') && is_object($this->form)){            
+        if (is_object($this->form) && !$this->form->getObject()->isNew()){
             $this->form->disableAllWidgets();
         }        
         parent::postExecute();        
@@ -66,11 +66,13 @@ class autorizaciones_autopsiaActions extends autoAutorizaciones_autopsiaActions
         return $filters;
     }
     
-    public function executeNew(sfWebRequest $request)
-    {        
-        parent::executeNew($request);        
-        $this->form->setDefault('internado_id',$request->getParameter('internado_id'));
-        //var_dump($this->form->getDefault('file_internacion_id'));
+    protected function processForm(sfWebRequest $request, sfForm $form)
+    {
+        if(!$form->getObject()->isNew()){ exit(); }
+        $vals = $request->getParameter($form->getName());                
+        $vals['internado_id'] = $request->getParameter('internado_id');        
+        $request->setParameter($form->getName(),$vals);
+        parent::processForm($request, $form);
     }
     
     public function executeExportPdf(sfWebRequest $request)

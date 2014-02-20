@@ -46,4 +46,4 @@ generator:
         title: Nueva Junta Médica
         display:
           Datos de la Junta Médica:      [fecha_junta, medico_id, servicio, especialidades, diagnostico_establecido, relacion_junta, conclusiones, tac, contraste]
-          Adicionar Médico Participante: [medico]  
+          Adicionar Médico Participante: [medico] 

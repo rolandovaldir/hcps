@@ -11,6 +11,7 @@ generator:
     with_doctrine_route:   true
     actions_base_class:    sfActions
     extra_url_custom_id:   internado_id
+    AnulableField:         MotivoAnulacion
 
     config:
       actions: ~
@@ -29,20 +30,23 @@ generator:
         title: Listado Resumen Alta
         display:    [diagnostico_provisional, diagnostico_definitivo, 	operaciones, anamesis_examenfisico, hallazgos_labo_interconsultas, evolucion_complicacion, condicion_tratamiento_pronostico]
         object_actions:  
-          _edit:        { credentials: [noAlta] }
-          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [Alta] }
-          _delete:      { credentials: [noAlta] }
+#          _edit:        { credentials: [noAlta] }
+          ver_detalle:  {label: Ver Detalle, action: edit, credentials: [[medico, ver_todo_datos]] }
+          _delete:      {label: Anular, credentials: [noAlta, crear, medico], onClickJsFunction: "dijit.byId('panel_anular').iniciar", AnulableField: 'MotivoAnulacion' }
         actions: {}
         batch_actions: {}
       filter: 
         display: [diagnostico_provisional, diagnostico_definitivo]
       form: 
-        display: [diagnostico_provisional, diagnostico_definitivo, 	operaciones, anamesis_examenfisico, hallazgos_labo_interconsultas, evolucion_complicacion, condicion_tratamiento_pronostico]
+        display: [diagnostico_provisional, diagnostico_definitivo, operaciones, anamesis_examenfisico, hallazgos_labo_interconsultas, evolucion_complicacion, condicion_tratamiento_pronostico]
         actions:
 #          _delete: { credentials: [noAlta] }
           _list:   ~
-          _save:   { credentials: [noAlta] }
+#          _save:   { credentials: [noAlta] }
       edit:    
         title: Edición Resumen Alta
       new:        
         title: Nueva Resumen Alta
+        actions:
+          _list:   ~
+          _save:   ~

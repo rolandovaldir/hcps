@@ -13,6 +13,6 @@ class ApgarForm extends BaseApgarForm
   public function configure()
   {
       unset($this['created_at'], $this['updated_at'], $this['examen_fisico_recien_nacido_id'], 
-            $this['created_by'], $this['updated_by']);
+            $this['created_by'], $this['updated_by'], $this['motivo_anulacion']);
   }
 }

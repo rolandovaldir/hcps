@@ -67,7 +67,7 @@ class papeleta_pedido_materialActions extends autoPapeleta_pedido_materialAction
     }
     
     public function executeNew(sfWebRequest $request)
-    {        
+    {
         parent::executeNew($request);        
         $this->form->setDefault('internado_id',$request->getParameter('internado_id'));        
     }
