@@ -16,4 +16,43 @@ class SolicitudTransfusionSanguineaTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('SolicitudTransfusionSanguinea');
     }
+    
+    const TIPO_TRANSFUSION_SANGRE = 's';
+    const TIPO_TRANSFUSION_OTRO = 'o';
+    
+    static $descripciones_requiereTransfusionDe = array('s'=>'Sangre', 'o'=>'Otro');
+    
+    static function getDescripciones_requiereTransfusionDe()
+    {
+        return self::$descripciones_requiereTransfusionDe;
+    }
+    
+    static function getDescripcion_requiereTransfusionDe($key,$default=null)
+    {
+        if (array_key_exists($key, self::$descripciones_requiereTransfusionDe)){
+            return self::$descripciones_requiereTransfusionDe[$key];
+        }
+        return $default;
+    }
+    
+    
+    
+    const TIPO_CUMPLIRSE_ENFORMA_MEDIATA = 'm';
+    const TIPO_CUMPLIRSE_ENFORMA_INMEDIATA = 'i';
+    
+    static $descripciones_cumplirseEnforma = array('m'=>'Mediata', 'i'=>'Inmediata');
+    
+    static function getDescripciones_cumplirseEnforma()
+    {
+        return self::$descripciones_cumplirseEnforma;
+    }
+    
+    static function getDescripcion_cumplirseEnforma($key,$default=null)
+    {
+        if (array_key_exists($key, self::$descripciones_cumplirseEnforma)){
+            return self::$descripciones_cumplirseEnforma[$key];
+        }
+        return $default;
+    }
+    
 }
