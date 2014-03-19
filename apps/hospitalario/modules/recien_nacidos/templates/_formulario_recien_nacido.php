@@ -1,8 +1,8 @@
 <table class="tbl-info">
     <tr>
-        <td>x<br />Ap. Paterno</td>
-        <td>x<br />Ap. materno</td>
-        <td>x<br />Nombre de la Madre</td>
+        <td><?php echo $form->getApPaterno(); ?><br />Ap. Paterno</td>
+        <td><?php echo $form->getApMaterno(); ?><br />Ap. materno</td>
+        <td><?php echo $form->Internado->Afiliado->getNombre(); ?><br />Nombre de la Madre</td>
         <td>Nº de matrícula (de la madre)</td>
     </tr>
 </table>

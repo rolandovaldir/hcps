@@ -23,7 +23,7 @@ class ImpresionPDF extends TCPDF
         
         //$user = sfContext::getInstance()->getUser();
         
-        $img = K_PATH_IMAGES.'logo-fondo-blanco.png';
+        $img = K_PATH_IMAGES.'cps/logo-fondo-blanco.png';
         $this->Image($img, 10, 8, 21, '', 'PNG', '', 'T', false, true, '', false, false, 0, false, false, false);
         
         // Caja Petrolera

@@ -99,9 +99,10 @@ class recien_nacidosActions extends autoRecien_nacidosActions
     
     public function executeExportPdf(sfWebRequest $request)
     {
+        $form = $this->getRoute()->getObject();
         // HTML
         $formulario = $this->getPartial('recien_nacidos/formulario_recien_nacido',
-            array('datos' => 'd'));
+            array('form' => $form));
         // obtenemos los estilos que se
         $css = file_get_contents(sfConfig::get('sf_root_dir') . '/web/css/formulario_medico_pdf.css');
         $css = '<style>'.$css.'</style>';
