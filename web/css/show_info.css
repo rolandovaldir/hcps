@@ -1,0 +1,16 @@
+
+.show-info td, 
+.show-info th{
+    font-size: 12px;
+    padding: 5px;
+    width: 350px;
+    border: 1px solid #555753;
+}
+
+.show-info td {
+    
+}
+
+.show-info th {
+    text-align: left;
+}

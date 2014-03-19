@@ -89,4 +89,91 @@ class recien_nacidosActions extends autoRecien_nacidosActions
         }
         $this->redirect('/hospitalario'.$env.'.php/apgar');   
     }
+    
+    public function executeVerApgarForm(sfWebRequest $request)
+    {
+        $this->recien_nacido = $this->getRoute()->getObject();
+        $this->internado_id = $request->getParameter('id');
+        
+    }
+    
+    public function executeExportPdf(sfWebRequest $request)
+    {
+        // HTML
+        $formulario = $this->getPartial('recien_nacidos/formulario_recien_nacido',
+            array('datos' => 'd'));
+        // obtenemos los estilos que se
+        $css = file_get_contents(sfConfig::get('sf_root_dir') . '/web/css/formulario_medico_pdf.css');
+        $css = '<style>'.$css.'</style>';
+        
+        // PDF
+        // ------------------------------------
+        $config = sfTCPDFPluginConfigHandler::loadConfig();
+        sfTCPDFPluginConfigHandler::includeLangFile($this->getUser()->getCulture());
+
+        // pdf object, reescrito
+        $pdf = new ImpresionPDF("L", PDF_UNIT, 'A4', true, 'UTF-8');
+
+        $pdf->setTituloForm('FORMULARIO RECIEN NACIDO');
+        $pdf->setCodigoForm('Form. HC. 19');
+        
+        // set document information
+        $pdf->SetCreator(PDF_CREATOR);
+        $pdf->SetAuthor('Sistema Informatico Hospitalario');
+        $pdf->SetTitle('HIS');
+        $pdf->SetSubject('impresion');
+        $pdf->SetKeywords('CPS, HIS');
+
+        // set default header data
+        //$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE, PDF_HEADER_STRING);
+
+        // set header and footer fonts
+        $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
+        $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
+
+        // set default monospaced font
+        $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+
+        //set margins
+        $pdf->SetMargins(15, 40, 15);
+        
+        // set margen del header hacia arriba
+        $pdf->SetHeaderMargin(10);
+        
+        $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
+
+        //set auto page breaks
+        $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+
+        //set image scale factor
+        $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
+
+        // ---------------------------------------------------------
+        // set default font subsetting mode
+        $pdf->setFontSubsetting(true);
+
+        //$pdf->SetPrintHeader(true);
+        
+        // Add a page
+        //$resolution= array(377, 279);
+        //$resolution= array(351, 279);
+        
+        // This method has several options, check the source code documentation for more information.
+        $pdf->AddPage('P', 'A4', false, false);
+        //$pdf->Write(0, 'Titulo 1', '', 0, 'L', true, 0, false, false, 0);
+        
+        // -------------------------------------------------------------
+        //foreach($html as $table)
+        //{
+            $pdf->writeHTML($css.$formulario, true, false, false, false, '');
+        //}
+        
+        // ---------------------------------------------------------
+        // Close and output PDF document
+        $pdf->Output('recien_nacido'.'.pdf', 'I');
+
+        // Stop symfony process
+        throw new sfStopException();
+    }
+
 }

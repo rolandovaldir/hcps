@@ -26,9 +26,11 @@ generator:
         title: Examen Físico del Recien Nacido
         display: [fecha_nacimiento, ap_paterno, ap_materno, numero_cuna, sexo, creator]
         object_actions:  
-          _edit:        { credentials: [noAlta, crear, enfermera] }
-          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [[enfermera, ver_todo_datos], alta] }
-          _delete:      { credentials: [noAlta, crear, enfermera] }
+          _edit:           { credentials: [noAlta, crear, enfermera] }
+          ver_detalle:     { label: Ver Detalle, action: edit, credentials: [[enfermera, ver_todo_datos], alta] }
+          ver_apgar_ form: { label: Ver Apgar, action: verApgarForm }
+          imprimir:        {label: Imprimir, action: exportPdf, params: { onclick: "var w=window.open(this.href,'popupWindow','width=900,height=700,left=320,top=100,scrollbars=yes,menubar=no,resizable=no');w.focus();return false;" } }
+          _delete:         { credentials: [noAlta, crear, enfermera] }
         actions: {}
         batch_actions: {}
       filter:  
