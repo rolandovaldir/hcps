@@ -77,61 +77,141 @@ class autorizaciones_alta_solicitadaActions extends autoAutorizaciones_alta_soli
     }
     
     
+//    public function executeExportPdf(sfWebRequest $request)
+//    {
+//        /*
+//        //$user = $this->getUser();
+//        //echo $id = $user->getAttribute('id');
+//        $form = $this->getRoute()->getObject();
+//        */
+//        // estilos para este tipo de documento
+//        $css = file_get_contents(sfConfig::get('sf_root_dir') . '/web/css/impresion_autorizacion_pdf.css');
+//        $css = '<style>'.$css.'</style>';
+//        
+//        $html = $this->getPartial('autorizaciones_alta_solicitada/impresion_autorizacion', array());
+//        
+//        // PDF
+//        $config = sfTCPDFPluginConfigHandler::loadConfig();
+//                  sfTCPDFPluginConfigHandler::includeLangFile($this->getUser()->getCulture());
+//
+//        // pdf object, reescrito
+//        $pdf = new sfTCPDF("P", PDF_UNIT, 'Letter', true, 'UTF-8');
+//        // set document information
+//        $pdf->SetCreator(PDF_CREATOR);
+//        $pdf->SetAuthor('CPS');
+//        $pdf->SetTitle('CPS');
+//        $pdf->SetSubject('Caja Petrolera de Salud');
+//        $pdf->SetKeywords('TCPDF, PDF, impresion');
+//        
+//        // set default header data
+////        $pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE, PDF_HEADER_STRING);
+//
+//        // set header and footer fonts
+//        $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
+//        $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
+//        
+//        //$pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM); 
+//        $pdf->SetAutoPageBreak(TRUE, 6);
+//        
+//        $pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
+//        $pdf->SetFooterMargin(0);
+//        
+//        $pdf->SetDisplayMode('real','default');  
+//        // quitar la linea del header
+//        $pdf->setHeaderData('',0,'','',array(0,0,0), array(255,255,255) );
+//        
+//        $pdf->setPrintHeader(false);
+//        $pdf->setPrintFooter(false);
+//        
+//        // set default monospaced font
+//        $pdf->SetMargins(10, 8, 10);
+//        $pdf->SetFont('dejavusans', '', 11, '', true);
+//        
+//        $pdf->AddPage();
+//        $pdf->writeHTML($css.$html, true, false, false, false, '');
+//
+//        // Close and output PDF document
+//        $pdf->Output('Formulario706.pdf', 'I');
+//
+//        // Stop symfony process
+//        throw new sfStopException();
+//    }
+    
     public function executeExportPdf(sfWebRequest $request)
     {
-        /*
-        //$user = $this->getUser();
-        //echo $id = $user->getAttribute('id');
-        $form = $this->getRoute()->getObject();
-        */
-        // estilos para este tipo de documento
-        $css = file_get_contents(sfConfig::get('sf_root_dir') . '/web/css/impresion_autorizacion_pdf.css');
+        // HTML
+        $formulario = $this->getPartial('autorizaciones_alta_solicitada/autorizacion_legal',
+            array('datos' => 'd'));
+        // obtenemos los estilos que se
+        $css = file_get_contents(sfConfig::get('sf_root_dir') . '/web/css/formulario_medico_pdf.css');
         $css = '<style>'.$css.'</style>';
         
-        $html = $this->getPartial('autorizaciones_alta_solicitada/impresion_autorizacion', array());
-        
         // PDF
+        // ------------------------------------
         $config = sfTCPDFPluginConfigHandler::loadConfig();
-                  sfTCPDFPluginConfigHandler::includeLangFile($this->getUser()->getCulture());
+        sfTCPDFPluginConfigHandler::includeLangFile($this->getUser()->getCulture());
 
         // pdf object, reescrito
-        $pdf = new sfTCPDF("P", PDF_UNIT, 'Letter', true, 'UTF-8');
+        $pdf = new ImpresionPDF("L", PDF_UNIT, 'A4', true, 'UTF-8');
+
+        $pdf->setTituloForm('AUTORIZACIÓN LEGAL CON CONSENTIMIENTO INFORMADO');
+        $pdf->setFontSizeTituloForm('15');
+        //$pdf->setCodigoForm('DEPARTAMENTO DE ENFERMERIA');
+        
         // set document information
         $pdf->SetCreator(PDF_CREATOR);
-        $pdf->SetAuthor('CPS');
-        $pdf->SetTitle('CPS');
-        $pdf->SetSubject('Caja Petrolera de Salud');
-        $pdf->SetKeywords('TCPDF, PDF, impresion');
-        
+        $pdf->SetAuthor('Sistema Informatico Hospitalario');
+        $pdf->SetTitle('HIS');
+        $pdf->SetSubject('impresion');
+        $pdf->SetKeywords('CPS, HIS');
+
         // set default header data
-//        $pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE, PDF_HEADER_STRING);
+        //$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE, PDF_HEADER_STRING);
 
         // set header and footer fonts
         $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
         $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
-        
-        //$pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM); 
-        $pdf->SetAutoPageBreak(TRUE, 6);
-        
-        $pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
-        $pdf->SetFooterMargin(0);
-        
-        $pdf->SetDisplayMode('real','default');  
-        // quitar la linea del header
-        $pdf->setHeaderData('',0,'','',array(0,0,0), array(255,255,255) );
-        
-        $pdf->setPrintHeader(false);
-        $pdf->setPrintFooter(false);
-        
-        // set default monospaced font
-        $pdf->SetMargins(10, 8, 10);
-        $pdf->SetFont('dejavusans', '', 11, '', true);
-        
-        $pdf->AddPage();
-        $pdf->writeHTML($css.$html, true, false, false, false, '');
 
+        // set default monospaced font
+        $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+
+        //set margins
+        $pdf->SetMargins(15, 40, 15);
+        
+        // set margen del header hacia arriba
+        $pdf->SetHeaderMargin(10);
+        
+        $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
+
+        //set auto page breaks
+        $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+
+        //set image scale factor
+        $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
+
+        // ---------------------------------------------------------
+        // set default font subsetting mode
+        $pdf->setFontSubsetting(true);
+
+        //$pdf->SetPrintHeader(true);
+        
+        // Add a page
+        //$resolution= array(377, 279);
+        //$resolution= array(351, 279);
+        
+        // This method has several options, check the source code documentation for more information.
+        $pdf->AddPage('P', 'A4', false, false);
+        //$pdf->Write(0, 'Titulo 1', '', 0, 'L', true, 0, false, false, 0);
+        
+        // -------------------------------------------------------------
+        //foreach($html as $table)
+        //{
+            $pdf->writeHTML($css.$formulario, true, false, false, false, '');
+        //}
+        
+        // ---------------------------------------------------------
         // Close and output PDF document
-        $pdf->Output('Formulario706.pdf', 'I');
+        $pdf->Output('alta_solicitada'.'.pdf', 'I');
 
         // Stop symfony process
         throw new sfStopException();

@@ -24,6 +24,7 @@ generator:
         object_actions:  
           _edit:        { credentials: [noAlta, crear, medico] }
           ver_detalle:  { label: Ver Detalle, action: edit, credentials: [[medico, ver_todo_datos], alta] }
+          imprimir:     {label: Imprimir, action: exportPdf, params: { onclick: "var w=window.open(this.href,'popupWindow','width=900,height=700,left=320,top=100,scrollbars=yes,menubar=no,resizable=no');w.focus();return false;"} }
           _delete:      { credentials: [noAlta, crear, medico] }
         actions: {}
         batch_actions: {}
