@@ -3,6 +3,7 @@
 <td>
   <ul class="sf_admin_td_actions">
 <?php foreach ($this->configuration->getValue('list.object_actions') as $name => $params): ?>
+
 <?php if ('_delete' == $name): ?>
     <?php //echo $this->addCredentialCondition('[?php echo $helper->linkToDelete($'.$this->getSingularName().', '.$this->asPhp($params).') ?]', $params) ?>    
     <?php 
@@ -23,7 +24,49 @@
          'echo \'<li class="sf_admin_action_delete">\' . link_to(__(\'' . $params['label'] . '\', array(), \'sf_admin\'), $helper->getUrlForAction(\'delete\'), $'.$this->getSingularName().', array(\'onclick\'=>"' . 
           $aux_del_function . '",' . $aux_extra_url_custom_id . ') ).\'</li>\' ?]', $params);
     echo $endIf1
-    ?>      
+    ?>
+<?php elseif ('_anular' == $name): ?>
+    <?php //echo $this->addCredentialCondition('[?php echo $helper->linkToDelete($'.$this->getSingularName().', '.$this->asPhp($params).') ?]', $params) ?>    
+    <?php 
+    $endIf1 = '';
+    if (array_key_exists('onClickJsFunction', $params)){
+        if (array_key_exists('BorradoConTipoMotivoFields', $this->params)){ 
+            echo '[?php if ($'.$this->getSingularName().'->get' . $this->params['BorradoConTipoMotivoFields']['motivo'] . '() === null): ?]' . "\n"; 
+            $endIf1 = '[?php endif; ?]';
+        }
+        $aux_del_function = $params['onClickJsFunction'] . "(this.href,'sf_method=delete" . '" . $aux_csrf_function . "' . "');return false;";
+    }
+    else{
+        $aux_del_function = "if(confirm('" . $params['confirm'] . "')){ var co = dijit.byId('" . $dojo_forajax_component_id . "'); " . 
+            "dojo.xhrPost({url:this.href, postData: 'sf_method=delete" . '" . $aux_csrf_function . "' . 
+            "',load:function(data){ co.set('content',data); },error: function(error){ co.set('content',error);} }); co.set('content',co.loadingMessage); } return false;";
+    }
+    echo $this->addCredentialCondition('[?php ' . ' $aux_form = new BaseForm(); $aux_csrf_function = $aux_form->isCSRFProtected() ? \'&\' . $aux_form->getCSRFFieldName() . \'=\' . $aux_form->getCSRFToken() : \'\'; ' .
+         'echo \'<li class="sf_admin_action_delete">\' . link_to(__(\'' . $params['label'] . '\', array(), \'sf_admin\'), $helper->getUrlForAction(\'delete\'), $'.$this->getSingularName().', array(\'onclick\'=>"' . 
+          $aux_del_function . '",' . $aux_extra_url_custom_id . ') ).\'</li>\' ?]', $params);
+    echo $endIf1
+    ?>
+<?php elseif ('_suspender' == $name): ?>
+    <?php //echo $this->addCredentialCondition('[?php echo $helper->linkToDelete($'.$this->getSingularName().', '.$this->asPhp($params).') ?]', $params) ?>    
+    <?php 
+    $endIf1 = '';
+    if (array_key_exists('onClickJsFunction', $params)){
+        if (array_key_exists('BorradoConTipoMotivoFields', $this->params)){ 
+            echo '[?php if ($'.$this->getSingularName().'->get' . $this->params['BorradoConTipoMotivoFields']['motivo'] . '() === null): ?]' . "\n"; 
+            $endIf1 = '[?php endif; ?]';
+        }
+        $aux_del_function = $params['onClickJsFunction'] . "(this.href,'sf_method=delete" . '" . $aux_csrf_function . "' . "');return false;";
+    }
+    else{
+        $aux_del_function = "if(confirm('" . $params['confirm'] . "')){ var co = dijit.byId('" . $dojo_forajax_component_id . "'); " . 
+            "dojo.xhrPost({url:this.href, postData: 'sf_method=delete" . '" . $aux_csrf_function . "' . 
+            "',load:function(data){ co.set('content',data); },error: function(error){ co.set('content',error);} }); co.set('content',co.loadingMessage); } return false;";
+    }
+    echo $this->addCredentialCondition('[?php ' . ' $aux_form = new BaseForm(); $aux_csrf_function = $aux_form->isCSRFProtected() ? \'&\' . $aux_form->getCSRFFieldName() . \'=\' . $aux_form->getCSRFToken() : \'\'; ' .
+         'echo \'<li class="sf_admin_action_delete">\' . link_to(__(\'' . $params['label'] . '\', array(), \'sf_admin\'), $helper->getUrlForAction(\'delete\'), $'.$this->getSingularName().', array(\'onclick\'=>"' . 
+          $aux_del_function . '",' . $aux_extra_url_custom_id . ') ).\'</li>\' ?]', $params);
+    echo $endIf1
+    ?>
 <?php elseif ('_edit' == $name): ?>
     <?php //echo $this->addCredentialCondition('[?php echo $helper->linkToEdit($'.$this->getSingularName().', '.$this->asPhp($params).') ?]', $params)  ?>      
     <?php echo $this->addCredentialCondition('[?php echo \'<li class="sf_admin_action_edit">\' . link_to(__(\'' . 

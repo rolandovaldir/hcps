@@ -31,11 +31,15 @@
       </tfoot>
       <tbody>
         [?php foreach ($pager->getResults() as $i => $<?php echo $this->getSingularName() ?>): $odd = fmod(++$i, 2) ? 'odd' : 'even' ?]
-        <?php 
+        <?php
             $aux_attib1 = '';
             if (array_key_exists('AnulableField', $this->params)){ 
                 $aux_attib1 = '[?php if ($' . $this->getSingularName() . '->get' . $this->params['AnulableField'] . "() !== null)" . 
                     " { echo 'style=\"color:red;\" title=\"Anulado: ' . $" . $this->getSingularName() . "->get" . $this->params['AnulableField'] . "() . '\"'; } ?] \n";                 
+            }elseif (array_key_exists('BorradoConTipoMotivoFields', $this->params)){
+                $aux_attib1 = '[?php if ($' . $this->getSingularName() . '->get' . $this->params['BorradoConTipoMotivoFields']['motivo'] . "() !== null)" . 
+                    " { echo 'style=\"color:' . ($" . $this->getSingularName() . "->get" . $this->params['BorradoConTipoMotivoFields']['tipo'] . "()==BorradoConTipoMotivoBehavior::TIPO_ANULADO? 'red;\" title=\"Motivo Anulacion: ': '#999900;\" title=\"Motivo Suspencion: ' ) . $" . 
+                    $this->getSingularName() . "->get" . $this->params['BorradoConTipoMotivoFields']['motivo'] . "() . '\"'; } ?] \n";                 
             }
         ?>      
           <tr class="sf_admin_row [?php echo $odd ?]" <?php echo $aux_attib1?> >
