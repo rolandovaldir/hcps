@@ -102,6 +102,9 @@ sfGuardGroupPermission:
   RelationGP7:
     Group:       Group_enfermera
     Permission:  Permission_crear  
+  RelationGP7b:
+    Group:       Group_enfermera
+    Permission:  Permission_ver_todo_datos
   RelationGP8:
     Group:       Group_medico_diagnostico
     Permission:  Permission_medico

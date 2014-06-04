@@ -115,6 +115,10 @@ ul.side_menu_forms li a:hover{
 #sf_admin_container .onlyFormat tr{ border:0; }
 #sf_admin_container .onlyFormat td{ border:0; }
 
+#sf_admin_container ul li.sf_admin_action_forbidden a{
+     background: url(../images/forbidden.png) no-repeat 0 0;
+} 
+
 
 /*****/
 

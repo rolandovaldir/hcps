@@ -63,7 +63,7 @@
             "',load:function(data){ co.set('content',data); },error: function(error){ co.set('content',error);} }); co.set('content',co.loadingMessage); } return false;";
     }
     echo $this->addCredentialCondition('[?php ' . ' $aux_form = new BaseForm(); $aux_csrf_function = $aux_form->isCSRFProtected() ? \'&\' . $aux_form->getCSRFFieldName() . \'=\' . $aux_form->getCSRFToken() : \'\'; ' .
-         'echo \'<li class="sf_admin_action_delete">\' . link_to(__(\'' . $params['label'] . '\', array(), \'sf_admin\'), $helper->getUrlForAction(\'delete\'), $'.$this->getSingularName().', array(\'onclick\'=>"' . 
+         'echo \'<li class="sf_admin_action_forbidden">\' . link_to(__(\'' . $params['label'] . '\', array(), \'sf_admin\'), $helper->getUrlForAction(\'delete\'), $'.$this->getSingularName().', array(\'onclick\'=>"' . 
           $aux_del_function . '",' . $aux_extra_url_custom_id . ') ).\'</li>\' ?]', $params);
     echo $endIf1
     ?>

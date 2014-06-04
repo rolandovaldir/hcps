@@ -215,7 +215,7 @@ Cama:
 #--------------------------------------------------------
 
 OrdenMedica:
-  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}}
+  actAs: { Timestampable: ~, Signable: ~, BorradoConTipoMotivoBehavior: {name: motivo_borrado, type: string, swname: tipo_borrado}}
   columns:
     internado_id:          {type: integer, notnull: true}
     via_administracion_id: {type: integer, notnull: true}
@@ -358,7 +358,7 @@ DetalleMedicacion:
 #--------------------------------------------------------
 
 SolicitudServicio:
-  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}}
+  actAs: { Timestampable: ~, Signable: ~, BorradoConTipoMotivoBehavior: {name: motivo_borrado, type: string, swname: tipo_borrado}}
   columns:
     internado_id:           {type: integer, notnull: true}
     atencion_id:            {type: integer, notnull: true}
@@ -490,7 +490,7 @@ AutorizacionAutopsia:
 
 # guillermo
 ProgramacionCirugia:
-  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}} 
+  actAs: { Timestampable: ~, Signable: ~, BorradoConTipoMotivoBehavior: {name: motivo_borrado, type: string, swname: tipo_borrado}} 
   columns:     
     internado_id:                { type: integer , notnull: true }
     medico_id:                   { type: integer }
@@ -511,7 +511,7 @@ ProgramacionCirugia:
 
 # guillermo
 SolicitudExamenLaboratorioClinico:
-  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}} 
+  actAs: { Timestampable: ~, Signable: ~, BorradoConTipoMotivoBehavior: {name: motivo_borrado, type: string, swname: tipo_borrado}} 
   columns:     
     internado_id:             { type: integer, notnull: true }
     vobo_medico_id:           { type: integer }
@@ -693,7 +693,7 @@ AtencionEnfermeria:
     
 # guillermo
 ListaDieta:
-  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}}
+  actAs: { Timestampable: ~, Signable: ~, BorradoConTipoMotivoBehavior: {name: motivo_borrado, type: string, swname: tipo_borrado}} 
   columns:
     internado_id:          { type: integer }
     enfermera_id:          { type: integer }
@@ -707,7 +707,7 @@ ListaDieta:
 
 # guillermo
 SolicitudTransfusionSanguinea:
-  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}} 
+  actAs: { Timestampable: ~, Signable: ~, BorradoConTipoMotivoBehavior: {name: motivo_borrado, type: string, swname: tipo_borrado}} 
   columns:     
     internado_id:                 { type: integer, notnull: true }
     quirofano:                    { type: string(50), notnull: true }
