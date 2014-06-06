@@ -11,7 +11,7 @@ generator:
     with_doctrine_route:   true
     actions_base_class:    sfActions
     extra_url_custom_id:   internado_id
-    AnulableField:         MotivoAnulacion
+    BorradoConTipoMotivoFields:  {motivo: MotivoBorrado ,tipo: TipoBorrado}
 
     config:
       actions: ~
@@ -32,7 +32,8 @@ generator:
         object_actions:  
 #          _edit:        { credentials: [noAlta] }
           ver_detalle:  {label: Ver Detalle, action: edit, credentials: [[medico, ver_todo_datos]] }
-          _delete:      {label: Anular, credentials: [noAlta, crear, medico], onClickJsFunction: "dijit.byId('panel_anular').iniciar", AnulableField: 'MotivoAnulacion' }
+          _suspender:   {label: Suspender, credentials: [noAlta, crear, medico], onClickJsFunction: "dijit.byId('panel_suspender').iniciar"}
+          _anular:      {label: Anular, credentials: [noAlta, crear, medico], onClickJsFunction: "dijit.byId('panel_anular').iniciar" }
         actions: {}
         batch_actions: {}
       filter: 

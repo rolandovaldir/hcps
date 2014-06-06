@@ -12,6 +12,7 @@ class SolicitudExamenLaboratorioClinicoForm extends BaseSolicitudExamenLaborator
 {
   public function configure()
   {
+      unset($this['created_at'], $this['updated_at'], $this['created_by'], $this['updated_by'], $this['motivo_borrado'], $this['tipo_borrado']);
       $this->setWidget("internado_id", new sfWidgetFormInputHidden());
       $this->widgetSchema['tipo_examen_laboratorio_clinico_list'] = new sfWidgetFormChoice(array('choices'  => TipoExamenLaboratorioClinicoTable::getExamenesActivosForChoice(),'expanded' => true, 'multiple'=>true, 'renderer_options'=>array('separator'=>'', 'template' => '<div class="group_title">%group%</div>%options%')));
   }

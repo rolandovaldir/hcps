@@ -12,7 +12,7 @@ generator:
     actions_base_class:    sfActions
     extra_url_custom_id:       internado_id
     sfGuard_check_created_by: user_id
-    AnulableField:         MotivoAnulacion
+    BorradoConTipoMotivoFields:  {motivo: MotivoBorrado ,tipo: TipoBorrado}
     
     config:
       actions: ~
@@ -31,7 +31,8 @@ generator:
         object_actions:  
 #          _edit:        { credentials: [noAlta, crear, enfermera] }
           ver_detalle:  { label: Ver Detalle, action: edit, credentials: [[enfermera, ver_todo_datos]] }
-          _delete:      { label: Anular, credentials: [noAlta, crear, enfermera], onClickJsFunction: "dijit.byId('panel_anular').iniciar", AnulableField: 'MotivoAnulacion' }
+          _suspender:   {label: Suspender, credentials: [noAlta, crear, enfermera], onClickJsFunction: "dijit.byId('panel_suspender').iniciar"}
+          _anular:      {label: Anular, credentials: [noAlta, crear, enfermera], onClickJsFunction: "dijit.byId('panel_anular').iniciar" }
           imprimir:     { credentials: [noAlta, crear, enfermera] }
         actions: {}
         batch_actions: {}

@@ -111,13 +111,13 @@ abstract class BaseAutorizacionAutopsia extends sfDoctrineRecord
 
         $timestampable0 = new Doctrine_Template_Timestampable();
         $signable0 = new Doctrine_Template_Signable();
-        $anulablebehavior0 = new AnulableBehavior(array(
+        $borradocontipomotivobehavior0 = new BorradoConTipoMotivoBehavior(array(
+             'name' => 'motivo_borrado',
              'type' => 'string',
-             'length' => 200,
-             'name' => 'motivo_anulacion',
+             'swname' => 'tipo_borrado',
              ));
         $this->actAs($timestampable0);
         $this->actAs($signable0);
-        $this->actAs($anulablebehavior0);
+        $this->actAs($borradocontipomotivobehavior0);
     }
 }

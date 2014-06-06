@@ -16,7 +16,7 @@ class ExamenFisicoRecienNacidoForm extends BaseExamenFisicoRecienNacidoForm
                                     'femenino'  => 'Femenino');
   public function configure()
   {
-      unset($this['created_at'], $this['updated_at'], $this['motivo_anulacion']);
+      unset($this['created_at'], $this['updated_at'], $this['motivo_anulacion'], $this['motivo_borrado'], $this['tipo_borrado']);
       
       $this->widgetSchema['internado_id'] = new sfWidgetFormInputHidden();
       $this->widgetSchema['sexo'] = new sfWidgetFormChoice(array('choices' => self::$sexo, 'expanded' => true));

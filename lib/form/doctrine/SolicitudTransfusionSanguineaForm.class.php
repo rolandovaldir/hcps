@@ -12,7 +12,7 @@ class SolicitudTransfusionSanguineaForm extends BaseSolicitudTransfusionSanguine
 {
   public function configure()
   {
-      unset($this['created_at'], $this['updated_at'], $this['created_by'], $this['updated_by'], $this['motivo_anulacion']);
+      unset($this['created_at'], $this['updated_at'], $this['created_by'], $this['updated_by'], $this['motivo_borrado'], $this['tipo_borrado']);
       
       $this->widgetSchema['internado_id'] = new sfWidgetFormInputHidden();
       $this->widgetSchema['requiere_transfusion_de'] = new sfWidgetFormChoice(array('choices'  => SolicitudTransfusionSanguineaTable::getDescripciones_requiereTransfusionDe(),'expanded' => FALSE));

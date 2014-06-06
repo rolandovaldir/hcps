@@ -258,7 +258,7 @@ ViaAdministracion:
 #--------------------------------------------------------
 
 JuntaMedica:
-  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}}
+  actAs: { Timestampable: ~, Signable: ~, BorradoConTipoMotivoBehavior: {name: motivo_borrado, type: string, swname: tipo_borrado}}
   columns:
     internado_id:            {type: integer, notnull: true}
     medico_id:               {type: integer, notnull: true}
@@ -288,7 +288,7 @@ MedicoParticipante:
 #--------------------------------------------------------
     
 ExamenFisicoRecienNacido:
-  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}}
+  actAs: { Timestampable: ~, Signable: ~, BorradoConTipoMotivoBehavior: {name: motivo_borrado, type: string, swname: tipo_borrado}}
   columns:
     internado_id:         {type: integer, notnull: true}
     ap_paterno:           {type: string(45), notnull: true}
@@ -330,7 +330,7 @@ Apgar:
 #--------------------------------------------------------
 
 SolicitudInterconsulta:
-  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}}
+  actAs: { Timestampable: ~, Signable: ~, BorradoConTipoMotivoBehavior: {name: motivo_borrado, type: string, swname: tipo_borrado}}
   columns:
     internado_id:    {type: integer, notnull: true}
     dirigida_a:      {type: string(50), notnull: true}
@@ -379,7 +379,7 @@ Atencion:
 #--------------------------------------------------------
 
 SolicitudReposicionMaterial:
-  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}}
+  actAs: { Timestampable: ~, Signable: ~, BorradoConTipoMotivoBehavior: {name: motivo_borrado, type: string, swname: tipo_borrado}}
   columns:
     internado_id: {type: integer, notnull: true}
     fecha:        {type: date, notnull: true}
@@ -405,7 +405,7 @@ DetalleMaterial:
 #--------------------------------------------------------
 
 SignosVitalesNursery:
-  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}}
+  actAs: { Timestampable: ~, Signable: ~, BorradoConTipoMotivoBehavior: {name: motivo_borrado, type: string, swname: tipo_borrado}}
   columns:
     internado_id:  {type: integer, notnull: true}
     fecha:         {type: date, notnull: true}
@@ -424,7 +424,7 @@ SignosVitalesNursery:
 #--------------------------------------------------------
 
 NotasEnfermeria:
-  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}}
+  actAs: { Timestampable: ~, Signable: ~, BorradoConTipoMotivoBehavior: {name: motivo_borrado, type: string, swname: tipo_borrado}}
   columns:
     internado_id:  {type: integer, notnull: true}
     fecha:          {type: date, notnull: true}
@@ -437,7 +437,7 @@ NotasEnfermeria:
 #--------------------------------------------------------
 
 NotasEvolucion:
-  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}}
+  actAs: { Timestampable: ~, Signable: ~, BorradoConTipoMotivoBehavior: {name: motivo_borrado, type: string, swname: tipo_borrado}}
   columns:
     internado_id: {type: integer, notnull: true}
     fecha_hora:   {type: timestamp, notnull: true}
@@ -450,7 +450,7 @@ NotasEvolucion:
 
 # guillermo
 AutorizacionDiagnosticoTratamiento:
-  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}}
+  actAs: { Timestampable: ~, Signable: ~, BorradoConTipoMotivoBehavior: {name: motivo_borrado, type: string, swname: tipo_borrado}}
   columns:     
     internado_id:        { type: integer , notnull: true }
     nombre_familiar:     { type: string(100) }
@@ -461,7 +461,7 @@ AutorizacionDiagnosticoTratamiento:
   
 # guillermo  
 AutorizacionAltaSolicitada:
-  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}}
+  actAs: { Timestampable: ~, Signable: ~, BorradoConTipoMotivoBehavior: {name: motivo_borrado, type: string, swname: tipo_borrado}}
   columns:     
     internado_id:          { type: integer , notnull: true }
     nombre_familiar:       { type: string(100), notnull: true}
@@ -472,7 +472,7 @@ AutorizacionAltaSolicitada:
 
 # guillermo
 AutorizacionAutopsia:
-  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}}  
+  actAs: { Timestampable: ~, Signable: ~, BorradoConTipoMotivoBehavior: {name: motivo_borrado, type: string, swname: tipo_borrado}}
   columns:     
     internado_id:          { type: integer , notnull: true }
     nombre_familiar1:      { type: string(100), notnull: true}
@@ -580,7 +580,7 @@ AdministracionMedicamento:
 
 # guillermo
 UsoHospitalario:
-  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}} 
+  actAs: { Timestampable: ~, Signable: ~, BorradoConTipoMotivoBehavior: {name: motivo_borrado, type: string, swname: tipo_borrado}}
   columns:     
     internado_id:           { type: integer, notnull: true }    
     lugar:                  { type: string(60), notnull: true }
@@ -607,7 +607,7 @@ DetalleUsoHospitalario:
       
 # guillermo    
 AtencionEnfermeria:
-  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}}  
+  actAs: { Timestampable: ~, Signable: ~, BorradoConTipoMotivoBehavior: {name: motivo_borrado, type: string, swname: tipo_borrado}}
   columns:     
     internado_id:                           { type: integer, notnull: true }
     enfermera_id:                           { type: integer }
@@ -750,7 +750,7 @@ InformeEstadisticoAdmEgreso:
 
 # guillermo
 PapeletaPedidoMaterial:
-  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}} 
+  actAs: { Timestampable: ~, Signable: ~, BorradoConTipoMotivoBehavior: {name: motivo_borrado, type: string, swname: tipo_borrado}}
   columns:
     internado_id:          { type: integer, notnull: true }
     enfermera_id:          { type: integer }
@@ -773,7 +773,7 @@ DetallePapeletaPedidoMaterial:
     PapeletaPedidoMaterial:    {onDelete: CASCADE, local: papeleta_pedido_material_id, foreignAlias: PapeletaPedidoMaterial }
     
 ResumenAlta:
-  actAs: { Timestampable: ~, Signable: ~, AnulableBehavior: {type: string, length: 200, name: motivo_anulacion}}
+  actAs: { Timestampable: ~, Signable: ~, BorradoConTipoMotivoBehavior: {name: motivo_borrado, type: string, swname: tipo_borrado}}
   columns:
     internado_id:                      { type: integer, notnull: true }    
     diagnostico_provisional:           { type: string(1000) } 

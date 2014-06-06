@@ -28,7 +28,8 @@ abstract class BaseAutorizacionAutopsiaFormFilter extends BaseFormFilterDoctrine
       'updated_at'       => new sfWidgetFormFilterDate(array('from_date' => new myWidgetFormDojoDate(), 'to_date' => new myWidgetFormDojoDate(), 'filter_template' => '%date_range% %empty_checkbox% %empty_label%', 'template' => '<table class="onlyFormat"><tr><td>from</td><td>%from_date%</td><tr/><tr><td>to</td><td>%to_date%</td></tr></table>', 'with_empty' => false)),
       'created_by'       => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Creator'), 'add_empty' => true)),
       'updated_by'       => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Updator'), 'add_empty' => true)),
-      'motivo_anulacion' => new sfWidgetFormFilterInput(),
+      'tipo_borrado'     => new sfWidgetFormFilterInput(),
+      'motivo_borrado'   => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
@@ -47,7 +48,8 @@ abstract class BaseAutorizacionAutopsiaFormFilter extends BaseFormFilterDoctrine
       'updated_at'       => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
       'created_by'       => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Creator'), 'column' => 'id')),
       'updated_by'       => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Updator'), 'column' => 'id')),
-      'motivo_anulacion' => new sfValidatorPass(array('required' => false)),
+      'tipo_borrado'     => new sfValidatorPass(array('required' => false)),
+      'motivo_borrado'   => new sfValidatorPass(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('autorizacion_autopsia_filters[%s]');
@@ -83,7 +85,8 @@ abstract class BaseAutorizacionAutopsiaFormFilter extends BaseFormFilterDoctrine
       'updated_at'       => 'Date',
       'created_by'       => 'ForeignKey',
       'updated_by'       => 'ForeignKey',
-      'motivo_anulacion' => 'Text',
+      'tipo_borrado'     => 'Text',
+      'motivo_borrado'   => 'Text',
     );
   }
 }
