@@ -36,7 +36,7 @@ generator:
         title:   Listado Solicitud de Tranfusiones sanguineas
         display: [ fecha_solicitud, hora_solicitud, cantidad_requerida, cantidad_requerida_unidad, observaciones, grupo_sanguineo_receptor, hr_receptor, creator]        
         object_actions:  
-#          _edit:        { credentials: [noAlta, crear, medico] }
+          imprimir:     {label: Imprimir, action: exportPdf, params: { onclick: "var w=window.open(this.href,'popupWindow','width=900,height=700,left=320,top=100,scrollbars=yes,menubar=no,resizable=no');w.focus();return false;"} }
           ver_detalle:  {label: Ver Detalle, action: edit, credentials: [[medico, ver_todo_datos]] }
           _suspender:   {label: Suspender, credentials: [noAlta, crear, medico], onClickJsFunction: "dijit.byId('panel_suspender').iniciar"}
           _anular:      {label: Anular, credentials: [noAlta, crear, medico], onClickJsFunction: "dijit.byId('panel_anular').iniciar" }

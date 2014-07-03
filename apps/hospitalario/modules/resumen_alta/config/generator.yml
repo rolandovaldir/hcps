@@ -16,21 +16,20 @@ generator:
     config:
       actions: ~
       fields: 
-        diagnostico_provisional:      { label: "Diagnostico Provisional" }
-        diagnostico_definitivo:       { label: "Diagnostico Definitivo"  }
+        diagnostico_provisional:      { label: "Diag. Provisional" }
+        diagnostico_definitivo:       { label: "Diag. Definitivo"  }
         operaciones:                  { label: "Operaciones"  }
         anamesis_examenfisico:        { label: "Anamesis y Examen Físico"  } 
-        hallazgos_labo_interconsultas:     { label: "Hallazgos significativos de Lab. y Rayos X e Interconsultas"  } 
-        evolucion_complicacion:            { label: "Evolución en el Hospital, con complicación, si la hubo"  } 
-        condicion_tratamiento_pronostico:  { label: "Codición, tratamiento, referencia final al dar de alta y pronóstico"  }
+        hallazgos_labo_interconsultas:     { label: "Lab. Rayos X e Interconsultas"  } 
+        evolucion_complicacion:            { label: "Evolución en el Hospital"  } 
+        condicion_tratamiento_pronostico:  { label: "Referencia final"  }
         created_at:           { date_format: dd/MM/yyyy }
         updated_at:           { date_format: dd/MM/yyyy }
         creator:              { label: Responsable }
       list:  
         title: Listado Resumen Alta
-        display:    [diagnostico_provisional, diagnostico_definitivo, 	operaciones, anamesis_examenfisico, hallazgos_labo_interconsultas, evolucion_complicacion, condicion_tratamiento_pronostico]
+        display:    [diagnostico_provisional, diagnostico_definitivo, operaciones, hallazgos_labo_interconsultas, evolucion_complicacion, condicion_tratamiento_pronostico]
         object_actions:  
-#          _edit:        { credentials: [noAlta] }
           ver_detalle:  {label: Ver Detalle, action: edit, credentials: [[medico, ver_todo_datos]] }
           _suspender:   {label: Suspender, credentials: [noAlta, crear, medico], onClickJsFunction: "dijit.byId('panel_suspender').iniciar"}
           _anular:      {label: Anular, credentials: [noAlta, crear, medico], onClickJsFunction: "dijit.byId('panel_anular').iniciar" }
