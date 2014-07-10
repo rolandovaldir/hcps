@@ -24,7 +24,7 @@ generator:
         display: [fecha_solicitud, dirigida_a, especialidad, motivo, creator]
         object_actions:  
           imprimir:     {label: Imprimir, action: exportPdf, params: { onclick: "var w=window.open(this.href,'popupWindow','width=900,height=700,left=320,top=100,scrollbars=yes,menubar=no,resizable=no');w.focus();return false;"} }
-          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [[medico, ver_todo_datos], alta] }
+          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [[medico, ver_todo_datos]] }
           _suspender:   {label: Suspender, credentials: [noAlta, crear, medico], onClickJsFunction: "dijit.byId('panel_suspender').iniciar"}
           _anular:      {label: Anular, credentials: [noAlta, crear, medico], onClickJsFunction: "dijit.byId('panel_anular').iniciar" }
         actions: {}
