@@ -1,9 +1,9 @@
 <table class="tbl-info">
     <tr>
-        <td><?php echo $form->getApPaterno(); ?><br />Ap. Paterno</td>
-        <td><?php echo $form->getApMaterno(); ?><br />Ap. materno</td>
-        <td><?php echo $form->Internado->Afiliado->getNombre(); ?><br />Nombre de la Madre</td>
-        <td>Nº de matrícula (de la madre)</td>
+        <td>Ap. Paterno<br /><?php echo $form->getApPaterno(); ?></td>
+        <td>Ap. materno<br /><?php echo $form->getApMaterno(); ?></td>
+        <td>Nombre de la Madre<br /><?php echo $form->Internado->Afiliado->getNombre(); ?></td>
+        <td>Nº de matrícula (de la madre)<br/><?php echo $form->Internado->Afiliado->getMatricula();?></td>
     </tr>
 </table>
 
