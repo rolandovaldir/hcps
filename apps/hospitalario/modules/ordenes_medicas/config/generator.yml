@@ -17,7 +17,7 @@ generator:
     config:
       actions: ~
       fields:  
-        nombre_medicamento:    {label: 'Nombre del Medicamento'}
+        nombre_medicamento:    {label: 'Medicamento'}
         indicacion:            {label: 'Indicación'}
         via_administracion_id: {label: 'Via de Administración'}
         dosis_intervalo:       {label: 'Dosis - Intérvalo'}
