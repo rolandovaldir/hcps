@@ -3,8 +3,8 @@
 index:
   credentials: [[medico, ver_todo_datos]]
 new:
-  credentials: [crear, medico]
+  credentials: [crear, [medico,enfermera]]
 edit:
   credentials: [[medico, ver_todo_datos]]
 delete: 
-  credentials: [crear, medico]
+  credentials: [crear, [medico,enfermera]]

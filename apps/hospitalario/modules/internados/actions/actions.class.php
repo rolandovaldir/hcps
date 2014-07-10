@@ -37,7 +37,7 @@ class internadosActions extends autoInternadosActions
     
     public function executeSecure(sfWebRequest $request)
     {
-        return $this->renderText('<div id="sf_admin_container"><div class="error">Usted No tiene los permisos necesarios (o el registro que quiere editar/eliminar no fue creado por usted)</div></div>');
+        return $this->renderText('<div id="sf_admin_container"><div class="error">Usted No tiene los permisos necesarios por una de las siguientes razones: <br/><ul><li>Usted no pertenece a el area del paciente que quiere ver</li><li>El registro que quiere editar/eliminar no fue creado por usted.</li></ul></div></div>');
     }
     
 }

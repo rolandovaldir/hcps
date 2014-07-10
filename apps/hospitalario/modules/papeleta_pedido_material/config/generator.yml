@@ -25,7 +25,7 @@ generator:
         title:          Listado Pepeleta Pedido material
         display:        [ fecha_solicitud, creator ]
         object_actions:  
-          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [[enfermera, ver_todo_datos], alta] }
+          ver_detalle:  { label: Ver Detalle, action: edit, credentials: [[enfermera, ver_todo_datos]] }
           _suspender:   {label: Suspender, credentials: [noAlta, crear, enfermera], onClickJsFunction: "dijit.byId('panel_suspender').iniciar"}
           _anular:      {label: Anular, credentials: [noAlta, crear, enfermera], onClickJsFunction: "dijit.byId('panel_anular').iniciar" }
         actions: {}
