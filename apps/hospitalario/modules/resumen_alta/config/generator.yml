@@ -31,8 +31,8 @@ generator:
         display:    [diagnostico_provisional, diagnostico_definitivo, operaciones, hallazgos_labo_interconsultas, evolucion_complicacion, condicion_tratamiento_pronostico, creator]
         object_actions:  
           ver_detalle:  {label: Ver Detalle, action: edit, credentials: [[medico, ver_todo_datos]] }
-          _suspender:   {label: Suspender, credentials: [noAlta, crear, medico], onClickJsFunction: "dijit.byId('panel_suspender').iniciar"}
-          _anular:      {label: Anular, credentials: [noAlta, crear, medico], onClickJsFunction: "dijit.byId('panel_anular').iniciar" }
+          _suspender:   {label: Suspender, credentials: [noAlta, crear, [medico,enfermera]], onClickJsFunction: "dijit.byId('panel_suspender').iniciar"}
+          _anular:      {label: Anular, credentials: [noAlta, crear, [medico,enfermera]], onClickJsFunction: "dijit.byId('panel_anular').iniciar" }
         actions: {}
         batch_actions: {}
       filter: 
