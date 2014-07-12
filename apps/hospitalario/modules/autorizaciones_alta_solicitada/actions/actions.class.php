@@ -37,7 +37,7 @@ class autorizaciones_alta_solicitadaActions extends autoAutorizaciones_alta_soli
             }            
         }
         if (!is_object($this->hcps_internado) || $this->hcps_internado->getAlta() 
-                || !$this->getUser()->hasCredential(array('crear','enfermera'))){
+                || !$this->getUser()->hasCredential(array('crear', array('enfermera', 'medico')))){
             $siAlta = true;
         }
         else { $siAlta = false; }

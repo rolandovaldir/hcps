@@ -37,8 +37,8 @@ generator:
 #          _edit:        { credentials: [noAlta, crear, enfermera] }
           imprimir:     {label: Imprimir, action: exportPdf, params: { onclick: "var w=window.open(this.href,'popupWindow','width=900,height=700,left=320,top=100,scrollbars=yes,menubar=no,resizable=no');w.focus();return false;"} }
           ver_detalle:  {label: Ver Detalle, action: edit, credentials: [[enfermera, ver_todo_datos]] }
-          _suspender:   {label: Suspender, credentials: [[noAlta, crear, enfermera],[noAlta, crear, medico]], onClickJsFunction: "dijit.byId('panel_suspender').iniciar"}
-          _anular:      {label: Anular, credentials: [[noAlta, crear, enfermera],[noAlta, crear, medico]], onClickJsFunction: "dijit.byId('panel_anular').iniciar" }
+          _suspender:   {label: Suspender, credentials: [noAlta, crear, [enfermera, medico]], onClickJsFunction: "dijit.byId('panel_suspender').iniciar"}
+          _anular:      {label: Anular, credentials: [noAlta, crear, [enfermera, medico]], onClickJsFunction: "dijit.byId('panel_anular').iniciar" }
         actions: {}
         batch_actions: {}
       filter:  
