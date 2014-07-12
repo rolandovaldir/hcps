@@ -36,7 +36,7 @@ class autorizaciones_diagnostico_tratamientoActions extends autoAutorizaciones_d
             }            
         }
         if (!is_object($this->hcps_internado) || $this->hcps_internado->getAlta() 
-                || !$this->getUser()->hasCredential(array('crear','enfermera'))){
+                || !$this->getUser()->hasCredential(array('crear'),array('medico', 'enfermera'))){
             $siAlta = true;
         }
         else { $siAlta = false; }

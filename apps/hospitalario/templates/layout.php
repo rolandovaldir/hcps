@@ -139,12 +139,13 @@
                     <tr><td>&nbsp;</td></tr> 
                 </table> 
             </div>
-            <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'leading',style:'padding:0;',splitter: true" >
-                <div>
-                    <div data-dojo-type="dijit/layout/AccordionContainer" data-dojo-props="style:'min-width:260px;'" >
+            <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'leading',style:'padding:0;',splitter: false" >
+                
+                
                         <?php include '_side_menu.php' ?>
-                    </div>
-                </div>     
+                    
+                    
+                   
             </div>
             <?php $auxColor = get_slot('historial',false) ? 'F3F3F3' : 'F9FFF9' ?>
             <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center',style:'background-color:#<?php echo $auxColor ?>'" id="dojotheme-maincontainer" >
