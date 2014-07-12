@@ -11,92 +11,734 @@ Filial:
     geoubicacion2: ''
     
 Planta:
+  plantaS:
+    Filial:        Policonsultorio
+    nombre:        Sotano
+    descripcion:   ''
+    observaciones: ''
+    codigo:        PS1231
+    plano:         ''
+    numero:        8
+  plantaB:
+    Filial:        Policonsultorio
+    nombre:        'Planta Baja'
+    descripcion:   ''
+    observaciones: ''
+    codigo:        PB1232
+    plano:         ''
+    numero:        11
+  plantaQ:
+    Filial:        Policonsultorio
+    nombre:        'Quirofano'
+    descripcion:   ''
+    observaciones: ''
+    codigo:        PQ1233
+    plano:         ''
+    numero:        9    
+  plantaM:
+    Filial:        Policonsultorio
+    nombre:        'Maternidad'
+    descripcion:   ''
+    observaciones: ''
+    codigo:        PM1234
+    plano:         ''
+    numero:        7    
   planta1:
     Filial:        Policonsultorio
-    nombre:        Ginecología
+    nombre:        'Pediatría y Ginecología'
     descripcion:   ''
     observaciones: ''
-    codigo:        PG1231
+    codigo:        PM1235
     plano:         ''
-    numero:        2
+    numero:        12    
   planta2:
     Filial:        Policonsultorio
-    nombre:        Pediatría
+    nombre:        'Cirugía'
     descripcion:   ''
     observaciones: ''
-    codigo:        PP1232
+    codigo:        PM1236
     plano:         ''
-    numero:        2
+    numero:        12    
   planta3:
     Filial:        Policonsultorio
-    nombre:        Odontología
+    nombre:        'Medicina Interna'
     descripcion:   ''
     observaciones: ''
-    codigo:        PO1233
+    codigo:        PM1237
     plano:         ''
-    numero:        2    
-    
+    numero:        12    
+  planta4:
+    Filial:        Policonsultorio
+    nombre:        'Servicios Complementarios'
+    descripcion:   ''
+    observaciones: ''
+    codigo:        PM1238
+    plano:         ''
+    numero:        12    
+  planta5:
+    Filial:        Policonsultorio
+    nombre:        'Terraza'
+    descripcion:   ''
+    observaciones: ''
+    codigo:        PM1239
+    plano:         ''
+    numero:        12    
+  
 Pieza:
-  pieza1:
-    Planta:        planta1
-    nombre:        p1
+  Emergencias:
+    Planta:        plantaS
+    nombre:        Emergencias
     codigo:        PZ1231
     descripcion:   ''
     observaciones: ''
     plano:         ''
-  pieza2:
-    Planta:        planta1
-    nombre:        p2
+  Farmacia:
+    Planta:        plantaS
+    nombre:        Farmacia
     codigo:        PZ1232
     descripcion:   ''
     observaciones: ''
     plano:         ''
-  pieza3:
-    Planta:        planta2
-    nombre:        p3
+  Lavanderia:
+    Planta:        plantaS
+    nombre:        Lavanderia
     codigo:        PZ1233
     descripcion:   ''
     observaciones: ''
     plano:         ''
-  pieza4:
-    Planta:        planta3
-    nombre:        p4
+  Nutricion:
+    Planta:        plantaS
+    nombre:        Nutricion
     codigo:        PZ1234
     descripcion:   ''
     observaciones: ''
     plano:         ''
-    
+  Almacen:
+    Planta:        plantaS
+    nombre:        Almacen
+    codigo:        PZ1235
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  Choferes:
+    Planta:        plantaS
+    nombre:        Choferes
+    codigo:        PZ1236
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  Satreria:
+    Planta:        plantaS
+    nombre:        Sastreria
+    codigo:        PZ1237
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  CentralTelefonica:
+    Planta:        plantaB
+    nombre:        'Central Telefonica'
+    codigo:        PZ1238
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  Direccion:
+    Planta:        plantaB
+    nombre:        'Direccion'
+    codigo:        PZ1239
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  Administracion:
+    Planta:        plantaB
+    nombre:        'Administracion'
+    codigo:        PZ1240
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  Secretaria:
+    Planta:        plantaB
+    nombre:        'Secretaria'
+    codigo:        PZ1241
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  Costos:
+    Planta:        plantaB
+    nombre:        'Costos'
+    codigo:        PZ1242
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  Policia:
+    Planta:        plantaB
+    nombre:        'Policia'
+    codigo:        PZ1243
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  Trabajo Social:
+    Planta:        plantaB
+    nombre:        'Trabajo Social'
+    codigo:        PZ1244
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  Ccin:
+    Planta:        plantaB
+    nombre:        'CCIN'
+    codigo:        PZ1245
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  RayosX:
+    Planta:        plantaB
+    nombre:        'Rayos X'
+    codigo:        PZ1246
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  Laboratorio:
+    Planta:        plantaB
+    nombre:        'Laboratorio'
+    codigo:        PZ1247
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  Patologia:
+    Planta:        plantaB
+    nombre:        'Patologia'
+    codigo:        PZ1248
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  UnidadTerapiaIntensiva:
+    Planta:        plantaQ
+    nombre:        'Unidad de Terapia Intensiva'
+    codigo:        PZ1249
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  Vestuario:
+    Planta:        plantaQ
+    nombre:        'Vestuario'
+    codigo:        PZ1250
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  Enfermeria1:
+    Planta:        plantaQ
+    nombre:        'Enfermeria1'
+    codigo:        PZ1251
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  Suministro:
+    Planta:        plantaQ
+    nombre:        'Suministro'
+    codigo:        PZ1252
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  UnidadTerapiaNeonatal:
+    Planta:        plantaQ
+    nombre:        'Unidad de Terapia Neonatal'
+    codigo:        PZ1253
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  Quirofano1:
+    Planta:        plantaQ
+    nombre:        'Quirofano 1'
+    codigo:        PZ1254
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  Quirofano2:
+    Planta:        plantaQ
+    nombre:        'Quirofano 2'
+    codigo:        PZ1255
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  Quirofano3:
+    Planta:        plantaQ
+    nombre:        'Quirofano 3'
+    codigo:        PZ1256
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  Enfermeria2:
+    Planta:        plantaQ
+    nombre:        'Enfermeria 2'
+    codigo:        PZ1257
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  EnfermeriaMaternidad:
+    Planta:        plantaM
+    nombre:        'Enfermeria Maternidad'
+    codigo:        PZ1258
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  JefaturaMaternidad:
+    Planta:        plantaM
+    nombre:        'Jefatura Medica Maternidad'
+    codigo:        PZ1259
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  pzamo2:
+    Planta:        plantaM
+    nombre:        'Pieza MO2'
+    codigo:        PZ1260
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  pzamo3:
+    Planta:        plantaM
+    nombre:        'Pieza MO3'
+    codigo:        PZ1261
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  pzamo4:
+    Planta:        plantaM
+    nombre:        'Pieza MO4'
+    codigo:        PZ1262
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  pzamo5:
+    Planta:        plantaM
+    nombre:        'Pieza MO5'
+    codigo:        PZ1263
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  pzamo6:
+    Planta:        plantaM
+    nombre:        'Pza MO6'
+    codigo:        PZ1264
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  EnfermeriaPG:
+    Planta:        planta1
+    nombre:        'Enfermeria Pediatría y Ginecología'
+    codigo:        PZ1265
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  JefaturaPG:
+    Planta:        planta1
+    nombre:        'Jefatura Medica Pediatría y Ginecología'
+    codigo:        PZ1266
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  pza102:
+    Planta:        planta1
+    nombre:        'Pieza 102'
+    codigo:        PZ1267
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  pza103:
+    Planta:        planta1
+    nombre:        'Pieza 103'
+    codigo:        PZ1268
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  pza104:
+    Planta:        planta1
+    nombre:        'Pieza 104'
+    codigo:        PZ1269
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  pza105:
+    Planta:        planta1
+    nombre:        'Pieza 105'
+    codigo:        PZ1270
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  pza106:
+    Planta:        planta1
+    nombre:        'Pieza 106'
+    codigo:        PZ1271
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  pza107:
+    Planta:        planta1
+    nombre:        'Pieza 107'
+    codigo:        PZ1272
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  pza108:
+    Planta:        planta1
+    nombre:        'Pieza 108'
+    codigo:        PZ1273
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  pza109:
+    Planta:        planta1
+    nombre:        'Pieza 109'
+    codigo:        PZ1274
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  pza110:
+    Planta:        planta1
+    nombre:        'Pieza 110'
+    codigo:        PZ1275
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  pza111:
+    Planta:        planta1
+    nombre:        'Pieza 111'
+    codigo:        PZ1276
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+#------
+  EnfermeriaCirugia:
+    Planta:        planta2
+    nombre:        'Enfermeria Cirugía'
+    codigo:        PZ1277
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  JefaturaCirugia:
+    Planta:        planta2
+    nombre:        'Jefatura Cirugía'
+    codigo:        PZ1278
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  pza202:
+    Planta:        planta2
+    nombre:        'Pieza 202'
+    codigo:        PZ1279
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  pza203:
+    Planta:        planta2
+    nombre:        'Pieza 203'
+    codigo:        PZ1280
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  pza204:
+    Planta:        planta2
+    nombre:        'Pieza 204'
+    codigo:        PZ1281
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  pza205:
+    Planta:        planta2
+    nombre:        'Pieza 205'
+    codigo:        PZ1282
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  pza206:
+    Planta:        planta2
+    nombre:        'Pieza 206'
+    codigo:        PZ1283
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  pza207:
+    Planta:        planta2
+    nombre:        'Pieza 207'
+    codigo:        PZ1284
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  pza208:
+    Planta:        planta2
+    nombre:        'Pieza 208'
+    codigo:        PZ1285
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  pza209:
+    Planta:        planta2
+    nombre:        'Pieza 209'
+    codigo:        PZ1286
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  pza210:
+    Planta:        planta2
+    nombre:        'Pieza 210'
+    codigo:        PZ1287
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  pza211:
+    Planta:        planta2
+    nombre:        'Pieza 211'
+    codigo:        PZ1288
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+#------
+  EnfermeriaMI:
+    Planta:        planta3
+    nombre:        'Enfermeria Medicina Interna'
+    codigo:        PZ1289
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  JefaturaMI:
+    Planta:        planta3
+    nombre:        'Jefatura Medicina Interna'
+    codigo:        PZ1290
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  pza302:
+    Planta:        planta3
+    nombre:        'Pieza 302'
+    codigo:        PZ1291
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  pza303:
+    Planta:        planta3
+    nombre:        'Pieza 303'
+    codigo:        PZ1292
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  pza304:
+    Planta:        planta3
+    nombre:        'Pieza 304'
+    codigo:        PZ1293
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  pza305:
+    Planta:        planta3
+    nombre:        'Pieza 305'
+    codigo:        PZ1294
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  pza306:
+    Planta:        planta3
+    nombre:        'Pieza 306'
+    codigo:        PZ1295
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  pza307:
+    Planta:        planta3
+    nombre:        'Pieza 307'
+    codigo:        PZ1296
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  pza308:
+    Planta:        planta3
+    nombre:        'Pieza 308'
+    codigo:        PZ1297
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  pza309:
+    Planta:        planta3
+    nombre:        'Pieza 309'
+    codigo:        PZ1298
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  pza310:
+    Planta:        planta3
+    nombre:        'Pieza 310'
+    codigo:        PZ1299
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  pza311:
+    Planta:        planta3
+    nombre:        'Pieza 311'
+    codigo:        PZ1300
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+#------
+  JefaturaEnfermeria:
+    Planta:        planta4
+    nombre:        'Jefatura de Enfermeria'
+    codigo:        PZ1301
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  Mamografia:
+    Planta:        planta4
+    nombre:        'Mamografía'
+    codigo:        PZ1302
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''
+  Consul402:
+    Planta:        planta4
+    nombre:        'Consultorio 402'
+    codigo:        PZ1303
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  Consul403:
+    Planta:        planta4
+    nombre:        'Consultorio 403'
+    codigo:        PZ1304
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  Hemodialisis405:
+    Planta:        planta4
+    nombre:        'Hemodíalisis 405'
+    codigo:        PZ1305
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  Ecografia406:
+    Planta:        planta4
+    nombre:        'Ecografía 406'
+    codigo:        PZ1306
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  Gastro407:
+    Planta:        planta4
+    nombre:        'Gastroenterología 407'
+    codigo:        PZ1307
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  BS409:
+    Planta:        planta4
+    nombre:        'Banco de Sagre 409'
+    codigo:        PZ1308
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  Onco411:
+    Planta:        planta4
+    nombre:        'Oncología 411'
+    codigo:        PZ1309
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  pza309:
+    Planta:        planta3
+    nombre:        'Pieza 309'
+    codigo:        PZ1310
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+#------
+  Cafeteria:
+    Planta:        planta5
+    nombre:        'Cafeteria 414'
+    codigo:        PZ1312
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  Biblioteca:
+    Planta:        planta5
+    nombre:        'Biblioteca 143'
+    codigo:        PZ1313
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  HabInternos:
+    Planta:        planta5
+    nombre:        'Habitacion Internos 416'
+    codigo:        PZ1314
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  HabMedicos:
+    Planta:        planta5
+    nombre:        'Biblioteca 415'
+    codigo:        PZ1315
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  HabRx:
+    Planta:        planta5
+    nombre:        'Habitacion RX 413'
+    codigo:        PZ1316
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  HabLaboratorio:
+    Planta:        planta5
+    nombre:        'Habitacion Laboratorio 413'
+    codigo:        PZ1317
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  Mantenimiento:
+    Planta:        planta5
+    nombre:        'Mantenimiento 373'
+    codigo:        PZ1318
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+  Sastreria127:
+    Planta:        planta5
+    nombre:        'Sastreria 127'
+    codigo:        PZ1319
+    descripcion:   ''
+    observaciones: ''
+    plano:         ''  
+#------
+
+
 Cama:
   cama1:
-    Pieza:         pieza1
+    Pieza:         pza102
     codigo:        CMB123
     ocupada:       SI
     observaciones: ''
     codigo_activo: CMB123S
     activo_id:     NULL
   cama2:
-    Pieza:         pieza1
+    Pieza:         pza202
     codigo:        CMB124
     ocupada:       NO
     observaciones: ''
     codigo_activo: CMB124S
     activo_id:     NULL
   cama3:
-    Pieza:         pieza2
+    Pieza:         pza203
     codigo:        CMB125
     ocupada:       NO
     observaciones: ''
     codigo_activo: CMB125S
     activo_id:     NULL
   cama4:
-    Pieza:         pieza3
+    Pieza:         pza304
     codigo:        CMB126
     ocupada:       SI
     observaciones: ''
     codigo_activo: CMB126S
     activo_id:     NULL
   cama5:
-    Pieza:         pieza4
+    Pieza:         pza204
     codigo:        CMB127
     ocupada:       SI
     observaciones: ''

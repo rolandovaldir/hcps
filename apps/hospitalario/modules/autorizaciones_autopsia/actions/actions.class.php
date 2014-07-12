@@ -36,7 +36,7 @@ class autorizaciones_autopsiaActions extends autoAutorizaciones_autopsiaActions
             }            
         }
         if (!is_object($this->hcps_internado) || $this->hcps_internado->getAlta() 
-                || !$this->getUser()->hasCredential(array('crear','enfermera'))){
+                || !$this->getUser()->hasCredential(array('crear', array('enfermera','medico')))){
             $siAlta = true;
         }
         else { $siAlta = false; }

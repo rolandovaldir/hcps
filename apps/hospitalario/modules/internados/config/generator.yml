@@ -23,7 +23,6 @@ generator:
         display: [descripcion_fecha_hora, matricula, nombre_completo, empresa, ubicacion, descripcion_es_afiliado]
         object_actions:
           visitar: {label: Visitar Paciente, action: visitar, params: { onclick: 'return true;' } }
-          _edit: ~
         actions: {}
         batch_actions: {}
       filter:  
